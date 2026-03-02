@@ -13,4 +13,5 @@ google-chrome output/web/index.html &
 
 #It will not deploy the book as that is cloud based and I feel it is similar to git 
 #and should be something done by the user rather than an automated process.
+
 #pretext deploy <- remember this is that command if you're looking for it.

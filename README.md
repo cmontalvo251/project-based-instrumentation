@@ -75,7 +75,25 @@ You'll see that there are a number of directions in the project.ptx file so it's
 straightforward. Note however that Dr. Levin suggests that each book have its own
 repo. 
 
-The command itself it 'pretext deploy'
+The command itself it 'pretext deploy' which will output a bunch of stuff like this
+
+To enable GitHub Pages, visit 
+    https://github.com/cmontalvo251/project-based-instrumentation/settings/pages
+selecting the `gh-pages` branch with the `/ (root)` folder.
+
+First, no need to "enable". Once you run pretext deploy you'll be able see in the settings/pages tab that your book is already deployed.
+
+Visit
+    https://github.com/cmontalvo251/project-based-instrumentation/actions/
+to check on the status of your GitHub Pages deployment.
+
+^This is a neat site which will show whether or not your book is deployed yet. For small projects like what I'm doing it is really quick.
+
+Your built project will soon be available to the public at:
+    https://cmontalvo251.github.io/project-based-instrumentation/
+
+When looking at the settings/pages tab you'll see that the book is indeed live
+at the URL above.
 
 # Textit
 
