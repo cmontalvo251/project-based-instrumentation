@@ -44,11 +44,15 @@ but you need npm first so run 'sudo apt install npm'
 
 You may need to run 'sudo apt update' and 'sudo apt upgrade' first of course
 
-'pretext view html' will open your newly created html or 'pretext view web'. 
+'pretext view html' will open your newly created html or 'pretext view web'
 
 Alternatively you can open the index.html file in the 
 
 'output/web' folder and it will open in your default web browser
+
+I personally just like to run google-chrome index.html from the command line.
+
+Much of this has been automated in the textit.sh script
 
 <!--In order to deploy you need to have your project.ptx file in the root dir -->
 
@@ -57,3 +61,13 @@ You'll see that there are a number of directions in the project.ptx file so it's
 straightforward. Note however that Dr. Levin suggests that each book have its own
 repo. 
 
+The command itself it 'pretext deploy'
+
+<!-- In order to speed things up a bit and help with the flow -->
+
+I have created a simple bash script called texit.sh which will compile the 
+ptx files into a pdf and then copy the pdf to the root directory so it's easy to find
+It will also evince the document so you can view it immediately. 
+It will also compile the ptx files for the web and then view it in the browser.
+It will not deploy the book as that is cloud based and I feel it is similar to git 
+and should be something done by the user rather than an automated process.
