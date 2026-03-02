@@ -6,7 +6,9 @@ One final comment, the archive folder called Figures/ has been moved to the PreT
 
 The directions that follow assume you are running Ubuntu or similar linux and understand the command line.
 
-<!--If you want to compile the raw text files here's how to do that on Linux -->
+# Directions to compile
+
+If you want to compile the raw text files here's how to do that on Linux
 
 If you have the space I strongly recommend you just run
 
