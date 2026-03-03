@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="Preface" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Preface</title>
+
+  <!--Stuff to come before the first section if you want 
+      <introduction>
+    <p> Text before the first section. </p>
+  </introduction> -->
+
+  <!-- this is how you include sections if you want 
+       <xi:include href="sec-section-name.ptx" />-->
+
+  <section xml:id="introduction">
+    <title>Introduction</title>
+    <p>This textbook describes an instrumentation kit used for an
+Instrumentation and Experimental Methods course at the undergraduate
+level. This textbook has been designed with the student and faculty member in
+mind. The kit contains the CircuitPlayground
+Express/Bluefruit running CircuitPython and is used to teach
+fundamentals of instrumentation and provide a hands-on way of
+learning. Engineering is usually taught in a
+traditional lecture format, involving theory in the classroom,
+homework outside of class, and routine examinations. Progressive forms
+of learning such as flipped classrooms and project based learning
+(PBL) have created new and fun ways for professors to interact with
+students and for students to be more involved in their learning. PBL
+provides a student-centered method of teaching and learning by posing
+problems for students to solve with the solution of the project being
+the primary goal and the theory a secondary goal.</p>
+  </section>
+
+  <section xml:id="course-description">
+    <title>Course Description</title>
+    <p>The course is designed to coincide with lecture content in a standard
+engineering instrumentation course. The students are guided through
+numerous projects. The specific course learning objectives, which include
+statistics, dynamic responses, operational amplifiers, and electronic
+    circuits both analog and digital are shown below:</p>
+  </section>
+  
+
+</chapter>

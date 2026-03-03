@@ -105,3 +105,9 @@ It will also evince the document so you can view it immediately.
 It will also compile the ptx files for the web and then view it in the browser.
 It will not deploy the book as that is cloud based and I feel it is similar to git 
 and should be something done by the user rather than an automated process.
+
+Note you need pdftk so make sure to run
+
+sudo apt install pdftk
+
+before running this script

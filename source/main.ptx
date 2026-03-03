@@ -4,19 +4,23 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book xml:id="project-based-instrumentation">
+
+    <!-- Title of the book -->
+    <title>Project Based Engineering Instrumentation</title>
+    <subtitle>Using CircuitPython and the Circuit Playground</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-    <xi:include href="./ch-chapter-title.ptx" />
+    <xi:include href="./preface.ptx" />
 
+    <!-- Include Acknowledgements -->
+    <xi:include href="./acknowledgements.ptx"/>
 
-    <!-- Include backmatter -->
-    <xi:include href="./backmatter.ptx" />
+    <!-- Include backmatter if you want 
+    <xi:include href="./backmatter.ptx" /> -->
 
   </book>
 </pretext>
