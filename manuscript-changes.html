@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Manuscript Changes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Project Based Engineering Instrumentation">
+<meta property="book:author" content="Carlos Montalvo">
+<meta property="book:author" content="Marine Feron Leabeater">
+<meta property="book:author" content="Lisa Schibelius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.16';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.0f480e95eedd3cd4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.75d8d8257df1449f.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="project-based-instrumentation.html"><span class="title">Project Based Engineering Instrumentation</span> <span class="subtitle">Using CircuitPython and the Circuit Playground</span></a></h1>
+<p class="byline">Carlos Montalvo, Marine Feron Leabeater, Lisa Schibelius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="current-edition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="frontmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="future-changes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter contains-active">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="current-edition.html" class="internal"><span class="codenumber">1</span> <span class="title">Current Edition</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="manuscript-changes.html" class="internal"><span class="codenumber">2</span> <span class="title">Manuscript Changes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="future-changes.html" class="internal"><span class="codenumber">3</span> <span class="title">Changes Needed and Future Project Ideas</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Preface</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="introduction.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="course-description.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Course Description</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="acknowledgements.html" class="internal"><span class="codenumber">2</span> <span class="title">Acknowledgements</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="manuscript-changes"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Manuscript Changes</span>
+</h2>
+<div class="para logical" id="manuscript-changes-2">
+<ol class="decimal" id="manuscript-changes-2-1">
+<li id="manuscript-changes-2-1-1">
+<div class="para" id="p-derived-manuscript-changes-2-1-1">Original tutorials in Google Docs created</div>
+<div class="autopermalink" data-description="Item 1"><a href="#manuscript-changes-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-2">
+<div class="para" id="p-derived-manuscript-changes-2-1-2">December 21st, 2021 - Updated links for manuscript and hardware</div>
+<div class="autopermalink" data-description="Item 2"><a href="#manuscript-changes-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-3">
+<div class="para" id="p-derived-manuscript-changes-2-1-3">Tutorials purchased by <a class="external" href="https://tangibles-that-teach.gitbook.io/instrumentation-lab-manual/-MbMx70LQzRmEG_hS7Ld/" target="_blank">Tangibles that Teach</a>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#manuscript-changes-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-4">
+<div class="para" id="p-derived-manuscript-changes-2-1-4">May 30th, 2022 - Tangibles that teach went out of business and chapter began the move to Github</div>
+<div class="autopermalink" data-description="Item 4"><a href="#manuscript-changes-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-5">
+<div class="para" id="p-derived-manuscript-changes-2-1-5">June 28th, 2022 - Work began on a Chromebook. Unfortunately the Figures folder is not back up on Git. As such a main_latest.pdf has been created that’s the latest full version. The main.pdf is the version created by the Chromebook so it has new chapters but none of the older chapters. Figure files are now backup on Git but only figures from the ’Voltage Potentiometer’ are currently there.</div>
+<div class="autopermalink" data-description="Item 5"><a href="#manuscript-changes-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-6">
+<div class="para" id="p-derived-manuscript-changes-2-1-6">July 2nd, 2022 - All figures backed up and latest manuscript completed</div>
+<div class="autopermalink" data-description="Item 6"><a href="#manuscript-changes-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-7">
+<div class="para" id="p-derived-manuscript-changes-2-1-7">October 18th, 2022 - A pedometer lab has been added.</div>
+<div class="autopermalink" data-description="Item 7"><a href="#manuscript-changes-2-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-8">
+<div class="para" id="p-derived-manuscript-changes-2-1-8">November 8th, 2022 - Edited the Servo and feedback control servo lab to be one big lab with 3 parts</div>
+<div class="autopermalink" data-description="Item 8"><a href="#manuscript-changes-2-1-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-9">
+<div class="para" id="p-derived-manuscript-changes-2-1-9">January 8th, 2023 - Removed all mentions of Tangibles that Teach in the main body of the text.</div>
+<div class="autopermalink" data-description="Item 9"><a href="#manuscript-changes-2-1-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-10">
+<div class="para" id="p-derived-manuscript-changes-2-1-10">February 6th, 2023 - Changed an assignment description for LEDs and push buttons</div>
+<div class="autopermalink" data-description="Item 10"><a href="#manuscript-changes-2-1-10" title="Copy heading and permalink for Item 10" aria-label="Copy heading and permalink for Item 10">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-11">
+<div class="para" id="p-derived-manuscript-changes-2-1-11">February 22nd, 2023 - Moved the Bluetooth module to be before the modules lab so this will end up being a few updates to make those projects more uniform. I also created a backup called Bluetooth original in case you wanted to go back to the other version.</div>
+<div class="autopermalink" data-description="Item 11"><a href="#manuscript-changes-2-1-11" title="Copy heading and permalink for Item 11" aria-label="Copy heading and permalink for Item 11">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-12">
+<div class="para" id="p-derived-manuscript-changes-2-1-12">June 16th, 2023 - Cleaned up the ``changes needed" list and updated Method 3 with some new software updates.</div>
+<div class="autopermalink" data-description="Item 12"><a href="#manuscript-changes-2-1-12" title="Copy heading and permalink for Item 12" aria-label="Copy heading and permalink for Item 12">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-13">
+<div class="para" id="p-derived-manuscript-changes-2-1-13">August 9th, 2023 - Edited the preamble for assignments and made a note in the servo lab</div>
+<div class="autopermalink" data-description="Item 13"><a href="#manuscript-changes-2-1-13" title="Copy heading and permalink for Item 13" aria-label="Copy heading and permalink for Item 13">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-14">
+<div class="para" id="p-derived-manuscript-changes-2-1-14">September 5th, 2023 - Updated hyperlinks to show up on Microsoft Edge using underlines and different color text.</div>
+<div class="autopermalink" data-description="Item 14"><a href="#manuscript-changes-2-1-14" title="Copy heading and permalink for Item 14" aria-label="Copy heading and permalink for Item 14">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-15">
+<div class="para" id="p-derived-manuscript-changes-2-1-15">September 7th, 2023 - Fixed the TL;DR section</div>
+<div class="autopermalink" data-description="Item 15"><a href="#manuscript-changes-2-1-15" title="Copy heading and permalink for Item 15" aria-label="Copy heading and permalink for Item 15">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-16">
+<div class="para" id="p-derived-manuscript-changes-2-1-16">September 15th, 2023 - Updated a link in the DAQ lab</div>
+<div class="autopermalink" data-description="Item 16"><a href="#manuscript-changes-2-1-16" title="Copy heading and permalink for Item 16" aria-label="Copy heading and permalink for Item 16">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-17">
+<div class="para" id="p-derived-manuscript-changes-2-1-17">September 20th, 2023 - Made the modules installation section a standalone tex file</div>
+<div class="autopermalink" data-description="Item 17"><a href="#manuscript-changes-2-1-17" title="Copy heading and permalink for Item 17" aria-label="Copy heading and permalink for Item 17">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-18">
+<div class="para" id="p-derived-manuscript-changes-2-1-18">October 4th, 2023 - Added a new potentiometer photo</div>
+<div class="autopermalink" data-description="Item 18"><a href="#manuscript-changes-2-1-18" title="Copy heading and permalink for Item 18" aria-label="Copy heading and permalink for Item 18">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-19">
+<div class="para" id="p-derived-manuscript-changes-2-1-19">November 16th, 2023 - Edited the lists of parts</div>
+<div class="autopermalink" data-description="Item 19"><a href="#manuscript-changes-2-1-19" title="Copy heading and permalink for Item 19" aria-label="Copy heading and permalink for Item 19">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-20">
+<div class="para" id="p-derived-manuscript-changes-2-1-20">November 22nd, 2023 - Edited acceleration lab</div>
+<div class="autopermalink" data-description="Item 20"><a href="#manuscript-changes-2-1-20" title="Copy heading and permalink for Item 20" aria-label="Copy heading and permalink for Item 20">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-21">
+<div class="para" id="p-derived-manuscript-changes-2-1-21">December 5th, 2023 - Edited the troubleshooting section</div>
+<div class="autopermalink" data-description="Item 21"><a href="#manuscript-changes-2-1-21" title="Copy heading and permalink for Item 21" aria-label="Copy heading and permalink for Item 21">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-22">
+<div class="para" id="p-derived-manuscript-changes-2-1-22">January 12th, 2024 - Edited chapters 1 and 2</div>
+<div class="autopermalink" data-description="Item 22"><a href="#manuscript-changes-2-1-22" title="Copy heading and permalink for Item 22" aria-label="Copy heading and permalink for Item 22">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-23">
+<div class="para" id="p-derived-manuscript-changes-2-1-23">January 22nd, 2024 - Edited the bootloader update notes in the troubleshooting chatper</div>
+<div class="autopermalink" data-description="Item 23"><a href="#manuscript-changes-2-1-23" title="Copy heading and permalink for Item 23" aria-label="Copy heading and permalink for Item 23">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-24">
+<div class="para" id="p-derived-manuscript-changes-2-1-24">January 25th, 2024 - More edits to the bootloader notes</div>
+<div class="autopermalink" data-description="Item 24"><a href="#manuscript-changes-2-1-24" title="Copy heading and permalink for Item 24" aria-label="Copy heading and permalink for Item 24">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-25">
+<div class="para" id="p-derived-manuscript-changes-2-1-25">March 20th, 2024 - Added a preamble about where this textbook is located</div>
+<div class="autopermalink" data-description="Item 25"><a href="#manuscript-changes-2-1-25" title="Copy heading and permalink for Item 25" aria-label="Copy heading and permalink for Item 25">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-26">
+<div class="para" id="p-derived-manuscript-changes-2-1-26">April 27th, 2024 - Previously edited servo lab and pendulum lab just the assignment portion and then added this change log to the manuscript</div>
+<div class="autopermalink" data-description="Item 26"><a href="#manuscript-changes-2-1-26" title="Copy heading and permalink for Item 26" aria-label="Copy heading and permalink for Item 26">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-27">
+<div class="para" id="p-derived-manuscript-changes-2-1-27">May 7th, 2024 - Title page changed and many sections moved around. Added a new results and discussion section following data analysis from course surveys of this course.</div>
+<div class="autopermalink" data-description="Item 27"><a href="#manuscript-changes-2-1-27" title="Copy heading and permalink for Item 27" aria-label="Copy heading and permalink for Item 27">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-28">
+<div class="para" id="p-derived-manuscript-changes-2-1-28">August 12th, 2024 - Added a new requirement for the servo lab</div>
+<div class="autopermalink" data-description="Item 28"><a href="#manuscript-changes-2-1-28" title="Copy heading and permalink for Item 28" aria-label="Copy heading and permalink for Item 28">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-29">
+<div class="para" id="p-derived-manuscript-changes-2-1-29">September 12th, 2024 - A few edits to assignment descriptions</div>
+<div class="autopermalink" data-description="Item 29"><a href="#manuscript-changes-2-1-29" title="Copy heading and permalink for Item 29" aria-label="Copy heading and permalink for Item 29">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-30">
+<div class="para" id="p-derived-manuscript-changes-2-1-30">October 25th, 2024 - Updated the photocell lab to include the number of data points for the histogram</div>
+<div class="autopermalink" data-description="Item 30"><a href="#manuscript-changes-2-1-30" title="Copy heading and permalink for Item 30" aria-label="Copy heading and permalink for Item 30">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-31">
+<div class="para" id="p-derived-manuscript-changes-2-1-31">November 11th, 2024 - Updated Method 3 quick list</div>
+<div class="autopermalink" data-description="Item 31"><a href="#manuscript-changes-2-1-31" title="Copy heading and permalink for Item 31" aria-label="Copy heading and permalink for Item 31">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-32">
+<div class="para" id="p-derived-manuscript-changes-2-1-32">March 26th, 2025 - Updated servo, pitot probe and photocell assignments</div>
+<div class="autopermalink" data-description="Item 32"><a href="#manuscript-changes-2-1-32" title="Copy heading and permalink for Item 32" aria-label="Copy heading and permalink for Item 32">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-33">
+<div class="para" id="p-derived-manuscript-changes-2-1-33">May 24th, 2025 - Made a few changes to chapters 2 and 19 to transition between the projects and the results and discussion about lab at home frameworks and project based teaching. Also overhauled the feedback control project.</div>
+<div class="autopermalink" data-description="Item 33"><a href="#manuscript-changes-2-1-33" title="Copy heading and permalink for Item 33" aria-label="Copy heading and permalink for Item 33">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-34">
+<div class="para" id="p-derived-manuscript-changes-2-1-34">June 16th, 2025 - Updated the assignment directions for all projects.</div>
+<div class="autopermalink" data-description="Item 34"><a href="#manuscript-changes-2-1-34" title="Copy heading and permalink for Item 34" aria-label="Copy heading and permalink for Item 34">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-35">
+<div class="para" id="p-derived-manuscript-changes-2-1-35">June 17th, 2025 - Added more theory to the photocell, thermistor and pitot probe assignment</div>
+<div class="autopermalink" data-description="Item 35"><a href="#manuscript-changes-2-1-35" title="Copy heading and permalink for Item 35" aria-label="Copy heading and permalink for Item 35">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-36">
+<div class="para" id="p-derived-manuscript-changes-2-1-36">June 20th, 2025 - Added more figures and wiring diagrams to many assignments to help students wire up their circuits.</div>
+<div class="autopermalink" data-description="Item 36"><a href="#manuscript-changes-2-1-36" title="Copy heading and permalink for Item 36" aria-label="Copy heading and permalink for Item 36">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-37">
+<div class="para" id="p-derived-manuscript-changes-2-1-37">June 21st, 2025 - Added a few problems from a standard instrumentation textbook. Probably need more statistics questions</div>
+<div class="autopermalink" data-description="Item 37"><a href="#manuscript-changes-2-1-37" title="Copy heading and permalink for Item 37" aria-label="Copy heading and permalink for Item 37">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-38">
+<div class="para" id="p-derived-manuscript-changes-2-1-38">July 2nd, 2025 - Moved changes needed to the preamble. Added learning objectives and parts list for a few projects that had them missing.</div>
+<div class="autopermalink" data-description="Item 38"><a href="#manuscript-changes-2-1-38" title="Copy heading and permalink for Item 38" aria-label="Copy heading and permalink for Item 38">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-39">
+<div class="para" id="p-derived-manuscript-changes-2-1-39">September 26th, 2025 - Updated the potentiometer assignment to include converting voltage to angle in degrees.</div>
+<div class="autopermalink" data-description="Item 39"><a href="#manuscript-changes-2-1-39" title="Copy heading and permalink for Item 39" aria-label="Copy heading and permalink for Item 39">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-40">
+<div class="para" id="p-derived-manuscript-changes-2-1-40">October 1st, 2025 - Updated the thermistor modules assignment with the thermistor equations so it’s easy to find in two places.</div>
+<div class="autopermalink" data-description="Item 40"><a href="#manuscript-changes-2-1-40" title="Copy heading and permalink for Item 40" aria-label="Copy heading and permalink for Item 40">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-41">
+<div class="para" id="p-derived-manuscript-changes-2-1-41">November 12th, 2025 - Fixed an equation, link and figure in the feedback control assignment</div>
+<div class="autopermalink" data-description="Item 41"><a href="#manuscript-changes-2-1-41" title="Copy heading and permalink for Item 41" aria-label="Copy heading and permalink for Item 41">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-42">
+<div class="para" id="p-derived-manuscript-changes-2-1-42">November 14th, 2025 - Fixed a broken link</div>
+<div class="autopermalink" data-description="Item 42"><a href="#manuscript-changes-2-1-42" title="Copy heading and permalink for Item 42" aria-label="Copy heading and permalink for Item 42">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-43">
+<div class="para" id="p-derived-manuscript-changes-2-1-43">November 20th, 2025 - Added a GPS requirement to the integrating acceleration lab</div>
+<div class="autopermalink" data-description="Item 43"><a href="#manuscript-changes-2-1-43" title="Copy heading and permalink for Item 43" aria-label="Copy heading and permalink for Item 43">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-44">
+<div class="para" id="p-derived-manuscript-changes-2-1-44">December 5th, 2025 - Added the settling time to the list of parameters for the time constant assignment and edited the overall assignment directions to have a better description of the video requirements. Also edited the servo second order systems equation for an aircraft to be stable since the equations were unstable open loop. I also moved the changes needed to Github. I also edited the purchase assignment to have bold text for some important information.</div>
+<div class="autopermalink" data-description="Item 44"><a href="#manuscript-changes-2-1-44" title="Copy heading and permalink for Item 44" aria-label="Copy heading and permalink for Item 44">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-45">
+<div class="para" id="p-derived-manuscript-changes-2-1-45">February 2nd, 2026 - Updated the push button and LED assignment to fix a mistake in the voltage source description.</div>
+<div class="autopermalink" data-description="Item 45"><a href="#manuscript-changes-2-1-45" title="Copy heading and permalink for Item 45" aria-label="Copy heading and permalink for Item 45">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-46">
+<div class="para" id="p-derived-manuscript-changes-2-1-46">February 5th, 2026 - Added an update from Jan 18th that I forgot to push which highlighted the ``Rubric" for each assignment. Also added a missing grade to the push button and LED assignment.</div>
+<div class="autopermalink" data-description="Item 46"><a href="#manuscript-changes-2-1-46" title="Copy heading and permalink for Item 46" aria-label="Copy heading and permalink for Item 46">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-47">
+<div class="para" id="p-derived-manuscript-changes-2-1-47">February 9th, 2026 - Moved the future project ideas to Github</div>
+<div class="autopermalink" data-description="Item 47"><a href="#manuscript-changes-2-1-47" title="Copy heading and permalink for Item 47" aria-label="Copy heading and permalink for Item 47">🔗</a></div>
+</li>
+<li id="manuscript-changes-2-1-48">
+<div class="para" id="p-derived-manuscript-changes-2-1-48">February 26th, 2026 - Edited the trouble shooting guide for updating the CPB bootloader on Windows</div>
+<div class="autopermalink" data-description="Item 48"><a href="#manuscript-changes-2-1-48" title="Copy heading and permalink for Item 48" aria-label="Copy heading and permalink for Item 48">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#manuscript-changes-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 2: Manuscript Changes"><a href="#manuscript-changes" title="Copy heading and permalink for Section 2: Manuscript Changes" aria-label="Copy heading and permalink for Section 2: Manuscript Changes">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="current-edition.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="future-changes.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
