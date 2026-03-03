@@ -3,7 +3,7 @@
 <chapter xml:id="acknowledgements" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Acknowledgements</title>
   <introduction>
-  <p>The author, Dr. Carlos Montalvo would like to acknowledge a few
+  <p>Dr. Carlos Montalvo would like to acknowledge a few
   key members who made this textbook possible. First and foremost I would
 like to thank Adafruit for their entire ecosystem of electronics,
 tutorials, blogs and forums. Much of what I have learned here to teach
@@ -11,7 +11,7 @@ Instrumentation was from <url href="https://www.adafruit.com/">Adafruit</url>
 and the <url href="https://learn.adafruit.com/">Adafruit Learn</url> system and 
 specifically people like Lady Ada and John Park who have helped shape
 <url href="https://circuitpython.org/">CircuitPython</url> and the
-<url href="href{https://www.adafruit.com/product/3333">CircuitPlayground
+<url href="https://www.adafruit.com/product/3333">CircuitPlayground
   Express</url> to what it is today. I 
 would also like to thank Dr. Saami Yazdani for creating the blueprint
 for Instrumentation at my university by creating a laboratory

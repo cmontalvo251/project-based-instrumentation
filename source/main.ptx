@@ -20,7 +20,7 @@
     <xi:include href="./acknowledgements.ptx"/>
 
     <!-- Include backmatter if you want 
-    <xi:include href="./backmatter.ptx" /> -->
+    <xi:include href="./backmatter.ptx" />  -->
 
   </book>
 </pretext>

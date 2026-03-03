@@ -61,9 +61,9 @@
     <title> Manuscript Changes </title>
     <p>
       <ol>
-	<li> Original tutorials in Google Docs created</li>
-	<li> December 21st, 2021 - Updated links for manuscript and hardware</li>
-	<li> Tutorials purchased by <url href="https://tangibles-that-teach.gitbook.io/instrumentation-lab-manual/-MbMx70LQzRmEG_hS7Ld/">Tangibles that Teach</url></li>
+	<li> July 1st, 2020 - Original tutorials in Google Docs created</li>
+	<li> July 15th, 2020 - Tutorials purchased by <url href="https://tangibles-that-teach.gitbook.io/instrumentation-lab-manual/-MbMx70LQzRmEG_hS7Ld/">Tangibles that Teach</url></li>
+  <li> December 21st, 2021 - Updated links for manuscript and hardware</li>
 	<li> May 30th, 2022 - Tangibles that teach went out of business and chapter began the move to Github</li>
 	<li> June 28th, 2022 - Work began on a Chromebook. Unfortunately the Figures folder is not back up on Git. As such a main_latest.pdf has been created that's the latest full version. The main.pdf is the version created by the Chromebook so it has new chapters but none of the older chapters. Figure files are now backup on Git but only figures from the 'Voltage Potentiometer' are currently there.</li>
 	<li> July 2nd, 2022 - All figures backed up and latest manuscript completed</li>
