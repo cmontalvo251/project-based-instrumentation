@@ -7,12 +7,16 @@ if [ "$1" == "pdf" ]; then
     #cp output/print/main.pdf main.pdf
     #but for some reason pretext also creates two
     #title pages so I'm going to "pop" the first page
+    #make sure you have pdftk installed
+    #sudo apt install pdftk
     pdftk output/print/main.pdf cat 2-end output main.pdf
     #It will also evince the document so you can view it immediately. 
     evince main.pdf &
 elif [ "$1" == "web" ]; then
     #It will also compile the ptx files for the web and then view it in the browser.
     pretext build web
+    #make sure you have google-chrome installed
+    #Download that directly from the web
     google-chrome output/web/index.html &
 elif [ "$1" == "all" ]; then
     ./textit.sh web

@@ -18,7 +18,7 @@ pip3 install pretext --break-system-packages
 
 Then open ~/.bashrc and add the following line of code
 
-PATH+='~/.local/bin'
+PATH+=':~/.local/bin'
 
 this way your terminal can find pretext
 
@@ -111,3 +111,12 @@ Note you need pdftk so make sure to run
 sudo apt install pdftk
 
 before running this script
+
+The script also defaults to opening the web version using google-chrome
+so make sure you have google-chrome installed
+
+# Help
+
+If you need more help with PreTeXt be sure to check out the guide made by some other pretext users
+
+https://pretextbook.org/doc/guide/html/guide.html
