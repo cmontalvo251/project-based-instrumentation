@@ -62,24 +62,24 @@ evaluations.
 </p>
 <p>
 Students can learn in many ways with a variety of different
-omodalities <xref ref="Gardner"/>. As such, instructors can choose how to
+modalities <xref ref="Gardner"/>. As such, instructors can choose how to
 present course material and have students develop content-specific
 skill sets. College students enter the classroom with existing skills
 in multi-disciplinary learning that is practiced at the secondary
-school level \cite{Ralph}. College and university professors have
+school level <xref ref="Ralph"/>. College and university professors have
 the opportunity to use these existing skills as a foundation for their
 own instructional practices. Traditional lectures provide students
 with lectures on theory. The instructor then provides examinations to
 the students based on that theory. Using this format, an instructor
 can focus on mathematical principles, the so-called building blocks of
 engineering or provide specific applications to these
-models \cite{Learning_Styles}. In a traditional lecture format,
+models <xref ref="Learning-Styles"/>. In a traditional lecture format,
 the instructor presents theory to the students with academic problems
 rarely encountered in a students future career, building invaluable
 theoretical knowledge of concepts that appear disconnected from
-practical knowledge applied in the field \cite{Yong}. Historically
+practical knowledge applied in the field <xref ref="Yong"/>. Historically
 in engineering education, there has been tension between theory and
-application \cite{PBL1}. Applications include case studies or
+application <xref ref="PBL1">. Applications include case studies or
 practical engineering problems that emulate future careers in
 engineering. This provides students with engineering phenomena that
 they can see and hear. They can reason through problems intuitively,
@@ -87,29 +87,29 @@ memorize facts using demos, build mathematical models, or build
 tangible objects themselves. With these different presentation
 methods, students are exposed to engineering phenomena in multiple
 ways rather than just on the
-whiteboard\cite{Learning_Styles}. Project Based Learning (PBL)
+whiteboard <xref ref="Learning-Styles"/>. Project Based Learning (PBL)
 provides an alternative for conventional teaching by facilitating
 problem solving for students in a group setting that requires
 communication, critical thinking, and creativity. These types of
 problems have shown that heightened learning can happen when students
 interact with tangible objects that represent the theory they are
-presented with in the classroom \cite{PBL_Book}. Rather than
+presented with in the classroom <xref ref="PBL_Book"/>. Rather than
 learning an equation for heat transfer along a one-dimensional pipe,
 the students can create a pipe with thermocouples and plot data from
 multiple sensors along the pipe. This connection to a tangible object
 reinforces learning and allows students to form bridges in
 comprehension between their theoretical knowledge and practical
 application (practical knowledge) of those theories in the
-field\cite{TANGIBLEINTERFACES}. Research has shown that a
+field <xref ref="TANGIBLEINTERFACES"/>. Research has shown that a
 classroom that creates an integrated curriculum increases student
 satisfaction which immediately correlates to satisfactory student
 performance and increased graduation
-rates \cite{StudentSatisfaction}. This is an example of the
+rates <xref ref="StudentSatisfaction"/>. This is an example of the
 benefits of active student engagement versus passive student
 engagement. While the traditional lecture format is vital to students
 understandings, it is understood that application of the concepts
 covered in lecture are
-required to reach higher levels of learning \cite{Armstrong}.
+required to reach higher levels of learning <xref ref="Armstrong"/>.
 </p>
 
 <p>
@@ -127,7 +127,7 @@ and perform the experiment without building anything themselves. The
 students take no ownership over the experiment and there is no
 creativity built-in. Over the years, the nature of laboratories has
 changed including the lack of clear learning
-objectives \cite{Labs}. Furthermore, this laboratory environment
+objectives <xref ref="Labs"/>. Furthermore, this laboratory environment
 requires a significant amount of instrumentation and hardware to
 implement. For example, a shock tube or steam pump can cost tens of
 thousands of dollars. The maintenance and up-keep alone is not
@@ -140,13 +140,13 @@ faculty member who often has a large research load.
 <p>
 The so-called "Lab at Home" hardware kits are becoming more and more
 common in the classroom to ease the burden on the instructor and
-institution itself\cite{LabAtHome}. These kits are small enough to be
+institution itself <xref ref="LabAtHome"/>. These kits are small enough to be
 purchased and shipped to a student for them to perform experiments
-remotely rather than in the classroom itself\cite{LabAtHome1}. They
+remotely rather than in the classroom itself <xref ref="LabAtHome1"/>. They
 can also be brought to the classroom to be used as a personal demo
-aid\cite{LabAtHome2_EE}. In this sense, the take-home lab kit serves
+aid <xref ref="LabAtHome2-EE"/>. In this sense, the take-home lab kit serves
 as a bridge between theory based lectures and a laboratory
-setting\cite{LabAtHome3}. This allows both instructors and students to
+setting <xref ref="LabAtHome3"/>. This allows both instructors and students to
 engage with content in a way that promotes enduring understandings and
 practical application of theoretical
 knowledge\cite{LabAtHome4_EE}. Since the kits can be used remotely,

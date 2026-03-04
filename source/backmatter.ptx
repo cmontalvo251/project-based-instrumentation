@@ -13,6 +13,47 @@
     <biblio xml:id="Gardner"><p>Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https://www.niu.edu/citl/resources/guides/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.</p></biblio>
     <biblio xml:id="Ralph"><p>R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.</p></biblio>
     <biblio xml:id="Learning-Styles"><p>Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.</p></biblio>
+    <biblio xml:id="Yong"><p>Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.</p></biblio>
+    <biblio xml:id="PBL1"><p>J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.</p></biblio>
+    <biblio xml:id="PBL-Book"><p>Krajcik Joseph S. and Phyllis C. Blumenfeld. Project-based learning. Academia, 2006.</p></biblio>
+    <biblio xml:id="TANGIBLEINTERACES"><p>Paul Marshall. Do tangible interfaces enhance learning? In Proceedings of the 1st International Conference on Tangible and Embedded Interaction, TEI ’07, page 163–170, New York, NY, USA, 2007. Association for Computing Machinery.</p></biblio>
+    <biblio xml:id="StudentSatisfaction"><p>BARBARA M. OLDS and RONALD L. MILLER. The effect of a first-year integrated engineering curriculum on graduation rates and student satisfaction: A longitudinal study. Journal of Engineering Education, 93(1):23–35, 2004.</p></biblio>
+    <biblio xml:id="Armstrong"><p>P. Armstrong. Bloom’s taxonomy. Accessed 2/2/22 https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/, 2010. Vanderbilt University Center for Teaching.</p></biblio>
+    <biblio xml:id="Labs"><p>Lyle D. Feisel and Albert J. Rosa. The role of the laboratory in undergraduate engineering education. Journal of Engineering Education, 94(1):121–130, 2005.</p></biblio>
+    <biblio xml:id="LabAtHome"><p>Juan P. Oliver and Fiorella Haim. Lab at home: Hardware kits for a digital design lab. IEEE Transactions on Education, 52(1):46–51, 2009.</p></biblio>
+    <biblio xml:id="LabAtHome1"><p>F. G. Martin. Integrating hardware experiences into a computer architecture core course. Journal of Computer Science College, 21:39–52, 6 2006.</p></biblio>
+    <biblio xml:id="LabAtHome2-EE"><p>N. Manjikian and S. Simmons. Evolution and enhancements of a microprocessor systems course. IEEE Transactions Education, 42(4):360, 11 1999.</p></biblio>
+    <biblio xml:id="LabAtHome3"><p>P. Li W. Durfee and D. Waletzko. Take-home lab kits for system dynamics and controls courses. Proceedings of the American Control Conference, pages 1319–1322, 2004.</p></biblio>
+    [15] D. Nicoletti D. Cyganski and J. A. Orr. A new introductory electrical engineering curriculum for the first-year
+student. IEEE Transactions on Education, 37(2):171–177, 5 1994.
+[16] Sebastian Nanz and Carlo A. Furia. A comparative study of programming languages in rosetta code. In 2015
+IEEE/ACM 37th IEEE International Conference on Software Engineering, volume 1, pages 778–788, 2015.
+[17] Integrated
+development
+environments.
+IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09.
+https://wiki.python.org/moin/
+[18] Tiobe index. https://www.tiobe.com/tiobe-index/, 2022. Accessed: 2021-3-25.
+19] Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak,
+Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004,
+pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.
+[20] Circuitpython. https://circuitpython.org/, 2021. Accessed: 12-09-2021.
+[21] Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with Cir-
+cuitPython. Github, 2023. https://github.com/cmontalvo251/LaTeX/blob/master/PBL_CircuitPython_
+Instrumentation/main.pdf.
+[22] Adafruit. Adafruit learn, 2021. Adafruit https://learn.adafruit.com/.
+[23] Carlos Montalvo. Facility for aerial systems and technology github repository.
+cmontalvo251, 2022.
+https://github.com/
+[24] Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.
+[25] Arduino. Arduino, 2023. https://www.arduino.cc/.
+[26] Adafruit. Adafruit ble connect, 2023. https://learn.adafruit.com/bluefruit-le-connect?gclid=
+CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_
+BwE.
+[27] Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the
+ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.
+[28] Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019.
+Frontiers in Psychology, 12, 2021.
   </references>
 
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
