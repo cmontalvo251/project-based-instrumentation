@@ -19,6 +19,9 @@
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
 
+    <!-- Inclue References Section -->
+    <!--<xi:include href="./bibliography.ptx"/>-->
+
     <!-- Include backmatter if you want 
     <xi:include href="./backmatter.ptx" />  -->
 
