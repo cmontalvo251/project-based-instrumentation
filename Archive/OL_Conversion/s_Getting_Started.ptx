@@ -1,0 +1,348 @@
+<section xml:id="s_Getting_Started">
+<title>Getting Started with the CPX/CPB</title>
+
+
+<subsection>
+<title>Parts List</title>
+<ol marker="itemsep5pt">
+<li><p>Laptop</p></li>
+<li><p><url href="https://codewith.mu/en/download">Mu</url></p></li>
+<li><p>CPX (or CPB) <url href="https://circuitpython.org">UF2 File</url></p></li>
+<li><p>CPX(or CPB)</p></li>
+<li><p>USB Cable (with a data line. Not all USB cables have data
+    lines)</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Learning Objectives</title>
+<ol marker="itemsep5pt">
+<li><p>Learn how to setup your Circuit Playground Express</p></li>
+<li><p>Learn how to install Mu</p></li>
+<li><p>Learn how to code with Mu</p></li>
+<li><p>Learn about hardware and software debugging</p></li>
+<li><p>Learn the difference between Python and CircuitPython</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Setting up your Circuit Playground</title>
+<p>
+By now you hopefully have your Circuit Playground (CPX) and it's time
+to get your CPX up and running. A very in depth and detailed tutorial
+can be found on the
+<url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/first-things-first">Adafruit
+Learn site.</url> The text below is a summary
+of what you need to do to get the CPX up and running.
+</p>
+
+<p>
+When you get your CPX and plug it into the computer via USB it
+actually won't run Python just yet. First you need to double click the
+reset button (the button in the center. It says RESET above the
+button) and put it into boot mode. All the neopixels (the ring lights
+on the CPX) will light up green.
+</p>
+<figure>
+<image width="73%" source="images/CPX_boot.png" />
+</figure>
+<p>
+Something called CPLAYBOOT will pop up on your computer just like a
+USB stick or external harddrive. A couple files with be in there but
+it doesn't matter what they say right now.
+</p>
+<figure>
+<image width="73%" source="images/CPLAYBOOT.png" />
+</figure>
+<p>
+You then need to download what's called a <url href="https://circuitpython.org/board/circuitplayground_express/">UF2 file</url> and transfer it
+onto the CPX. Note if you purchased a kit with the Bluefruit you need
+to download a
+<url href="https://circuitpython.org/board/circuitplayground_bluefruit/">different
+UF2</url>. Make sure you get the right one. Once the
+UF2 is downloaded you need to drag the UF2 over to the CPLAYBOOT drive
+on your computer. After a bit of time a USB drive called CIRCUITPY
+will pop up as a flash drive on your computer. The CPX is now like a
+USB stick with 2MB of storage. <em>Note that if you have an old bootloader you must update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader</url>.</em>
+</p>
+<figure>
+<image width="73%" source="images/CIRCUITPY.png" />
+</figure>
+<p>
+At this point the CPX is like a mini computer. If you put Python code
+on the <q>flash drive</q> it will run python code. Since I've done this
+before, there are a number of files already on my CPX. You may have
+some or none of these. The <q>boot_out.txt</q> file will tell you the
+version of CircuitPython you have on the CPX. Mine says this:
+</p>
+<pre>
+Adafruit CircuitPython 5.3.0 on 2020-04-29; Adafruit CircuitPlayground Express with samd21g18
+</pre>
+<p>
+Which means I have CircuitPython version 5.3.0 last updated on April
+29th, 2020. The CPX itself is using the <url href="https://www.microchip.com/wwwproducts/en/ATsamd21g18">ATSAMD21G18</url>
+microprocessor. The folder lib is a folder with extra libraries that
+you may need to install later. The file main.py is the Python file
+that the CPX is currently running. <em>The CPX can store as many Python
+files as possible for a 2MB flash drive but it will only run ONE
+Python script at a time and that file must be named main.py</em> The folder
+<em>System_Volume_Information</em> is a file management folder that we will
+never use.
+</p>
+
+<p>
+If you want the CPX to run code you simply need to edit the file
+<em>main.py</em> or if that file does not exist you just need to create it. You
+could just open Notepad or any other text app (Sublime,TexWrangler,
+Emacs, Vi, Nano, Gedit, Notepad++, Wordpad, VSCode, etc) but the CPX
+has alot of debugging options and it is recommended to use a program
+called <q><url href="https://codewith.mu/en/download">Mu</url></q>. Mus is a good way to write and debug code on the
+CPX. Note that Mu is only used to program the CPX. If you want to run
+Python code on your laptop you need to use Thonny or Spyder (or
+whatever other IDE you downloaded). If you want to run Python code on
+your CPX you must use Mu. Once you've downloaded and installed Mu and
+open it up it will look like this (Note it's possible the the software
+gets updated from the time this book is published. As such be sure to
+select the Circuitpython Mode for board development).
+</p>
+<figure>
+<image width="73%" source="images/Mu.png" />
+</figure>
+<p>
+Make sure to select the <q>Adafruit CircuitPython</q> option. If the
+software has been updated and that option no longer exists, be sure to
+select the option that says Circuitpython for board development.
+</p>
+
+<p>
+Alright, let's start writing code! If you have a file called <em>main.py</em>
+on your CPX click the Load button and load <em>main.py</em> (make sure to load
+the main.py that is stored on your CPX and not somewhere else on your
+computer.) If a file <em>main.py</em> does not exist on your CPX simply click
+the New button and then Save the file as <em>main.py</em> (again make sure you
+save it to the CPX and not to your computer)
+</p>
+<figure>
+<image width="73%" source="images/Mu2.png" />
+</figure>
+<p>
+You'll see that I am accessing the CIRCUITPY drive and saving the file
+as main.py The file itself is empty and just has a comment using the #
+symbol. At this point since the file is blank the CPX won't do
+anything.
+</p>
+
+<p>
+<em> Now this is really important. Your CPX is a USB stick that can hold as
+many Python files as 2MB will allow but it can only run or execute one
+python script at a time. Furthermore it will only run two types of
+files. It will run code.py if it exists and if it can't find code.py
+it will run main.py If the CPX can't find main.py or code.y it will
+just not do anything. If you have two versions of main.py or a
+combination of main.py or code.py it will run one of them and not the
+other. Make sure you only have one version of main.py or code.by but
+not both! Some common things to check if your CPX isn't working. </em>
+
+<ol marker="itemsep5pt">
+<li><p>Make sure you're using Mu in the right Mode</p></li>
+<li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
+<li><p>Make sure you are editing the right file in Mu. Do you have two versions of main.py?</p></li>
+<li><p>Are you editing using Thonny or Spyder?</p></li>
+<li><p>Are you editing a file on your computer? Make sure you are writing to the CIRCUITPY drive.</p></li>
+<li><p>Unplug the CPX, close Mu and try again.</p></li>
+</ol>
+</p>
+
+<p>
+So let's get the CPX to do something simple like blink an LED. I have
+an entire
+<url href="https://github.com/cmontalvo251/Microcontrollers">Github</url>
+devoted to Microelectronics. Specifically I have a
+<url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython">folder
+with all of my Circuit Playground files</url>. The easiest program to
+run is the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/blink.py">blink.py</url> script. I've attached a screenshot of the script
+below.
+</p>
+<figure>
+<image width="73%" source="images/blink.png" />
+</figure>
+<p>
+We will talk about what this code is doing later on. For now copy and
+paste these 17 or so lines of code and paste them into Mu specifically
+the <em>main.py</em> script. It will hopefully look like this.
+</p>
+<figure>
+<image width="73%" source="images/blinkmu.png" />
+</figure>
+<p>
+Make sure to save. You can click <em>Zoom-In</em> and <em>Zoom-out</em> to zoom in and
+out to change the font size and see more of the output. If the blink
+code is working you will see a red led labeled D13 on the CPX blink
+back and forth. D13 stands for digital pin 13. You'll notice there are
+analog pins labeled A5 and A6 among other numbers. Let's talk about
+the code a bit more and explain why it's doing what it's doing. The
+three lines at the top of the code are <em>import</em> commands to import
+different modules just like we did for <em>numpy</em> and <em>matplotlib</em>. In this
+case the modules being imported are <em>board</em>, <em>digitalio</em> and
+<em>time</em>. The module <em>board</em> is used to import the layout of the
+CPX so we can access different pins on the CPX. The module <em>digitalio</em>
+stands for digital input output which means we are inputting and
+outputting digital signals. Since we can combine this module with the
+<em>board</em> module we will be able to output digital signals to
+different pins on the CPX board. Remember that PCB stands for printed
+circuit board so <em>board</em> implies we are accessing pins on the CPX
+PCB. Hopefully that makes sense. The final module we are importing is
+<em>time</em> which acts just like the <em>time</em> module on your desktop
+computer. It will let us access the CPX's internal clock.
+</p>
+
+<p>
+Moving along, lines 7 and 8 create an LED object using the <em>board</em>
+module and <em>digitalio</em>. It's a long line of code that basically says,
+create a variable called <em>led</em> that lets us output a digital signal to
+pin D13. We also set the direction of the LED to output since we only
+want to write to the LED.
+</p>
+
+<p>
+Lines 10 through 19 kick off an infinite loop that never ends. The
+line that says <em>while True:</em> means loop while <em>True</em>. Well
+<em>True</em> is always true which means it will loop forever. The colon
+at the end of the line tells Python that the loop condition statement
+ends and to begin looping from 11 through 19.
+</p>
+
+<p>
+Line 11 specifically says <em>print(time.monotonic())</em>. First the
+<em>print()</em> function is used to print things so that you and I can
+see it. Rather than just seeing a blinking LED we want to see the time
+printed. The <em>time.monotonic()</em> is using the module <em>time</em> which we
+imported and using a function from that module called <em>monotonic()</em>
+which calls the internal clock of the CPX. So how do you see the
+output from the print statement? Hit the <em>Serial</em> button on Mu and you
+will hopefully see some output. Here's what it looks like on my
+machine.
+</p>
+<figure>
+<image width="73%" source="images/blinkmu2.png" />
+</figure>
+<p>
+In this case you can see the time printed every time it goes through
+the loop. You may even see an error. This <em>Serial</em> button is great for
+debugging because it will tell you the error in your code. For
+example, in the picture below I have an error in my code and the
+<em>Serial</em> output is letting me know.
+</p>
+<figure>
+<image width="73%" source="images/blinkerror.png" />
+</figure>
+<p>
+In this case I have an error on line 5. It's saying there is no module
+named <em>timed</em>. The reason that module doesn't exist is because the
+module is actually <em>time</em> not <em>timed</em>. You can use the <em>Serial</em> monitor to check on your program and see what errors you may
+have. Ok so there are two more lines of code to discuss. They are
+<em>led.value = True</em> and <em>time.sleep(0.5)</em>.
+</p>
+
+<p>
+These lines of code are repeated throughout the while loop and do two
+things. First, the <em>led.value</em> either sets the value of the LED to
+True which turns the light on or False which turns the light off. The
+LED is digital which means the signal can either be on or off. There's
+no in between for digital signals. The <em>time.sleep()</em> function
+tells the CPX to pause for half a second. You can change the number in
+the parentheses if you want to change length of time the code
+pauses. Note that the CPX completely pauses. That is no code runs
+during a sleep.
+</p>
+
+<p>
+If you've gotten the LED to blink you're all set for this
+lab. However, I'd like to you learn a few more things about
+documentation. Just like Python on your desktop you can lookup the
+documentation on the CPX itself. For example, I've added a print
+statement to print the directory of time.
+</p>
+<figure>
+<image width="73%" source="images/printtimeMu.png" />
+</figure>
+<p>
+In this case I've added <em>print(dir(time))</em> to line 7. The output shows
+that the <em>time</em> module has 9 functions including
+<em>monotonic()</em>. Unfortunately CircuitPython does not have <em>__doc__</em>
+functions built in which means if you want to learn about a specific
+function, you need to visit the <url href="https://circuitpython.readthedocs.io/en/5.3.x/README.html">documentation for
+CircuitPython</url>. Here's the <url href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/time/index.html">specific documentation for the</url> <url href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/time/index.html">time</url>
+<url href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/time/index.html">module</url>. A lot of <url href="https://github.com/adafruit/Adafruit_Learning_System_Guides/tree/master/CircuitPython_Essentials">example code from the Adafruit Learning System is
+also on Github.</url>
+</p>
+
+<p>
+Finally, in order to keep practicing using Python on your desktop I
+want you to modify the code above to run on your desktop
+computer. You're going to have to modify a few things. First, make
+sure to open Thonny or Spyder depending on which version of Python IDE
+you downloaded. Then, only import the <em>time</em> module. All the other
+modules don't exist on your desktop. Also, get rid of all the lines of
+code that blink the LED. We just want to print time in a while
+loop. Finally, the time module on your desktop uses a function called
+time.time() (unless you have Python3 installed) so when you print time
+make sure to use that module instead. Again visit the <url href="https://docs.python.org/3/library/time.html#functions">documentation
+for time for Python if you want to learn more</url>. Thonny by default will
+load Python version 3 but it's possible you may have Python version 2
+so make sure you look up the documentation for the appropriate version
+of Python. After searching through the documentation you can use a
+function called asctime() on your desktop. This is the output I get in
+Thonny when I add a sleep of 1 second. The exercise for you is to do
+something similar.
+</p>
+<figure>
+<image width="73%" source="images/blinkcomputer.png" />
+</figure>
+</subsection>
+
+
+<subsection>
+<title>TL;DR</title>
+<ol marker="itemsep5pt">
+<li><p>Plug in your CPX and double tap it to go into reset
+  mode. CPLAYBOOT will mount to your computer. (Some CPXes you need to hold the button down instead of double tap).</p></li>
+<li><p>Download the <url href="https://circuitpython.org/downloads">UF2
+  file</url>.</p></li>
+<li><p>Drag the UF2 file to your CPLAYBOOT drive. After a few seconds
+  CIRCUITPY will mount.</p></li>
+<li><p>You need to then download
+  <url href="https://codewith.mu/en/download">Mu</url></p></li>
+<li><p>Open Mu and make sure to select the mode Adafruit CircuitPython (or just CircuitPython if you have a new version)</p></li>
+<li><p>Open main.py (or code.py) in Mu from the CIRCUITPY drive in Mu. (It's possible you have code.py on your drive instead of main.py which is fine. Just open one or the other)</p></li>
+<li><p>Copy the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/blink.py">blink.py</url> script into main.py (or code.py)</p></li>
+<li><p>Once you have the script running, modify the script to run on
+  your Desktop using Spyder or Thonny</p></li>
+</ol>
+
+<p>
+There is an accompanying
+<url href="https://www.youtube.com/watch?v=XFvLn6rwm3I">youtube video to
+help you see me perform the 8 steps above.</url>
+</p>
+</subsection>
+
+
+<subsection>
+<title>Assignment</title>
+<p>
+For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots of relevant steps. <em>Note for the blink code, modify blink pattern to be different from the default on Github</em>. The specific items requested are shown below.
+
+<ol marker="itemsep5pt">
+<li><p>Include a screenshot of your computer showing the CPLAYBOOT drive on your computer - 20</p></li>
+<li><p>Include a screenshot of your computer showing the CIRCUITPY drive on your computer - 20</p></li>
+<li><p>Include a screenshot of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20</p></li>
+<li><p>Include a photo of your CPX with the red led on - 20</p></li>
+</ol>
+
+</p>
+</subsection>
+
+</section>

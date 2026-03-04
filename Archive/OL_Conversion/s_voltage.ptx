@@ -1,0 +1,107 @@
+<section xml:id="s_voltage">
+<title>Measuring Voltage Across a Potentiometer</title>
+
+
+<subsection>
+<title>Parts List</title>
+<ol marker="itemsep5pt">
+<li><p>Laptop</p></li>
+<li><p>CPX/CPB</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Potentiometer</p></li>
+<li><p>Resistor (the Ohms depends on how large your potentiometer is)</p></li>
+<li><p>Breadboard</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Learning Objectives</title>
+<ol marker="itemsep5pt">
+<li><p>Understand voltage division of resistors in series</p></li>
+<li><p>Measure an analog signal on the CircuitPlayground</p></li>
+<li><p>Understand the binary measurement done by the analog to digital conversion (ADC)</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Getting Started</title>
+<p>
+At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is <m>2^{16}</m> hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about <url href="https://www.build-electronic-circuits.com/potentiometer/">potentiometers online if you wish</url>. Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some <url href="https://uk.rs-online.com/web/content/discovery/ideas-and-advice/potentiometers-guide">potentiometer examples</url>. I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the <url href="https://learn.adafruit.com/sensor-plotting-with-mu-and-circuitpython/potentiometer">figure below</url> (Courtesy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>).
+</p>
+<figure>
+<image width="80%" source="images/sensors_PlottingMuPotentiometer_bb.png" />
+</figure>
+<p>
+Here's my circuit all hooked up without a resistor in series. Two legs are connected to 3.3V and GND while the middle leg of the potentiometer is connected to pin A2.
+</p>
+<figure>
+<image width="80%" source="images/potentiometer1.png" />
+</figure>
+<p>
+<em>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</em> Here is my circuit with a resistor in series.
+</p>
+<figure>
+<image width="80%" source="images/Potentiometer_Alternate.png" />
+</figure>
+<p>
+There is a relevant <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in">Adafruit Learn Tutorial</url> to help with the <em>analogio</em> module but I'll explain the minimum required here to get some analog values plotted in <em>Plotter</em> and Python on your computer. First let's take a look at some <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">simple example code</url> to read an analog signal and plot it using the <em>Plotter</em>.
+</p>
+<figure>
+<image width="50%" source="images/analogio.png" />
+</figure>
+<p>
+In the example code above, lines 1-3 again import the necessary modules with <em>analogio</em> being the new module here. Line 5 creates the analog object by attaching pin A2 to the analog function. Lines 7-9 then simple read the analog value and print it to <em>Serial</em> and the <em>Plotter</em>. Running this code on my laptop and turning the knob on the potentiometer produces this output. My potentiometer has a very large knob on the front and is easy to turn. Some potentiometers have a small screw on top that you need to turn with a screwdriver. Turning the screw or the knob results in chaning the resistance and therefore changing the voltage read by the CPX.
+</p>
+<figure>
+<image width="73%" source="images/analogio_mu.png" />
+</figure>
+<p>
+For this lab I want you to spin the potentiometer all the way to one side and then the other while recording time and the analog value. I then want you to plot the data with time on the x-axis and voltage on the y-axis. Remember to convert a digital output to voltage you just need to use the equation below where D is the raw value from the analog port. 3.3V is the range of the ADC and <m>2^{16}</m> is the maximum value the ADC can represent.
+<men>
+  V = \frac{3.3D}{2^{16}}
+</men>
+</p>
+
+<p>
+After doing this experiment myself, this is the plot I obtain. The code is not provided as reading data and plotting has been discussed in a previous lab (See <xref ref="s_daq">chapter</xref>). From the screenshot though you can see how I convert the digital output to an analog signal.
+</p>
+
+<p>
+<em>NOTE THAT ON LINE 6 IT READS</em>
+</p>
+<pre>
+time -= time[0]
+</pre>
+<p>
+<em>Notice the minus sign in front of the equal sign. That effects a lot.</em>
+</p>
+<figure>
+<image width="73%" source="images/plotting_analogio.png" />
+</figure>
+<p>
+Your assignment for this lab is to do the same as I've done above. Wire up the potentiometer, read the analog signal and plot it in Python on your desktop computer. I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url>.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Assignment</title>
+<p>
+For this assignment you are to wire up a potentiometer and read the voltage across the potentiometer using the analog to digital converter on the CPX. You are to record both time and voltage as you rotate the potentiometer and then plot that as a function of time. Specific requirements are shown below.
+
+<ol marker="itemsep5pt">
+<li><p>Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX/CPB - 10</p></li>
+<li><p>Include a screenshot of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10</p></li>
+<li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10</p></li>
+<li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10</p></li>
+<li><p>Plot your digital output (raw potentiometer analog value) vs time - 10</p></li>
+<li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
+<li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20</p></li>
+</ol>
+
+</p>
+</subsection>
+
+</section>

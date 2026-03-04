@@ -1,0 +1,37 @@
+<section>
+<title>Conclusions</title>
+<p>
+A lab at home kit has been described here. This kit is part of the
+curriculum for Instrumentation &amp; Experimental Methods and uses the
+CircuitPlayground Express (CPX) from Adafruit as well as other
+electronic components. The CPX uses CircuitPython, a derivative of
+Python. Python like all scripting languages allows students to focus
+on writing concise code to use the CPX as a tool rather than getting
+bogged down in syntax, compilation and runtime errors. All software is
+free, open source and has numerous examples on the Adafruit Learn page
+as well as the internet at large and Github \cite{Github}.
+</p>
+
+<p>
+As with all other courses in engineering it is possible to teach this
+course without any hands on material. Instead, a project based
+learning (PBL) style is utilized where students use the CPX and other
+components of the lab at home kit to complete guided projects
+requiring data acquisition, analysis and post-processing all geared
+towards enhancing learning of course objectives. The final project in
+the class allows the students to be creative, take ownership,
+collaborate with others, and use critical thinking to develop
+something new.
+</p>
+
+<p>
+The responses from the students is positive with a 22% increase over
+the department average over 7 semesters. The qualitative survey
+responses from students are also positive and show that the kit is
+effective in enhancing student satisfaction through interaction of
+tangible objects. Student satisfaction correlates to student
+performance as shown in the literature. Hopefully, similar kits can be
+created for other classes at USA as well as other universities in STEM
+across the world.
+</p>
+</section>

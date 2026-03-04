@@ -2,7 +2,7 @@
 
 This repo contains my project based instrumentation textbook that I use at the undergraduate level. Multiple authors have contributed to this textbook and they have been placed on the cover page. Note that some authors did not push directly to github but are still shown in the title page.
 
-The Archive LaTeX version of this textbook is in the Archive_LaTeX/ folder with a separate readme that you can use to compile that version of the textbook. I don't recommend using that version but it is here for thoroughness as it was used to convert to the current version of PreTeXt shown here. All LaTeX directions are in that readme and left of of this readme for brevity. It is assumed that you have all latex compilers on your computer and are well versed in LaTeX before continuing on with this readme.
+The Archive LaTeX version of this textbook is in the Archive/ folder with a separate readme that you can use to compile that version of the textbook. I don't recommend using that version but it is here for thoroughness as it was used to convert to the current version of PreTeXt shown here. All LaTeX directions are in that readme and left of of this readme for brevity. It is assumed that you have all latex compilers on your computer and are well versed in LaTeX before continuing on with this readme.
 
 Using PreTeXt on Ubuntu 24.03
 
@@ -94,6 +94,18 @@ Your built project will soon be available to the public at:
 
 When looking at the settings/pages tab you'll see that the book is indeed live
 at the URL above.
+
+# Conversion
+
+Note that it is fairly straightforward to convert LaTeX (.tex) files to PreTeXt (.ptx) and can be done manaully is desired; however, it is also possible to download a convert tool made by David Farmer. The tool can be found on github - https://github.com/davidfarmer/SL3X. A simple git clone will pull down all the necessary files
+
+git clone https://github.com/davidfarmer/SL3X.git just make sure to add SL3X to your gitignore files unless you want the current copy backed up on your own repo. Inside the SL3X directory is the file sl3x.py
+
+You simply need to invoke the command
+
+./sl3x.py inputfile.tex outputdirectory/ -t ptx
+
+That will convert the LaTeX file in inputfile.tex and convert it to PreTeXt (.ptx) and put it in the outputdirectory
 
 # Textit
 

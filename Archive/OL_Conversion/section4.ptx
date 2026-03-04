@@ -1,0 +1,244 @@
+<section>
+<title>Download Python for Desktop</title>
+
+
+<subsection>
+<title>Parts List</title>
+<ol marker="itemsep5pt">
+<li><p>Laptop</p></li>
+<li><p><url href="https://www.python.org/">Python</url> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> or <url href="https://www.spyder-ide.org/">Spyder</url> - Do not use Python IDLE)</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Learning Objectives</title>
+<ol marker="itemsep5pt">
+<li><p>How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)</p></li>
+<li><p>Plot a simple function in Python</p></li>
+</ol>
+
+<p>
+As you learn Instrumentation throughout the semester, you will be
+tasked with creating computer programs on the Circuit Playground
+Express (CPX). The CPX itself has it's own RAM, CPU, HDD and many
+sensors. Your CPX is kind of like a mini computer! You can plug the
+CPX into your computer via USB and access the hard drive (HDD) from
+your own computer. When you program on the CPX you need to write
+programs on the CPX itself so that the mini computer can run the
+program you wrote. The CPX knows how to read multiple different
+languages but in this class we are going to write everything in the
+<url href="https://www.python.org/">Python</url> language which has been ported
+to the CPX and called
+<url href="https://circuitpython.org/">CircuitPython</url>. Since we have to
+write everything in CircuitPython we
+need to first learn how to program some things in Python. You can
+easily download Python by itself but it's nice to get what's called an
+Integrated Development Environment (IDE). This way you can practice
+writing Python code on your computer while you wait for your purchases
+to arrive in the mail.
+</p>
+
+<p>
+So which IDE can you download and which is recommended? I recommend
+two IDEs. They are listed below. I recommend getting either one. If
+you just Google <q>Python download</q> you will find a humongous list of
+editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to
+get lost when searching for something so broad. You've been warned.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Thonny</title>
+<p>
+Thonny - \url{https://thonny.org/} -
+<url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube
+video on how to install</url>
+</p>
+<figure>
+<image width="73%" source="images/Thonny.png" />
+</figure>
+</subsection>
+
+
+<subsection>
+<title>Spyder</title>
+<p>
+Spyder - \url{https://www.spyder-ide.org/} - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url>
+</p>
+<figure>
+<image width="73%" source="images/Spyder.png" />
+</figure>
+</subsection>
+
+
+<subsection>
+<title>Other Options</title>
+<p>
+It is possible to use
+<url href="https://colab.research.google.com/drive/1-VzSDojevQZ6A0oJNol9YXV6SRp3FKeP">Google
+Colab</url> if you want to collaborate on Python projects or even get apps for your phone (<url href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&amp;hl=en_US&amp;gl=US">Pydroid</url> or <url href="https://apps.apple.com/us/app/pythonista-3/id1085978097">Pythonista</url>
+depending on Android or iPhone). You'll need to download 32 bit or 64
+bit but which one? Well you need to figure out how many bits your
+computer has. This is a great thing to Google. Type the following: "do
+I have a 32 bit or 64 bit computer" into Google. I'm willing to bet
+you have a 64 bit computer but you may as well check. We'll learn
+about the difference between 32 and 64 bit computers when we get to
+the projects on Binary.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Setting up your IDE</title>
+<p>
+Once you have Thonny or Spyder installed you need to install numpy and
+matplotlib which are modules within Python that allow us to do some
+extra things like numerical computation with Python (numpy) and Matlab
+style Plotting libraries (matplotlib). I explain how to install
+modules in my Youtube videos above; however, you need to head over to
+Tools>Manage Packages in Thonny. You can see in the image below I
+already have version 3.1.2 but I can upgrade to 3.2.2
+</p>
+<figure>
+<image width="73%" source="images/IDE_upgrades.png" />
+</figure>
+<p>
+If numpy or matplotlib is not already included in Spyder then you need
+to type the following into the Python Console in the lower right hand
+corner of Spyder which is called the IPython console.
+</p>
+<pre>
+!pip install matplotlib
+</pre>
+<p>
+If that doesn't work try
+</p>
+<pre>
+!pip3 install matplotlib
+</pre>
+<p>
+You can see in the output example below that I already have matplotlib
+installed as it says <q>requirement already satisfied</q>. Assuming you
+have a valid internet connection it will install the necessary
+module.
+</p>
+<figure>
+<image width="50%" source="images/console_thonny.png" />
+</figure>
+</subsection>
+
+
+<subsection>
+<title>Scripting</title>
+<p>
+Once you have numpy and matplotlib it's time to make a plot. I have a
+pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> but if
+you prefer text I will walk through a simple example.
+</p>
+<figure>
+<image width="50%" source="images/matplotlib_example.png" />
+</figure>
+<p>
+The code above will plot a sine wave from 0 to 2pi. The two lines at
+the top are importing the numpy and matplotlib modules you installed
+earlier. When they are imported we give them shorter names so it's
+easier to reference them so numpy will now be called np and
+matplotlib.pyplot will be called plt. The next two lines then create a
+vector <q>x</q> from 0 to 2pi using 1000 data points. The next line then
+uses the sine function to create the vector <q>y</q>. Finally <q>x</q> and <q>y</q>
+are plotted and the figure is instructed to pop up on your screen
+using the show() function.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Built-In Help Function and dir()</title>
+<p>
+Running code will always create syntax errors. Typing your syntax
+error into Google will yield so many results you might get
+lost. Sometimes it helps to know how to learn things just from your
+computer. For example, type in the commands below in the IPython
+console or the Shell.
+</p>
+
+<p>
+<em>import numpy as np</em>
+</p>
+
+<p>
+<em>dir(np)</em>
+</p>
+<figure>
+<image width="73%" source="images/dir.png" />
+</figure>
+<p>
+I included a photo of the output from the dir function. You'll notice
+there are a ton of functions in numpy. Every function in Python has a
+</p>
+<pre>
+__doc__
+</pre>
+<p>
+function. That's two underscores followed by <q>doc</q> and then
+another two underscores. If you're ever curious about what a
+particular function does you can just run the command below again in
+the IPython console or Shell. In this example I'm looking at what
+<em>arctan2</em> does.
+</p>
+<pre>
+print(np.arctan2.__doc__)
+</pre>
+<figure>
+<image width="73%" source="images/arctan2_doc.png" />
+</figure>
+<p>
+You'll see that arctan2 takes 2 input arguments <q>x1</q> and <q>x2</q>. I
+didn't include the entire output but if you continue to scroll through
+the output it will even include examples on how to use the function.
+</p>
+
+<p>
+Another way to learn certain functions is by visiting the appropriate
+documentation. The <url href="https://numpy.org/doc/">Numpy Docs</url> website
+for example has all the documentation you need for Numpy. Navigating
+that website you can find the same <url href="https://numpy.org/doc/1.19/reference/generated/numpy.arctan2.html?highlight=arctan2#numpy.arctan2">documentation for arctan2</url>.
+</p>
+
+<p>
+As a last resort you can always Google <q>how to compute the inverse
+tangent 2 function in Python</q>. Note though that there is so much
+content out there on Google that you could easily get lost. Still,
+there's also so much information that the answers are out there for
+just about anything.
+</p>
+
+<p>
+So you have three methods for finding out how to program in
+python. The dir and <em>__doc__</em> functions in Python, using the appropriate
+documentation online and of course Google. I'm lumping Youtube in with
+Google which is also another way to learn information although when I
+want to find information quickly I just use the documentation. It's
+the best in my opinion.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Assignment</title>
+<p>
+Your assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in your report. You must add a grid and label the x-axis ‘Time (sec)' and the y-axis ‘Temperature (F)'
+<men>
+  T(t) = 60(1-e^{-5t})+30
+</men>
+<ol marker="itemsep5pt">
+<li><p>Include a screenshot of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%</p></li>
+<li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40</p></li>
+</ol>
+
+</p>
+</subsection>
+
+</section>

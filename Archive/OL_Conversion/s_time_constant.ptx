@@ -1,0 +1,138 @@
+<section xml:id="s_time_constant">
+<title>Time Constant of a Thermistor</title>
+
+
+<subsection>
+<title>Parts List</title>
+<ol marker="itemsep5pt">
+<li><p>CPX/CPB</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Laptop</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Learning Objectives</title>
+<ol marker="itemsep5pt">
+<li><p>Learn the basic form of a first order system</p></li>
+<li><p>Learn the basic solution of a first order system</p></li>
+<li><p>Understand settling time and how that effects engineering</p></li>
+<li><p>Applied Estimation of a First Order system</p></li>
+</ol>
+</subsection>
+
+
+<subsection>
+<title>Getting Started</title>
+<p>
+For this lab we're going to use the thermistor located on Pin A9. In a previous lab we measured the analog signal from the pin and also used the <em>adafruit_thermistor.py</em> module that converts the voltage from the thermistor to celsius. Here though we're going to explain a bit more about the thermistor. In this case, the thermistor is wired in a voltage divider circuit in series with a <m>10000~\Omega</m> resistor. This means that the voltage across the thermistor can be converted to its resistance using the voltage divider equation below similar to the equation used for the photocell.
+<men>
+  V_{thermistor} = V_{out}\frac{R_{thermistor}}{R_{series}+R_{thermistor}}
+</men>
+</p>
+
+<p>
+Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">
+</p>
+</url>
+<men>
+  T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
+</men>
+<p>
+where <m>\beta=3950</m> is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and <m>T_0=298.15K</m> is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.
+</p>
+
+<p>
+For this lab though, we're not just going to measure the temperature from the thermistor, we're going to analyze the dynamics of the thermistor and how it responds to an abrupt change in temperature. It is said that a themistor can be modeled as a first order system. The basic form of a first order system can be shown below.
+<men>
+  \dot{T} = \sigma (T_f - T)
+</men>
+where <m>T</m> is our state variable and <m>\dot{T}</m> is the derivative of our state. For this example let's assume that <m>T</m> is temperature. In this case <m>T_f</m> is an external temperature that is either higher or lower than current temperature causing the derivative of temperature to be non-zero. You can see in this case that once the temperature of the system is equal to the external forcing temperature, the derivative of the temperature of the system goes to zero. This implies that the system has reached equilibrium. The variable <m>\sigma</m> has units of <m>Hz</m> or <m>1/sec</m>. The inverse of <m>\sigma</m> is <m>\tau</m> the time constant.
+<men>
+  \tau = \frac{1}{\sigma}
+</men>
+</p>
+
+<p>
+The time constant of the system is related to how quickly the system responds to change or even how long it takes for the system to reach equilibrium. Reaching equilibrium quantitatively happens when the state has changed 98%. In other words the state of the system is within 2% of the equilibrium state. This is called the settling time <m>T_s</m>. The time constant is related to the settling time using the equation below.
+<men>
+  \tau = \frac{T_s}{4}
+</men>
+</p>
+
+<p>
+The only question now of course is what is the solution <m>T(t)</m> or rather the temperature as a function of time. In this case, the solution to the above dynamics equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard first order differential equation techniques</url> to obtain the solution below.
+<men xml:id="e_thermistor" >
+  T(t) = (T_0-T_f)e^{-\sigma t} + T_f
+</men>
+</p>
+
+<p>
+Looking at the equation now you can see some properties right away. When <m>t=0</m>, the first term reduces to <m>(T_0-T_f)</m> which means the initial temperature is <m>T_0</m> or the initial temperature. When <m>t\rightarrow\infty</m>, the first term drops to zero and thus the temperature is <m>T_f</m> or final temperature.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Temperature Change Ideas</title>
+<p>
+In this lab we're going to get the time constant of the <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url> on board the CPX. If you take data on the CPX and walk outside or place the thermistor directly into a fridge, the temperature change will not be immediate. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. <url href="https://learn.adafruit.com/thermistor/circuitpython">The Adafruit Learn system</url> does a bit of work to explain the conversion from voltage to temperature. My version of the code is also on my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">Github</url>.
+</p>
+<figure>
+<image width="73%" source="images/thermistor.png" />
+</figure>
+<p>
+For this lab in order to estimate the time constant of a thermistor you need to change the temperature somehow.
+
+<ol marker="itemsep5pt">
+<li><p>Start logging data and then place the CPX into the fridge</p></li>
+<li><p>Put the CPX into the fridge and then pull the CPX out of the fridge and watch the temperature return to ambient</p></li>
+<li><p>Walk outside on a hot (or cold) day and watch the CPX change temperature due to your A/C</p></li>
+<li><p>Walk inside and watch the CPX get warmer (or colder) as your HVAC changes the CPX temperature.</p></li>
+</ol>
+
+</p>
+</subsection>
+
+
+<subsection>
+<title>Estimating Time Constant</title>
+<p>
+I did the first two examples and plotted both data sets in the same script as shown below. I opted to use method 1 (see <xref ref="s_daq">chapter</xref>) from the datalogging project and just have the data print to Serial and then unplug the CPX when I'm done taking data and copy and paste the data into a text file.
+</p>
+<figure>
+<image width="73%" source="images/thermistor_plots.png" />
+</figure>
+<p>
+At this point it's possible to get the time constant by remember that the settling time (time it takes the temperature to settle out) is equal to 4 times the time constant (<m>\tau</m>) and thus the time constant is the settling time divided by 4. After computing the settling time for both data sets and overlaying the equations on the measured data I get these two plots.
+</p>
+<figure>
+<image width="73%" source="images/thermistor_plots2.png" />
+</figure>
+<p>
+What was interesting was that the time constant for heating up was 62.5 seconds and for cooling down it was 155 seconds. The time to get cold was way slower than heating up. I'm not a heat transfer expert so I won't comment as to why this happened. One other import note I'd like to mention is the cool down phase was much more accurate than the heat up phase. This is most likely because when I pulled the thermistor out of the fridge I touched it with my hands and then moved it to a table. There was also alot more airflow outside the fridge which would change the overall dynamics. Still, the fitted data matches up pretty well and I hope yours does too.
+</p>
+</subsection>
+
+
+<subsection>
+<title>Assignment</title>
+<p>
+For this assignment, you are to change the ambient temperature of the CPX/CPB through heating or cooling and then record time and voltage while waiting for the CPX/CPB to return to ambient temperature. You are to then plot voltage, resistance and temperature as a function of time and then using the graph of temperature (not using a curve fit), estimate <m>T_0</m>, <m>T_f
+<me>
+  ,\sigma
+</me>
+,T_s</m> and <m>\tau</m>. Finally, using <xref ref="e_thermistor">equation</xref>, plot the estimate of <m>T(t)</m>.
+
+<ol marker="itemsep5pt">
+<li><p>Take a picture of you heating or cooling the CPX/CPB - 20</p></li>
+<li><p>Plot the raw voltage and resistance in the thermistor vs time - 20</p></li>
+<li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20</p></li>
+<li><p>Include a table of your estimated parameters - 20</p></li>
+</ol>
+
+</p>
+</subsection>
+
+</section>

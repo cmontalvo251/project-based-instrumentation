@@ -4,6 +4,7 @@ ASAC_Derivations
 *.log
 *.out
 *.log
+SL3X
 stage/
 web/
 *.backup.*
