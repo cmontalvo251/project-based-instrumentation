@@ -79,7 +79,7 @@ rarely encountered in a students future career, building invaluable
 theoretical knowledge of concepts that appear disconnected from
 practical knowledge applied in the field <xref ref="Yong"/>. Historically
 in engineering education, there has been tension between theory and
-application <xref ref="PBL1">. Applications include case studies or
+application <xref ref="PBL1"/>. Applications include case studies or
 practical engineering problems that emulate future careers in
 engineering. This provides students with engineering phenomena that
 they can see and hear. They can reason through problems intuitively,
@@ -93,7 +93,7 @@ problem solving for students in a group setting that requires
 communication, critical thinking, and creativity. These types of
 problems have shown that heightened learning can happen when students
 interact with tangible objects that represent the theory they are
-presented with in the classroom <xref ref="PBL_Book"/>. Rather than
+presented with in the classroom <xref ref="PBL-Book"/>. Rather than
 learning an equation for heat transfer along a one-dimensional pipe,
 the students can create a pipe with thermocouples and plot data from
 multiple sensors along the pipe. This connection to a tangible object
@@ -149,17 +149,17 @@ as a bridge between theory based lectures and a laboratory
 setting <xref ref="LabAtHome3"/>. This allows both instructors and students to
 engage with content in a way that promotes enduring understandings and
 practical application of theoretical
-knowledge\cite{LabAtHome4_EE}. Since the kits can be used remotely,
+knowledge<xref ref="LabAtHome4-EE"/>. Since the kits can be used remotely,
 they can also be used for distance learning courses or other
 asynchronous activities as well as during the COVID-19 pandemic.
 </p>
 
 <p>
 Two home kits in particular are directly related to instrumentation
-and circuits. Cyganski and Nicoletti\cite{LabAtHome4_EE} for example
+and circuits. Cyganski and Nicoletti <xref ref="LabAtHome4-EE"/> for example
 created a new curriculum for first year electrical engineering
 students by creating live demonstrations for the students. Manijikian
-and Simmons\cite{LabAtHome2_EE} however, combined a popular commercial
+and Simmons <xref ref="LabAtHome2-EE"/> however, combined a popular commercial
 microcomputer board with their own custom-designed interface board in
 a kit that students retain for the duration of the course for both
 in-lab and at-home assignments. The take-home kits however were based
@@ -167,7 +167,7 @@ on the Motorola 68HC11EVB microcomputer which is programmed in
 assembly language. Assembly language is a rather difficult language to
 learn at the undergraduate level. Even with such a difficult learning
 curve, however, student feedback on their approach was
-positive\cite{LabAtHome2_EE}.
+positive <xref ref="LabAtHome2-EE"/>.
 </p>
 
 <p>
@@ -181,18 +181,18 @@ compilation languages like Fortran and C. Note, this is not an
 exhaustive list. A recent study showed that scripting languages
 (Python, Ruby, MATLAB) enable writing more concise code while
 compilation languages (C, Fortran) create smaller
-executables \cite{codetype}. MATLAB is often considered in engineering
+executables <xref ref="codetype"/>. MATLAB is often considered in engineering
 given its success in industry and its ability to perform numerical
 simulations and plotting with ease. Python, however, has become more
 and more popular with numerical toolboxes like numpy and plotting
 toolboxes like matplotlib that are free and easy to install in
 integrated development environments like Thonny or
-Spyder \cite{IDE}. The Tiobe Index of Programming\cite{Tiobe} has the
+Spyder <xref ref="IDE"/>. The Tiobe Index of Programming <xref ref="Tiobe"/> has the
 top 3 programming languages listed as Python, C, and Java. MATLAB
 is #20 on the list. In 2004, Hans Fangohr wrote that MATLAB is much
 better suited than C for engineering computing but the best choice in
 terms of clarity and functionality is provided by
-Python \cite{CodeComparison}. It seems then that it would be more
+Python <xref ref="CodeComparison"/>. It seems then that it would be more
 practical for educators even in engineering to teach the most popular
 language. This helps with transferability of skills and has future
 implications for a students' career. The scripting aspect of Python
@@ -210,7 +210,7 @@ Python, the University of South Alabama (USA) has implemented such a
 kit for Instrumentation &amp; Experimental Methods (ME 316) using
 CircuitPython. CircuitPython is a derivative of Python written for
 embedded systems and designed to simplify experimenting and learning
-to code \cite{CircuitPython}. The learning objectives for ME316
+to code <xref ref="CircuitPython"/>. The learning objectives for ME316
 include: statistics, dynamic response of measurement systems,
 operational amplifiers, signal conditioners and fundamentals of
 microprocessors. This course could be taught with theory as the main
@@ -218,7 +218,7 @@ focus of the lecture. However, this course includes the use of an
 instrumentation kit and Project Based Learning methods in addition to
 theory in the classroom. Each student taking the course purchases the
 kit and downloads a free accompanying project
-list \cite{Gitbook}. Every Friday, the students complete one of the multiple
+list <xref ref="Gitbook"/>. Every Friday, the students complete one of the multiple
 projects. The following week they submit a report which includes a
 demo of the working project in the form of photos and videos, any
 plots generated if they are required to take data, all code used and a
@@ -229,7 +229,7 @@ have taken the course.
 
 <p>
 Note that, the Adafruit Learn page contains many tutorials on how to operate the
-CircuitPlayground\cite{Adafruit}. However, Adafruit sells much
+CircuitPlayground <xref ref="Adafruit"/>. However, Adafruit sells much
 more than just the CPX and thus it is often difficult for anyone to
 find the correct tutorial needed for the CPX. A simple search on the
 Adafruit Learn System yields 21 results for "servo" just on the first
@@ -238,7 +238,7 @@ with CircuitPython is the 10th result and it's for a different
 development board. Although the software works with the CPX, it does
 not explicitly say so. Due to the complexity of some of these systems,
 documentation was made and freely given to the
-community\cite{Gitbook}. This documentation was custom built using a
+community <xref ref="Gitbook"/>. This documentation was custom built using a
 combination of multiple sources across the internet. All software for
 the kit is also
 on <url href="www.github.com/cmontalvo251/Microcontrollers.git">Github</url> in
