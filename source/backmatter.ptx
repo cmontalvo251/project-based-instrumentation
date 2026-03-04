@@ -32,10 +32,8 @@
     <biblio xml:id="CircuitPython"><p>Circuitpython. https://circuitpython.org/, 2021. Accessed: 12-09-2021.</p></biblio>
     <biblio xml:id="Gitbook"><p>Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https://github.com/cmontalvo251/LaTeX/blob/master/PBL_CircuitPython_Instrumentation/main.pdf.</p></biblio>
     <biblio xml:id="Adafruit"><p>Adafruit. Adafruit learn, 2021. Adafruit https://learn.adafruit.com/.</p></biblio>
-    <!--[23] Carlos Montalvo. Facility for aerial systems and technology github repository.
-cmontalvo251, 2022.
-https://github.com/
-[24] Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.
+    <biblio xml:id="Github"><p>Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https://github.com/cmontalvo251</p></biblio>
+    <!--[24] Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.
 [25] Arduino. Arduino, 2023. https://www.arduino.cc/.
 [26] Adafruit. Adafruit ble connect, 2023. https://learn.adafruit.com/bluefruit-le-connect?gclid=
 CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_
