@@ -8,10 +8,16 @@
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="backmatter">
   <!-- <solutions divisional="hint"> <title>Selected Hints</title> </solutions> -->
 
+  <references>
+    <title>References</title>
+    <biblio xml:id="Gardner"><p>Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https://www.niu.edu/citl/resources/guides/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.</p></biblio>
+    <biblio xml:id="Ralph"><p>R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.</p></biblio>
+    <biblio xml:id="Learning-Styles"><p>Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.</p></biblio>
+  </references>
+
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
 
   <!-- <appendix> <title>List of Symbols</title> <notation-list/> </appendix> -->
-   <appendix> <title>Acknowledgements</title></appendix>
 
   <!-- <index> <title>Index</title> <index-list/> </index> -->
 
