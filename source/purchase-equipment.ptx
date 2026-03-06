@@ -1,27 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="purchase-equipment" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Purchase Equipment</title>
 <section>
-<title>Purchase Equipment</title>
-
-
-<subsection>
 <title>Parts List</title>
 <ol marker="itemsep5pt">
 <li><p>Laptop with internet connectivity</p></li>
 <li><p>Credit/Debit Card to Purchase items</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Understand the world of microcontrollers</p></li>
 <li><p>Learn about the Adafruit eco-system</p></li>
 <li><p>Learn about the Circuit Playground Express/Bluefruit</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>CircuitPython Kit</title>
 <p>
 In this class you're going to build some circuits that will enhance
@@ -32,7 +30,7 @@ all components together. Unfortunately, that company has gone out of
 business and as such for the time being you must build the kit
 yourself. Here is a list of all the components in the kit
 
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Circuit Playground Bluefruit or Express + Included USB Cable</p></li>
 <li><p>Micro Servo</p></li>
 <li><p>Potentiometer</p></li>
@@ -81,10 +79,10 @@ does not have an infrared sensor but does contain bluetooth
 functionality to send data wirelessly to the Adafruit Connect App
 which runs on Apple/Android\cite{AdafruitBLE}.
 </p>
-</subsection>
+</section>
 
 
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 Your assignment for this module is to purchase the required equipment for your class. <em>Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything.</em> At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. <em>Also, the CPX/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.</em>
@@ -97,7 +95,7 @@ Your assignment for this module is to purchase the required equipment for your c
 <p>
 For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.
 
-<ol marker="itemsep5pt">
+<ol>
 <li><p>The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass/Fail]</p></li>
 <li><p>The second page will contain an introduction which explains the
 project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]</p></li>
@@ -119,12 +117,12 @@ results in a failure of the assignment.</em> - [Rubric: This is Pass/Fail]</p></
 <p>
 { <em>Project Specific Requirements</em>}
 
-<ol marker="itemsep5pt">
+<ol>
 <li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device) - [Rubric: Worth 60% of your grade]</p></li>
 <li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a failure rate of 1%. - [Rubric: Worth 20% of your grade]</p></li>
 </ol>
 
 </p>
-</subsection>
-
 </section>
+
+</chapter>

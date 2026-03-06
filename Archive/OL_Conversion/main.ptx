@@ -46,7 +46,7 @@
 </frontmatter>
 
 
-<xi:include href="./section1x.ptx" />
+<!--<xi:include href="./section1x.ptx" />
 
 <xi:include href="./section2x.ptx" />
 
@@ -56,7 +56,7 @@
 
 <xi:include href="./section2.ptx" />
 
-<xi:include href="./section3.ptx" />
+<xi:include href="./section3.ptx" /> -->
 
 <xi:include href="./section4.ptx" />
 

@@ -13,8 +13,10 @@
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
-    <!-- Include chapters -->
+    <!-- Include Projects -->
     <xi:include href="./preface.ptx" />
+    <xi:include href="./purchase-equipment.ptx"/>
+    
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
