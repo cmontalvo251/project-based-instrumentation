@@ -1,19 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="download-python" xmlns:xi="http://www.w3.org/2001/XInclude">
+	 <title>Download Python for Desktop</title>
+  
 <section>
-<title>Download Python for Desktop</title>
-
-
-<subsection>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Laptop</p></li>
 <li><p><url href="https://www.python.org/">Python</url> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> or <url href="https://www.spyder-ide.org/">Spyder</url> - Do not use Python IDLE)</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)</p></li>
 <li><p>Plot a simple function in Python</p></li>
 </ol>
@@ -46,34 +46,31 @@ you just Google <q>Python download</q> you will find a humongous list of
 editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to
 get lost when searching for something so broad. You've been warned.
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Thonny</title>
 <p>
-Thonny - \url{https://thonny.org/} -
-<url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube
-video on how to install</url>
+Thonny - <url href="https://thonny.org/">https://thonny.org</url> - <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube video on how to install</url>
 </p>
 <figure>
-<image width="73%" source="images/Thonny.png" />
+<image width="73%" source="Thonny.png" />
+<caption>Example Sine Graph in Thonny</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Spyder</title>
 <p>
-Spyder - \url{https://www.spyder-ide.org/} - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url>
+Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url> - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url>
 </p>
 <figure>
-<image width="73%" source="images/Spyder.png" />
+<image width="73%" source="Spyder.png" />
+<caption>Example Sine Graph in Spyder</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Other Options</title>
 <p>
 It is possible to use
@@ -87,10 +84,9 @@ you have a 64 bit computer but you may as well check. We'll learn
 about the difference between 32 and 64 bit computers when we get to
 the projects on Binary.
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Setting up your IDE</title>
 <p>
 Once you have Thonny or Spyder installed you need to install numpy and
@@ -102,7 +98,8 @@ Tools>Manage Packages in Thonny. You can see in the image below I
 already have version 3.1.2 but I can upgrade to 3.2.2
 </p>
 <figure>
-<image width="73%" source="images/IDE_upgrades.png" />
+<image width="73%" source="IDE_upgrades.png" />
+<caption>Installing Matplotlib in Thonny</caption>
 </figure>
 <p>
 If numpy or matplotlib is not already included in Spyder then you need
@@ -125,12 +122,12 @@ have a valid internet connection it will install the necessary
 module.
 </p>
 <figure>
-<image width="50%" source="images/console_thonny.png" />
+<image width="50%" source="console_thonny.png" />
+<caption>Installing Python Modules via Thonny Console</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Scripting</title>
 <p>
 Once you have numpy and matplotlib it's time to make a plot. I have a
@@ -138,7 +135,8 @@ pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvG
 you prefer text I will walk through a simple example.
 </p>
 <figure>
-<image width="50%" source="images/matplotlib_example.png" />
+<image width="50%" source="matplotlib_example.png" />
+<caption>Close up text of plotting in Python</caption>
 </figure>
 <p>
 The code above will plot a sine wave from 0 to 2pi. The two lines at
@@ -151,10 +149,9 @@ uses the sine function to create the vector <q>y</q>. Finally <q>x</q> and <q>y<
 are plotted and the figure is instructed to pop up on your screen
 using the show() function.
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Built-In Help Function and dir()</title>
 <p>
 Running code will always create syntax errors. Typing your syntax
@@ -171,8 +168,10 @@ console or the Shell.
 <p>
 <em>dir(np)</em>
 </p>
+
 <figure>
-<image width="73%" source="images/dir.png" />
+<image width="73%" source="dir.png" />
+<caption>Output of dir(numpy)</caption>
 </figure>
 <p>
 I included a photo of the output from the dir function. You'll notice
@@ -192,7 +191,8 @@ the IPython console or Shell. In this example I'm looking at what
 print(np.arctan2.__doc__)
 </pre>
 <figure>
-<image width="73%" source="images/arctan2_doc.png" />
+<image width="73%" source="arctan2_doc.png" />
+<caption>Output of print(np.arctan2.__doc__)</caption>
 </figure>
 <p>
 You'll see that arctan2 takes 2 input arguments <q>x1</q> and <q>x2</q>. I
@@ -223,22 +223,26 @@ Google which is also another way to learn information although when I
 want to find information quickly I just use the documentation. It's
 the best in my opinion.
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 Your assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in your report. You must add a grid and label the x-axis ‘Time (sec)' and the y-axis ‘Temperature (F)'
 <men>
   T(t) = 60(1-e^{-5t})+30
 </men>
-<ol marker="itemsep5pt">
+</p>
+
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+<ol>
 <li><p>Include a screenshot of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%</p></li>
-<li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40</p></li>
+<li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%</p></li>
 </ol>
 
-</p>
 </subsection>
-
 </section>
+</chapter>
