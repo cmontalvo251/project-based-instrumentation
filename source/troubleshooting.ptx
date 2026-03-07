@@ -1,10 +1,14 @@
-<section>
-<title>Troubleshooting Guide</title>
-<p>
-<em>Is your CPX/CPB broken or not running code? Read below.</em>
-</p>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<ol marker="itemsep5pt">
+<chapter xml:id="troubleshooting" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Troubleshooting Guide</title>
+
+  <introduction>
+    <p>
+      <em>Is your CPX/CPB broken or not running code? Read below.</em>
+    </p>
+    
+    <ol>
 <li><p>Your CPX is a USB stick that can hold as many Python files as 2MB will allow but it can only run or execute one python script at a time. It will look for code.py and then main.py and that's it.</p></li>
 <li><p>Make sure you're using Mu in the right Mode (CircuitPython)</p></li>
 <li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
@@ -40,4 +44,6 @@ For linux users you will need a few things
 For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is <em>update-bootloader-circuitplay_m0-v3.15.0.uf2</em>.</li>
 <li><p>Are you running out of memory? To figure out how much RAM you have on your CPX/CPB you need to <em>import gc</em> then run <em>gc.collect()</em> and then <em>print(gc.mem_free())</em>. At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM.</p></li>
 </ol>
-</section>
+  </introduction>
+
+</chapter>
