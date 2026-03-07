@@ -1,10 +1,11 @@
-<section xml:id="s_Getting_Started">
-<title>Getting Started with the CPX/CPB</title>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<chapter xml:id="getting-started" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Getting Started with the CPX/CPB</title>
 
-<subsection>
+<section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Laptop</p></li>
 <li><p><url href="https://codewith.mu/en/download">Mu</url></p></li>
 <li><p>CPX (or CPB) <url href="https://circuitpython.org">UF2 File</url></p></li>
@@ -12,22 +13,20 @@
 <li><p>USB Cable (with a data line. Not all USB cables have data
     lines)</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Learn how to setup your Circuit Playground Express</p></li>
 <li><p>Learn how to install Mu</p></li>
 <li><p>Learn how to code with Mu</p></li>
 <li><p>Learn about hardware and software debugging</p></li>
 <li><p>Learn the difference between Python and CircuitPython</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Setting up your Circuit Playground</title>
 <p>
 By now you hopefully have your Circuit Playground (CPX) and it's time
@@ -46,7 +45,8 @@ button) and put it into boot mode. All the neopixels (the ring lights
 on the CPX) will light up green.
 </p>
 <figure>
-<image width="73%" source="images/CPX_boot.png" />
+<image width="73%" source="CPX_boot.jpeg" />
+<caption>The Circuit Playground Express in Boot mode</caption>
 </figure>
 <p>
 Something called CPLAYBOOT will pop up on your computer just like a
@@ -54,7 +54,8 @@ USB stick or external harddrive. A couple files with be in there but
 it doesn't matter what they say right now.
 </p>
 <figure>
-<image width="73%" source="images/CPLAYBOOT.png" />
+<image width="73%" source="CPLAYBOOT.png" />
+<caption>Contents of the CPLAYBOOT Folder </caption>
 </figure>
 <p>
 You then need to download what's called a <url href="https://circuitpython.org/board/circuitplayground_express/">UF2 file</url> and transfer it
@@ -68,7 +69,8 @@ will pop up as a flash drive on your computer. The CPX is now like a
 USB stick with 2MB of storage. <em>Note that if you have an old bootloader you must update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader</url>.</em>
 </p>
 <figure>
-<image width="73%" source="images/CIRCUITPY.png" />
+<image width="73%" source="CIRCUITPY.png" />
+<caption>Contents of the CIRCUITPY Folder</caption>
 </figure>
 <p>
 At this point the CPX is like a mini computer. If you put Python code
@@ -108,7 +110,8 @@ gets updated from the time this book is published. As such be sure to
 select the Circuitpython Mode for board development).
 </p>
 <figure>
-<image width="73%" source="images/Mu.png" />
+<image width="73%" source="Mu.png" />
+<caption>Opening Screen for Mu</caption>
 </figure>
 <p>
 Make sure to select the <q>Adafruit CircuitPython</q> option. If the
@@ -125,7 +128,8 @@ the New button and then Save the file as <em>main.py</em> (again make sure you
 save it to the CPX and not to your computer)
 </p>
 <figure>
-<image width="73%" source="images/Mu2.png" />
+<image width="73%" source="Mu2.png" />
+<caption>Opening main.py in Mu</caption>
 </figure>
 <p>
 You'll see that I am accessing the CIRCUITPY drive and saving the file
@@ -145,7 +149,7 @@ combination of main.py or code.py it will run one of them and not the
 other. Make sure you only have one version of main.py or code.by but
 not both! Some common things to check if your CPX isn't working. </em>
 
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Make sure you're using Mu in the right Mode</p></li>
 <li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
 <li><p>Make sure you are editing the right file in Mu. Do you have two versions of main.py?</p></li>
@@ -156,8 +160,7 @@ not both! Some common things to check if your CPX isn't working. </em>
 </p>
 
 <p>
-So let's get the CPX to do something simple like blink an LED. I have
-an entire
+So let's get the CPX to do something simple like blink an LED. I have an entire
 <url href="https://github.com/cmontalvo251/Microcontrollers">Github</url>
 devoted to Microelectronics. Specifically I have a
 <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython">folder
@@ -166,7 +169,8 @@ run is the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/mast
 below.
 </p>
 <figure>
-<image width="73%" source="images/blink.png" />
+<image width="73%" source="blink.png" />
+<caption>CircuitPython Blink Code for the Circuit Playground Express</caption>
 </figure>
 <p>
 We will talk about what this code is doing later on. For now copy and
@@ -174,7 +178,8 @@ paste these 17 or so lines of code and paste them into Mu specifically
 the <em>main.py</em> script. It will hopefully look like this.
 </p>
 <figure>
-<image width="73%" source="images/blinkmu.png" />
+<image width="73%" source="blinkmu.png" />
+<caption>Blink Code inside Mu</caption>
 </figure>
 <p>
 Make sure to save. You can click <em>Zoom-In</em> and <em>Zoom-out</em> to zoom in and
@@ -226,7 +231,8 @@ will hopefully see some output. Here's what it looks like on my
 machine.
 </p>
 <figure>
-<image width="73%" source="images/blinkmu2.png" />
+<image width="73%" source="blinkmu2.png" />
+<caption>Serial Monitor Open in Mu</caption>
 </figure>
 <p>
 In this case you can see the time printed every time it goes through
@@ -236,7 +242,8 @@ example, in the picture below I have an error in my code and the
 <em>Serial</em> output is letting me know.
 </p>
 <figure>
-<image width="73%" source="images/blinkerror.png" />
+<image width="73%" source="blinkerror.png" />
+<caption>Example Error Shown in Serial Monitor</caption>
 </figure>
 <p>
 In this case I have an error on line 5. It's saying there is no module
@@ -266,7 +273,8 @@ documentation on the CPX itself. For example, I've added a print
 statement to print the directory of time.
 </p>
 <figure>
-<image width="73%" source="images/printtimeMu.png" />
+<image width="73%" source="printtimeMu.png" />
+<caption>Showing Directory of the time module in Mu</caption>
 </figure>
 <p>
 In this case I've added <em>print(dir(time))</em> to line 7. The output shows
@@ -299,14 +307,14 @@ Thonny when I add a sleep of 1 second. The exercise for you is to do
 something similar.
 </p>
 <figure>
-<image width="73%" source="images/blinkcomputer.png" />
+<image width="73%" source="blinkcomputer.png" />
+<caption>Output of datetime in Thonny</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>TL;DR</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Plug in your CPX and double tap it to go into reset
   mode. CPLAYBOOT will mount to your computer. (Some CPXes you need to hold the button down instead of double tap).</p></li>
 <li><p>Download the <url href="https://circuitpython.org/downloads">UF2
@@ -327,22 +335,24 @@ There is an accompanying
 <url href="https://www.youtube.com/watch?v=XFvLn6rwm3I">youtube video to
 help you see me perform the 8 steps above.</url>
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots of relevant steps. <em>Note for the blink code, modify blink pattern to be different from the default on Github</em>. The specific items requested are shown below.
-
-<ol marker="itemsep5pt">
-<li><p>Include a screenshot of your computer showing the CPLAYBOOT drive on your computer - 20</p></li>
-<li><p>Include a screenshot of your computer showing the CIRCUITPY drive on your computer - 20</p></li>
-<li><p>Include a screenshot of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20</p></li>
-<li><p>Include a photo of your CPX with the red led on - 20</p></li>
-</ol>
-
 </p>
-</subsection>
 
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+<ol>
+<li><p>Include a screenshot of your computer showing the CPLAYBOOT drive on your computer - 20%</p></li>
+<li><p>Include a screenshot of your computer showing the CIRCUITPY drive on your computer - 20%</p></li>
+<li><p>Include a screenshot of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20%</p></li>
+<li><p>Include a photo of your CPX with the red led on - 20%</p></li>
+</ol>
+</subsection>
 </section>
+</chapter>

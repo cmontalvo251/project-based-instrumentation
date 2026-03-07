@@ -18,6 +18,7 @@
     <xi:include href="./course-description.ptx"/>
     <xi:include href="./purchase-equipment.ptx"/>
     <xi:include href="./download-python.ptx"/>
+    <xi:include href="./getting-started.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
