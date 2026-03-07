@@ -100,11 +100,155 @@ var ptx_lunr_docs = [
   "body": " Assignment  Your assignment for this module is to purchase the required equipment for your class. Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything. At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. Also, the CPX\/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.    Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   A figure of your receipt of your purchases this semester (If you already own the CPX\/CPB you may just take a photo of you holding the device) - [Rubric: Worth 60% of your grade]  Using the number of students in your class, compute the probability that at least one CPX\/CPB will be shipped DOA (dead on arrival) assuming a failure rate of 1%. - [Rubric: Worth 20% of your grade]    "
 },
 {
+  "id": "download-python-2",
+  "level": "1",
+  "url": "download-python-2.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Parts List",
+  "body": " Parts List   Laptop  Python Integrated Development Environment (IDE) ( Thonny or Spyder - Do not use Python IDLE)   "
+},
+{
+  "id": "download-python-3",
+  "level": "1",
+  "url": "download-python-3.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)  Plot a simple function in Python   As you learn Instrumentation throughout the semester, you will be tasked with creating computer programs on the Circuit Playground Express (CPX). The CPX itself has it's own RAM, CPU, HDD and many sensors. Your CPX is kind of like a mini computer! You can plug the CPX into your computer via USB and access the hard drive (HDD) from your own computer. When you program on the CPX you need to write programs on the CPX itself so that the mini computer can run the program you wrote. The CPX knows how to read multiple different languages but in this class we are going to write everything in the Python language which has been ported to the CPX and called CircuitPython . Since we have to write everything in CircuitPython we need to first learn how to program some things in Python. You can easily download Python by itself but it's nice to get what's called an Integrated Development Environment (IDE). This way you can practice writing Python code on your computer while you wait for your purchases to arrive in the mail.  So which IDE can you download and which is recommended? I recommend two IDEs. They are listed below. I recommend getting either one. If you just Google Python download you will find a humongous list of editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to get lost when searching for something so broad. You've been warned.  "
+},
+{
+  "id": "download-python-4",
+  "level": "1",
+  "url": "download-python-4.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Thonny",
+  "body": " Thonny  Thonny - https:\/\/thonny.org - Youtube video on how to install     Example Sine Graph in Thonny   "
+},
+{
+  "id": "download-python-4-3",
+  "level": "2",
+  "url": "download-python-4.html#download-python-4-3",
+  "type": "Figure",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  Example Sine Graph in Thonny  "
+},
+{
+  "id": "download-python-5",
+  "level": "1",
+  "url": "download-python-5.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Spyder",
+  "body": " Spyder  Spyder - https:\/\/www.spyder-ide.org\/ - Youtube video on how to install     Example Sine Graph in Spyder   "
+},
+{
+  "id": "download-python-5-3",
+  "level": "2",
+  "url": "download-python-5.html#download-python-5-3",
+  "type": "Figure",
+  "number": "4.4.1",
+  "title": "",
+  "body": "  Example Sine Graph in Spyder  "
+},
+{
+  "id": "download-python-6",
+  "level": "1",
+  "url": "download-python-6.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Other Options",
+  "body": " Other Options  It is possible to use Google Colab if you want to collaborate on Python projects or even get apps for your phone ( Pydroid or Pythonista depending on Android or iPhone). You'll need to download 32 bit or 64 bit but which one? Well you need to figure out how many bits your computer has. This is a great thing to Google. Type the following: \"do I have a 32 bit or 64 bit computer\" into Google. I'm willing to bet you have a 64 bit computer but you may as well check. We'll learn about the difference between 32 and 64 bit computers when we get to the projects on Binary.  "
+},
+{
+  "id": "download-python-7",
+  "level": "1",
+  "url": "download-python-7.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Setting up your IDE",
+  "body": " Setting up your IDE  Once you have Thonny or Spyder installed you need to install numpy and matplotlib which are modules within Python that allow us to do some extra things like numerical computation with Python (numpy) and Matlab style Plotting libraries (matplotlib). I explain how to install modules in my Youtube videos above; however, you need to head over to Tools>Manage Packages in Thonny. You can see in the image below I already have version 3.1.2 but I can upgrade to 3.2.2    Installing Matplotlib in Thonny   If numpy or matplotlib is not already included in Spyder then you need to type the following into the Python Console in the lower right hand corner of Spyder which is called the IPython console.  !pip install matplotlib  If that doesn't work try  !pip3 install matplotlib  You can see in the output example below that I already have matplotlib installed as it says requirement already satisfied . Assuming you have a valid internet connection it will install the necessary module.    Installing Python Modules via Thonny Console   "
+},
+{
+  "id": "download-python-7-3",
+  "level": "2",
+  "url": "download-python-7.html#download-python-7-3",
+  "type": "Figure",
+  "number": "4.6.1",
+  "title": "",
+  "body": "  Installing Matplotlib in Thonny  "
+},
+{
+  "id": "download-python-7-9",
+  "level": "2",
+  "url": "download-python-7.html#download-python-7-9",
+  "type": "Figure",
+  "number": "4.6.2",
+  "title": "",
+  "body": "  Installing Python Modules via Thonny Console  "
+},
+{
+  "id": "download-python-8",
+  "level": "1",
+  "url": "download-python-8.html",
+  "type": "Section",
+  "number": "4.7",
+  "title": "Scripting",
+  "body": " Scripting  Once you have numpy and matplotlib it's time to make a plot. I have a pretty comprehensive youtube video on how to plot in matplotlib but if you prefer text I will walk through a simple example.    Close up text of plotting in Python   The code above will plot a sine wave from 0 to 2pi. The two lines at the top are importing the numpy and matplotlib modules you installed earlier. When they are imported we give them shorter names so it's easier to reference them so numpy will now be called np and matplotlib.pyplot will be called plt. The next two lines then create a vector x from 0 to 2pi using 1000 data points. The next line then uses the sine function to create the vector y . Finally x and y are plotted and the figure is instructed to pop up on your screen using the show() function.  "
+},
+{
+  "id": "download-python-8-3",
+  "level": "2",
+  "url": "download-python-8.html#download-python-8-3",
+  "type": "Figure",
+  "number": "4.7.1",
+  "title": "",
+  "body": "  Close up text of plotting in Python  "
+},
+{
+  "id": "download-python-9",
+  "level": "1",
+  "url": "download-python-9.html",
+  "type": "Section",
+  "number": "4.8",
+  "title": "Built-In Help Function and dir()",
+  "body": " Built-In Help Function and dir()  Running code will always create syntax errors. Typing your syntax error into Google will yield so many results you might get lost. Sometimes it helps to know how to learn things just from your computer. For example, type in the commands below in the IPython console or the Shell.   import numpy as np    dir(np)     Output of dir(numpy)   I included a photo of the output from the dir function. You'll notice there are a ton of functions in numpy. Every function in Python has a  __doc__  function. That's two underscores followed by doc and then another two underscores. If you're ever curious about what a particular function does you can just run the command below again in the IPython console or Shell. In this example I'm looking at what arctan2 does.  print(np.arctan2.__doc__)    Output of print(np.arctan2.__doc__)   You'll see that arctan2 takes 2 input arguments x1 and x2 . I didn't include the entire output but if you continue to scroll through the output it will even include examples on how to use the function.  Another way to learn certain functions is by visiting the appropriate documentation. The Numpy Docs website for example has all the documentation you need for Numpy. Navigating that website you can find the same documentation for arctan2 .  As a last resort you can always Google how to compute the inverse tangent 2 function in Python . Note though that there is so much content out there on Google that you could easily get lost. Still, there's also so much information that the answers are out there for just about anything.  So you have three methods for finding out how to program in python. The dir and __doc__ functions in Python, using the appropriate documentation online and of course Google. I'm lumping Youtube in with Google which is also another way to learn information although when I want to find information quickly I just use the documentation. It's the best in my opinion.  "
+},
+{
+  "id": "download-python-9-5",
+  "level": "2",
+  "url": "download-python-9.html#download-python-9-5",
+  "type": "Figure",
+  "number": "4.8.1",
+  "title": "",
+  "body": "  Output of dir(numpy)  "
+},
+{
+  "id": "download-python-9-10",
+  "level": "2",
+  "url": "download-python-9.html#download-python-9-10",
+  "type": "Figure",
+  "number": "4.8.2",
+  "title": "",
+  "body": "  Output of print(np.arctan2.__doc__)  "
+},
+{
+  "id": "download-python-10",
+  "level": "1",
+  "url": "download-python-10.html",
+  "type": "Section",
+  "number": "4.9",
+  "title": "Assignment",
+  "body": " Assignment  Your assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in your report. You must add a grid and label the x-axis ‘Time (sec)' and the y-axis ‘Temperature (F)'    Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a screenshot of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%  Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%    "
+},
+{
   "id": "acknowledgements",
   "level": "1",
   "url": "acknowledgements.html",
   "type": "Chapter",
-  "number": "4",
+  "number": "5",
   "title": "Acknowledgements",
   "body": " Acknowledgements   Dr. Carlos Montalvo would like to acknowledge a few key members who made this textbook possible. First and foremost I would like to thank Adafruit for their entire ecosystem of electronics, tutorials, blogs and forums. Much of what I have learned here to teach Instrumentation was from Adafruit and the Adafruit Learn system and specifically people like Lady Ada and John Park who have helped shape CircuitPython and the CircuitPlayground Express to what it is today. I would also like to thank Dr. Saami Yazdani for creating the blueprint for Instrumentation at my university by creating a laboratory environment for an otherwise totally theoretical course. His course was the foundation for this textbook and for that I thank him for showing the way. I’d like to also thank and acknowledge Tangibles that Teach for giving me the opportunity to morph this loose set of projects into a textbook that can be used for multiple universities and classrooms and of course help students learn and acquire knowledge through creating. I'd also like to change Steven Clontz for first showing me PreTeXt and for Oscar Levin and all of his helpful replies via email and Zoom. Finally, I'd like to thank the co-authors Lisa and Marine for helping me add some statistical data to this textbook and being all around great academic colleagues and friends   "
 },
