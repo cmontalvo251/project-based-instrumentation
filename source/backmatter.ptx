@@ -33,12 +33,10 @@
     <biblio xml:id="Gitbook"><p>Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https://github.com/cmontalvo251/LaTeX/blob/master/PBL_CircuitPython_Instrumentation/main.pdf.</p></biblio>
     <biblio xml:id="Adafruit"><p>Adafruit. Adafruit learn, 2021. Adafruit https://learn.adafruit.com/.</p></biblio>
     <biblio xml:id="Github"><p>Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https://github.com/cmontalvo251</p></biblio>
-    <!--[24] Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.
-[25] Arduino. Arduino, 2023. https://www.arduino.cc/.
-[26] Adafruit. Adafruit ble connect, 2023. https://learn.adafruit.com/bluefruit-le-connect?gclid=
-CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_
-BwE.
-[27] Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the
+    <biblio xml:id="AdafruitMAIN"><p>Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.</p></biblio>
+    <biblio xml:id="Arduino"><p>Arduino. Arduino, 2023. https://www.arduino.cc/.</p></biblio>
+    <biblio xml:id="AdafruitBLE"><p>Adafruit. Adafruit ble connect, 2023. https://learn.adafruit.com/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.</p></biblio>
+    <!--[27] Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the
 ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.
 [28] Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019.
 Frontiers in Psychology, 12, 2021.-->

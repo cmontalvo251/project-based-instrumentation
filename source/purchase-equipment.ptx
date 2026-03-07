@@ -2,9 +2,10 @@
 
 <chapter xml:id="purchase-equipment" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Purchase Equipment</title>
+
 <section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Laptop with internet connectivity</p></li>
 <li><p>Credit/Debit Card to Purchase items</p></li>
 </ol>
@@ -54,21 +55,23 @@ an <url href="https://youtu.be/6sNNQrhnzLE">unboxing video on Youtube</url>
 for you to take a look. The hardware kit is a collection of multiple
 items. At the time of this writing the entire kit cannot be purchased
 however the CircuitPlayground Express (CPX) can be purchased on
-Adafruit\cite{AdafruitMAIN}. A photo of the kit is shown in the figure below. The photo shows the CPX on the left inside it's
+Adafruit <xref ref="AdafruitMAIN"/>. A photo of the kit is shown in the figure below. The photo shows the CPX on the left inside it's
 protective zip lock bag.
 </p>
 <figure>
-<image width="80%" source="images/components.png" />
+  <image width="80%" source="components.png" />
+  <caption><p>Photo of CircuitPython Kit Components</p></caption>
 </figure>
+
 <p>
 The CPX is a relatively new development board that operates in the
-same style as Arduino\cite{Arduino}. That is, the student can
+same style as Arduino<xref ref="Arduino"/>. That is, the student can
 create a relatively simple script and then flash the software to the
 CPX via USB. The Arduino operates in the same way. The benefit of the
 CPX vs the Arduino is that the software is CircuitPython which is
 indistinguishable from Python. As mentioned earlier, Python is in the
 top 3 programming languages as stated by the Tiobe Index of
-Programming\cite{Tiobe}. Other benefits include the components
+Programming<xref ref="Tiobe"/>. Other benefits include the components
 built in to the CPX. The CPX itself contains a built in microphone,
 accelerometer, light sensor, speaker, three push buttons, slide switch
 and infrared sensor. The CircuitPlayground Express (CPX) also contains
@@ -77,52 +80,27 @@ attached to the included alligator clips and breadboard. Students can
 also elect to purchase the CircuitPlayground Bluefruit (CPB) which
 does not have an infrared sensor but does contain bluetooth
 functionality to send data wirelessly to the Adafruit Connect App
-which runs on Apple/Android\cite{AdafruitBLE}.
+which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 </p>
 </section>
 
-
 <section>
 <title>Assignment</title>
+
 <p>
-Your assignment for this module is to purchase the required equipment for your class. <em>Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything.</em> At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. <em>Also, the CPX/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.</em>
+  Your assignment for this module is to purchase the required equipment for your class. <em>Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything.</em> At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. <em>Also, the CPX/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.</em>
 </p>
 
-<p>
-{ <em>Grading Rubric</em>}
-</p>
+<xi:include href="./assignment_directions.ptx"/>
 
-<p>
-For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.
-
-<ol>
-<li><p>The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass/Fail]</p></li>
-<li><p>The second page will contain an introduction which explains the
-project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]</p></li>
-<li><p>After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]</p></li>
-<li><p>All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]</p></li>
-<li><p>The last few pages will be appendices which are
-pass/fail. Failure to include both Appendix "A" and "B" will result in
-a zero in the assignment. Appendix "A" will be a link (Youtube or
-Google Drive) to a professional video recording of you and your screen
-explaining the project and showing any of the systems operate as
-asked. <em>This includes any portion of the experiment such as
-heating up your thermistor or rotating a potentiometer and showing the
-response in the Serial monitor</em>. Appendix "B" will be any and all code
-used in the project - <em>Failure to provide code or an adequate video
-results in a failure of the assignment.</em> - [Rubric: This is Pass/Fail]</p></li>
-</ol>
-</p>
-
-<p>
-{ <em>Project Specific Requirements</em>}
-
+<subsection>
+  <title>Specific Directions</title>
 <ol>
 <li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device) - [Rubric: Worth 60% of your grade]</p></li>
 <li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a failure rate of 1%. - [Rubric: Worth 20% of your grade]</p></li>
 </ol>
 
-</p>
-</section>
+</subsection>
 
+</section>
 </chapter>

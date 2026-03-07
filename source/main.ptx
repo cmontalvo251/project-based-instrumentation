@@ -14,9 +14,9 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include Projects -->
-    <xi:include href="./preface.ptx" />
+    <xi:include href="./intro.ptx" />
+    <xi:include href="./course-description.ptx"/>
     <xi:include href="./purchase-equipment.ptx"/>
-    
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
