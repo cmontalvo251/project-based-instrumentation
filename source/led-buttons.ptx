@@ -1,10 +1,11 @@
-<section>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="led-buttons" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>External LEDs and Push Buttons</title>
 
-
-<subsection>
+<section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Laptop</p></li>
 <li><p>CPX + USB Cable</p></li>
 <li><p>2 Alligator clips</p></li>
@@ -13,13 +14,12 @@
 <li><p>LED (Light Emitting Diode) (x3 in case you fry some)</p></li>
 <li><p>Resistor (300 to 1000 Ohms)</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
-<li><p>The VOUT and 3.3V pin are always "ON" even when code is not
+<ol>
+<li><p>The VOUT and 3.3V pins are always "ON" even when code is not
   running on the CPX. So long as your CPX is plugged in via USB or a
   Lipo Battery</p></li>
 <li><p>LEDs are Light Emitting <em>Diodes</em> which means current only flows in one direction</p></li>
@@ -67,7 +67,8 @@ also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows
 ">Arduino Metro</url> hooked up to an LED on a breadboard (Courtesy of <url href="https://learn.adafruit.com/u/tdicola">Tony Dicola</url>).
 </p>
 <figure>
-<image width="73%" source="images/circuitpython_01_digital_io_figure_1.png" />
+<image width="73%" source="circuitpython_01_digital_io_figure_1.png" />
+<caption>Fritzing diagram of an Arduino Metro hooked up to an LED <xref ref="Metro"/></caption>
 </figure>
 <p>
 If you're not familiar with how breadboards work I would recommend watching this <url href="https://www.youtube.com/watch?v=mE33WpRWrXs">video on how
@@ -78,10 +79,9 @@ more online if you wish. <em>Remember that the long leg of the LED is
 the positive end and the short leg is the negative end.</em> The task today
 is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <em>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</em>
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>LED with no Code</title>
 <p>
 For this part we are going to light up the LED without the use of any
@@ -95,7 +95,8 @@ just won't turn on because the voltage/current through the LED will be
 below the activation voltage of the circuit.
 </p>
 <figure>
-<image width="73%" source="images/LED1.png" />
+<image width="73%" source="LED1.jpeg" />
+<caption>CircuitPlayground Express connected to an LED on a breadboard</caption>
 </figure>
 <p>
 Once you have that circuit working, wire up the circuit again with the
@@ -105,12 +106,12 @@ something different about the intensity of the LED? Why is it
 different?
 </p>
 <figure>
-<image width="73%" source="images/LED2.png" />
+<image width="73%" source="LED2.jpeg" />
+<caption>CircuitPlayground Express connected to an LED using 3.3V</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>LED with a push button</title>
 <p>
 Now that we understand breadboards a bit, we're now going to manually
@@ -121,12 +122,13 @@ released the LED will turn off. The button just acts like a wire so
 you can plug in the button anywhere in the circuit.
 </p>
 <figure>
-<image width="73%" source="images/LED3.png" />
+<image width="73%" source="LED3.jpeg" />
+<caption>CircuitPlayground Express turning on an LED with an external push button</caption>
 </figure>
-</subsection>
+</section>
 
 
-<subsection>
+<section>
 <title>LED with code</title>
 <p>
 Next I want you to remove the button from the circuit and wire up the
@@ -140,12 +142,12 @@ like for this one. I won't include code for this one since you just
 need to change one line of code.
 </p>
 <figure>
-<image width="73%" source="images/LED4.png" />
+<image width="73%" source="LED4.jpeg" />
+<caption>CircuitPlayground Express connected to an LED with an analog pin</caption>
 </figure>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>LED with CPX button</title>
 <p>
 Finally, I want to use one of the buttons on the CPX to blink the LED
@@ -157,7 +159,8 @@ itself. Here is my circuit (identical) to the previous one with Button
 A on the CPX pressed down.
 </p>
 <figure>
-<image width="73%" source="images/LED5.png" />
+<image width="73%" source="LED5.jpeg" />
+<caption>CircuitPlayground Express powering an LED with an on-board button</caption>
 </figure>
 <p>
 Alright so how do we detect a button press? Well the documentation on
@@ -166,7 +169,8 @@ INPUT of a digital signal and then do something if we detect that
 signal. Here's the code I created to get it to work.
 </p>
 <figure>
-<image width="73%" source="images/button_blink.png" />
+<image width="73%" source="button_blink.png" />
+<caption>Circuitpython code to power an LED with an on-board button</caption>
 </figure>
 <p>
 The code above is an image. You could type exactly what you see and
@@ -206,7 +210,8 @@ button. When I press the button down here is the output I get from the
 <em>Serial</em> monitor.
 </p>
 <figure>
-<image width="73%" source="images/MuButton.png" />
+<image width="73%" source="MuButton.png" />
+<caption>Circuitpython code to power an LED with an on-board button in Mu</caption>
 </figure>
 <p>
 Here you'll see 4 lines that say <q>Button value is False</q> and then two
@@ -218,32 +223,34 @@ it's all just soldered to the PCB so you don't have to build it using
 a breadboard. Hopefully now you have some appreciation for buttons and
 LEDs!!
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 For this specific project you must get your LED to turn on and off using buttons as well as software. The different scenarios are shown below and the grading rubric is presented after this list.
 
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Get your LED to turn on with the VOUT pin.</p></li>
 <li><p>Get your LED to turn on with the 3.3V pin.</p></li>
 <li><p>Get your LED to blink automatically using an analog pin on the CPX/CPB.</p></li>
 <li><p>Get your LED to turn on using a button on the breadboard.</p></li>
 <li><p>Get your LED to blink automatically by pressing a button on the CPX/CPB.</p></li>
 </ol>
-
-<ol marker="itemsep5pt">
-<li><p>Include a photo of your circuit with your LED turned on using VOUT. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10</p></li>
-<li><p>Include a photo of your circuit with your LED turned on using 3.3V. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10</p></li>
-<li><p>The USB port from your computer is 5V. The DC to DC converter on the CPX/CPB converts that 5V to 3.3V. Compute the Gain (<m>G</m>) for this converter both in magnitude and in <m>dB</m>. - 10</p></li>
-<li><p>Include a photo of your circuit with your LED turned on using a button on your breadboard - 10</p></li>
-<li><p>Include a photo of your circuit with your LED turned on using an analog pin and then also include a screenshot of your Mu code showing the same analog pin used to blink your LED - 20</p></li>
-<li><p>Include a photo of your circuit with your LED turned on by pressing a button on the CPX/CPB and then also include a screenshot of your Mu code showing the line of code used to read the button press and blink the LED. - 20</p></li>
-</ol>
-
 </p>
-</subsection>
 
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+<ol>
+<li><p>Include a photo of your circuit with your LED turned on using VOUT. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%</p></li>
+<li><p>Include a photo of your circuit with your LED turned on using 3.3V. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%</p></li>
+<li><p>The USB port from your computer is 5V. The DC to DC converter on the CPX/CPB converts that 5V to 3.3V. Compute the Gain (<m>G</m>) for this converter both in magnitude and in <m>dB</m>. - 10%</p></li>
+<li><p>Include a photo of your circuit with your LED turned on using a button on your breadboard - 10</p></li>
+<li><p>Include a photo of your circuit with your LED turned on using an analog pin and then also include a screenshot of your Mu code showing the same analog pin used to blink your LED - 20%</p></li>
+<li><p>Include a photo of your circuit with your LED turned on by pressing a button on the CPX/CPB and then also include a screenshot of your Mu code showing the line of code used to read the button press and blink the LED. - 20%</p></li>
+</ol>
+</subsection>
 </section>
+</chapter>
