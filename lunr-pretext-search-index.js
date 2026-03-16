@@ -397,11 +397,146 @@ var ptx_lunr_docs = [
   "body": " Troubleshooting Guide    Is your CPX\/CPB broken or not running code? Read below.    Your CPX is a USB stick that can hold as many Python files as 2MB will allow but it can only run or execute one python script at a time. It will look for code.py and then main.py and that's it.  Make sure you're using Mu in the right Mode (CircuitPython)  Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.  Make sure you are editing the right file in Mu. Do you have two versions of main.py or perhaps main.py and code.py?  Do you have boot.py on there when you don't need it?  Are you editing using Thonny or Spyder? You're supposed to use Mu.  Are you editing a file on your computer? Make sure you are writing to the CIRCUITPY drive.  Do you have the right modules in your lib folder?  Unplug the CPX, close Mu and try again.  First, try and reset the CPX to CPLAYBOOT and reflash the UF2 to see if that fixes it.  If you have a linux computer you can sudo screen \/dev\/ttyACM0 and then run import storage and then storage.erase_filesystem()  If that doesn't work sometimes you just need to completely erase the CIRCUITPY drive so head over to this troubleshooting guide and follow some of the steps they tell you.  As a last resort you can try to download these UF2s and hopefully it will fix all errors and mistakes - CPX , CPB  If you're having an issue with an old bootloader be sure to update the bootloader for the CPB or alternatively the bootloader for the CPX . At the time of this writing here is the command you need to upload the new bootloader the CPB. If you have version 0.4.0 or later you can use the UF2 method . adafruit-nrfutil --verbose dfu serial --package circuitplayground_nrf52840_bootloader-0.8.2_s140_6.1.1.zip -p \/dev\/ttyACM0 -b 115200 --singlebank --touch 1200 For linux users you will need a few things   You need pip3 $ sudo apt install python3-pip  You need adafruit-nrfutil $ pip3 install --user adafruit-nrfutil  adafruit-nrfutil gets installed into \\textasciitilde\/.local\/bin  You need to add your user to dialout $ sudo usermod -a -G your_username  Restart your computer  For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is update-bootloader-circuitplay_m0-v3.15.0.uf2 .  Are you running out of memory? To figure out how much RAM you have on your CPX\/CPB you need to import gc then run gc.collect() and then print(gc.mem_free()) . At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM.    "
 },
 {
+  "id": "led-buttons-2",
+  "level": "1",
+  "url": "led-buttons-2.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Parts List",
+  "body": " Parts List   Laptop  CPX + USB Cable  2 Alligator clips  Push Button  Breadboard  LED (Light Emitting Diode) (x3 in case you fry some)  Resistor (300 to 1000 Ohms)   "
+},
+{
+  "id": "led-buttons-3",
+  "level": "1",
+  "url": "led-buttons-3.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   The VOUT and 3.3V pins are always \"ON\" even when code is not running on the CPX. So long as your CPX is plugged in via USB or a Lipo Battery  LEDs are Light Emitting Diodes which means current only flows in one direction  LEDs need resistors in series otherwise they will get too hot and burn up  Breadboard pinout diagrams  Analog pins can be controlled by simply using the digitalio module  LEDs can be hooked up to analog pins and set to blink by changing the board pin   In this project we're going to use the same blink code as before but modify it to blink an external LED. The purpose of this lab is to familiarize yourself with the pins on the CPX and create a simple circuit using the 5V (VOUT) pin on the CPX and one of the Analog pins. Your laptop has a battery with something between 10 to 20V. There are DC to DC converters in your laptop that provide 5V to your USB ports. These USB ports can be used to power your CPX as you have done in the past few labs.  If you purchased the optional battery pack you can also power the CPX using 3 AA batteries. These batteries nominally have 1.5 V but fully charged it's actually something like 1.8 V. So 1.8 times 3 is 5.4V which is enough to power the CPX. If you have the battery pack and some AA batteries, give it a try. If you still have the blink code from the last project on board you'll see the D13 LED blink as before. You won't be able to see the serial print() output as before but that code will be running which is why D13 is blinking. I have noticed that some of the battery packs have power and ground wires swapped. If the battery pack doesn't work it may be because those two wires are backwards.   The CPX itself uses 3.3V logic which means when it converts numbers to binary a 0 (False) represents 0 volts and a 1 (True) represents 3.3V. The CPX has ports that are labeled various things. GND stands for ground and you need to hook the negative end of your circuit to this and it also has VOUT which supplies 5V to any circuit you build. Hook the positive end of your circuit to the VOUT pin. There is also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows an Arduino Metro hooked up to an LED on a breadboard (Courtesy of Tony Dicola ).    Fritzing diagram of an Arduino Metro hooked up to an LED   If you're not familiar with how breadboards work I would recommend watching this video on how breadboards work . Your lab today specifically involves an external LED as shown above. You can read about LEDs more online if you wish. Remember that the long leg of the LED is the positive end and the short leg is the negative end. The task today is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX\/CPB to gain understanding in how the circuit works. Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.   "
+},
+{
+  "id": "led-buttons-3-6",
+  "level": "2",
+  "url": "led-buttons-3.html#led-buttons-3-6",
+  "type": "Figure",
+  "number": "7.2.1",
+  "title": "",
+  "body": "  Fritzing diagram of an Arduino Metro hooked up to an LED  "
+},
+{
+  "id": "led-buttons-4",
+  "level": "1",
+  "url": "led-buttons-4.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "LED with no Code",
+  "body": " LED with no Code  For this part we are going to light up the LED without the use of any code on the CPX. First, wire up the circuit with the positive end connected to 5V. This is how my circuit looks. Make sure to use a resistor between 300 and 1000 Ohms. An LED does not have that much internal resistance so you need a resistor in series with an LED to reduce the amount of current flowing through the LED or the entire LED will fry. If you use a resistor that has too much impedance the LED just won't turn on because the voltage\/current through the LED will be below the activation voltage of the circuit.    CircuitPlayground Express connected to an LED on a breadboard   Once you have that circuit working, wire up the circuit again with the 3.3V output. Do you notice anything different when you hook up the circuit with different pins? Here's my circuit. Do you notice something different about the intensity of the LED? Why is it different?    CircuitPlayground Express connected to an LED using 3.3V   "
+},
+{
+  "id": "led-buttons-4-3",
+  "level": "2",
+  "url": "led-buttons-4.html#led-buttons-4-3",
+  "type": "Figure",
+  "number": "7.3.1",
+  "title": "",
+  "body": "  CircuitPlayground Express connected to an LED on a breadboard  "
+},
+{
+  "id": "led-buttons-4-5",
+  "level": "2",
+  "url": "led-buttons-4.html#led-buttons-4-5",
+  "type": "Figure",
+  "number": "7.3.2",
+  "title": "",
+  "body": "  CircuitPlayground Express connected to an LED using 3.3V  "
+},
+{
+  "id": "led-buttons-5",
+  "level": "1",
+  "url": "led-buttons-5.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "LED with a push button",
+  "body": " LED with a push button  Now that we understand breadboards a bit, we're now going to manually blink the LED using a push button placed onto the breadboard and have it act like a switch. Therefore, when the button is pressed, the LED will turn on and when the button is released the LED will turn off. The button just acts like a wire so you can plug in the button anywhere in the circuit.    CircuitPlayground Express turning on an LED with an external push button   "
+},
+{
+  "id": "led-buttons-5-3",
+  "level": "2",
+  "url": "led-buttons-5.html#led-buttons-5-3",
+  "type": "Figure",
+  "number": "7.4.1",
+  "title": "",
+  "body": "  CircuitPlayground Express turning on an LED with an external push button  "
+},
+{
+  "id": "led-buttons-6",
+  "level": "1",
+  "url": "led-buttons-6.html",
+  "type": "Section",
+  "number": "7.5",
+  "title": "LED with code",
+  "body": " LED with code  Next I want you to remove the button from the circuit and wire up the LED like you had it when the positive end was connected to VOUT or 3.3V. Except this time I want you to hook the positive end of the circuit to pin A2. Then edit your blink code to blink pin A2. Take a look at the blink code. Right now the code is blinking pin D13. How do you think you need to change the code to blink pin A2? Here's what my circuit looks like for this one. I won't include code for this one since you just need to change one line of code.    CircuitPlayground Express connected to an LED with an analog pin   "
+},
+{
+  "id": "led-buttons-6-3",
+  "level": "2",
+  "url": "led-buttons-6.html#led-buttons-6-3",
+  "type": "Figure",
+  "number": "7.5.1",
+  "title": "",
+  "body": "  CircuitPlayground Express connected to an LED with an analog pin  "
+},
+{
+  "id": "led-buttons-7",
+  "level": "1",
+  "url": "led-buttons-7.html",
+  "type": "Section",
+  "number": "7.6",
+  "title": "LED with CPX button",
+  "body": " LED with CPX button  Finally, I want to use one of the buttons on the CPX to blink the LED hooked up to pin A2. For this code to work you first need to detect a button press and then tell the program to change the light from True to False depending on what it's current status is. This one is a bit more difficult so I'll include the code here and discuss the code itself. Here is my circuit (identical) to the previous one with Button A on the CPX pressed down.    CircuitPlayground Express powering an LED with an on-board button   Alright so how do we detect a button press? Well the documentation on this is not so straight forward. What we want to do is detect the INPUT of a digital signal and then do something if we detect that signal. Here's the code I created to get it to work.    Circuitpython code to power an LED with an on-board button   The code above is an image. You could type exactly what you see and hope you don't type any errors (which is highly unlikely) or you could look for my code on my Github . Have you bookmarked this link yet? I recommend you do so!!! So you're making a code about Buttons....hmmm. Click that Github link. Where do you think the code about Buttons is located? Anywho, let's talk about the code.  The first 3 lines are exactly the same as before. Line 5 through 7 are similar to creating the led variable except we're using BUTTON_A as the board value and setting the direction to INPUT . Finally we're setting the pull direction to DOWN . This means the button acts like a pull down resistor and when it's pressed the value of the button goes HIGH .  Lines 9-11 are the same as before. We create an led variable and tell the CPX that the led is hooked up to pin A2. We then start the while loop on line 13. First if you click the Serial button you'll see the text ‘Button value is False'. It's False because buttonA.value is not being pressed. On line 15 the led is set to False (turned off). On line 16 the button value is checked using an if statement as to whether or not the button is pressed (True). If the button is pressed, the user will be notified that the button is pressed on line 17 and the led will be set to True (on) in line 18. Lines 19-22 are while loop that will notify the Serial monitor that you must let go of the button before the code can continue to the main while loop. The time.sleep functions are there to make sure a human can operate the button without code running faster than a human can press a button. When I press the button down here is the output I get from the Serial monitor.    Circuitpython code to power an LED with an on-board button in Mu   Here you'll see 4 lines that say Button value is False and then two lines that say Button value is True followed by 5 lines that say Waiting for you to let go... . See if you can get this code to work and play with it and modify it as you see fit. By the way, the LED connected to pin D13 has this exact same circuitry, an LED a resistor, it's all just soldered to the PCB so you don't have to build it using a breadboard. Hopefully now you have some appreciation for buttons and LEDs!!  "
+},
+{
+  "id": "led-buttons-7-3",
+  "level": "2",
+  "url": "led-buttons-7.html#led-buttons-7-3",
+  "type": "Figure",
+  "number": "7.6.1",
+  "title": "",
+  "body": "  CircuitPlayground Express powering an LED with an on-board button  "
+},
+{
+  "id": "led-buttons-7-5",
+  "level": "2",
+  "url": "led-buttons-7.html#led-buttons-7-5",
+  "type": "Figure",
+  "number": "7.6.2",
+  "title": "",
+  "body": "  Circuitpython code to power an LED with an on-board button  "
+},
+{
+  "id": "led-buttons-7-9",
+  "level": "2",
+  "url": "led-buttons-7.html#led-buttons-7-9",
+  "type": "Figure",
+  "number": "7.6.3",
+  "title": "",
+  "body": "  Circuitpython code to power an LED with an on-board button in Mu  "
+},
+{
+  "id": "led-buttons-8",
+  "level": "1",
+  "url": "led-buttons-8.html",
+  "type": "Section",
+  "number": "7.7",
+  "title": "Assignment",
+  "body": " Assignment  For this specific project you must get your LED to turn on and off using buttons as well as software. The different scenarios are shown below and the grading rubric is presented after this list.  Get your LED to turn on with the VOUT pin.  Get your LED to turn on with the 3.3V pin.  Get your LED to blink automatically using an analog pin on the CPX\/CPB.  Get your LED to turn on using a button on the breadboard.  Get your LED to blink automatically by pressing a button on the CPX\/CPB.     Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a photo of your circuit with your LED turned on using VOUT. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%  Include a photo of your circuit with your LED turned on using 3.3V. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%  The USB port from your computer is 5V. The DC to DC converter on the CPX\/CPB converts that 5V to 3.3V. Compute the Gain ( ) for this converter both in magnitude and in . - 10%  Include a photo of your circuit with your LED turned on using a button on your breadboard - 10  Include a photo of your circuit with your LED turned on using an analog pin and then also include a screenshot of your Mu code showing the same analog pin used to blink your LED - 20%  Include a photo of your circuit with your LED turned on by pressing a button on the CPX\/CPB and then also include a screenshot of your Mu code showing the line of code used to read the button press and blink the LED. - 20%    "
+},
+{
   "id": "acknowledgements",
   "level": "1",
   "url": "acknowledgements.html",
   "type": "Chapter",
-  "number": "7",
+  "number": "8",
   "title": "Acknowledgements",
   "body": " Acknowledgements   Dr. Carlos Montalvo would like to acknowledge a few key members who made this textbook possible. First and foremost I would like to thank Adafruit for their entire ecosystem of electronics, tutorials, blogs and forums. Much of what I have learned here to teach Instrumentation was from Adafruit and the Adafruit Learn system and specifically people like Lady Ada and John Park who have helped shape CircuitPython and the CircuitPlayground Express to what it is today. I would also like to thank Dr. Saami Yazdani for creating the blueprint for Instrumentation at my university by creating a laboratory environment for an otherwise totally theoretical course. His course was the foundation for this textbook and for that I thank him for showing the way. I’d like to also thank and acknowledge Tangibles that Teach for giving me the opportunity to morph this loose set of projects into a textbook that can be used for multiple universities and classrooms and of course help students learn and acquire knowledge through creating. I'd also like to change Steven Clontz for first showing me PreTeXt and for Oscar Levin and all of his helpful replies via email and Zoom. Finally, I'd like to thank the co-authors Lisa and Marine for helping me add some statistical data to this textbook and being all around great academic colleagues and friends   "
 },
@@ -412,7 +547,7 @@ var ptx_lunr_docs = [
   "type": "References",
   "number": "",
   "title": "References",
-  "body": " References  Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https:\/\/www.niu.edu\/citl\/resources\/guides\/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.  R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.  Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.  Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.  J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.  Krajcik Joseph S. and Phyllis C. Blumenfeld. Project-based learning. Academia, 2006.  Paul Marshall. Do tangible interfaces enhance learning? In Proceedings of the 1st International Conference on Tangible and Embedded Interaction, TEI ’07, page 163–170, New York, NY, USA, 2007. Association for Computing Machinery.  BARBARA M. OLDS and RONALD L. MILLER. The effect of a first-year integrated engineering curriculum on graduation rates and student satisfaction: A longitudinal study. Journal of Engineering Education, 93(1):23–35, 2004.  P. Armstrong. Bloom’s taxonomy. Accessed 2\/2\/22 https:\/\/cft.vanderbilt.edu\/guides-sub-pages\/blooms-taxonomy\/, 2010. Vanderbilt University Center for Teaching.  Lyle D. Feisel and Albert J. Rosa. The role of the laboratory in undergraduate engineering education. Journal of Engineering Education, 94(1):121–130, 2005.  Juan P. Oliver and Fiorella Haim. Lab at home: Hardware kits for a digital design lab. IEEE Transactions on Education, 52(1):46–51, 2009.  F. G. Martin. Integrating hardware experiences into a computer architecture core course. Journal of Computer Science College, 21:39–52, 6 2006.  N. Manjikian and S. Simmons. Evolution and enhancements of a microprocessor systems course. IEEE Transactions Education, 42(4):360, 11 1999.  P. Li W. Durfee and D. Waletzko. Take-home lab kits for system dynamics and controls courses. Proceedings of the American Control Conference, pages 1319–1322, 2004.  D. Nicoletti D. Cyganski and J. A. Orr. A new introductory electrical engineering curriculum for the first-year student. IEEE Transactions on Education, 37(2):171–177, 5 1994.  Sebastian Nanz and Carlo A. Furia. A comparative study of programming languages in rosetta code. In 2015 IEEE\/ACM 37th IEEE International Conference on Software Engineering, volume 1, pages 778–788, 2015.  Integrated development environments. IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09. https:\/\/wiki.python.org\/moin\/  Tiobe index. https:\/\/www.tiobe.com\/tiobe-index\/, 2022. Accessed: 2021-3-25.  Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak, Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004, pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.  Circuitpython. https:\/\/circuitpython.org\/, 2021. Accessed: 12-09-2021.  Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https:\/\/github.com\/cmontalvo251\/LaTeX\/blob\/master\/PBL_CircuitPython_Instrumentation\/main.pdf.  Adafruit. Adafruit learn, 2021. Adafruit https:\/\/learn.adafruit.com\/.  Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https:\/\/github.com\/cmontalvo251  Adafruit. Adafruit, 2023. Adafruit https:\/\/adafruit.com\/.  Arduino. Arduino, 2023. https:\/\/www.arduino.cc\/.  Adafruit. Adafruit ble connect, 2023. https:\/\/learn.adafruit.com\/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.   "
+  "body": " References  Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https:\/\/www.niu.edu\/citl\/resources\/guides\/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.  R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.  Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.  Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.  J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.  Krajcik Joseph S. and Phyllis C. Blumenfeld. Project-based learning. Academia, 2006.  Paul Marshall. Do tangible interfaces enhance learning? In Proceedings of the 1st International Conference on Tangible and Embedded Interaction, TEI ’07, page 163–170, New York, NY, USA, 2007. Association for Computing Machinery.  BARBARA M. OLDS and RONALD L. MILLER. The effect of a first-year integrated engineering curriculum on graduation rates and student satisfaction: A longitudinal study. Journal of Engineering Education, 93(1):23–35, 2004.  P. Armstrong. Bloom’s taxonomy. Accessed 2\/2\/22 https:\/\/cft.vanderbilt.edu\/guides-sub-pages\/blooms-taxonomy\/, 2010. Vanderbilt University Center for Teaching.  Lyle D. Feisel and Albert J. Rosa. The role of the laboratory in undergraduate engineering education. Journal of Engineering Education, 94(1):121–130, 2005.  Juan P. Oliver and Fiorella Haim. Lab at home: Hardware kits for a digital design lab. IEEE Transactions on Education, 52(1):46–51, 2009.  F. G. Martin. Integrating hardware experiences into a computer architecture core course. Journal of Computer Science College, 21:39–52, 6 2006.  N. Manjikian and S. Simmons. Evolution and enhancements of a microprocessor systems course. IEEE Transactions Education, 42(4):360, 11 1999.  P. Li W. Durfee and D. Waletzko. Take-home lab kits for system dynamics and controls courses. Proceedings of the American Control Conference, pages 1319–1322, 2004.  D. Nicoletti D. Cyganski and J. A. Orr. A new introductory electrical engineering curriculum for the first-year student. IEEE Transactions on Education, 37(2):171–177, 5 1994.  Sebastian Nanz and Carlo A. Furia. A comparative study of programming languages in rosetta code. In 2015 IEEE\/ACM 37th IEEE International Conference on Software Engineering, volume 1, pages 778–788, 2015.  Integrated development environments. IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09. https:\/\/wiki.python.org\/moin\/  Tiobe index. https:\/\/www.tiobe.com\/tiobe-index\/, 2022. Accessed: 2021-3-25.  Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak, Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004, pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.  Circuitpython. https:\/\/circuitpython.org\/, 2021. Accessed: 12-09-2021.  Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https:\/\/github.com\/cmontalvo251\/LaTeX\/blob\/master\/PBL_CircuitPython_Instrumentation\/main.pdf.  Adafruit. Adafruit learn, 2021. Adafruit https:\/\/learn.adafruit.com\/.  Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https:\/\/github.com\/cmontalvo251  Adafruit. Adafruit, 2023. Adafruit https:\/\/adafruit.com\/.  Arduino. Arduino, 2023. https:\/\/www.arduino.cc\/.  Adafruit. Adafruit ble connect, 2023. https:\/\/learn.adafruit.com\/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.  DiCola, Tony. \"Digital Outputs.\" CircuitPython Basics: Digital Inputs and Outputs, Adafruit Learning System, 28 Aug. 2017, learn.adafruit.com\/circuitpython-digital-inputs-and-outputs\/digital-outputs. Accessed 16 Mar. 2026.   "
 }
 ]
 
