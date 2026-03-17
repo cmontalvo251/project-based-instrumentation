@@ -21,6 +21,8 @@
     <xi:include href="./getting-started.ptx"/>
     <xi:include href="./troubleshooting.ptx"/>
     <xi:include href="./led-buttons.ptx"/>
+    <xi:include href="./daq.ptx"/>
+    <xi:include href="./bluetooth.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
