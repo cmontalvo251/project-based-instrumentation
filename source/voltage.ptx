@@ -45,7 +45,7 @@ Here's my circuit all hooked up without a resistor in series. Two legs are conne
 <em>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</em> Here is my circuit with a resistor in series.
 </p>
 <figure>
-  <image width="80%" source="Potentiometer_Alternate.jpg" />
+  <image width="80%" source="potentiometer2.png"/>
   <caption>Potentiometer with a blue resistor in series</caption>
 </figure>
 <p>
