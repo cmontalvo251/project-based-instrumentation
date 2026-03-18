@@ -532,11 +532,434 @@ var ptx_lunr_docs = [
   "body": " Assignment  For this specific project you must get your LED to turn on and off using buttons as well as software. The different scenarios are shown below and the grading rubric is presented after this list.  Get your LED to turn on with the VOUT pin.  Get your LED to turn on with the 3.3V pin.  Get your LED to blink automatically using an analog pin on the CPX\/CPB.  Get your LED to turn on using a button on the breadboard.  Get your LED to blink automatically by pressing a button on the CPX\/CPB.     Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a photo of your circuit with your LED turned on using VOUT. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%  Include a photo of your circuit with your LED turned on using 3.3V. Based on the forward voltage in your LED and the resistance in your circuit, what is the voltage drop across the resistor and current through the LED? Assuming your LED acted like a resistor, what would the resistance of your LED be? - 10%  The USB port from your computer is 5V. The DC to DC converter on the CPX\/CPB converts that 5V to 3.3V. Compute the Gain ( ) for this converter both in magnitude and in . - 10%  Include a photo of your circuit with your LED turned on using a button on your breadboard - 10  Include a photo of your circuit with your LED turned on using an analog pin and then also include a screenshot of your Mu code showing the same analog pin used to blink your LED - 20%  Include a photo of your circuit with your LED turned on by pressing a button on the CPX\/CPB and then also include a screenshot of your Mu code showing the line of code used to read the button press and blink the LED. - 20%    "
 },
 {
+  "id": "daq-2",
+  "level": "1",
+  "url": "daq-2.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "Parts List",
+  "body": " Parts List   Laptop  CPX\/CPB  USB Cable   "
+},
+{
+  "id": "daq-3",
+  "level": "1",
+  "url": "daq-3.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   Record real time measurements from the CircuitPlayground using the Serial monitor  Learn how to use the typing module to type data directly into a spreadsheet or text file  Learn how to log data on the on board memory of the CircuitPlayground   "
+},
+{
+  "id": "daq-4",
+  "level": "1",
+  "url": "daq-4.html",
+  "type": "Section",
+  "number": "8.3",
+  "title": "Extra Help",
+  "body": " Extra Help  This is a pretty hard project to do with multiple different methods. After you've read through this document I suggest you watch a youtube I created on Logging Data with the Circuit Playground Express . I have also made video where I log temperature and accelerometer data using on board memory with the CircuitPlayground Bluefruit.   "
+},
+{
+  "id": "daq-5",
+  "level": "1",
+  "url": "daq-5.html",
+  "type": "Section",
+  "number": "8.4",
+  "title": "Getting Started",
+  "body": " Getting Started  Taking data is the core of any instrumentation project. Data Acquisition Systems or DAQ for short come in all shapes and sizes. Believe it or not the CPX can be used as a crude and cheap DAQ. The CPX can easily take temperature data and monitor the temperature in a greenhouse or take humidity readings of a plant to monitor soil content. Before we learn about the different sensors on board the CPX, we want to make sure we can store that data later rather than just having it spit data out via the serial monitor. For starters though let's get the CPX to print out something simple like button presses since we've touched on that already. The code I'm using is shown below and can also be found on Github .    CircuitPython code that prints button presses   The code is pretty similar to what I had in the past. I import board, digitalio, and time. I create a buttonA object using the digitalio library to record button presses. I then enter into a while loop print the buttonA.value. The difference here is that I use the int() function to convert the buttonA.value to an integer. The reason why I do this is because buttonA.value is a boolean. It is either True or False. An integer though is a number and thus a value of False is 0 and True is 1. If you open the serial monitor and push the A button down a few times you'll see some zeros and 1's.    Serial monitor showing button presses in Mu   Mu also has a really neat builtin plotter. You'll see next to the Serial button there is a button called Plotter. If you click that button now nothing will pop up on the screen. Unfortunately in order to plot using the Plotter you need to modify the print() statement to this:  print((int(buttonA.value),))  Notice the extra parentheses and the comma. Now if you click Plotter you'll see something like this. You'll notice that the print statement now has commas in it and the Plotter is recording button presses.    Plotter open showing button presses in Mu   The problem with this is we still can't save the recorded data anywhere. Before we get into saving data let's first edit the print statement again to get rid of the Plotter by removing the extra parentheses and add time.monotonic() that way we can keep track of when a button was pressed. My print statement looks like this now:  print(time.monotonic(),int(buttonA.value))  Looking at the serial monitor now you'll see that time is being printed alongside the button presses.    Serial monitor showing button presses and time in Mu   Now we are in a position where we can record some data and save it to our computer. There are 4 ways to record data. I call the first, Method1 and you basically just copy and paste from the serial monitor, Method2 where you have the CPX\/CPB type data into a spreadsheet and Method3 where you log data internally onto the CPX\/CPB itself. The 4th method called Method4 utilizes the Bluetooth Module. Since that has it's own issues there is a completely separate section on how to explain Bluetooth (See ). Note you can only do Bluetooth if you have the Circuit Playground Bluefruit (CPB).  "
+},
+{
+  "id": "daq-5-3",
+  "level": "2",
+  "url": "daq-5.html#daq-5-3",
+  "type": "Figure",
+  "number": "8.4.1",
+  "title": "",
+  "body": "  CircuitPython code that prints button presses  "
+},
+{
+  "id": "daq-5-5",
+  "level": "2",
+  "url": "daq-5.html#daq-5-5",
+  "type": "Figure",
+  "number": "8.4.2",
+  "title": "",
+  "body": "  Serial monitor showing button presses in Mu  "
+},
+{
+  "id": "daq-5-9",
+  "level": "2",
+  "url": "daq-5.html#daq-5-9",
+  "type": "Figure",
+  "number": "8.4.3",
+  "title": "",
+  "body": "  Plotter open showing button presses in Mu  "
+},
+{
+  "id": "daq-5-13",
+  "level": "2",
+  "url": "daq-5.html#daq-5-13",
+  "type": "Figure",
+  "number": "8.4.4",
+  "title": "",
+  "body": "  Serial monitor showing button presses and time in Mu  "
+},
+{
+  "id": "daq-6",
+  "level": "1",
+  "url": "daq-6.html",
+  "type": "Section",
+  "number": "8.5",
+  "title": "Method 1 - Copying Serial Monitor Data",
+  "body": " Method 1 - Copying Serial Monitor Data  If you open up the serial monitor you can see the data output. If you unplug the CPX while it's taking data the code will stop. Note: In newer versions, unplugging your CPX will result in a loss of data. If this happens try pressing CTRL+C after you click the REPL window. With the code stopped you can select all the data in the Serial monitor and then copy and paste the data into a text file on your computer. You can actually copy this into a new file on Thonny and just save it as a *.txt file. Once you have the data in a text file you can proceed to plotting in Python on your desktop which I discuss in the last section.Here's some example data in Gedit which is a simple text editing program.    Example button data in a text editor   "
+},
+{
+  "id": "daq-6-3",
+  "level": "2",
+  "url": "daq-6.html#daq-6-3",
+  "type": "Figure",
+  "number": "8.5.1",
+  "title": "",
+  "body": "  Example button data in a text editor  "
+},
+{
+  "id": "daq-7",
+  "level": "1",
+  "url": "daq-7.html",
+  "type": "Section",
+  "number": "8.6",
+  "title": "Method 2 - Automatically Populate a Spreadsheet",
+  "body": " Method 2 - Automatically Populate a Spreadsheet  The downside with the above method of course is if you have a ton of data to record you could lose the data or run into a massive copy and paste issue. The second option is to use this module called keyboard which takes control of your keyboard on your desktop computer and actively types your data into a spreadsheet. The code is very extensive but I'll include the simple one here so we can discuss it. Below are the first 30 lines of code. The first 6 lines of code are just comments since I heavily adopted this code from the Adafruit Learn System . My version of this code can be found on my Github. Lines 8 - 14 are import commands as we've seen previously. The regular import modules board, time and digitalio are imported but we are also importing the Keyboard module so that the CPX can takeover our keyboard. Lines 16-22 create two buttons. First we create buttonA attached to pin D4 and then a switch attached to pin D7. If you look on the CPX there is a switch labeled D7. Before you copy this code onto the CPX make sure you move the switch towards the ear looking symbol. Lines 26-28 created the keyboard object. We are going to call it layout for this example code.    Snippet of Typing code in CircuitPython   The next 30 lines are shown below. Lines 32-35 define a function. Functions in Python have a pretty standard structure. The keyword def is used to denote that the next line is a definition for a function. The name of the function is slow_write() . The input to the function is string which ironically enough is a string object. Line 33-35 define what the function does. Line 33 sets up a for loop where the code loops through each character in the string. Everytime it gets to a new character it will use your keyboard to type that character using the layout.write(c) command. The time.sleep(0.02) is just to slow down the keyboard so your computer can keep up. That function is defined above the standard while True: statement on line 37 but is called on line 42. You'll see there is a slow_write(output) on line 42. In this case output is a string and it's sent to the function slow_write() . So in this case we have a function that can write a string so we just need to take data and then write it using our keyboard. Line 38 is an if statement that will only be true if the switch on pin D7 is pushed towards the music note on the CPX. If the switch is not thrown the code will move to the else statement on line 52 and tell the user that you need to flip the switch. If the switch is thrown line 40 will take data for us. First it will record the time.monotonic() and store it as a floating point number using the %0.1f designation which means that it will store 1 decimal as a %floating point number for f.    Remainder of Typing code in CircuitPython   The second number in the string is an integer or a base 10 (decimal) integer designated by the %d part of the format. The integer is int(buttonA.value). You'll see a \\t in between the formatted numbers which is a tab. The tab is there to tab between cells in a spreadsheet. Line 41 will print the output string to the Serial monitor and it will also type the contents of the string. Very important here. When you flip the switch on the CPX your keyboard will start typing in whatever active window is selected. If you don't have a spreadsheet opened and active (selected), the keyboard will just begin typing in whatever window is open. Make sure you have a spreadsheet program open and ready to go. Lines 44-51 tell the keyboard to hit the DOWN_ARROW on your keyboard to move to the next row and the LEFT_ARROW twice to move back to the first column. Line 55 is a sleep to only log data once a second. I ran this code for a bit and had it type into LibreOffice Calc which is a free spreadsheet program. Google Sheets or Microsoft Excel will also work just fine.    Example data in a spreadsheet from Typing code   You'll see that the first column is time with 1 decimal point and the second column is the button press values. At this point you must click Save As... and save the document as a CSV which stands for Comma Separated Value. Once you have the file saved you can proceed to plotting in Python on your Desktop.  "
+},
+{
+  "id": "daq-7-3",
+  "level": "2",
+  "url": "daq-7.html#daq-7-3",
+  "type": "Figure",
+  "number": "8.6.1",
+  "title": "",
+  "body": "  Snippet of Typing code in CircuitPython  "
+},
+{
+  "id": "daq-7-5",
+  "level": "2",
+  "url": "daq-7.html#daq-7-5",
+  "type": "Figure",
+  "number": "8.6.2",
+  "title": "",
+  "body": "  Remainder of Typing code in CircuitPython  "
+},
+{
+  "id": "daq-7-7",
+  "level": "2",
+  "url": "daq-7.html#daq-7-7",
+  "type": "Figure",
+  "number": "8.6.3",
+  "title": "",
+  "body": "  Example data in a spreadsheet from Typing code  "
+},
+{
+  "id": "daq-8",
+  "level": "1",
+  "url": "daq-8.html",
+  "type": "Section",
+  "number": "8.7",
+  "title": "Installing Modules",
+  "body": " Installing Modules   One issue you're going to run into when you run the codes below is that you won't have some of the modules on your CPB\/CPX. To fix this you need to download the CircuitPython Libraries . You need to download the appropriate version: 6.x, 7.x or 8.x. How do you know what version of CircuitPython you have? Well head over to your CIRCUITPY drive and open the boot_out.txt file and it will tell you the version. Note that this is the same version as the .UF2 file installed back in the Getting Started labs (See Chapter ). When you download the modules it will download a .zip file. Extract the .zip file on your desktop computer and then open the lib folder on your desktop and your CIRCUITPY. You then need to transfer the modules (ONLY THE ONES YOU NEED) from your desktop to your CPX\/CPB lib folder. The reason why you can't copy the entire folder is because the CPB\/CPX only has 2MB of flash and the CircuitPython download is 4.1 MB at the time of this writing.  "
+},
+{
+  "id": "daq-9",
+  "level": "1",
+  "url": "daq-9.html",
+  "type": "Section",
+  "number": "8.8",
+  "title": "Method 3 - Logging Data Directly to on board memory",
+  "body": " Method 3 - Logging Data Directly to on board memory  The problem with the above 2 methods is that you need a laptop to log data in the field. It would be nice if you could use the optional battery pack and just have the CPX log data on the CPX itself. This is the most complex way but in my opinion the best way. In order to get this to work you need to allow the drive on the CPX to have read\/write permissions. This requires you to load a piece of software called boot.py and put it on the CPX. I have this software on my Github . The software is shown below. The first 10 lines are probably very familiar. Import some modules and then create a switch object. Line 13 is where all of the storage permissions are changed. If the flip is switched towards the A button, the storage module is used to allow you to write to the CPX. The problem here is that if you do this, you won't be able to edit code. I'll explain the procedure here in a minute. As always, the relevant Adafruit tutorial is on the Adafruit Learn System if you want to read more about it. Again make sure you store this file onto the CIRCUITPY drive and save it as boot.py    boot.py script in CircuitPython   In addition to storing the file boot.py you'll need to edit your main.py script to only log data when the switch is moved towards the B button. The software to record button presses on disk is shown below and as always on my Github . In this software we again see the standard commands. Lines 1-3 import all the modules we need and then 5-15 create a switch, a button and an LED. In this case we're using the LED soldered to the board. Line 17-20 check to see if the user has flipped the switch. If the switch is False the storage module on boot.py will allow the drive to act like a data logger and it will open a file called Test_Data.txt for writing (‘w'). If the switch is True then the user will be notified that the file has not been opened for writing. Lines 22 through 33 include the infinite while loop. Line 23 turns the LED on and line 24 prints out the current time and the button value in integer form. If the switch value is False the program will create an output string by converting all numbers to strings using the str function. Notice that there is a str( \\textbackslash n ) at the end of the output variable which tells the computer to write a new line of data to the file. Lines 28 and 29 write the output to the file from line 18 and then flush the output which means the CPX waits for the data to be fully written before moving on. It also turns the LED off so we know the CPX took data even when we aren't looking at the Serial monitor. If the switch value is true it means that the we never opened the data file and thus we tell the user we aren't logging data and it's time to flip the switch and hit reset. NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.     Snippet of writing data to a text file in CircuitPython   So here is the flow of what you want to do for method 3.   Unplug the CPX  Flip the switch towards the A button.  Plug in the CPX and save the boot.py and main.py files. Remember you can only save Python scripts when the switch is flipped towards the A button.  When you are ready to start recording data, flip the switch towards the B button. If you're looking at the Serial monitor, the software will throw an error. Just ignore it and hit the reset button. When your computer recognizes the CPX you can turn the Serial monitor on and off.  When you are done taking data simply slide the switch over towards the A button and hit reset again. This is what my Serial monitor looks like when I do this. You'll see that I was writing to disk for like 25 seconds and then I flipped the switch back towards the A button.     Serial monitor open in Mu showing Method 3 for data logging   With the switch flipped and data taken, open your folder manager and take a look at the CIRCUITPY drive. This is what mine looks like. You'll see I have two Python files and a file Test_Data.txt with all my data in it.    Text file shown in file manager on computer   If you open the Test_Data.txt file you will hopefully see data in it.    Example text file from Method 3   At this point you can copy this text file over to your desktop computer and proceed to the Python plotting portion. Ok so let's recap method 3 one more time.  Unplug CPX (or remove power)  Slide switch to A  Plug in CPX (or provide battery power) and wait for system to fully boot up  Slide switch to B  Hit Reset and wait for system to fully boot up  Take data for however long you want  Slide switch to A when you're ready to stop taking data  Hit Reset and wait for system to fully boot up  Remove power if you're on battery power  Plug CPX into computer if not already connected  Transfer data file to computer    "
+},
+{
+  "id": "daq-9-3",
+  "level": "2",
+  "url": "daq-9.html#daq-9-3",
+  "type": "Figure",
+  "number": "8.8.1",
+  "title": "",
+  "body": "  boot.py script in CircuitPython  "
+},
+{
+  "id": "daq-9-5",
+  "level": "2",
+  "url": "daq-9.html#daq-9-5",
+  "type": "Figure",
+  "number": "8.8.2",
+  "title": "",
+  "body": "  Snippet of writing data to a text file in CircuitPython  "
+},
+{
+  "id": "daq-9-8",
+  "level": "2",
+  "url": "daq-9.html#daq-9-8",
+  "type": "Figure",
+  "number": "8.8.3",
+  "title": "",
+  "body": "  Serial monitor open in Mu showing Method 3 for data logging  "
+},
+{
+  "id": "daq-9-10",
+  "level": "2",
+  "url": "daq-9.html#daq-9-10",
+  "type": "Figure",
+  "number": "8.8.4",
+  "title": "",
+  "body": "  Text file shown in file manager on computer  "
+},
+{
+  "id": "daq-9-12",
+  "level": "2",
+  "url": "daq-9.html#daq-9-12",
+  "type": "Figure",
+  "number": "8.8.5",
+  "title": "",
+  "body": "  Example text file from Method 3  "
+},
+{
+  "id": "daq-10",
+  "level": "1",
+  "url": "daq-10.html",
+  "type": "Section",
+  "number": "8.9",
+  "title": "Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)",
+  "body": " Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)  As mentioned in the introduction it's possible to have the Circuit Playground send data wirelessly to a cell phone using Bluetooth provided you have Bluetooth setup and a smart phone with the Adafruit Connect App. Bluetooth is explained in detail in its own chapter (See ). Method 4 is a valid form of logging data it just requires a cell phone to be powered the entire time and it must be within 30 feet of the Circuit Playground at all times. This also only works on the CPB since the CPX does not have a Bluetooth transmitter.  "
+},
+{
+  "id": "daq-11",
+  "level": "1",
+  "url": "daq-11.html",
+  "type": "Section",
+  "number": "8.10",
+  "title": "Plotting Logged Data",
+  "body": " Plotting Logged Data  Alright so there you have it. I have explained 4 methods to datalogging. Here are the methods again in summary.  Print data to Serial and copy and paste  Use the Keyboard module to save data to a spreadsheet  Access the storage of your CPX and write data to a text file on the CPX  Send data wirelessly to a Cell Phone using Bluetooth - CPB Only (See )    All methods will work but some will obviously have their pros and cons. I suggest you get comfortable with 1 method and use that for the remainder of the semester. Whatever option you choose though will provide you with a data file that you can read in Python on your desktop computer to plot. The simplest way to import data is by using the loadtxt function from the module numpy. Here is some very simple code to plot data from a text file. I also have a Youtube video explaining how to plot a text file if you'd rather watch something.  When you plot make sure your Test_Data.txt file is in the same folder as your plotting script in Thonny or Spyder. Here's my example code (this code is not on Github but you only need 3 or 4 lines of code to plot).    Plotted data shown in Thonny   In this example lines 1 and 2 import numpy and matplotlib. Line 4 imports data from the Test_Data.txt file and then 6 and 7 save the first and second columns into time and button. The remaining lines plot the data and create x and y labels as well as a grid. Hopefully now you are well versed in taking data and plotting in Python.  "
+},
+{
+  "id": "daq-11-5",
+  "level": "2",
+  "url": "daq-11.html#daq-11-5",
+  "type": "Figure",
+  "number": "8.10.1",
+  "title": "",
+  "body": "  Plotted data shown in Thonny  "
+},
+{
+  "id": "daq-12",
+  "level": "1",
+  "url": "daq-12.html",
+  "type": "Section",
+  "number": "8.11",
+  "title": "Assignment",
+  "body": " Assignment  For this project you must use method 1, 2, 3 or 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a snippet (5 lines) of your data file - 40%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%    "
+},
+{
+  "id": "bluetooth-2",
+  "level": "1",
+  "url": "bluetooth-2.html",
+  "type": "Section",
+  "number": "9.1",
+  "title": "Parts List",
+  "body": " Parts List   Smart Phone  Adafruit BLE Connect App ( Play Store \/ App Store )  CircuitPlayground Bluefruit  USB Cable  Laptop   "
+},
+{
+  "id": "bluetooth-3",
+  "level": "1",
+  "url": "bluetooth-3.html",
+  "type": "Section",
+  "number": "9.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   Understand the bluetooth module on the CircuitPlayground Bluefruit  Learn how to send data via the Bluefruit to your smart phone  Understand how to plot data sent via UART   "
+},
+{
+  "id": "bluetooth-4",
+  "level": "1",
+  "url": "bluetooth-4.html",
+  "type": "Section",
+  "number": "9.3",
+  "title": "Extra Help",
+  "body": " Extra Help  You might find plotting data via bluetooth to be rather difficult and it was pretty difficult for me until I learned that you can export data as a txt file rather than a csv file. Before I learned how to do that I put together a 4 part series describing everything in this module. Worst case you can just watch the third video in the series . The video is 30 minutes but the first 8 minutes goes through setting up the bluetooth module and the rest of the video is just on plotting the exported csv data which took me some time. Note that exporting data as a txt file is the preferred method as parsing the file is way easier.  "
+},
+{
+  "id": "bluetooth-5",
+  "level": "1",
+  "url": "bluetooth-5.html",
+  "type": "Section",
+  "number": "9.4",
+  "title": "Getting Started",
+  "body": " Getting Started  I mentioned in the DAQ project that there is technically a Method4. This is because with bluetooth you can send data from your phone to your Circuitplayground Bluefruit (CPB) and you can also send data to your smart phone. Once the data is on your phone you can export the data to a text file. That basically means you can use the bluetooth module as another method to save data from the CPB. There is a lot you can do with bluetooth but the bottom line is that All code required for this module is on my Github . First we're going to run the bluetooth_uart_button.py script which sends button data to your smart phone via something called UART which is a type of serial communication. It's beyond the scope of this lesson but serial is digital as opposed to analog which is done using the AnalogIn functions (See )    Example Bluetooth code in CircuitPython   Lines 3-11 import a ton of modules. You'll recognize many of them like analogio, and time but the new ones are the ones that say ble. These are the bluetooth modules required for the CPB. Lines 21-24 setup the button so we can log the button via bluetooth and Lines 14-17 kick of the BLERadio object and the UARTService() to send data. Line 25 also grabs the current time before the infinite while loop that way the timer starts closer to zero.    Remainder of Bluetooth code in CircuitPython   The code above is the infinite while loop which actually contains 2 while loops. Lines 28-33 prints the name of your bluetooth sensor and then starts advertising bluetooth to whoever is listening. It will then enter a while loop from 32-33 until bluetooth is connected. Once bluetooth is connected it will enter into the second while loop from line 39-52. In those lines 40-46 is responsible for taking all the necessary measurements and printing them to the serial monitor in Mu. In this case it's only printing the current time and the value of the button as an integer. buttonA.value is either True or False and the int function converts that to a 0 or a 1. Line 49 then sends the data over bluetooth using the UART server. You'll notice in this case the code is sending t,b by using the format variable and the 2 empty brackets. If you want to send more data you need to add more empty brackets and more variables to the format function. When you first save this script your CPB will not be connected and enter into an infinite while loop where it waits for your smart phone to connect. If you open your smart phone and open the Bluefruit Connect App the following screen will pop up.    Screenshot of Bluetooth devices on a smart phone   In this case there are numerous different bluetooth modules can be seen but the one you need to click is the one that says CIRCUITPYf8e8. You will have a different code after CIRCUITPY and you can figure out what your 4 digit code is by making sure you have the print('Look for',ble.name) in your code. Once you do that the CPB will begin sending time and the button press to your smart phone.    Interfaces in Bluetooth App on smart phone   There are numerous items you can click. The Controller is very fun for creating a remote control robot but we're only going to go over the UART and Plotter tabs. If you click the plotter tab you will be greeted with a live screen of the data being sent.    Example plotter in Bluetooth App on smart phone   In the photo above you can see three data streams that is coming directly from the CPB. The red line is time and the blue line is the button value. Notice the blue line goes from 0 to 1 which means I pressed the button a few times. The red line is always increasing which kind of messes up the plotter so you can always go back to your code in Mu and just send your data. This is great for live demonstrations and for debugging if you need to see data from an experiment and you don't have access to a laptop with Mu. If you hit the back arrow and then click UART you will see the raw data come in as text.    Example UART data in Bluetooth App on smart phone   Again here you can see the 3 data streams separated by commas. The very neat thing with the UART tab is that you can click the three vertical dots in the upper right hand corner and click export to TXT. The easiest thing for me was to export the data to google drive and then download the data to my computer. Once I downloaded the TXT file to my computer and opened it the data file looked like this.    Example data exported to CSV file   If you export the file as a CSV the data file will look completely different and it's much more complicated to plot. If you export the data as a TXT file you just need to use the np.loadtxt command to read in the data. Note you might have commas in your data file. If there are commas just use the CTRL+H command and replace all commas with spaces or use the np.loadtxt('buttonble.txt',delimiter=',') command. Plotting your button presses should be as simple as the previous lab thus plotting the button is left as an exercise to the reader.  "
+},
+{
+  "id": "bluetooth-5-3",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-3",
+  "type": "Figure",
+  "number": "9.4.1",
+  "title": "",
+  "body": "  Example Bluetooth code in CircuitPython  "
+},
+{
+  "id": "bluetooth-5-5",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-5",
+  "type": "Figure",
+  "number": "9.4.2",
+  "title": "",
+  "body": "  Remainder of Bluetooth code in CircuitPython  "
+},
+{
+  "id": "bluetooth-5-7",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-7",
+  "type": "Figure",
+  "number": "9.4.3",
+  "title": "",
+  "body": "  Screenshot of Bluetooth devices on a smart phone  "
+},
+{
+  "id": "bluetooth-5-9",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-9",
+  "type": "Figure",
+  "number": "9.4.4",
+  "title": "",
+  "body": "  Interfaces in Bluetooth App on smart phone  "
+},
+{
+  "id": "bluetooth-5-11",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-11",
+  "type": "Figure",
+  "number": "9.4.5",
+  "title": "",
+  "body": "  Example plotter in Bluetooth App on smart phone  "
+},
+{
+  "id": "bluetooth-5-13",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-13",
+  "type": "Figure",
+  "number": "9.4.6",
+  "title": "",
+  "body": "  Example UART data in Bluetooth App on smart phone  "
+},
+{
+  "id": "bluetooth-5-15",
+  "level": "2",
+  "url": "bluetooth-5.html#bluetooth-5-15",
+  "type": "Figure",
+  "number": "9.4.7",
+  "title": "",
+  "body": "  Example data exported to CSV file  "
+},
+{
+  "id": "bluetooth-6",
+  "level": "1",
+  "url": "bluetooth-6.html",
+  "type": "Section",
+  "number": "9.5",
+  "title": "Assignment",
+  "body": " Assignment  This project is similar to the Data Acquisition project only you must use method 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a screenshot from your phone showing the raw UART output - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%    "
+},
+{
+  "id": "voltage-2",
+  "level": "1",
+  "url": "voltage-2.html",
+  "type": "Section",
+  "number": "10.1",
+  "title": "Parts List",
+  "body": " Parts List   Laptop  CPX\/CPB  USB Cable  Potentiometer  Resistor (the Ohms depends on how large your potentiometer is)  Breadboard   "
+},
+{
+  "id": "voltage-3",
+  "level": "1",
+  "url": "voltage-3.html",
+  "type": "Section",
+  "number": "10.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   Understand voltage division of resistors in series  Measure an analog signal on the CircuitPlayground  Understand the binary measurement done by the analog to digital conversion (ADC)   "
+},
+{
+  "id": "voltage-4",
+  "level": "1",
+  "url": "voltage-4.html",
+  "type": "Section",
+  "number": "10.3",
+  "title": "Getting Started",
+  "body": " Getting Started  At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about potentiometers online if you wish . Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some potentiometer examples . I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the figure below (Courtesy of Kattni Rembor ).    Wiring Diagram of a Circuit Playground Express hooked up to a Potentiometer   Here's my circuit all hooked up without a resistor in series. Two legs are connected to 3.3V and GND while the middle leg of the potentiometer is connected to pin A2.    Circuit Playground Express hooked up to a Potentiometer    As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer. Here is my circuit with a resistor in series.    Potentiometer with a blue resistor in series   There is a relevant Adafruit Learn Tutorial to help with the analogio module but I'll explain the minimum required here to get some analog values plotted in Plotter and Python on your computer. First let's take a look at some simple example code to read an analog signal and plot it using the Plotter .    Code to read analog signal in CircuitPython   In the example code above, lines 1-3 again import the necessary modules with analogio being the new module here. Line 5 creates the analog object by attaching pin A2 to the analog function. Lines 7-9 then simple read the analog value and print it to Serial and the Plotter . Running this code on my laptop and turning the knob on the potentiometer produces this output. My potentiometer has a very large knob on the front and is easy to turn. Some potentiometers have a small screw on top that you need to turn with a screwdriver. Turning the screw or the knob results in chaning the resistance and therefore changing the voltage read by the CPX.    Reading an analog signal in Mu with Serial monitor and Plotter open   For this lab I want you to spin the potentiometer all the way to one side and then the other while recording time and the analog value. I then want you to plot the data with time on the x-axis and voltage on the y-axis. Remember to convert a digital output to voltage you just need to use the equation below where D is the raw value from the analog port. 3.3V is the range of the ADC and is the maximum value the ADC can represent.   After doing this experiment myself, this is the plot I obtain. The code is not provided as reading data and plotting has been discussed in a previous lab (See ). From the screenshot though you can see how I convert the digital output to an analog signal.   NOTE THAT ON LINE 6 IT READS   time -= time[0]   Notice the minus sign in front of the equal sign. That effects a lot.     Plotting analog signal in volts in Thonny   "
+},
+{
+  "id": "voltage-4-3",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-3",
+  "type": "Figure",
+  "number": "10.3.1",
+  "title": "",
+  "body": "  Wiring Diagram of a Circuit Playground Express hooked up to a Potentiometer  "
+},
+{
+  "id": "voltage-4-5",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-5",
+  "type": "Figure",
+  "number": "10.3.2",
+  "title": "",
+  "body": "  Circuit Playground Express hooked up to a Potentiometer  "
+},
+{
+  "id": "voltage-4-7",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-7",
+  "type": "Figure",
+  "number": "10.3.3",
+  "title": "",
+  "body": "  Potentiometer with a blue resistor in series  "
+},
+{
+  "id": "voltage-4-9",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-9",
+  "type": "Figure",
+  "number": "10.3.4",
+  "title": "",
+  "body": "  Code to read analog signal in CircuitPython  "
+},
+{
+  "id": "voltage-4-11",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-11",
+  "type": "Figure",
+  "number": "10.3.5",
+  "title": "",
+  "body": "  Reading an analog signal in Mu with Serial monitor and Plotter open  "
+},
+{
+  "id": "voltage-4-17",
+  "level": "2",
+  "url": "voltage-4.html#voltage-4-17",
+  "type": "Figure",
+  "number": "10.3.6",
+  "title": "",
+  "body": "  Plotting analog signal in volts in Thonny  "
+},
+{
+  "id": "voltage-5",
+  "level": "1",
+  "url": "voltage-5.html",
+  "type": "Section",
+  "number": "10.4",
+  "title": "Assignment",
+  "body": " Assignment  Your assignment for this lab is to do the same as I've done above. Wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. I've made some youtube videos on first just creating the circuit and plotting the data and then another video where I write data to the CPX using method 3 . Remember to record both time and digital output as you rotate the potentiometer and then plot that as a function of time. Specific requirements are shown below.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX\/CPB - 10%  Include a screenshot of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%  Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%  Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%  Plot your digital output (raw potentiometer analog value) vs time - 10%  Then convert your digital output (Do) to voltage and plot that vs time - 10%  Finally convert your voltage to angle in degrees and plot that vs time - 20%    "
+},
+{
   "id": "acknowledgements",
   "level": "1",
   "url": "acknowledgements.html",
   "type": "Chapter",
-  "number": "8",
+  "number": "11",
   "title": "Acknowledgements",
   "body": " Acknowledgements   Dr. Carlos Montalvo would like to acknowledge a few key members who made this textbook possible. First and foremost I would like to thank Adafruit for their entire ecosystem of electronics, tutorials, blogs and forums. Much of what I have learned here to teach Instrumentation was from Adafruit and the Adafruit Learn system and specifically people like Lady Ada and John Park who have helped shape CircuitPython and the CircuitPlayground Express to what it is today. I would also like to thank Dr. Saami Yazdani for creating the blueprint for Instrumentation at my university by creating a laboratory environment for an otherwise totally theoretical course. His course was the foundation for this textbook and for that I thank him for showing the way. I’d like to also thank and acknowledge Tangibles that Teach for giving me the opportunity to morph this loose set of projects into a textbook that can be used for multiple universities and classrooms and of course help students learn and acquire knowledge through creating. I'd also like to change Steven Clontz for first showing me PreTeXt and for Oscar Levin and all of his helpful replies via email and Zoom. Finally, I'd like to thank the co-authors Lisa and Marine for helping me add some statistical data to this textbook and being all around great academic colleagues and friends   "
 },
@@ -547,7 +970,7 @@ var ptx_lunr_docs = [
   "type": "References",
   "number": "",
   "title": "References",
-  "body": " References  Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https:\/\/www.niu.edu\/citl\/resources\/guides\/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.  R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.  Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.  Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.  J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.  Krajcik Joseph S. and Phyllis C. Blumenfeld. Project-based learning. Academia, 2006.  Paul Marshall. Do tangible interfaces enhance learning? In Proceedings of the 1st International Conference on Tangible and Embedded Interaction, TEI ’07, page 163–170, New York, NY, USA, 2007. Association for Computing Machinery.  BARBARA M. OLDS and RONALD L. MILLER. The effect of a first-year integrated engineering curriculum on graduation rates and student satisfaction: A longitudinal study. Journal of Engineering Education, 93(1):23–35, 2004.  P. Armstrong. Bloom’s taxonomy. Accessed 2\/2\/22 https:\/\/cft.vanderbilt.edu\/guides-sub-pages\/blooms-taxonomy\/, 2010. Vanderbilt University Center for Teaching.  Lyle D. Feisel and Albert J. Rosa. The role of the laboratory in undergraduate engineering education. Journal of Engineering Education, 94(1):121–130, 2005.  Juan P. Oliver and Fiorella Haim. Lab at home: Hardware kits for a digital design lab. IEEE Transactions on Education, 52(1):46–51, 2009.  F. G. Martin. Integrating hardware experiences into a computer architecture core course. Journal of Computer Science College, 21:39–52, 6 2006.  N. Manjikian and S. Simmons. Evolution and enhancements of a microprocessor systems course. IEEE Transactions Education, 42(4):360, 11 1999.  P. Li W. Durfee and D. Waletzko. Take-home lab kits for system dynamics and controls courses. Proceedings of the American Control Conference, pages 1319–1322, 2004.  D. Nicoletti D. Cyganski and J. A. Orr. A new introductory electrical engineering curriculum for the first-year student. IEEE Transactions on Education, 37(2):171–177, 5 1994.  Sebastian Nanz and Carlo A. Furia. A comparative study of programming languages in rosetta code. In 2015 IEEE\/ACM 37th IEEE International Conference on Software Engineering, volume 1, pages 778–788, 2015.  Integrated development environments. IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09. https:\/\/wiki.python.org\/moin\/  Tiobe index. https:\/\/www.tiobe.com\/tiobe-index\/, 2022. Accessed: 2021-3-25.  Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak, Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004, pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.  Circuitpython. https:\/\/circuitpython.org\/, 2021. Accessed: 12-09-2021.  Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https:\/\/github.com\/cmontalvo251\/LaTeX\/blob\/master\/PBL_CircuitPython_Instrumentation\/main.pdf.  Adafruit. Adafruit learn, 2021. Adafruit https:\/\/learn.adafruit.com\/.  Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https:\/\/github.com\/cmontalvo251  Adafruit. Adafruit, 2023. Adafruit https:\/\/adafruit.com\/.  Arduino. Arduino, 2023. https:\/\/www.arduino.cc\/.  Adafruit. Adafruit ble connect, 2023. https:\/\/learn.adafruit.com\/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.  DiCola, Tony. \"Digital Outputs.\" CircuitPython Basics: Digital Inputs and Outputs, Adafruit Learning System, 28 Aug. 2017, learn.adafruit.com\/circuitpython-digital-inputs-and-outputs\/digital-outputs. Accessed 16 Mar. 2026.   "
+  "body": " References  Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https:\/\/www.niu.edu\/citl\/resources\/guides\/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.  R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.  Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.  Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.  J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.  Krajcik Joseph S. and Phyllis C. Blumenfeld. Project-based learning. Academia, 2006.  Paul Marshall. Do tangible interfaces enhance learning? In Proceedings of the 1st International Conference on Tangible and Embedded Interaction, TEI ’07, page 163–170, New York, NY, USA, 2007. Association for Computing Machinery.  BARBARA M. OLDS and RONALD L. MILLER. The effect of a first-year integrated engineering curriculum on graduation rates and student satisfaction: A longitudinal study. Journal of Engineering Education, 93(1):23–35, 2004.  P. Armstrong. Bloom’s taxonomy. Accessed 2\/2\/22 https:\/\/cft.vanderbilt.edu\/guides-sub-pages\/blooms-taxonomy\/, 2010. Vanderbilt University Center for Teaching.  Lyle D. Feisel and Albert J. Rosa. The role of the laboratory in undergraduate engineering education. Journal of Engineering Education, 94(1):121–130, 2005.  Juan P. Oliver and Fiorella Haim. Lab at home: Hardware kits for a digital design lab. IEEE Transactions on Education, 52(1):46–51, 2009.  F. G. Martin. Integrating hardware experiences into a computer architecture core course. Journal of Computer Science College, 21:39–52, 6 2006.  N. Manjikian and S. Simmons. Evolution and enhancements of a microprocessor systems course. IEEE Transactions Education, 42(4):360, 11 1999.  P. Li W. Durfee and D. Waletzko. Take-home lab kits for system dynamics and controls courses. Proceedings of the American Control Conference, pages 1319–1322, 2004.  D. Nicoletti D. Cyganski and J. A. Orr. A new introductory electrical engineering curriculum for the first-year student. IEEE Transactions on Education, 37(2):171–177, 5 1994.  Sebastian Nanz and Carlo A. Furia. A comparative study of programming languages in rosetta code. In 2015 IEEE\/ACM 37th IEEE International Conference on Software Engineering, volume 1, pages 778–788, 2015.  Integrated development environments. IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09. https:\/\/wiki.python.org\/moin\/  Tiobe index. https:\/\/www.tiobe.com\/tiobe-index\/, 2022. Accessed: 2021-3-25.  Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak, Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004, pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.  Circuitpython. https:\/\/circuitpython.org\/, 2021. Accessed: 12-09-2021.  Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https:\/\/github.com\/cmontalvo251\/LaTeX\/blob\/master\/PBL_CircuitPython_Instrumentation\/main.pdf.  Adafruit. Adafruit learn, 2021. Adafruit https:\/\/learn.adafruit.com\/.  Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https:\/\/github.com\/cmontalvo251  Adafruit. Adafruit, 2023. Adafruit https:\/\/adafruit.com\/.  Arduino. Arduino, 2023. https:\/\/www.arduino.cc\/.  Adafruit. Adafruit ble connect, 2023. https:\/\/learn.adafruit.com\/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.  DiCola, Tony. \"Digital Outputs.\" CircuitPython Basics: Digital Inputs and Outputs, Adafruit Learning System, 28 Aug. 2017, learn.adafruit.com\/circuitpython-digital-inputs-and-outputs\/digital-outputs. Accessed 16 Mar. 2026.  Ada (Fried), Lady (Limor), and Kattni Rembor. \"CircuitPython Analog In.\" Adafruit Circuit Playground Express, Adafruit Learning System, 12 Oct. 2017, learn.adafruit.com\/adafruit-circuit-playground-express\/circuitpython-analog-in. Accessed 18 Mar. 2026.   "
 }
 ]
 
