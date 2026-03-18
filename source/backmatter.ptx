@@ -37,6 +37,7 @@
     <biblio xml:id="Arduino"><p>Arduino. Arduino, 2023. https://www.arduino.cc/.</p></biblio>
     <biblio xml:id="AdafruitBLE"><p>Adafruit. Adafruit ble connect, 2023. https://learn.adafruit.com/bluefruit-le-connect?gclid=CjwKCAiA3KefBhByEiwAi2LDHOVV9IbeAFTEsKBx285M-B7o3VSCeW7uoU0gbDqJ3D0KDX_xnKD-uxoCrrAQAvD_BwE.</p></biblio>
     <biblio xml:id="Metro"><p>DiCola, Tony. "Digital Outputs." CircuitPython Basics: Digital Inputs and Outputs, Adafruit Learning System, 28 Aug. 2017, learn.adafruit.com/circuitpython-digital-inputs-and-outputs/digital-outputs. Accessed 16 Mar. 2026.</p></biblio>
+    <biblio xml:id="potentiometer"><p>Ada (Fried), Lady (Limor), and Kattni Rembor. "CircuitPython Analog In." Adafruit Circuit Playground Express, Adafruit Learning System, 12 Oct. 2017, learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in. Accessed 18 Mar. 2026.</p></biblio>
     <!--[27] Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the
 ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.
 [28] Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019.

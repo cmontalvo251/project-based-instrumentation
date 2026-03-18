@@ -348,7 +348,7 @@ Ok so let's recap method 3 one more time.
 As mentioned in the introduction it's possible to have the Circuit
 Playground send data wirelessly to a cell phone using Bluetooth
 provided you have Bluetooth setup and a smart phone with the Adafruit
-Connect App. Bluetooth is explained in detail in its own section (See
+Connect App. Bluetooth is explained in detail in its own chapter (See
 <xref ref="bluetooth"/>). Method 4 is a valid form of logging data
 it just requires a cell phone to be powered the entire time and it
 must be within 30 feet of the Circuit Playground at all times. This
