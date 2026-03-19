@@ -2,6 +2,9 @@
 
 This repo contains my project based instrumentation textbook that I use at the undergraduate level. Multiple authors have contributed to this textbook and they have been placed on the cover page. Note that some authors did not push directly to github but are still shown in the title page.
 
+PDF: This is the main.pdf file in the root directory
+WEB: https://cmontalvo251.github.io/project-based-instrumentation/
+
 The Archive LaTeX version of this textbook is in the Archive/ folder with a separate readme that you can use to compile that version of the textbook. I don't recommend using that version but it is here for thoroughness as it was used to convert to the current version of PreTeXt shown here. All LaTeX directions are in that readme and left of of this readme for brevity. It is assumed that you have all latex compilers on your computer and are well versed in LaTeX before continuing on with this readme.
 
 Using PreTeXt on Ubuntu 24.03
@@ -74,6 +77,9 @@ This means you need to edit the project.ptx file and then move it to the root di
 You'll see that there are a number of directions in the project.ptx file so it's pretty
 straightforward. Note however that Dr. Levin suggests that each book have its own
 repo. 
+
+If this is your first time deploying it you can just run the command below, if not make
+sure to run 'git fetch origin' to pull down the gh-pages branch
 
 The command itself it 'pretext deploy' which will output a bunch of stuff like this
 
