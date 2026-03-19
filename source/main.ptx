@@ -23,6 +23,7 @@
     <xi:include href="./led-buttons.ptx"/>
     <xi:include href="./daq.ptx"/>
     <xi:include href="./bluetooth.ptx"/>
+    <xi:include href="./sdcard.ptx"/>
     <xi:include href="./voltage.ptx"/>
     <xi:include href="./pitot.ptx"/>
     <xi:include href="./modules.ptx"/>

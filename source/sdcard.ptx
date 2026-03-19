@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="sdcard" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Logging Data to an SD Card - Method 5</title>
+
+<section>
+<title>Parts List</title>
+<ol>
+<li><p>TBD</p></li>
+</ol>
+</section>
+
+<section>
+<title>Learning Objectives</title>
+<ol>
+<li><p>TBD</p></li>
+</ol>
+</section>
+
+<section>
+<title>Getting Started</title>
+<p>
+TBD
+</p>
+</section>
+
+<section>
+<title>Assignment</title>
+<p>
+This project is similar to the Data Acquisition project only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
+</p>
+
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+<ol>
+<li><p>Include a screenshot of your SD card open and mounted on your computer with your data file in it - 20%</p></li>
+<li><p>Include a snippet (5 lines) of your data file - 20%</p></li>
+<li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+</ol>
+
+</subsection>
+</section>
+</chapter>
