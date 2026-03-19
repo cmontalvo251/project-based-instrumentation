@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Low Level Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Project Based Engineering Instrumentation">
+<meta property="book:author" content="Carlos Montalvo">
+<meta property="book:author" content="Marine Feron Leabeater">
+<meta property="book:author" content="Lisa Schibelius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="project-based-instrumentation.html"><span class="title">Project Based Engineering Instrumentation</span> <span class="subtitle">Using CircuitPython and the Circuit Playground</span></a></h1>
+<p class="byline">Carlos Montalvo, Marine Feron Leabeater, Lisa Schibelius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="modules-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="modules.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="modules-8.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="current-edition.html" class="internal"><span class="codenumber">1</span> <span class="title">Current Edition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="manuscript-changes.html" class="internal"><span class="codenumber">2</span> <span class="title">Manuscript Changes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="future-changes.html" class="internal"><span class="codenumber">3</span> <span class="title">Changes Needed and Future Project Ideas</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-descripion.html" class="internal"><span class="codenumber">2</span> <span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="purchase-equipment.html" class="internal"><span class="codenumber">3</span> <span class="title">Purchase Equipment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-2.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">3.3</span> <span class="title">CircuitPython Kit</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="purchase-equipment-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-4" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">4</span> <span class="title">Download Python for Desktop</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-2.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Thonny</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Spyder</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Other Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Setting up your IDE</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Scripting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="download-python-10.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-3" class="internal"><span class="codenumber">4.9.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-4" class="internal"><span class="codenumber">4.9.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">5</span> <span class="title">Getting Started with the CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Setting up your Circuit Playground</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">5.4</span> <span class="title">TL;DR</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-3" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-4" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">6</span> <span class="title">Troubleshooting Guide</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="led-buttons.html" class="internal"><span class="codenumber">7</span> <span class="title">External LEDs and Push Buttons</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">7.3</span> <span class="title">LED with no Code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">7.4</span> <span class="title">LED with a push button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">7.5</span> <span class="title">LED with code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">7.6</span> <span class="title">LED with CPX button</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="led-buttons-8.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">8</span> <span class="title">Using the CPX/CPB as a Data Acquisition System (DAQ)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Installing Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Plotting Logged Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="daq-12.html" class="internal"><span class="codenumber">8.11</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-3" class="internal"><span class="codenumber">8.11.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-4" class="internal"><span class="codenumber">8.11.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">9</span> <span class="title">Bluetooth on the CircuitPlayground Bluefruit - Method 4</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bluetooth-6.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">10</span> <span class="title">Measuring Voltage Across a Potentiometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">11</span> <span class="title">Wind Speed from Pitot Probe</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-2.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pitot-5.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-3" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-4" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">12</span> <span class="title">Circuit Playground (CPX/CPB) Modules</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-2.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Installing Modules</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="modules-7.html" class="internal"><span class="codenumber">12.6</span> <span class="title">Low Level Control</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-7.html#modules-7-2" class="internal"><span class="codenumber">12.6.1</span> <span class="title">Light</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-7.html#modules-7-3" class="internal"><span class="codenumber">12.6.2</span> <span class="title">Sound</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-7.html#modules-7-4" class="internal"><span class="codenumber">12.6.3</span> <span class="title">Temperature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-7.html#modules-7-5" class="internal"><span class="codenumber">12.6.4</span> <span class="title">Accelerometer</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-8.html" class="internal"><span class="codenumber">12.7</span> <span class="title">High Level Control</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-9.html" class="internal"><span class="codenumber">12.8</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-9.html#modules-9-3" class="internal"><span class="codenumber">12.8.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-9.html#modules-9-4" class="internal"><span class="codenumber">12.8.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="acknowledgements.html" class="internal"><span class="codenumber">13</span> <span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="modules-7"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Low Level Control</span>
+</h2>
+<section class="subsection" id="modules-7-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Light</span>
+</h3>
+<div class="para" id="modules-7-2-2">The light sensor on the CPX is just a simple photocell wired in series with a resistor. There is a lab on photocells (See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "photocell" missing or not unique]</code> if you’d like to do that lab first to learn more about photocells. This lab is designed to simply teach you about the onboard sensors rather than how they work. The GND leg of the photocell is connected to pin A8. You can check the pin by looking at the graphic of an eye on the CPX and taking a look at the digital pin next to it. We’ve already learned how to {access analog pins (See <a href="voltage.html" class="internal" title="Chapter 10: Measuring Voltage Across a Potentiometer">Chapter 10</a>) in a previous lab so just use the <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py" target="_blank">code from that lab</a> and change the pin to A8. Here’s what my code looks like when I change the pin to A8. I also brought the Plotter up and moved my finger in front of the light to make sure the light was working. Verify that your CPX responds the same way before moving on.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-2-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/modules_light_mu.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)<div class="autopermalink" data-description="Figure 12.6.1"><a href="#modules-7-2-3" title="Copy heading and permalink for Figure 12.6.1" aria-label="Copy heading and permalink for Figure 12.6.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 12.6.1: Light"><a href="#modules-7-2" title="Copy heading and permalink for Subsection 12.6.1: Light" aria-label="Copy heading and permalink for Subsection 12.6.1: Light">🔗</a></div></section><section class="subsection" id="modules-7-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sound</span>
+</h3>
+<div class="para" id="modules-7-3-2">The sound sensor uses the audiobusio library and creates a mic object using the (Pulse Density Modulation) PDM library. You have to set the sample rate and the number of bits to use to capture the data. We’re going to set the bits to 16 to utilize the whole spectrum and then set the sample rate to 16 kHz. It’s not quite 44.1 kHz like most modern microphones but it will do. After creating the mic object we have to compute some root mean squared values and thus two functions are defined before the while true loop in the code. The code itself is shown below. The code starts on line 22 because the first <a class="external" href="https://learn.adafruit.com/adafruit-pdm-microphone-breakout/circuitpython" target="_blank">22 lines are copyright from Dan Halbert, Kattni Rembor, and Tony DiCola from Adafruit Industries</a>. I have edited the code a bit to fit my needs and uploaded <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Audio/record_sound_simple.py" target="_blank">my version to Github</a>. In the code line 23-27 import standard modules as well as some new ones. The array module is used to create array like matrices. The math module is used to compute functions like cos, sin, and sqrt. Then of course the audiobusio module is used to create the mic object on line 42. Notice the two functions defined on 33 and 39 which create a function for computing the mean and for computing the normalized root mean square value of the data stream. Basically what’s going to happen is we’re going to record 160 samples as defined on line 160. So on line 43 we create a hexadecimal array (hexademical: base 16 hence the num_bits set to 16 on line 31) with 160 zeros. In the while true loop we’re going to sleep for 0.01 seconds and then record some samples. Since we’re sampling at 16 kHz the time it takes to record 160 samples is 160/16000 = 16/1600 = 1/100 = 0.01 seconds. Since we’re taking 160 samples we need to compute some sort of average which is why the normalized root mean square value is computed on line 48.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-3-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/sound_code.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Reading sound code in CircuitPython<div class="autopermalink" data-description="Figure 12.6.2"><a href="#modules-7-3-3" title="Copy heading and permalink for Figure 12.6.2" aria-label="Copy heading and permalink for Figure 12.6.2">🔗</a></div></figcaption></figure><div class="para" id="modules-7-3-4">When I run this code and talk normally into the microphone, I get this output in the Plotter. You’ll notice that the data is pretty noisy in the beginning but then there are noticeable humps in the data. This is me saying something random into the microphone at normal volume. It’s possible we could increase the number of samples we take each loop by editing line 30 but that would slow down our code. So there’s a tradeoff between filtering here and speed. That’s something will investigate in some later labs.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-3-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/sound_mu.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Serial monitor and Plotter open in Mu showing digital output sound sensor<div class="autopermalink" data-description="Figure 12.6.3"><a href="#modules-7-3-5" title="Copy heading and permalink for Figure 12.6.3" aria-label="Copy heading and permalink for Figure 12.6.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 12.6.2: Sound"><a href="#modules-7-3" title="Copy heading and permalink for Subsection 12.6.2: Sound" aria-label="Copy heading and permalink for Subsection 12.6.2: Sound">🔗</a></div></section><section class="subsection" id="modules-7-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Temperature</span>
+</h3>
+<div class="para" id="modules-7-4-2">The temperature sensor is actually a <a class="external" href="https://en.wikipedia.org/wiki/Thermistor" target="_blank">thermistor</a>. A thermistor is basically a thermometer resistor which means the resistance depends on temperature. Since this thermistor on the CPX/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX you’ll see pin A9. Therefore, it is possible to just use the analogio library and just read in the analog voltage but in order to convert to celsius and then fahrenheit you need to use some heat transfer equations to convert the analog signal to celsius.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="modules-7-4-3">
+<div class="para">In this case, the thermistor is wired in a voltage divider circuit in series with a <span class="process-math">\(10000~\Omega\)</span> resistor. This means that the voltage across the thermistor can be converted to its resistance using the voltage divider equation below similar to the equation used for the photocell.</div>
+<div class="displaymath process-math" id="modules-7-4-3-2">
+\begin{equation}
+V_{thermistor} = V_{out}\frac{R_{thermistor}}{R_{series}+R_{thermistor}}\tag{12.6.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="modules-7-4-4">Where <span class="process-math">\(V_{out}=3.3V\)</span> and <span class="process-math">\(R_{series}=10000~\Omega\text{.}\)</span> The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <span class="process-math">\(V_{thermistor} = V_{out}D_o/65535\)</span> where <span class="process-math">\(D_o\)</span> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <a class="external" href="https://en.wikipedia.org/wiki/Steinhart" target="_blank">Stein-Hart</a><div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="" id="modules-7-4-5">
+\begin{equation}
+T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}\tag{12.6.2}
+\end{equation}
+</div>
+<div class="para" id="modules-7-4-6">where <span class="process-math">\(\beta=3950\)</span> is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and <span class="process-math">\(T_0=298.15K\)</span> is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="modules-7-4-7">Thankfully, the folks at Adafruit have done it again with an <em class="emphasis">adafruit_thermistor</em> module. If you head over to their <a class="external" href="https://github.com/adafruit/Adafruit_CircuitPython_Thermistor/blob/master/adafruit_thermistor.py" target="_blank">github on this module</a> you’ll see the relevant conversion under the definition temperature which at the time of this writing is on line 86. <a class="external" href="https://learn.adafruit.com/thermistor/circuitpython" target="_blank">The Adafruit Learn system also does a bit of work to explain the conversion from voltage to temperature</a> but I have also summarized it above and in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "thermistor" missing or not unique]</code>. For now though we will just appreciate the simplicity of the code below which is also <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py" target="_blank">on my Github</a>.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-4-8"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/thermistor_code.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPython code to read the onboard thermistor<div class="autopermalink" data-description="Figure 12.6.4"><a href="#modules-7-4-8" title="Copy heading and permalink for Figure 12.6.4" aria-label="Copy heading and permalink for Figure 12.6.4">🔗</a></div></figcaption></figure><div class="para" id="modules-7-4-9">As always lines 1-3 import the relevant modules and then line 8 create the thermistor object. You’ll notice the input arguments are the pin which is A9 as well as the resistor values which are in series with the thermistor. These resistors are soldered to the PCB so they are fixed at 10 kOhms. The 25 is for the nominal resistance temperature in celsius of the thermistor and 3950 is the b coefficient which is a heat transfer property. Running this code and then placing my finger on the A9 symbol causes the temperature to rise just a bit. You’ll notice the temperature rise quite quickly when I place my finger on the sensor but when I remove the sensor it takes some time before the sensor cools off. This has to do with the dynamic response of the sensor. We’ll discuss this in some future labs on dynamic measurements. For now you can move on to the accelerometer.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-4-10"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/thermistor_mu.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Serial monitor and Plotter open in Mu showing temperature in Celsius<div class="autopermalink" data-description="Figure 12.6.5"><a href="#modules-7-4-10" title="Copy heading and permalink for Figure 12.6.5" aria-label="Copy heading and permalink for Figure 12.6.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 12.6.3: Temperature"><a href="#modules-7-4" title="Copy heading and permalink for Subsection 12.6.3: Temperature" aria-label="Copy heading and permalink for Subsection 12.6.3: Temperature">🔗</a></div></section><section class="subsection" id="modules-7-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Accelerometer</span>
+</h3>
+<div class="para" id="modules-7-5-2">The accelerometer is a 3-axis sensor. As such it is going to spit out not just 1 value but 3 values. Accelerations in x,y and z or North, East, Down or Forward, Side to Side, Up and Down. Since it’s reading 3 values we can’t just read 3 analog signals (we can but the accelerometer chip design didn’t want to do that) so instead we’re going to use the I2C (I like "Indigo" and 2C like "Squared C". So "I Squared C". Not "12C" or "one two C". It’s "I squared C") functionality. I2C is a type of serial communication that allows computers to send strings rather than numbers. It’s a much more complex form of communication but since it’s standard we can just use the busio module which contains the I2C protocol.<div class="autopermalink" data-description="Paragraph"><a href="#modules-7-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-5-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/accelerometer_code.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPython code to read the onboard accelerometer<div class="autopermalink" data-description="Figure 12.6.6"><a href="#modules-7-5-3" title="Copy heading and permalink for Figure 12.6.6" aria-label="Copy heading and permalink for Figure 12.6.6">🔗</a></div></figcaption></figure><div class="para" id="modules-7-5-4">In this code we see alot more imports than normal. In addition to the standard time, board and digitalio modules we need the busio module and the <em class="emphasis">adafruit_lis3dh</em>. You might think that LIS3DH is a very weird name for an accelerometer but it’s actually the name of the chip on your CPX. The chip itself is very standard and is well documented on multiple websites. <a class="external" href="https://www.st.com/en/mems-and-sensors/lis3dh.html" target="_blank">Here’s one from ST</a>. You can also buy the <a class="external" href="https://www.adafruit.com/product/2809?gclid=EAIaIQobChMI98qfjrC86gIVEI_ICh2JtQ-JEAAYAiAAEgJ2_fD_BwE" target="_blank">chip on a breakout board from Adafruit</a> and then of course the Adafruit Learn site has plenty of tutorials on <a class="external" href="https://learn.adafruit.com/circuitpython-hardware-lis3dh-accelerometer/software" target="_blank">reading Accelerometer data in CircuitPython</a>. As always I’ve learned what I can from the relevant tutorials and created <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/low_level_accel.py" target="_blank">my own simple version to read the accelerometer data and posted it to Github</a>. I digress, lines 8-11 of the code do alot. It first uses the SCL and SDA pins to set up an I2C object which establishes serial communication to the accelerometer. Line 9 creates an interrupt which is beyond the scope of this course. Finally, line 10 creates the actual accelerometer object by sending it the I2C pins, the hexadecimal address in the I2C protocol and finally the interrupt pin. Line 11 then sets the range. Line 14 in the while loop is where the x,y and z values of the accelerometer are read and then promptly printed to Serial on line 15. If I run this code and shake the sensor a bit I can get all the values to vary. If you put the CPX on a flat surface, the Z axis will measure something close to 9.81. The units of the accelerometer are clearly in <span class="process-math">\(m/s^2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#modules-7-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="modules-7-5-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/accelerometer_mu.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12.6.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Serial monitor and Plotter open in Mu showing accelerometer output in <span class="process-math">\(m/s^2\)</span><div class="autopermalink" data-description="Figure 12.6.7"><a href="#modules-7-5-5" title="Copy heading and permalink for Figure 12.6.7" aria-label="Copy heading and permalink for Figure 12.6.7">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Subsection 12.6.4: Accelerometer"><a href="#modules-7-5" title="Copy heading and permalink for Subsection 12.6.4: Accelerometer" aria-label="Copy heading and permalink for Subsection 12.6.4: Accelerometer">🔗</a></div></section><div class="autopermalink" data-description="Section 12.6: Low Level Control"><a href="#modules-7" title="Copy heading and permalink for Section 12.6: Low Level Control" aria-label="Copy heading and permalink for Section 12.6: Low Level Control">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="modules-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="modules-8.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
