@@ -865,11 +865,47 @@ var ptx_lunr_docs = [
   "body": " Assignment  This project is similar to the Data Acquisition project only you must use method 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a screenshot from your phone showing the raw UART output - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%    "
 },
 {
+  "id": "sdcard-2",
+  "level": "1",
+  "url": "sdcard-2.html",
+  "type": "Section",
+  "number": "10.1",
+  "title": "Parts List",
+  "body": " Parts List   TBD   "
+},
+{
+  "id": "sdcard-3",
+  "level": "1",
+  "url": "sdcard-3.html",
+  "type": "Section",
+  "number": "10.2",
+  "title": "Learning Objectives",
+  "body": " Learning Objectives   TBD   "
+},
+{
+  "id": "sdcard-4",
+  "level": "1",
+  "url": "sdcard-4.html",
+  "type": "Section",
+  "number": "10.3",
+  "title": "Getting Started",
+  "body": " Getting Started  TBD  "
+},
+{
+  "id": "sdcard-5",
+  "level": "1",
+  "url": "sdcard-5.html",
+  "type": "Section",
+  "number": "10.4",
+  "title": "Assignment",
+  "body": " Assignment  This project is similar to the Data Acquisition project only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a screenshot of your SD card open and mounted on your computer with your data file in it - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%    "
+},
+{
   "id": "voltage-2",
   "level": "1",
   "url": "voltage-2.html",
   "type": "Section",
-  "number": "10.1",
+  "number": "11.1",
   "title": "Parts List",
   "body": " Parts List   Laptop  CPX\/CPB  USB Cable  Potentiometer  Resistor (the Ohms depends on how large your potentiometer is)  Breadboard   "
 },
@@ -878,7 +914,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "voltage-3.html",
   "type": "Section",
-  "number": "10.2",
+  "number": "11.2",
   "title": "Learning Objectives",
   "body": " Learning Objectives   Understand voltage division of resistors in series  Measure an analog signal on the CircuitPlayground  Understand the binary measurement done by the analog to digital conversion (ADC)   "
 },
@@ -887,7 +923,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "voltage-4.html",
   "type": "Section",
-  "number": "10.3",
+  "number": "11.3",
   "title": "Getting Started",
   "body": " Getting Started  At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about potentiometers online if you wish . Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some potentiometer examples . I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the figure below (Courtesy of Kattni Rembor ).    Wiring Diagram of a Circuit Playground Express hooked up to a Potentiometer   Here's my circuit all hooked up without a resistor in series. Two legs are connected to 3.3V and GND while the middle leg of the potentiometer is connected to pin A2.    Circuit Playground Express hooked up to a Potentiometer    As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer. Here is my circuit with a resistor in series.    Potentiometer with a blue resistor in series   There is a relevant Adafruit Learn Tutorial to help with the analogio module but I'll explain the minimum required here to get some analog values plotted in Plotter and Python on your computer. First let's take a look at some simple example code to read an analog signal and plot it using the Plotter .    Code to read analog signal in CircuitPython   In the example code above, lines 1-3 again import the necessary modules with analogio being the new module here. Line 5 creates the analog object by attaching pin A2 to the analog function. Lines 7-9 then simple read the analog value and print it to Serial and the Plotter . Running this code on my laptop and turning the knob on the potentiometer produces this output. My potentiometer has a very large knob on the front and is easy to turn. Some potentiometers have a small screw on top that you need to turn with a screwdriver. Turning the screw or the knob results in chaning the resistance and therefore changing the voltage read by the CPX.    Reading an analog signal in Mu with Serial monitor and Plotter open   For this lab I want you to spin the potentiometer all the way to one side and then the other while recording time and the analog value. I then want you to plot the data with time on the x-axis and voltage on the y-axis. Remember to convert a digital output to voltage you just need to use the equation below where D is the raw value from the analog port. 3.3V is the range of the ADC and is the maximum value the ADC can represent.   After doing this experiment myself, this is the plot I obtain. The code is not provided as reading data and plotting has been discussed in a previous lab (See ). From the screenshot though you can see how I convert the digital output to an analog signal.   NOTE THAT ON LINE 6 IT READS   time -= time[0]   Notice the minus sign in front of the equal sign. That effects a lot.     Plotting analog signal in volts in Thonny   "
 },
@@ -896,7 +932,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-3",
   "type": "Figure",
-  "number": "10.3.1",
+  "number": "11.3.1",
   "title": "",
   "body": "  Wiring Diagram of a Circuit Playground Express hooked up to a Potentiometer  "
 },
@@ -905,7 +941,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-5",
   "type": "Figure",
-  "number": "10.3.2",
+  "number": "11.3.2",
   "title": "",
   "body": "  Circuit Playground Express hooked up to a Potentiometer  "
 },
@@ -914,7 +950,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-7",
   "type": "Figure",
-  "number": "10.3.3",
+  "number": "11.3.3",
   "title": "",
   "body": "  Potentiometer with a blue resistor in series  "
 },
@@ -923,7 +959,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-9",
   "type": "Figure",
-  "number": "10.3.4",
+  "number": "11.3.4",
   "title": "",
   "body": "  Code to read analog signal in CircuitPython  "
 },
@@ -932,7 +968,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-11",
   "type": "Figure",
-  "number": "10.3.5",
+  "number": "11.3.5",
   "title": "",
   "body": "  Reading an analog signal in Mu with Serial monitor and Plotter open  "
 },
@@ -941,7 +977,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-4.html#voltage-4-17",
   "type": "Figure",
-  "number": "10.3.6",
+  "number": "11.3.6",
   "title": "",
   "body": "  Plotting analog signal in volts in Thonny  "
 },
@@ -950,7 +986,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "voltage-5.html",
   "type": "Section",
-  "number": "10.4",
+  "number": "11.4",
   "title": "Assignment",
   "body": " Assignment  Your assignment for this lab is to do the same as I've done above. Wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. I've made some youtube videos on first just creating the circuit and plotting the data and then another video where I write data to the CPX using method 3 . Remember to record both time and digital output as you rotate the potentiometer and then plot that as a function of time. Specific requirements are shown below.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX\/CPB - 10%  Include a screenshot of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%  Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%  Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%  Plot your digital output (raw potentiometer analog value) vs time - 10%  Then convert your digital output (Do) to voltage and plot that vs time - 10%  Finally convert your voltage to angle in degrees and plot that vs time - 20%    "
 },
@@ -959,7 +995,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-2.html",
   "type": "Section",
-  "number": "11.1",
+  "number": "12.1",
   "title": "Parts List",
   "body": " Parts List   Laptop  CPX\/CPB  USB Cable  Alligator Clips (x3)  Pitot Probe (Not included in kit at the moment so will need to buy this separately or borrow one)  Breadboard   "
 },
@@ -968,7 +1004,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-3.html",
   "type": "Section",
-  "number": "11.2",
+  "number": "12.2",
   "title": "Learning Objectives",
   "body": " Learning Objectives   Understand how pitot probes works  Understand the relationship between a voltage signal from a pitot probe to a pressure value  Understand the relationship between pressure and windspeed   "
 },
@@ -977,7 +1013,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-4.html",
   "type": "Section",
-  "number": "11.3",
+  "number": "12.3",
   "title": "Getting Started",
   "body": " Getting Started  Although a CPX has numerous sensors built in, you can easily augment the capabilities of the CPX using either I2C or just the ADC on board the CPX. In this lab, if you purchased a pitot probe you will be able to do this assignment. Since you don't need the pitot probe for very long you can always borrow one from some other team. Let's talk about the hardware and the wiring to get this to work. First, pitot probes work by mechanically changing the dynamic pressure of the incoming airflow as shown in the figure below (Courtesy of Joshua Hrisko ).    Schematic of Pitot probe showing static and dynamic pressures   The pitot probe has two pressure taps that measure static (ambient) pressure and dynamic (stagnation) pressure. These taps move through two silicon tubes to a pressure transducer that has a strain gauge that separates both pressures. When the pressure on one side of the transducer is larger than the other, it will flex the membrane and create strain. This strain runs through a wheatstone bridge with a voltage offset to the pin labeled analog. The analog signal from the analog pin will be denoted as . The pressure transducer used in this lab is the MPXV7002 which is a differential pressure sensor. The datasheet indicates that the voltage offset of the pitot probe is 2.5V and the change in voltage is proportional to the change in pressure in units of kPa. This means that is given by the equation below. remembering that . Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. I explain the process of substracting off bias in this accelerometer video . To measure wind speed you can use a variation of Bernoulli's principle. Remember to convert the pressure from kilopascals (kPa) to Pascals (Pa) by multiplying by before using it in this formula. where is the wind speed in , is the differential pressure (in Pascals), and is the density of air. I've done this pitot project before and have posted a video on Youtube about Converting Pitot Probe Data to Windspeed . There is a typo in the video. V1 is supposed to have a sqrt()) . As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of Joshua Hrisko ).    Arduino connected to a pressure transducer   It is pretty straightforward how to wire this up to a CPX\/CPB but remember that +5V needs to go to VOUT, GND to GND and Analog to any analog pin. I chose pin A2 as shown in the Figure below.    CircuitPlayground Express connected to Pitot Probe and Transducer   At that point it's very simple to just print the analog signal in bits to Serial. I've done this below. The code is the same analog code that we've used in the past.    Analogio code in CircuitPython   The goal of the experiment is to take pitot probe data for 15 seconds with no wind, then 15 seconds of data with a fan on and then 15 seconds of no wind data. You'll need to use one of the datalogging methods (See ) to log both time and pitot probe analog value. Once you have that data, import the data into Python on your desktop computer and convert the signal to windspeed as explained above. Using your data, create a plot of windspeed with time on the x-axis and windspeed on the y-axis. Some steps that might help you as you complete this project. First, have Mu plot the voltage coming from the pitot probe. If you've done everything right it will not be zero. The data sheet says there's an offset voltage of 2.5V so you will hopefully get something around 50,000 when you don't blow into the pitot probe. 50,000 multiplied by 3.3\/ is around 2.5V. Make a note of that average value you get so you can subtract it off later. Once you've verified you're reading the pitot probe correctly, blow into the pitot probe and using the Plotter or Serial, verify that the analog signal increases. If the signal decreases, it means the pressure taps on the pressure transducer are backwards and you need to flip them. Either that or just flip the sign in your plotting routine on your computer but flipping the tubes might be easier for you. Hopefully when you do this lab you will get some data that looks like this. In this Figure you'll see that when the fan wasn't running the signal was something around 49,800 which is fine. It means your bias is around 2.5 volts. Every pitot probe and circuit will be different. You can then convert this signal to voltage then and then pressure and then finally wind speed.    Example pitot probe data showing fan off\/on\/off scenario   The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a complementary filter is probably a good idea provided you don't over filter the signal and run into aliasing issues . You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m\/s. It turns out that pitot probes are actually not very accurate lower than about 2 m\/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.    Example windspeed data showing complementary filter in Thonny   "
 },
@@ -986,7 +1022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-3",
   "type": "Figure",
-  "number": "11.3.1",
+  "number": "12.3.1",
   "title": "",
   "body": "  Schematic of Pitot probe showing static and dynamic pressures  "
 },
@@ -995,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-5",
   "type": "Figure",
-  "number": "11.3.2",
+  "number": "12.3.2",
   "title": "",
   "body": "  Arduino connected to a pressure transducer  "
 },
@@ -1004,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-7",
   "type": "Figure",
-  "number": "11.3.3",
+  "number": "12.3.3",
   "title": "",
   "body": "  CircuitPlayground Express connected to Pitot Probe and Transducer  "
 },
@@ -1013,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-9",
   "type": "Figure",
-  "number": "11.3.4",
+  "number": "12.3.4",
   "title": "",
   "body": "  Analogio code in CircuitPython  "
 },
@@ -1022,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-11",
   "type": "Figure",
-  "number": "11.3.5",
+  "number": "12.3.5",
   "title": "",
   "body": "  Example pitot probe data showing fan off\/on\/off scenario  "
 },
@@ -1031,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pitot-4.html#pitot-4-13",
   "type": "Figure",
-  "number": "11.3.6",
+  "number": "12.3.6",
   "title": "",
   "body": "  Example windspeed data showing complementary filter in Thonny  "
 },
@@ -1040,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-5.html",
   "type": "Section",
-  "number": "11.4",
+  "number": "12.4",
   "title": "Assignment",
   "body": " Assignment  For this assignment you are to wire up a pitot probe and record time and raw analog signal from the pitot probe as you turn a fan on and off. My suggestion is you record at least 30 seconds of data with the fan off and then 30 seconds with the fan on and then again 30 seconds with the fan off. Specific requirements are shown below.   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass\/Fail  Include a photo of your circuit with your pitot probe wired up to an analog pin - 10%  Include a screenshot of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%  Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%  Convert your raw signal to windspeed and filter your signal using an offline complementary filter. Plot both unfiltered and filtered windspeed on the same plot and include a legend. Make sure you add the saturation filter to prevent a negative in the square root - 20%  What is the maximum windspeed that the CPX\/CPB can read? - 10%  The data sheet also suggests that you use a capacitor to filter the output. Select two resistors for a low pass filter such that the DC Gain would be equal to 1. Assume the total impedance of both resistors is . Also compute the cutoff frequency. - 10%    "
 },
@@ -1049,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-2.html",
   "type": "Section",
-  "number": "12.1",
+  "number": "13.1",
   "title": "Parts List",
   "body": " Parts List   Laptop  CPX\/CPB  USB Cable   "
 },
@@ -1058,7 +1094,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-3.html",
   "type": "Section",
-  "number": "12.2",
+  "number": "13.2",
   "title": "Learning Objectives",
   "body": " Learning Objectives   Understand the different sensors on the Circuitplayground  Learn the difference between high level and low level control  Get more practice plotting data from onboard sensors   "
 },
@@ -1067,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-4.html",
   "type": "Section",
-  "number": "12.3",
+  "number": "13.3",
   "title": "Extra Help",
   "body": " Extra Help  If you need extra help on this assignment I have uploaded a youtube video where I read the temperature and accelerometer from the CircuitPlayground Bluefruit   "
 },
@@ -1076,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-5.html",
   "type": "Section",
-  "number": "12.4",
+  "number": "13.4",
   "title": "Getting Started",
   "body": " Getting Started  The CPX has numerous built-in sensors. These include a light sensor, an IR sensor, an accelerometer, a microphone, a speaker, some neopixels, a temperature sensor and 8 analog inputs with ADCs and even I2C (pronounced I squared C - it's a kind of serial communication) that you can use to easily hook up more sensors to it. We're not going to utilize all of these sensors since that would be a rather large project. Instead we're going to learn how to use the temperature, light and sound sensors as well as the accelerometer. For each of these examples there is a relatively easy way to access the sensors using a built-in module called adafruit_circuitplayground.express if you are using the CPX. If you are using the CPB you need to type adafruit_circuitplayground.bluefruit . It's a very nice module because it imports everything on the board. The problem is you can run into module conflicts. This happens when two different modules try to access the same pins on the CP. Sometimes if you import adafruit_circuitplayground you won't be able to import some other modules. Note you might need to add the adafruit_circuitplayground library to your lib\/ folder on your CIRCUITPY drive . Due to this module conflict issue, there are some low level control commands you can use to access each of the sensors on board. We're obviously going to learn the low level control method first and then I'll show you how to access the sensors using the adafruit_circuitplayground module. If you get a currently in use error it means you have a module conflict. Hence why I'm showing you the low level control method .  "
 },
@@ -1085,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-6.html",
   "type": "Section",
-  "number": "12.5",
+  "number": "13.5",
   "title": "Installing Modules",
   "body": " Installing Modules   One issue you're going to run into when you run the codes below is that you won't have some of the modules on your CPB\/CPX. To fix this you need to download the CircuitPython Libraries . You need to download the appropriate version: 6.x, 7.x or 8.x. How do you know what version of CircuitPython you have? Well head over to your CIRCUITPY drive and open the boot_out.txt file and it will tell you the version. Note that this is the same version as the .UF2 file installed back in the Getting Started labs (See Chapter ). When you download the modules it will download a .zip file. Extract the .zip file on your desktop computer and then open the lib folder on your desktop and your CIRCUITPY. You then need to transfer the modules (ONLY THE ONES YOU NEED) from your desktop to your CPX\/CPB lib folder. The reason why you can't copy the entire folder is because the CPB\/CPX only has 2MB of flash and the CircuitPython download is 4.1 MB at the time of this writing.  "
 },
@@ -1094,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-7.html",
   "type": "Section",
-  "number": "12.6",
+  "number": "13.6",
   "title": "Low Level Control",
   "body": " Low Level Control   Light  The light sensor on the CPX is just a simple photocell wired in series with a resistor. There is a lab on photocells (See if you'd like to do that lab first to learn more about photocells. This lab is designed to simply teach you about the onboard sensors rather than how they work. The GND leg of the photocell is connected to pin A8. You can check the pin by looking at the graphic of an eye on the CPX and taking a look at the digital pin next to it. We've already learned how to {access analog pins (See ) in a previous lab so just use the code from that lab and change the pin to A8. Here's what my code looks like when I change the pin to A8. I also brought the Plotter up and moved my finger in front of the light to make sure the light was working. Verify that your CPX responds the same way before moving on.    Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)     Sound  The sound sensor uses the audiobusio library and creates a mic object using the (Pulse Density Modulation) PDM library. You have to set the sample rate and the number of bits to use to capture the data. We're going to set the bits to 16 to utilize the whole spectrum and then set the sample rate to 16 kHz. It's not quite 44.1 kHz like most modern microphones but it will do. After creating the mic object we have to compute some root mean squared values and thus two functions are defined before the while true loop in the code. The code itself is shown below. The code starts on line 22 because the first 22 lines are copyright from Dan Halbert, Kattni Rembor, and Tony DiCola from Adafruit Industries . I have edited the code a bit to fit my needs and uploaded my version to Github . In the code line 23-27 import standard modules as well as some new ones. The array module is used to create array like matrices. The math module is used to compute functions like cos, sin, and sqrt. Then of course the audiobusio module is used to create the mic object on line 42. Notice the two functions defined on 33 and 39 which create a function for computing the mean and for computing the normalized root mean square value of the data stream. Basically what's going to happen is we're going to record 160 samples as defined on line 160. So on line 43 we create a hexadecimal array (hexademical: base 16 hence the num_bits set to 16 on line 31) with 160 zeros. In the while true loop we're going to sleep for 0.01 seconds and then record some samples. Since we're sampling at 16 kHz the time it takes to record 160 samples is 160\/16000 = 16\/1600 = 1\/100 = 0.01 seconds. Since we're taking 160 samples we need to compute some sort of average which is why the normalized root mean square value is computed on line 48.    Reading sound code in CircuitPython   When I run this code and talk normally into the microphone, I get this output in the Plotter. You'll notice that the data is pretty noisy in the beginning but then there are noticeable humps in the data. This is me saying something random into the microphone at normal volume. It's possible we could increase the number of samples we take each loop by editing line 30 but that would slow down our code. So there's a tradeoff between filtering here and speed. That's something will investigate in some later labs.    Serial monitor and Plotter open in Mu showing digital output sound sensor     Temperature  The temperature sensor is actually a thermistor . A thermistor is basically a thermometer resistor which means the resistance depends on temperature. Since this thermistor on the CPX\/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX you'll see pin A9. Therefore, it is possible to just use the analogio library and just read in the analog voltage but in order to convert to celsius and then fahrenheit you need to use some heat transfer equations to convert the analog signal to celsius.  In this case, the thermistor is wired in a voltage divider circuit in series with a resistor. This means that the voltage across the thermistor can be converted to its resistance using the voltage divider equation below similar to the equation used for the photocell.   Where and . The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that where is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the Stein-Hart    where is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.  Thankfully, the folks at Adafruit have done it again with an adafruit_thermistor module. If you head over to their github on this module you'll see the relevant conversion under the definition temperature which at the time of this writing is on line 86. The Adafruit Learn system also does a bit of work to explain the conversion from voltage to temperature but I have also summarized it above and in . For now though we will just appreciate the simplicity of the code below which is also on my Github .    CircuitPython code to read the onboard thermistor   As always lines 1-3 import the relevant modules and then line 8 create the thermistor object. You'll notice the input arguments are the pin which is A9 as well as the resistor values which are in series with the thermistor. These resistors are soldered to the PCB so they are fixed at 10 kOhms. The 25 is for the nominal resistance temperature in celsius of the thermistor and 3950 is the b coefficient which is a heat transfer property. Running this code and then placing my finger on the A9 symbol causes the temperature to rise just a bit. You'll notice the temperature rise quite quickly when I place my finger on the sensor but when I remove the sensor it takes some time before the sensor cools off. This has to do with the dynamic response of the sensor. We'll discuss this in some future labs on dynamic measurements. For now you can move on to the accelerometer.    Serial monitor and Plotter open in Mu showing temperature in Celsius     Accelerometer  The accelerometer is a 3-axis sensor. As such it is going to spit out not just 1 value but 3 values. Accelerations in x,y and z or North, East, Down or Forward, Side to Side, Up and Down. Since it's reading 3 values we can't just read 3 analog signals (we can but the accelerometer chip design didn't want to do that) so instead we're going to use the I2C (I like \"Indigo\" and 2C like \"Squared C\". So \"I Squared C\". Not \"12C\" or \"one two C\". It's \"I squared C\") functionality. I2C is a type of serial communication that allows computers to send strings rather than numbers. It's a much more complex form of communication but since it's standard we can just use the busio module which contains the I2C protocol.    CircuitPython code to read the onboard accelerometer   In this code we see alot more imports than normal. In addition to the standard time, board and digitalio modules we need the busio module and the adafruit_lis3dh . You might think that LIS3DH is a very weird name for an accelerometer but it's actually the name of the chip on your CPX. The chip itself is very standard and is well documented on multiple websites. Here's one from ST . You can also buy the chip on a breakout board from Adafruit and then of course the Adafruit Learn site has plenty of tutorials on reading Accelerometer data in CircuitPython . As always I've learned what I can from the relevant tutorials and created my own simple version to read the accelerometer data and posted it to Github . I digress, lines 8-11 of the code do alot. It first uses the SCL and SDA pins to set up an I2C object which establishes serial communication to the accelerometer. Line 9 creates an interrupt which is beyond the scope of this course. Finally, line 10 creates the actual accelerometer object by sending it the I2C pins, the hexadecimal address in the I2C protocol and finally the interrupt pin. Line 11 then sets the range. Line 14 in the while loop is where the x,y and z values of the accelerometer are read and then promptly printed to Serial on line 15. If I run this code and shake the sensor a bit I can get all the values to vary. If you put the CPX on a flat surface, the Z axis will measure something close to 9.81. The units of the accelerometer are clearly in .    Serial monitor and Plotter open in Mu showing accelerometer output in    "
 },
@@ -1103,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-2-3",
   "type": "Figure",
-  "number": "12.6.1",
+  "number": "13.6.1",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)  "
 },
@@ -1112,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-3-3",
   "type": "Figure",
-  "number": "12.6.2",
+  "number": "13.6.2",
   "title": "",
   "body": "  Reading sound code in CircuitPython  "
 },
@@ -1121,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-3-5",
   "type": "Figure",
-  "number": "12.6.3",
+  "number": "13.6.3",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing digital output sound sensor  "
 },
@@ -1130,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-4-8",
   "type": "Figure",
-  "number": "12.6.4",
+  "number": "13.6.4",
   "title": "",
   "body": "  CircuitPython code to read the onboard thermistor  "
 },
@@ -1139,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-4-10",
   "type": "Figure",
-  "number": "12.6.5",
+  "number": "13.6.5",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing temperature in Celsius  "
 },
@@ -1148,7 +1184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-5-3",
   "type": "Figure",
-  "number": "12.6.6",
+  "number": "13.6.6",
   "title": "",
   "body": "  CircuitPython code to read the onboard accelerometer  "
 },
@@ -1157,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-7.html#modules-7-5-5",
   "type": "Figure",
-  "number": "12.6.7",
+  "number": "13.6.7",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing accelerometer output in  "
 },
@@ -1166,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-8.html",
   "type": "Section",
-  "number": "12.7",
+  "number": "13.7",
   "title": "High Level Control",
   "body": " High Level Control  Alright so we've learned the hard way for all the sensors using low level control of the various sensors. Let's now import the simple adafruit_circuitplayground.express module. The Adafruit Learn site offers pretty much every example code snippet you'd ever need for all the different push buttons and sensors on the CPX . Head over there if you ever need something outside of the scope of this text. As I said before, the main module you need to import is done by adding the following to the top of your code  from adafruit_circuitplayground.express import cpx   Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb. This will import the cpx module into your working code. From here the commands to read different things are relatively simple. Here are the commands for all the various sensors  light = cpx.light x,y,z = cpx.acceleration temperature = cpx.temperature  There unfortunately is no simple module for the sound sensor. You'll still need to use the low level control no matter what. According to Adafruit though, if you get the Circuit Playground Bluefruit there is a simple way to read the sound level . Implementing the various sensors into a while loop on my CPX looks like this.    Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl   I left out the sound sensor stuff just because it kind of messes with the simplicity of the code above. The adafruit_circuitplayground.express module outputs just as before except for the light sensor. In the low level control we simply computed the voltage across the photocell but the adafruit_circuitplayground.express module outputs data in Lux .  "
 },
@@ -1175,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-8.html#modules-8-7",
   "type": "Figure",
-  "number": "12.7.1",
+  "number": "13.7.1",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl  "
 },
@@ -1184,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-9.html",
   "type": "Section",
-  "number": "12.8",
+  "number": "13.8",
   "title": "Assignment",
   "body": " Assignment  Using either low or high level control , take at least 60 seconds of data using the microphone, photocell, accelerometer and thermistor on your CPX\/CPB. Make sure to log time and the raw sensor value at 1Hz or faster. To make the project more challenging, try and log all sensor data all at once (although this isn't a strict requirement).   Grading Rubric  For every project you must turn in a properly formatted engineering report submitted as a PDF. The grading rubric is shown below.  The first page will be a title page with your name, title of the project and date - [Rubric: This is Pass\/Fail]  The second page will contain an introduction which explains the project itself, learning objectives and expected outcomes - [Rubric: Worth 10% of your grade]  After the introduction you then include the project specific requirements (see below) - [Rubric: The contents below add up to 80% of your grade]  All figures must have appropriate figure captions, axis labels and a paragraph explaining the figure - [Rubric: Worth 10% of your grade]  The last few pages will be appendices which are pass\/fail. Failure to include both Appendix \"A\" and \"B\" will result in a zero in the assignment. Appendix \"A\" will be a link (Youtube or Google Drive) to a professional video recording of you and your screen explaining the project and showing any of the systems operate as asked. This includes any portion of the experiment such as heating up your thermistor or rotating a potentiometer and showing the response in the Serial monitor . Appendix \"B\" will be any and all code used in the project - Failure to provide code or an adequate video results in a failure of the assignment. - [Rubric: This is Pass\/Fail]      Specific Directions   Include 4 photos of Mu with the plotter open showing example data from each sensor. - 10% per photo  Include 4 plots with time on the x-axis and sensor data on the y-axis (No screenshots) - 10% per plot    "
 },
@@ -1193,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "acknowledgements.html",
   "type": "Chapter",
-  "number": "13",
+  "number": "14",
   "title": "Acknowledgements",
   "body": " Acknowledgements   Dr. Carlos Montalvo would like to acknowledge a few key members who made this textbook possible. First and foremost I would like to thank Adafruit for their entire ecosystem of electronics, tutorials, blogs and forums. Much of what I have learned here to teach Instrumentation was from Adafruit and the Adafruit Learn system and specifically people like Lady Ada and John Park who have helped shape CircuitPython and the CircuitPlayground Express to what it is today. I would also like to thank Dr. Saami Yazdani for creating the blueprint for Instrumentation at my university by creating a laboratory environment for an otherwise totally theoretical course. His course was the foundation for this textbook and for that I thank him for showing the way. I’d like to also thank and acknowledge Tangibles that Teach for giving me the opportunity to morph this loose set of projects into a textbook that can be used for multiple universities and classrooms and of course help students learn and acquire knowledge through creating. I'd also like to change Steven Clontz for first showing me PreTeXt and for Oscar Levin and all of his helpful replies via email and Zoom. Finally, I'd like to thank the co-authors Lisa and Marine for helping me add some statistical data to this textbook and being all around great academic colleagues and friends   "
 },
