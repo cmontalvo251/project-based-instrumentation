@@ -25,6 +25,7 @@
     <xi:include href="./bluetooth.ptx"/>
     <xi:include href="./voltage.ptx"/>
     <xi:include href="./pitot.ptx"/>
+    <xi:include href="./modules.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>

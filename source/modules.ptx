@@ -1,28 +1,27 @@
-<section xml:id="s_Modules">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="modules" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Circuit Playground (CPX/CPB) Modules</title>
 
-
-<subsection>
+<section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Understand the different sensors on the Circuitplayground</p></li>
 <li><p>Learn the difference between high level and low level control</p></li>
 <li><p>Get more practice plotting data from onboard sensors</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Extra Help</title>
 <p>
 If you need extra help on this assignment I have uploaded a youtube
@@ -30,10 +29,9 @@ video where I <url href="https://www.youtube.com/watch?v=ceI0uw3ICE0">read
 the temperature and accelerometer from the CircuitPlayground
 Bluefruit</url>
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Getting Started</title>
 <p>
 The CPX has numerous built-in sensors. These include a light sensor,
@@ -58,23 +56,23 @@ first and then I'll show you how to access the sensors using the <em>adafruit_ci
 use</q> error it means you have a module conflict. Hence why I'm showing
 you the low level control method</em>.
 </p>
-</subsection>
+</section>
 
+<xi:include href="./modules_install.ptx"/>
 
-<subsection>
+<section>
 <title>Low Level Control</title>
 
-
-<subsubsection>
+<subsection>
 <title>Light</title>
 <p>
 The light sensor on the CPX is just a simple photocell wired in series
 with a resistor. There is a lab on photocells (See
-<xref ref="s_photocell">chapter</xref> if you'd like to do that lab first to learn more
+<xref ref="photocell"/> if you'd like to do that lab first to learn more
 about photocells. This lab is designed to simply teach you about the onboard sensors rather than how they work. The GND leg of the photocell is connected to pin
 A8. You can check the pin by looking at the graphic of an eye on the
 CPX and taking a look at the digital pin next to it. We've already
-learned how to {access analog pins (See <xref ref="s_voltage">chapter</xref>) in a
+learned how to {access analog pins (See <xref ref="voltage"/>) in a
 previous lab so just use
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">code
 from that lab</url> and change the pin to A8. Here's what my code looks
@@ -83,12 +81,12 @@ moved my finger in front of the light to make sure the light was
 working. Verify that your CPX responds the same way before moving on.
 </p>
 <figure>
-<image width="73%" source="images/modules_light_mu.png" />
+  <image width="73%" source="modules_light_mu.png" />
+  <caption>Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)</caption>
 </figure>
-</subsubsection>
+</subsection>
 
-
-<subsubsection>
+<subsection>
 <title>Sound</title>
 <p>
 The sound sensor uses the audiobusio library and creates a mic object
@@ -123,7 +121,8 @@ of average which is why the normalized root mean square value is
 computed on line 48.
 </p>
 <figure>
-<image width="73%" source="images/sound_code.png" />
+  <image width="73%" source="sound_code.png" />
+  <caption>Reading sound code in CircuitPython</caption>
 </figure>
 <p>
 When I run this code and talk normally into the microphone, I get this
@@ -132,12 +131,12 @@ the beginning but then there are noticeable humps in the data. This is me saying
 something will investigate in some later labs.
 </p>
 <figure>
-<image width="73%" source="images/sound_mu.png" />
+  <image width="73%" source="sound_mu.png" />
+  <caption>Serial monitor and Plotter open in Mu showing digital output sound sensor</caption>
 </figure>
-</subsubsection>
+</subsection>
 
-
-<subsubsection>
+<subsection>
 <title>Temperature</title>
 <p>
 The temperature sensor is actually
@@ -158,9 +157,8 @@ In this case, the thermistor is wired in a voltage divider circuit in series wit
 </p>
 
 <p>
-Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">
+Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url>
 </p>
-</url>
 <men>
   T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
 </men>
@@ -176,13 +174,14 @@ on this module</url> you'll see the relevant conversion under the
 definition temperature which at the time of this writing is on line
 86. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
 Adafruit Learn system also does a bit of work to explain the
-conversion from voltage to temperature</url> but I have also summarized it above and in <xref ref="s_thermistor">Chapter</xref>. For now though we will just
+conversion from voltage to temperature</url> but I have also summarized it above and in <xref ref="thermistor"/>. For now though we will just
 appreciate the simplicity of the code below which is
 also <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
 my Github</url>.
 </p>
 <figure>
-<image width="73%" source="images/thermistor_code.png" />
+  <image width="73%" source="thermistor_code.png" />
+  <caption>CircuitPython code to read the onboard thermistor</caption>
 </figure>
 <p>
 As always lines 1-3 import the relevant modules and then line 8 create
@@ -200,12 +199,12 @@ sensor. We'll discuss this in some future labs on dynamic
 measurements. For now you can move on to the accelerometer.
 </p>
 <figure>
-<image width="73%" source="images/thermistor_mu.png" />
+  <image width="73%" source="thermistor_mu.png" />
+  <caption>Serial monitor and Plotter open in Mu showing temperature in Celsius</caption>
 </figure>
-</subsubsection>
+</subsection>
 
-
-<subsubsection xml:id="s_modules">
+<subsection>
 <title>Accelerometer</title>
 <p>
 The accelerometer is a 3-axis sensor. As such it is going to spit out
@@ -221,7 +220,8 @@ standard we can just use the busio module which contains the I2C
 protocol.
 </p>
 <figure>
-<image width="73%" source="images/accelerometer_code.png" />
+  <image width="73%" source="accelerometer_code.png" />
+  <caption>CircuitPython code to read the onboard accelerometer</caption>
 </figure>
 <p>
 In this code we see alot more imports than normal. In addition to the
@@ -254,14 +254,13 @@ surface, the Z axis will measure something close to 9.81. The units of
 the accelerometer are clearly in <m>m/s^2</m>.
 </p>
 <figure>
-<image width="73%" source="images/accelerometer_mu.png" />
+  <image width="73%" source="accelerometer_mu.png" />
+  <caption>Serial monitor and Plotter open in Mu showing accelerometer output in <m>m/s^2</m></caption>
 </figure>
-</subsubsection>
-
 </subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>High Level Control</title>
 <p>
 Alright so we've learned the hard way for all the sensors using low
@@ -299,7 +298,8 @@ way to read the sound level</url>. Implementing the various sensors into a
 while loop on my CPX looks like this.
 </p>
 <figure>
-<image width="73%" source="images/high_level_mu.png" />
+  <image width="73%" source="high_level_mu.png" />
+  <caption>Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl</caption>
 </figure>
 <p>
 I left out the sound sensor stuff just because it kind of messes with
@@ -310,21 +310,23 @@ computed the voltage across the photocell but the
 adafruit_circuitplayground.express module outputs data
 in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url>.
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 Using either <em>low or high level control</em>, take at least 60 seconds
 of data using the microphone, photocell, accelerometer and thermistor on your CPX/CPB. Make sure to log time and the raw sensor value at 1Hz or faster. To make the project more challenging, try and log all sensor data all at once (although this isn't a strict requirement).
+</p>
 
-<ol marker="itemsep5pt">
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+<ol>
 <li><p>Include 4 photos of Mu with the plotter open showing example data from each sensor. - 10% per photo</p></li>
 <li><p>Include 4 plots with time on the x-axis and sensor data on the y-axis (No screenshots) - 10% per plot</p></li>
 </ol>
-
-</p>
 </subsection>
-
 </section>
+</chapter>
