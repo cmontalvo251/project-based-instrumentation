@@ -29,6 +29,7 @@
     <xi:include href="./modules.ptx"/>
     <xi:include href="./acceleration.ptx"/>
     <xi:include href="./pedometer.ptx"/>
+    <xi:include href="./imu.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
