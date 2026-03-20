@@ -1,36 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="acceleration" xmlns:xi="http://www.w3.org/2001/XInclude">
 <section>
 <title>Integrating Acceleration</title>
 
-
-<subsection>
+<section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 <li><p>Laptop</p></li>
 <li><p>Some sort of temporary adhesive</p></li>
 <li><p>Automobile</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Taking acceleration data of real systems</p></li>
 <li><p>Numerical Integration</p></li>
 <li><p>The dangers of integration bias</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Getting Started</title>
 <p>
-The code for this lab is to have the CPX log acceleration. So when you're done with this lab you will hopefully have a data file with 4 columjns of data: time, acceleration x, acceleration y, acceleration z. The code I'm using is the same as the lab on accelerometers (See <xref ref="s_modules">chatper</xref>). I'm using method 1 for datalogging so I'm just having it print to Serial (See <xref ref="s_daq">chapter</xref>).
+The code for this lab is to have the CPX log acceleration. So when you're done with this lab you will hopefully have a data file with 4 columjns of data: time, acceleration x, acceleration y, acceleration z. The code I'm using is the same as the lab on accelerometers (See <xref ref="modules"/>). I'm using method 1 for datalogging so I'm just having it print to Serial (See <xref ref="daq"/>).
 </p>
 <figure>
-<image width="80%" source="images/accelerometer_code1.png" />
+  <image width="80%" source="accelerometer_code1.png" />
+  <caption>Accelerometer code used print acceleration to Serial</caption>
 </figure>
 <p>
 The code on Github has a sleep of 0.1 seconds but make sure to have
@@ -63,7 +64,8 @@ just to get something working properly I went ahead and just used the
 first data point.
 </p>
 <figure>
-<image width="73%" source="images/accelerometer_plots.png" />
+  <image width="73%" source="accelerometer_plots.png" />
+  <caption>Example acceleration curves coming from accelerating and decelerating in a car</caption>
 </figure>
 <p>
 It's clear from the plots that the z axis was oriented towards the nose of the car. In this case I am going to have to flip the z-axis since the beginning is acceleration and the end is deceleration. I also through the acceleration in the z-axis through a complementary filter with a filter value of 0.25. I think it makes the acceleration profile a bit less jumpy. I then used a Reimann sum and integrated the acceleration data points to get velocity. The equation itself looks like this:
@@ -76,7 +78,8 @@ It's clear from the plots that the z axis was oriented towards the nose of the c
 This of course assumes the initial velocity is zero. Notice that I take the individual acceleration points and subtract off the bias. Computing that summation by hand is pretty trivial but getting the code to work is another story. For a Reimann sum we're going to use a for loop where we loop through all the data points. The good news is that the time between data points is the same so we can just treat that as a constant. Once you have acceleration integrated you can plot velocity. This is what mine looks like after I did the experiment. According to my plot I accelerated to about 45 mph. I guess I can't lie in this instance. I said to accelerate to 20 mph but I really wanted to see a large change in acceleration so I punched it. Notice though that at the end of the time series the velocity is negative. This is because as time goes on you are integrating error and the error just gets worse.
 </p>
 <figure>
-<image width="73%" source="images/accelerometer_integration.png" />
+  <image width="73%" source="accelerometer_integration.png" />
+  <caption>Integrating Acceleration and plotting Velocity in Thonny</caption>
 </figure>
 <p>
 This is why speedometers are used. They are just much more accurate
@@ -90,23 +93,26 @@ set. Make sure to understand what each filter does and think about how
 it applies to your data set otherwise your code may throw an error due
 to the differences in your data set.</em>
 </p>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 For this assignment you are to find a safe place to accelerate and decelerate your vehicle while recording acceleration data on the Circuit Playground. I also want you to take GPS data using PhyPhox so you can compare data. I suggest using a temporary adhesive to secure your CPX/CPB to your dashboard (making sure it's level) and have a passenger in the car to help you record data as well as operate Phyphox and verify that you have a GPS lock. Again for safety's sake I suggest finding an empty parking lot and only accelerating to 20 mph or less.
-
-<ol marker="itemsep5pt">
-<li><p>Include a picture of your car and your passenger that is helping you record data. In your description write what speed you achieved in your experiment. - 10</p></li>
-<li><p>Include a photo of your CPX/CPB mounted to your vehicle indicating which axis of acceleration is pointing forward - 10</p></li>
-<li><p>Plot one axis of your accelerometer data vs time which clearly indicates when you accelerated and decelerated. In your description be sure to explain which axis you are plotting and any signal conditioners you applied to get your clean signal - 20</p></li>
-<li><p>Integrate acceleration and plot velocity as a function of time. Comment on whether or not the maximum velocity is the same as what you did in your actual car. Make sure to superimpose your Phyphox GPS speed on top of your plot to compare. You may need to have your raw GPS coordinates converted to velocity if it doesn't log speed natively. - 20</p></li>
-<li><p>Integrate the velocity and compute position. Plot your position as a function of time and include that in your report. Also include the position of your car using your GPS coordinates keeping in mind that you may need to convert your Lat/Lon coordinates to meters. Although you didn't measure how far you went, comment on the accuracy of the plot and whether or not you think you traveled that far especially given the superimposed data from your GPS. - 20</p></li>
-</ol>
-
 </p>
-</subsection>
 
+<xi:include href="./assignment_directions.ptx"/>
+
+<subsection>
+<title>Specific Directions</title>
+
+<ol>
+<li><p>Include a picture of your car and your passenger that is helping you record data. In your description write what speed you achieved in your experiment. - 10%</p></li>
+<li><p>Include a photo of your CPX/CPB mounted to your vehicle indicating which axis of acceleration is pointing forward - 10%</p></li>
+<li><p>Plot one axis of your accelerometer data vs time which clearly indicates when you accelerated and decelerated. In your description be sure to explain which axis you are plotting and any signal conditioners you applied to get your clean signal - 20%</p></li>
+<li><p>Integrate acceleration and plot velocity as a function of time. Comment on whether or not the maximum velocity is the same as what you did in your actual car. Make sure to superimpose your Phyphox GPS speed on top of your plot to compare. You may need to have your raw GPS coordinates converted to velocity if it doesn't log speed natively. - 20%</p></li>
+<li><p>Integrate the velocity and compute position. Plot your position as a function of time and include that in your report. Also include the position of your car using your GPS coordinates keeping in mind that you may need to convert your Lat/Lon coordinates to meters. Although you didn't measure how far you went, comment on the accuracy of the plot and whether or not you think you traveled that far especially given the superimposed data from your GPS. - 20%</p></li>
+</ol>
+</subsection>
 </section>
+</chapter>

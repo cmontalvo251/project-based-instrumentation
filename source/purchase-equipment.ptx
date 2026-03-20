@@ -96,8 +96,8 @@ which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 <subsection>
   <title>Specific Directions</title>
 <ol>
-<li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device) - [Rubric: Worth 60% of your grade]</p></li>
-<li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a failure rate of 1%. - [Rubric: Worth 20% of your grade]</p></li>
+<li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device). - 60%</p></li>
+<li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a low (p=1%) failure rate. - 20% </p></li>
 </ol>
 
 </subsection>

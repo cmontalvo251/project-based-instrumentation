@@ -27,6 +27,7 @@
     <xi:include href="./voltage.ptx"/>
     <xi:include href="./pitot.ptx"/>
     <xi:include href="./modules.ptx"/>
+    <xi:include href="./acceleration.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
