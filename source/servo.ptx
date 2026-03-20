@@ -1,11 +1,12 @@
-<section xml:id="s_pwm">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="servo" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Servo Calibration (PulseWidthModulation(PWM) =
   f(angle)) and Feedback Control</title>
 
-
-<subsection>
+<section>
 <title>Parts List</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 <li><p>Laptop</p></li>
@@ -13,12 +14,11 @@
 <li><p>servo</p></li>
 <li><p>Alligator clips (x3)</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Learning Objectives</title>
-<ol marker="itemsep5pt">
+<ol>
 <li><p>Understand what a PWM signal is and how it affects a servo</p></li>
 <li><p>Understand the inner workings of a servo and how to make it move</p></li>
 <li><p>Practice first order regression and calibration techniques</p></li>
@@ -26,16 +26,16 @@
 <li><p>Learn the fundamental concepts of feedback control</p></li>
 <li><p>Learn how to Combine two codes (servo code and accelerometer code into one)</p></li>
 </ol>
-</subsection>
+</section>
 
-
-<subsection>
+<section>
 <title>Getting Started</title>
 <p>
 For this lab we are going to learn how to drive a <url href="https://www.adafruit.com/product/1143">servo</url>. Servos accept what are called PWM signals which are basically square waves of varying frequency. The servo itself has a microprocessor on board that turns a DC motor based on the incoming PWM frequency which is typically called a duty cycle. The DC motor runs through some gear to rotate a shaft. Because of this rotation, you can make a number of things move! Servos are used for all sorts of things, opening doors, deflecting control surfaces on RC aircraft and many more! The neat thing about PWM signals is that they can not only move servos but they can also drive speed controllers to turn 3 phase motors and even change the light intensity of LEDs. Servos typically come in two different color schemes as shown below.
 </p>
 <figure>
-<image width="80%" source="images/servo.png" />
+  <image width="80%" source="servo.png" />
+  <caption>Example servos</caption>
 </figure>
 <p>
 As you can see, servos have 3 pins (GND, PWR, SIGNAL). A wiring diagram of a servo connected to the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo">CPX/CPB</url> is shown below (Couresy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>).
@@ -261,35 +261,38 @@ Now that the dynamics are written, the second order equation can be integrated u
 </subsection>
 
 
-<subsection>
+<section>
 <title>Assignment</title>
 <p>
 This servo project can be split into 2 projects at your instructors discretion. The first part involves learning how to rotate the servo and then calibrating the servo so that degrees of rotation can be related to PWM in microseconds while the second part deals with feedback control. In part 1 ensure that you can rotate the servo and then experimentally determine the minimum and maximum PWM signal you can send to the servo before it stops rotating anymore. Then create a calibration equation and plot with degrees on the x-axis and PWM on the y-axis. Take at least 10 data points for your calibration equation and use a protractor on your computer screen to obtain angle in degrees of your servo. Your calibration equation needs to be linear. In part 2 you are to use the angle obtained by the accelerometer to feedback to the servo using proportional control. You are to do this for a <m>k_p</m> value of 1 and 2. In addition, you are to simulate the second order system above for 10 seconds with varying values of <m>k_p</m> and plotting the results. <em>Note, for this lab, once you have the minimum and maximum values of your servo, you need to add a saturation filter into your code so that the value sent to your servo is always within these bounds. Otherwise you could damage or even break your servo.</em>
 </p>
 
-<p>
-<em>Part 1</em>
+<xi:include href="./assignment_directions.ptx"/>
 
-<ol marker="itemsep5pt">
-<li><p>Include 2 photos of your servo with one photo rotated to the maximum and the other photo rotated to the minimum degrees. Also, include a screenshot of Mu showing the PWM pulse in the serial monitor for both rotations. - 10</p></li>
-<li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. Give at least 2 decimal points in your calculation - 10</p></li>
-<li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10</p></li>
-<li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20</p></li>
+<subsection>
+<title>Specific Directions</title>
+
+<subsubsection>
+<title>Part 1</title>
+
+<ol>
+<li><p>Include 2 photos of your servo with one photo rotated to the maximum and the other photo rotated to the minimum degrees. Also, include a screenshot of Mu showing the PWM pulse in the serial monitor for both rotations. - 10%</p></li>
+<li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. Give at least 2 decimal points in your calculation - 10%</p></li>
+<li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
+<li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
 <li><p>Write your regression equation as servo_pulse = m*servo_angle + b being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
-<li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 20</p></li>
+<li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 20%</p></li>
 </ol>
-</p>
+</subsubsection>
 
-<p>
-<em>Part 2</em>
-
-<ol marker="itemsep5pt">
-<li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20</p></li>
-<li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and 2. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40</p></li>
-<li><p>Simulate the second order system above for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20</p></li>
+<subsubsection>
+<title>Part 2</title>
+<ol">
+<li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%</p></li>
+<li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and 2. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
+<li><p>Simulate the second order system above for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
 </ol>
-
-</p>
+</subsubsection>
 </subsection>
-
 </section>
+</chapter>

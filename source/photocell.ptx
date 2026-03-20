@@ -199,12 +199,12 @@ For this assignment you are to build another voltage divider circuit using a pho
 <subsection>
   <title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Also, explain how you varied the light levels - 10</p></li>
-<li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20</p></li>
-<li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10</p></li>
-<li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10</p></li>
+<li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Also, explain how you varied the light levels - 10%</p></li>
+<li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%</p></li>
+<li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10%</p></li>
+<li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%</p></li>
 <li><p>Include 3 histogram plots of low light, ambient light and high
-light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 30</p></li>
+light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 30%</p></li>
 </ol>
 </subsection>
 </section>

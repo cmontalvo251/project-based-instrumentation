@@ -132,15 +132,13 @@ For this assignment you are to wire up the external IMU and get data from it. Yo
 <subsection>
 <title>Specific Directions</title>
 <ol marker="itemsep5pt">
-<li><p>Include a photo of your CPX/CPB mounted to a hard surface with the IMU on a breadboard. Be sure to explain in your description about your axis system for both sensors. - 10</p></li>
-<li><p>Include a screenshot of Mu showing the Plotter open and all 3 angular velocity axes - 10</p></li>
-<li><p>Include a plot of both accelerometers for the 3 doublet manuevers. - 10</p></li>
-<li><p>Include a plot of angular velocity data for the 3 doublet manuevers. Also plot the derivative of the pitch, roll and yaw angles on top of this plot and add a legend to clearly indicate which is which. - 20</p></li>
-<li><p>Include a plot of magnetometer data for the 3 doublet maneuevers - 10</p></li>
-<li><p>Plot the roll, pitch and yaw angles in degrees from the accelerometer/magnetometer as well as the integrated rate gyro angles. Add a legend to clearly indicate which line is which. - 20</p></li>
+<li><p>Include a photo of your CPX/CPB mounted to a hard surface with the IMU on a breadboard. Be sure to explain in your description about your axis system for both sensors. - 10%</p></li>
+<li><p>Include a screenshot of Mu showing the Plotter open and all 3 angular velocity axes - 10%</p></li>
+<li><p>Include a plot of both accelerometers for the 3 doublet manuevers. - 10%</p></li>
+<li><p>Include a plot of angular velocity data for the 3 doublet manuevers. Also plot the derivative of the pitch, roll and yaw angles on top of this plot and add a legend to clearly indicate which is which. - 20%</p></li>
+<li><p>Include a plot of magnetometer data for the 3 doublet maneuevers - 10%</p></li>
+<li><p>Plot the roll, pitch and yaw angles in degrees from the accelerometer/magnetometer as well as the integrated rate gyro angles. Add a legend to clearly indicate which line is which. - 20%</p></li>
 </ol>
-
-</p>
 </subsection>
 </section>
 </chapter>
