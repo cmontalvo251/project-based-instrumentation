@@ -30,6 +30,7 @@
     <xi:include href="./acceleration.ptx"/>
     <xi:include href="./pedometer.ptx"/>
     <xi:include href="./imu.ptx"/>
+    <xi:include href="./photocell.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
