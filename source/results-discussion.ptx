@@ -51,34 +51,65 @@ question in the course survey will be examined. This question states:
 course?"</em> <xref ref="tab_quotes">Table</xref> includes examples of questionnaire
 responses which is in the appendix.
 </p>
-<table xml:id="tab_quotes" >
-<title>Questionnaire responses to "What did you like best about how the instructor taught the course?"</title>
-<tabular>
-<row><cell>Semester</cell><cell>Quotes</cell></row>
-<row bottom="medium"><cell></cell><cell></cell></row>
-<row><cell>
-        Fall 2019</cell><cell>"The course was taught expertly with proper use of in class equipment available and hands on design problems with experiments relative to the material being taught."</cell></row>
-<row><cell></cell><cell>"I like how he introduced us to the Circuit Playground which allowed to be hands-on since none of my other classes are."</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Spring 2020 (Remote Mid-Way)</cell><cell>"Hands on experience"</cell></row>
-<row><cell></cell><cell>"I especially enjoyed the hands-on Fridays portion of the course. The practical knowledge of creating something with the book-learning we gained during the lecture was priceless."</cell></row>
-<row><cell></cell><cell>"Fridays were my favorite days. I got to experience hands on projects where I learned the most from."</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Fall 2020 (Hybrid)</cell><cell>"I loved the hands on approach to the course. It is the first course, outside senior design, where we had the opportunity to exercise our engineering knowledge on an actual project."</cell></row>
-<row><cell></cell><cell>"The projects! this [taught] a lot of people hands-on skills"</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Spring 2021 (Hybrid)</cell><cell>"I liked the hands on aspect of the class the most"</cell></row>
-<row><cell></cell><cell>"I wish all other class were taught as well"</cell></row>
-<row><cell></cell><cell>"I like that we actually had a hands on project, and several projects that were fun to do"</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Fall 2021</cell><cell>"I love how he tries to engage his students and help them learn real world engineering, not just textbook stuff. He really wants to watch his students succeed inside and outside of the classroom. We need more classes and professors like this in engineering! It was a fantastic class and instructor"</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Spring 2022</cell><cell>"I had no interest in coding or robotics like things but now I do. I grew an interest in coding after absolutely hating it. I love seeing the application of what I've learned so far in my degree path. I am a hands-on learner, so the labs and the project were my favorite."</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Fall 2022</cell><cell>"The hands on projects and labs"</cell></row>
-<row><cell></cell><cell>"Very engaging with the students and cared for each student and wanted to help when needed. Gave good real world applications as well as fun, interesting assignments that helped us students learn."</cell></row>
-</tabular>
-<caption>Questionnaire responses to ”What did you like best about how the instructor taught the course?”</caption>
+<table xml:id="tab_quotes">
+  <title>Questionnaire responses to <q>What did you like best about how the instructor taught the course?</q></title>
+  <tabular align="center" left="minor" right="minor" top="minor" halign="center">
+    <col width="30%" />
+    <col width="70%" />
+    <row bottom="medium">
+      <cell>Semester</cell>
+      <cell>Quotes</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2019</cell>
+      <cell halign="left">
+        <p><q>The course was taught expertly with proper use of in class equipment available and hands on design problems with experiments relative to the material being taught.</q></p>
+        <p><q>I like how he introduced us to the Circuit Playground which allowed to be hands-on since none of my other classes are.</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2020 (Remote Mid-Way)</cell>
+      <cell halign="left">
+        <p><q>Hands on experience</q></p>
+        <p><q>I especially enjoyed the hands-on Fridays portion of the course. The practical knowledge of creating something with the book-learning we gained during the lecture was priceless.</q></p>
+        <p><q>Fridays were my favorite days. I got to experience hands on projects where I learned the most from.</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2020 (Hybrid)</cell>
+      <cell halign="left">
+        <p><q>I loved the hands on approach to the course. It is the first course, outside senior design, where we had the opportunity to exercise our engineering knowledge on an actual project.</q></p>
+        <p><q>The projects! this [taught] a lot of people hands-on skills</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2021 (Hybrid)</cell>
+      <cell halign="left">
+        <p><q>I liked the hands on aspect of the class the most</q></p>
+        <p><q>I wish all other class were taught as well</q></p>
+        <p><q>I like that we actually had a hands on project, and several projects that were fun to do</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2021</cell>
+      <cell halign="left">
+        <p><q>I love how he tries to engage his students and help them learn real world engineering, not just textbook stuff. He really wants to watch his students succeed inside and outside of the classroom. We need more classes and professors like this in engineering! It was a fantastic class and instructor</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2022</cell>
+      <cell halign="left">
+        <p><q>I had no interest in coding or robotics like things but now I do. I grew an interest in coding after absolutely hating it. I love seeing the application of what I've learned so far in my degree path. I am a hands-on learner, so the labs and the project were my favorite.</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2022</cell>
+      <cell halign="left">
+        <p><q>The hands on projects and labs</q></p>
+        <p><q>Very engaging with the students and cared for each student and wanted to help when needed. Gave good real world applications as well as fun, interesting assignments that helped us students learn.</q></p>
+      </cell>
+    </row>
+  </tabular>
 </table>
 <p>
 Note that certain semesters were during the Pandemic of COVID-19. In
@@ -104,56 +135,99 @@ perception of the quality of the class prior to the transition to
 departmental scores are not listed.
 </p>
 <table xml:id="tab_scores" >
-<title>Average Score for "Instructor Effectiveness in Helping Students Achieve Course Objectives" (*Alternate question during COVID-19 Pandemic)</title>
-<tabular>
-<row><cell>Semester</cell><cell>Response Rate</cell><cell>Average Score (1-5)</cell><cell>Department Avg Score (1-5)</cell></row>
-<row bottom="medium"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-
-<row><cell  >
-        Fall 2019</cell><cell>22%</cell><cell>4.20</cell><cell>3.63</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Spring 2020 (Remote Mid-Way) <m>^*</m></cell><cell>30%</cell><cell>4.66<m>^*</m></cell><cell>N/A</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Fall 2020 (Hybrid)</cell><cell>46%</cell><cell>4.64</cell><cell>3.57</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Spring 2021 (Hybrid)</cell><cell>45%</cell><cell>4.75</cell><cell>3.73</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Fall 2021</cell><cell>42%</cell><cell>4.70</cell><cell>4.14</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Spring 2022</cell><cell>47%</cell><cell>4.94</cell><cell>3.91</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Fall 2022</cell><cell>57%</cell><cell>5.0</cell><cell>4.0</cell></row>
-<row bottom="minor"><cell></cell><cell></cell><cell></cell><cell></cell></row>
-<row><cell>Average</cell><cell>41.3%</cell><cell>4.70</cell><cell>3.83</cell></row>
-</tabular>
-<caption>Average Score for "Instructor Effectiveness in Helping Students Achieve Course Objectives" (*Alternate question during COVID-19 Pandemic)</caption>
+  <title>Average Score for <q>Instructor Effectiveness in Helping Students Achieve Course Objectives</q> (*Alternate question during COVID-19 Pandemic)</title>
+  <tabular align="center" left="minor" right="minor" top="minor" halign="center">
+    <row bottom="medium">
+      <cell>Semester</cell>
+      <cell>Response Rate</cell>
+      <cell>Average Score (1-5)</cell>
+      <cell>Department Avg Score (1-5)</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2019</cell>
+      <cell>22%</cell>
+      <cell>4.20</cell>
+      <cell>3.63</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2020 (Remote Mid-Way) *</cell>
+      <cell>30%</cell>
+      <cell>4.66*</cell>
+      <cell>N/A</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2020 (Hybrid)</cell>
+      <cell>46%</cell>
+      <cell>4.64</cell>
+      <cell>3.57</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2021 (Hybrid)</cell>
+      <cell>45%</cell>
+      <cell>4.75</cell>
+      <cell>3.73</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2021</cell>
+      <cell>42%</cell>
+      <cell>4.70</cell>
+      <cell>4.14</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2022</cell>
+      <cell>47%</cell>
+      <cell>4.94</cell>
+      <cell>3.91</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2022</cell>
+      <cell>57%</cell>
+      <cell>5.0</cell>
+      <cell>4.0</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Average</cell>
+      <cell>41.3%</cell>
+      <cell>4.70</cell>
+      <cell>3.83</cell>
+    </row>
+  </tabular>
 </table>
 <p>
 From analysis of the surveys, 4 themes emerged which capture student
 perceptions of the newly developed course. These include: Teaching
-Style, Course Design &amp; Comparison, Balance between Theory &amp;
+Style, Course Design and; Comparison, Balance between Theory and;
 Application and Connected Learning. <xref ref="t_themes">Table</xref> shows these
 four themes with definitions of each. These themes overall represent
 the perspectives students had on the course based on the survey
 results.
 </p>
-<table xml:id="t_themes" >
-<title>Resultant themes and definitions of themes</title>
-<tabular>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell><em>Theme</em></cell><cell><em>Definition</em></cell></row>
-<row bottom="medium"><cell></cell><cell></cell></row>
-<row><cell>
-Teaching Style</cell><cell>Instructor teaching style and personality has an impact on course which is sometimes hard to distinguish from the course design itself</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Course Design \</cell><cell>Comparison</cell><cell>Student evaluation of different aspects of the course, including the flipped-classroom design, structure of lecture and class time, as well as specifics of the book. Course is compared to others.</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Balance between Theory \</cell><cell>Application</cell><cell>Students enjoyed the application aspect of the PBL Instrumentation course, but suggested adding more theory to the GitBook provided for the course. Students wanted more harmony between the textbook and the kit.</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-<row><cell>Connected Learning</cell><cell>Students extend learning outside of the classroom and make connections to their personal life</cell></row>
-<row bottom="minor"><cell></cell><cell></cell></row>
-</tabular>
-<caption>Resultant themes and definitions of themes</caption>
+<table xml:id="t_themes">
+  <title>Resultant themes and definitions of themes</title>
+  <tabular align="center" left="minor" right="minor" top="minor" halign="center">
+    <col width="30%" />
+    <col width="60%" />
+    <row bottom="medium">
+      <cell><term>Theme</term></cell>
+      <cell><term>Definition</term></cell>
+    </row>
+    <row bottom="minor">
+      <cell>Teaching Style</cell>
+      <cell halign="left"><p>Instructor teaching style and personality has an impact on course which is sometimes hard to distinguish from the course design itself</p></cell>
+    </row>
+    <row bottom="minor">
+      <cell>Course Design &amp; Comparison</cell>
+      <cell halign="left"><p>Student evaluation of different aspects of the course, including the flipped-classroom design, structure of lecture and class time, as well as specifics of the book. Course is compared to others.</p></cell>
+    </row>
+    <row bottom="minor">
+      <cell>Balance between Theory &amp; Application</cell>
+      <cell halign="left"><p>Students enjoyed the application aspect of the PBL Instrumentation course, but suggested adding more theory to the GitBook provided for the course. Students wanted more harmony between the textbook and the kit.</p></cell>
+    </row>
+    <row bottom="minor">
+      <cell>Connected Learning</cell>
+      <cell halign="left"><p>Students extend learning outside of the classroom and make connections to their personal life</p></cell>
+    </row>
+  </tabular>
 </table>
 </section>
 

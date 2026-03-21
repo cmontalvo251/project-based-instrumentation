@@ -356,6 +356,13 @@ transmitter.
 </section>
 
 <section>
+<title>Method 5 - Logging Data to an SD Card</title>
+<p>
+A final method to log data is using a standalone <url href="https://www.adafruit.com/product/254">micro sd card breakout board</url> (See <xref ref="sdcard"/>). Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See <xref ref="troubleshooting"/>) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting <em>boot.py</em> to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter. 
+</p>
+</section>
+
+<section>
 <title>Plotting Logged Data</title>
 <p>
 Alright so there you have it. I have explained 4 methods to

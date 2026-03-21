@@ -4,14 +4,14 @@
 <introduction>
 <p>
 A lab at home kit has been described here. This kit is part of the
-curriculum for Instrumentation &amp; Experimental Methods and uses the
+curriculum for Instrumentation and Experimental Methods and uses the
 CircuitPlayground Express (CPX) from Adafruit as well as other
 electronic components. The CPX uses CircuitPython, a derivative of
 Python. Python like all scripting languages allows students to focus
 on writing concise code to use the CPX as a tool rather than getting
 bogged down in syntax, compilation and runtime errors. All software is
 free, open source and has numerous examples on the Adafruit Learn page
-as well as the internet at large and Github \cite{Github}.
+as well as the internet at large and Github <xref ref="Github"/>.
 </p>
 
 <p>
