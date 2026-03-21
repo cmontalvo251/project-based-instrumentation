@@ -32,6 +32,7 @@
     <xi:include href="./imu.ptx"/>
     <xi:include href="./photocell.ptx"/>
     <xi:include href="./thermistor.ptx"/>
+    <xi:include href="./second-order.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>
