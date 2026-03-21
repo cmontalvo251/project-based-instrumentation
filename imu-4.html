@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Getting Started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Project Based Engineering Instrumentation">
+<meta property="book:author" content="Carlos Montalvo">
+<meta property="book:author" content="Marine Feron Leabeater">
+<meta property="book:author" content="Lisa Schibelius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="project-based-instrumentation.html"><span class="title">Project Based Engineering Instrumentation</span> <span class="subtitle">Using CircuitPython and the Circuit Playground</span></a></h1>
+<p class="byline">Carlos Montalvo, Marine Feron Leabeater, Lisa Schibelius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="imu-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="imu.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="imu-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="current-edition.html" class="internal"><span class="codenumber">1</span> <span class="title">Current Edition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="manuscript-changes.html" class="internal"><span class="codenumber">2</span> <span class="title">Manuscript Changes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="future-changes.html" class="internal"><span class="codenumber">3</span> <span class="title">Changes Needed and Future Project Ideas</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-descripion.html" class="internal"><span class="codenumber">2</span> <span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="purchase-equipment.html" class="internal"><span class="codenumber">3</span> <span class="title">Purchase Equipment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-2.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">3.3</span> <span class="title">CircuitPython Kit</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="purchase-equipment-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-4" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">4</span> <span class="title">Download Python for Desktop</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-2.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Thonny</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Spyder</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Other Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Setting up your IDE</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Scripting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="download-python-10.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-3" class="internal"><span class="codenumber">4.9.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-4" class="internal"><span class="codenumber">4.9.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">5</span> <span class="title">Getting Started with the CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Setting up your Circuit Playground</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">5.4</span> <span class="title">TL;DR</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-3" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-4" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">6</span> <span class="title">Installing Modules and Troubleshooting your CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Updating your Bootloader</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Installing Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Reformatting your CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Common Mishaps</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="led-buttons.html" class="internal"><span class="codenumber">7</span> <span class="title">External LEDs and Push Buttons</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">7.3</span> <span class="title">LED with no Code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">7.4</span> <span class="title">LED with a push button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">7.5</span> <span class="title">LED with code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">7.6</span> <span class="title">LED with CPX button</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="led-buttons-8.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">8</span> <span class="title">Using the CPX/CPB as a Data Acquisition System (DAQ)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Method 5 - Logging Data to an SD Card</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Plotting Logged Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="daq-12.html" class="internal"><span class="codenumber">8.11</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-3" class="internal"><span class="codenumber">8.11.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-4" class="internal"><span class="codenumber">8.11.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">9</span> <span class="title">Bluetooth on the CircuitPlayground Bluefruit - Method 4</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bluetooth-6.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">10</span> <span class="title">Logging Data to an SD Card - Method 5</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sdcard-5.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sdcard-5.html#sdcard-5-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sdcard-5.html#sdcard-5-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">11</span> <span class="title">Measuring Voltage Across a Potentiometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-2.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-3" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-4" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">12</span> <span class="title">Wind Speed from Pitot Probe</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-2.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-3.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pitot-5.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-3" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-4" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">13</span> <span class="title">Circuit Playground (CPX/CPB) Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-2.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Low Level Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-2" class="internal"><span class="codenumber">13.5.1</span> <span class="title">Light</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-3" class="internal"><span class="codenumber">13.5.2</span> <span class="title">Sound</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-4" class="internal"><span class="codenumber">13.5.3</span> <span class="title">Temperature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-5" class="internal"><span class="codenumber">13.5.4</span> <span class="title">Accelerometer</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-7.html" class="internal"><span class="codenumber">13.6</span> <span class="title">High Level Control</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-8.html" class="internal"><span class="codenumber">13.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-8.html#modules-8-3" class="internal"><span class="codenumber">13.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-8.html#modules-8-4" class="internal"><span class="codenumber">13.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="acceleration.html" class="internal"><span class="codenumber">14</span> <span class="title">Integrating Acceleration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-2.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-3.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-4.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="acceleration-5.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="acceleration-5.html#acceleration-5-3" class="internal"><span class="codenumber">14.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="acceleration-5.html#acceleration-5-4" class="internal"><span class="codenumber">14.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pedometer.html" class="internal"><span class="codenumber">15</span> <span class="title">Building a Pedometer using an Accelerometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-2.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-3.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-4.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-5.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Gathering Accelerometer Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-6.html" class="internal"><span class="codenumber">15.5</span> <span class="title">Computing Number of Steps: Post-Processing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-7.html" class="internal"><span class="codenumber">15.6</span> <span class="title">Computing Number of Steps: Online</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pedometer-8.html" class="internal"><span class="codenumber">15.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pedometer-8.html#pedometer-8-3" class="internal"><span class="codenumber">15.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pedometer-8.html#pedometer-8-4" class="internal"><span class="codenumber">15.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">16</span> <span class="title">Inertial Measurement Unit - Accelerometer, Rate Gyro, Magnetometer</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="imu-5.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="imu-5.html#imu-5-3" class="internal"><span class="codenumber">16.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="imu-5.html#imu-5-4" class="internal"><span class="codenumber">16.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="photocell.html" class="internal"><span class="codenumber">17</span> <span class="title">Histograms and Normal Distribution of Photocell Readings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-2.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-3.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-4.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-5.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Throwing Out Outliers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-6.html" class="internal"><span class="codenumber">17.5</span> <span class="title">Normal Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="photocell-7.html" class="internal"><span class="codenumber">17.6</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="photocell-7.html#photocell-7-3" class="internal"><span class="codenumber">17.6.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="photocell-7.html#photocell-7-4" class="internal"><span class="codenumber">17.6.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="servo.html" class="internal"><span class="codenumber">18</span> <span class="title">Servo Calibration (PulseWidthModulation(PWM) = f(angle)) and Feedback Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-2.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-3.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-calibration.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-5.html" class="internal"><span class="codenumber">18.4</span> <span class="title">Feedback Control</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="servo-6.html" class="internal"><span class="codenumber">18.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-3" class="internal"><span class="codenumber">18.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="servo-6.html#servo-6-4" class="internal"><span class="codenumber">18.5.2</span> <span class="title">Specific Directions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4-2" class="internal"><span class="codenumber">18.5.2.1</span> <span class="title">Part 1</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4-3" class="internal"><span class="codenumber">18.5.2.2</span> <span class="title">Part 2</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="thermistor.html" class="internal"><span class="codenumber">19</span> <span class="title">Time Constant of a Thermistor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-2.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-3.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-4.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-5.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Temperature Change Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-6.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Estimating Time Constant</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="thermistor-7.html" class="internal"><span class="codenumber">19.6</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="thermistor-7.html#thermistor-7-3" class="internal"><span class="codenumber">19.6.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="thermistor-7.html#thermistor-7-4" class="internal"><span class="codenumber">19.6.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="second-order.html" class="internal"><span class="codenumber">20</span> <span class="title">Natural Frequency and Damping of a Second Order System and Issues with Aliasing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-2.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-3.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-4.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Oscillatory Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-6.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Pendulum Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-7.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Aliasing</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="second-order-8.html" class="internal"><span class="codenumber">20.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="second-order-8.html#second-order-8-3" class="internal"><span class="codenumber">20.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="second-order-8.html#second-order-8-4" class="internal"><span class="codenumber">20.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="results-discussion.html" class="internal"><span class="codenumber">21</span> <span class="title">Results and Discussion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-3.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Data Collection and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-4.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-5.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Discussion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-6.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Limitations of Findings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="conclusions.html" class="internal"><span class="codenumber">22</span> <span class="title">Conclusions</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="acknowledgements.html" class="internal"><span class="codenumber">23</span> <span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="imu-4"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Getting Started</span>
+</h2>
+<div class="para" id="imu-4-2">In this lab we’re going to use this an external sensor to measure angular velocity and the magnetic field of the surrounding environment.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/imu.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Inertial Measurement Unit (IMU) without header pins soldered<div class="autopermalink" data-description="Figure 16.3.1"><a href="#imu-4-3" title="Copy heading and permalink for Figure 16.3.1" aria-label="Copy heading and permalink for Figure 16.3.1">🔗</a></div></figcaption></figure><div class="para" id="imu-4-4">The sensor above is the <a class="external" href="https://www.adafruit.com/product/4485" target="_blank">LSM6DS33+LIS3MDL</a>. You basically have 2 separate microchips in one. The first (LSM6DS33) is a 3-axis accelerometer and 3-axis rate gyro. The first measures acceleration and the second measures angular velocity. The LIS3MDL is a 3-axis magnetometer which measures magnetic fields. The three of these sensors put together (accelerometer, rate gyro, magnetometer) is called an IMU (Inertial Measurement Unit). It’s actually possible to measure roll and pitch of an airplane and heading using the magnetometer. Combining the angular velocity of the rate gyro can create a complete attitude estimation algorithm for spacecraft. This sensor does not come standard in the current iteration of the kit. You can purchase one on Adafruit for only $10 at the time of this writing. The interesting thing about this device is that you can actually purchase the LSM6DS33 and LIS3MDL separately but this breakout board has both chips on board. The goal of this lab is not necessarily to use this specific sensor but to understand IMUs and I2C protocol. Most if not all breakout boards on the Adafruit website use I2C communication. You’ll know if the breakout board uses I2C if you find SDA/SCL pins on the board. It will also say it in the quick description of the sensor.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/imu2.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>IMU on Adafruit<div class="autopermalink" data-description="Figure 16.3.2"><a href="#imu-4-5" title="Copy heading and permalink for Figure 16.3.2" aria-label="Copy heading and permalink for Figure 16.3.2">🔗</a></div></figcaption></figure><div class="para" id="imu-4-6">When you open the packaging of this breakout board you’ll notice that the header pins are missing. First you’ll need to cut a row of 4 and 6 for the top and bottom side of the board and <em class="emphasis">solder the header pins to the sensor</em>. If you’re taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <a class="external" href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython" target="_blank">Feather M4</a> (Courtesy of <a class="external" href="https://learn.adafruit.com/u/siddacious" target="_blank">Bryan Siepert</a>).<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-7"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/sensors_python_feather_wiring_breadboard.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Wiring diagram of IMU connected to a FeatherWing<a href="backmatter-1.html#imu-wiring" class="xref" data-knowl="./knowl/xref/imu-wiring.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 30">[30]</a><div class="autopermalink" data-description="Figure 16.3.3"><a href="#imu-4-7" title="Copy heading and permalink for Figure 16.3.3" aria-label="Copy heading and permalink for Figure 16.3.3">🔗</a></div></figcaption></figure><div class="para" id="imu-4-8">The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need VOUT (5V) to run to (VIN), GND to GND and then SDA to SDA and SCL to SCL.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-9"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/imu_circuit.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Photo of IMU Connected to a CircuitPlayground Express<div class="autopermalink" data-description="Figure 16.3.4"><a href="#imu-4-9" title="Copy heading and permalink for Figure 16.3.4" aria-label="Copy heading and permalink for Figure 16.3.4">🔗</a></div></figcaption></figure><div class="para" id="imu-4-10">
+<em class="emphasis">Believe it or not the photo above was actually wired wrong. I had SDA to SCL and SCL to SDA. You need to make sure you have the proper wires going to the correct pins or it won’t work.</em>SDA and SCL are 2 pins for something called I2C (pronounced I squared C) where I is I as in "I am a billy goat" or "I like to code". I2C is beyond the scope of this project but just know it’s a type of serial communication that uses hexadecimal addresses.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="imu-4-11">
+<div class="para">Once you have the circuit wired and soldered it’s time to work on software. First, you want to make sure you have your <a class="external" href="https://circuitpython.org/downloads" target="_blank">Circuit Python UF2</a> up to date. In this example I’m using the 6.X version. Once I updated my UF2 I also updated my <a class="external" href="https://circuitpython.org/libraries" target="_blank">Circuit Python Libraries</a>. The Circuit Python Libraries download as a zip file. You need to unzip the folder and go into the lib folder and grab the following python modules.</div>
+<ol class="decimal" id="imu-4-11-3">
+<li id="imu-4-11-3-1">
+<div class="para" id="imu-4-11-3-1-1">adafruit_bus_device<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-11-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#imu-4-11-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="imu-4-11-3-2">
+<div class="para" id="imu-4-11-3-2-1">adafruit_register<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-11-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#imu-4-11-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="imu-4-11-3-3">
+<div class="para" id="imu-4-11-3-3-1">lis3mdl<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-11-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#imu-4-11-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="imu-4-11-3-4">
+<div class="para" id="imu-4-11-3-4-1">lsm6ds33<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-11-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#imu-4-11-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="imu-4-12">There will be folders for some and just floating .mpy files for others which are python modules that you can import just like time, board and busio as we’ve done in the past. Put those files into your lib folder on your CIRCUITPY drive. If the lib folder doesn’t exist you just need to make one. Once you have the necessary modules you can run some example code. The Adafruit Learn page has a <a class="external" href="https://learn.adafruit.com/lsm6ds33-6-dof-imu=accelerometer-gyro/python-circuitpython" target="_blank">tutorial for the LSM6DS33</a>. The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on <a class="external" href="https://github.com/adafruit/Adafruit_CircuitPython_LSM6DS/blob/master/examples/lsm6ds_lsm6ds33_simpletest.py" target="_blank">Adafruit’s Github</a>. After following both tutorials I was able to make my own script and upload it to my <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl_lsm6dss.py" target="_blank">Github</a>.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-13"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/imu_code.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPython code to read an IMU<div class="autopermalink" data-description="Figure 16.3.5"><a href="#imu-4-13" title="Copy heading and permalink for Figure 16.3.5" aria-label="Copy heading and permalink for Figure 16.3.5">🔗</a></div></figcaption></figure><div class="para" id="imu-4-14">In the code above lines 1-6 import all the modules with line 5 importing the accelerometer on board the CPX and line 6 importing the external sensor wired up to SDA and SCL. Line 8 creates an I2C object using the SDA and SCL pins from the alligator clips and line 11 creates the sensor object. I also include lines 14-17 to include the onboard accelerometer. Notice I can access both sensors no problem. In the while loop line 20 checks the accelerometer on the CPX, line 21 checks the accelerometer on the breakout board and line 22 checks the angular velocity on the breakout board. Lines 23 and 24 print to serial and output to the plotter. Note that some lines are commented out because I wanted to try one thing at a time. With both accelerometers printing to the Plotter I could move the CPX and the breakout board in unison and get the following output.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-15"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/imu_mu.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Serial monitor open showing IMU data in Mu<div class="autopermalink" data-description="Figure 16.3.6"><a href="#imu-4-15" title="Copy heading and permalink for Figure 16.3.6" aria-label="Copy heading and permalink for Figure 16.3.6">🔗</a></div></figcaption></figure><div class="para" id="imu-4-16">Notice that there are 6 numbers printed and 6 lines on the plotter. Both the CPX and the breakout board have little XYZ cartesian coordinate systems. I had to line them up properly before I started moving them. My suggestion would be for you to get some hot glue or 3M tape and place both breakout board and CPX on some sort of hard material like plywood, masonite, or even a cutting board. Anything to keep everything together.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="imu-4-17">Once you’ve done this, try uncommenting the line of code that prints the angular velocity. When I do that and move the breakout board around I can measure the angular velocity of each axis. The units are in radians per second but it’s pretty obvious just from the magnitude of the graph.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-18"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/imu_mag.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Angular Velocity data of IMU shown in Serial Monitor or Mu<div class="autopermalink" data-description="Figure 16.3.7"><a href="#imu-4-18" title="Copy heading and permalink for Figure 16.3.7" aria-label="Copy heading and permalink for Figure 16.3.7">🔗</a></div></figcaption></figure><div class="para" id="imu-4-19">The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the <a class="external" href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython" target="_blank">Adafruit Learn page</a>, along with the simple example from <a class="external" href="https://github.com/adafruit/Adafruit_CircuitPython_LIS3MDL/blob/master/examples/lis3mdl_simpletest.py" target="_blank">Adafruit’s Github</a>. After that I was able to create <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl.py" target="_blank">my own code</a>. The only difference in your code is that the address will be 0x1c instead of 0x1e.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="imu-4-20"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/imu_code_mag.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Magnetometer code in CircuitPython<div class="autopermalink" data-description="Figure 16.3.8"><a href="#imu-4-20" title="Copy heading and permalink for Figure 16.3.8" aria-label="Copy heading and permalink for Figure 16.3.8">🔗</a></div></figcaption></figure><div class="para logical" id="imu-4-21">
+<div class="para">The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it. Note that the accelerometer can be used to obtain pitch and roll angles and the magnetometer can be used to obtain the yaw angle. This is done via trigonometry and is shown in the equations below.</div>
+<div class="displaymath process-math" id="imu-4-21-1">
+\begin{equation}
+\theta = -sin^{-1}(\bar{a}_x)\tag{16.3.1}
+\end{equation}
+</div>
+<div class="displaymath process-math" id="imu-4-21-2">
+\begin{equation}
+\phi = tan^{-1}\left(\frac{\bar{a}_y}{\bar{a}_z}\right)\tag{16.3.2}
+\end{equation}
+</div>
+<div class="displaymath process-math" id="imu-4-21-3">
+\begin{equation}
+\psi = tan^{-1}\left(\frac{\bar{\beta}_z s_{\phi} - \bar{\beta}_y c_{\phi}}{\bar{\beta}_x c_{\phi} + \bar{\beta}_y s_{\theta}s_{\phi} + \bar{\beta}_z c_{\phi}s_{\theta}}\right)\tag{16.3.3}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="imu-4-22">In the equations above <span class="process-math">\(\beta\)</span> is the magnetic field along all 3 axes and <span class="process-math">\(a\)</span> is the accelerations along all 3 axes. Shorthand is used for <span class="process-math">\(cos(\eta)=c_{\eta}\)</span> and <span class="process-math">\(sin(\eta)=s_{\eta}\text{.}\)</span> The <span class="process-math">\(\bar{\eta}\)</span> notation is used to indicate a normalization of the vector. That is <span class="process-math">\(\bar{\eta} = \eta/||\eta||\)</span> where <span class="process-math">\(||\eta||\)</span> is the norm of a 3 dimensional vector <span class="process-math">\(||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}\text{.}\)</span> The derivation for these angles from accelerometers and magnetometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <a class="external" href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics" target="_blank">Aerospace Mechanics</a>.<div class="autopermalink" data-description="Paragraph"><a href="#imu-4-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 16.3: Getting Started"><a href="#imu-4" title="Copy heading and permalink for Section 16.3: Getting Started" aria-label="Copy heading and permalink for Section 16.3: Getting Started">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="imu-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="imu-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

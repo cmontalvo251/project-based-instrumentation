@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Getting Started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Project Based Engineering Instrumentation">
+<meta property="book:author" content="Carlos Montalvo">
+<meta property="book:author" content="Marine Feron Leabeater">
+<meta property="book:author" content="Lisa Schibelius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.19';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="project-based-instrumentation.html"><span class="title">Project Based Engineering Instrumentation</span> <span class="subtitle">Using CircuitPython and the Circuit Playground</span></a></h1>
+<p class="byline">Carlos Montalvo, Marine Feron Leabeater, Lisa Schibelius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="servo-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="servo.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="servo-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="current-edition.html" class="internal"><span class="codenumber">1</span> <span class="title">Current Edition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="manuscript-changes.html" class="internal"><span class="codenumber">2</span> <span class="title">Manuscript Changes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="future-changes.html" class="internal"><span class="codenumber">3</span> <span class="title">Changes Needed and Future Project Ideas</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-descripion.html" class="internal"><span class="codenumber">2</span> <span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="purchase-equipment.html" class="internal"><span class="codenumber">3</span> <span class="title">Purchase Equipment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-2.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">3.3</span> <span class="title">CircuitPython Kit</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="purchase-equipment-5.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-3" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="purchase-equipment-5.html#purchase-equipment-5-4" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">4</span> <span class="title">Download Python for Desktop</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-2.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Thonny</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Spyder</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Other Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">4.6</span> <span class="title">Setting up your IDE</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Scripting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="download-python-10.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-3" class="internal"><span class="codenumber">4.9.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="download-python-10.html#download-python-10-4" class="internal"><span class="codenumber">4.9.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">5</span> <span class="title">Getting Started with the CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Setting up your Circuit Playground</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">5.4</span> <span class="title">TL;DR</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-3" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="getting-started-6.html#getting-started-6-4" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">6</span> <span class="title">Installing Modules and Troubleshooting your CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-3.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Updating your Bootloader</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Installing Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Reformatting your CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Common Mishaps</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="led-buttons.html" class="internal"><span class="codenumber">7</span> <span class="title">External LEDs and Push Buttons</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-2.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">7.3</span> <span class="title">LED with no Code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">7.4</span> <span class="title">LED with a push button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">7.5</span> <span class="title">LED with code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">7.6</span> <span class="title">LED with CPX button</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="led-buttons-8.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-3" class="internal"><span class="codenumber">7.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="led-buttons-8.html#led-buttons-8-4" class="internal"><span class="codenumber">7.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">8</span> <span class="title">Using the CPX/CPB as a Data Acquisition System (DAQ)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">8.6</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">8.7</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">8.9</span> <span class="title">Method 5 - Logging Data to an SD Card</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">8.10</span> <span class="title">Plotting Logged Data</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="daq-12.html" class="internal"><span class="codenumber">8.11</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-3" class="internal"><span class="codenumber">8.11.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="daq-12.html#daq-12-4" class="internal"><span class="codenumber">8.11.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">9</span> <span class="title">Bluetooth on the CircuitPlayground Bluefruit - Method 4</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="bluetooth-6.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-3" class="internal"><span class="codenumber">9.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="bluetooth-6.html#bluetooth-6-4" class="internal"><span class="codenumber">9.5.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">10</span> <span class="title">Logging Data to an SD Card - Method 5</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sdcard-5.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sdcard-5.html#sdcard-5-3" class="internal"><span class="codenumber">10.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sdcard-5.html#sdcard-5-4" class="internal"><span class="codenumber">10.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">11</span> <span class="title">Measuring Voltage Across a Potentiometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-2.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-3" class="internal"><span class="codenumber">11.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="voltage-5.html#voltage-5-4" class="internal"><span class="codenumber">11.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">12</span> <span class="title">Wind Speed from Pitot Probe</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-2.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-3.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pitot-5.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-3" class="internal"><span class="codenumber">12.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-5.html#pitot-5-4" class="internal"><span class="codenumber">12.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">13</span> <span class="title">Circuit Playground (CPX/CPB) Modules</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-2.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">13.5</span> <span class="title">Low Level Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-2" class="internal"><span class="codenumber">13.5.1</span> <span class="title">Light</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-3" class="internal"><span class="codenumber">13.5.2</span> <span class="title">Sound</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-4" class="internal"><span class="codenumber">13.5.3</span> <span class="title">Temperature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-5" class="internal"><span class="codenumber">13.5.4</span> <span class="title">Accelerometer</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-7.html" class="internal"><span class="codenumber">13.6</span> <span class="title">High Level Control</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-8.html" class="internal"><span class="codenumber">13.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-8.html#modules-8-3" class="internal"><span class="codenumber">13.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-8.html#modules-8-4" class="internal"><span class="codenumber">13.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="acceleration.html" class="internal"><span class="codenumber">14</span> <span class="title">Integrating Acceleration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-2.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-3.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-4.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="acceleration-5.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="acceleration-5.html#acceleration-5-3" class="internal"><span class="codenumber">14.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="acceleration-5.html#acceleration-5-4" class="internal"><span class="codenumber">14.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pedometer.html" class="internal"><span class="codenumber">15</span> <span class="title">Building a Pedometer using an Accelerometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-2.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-3.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-4.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-5.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Gathering Accelerometer Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-6.html" class="internal"><span class="codenumber">15.5</span> <span class="title">Computing Number of Steps: Post-Processing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-7.html" class="internal"><span class="codenumber">15.6</span> <span class="title">Computing Number of Steps: Online</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="pedometer-8.html" class="internal"><span class="codenumber">15.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pedometer-8.html#pedometer-8-3" class="internal"><span class="codenumber">15.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pedometer-8.html#pedometer-8-4" class="internal"><span class="codenumber">15.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">16</span> <span class="title">Inertial Measurement Unit - Accelerometer, Rate Gyro, Magnetometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="imu-5.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="imu-5.html#imu-5-3" class="internal"><span class="codenumber">16.4.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="imu-5.html#imu-5-4" class="internal"><span class="codenumber">16.4.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="photocell.html" class="internal"><span class="codenumber">17</span> <span class="title">Histograms and Normal Distribution of Photocell Readings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-2.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-3.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-4.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-5.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Throwing Out Outliers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-6.html" class="internal"><span class="codenumber">17.5</span> <span class="title">Normal Distribution</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="photocell-7.html" class="internal"><span class="codenumber">17.6</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="photocell-7.html#photocell-7-3" class="internal"><span class="codenumber">17.6.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="photocell-7.html#photocell-7-4" class="internal"><span class="codenumber">17.6.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="servo.html" class="internal"><span class="codenumber">18</span> <span class="title">Servo Calibration (PulseWidthModulation(PWM) = f(angle)) and Feedback Control</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-2.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-3.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="servo-calibration.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-5.html" class="internal"><span class="codenumber">18.4</span> <span class="title">Feedback Control</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="servo-6.html" class="internal"><span class="codenumber">18.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-3" class="internal"><span class="codenumber">18.5.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="servo-6.html#servo-6-4" class="internal"><span class="codenumber">18.5.2</span> <span class="title">Specific Directions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4-2" class="internal"><span class="codenumber">18.5.2.1</span> <span class="title">Part 1</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4-3" class="internal"><span class="codenumber">18.5.2.2</span> <span class="title">Part 2</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="thermistor.html" class="internal"><span class="codenumber">19</span> <span class="title">Time Constant of a Thermistor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-2.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-3.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-4.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-5.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Temperature Change Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-6.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Estimating Time Constant</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="thermistor-7.html" class="internal"><span class="codenumber">19.6</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="thermistor-7.html#thermistor-7-3" class="internal"><span class="codenumber">19.6.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="thermistor-7.html#thermistor-7-4" class="internal"><span class="codenumber">19.6.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="second-order.html" class="internal"><span class="codenumber">20</span> <span class="title">Natural Frequency and Damping of a Second Order System and Issues with Aliasing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-2.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-3.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-4.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Oscillatory Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-6.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Pendulum Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-7.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Aliasing</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="second-order-8.html" class="internal"><span class="codenumber">20.7</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="second-order-8.html#second-order-8-3" class="internal"><span class="codenumber">20.7.1</span> <span class="title">Grading Rubric</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="second-order-8.html#second-order-8-4" class="internal"><span class="codenumber">20.7.2</span> <span class="title">Specific Directions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="results-discussion.html" class="internal"><span class="codenumber">21</span> <span class="title">Results and Discussion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-3.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Data Collection and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-4.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-5.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Discussion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-6.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Limitations of Findings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="conclusions.html" class="internal"><span class="codenumber">22</span> <span class="title">Conclusions</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="acknowledgements.html" class="internal"><span class="codenumber">23</span> <span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="servo-calibration"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Getting Started</span>
+</h2>
+<div class="para" id="servo-calibration-2">For this lab we are going to learn how to drive a <a class="external" href="https://www.adafruit.com/product/1143" target="_blank">servo</a>. Servos accept what are called PWM signals which are basically square waves of varying frequency. The servo itself has a microprocessor on board that turns a DC motor based on the incoming PWM frequency which is typically called a duty cycle. The DC motor runs through some gear to rotate a shaft. Because of this rotation, you can make a number of things move! Servos are used for all sorts of things, opening doors, deflecting control surfaces on RC aircraft and many more! The neat thing about PWM signals is that they can not only move servos but they can also drive speed controllers to turn 3 phase motors and even change the light intensity of LEDs. Servos typically come in two different color schemes as shown below.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="servo-calibration-3"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/servo.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Example servos<div class="autopermalink" data-description="Figure 18.3.1"><a href="#servo-calibration-3" title="Copy heading and permalink for Figure 18.3.1" aria-label="Copy heading and permalink for Figure 18.3.1">🔗</a></div></figcaption></figure><div class="para" id="servo-calibration-4">As you can see, servos have 3 pins (GND, PWR, SIGNAL). A wiring diagram of a servo connected to the <a class="external" href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo" target="_blank">CPX/CPB</a> is shown below (Couresy of <a class="external" href="https://learn.adafruit.com/u/kattni" target="_blank">Kattni Rembor</a>).<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="servo-calibration-5"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/circuitpython_CPXServo_bb.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Wiring diagram of a servo connected to a CircuitPlayground Express<a href="backmatter-1.html#servo-wiring" class="xref" data-knowl="./knowl/xref/servo-wiring.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 32">[32]</a><div class="autopermalink" data-description="Figure 18.3.2"><a href="#servo-calibration-5" title="Copy heading and permalink for Figure 18.3.2" aria-label="Copy heading and permalink for Figure 18.3.2">🔗</a></div></figcaption></figure><div class="para" id="servo-calibration-6">The brown or black wire is GND, the red wire needs to go to a 5V signal so for the CPX it needs to go to the VOUT pin and the yellow or white wire is the signal wire which need to go to an analog port on the CPX that supports PWM signals. Which ones support PWM signals? <a class="external" href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts" target="_blank">Adafruit Learn</a> has a great description of which pins support PWM signals but as a quick check you can use the following analog pins: A1, A2, A3, A6 and A7. In my circuit I just picked pin A2 since I’ve been using it so much in the past.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="servo-calibration-7"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/servo_circuit.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Photo of a servo connected to a CircuitPlayground Express<div class="autopermalink" data-description="Figure 18.3.3"><a href="#servo-calibration-7" title="Copy heading and permalink for Figure 18.3.3" aria-label="Copy heading and permalink for Figure 18.3.3">🔗</a></div></figcaption></figure><div class="para" id="servo-calibration-8">
+<em class="emphasis">Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will “brown out” which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won’t have any issues.</em><div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="servo-calibration-9">As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the <a class="external" href="https://learn.adafruit.com/using-servos-with-circuitpython/overview" target="_blank">Adafruit Learn system</a>. I also have a <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Servo/servo.py" target="_blank">simple servo.py script</a> on Github. In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You’ll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals. I did this project myself and <a class="external" href="https://youtu.be/ynlGiPZk5VM" target="_blank">posted a YouTube video about it</a>.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="servo-calibration-10">Besides making the servo move back and forth I’d like you to vary the pulses on line 16 <em class="emphasis">SLOWLY</em> until the servo can’t move any farther. This line of code is a for loop which loops through the array currently showing [0.8,2.0]. If you change that array to [0.9,1.2,1.5,1.8] the servo will move to a pulse in milliseconds of 0.9, 1.2, 1.5 and then 1.8. The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number [0.8] the servo will just move to 1 angle and stay there forever. <em class="emphasis">NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY</em>.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="servo-calibration-11"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/servo_code.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPython code to move a servo<div class="autopermalink" data-description="Figure 18.3.4"><a href="#servo-calibration-11" title="Copy heading and permalink for Figure 18.3.4" aria-label="Copy heading and permalink for Figure 18.3.4">🔗</a></div></figcaption></figure><div class="para" id="servo-calibration-12">If you notice, sending a pulse signal in microseconds moved the servo to a specific angle. Thing is I would like to be able to move the servo to a specific angle rather than having to just guess and check like we did in the last lab. So what we’re going to do is start at the minimum pulse signal you computed in the last project and then change the servo pulse in equal increments until we reach the maximum servo pulse signal. When I did this lab I found that 0.6 ms was just about the smallest I could get the servo to move. We’re going to call this 0 degrees. My maximum pulse signal ended up being about 2.4 ms. So I want you to test 10 different points between your specific maximum and minimum value which will hopefully be different for all of you. Everytime you test a pulse I want to measure the angle the servo makes with the minimum value being 0 degrees. Create a table of data with two columns. In the first column put pulse in milliseconds and in the second column put angle of servo in degrees. Use a protractor to measure the angle. <a class="external" href="https://www.youtube.com/watch?v=XSLzcwTOsWk" target="_blank">If you don’t have a protractor make one</a> or you can download a picture and hold your servo up to the screen. I did this project with just 3 data points and here are my data points. Again you need to have around 10 data points<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-servo-calibration"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Example Data taken for Calibration of Servo<div class="autopermalink" data-description="Table 18.3.5: Example Data taken for Calibration of Servo"><a href="#table-servo-calibration" title="Copy heading and permalink for Table 18.3.5: Example Data taken for Calibration of Servo" aria-label="Copy heading and permalink for Table 18.3.5: Example Data taken for Calibration of Servo">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r1 l1 t1 lines">Pulse (ms)</td>
+<td class="c m b1 r1 l0 t1 lines">Angle (Degrees)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">0.6</td>
+<td class="c m b1 r1 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">1.5</td>
+<td class="c m b1 r1 l0 t0 lines">90</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">2.4</td>
+<td class="c m b1 r1 l0 t0 lines">180</td>
+</tr>
+</table></div></figure><div class="para" id="servo-calibration-14">Take your table of data and put it into a spreadsheet and save the data as a CSV or simply put your data into a text file. Since I only had 3 data points I just put them into a text file. Plot the data in Python on your desktop computer with servo angle on the x-axis and duty cycle on the y axis. Using the data, determine if the data set is linear, quadratic or cubic. Fit a trend line to the data and plot your trend line on top of the data. <a class="external" href="https://www.youtube.com/watch?v=4vYYPHRMdqM&amp;feature=youtu.be" target="_blank">If you need help with trend lines in Python you can watch this video I posted on Youtube</a>. I also made a helpful <a class="external" href="https://github.com/cmontalvo251/Python/blob/master/instrumentation/book_problems/least_squares_regression.py" target="_blank">python script with some fictitious data on Github</a> that fits the data with linear and quadratic fits. Here is my data plotted alongside the trendline in Python. I sort of made up the data and made it perfect on purpose so my trendline is perfect. Yours will not be so perfect.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="servo-calibration-15"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/trendline.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.3.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Example trendline fit to example servo calibration data<div class="autopermalink" data-description="Figure 18.3.6"><a href="#servo-calibration-15" title="Copy heading and permalink for Figure 18.3.6" aria-label="Copy heading and permalink for Figure 18.3.6">🔗</a></div></figcaption></figure><div class="para logical" id="servo-calibration-16">
+<div class="para">You’ll notice that I first import the data from the text file using the np.loadtxt function and then I use the polyfit and polyval functions to create the trendline. The polyfit function requires you to give it the X and Y axes and the order of the trendline which since the trend line is linear I sent it a 1 but you could easily do 2 for quadratic or 3 for cubic. I then print the coefficients which are [0.01 0.6]. This means my trend line looks like this.</div>
+<div class="displaymath process-math" id="servo-calibration-16-1">
+\begin{equation}
+Pulse = 0.6 + 0.01*Angle\tag{18.3.1}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="servo-calibration-17">Where Pulse is in ms and Angle is in degrees. Now you have an equation where you can use angle in degrees to compute the pulse in milliseconds. In the code I’ve posted I then use np.linspace to create 1000 data points from 0 to 180 degrees and then use the polyval function to compute the pulse for all 1000 angles I created using the linspace command. I finally plot the trend line in red and use the remaining part of the script to create labels and legends. Once you have this plot write down your coefficients and create an equation like I did above. Again your numbers won’t be so neat. Once you have this equation, return to Mu and create a function using the def keyword that takes in an angle as an input and then returns a pulse signal in milli seconds. It will look sometime like this<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">def angle2pulse(angle):
+        return 0.6 + 0.01*angle
+</pre>
+<div class="para" id="servo-calibration-19">
+<em class="emphasis">Note: Functions in python must be after all your imports but before your while loop. If you put this function inside your while loop the code will not work</em>. Using that equation, modify your servo.py script to have the servo move through the following angles, 0, 45,90,135 (your servo may not travel to 180 degrees). Verify that your equation is working correctly by placing your protractor below the servo. Much of the code required for this project is not included because it is left as an exercise for the student.<div class="autopermalink" data-description="Paragraph"><a href="#servo-calibration-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 18.3: Getting Started"><a href="#servo-calibration" title="Copy heading and permalink for Section 18.3: Getting Started" aria-label="Copy heading and permalink for Section 18.3: Getting Started">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="servo-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="servo-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
