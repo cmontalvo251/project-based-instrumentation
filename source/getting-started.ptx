@@ -341,7 +341,7 @@ help you see me perform the 8 steps above.</url>
   <title>Assignment</title>
   <introduction>
 <p>
-For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots of relevant steps. <em>Note for the blink code, modify blink pattern to be different from the default on Github</em>. The specific items requested are shown below.
+For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots (your entire computer screen) of relevant steps. <em>Note for the blink code, modify blink pattern to be different from the default on Github</em>. The specific items requested are shown below.
 </p>
   </introduction>
 
@@ -350,9 +350,9 @@ For this assignment you must appropriately set up your CPX/CPB, get the blink co
 <subsection>
 <title>Specific Directions</title>
 <ol>
-<li><p>Include a screenshot of your computer showing the CPLAYBOOT drive on your computer - 20%</p></li>
-<li><p>Include a screenshot of your computer showing the CIRCUITPY drive on your computer - 20%</p></li>
-<li><p>Include a screenshot of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20%</p></li>
+<li><p>Include a screenshot (entire computer screen) of your computer showing the CPLAYBOOT drive on your computer - 20%</p></li>
+<li><p>Include a screenshot (entire computer screen) of your computer showing the CIRCUITPY drive on your computer - 20%</p></li>
+<li><p>Include a screenshot (entire computer screen) of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20%</p></li>
 <li><p>Include a photo of your CPX with the red led on - 20%</p></li>
 </ol>
 </subsection>

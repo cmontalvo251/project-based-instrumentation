@@ -94,7 +94,7 @@ The code to accomplish this is relatively simple and a portion of the code is sh
 <ol>
 <li><p>In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass/Fail</p></li>
 <li><p>Include a photo of your circuit with your pitot probe wired up to an analog pin - 10%</p></li>
-<li><p>Include a screenshot of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%</p></li>
+<li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%</p></li>
 <li><p>Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%</p></li>
 <li><p>Convert your raw signal to windspeed and filter your signal using an offline complementary filter. Plot both unfiltered and filtered windspeed on the same plot and include a legend. Make sure you add the saturation filter to prevent a negative in the square root - 20%</p></li>
 <li><p>What is the maximum windspeed that the CPX/CPB can read? - 10%</p></li>
