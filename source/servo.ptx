@@ -298,7 +298,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
 
 <subsubsection>
 <title>Part 2</title>
-<ol">
+<ol>
 <li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%</p></li>
 <li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and 2. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
 <li><p>Simulate the second order system above for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
