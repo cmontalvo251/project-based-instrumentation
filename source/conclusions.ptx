@@ -1,5 +1,7 @@
-<section>
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="conclusions" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Conclusions</title>
+<introduction>
 <p>
 A lab at home kit has been described here. This kit is part of the
 curriculum for Instrumentation &amp; Experimental Methods and uses the
@@ -34,4 +36,5 @@ performance as shown in the literature. Hopefully, similar kits can be
 created for other classes at USA as well as other universities in STEM
 across the world.
 </p>
-</section>
+</introduction>
+</chapter>

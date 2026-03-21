@@ -131,10 +131,10 @@ For this assignment, you are to change the ambient temperature of the CPX/CPB th
 <subsection>
 <title>Specific Directions</title>
 <ol>
-<li><p>Take a picture of you heating or cooling the CPX/CPB - 20</p></li>
-<li><p>Plot the raw voltage and resistance in the thermistor vs time - 20</p></li>
-<li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20</p></li>
-<li><p>Include a table of your estimated parameters - 20</p></li>
+<li><p>Take a picture of you heating or cooling the CPX/CPB - 20%</p></li>
+<li><p>Plot the raw voltage and resistance in the thermistor vs time - 20%</p></li>
+<li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20%</p></li>
+<li><p>Include a table of your estimated parameters - 20%</p></li>
 </ol>
 </subsection>
 </section>

@@ -13,9 +13,11 @@
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
-    <!-- Include Projects -->
+    <!--Include Introduction chapter -->
     <xi:include href="./intro.ptx" />
     <xi:include href="./course-description.ptx"/>
+
+    <!-- Include Projects -->
     <xi:include href="./purchase-equipment.ptx"/>
     <xi:include href="./download-python.ptx"/>
     <xi:include href="./getting-started.ptx"/>
@@ -31,8 +33,13 @@
     <xi:include href="./pedometer.ptx"/>
     <xi:include href="./imu.ptx"/>
     <xi:include href="./photocell.ptx"/>
+    <xi:include href="./servo.ptx"/>
     <xi:include href="./thermistor.ptx"/>
     <xi:include href="./second-order.ptx"/>
+
+    <!--Include Results and Discussion chapters-->
+    <xi:include href="./results-discussion.ptx"/>
+    <xi:include href="./conclusions.ptx"/>
 
     <!-- Include Acknowledgements -->
     <xi:include href="./acknowledgements.ptx"/>

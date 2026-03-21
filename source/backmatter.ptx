@@ -42,10 +42,8 @@
     <biblio xml:id="imu-wiring"><p>Siepert, Bryan. "LIS3MDL Triple-axis Magnetometer", Adafruit Learning System January 17th, 2020, https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython. Accessed 20 Mar. 2026 </p></biblio>
     <biblio xml:id="photocell-wiring"><p>Ada (Fried), Lady (Limor), "Photocells", Adafruit Learning System, July 29th, 2012, https://learn.adafruit.com/photocells/using-a-photocell, Accessed Mar 20. 2026 </p></biblio>
     <biblio xml:id="servo-wiring"><p>Ada (Fried), Lady (Limor), Rembor, Kattni, "Adafruit Circuit Playground Express - CircuitPython Servo", 12 Oct. 2017, https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo. Accessed 20 Mar. 2026 </p></biblio>
-    <!--[27] Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the
-ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.
-[28] Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019.
-Frontiers in Psychology, 12, 2021.-->
+    <biblio xml:id="b_photocell"><p>Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.</p></biblio>
+    <biblio xml:id="likert"><p>Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019. Frontiers in Psychology, 12, 2021</p></biblio>
   </references>
 
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->

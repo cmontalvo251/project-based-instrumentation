@@ -149,11 +149,11 @@ For this assignment you are to create a system that oscillates and capture data 
 <subsection>
 <title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your experiment and explain the state that you are measuring - 10</p></li>
-<li><p>Plot the results of your data (make sure to connect your data points) vs time for all 3 sampling frequencies (1,10, 100Hz) and include a legend - 20</p></li>
+<li><p>Include a photo of your experiment and explain the state that you are measuring - 10%</p></li>
+<li><p>Plot the results of your data (make sure to connect your data points) vs time for all 3 sampling frequencies (1,10, 100Hz) and include a legend - 20%</p></li>
 <li><p>Include a table of your estimated parameters as well as the natural frequency and damping ratio - 20%</p></li>
-<li><p>Plot your measured data sampled at 100hz with your fitted equation on top - 20</p></li>
-<li><p>Based on your results and your computed natural frequency, comment on the Nyquist frequency and the Montalvo frequency of your system and whether or not you encountered aliasing in your experiment based on the figures and the Nyquist/Montalvo frequency - 10</p></li>
+<li><p>Plot your measured data sampled at 100hz with your fitted equation on top - 20%</p></li>
+<li><p>Based on your results and your computed natural frequency, comment on the Nyquist frequency and the Montalvo frequency of your system and whether or not you encountered aliasing in your experiment based on the figures and the Nyquist/Montalvo frequency - 10%</p></li>
 </ol>
 </subsection>
 </section>

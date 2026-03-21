@@ -53,7 +53,7 @@ Building this circuit as a voltage divider will create the standard voltage divi
 </p>
 
 <p>
-In this case <m>V_{out}</m> is 3.3V and <m>R_{series}</m> is dependant on the resistor you use in your circuit. So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below \cite{photocell2023}.
+In this case <m>V_{out}</m> is 3.3V and <m>R_{series}</m> is dependant on the resistor you use in your circuit. So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below <xref ref="b_photocell"/>.
 <men>
   Lux = 500000R_{photocell}^{-0.7}
 </men>
