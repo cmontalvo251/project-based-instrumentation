@@ -46,7 +46,7 @@ The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS
 When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <em>solder the header pins to the sensor</em>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>).
 </p>
 <figure>
-  <image width="73%" source="images/sensors_python_feather_wiring_breadboard.png" />
+  <image width="73%" source="sensors_python_feather_wiring_breadboard.png" />
   <caption>Wiring diagram of IMU connected to a FeatherWing<xref ref="imu-wiring"/></caption>
 </figure>
 <p>

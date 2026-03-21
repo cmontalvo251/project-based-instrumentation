@@ -35,14 +35,14 @@ This lab is going to be similar to the potentiometer lab (See <xref ref="voltage
 Wiring a photocell is similar to a potentiometer and remember that you need a resistor in series with the photocell to create the voltage divider circuit. There is a relevant <url href="https://learn.adafruit.com/photocells/circuitpython">Adafruit Tutorial on Photocells</url> and the code required to measure the voltage if you'd like to read more about it. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!).
 </p>
 <figure>
-  <image width="73%" source="images/arduino_photocell.png" />
+  <image width="73%" source="arduino_photocell.png" />
   <caption>Photocell wired up to an Arduino<xref ref="photocell-wiring"/></caption>
 </figure>
 <p>
 The lab this week requires you to do the same as the potentiometer lab. I'd like you to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set in Python on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell.
 </p>
 <figure>
-  <image width="73%" source="photocell_circuit.png" />
+  <image width="73%" source="photocell_circuit.jpeg" />
   <caption>CircuitPlayground Express connected to a Photocell</caption>
 </figure>
 <p>
