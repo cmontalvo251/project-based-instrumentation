@@ -25,10 +25,12 @@ TBD
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 This project is similar to the Data Acquisition project only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

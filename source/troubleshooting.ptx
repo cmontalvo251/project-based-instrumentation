@@ -1,49 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="troubleshooting" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Troubleshooting Guide</title>
+  <title>Installing Modules and Troubleshooting your CPX/CPB</title>
 
   <introduction>
     <p>
-      <em>Is your CPX/CPB broken or not running code? Read below.</em>
+      Are you getting tons of errors because a certain moduble is not installed? Is your CPX/CPB broken or not running code? This chapter walks through a few common mishaps that will happen as you work through these code examples.
     </p>
-    
-    <ol>
-<li><p>Your CPX is a USB stick that can hold as many Python files as 2MB will allow but it can only run or execute one python script at a time. It will look for code.py and then main.py and that's it.</p></li>
-<li><p>Make sure you're using Mu in the right Mode (CircuitPython)</p></li>
-<li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
-<li><p>Make sure you are editing the right file in Mu. Do you have two versions of main.py or perhaps main.py and code.py?</p></li>
-<li><p>Do you have boot.py on there when you don't need it?</p></li>
-<li><p>Are you editing using Thonny or Spyder? You're supposed to use Mu.</p></li>
-<li><p>Are you editing a file on your computer? Make sure you are
-    writing to the CIRCUITPY drive.</p></li>
-<li><p>Do you have the right modules in your <em>lib</em> folder?</p></li>
-<li><p>Unplug the CPX, close Mu and try again.</p></li>
-<li><p>First, try and reset the CPX to CPLAYBOOT and reflash the UF2 to see if that fixes it.</p></li>
-<li><p>If you have a linux computer you can <q>sudo screen /dev/ttyACM0</q> and then run <q>import storage</q> and then <q>storage.erase_filesystem()</q></p></li>
-<li><p>If that doesn't work sometimes you just need to completely erase the CIRCUITPY drive so head over to this <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting">troubleshooting guide</url> and follow some of the steps they tell you.</p></li>
-<li><p>As a last resort you can try to download these UF2s and
-    hopefully it will fix all errors and mistakes -
-    <url href="https://cdn-learn.adafruit.com/assets/assets/000/048/745/original/flash_erase_express.ino.circuitplay.uf2?1512152080">CPX</url>, <url href="https://cdn-learn.adafruit.com/assets/assets/000/082/950/original/CP_Bluefruit_QSPI_Erase.UF2?1572026649">CPB</url></p></li>
-<li><p>If you're having an issue with an old bootloader be sure to update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader for the CPB</url> or alternatively the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">bootloader for the CPX</url>. At the time of this writing here is the command you need to upload the new bootloader the CPB. If you have version 0.4.0 or later you can use the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-uf2">UF2 method</url>.
-<pre>
-adafruit-nrfutil --verbose dfu serial --package 
-circuitplayground_nrf52840_bootloader-0.8.2_s140_6.1.1.zip -p /dev/ttyACM0 
--b 115200 --singlebank --touch 1200
-</pre>
-For linux users you will need a few things
-</p>
-
-<ol>
-<li><p>You need pip3 <m>-></m> $ sudo apt install python3-pip</p></li>
-<li><p>You need adafruit-nrfutil <m>-></m> $ pip3 install --user adafruit-nrfutil</p></li>
-<li><p>adafruit-nrfutil gets installed into \textasciitilde/.local/bin</p></li>
-<li><p>You need to add your user to dialout <m>-></m> $ sudo usermod -a -G your_username</p></li>
-<li><p>Restart your computer</p></li>
-</ol>
-For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is <em>update-bootloader-circuitplay_m0-v3.15.0.uf2</em>.</li>
-<li><p>Are you running out of memory? To figure out how much RAM you have on your CPX/CPB you need to <em>import gc</em> then run <em>gc.collect()</em> and then <em>print(gc.mem_free())</em>. At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM.</p></li>
-</ol>
   </introduction>
 
+    <section>
+      <title>Updating your Bootloader</title>
+      <p>
+	If you're having an issue with an old bootloader be sure to update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader for the CPB</url> or alternatively the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">bootloader for the CPX</url>. At the time of this writing here is the command you need to upload the new bootloader the CPB. If you have version 0.4.0 or later you can use the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-uf2">UF2 method</url>. If your bootloader is too old you need <em>adafruit-nrfutil</em>. Here is the command you need to upload the new bootloader to the CPB.
+    <pre>
+      adafruit-nrfutil --verbose dfu serial --package 
+      circuitplayground_nrf52840_bootloader-0.8.2_s140_6.1.1.zip -p /dev/ttyACM0 
+      -b 115200 --singlebank --touch 1200
+    </pre>
+    <term>For windows users</term> you use the <em>adafruit-nrfutil.exe</em> file from the Adafruit bootloader website. Then, usingcommand prompt to run the command above you need to change the tty port to the correct COM port which can be found using <em>Device Manager</em>.
+
+    <term>For linux users</term> you will need a few things
+
+    <ol>
+      <li><p>You need pip3 <m>-></m> $ sudo apt install python3-pip</p></li>
+      <li><p>You need adafruit-nrfutil <m>-></m> $ pip3 install --user adafruit-nrfutil</p></li>
+      <li><p>adafruit-nrfutil gets installed into \textasciitilde/.local/bin</p></li>
+      <li><p>You need to add your user to dialout <m>-></m> $ sudo usermod -a -G your_username</p></li>
+      <li><p>Restart your computer</p></li>
+    </ol>
+
+    For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is <em>update-bootloader-circuitplay_m0-v3.15.0.uf2</em>.
+    </p>
+    </section>
+    
+  <section>
+    <title>Installing Modules</title>
+    <p>
+      <em>One issue you're going to run into when you run the codes below is that you won't have some of the modules on your CPB/CPX.</em> To fix this you need to download the <url href="https://circuitpython.org/libraries">CircuitPython Libraries</url>. You need to download the appropriate version: 6.x, 7.x or 8.x. How do you know what version of CircuitPython you have? Well head over to your CIRCUITPY drive and open the boot_out.txt file and it will tell you the version. Note that this is the same version as the .UF2 file installed back in the Getting Started labs (See <xref ref="getting-started">Chapter</xref>). When you download the modules it will download a .zip file. Extract the .zip file on your desktop computer and then open the <em>lib</em> folder on your desktop and your CIRCUITPY. You then need to transfer the modules (ONLY THE ONES YOU NEED) from your desktop to your CPX/CPB <em>lib</em> folder. The reason why you can't copy the entire folder is because the CPB/CPX only has 2MB of flash and the CircuitPython download is 4.1 MB at the time of this writing.
+    </p>
+  </section>
+
+  <section>
+    <title>Reformatting your CPX/CPB</title>
+    <p>First, try and reset the CPX/CPB to CPLAYBOOT and reflash the UF2 to see if that fixes it. As a last resort you can try to download these UF2s and completely wipe the memory on your CPX/CPB. Once you do that you will have to re-insall the CircuitPython UF2 -
+    <url href="https://cdn-learn.adafruit.com/assets/assets/000/048/745/original/flash_erase_express.ino.circuitplay.uf2?1512152080">CPX</url>, <url href="https://cdn-learn.adafruit.com/assets/assets/000/082/950/original/CP_Bluefruit_QSPI_Erase.UF2?1572026649">CPB</url>
+
+    If you have a linux computer you can <q>sudo screen /dev/ttyACM0</q> and then run <q>import storage</q> and then <q>storage.erase_filesystem()</q>
+
+    If you feel like you've tried everything this <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting">troubleshooting guide</url> may have some other steps outlined to help you. However, I have had great experience with the eraser tool above.</p>
+  </section>
+
+  <section>
+    <title>Common Mishaps</title>
+    <ol>
+      <li><p>Your CPX is a USB stick that can hold as many Python files as 2MB will allow but it can only run or execute one python script at a time. It will look for code.py and then main.py and that's it.</p></li>
+      <li><p>Make sure you're using Mu in the right Mode (CircuitPython)</p></li>
+      <li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
+      <li><p>Make sure you are editing the right file in Mu. Do you have two versions of main.py or perhaps main.py and code.py?</p></li>
+      <li><p>Do you have boot.py on there when you don't need it?</p></li>
+      <li><p>Are you editing using Thonny or Spyder? You're supposed to use Mu.</p></li>
+     <li><p>Are you editing a file on your computer? Make sure you are writing to the CIRCUITPY drive.</p></li>
+     <li><p>Are you running out of memory? To figure out how much RAM you have on your CPX/CPB you need to <em>import gc</em> then run <em>gc.collect()</em> and then <em>print(gc.mem_free())</em>. At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM.</p></li>
+    </ol>
+  </section>
 </chapter>

@@ -95,10 +95,12 @@ to the differences in your data set.</em>
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 For this assignment you are to find a safe place to accelerate and decelerate your vehicle while recording acceleration data on the Circuit Playground. I also want you to take GPS data using PhyPhox so you can compare data. I suggest using a temporary adhesive to secure your CPX/CPB to your dashboard (making sure it's level) and have a passenger in the car to help you record data as well as operate Phyphox and verify that you have a GPS lock. Again for safety's sake I suggest finding an empty parking lot and only accelerating to 20 mph or less.
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

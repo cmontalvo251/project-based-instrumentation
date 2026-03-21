@@ -154,7 +154,7 @@ Learn System</url>. <url href="https://github.com/cmontalvo251/Microcontrollers/
 14 are import commands as we've seen previously. The regular import
 modules board, time and digitalio are imported but we are also
 importing the Keyboard module so that the CPX can takeover our
-keyboard. Lines 16-22 create two buttons. First we create buttonA
+keyboard. <b>In order to import that module properly</b> you need to <url href="https://circuitpython.org">install modules</url> onto you <em>lib</em> folder (See <xref ref="troubleshooting"/>). Lines 16-22 create two buttons. First we create buttonA
 attached to pin D4 and then a switch attached to pin D7. If you look
 on the CPX there is a switch labeled D7. Before you copy this code
 onto the CPX make sure you move the switch towards the ear looking
@@ -224,8 +224,6 @@ Separated Value. Once you have the file saved you can proceed to
 plotting in Python on your Desktop.
 </p>
 </section>
-
-<xi:include href="./modules_install.ptx"/>
 
 <section>
 <title>Method 3 - Logging Data Directly to on board memory</title>
@@ -403,10 +401,12 @@ now you are well versed in taking data and plotting in Python.
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 For this project you must use method 1, 2, 3 or 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
+</introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

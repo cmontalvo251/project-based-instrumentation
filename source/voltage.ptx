@@ -89,10 +89,12 @@ time -= time[0]
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
   Your assignment for this lab is to do the same as I've done above. Wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url>. Remember to record both time and digital output as you rotate the potentiometer and then plot that as a function of time. Specific requirements are shown below.
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

@@ -54,11 +54,9 @@ low level control commands you can use to access each of the sensors
 on board. We're obviously going to learn the low level control method
 first and then I'll show you how to access the sensors using the <em>adafruit_circuitplayground</em> module. <em>If you get a <q>currently in
 use</q> error it means you have a module conflict. Hence why I'm showing
-you the low level control method</em>.
+you the low level control method</em>. 
 </p>
 </section>
-
-<xi:include href="./modules_install.ptx"/>
 
 <section>
 <title>Low Level Control</title>
@@ -277,8 +275,7 @@ done by adding the following to the top of your code
 from adafruit_circuitplayground.express import cpx
 </pre>
 <p>
-<em>Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</em>
-This will import the cpx module into your working code. From here the
+<em>Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</em> Also, keep in mind that you will need to install modules onto your CPX/CPB so be sure to read up on how to install those (<xref ref="troubleshooting"/>). Assuming you have the right module, the line above will import the cpx module into your working code. From here the
 commands to read different things are relatively simple. Here are the
 commands for all the various sensors
 </p>
@@ -313,11 +310,13 @@ in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url>.
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 Using either <em>low or high level control</em>, take at least 60 seconds
 of data using the microphone, photocell, accelerometer and thermistor on your CPX/CPB. Make sure to log time and the raw sensor value at 1Hz or faster. To make the project more challenging, try and log all sensor data all at once (although this isn't a strict requirement).
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

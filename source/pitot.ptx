@@ -80,10 +80,12 @@ The code to accomplish this is relatively simple and a portion of the code is sh
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
   For this assignment you are to wire up a pitot probe and record time and raw analog signal from the pitot probe as you turn a fan on and off. My suggestion is you record at least 30 seconds of data with the fan off and then 30 seconds with the fan on and then again 30 seconds with the fan off. Specific requirements are shown below.
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

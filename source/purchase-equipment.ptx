@@ -86,10 +86,11 @@ which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 
 <section>
 <title>Assignment</title>
-
+<introduction>
 <p>
   Your assignment for this module is to purchase the required equipment for your class. <em>Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything.</em> At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. <em>Also, the CPX/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.</em>
 </p>
+</introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

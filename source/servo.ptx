@@ -271,10 +271,12 @@ Now that the dynamics are written, the second order equation can be integrated u
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 This servo project can be split into 2 projects at your instructors discretion. The first part involves learning how to rotate the servo and then calibrating the servo so that degrees of rotation can be related to PWM in microseconds while the second part deals with feedback control. In part 1 ensure that you can rotate the servo and then experimentally determine the minimum and maximum PWM signal you can send to the servo before it stops rotating anymore. Then create a calibration equation and plot with degrees on the x-axis and PWM on the y-axis. Take at least 10 data points for your calibration equation and use a protractor on your computer screen to obtain angle in degrees of your servo. Your calibration equation needs to be linear. In part 2 you are to use the angle obtained by the accelerometer to feedback to the servo using proportional control. You are to do this for a <m>k_p</m> value of 1 and 2. In addition, you are to simulate the second order system above for 10 seconds with varying values of <m>k_p</m> and plotting the results. <em>Note, for this lab, once you have the minimum and maximum values of your servo, you need to add a saturation filter into your code so that the value sent to your servo is always within these bounds. Otherwise you could damage or even break your servo.</em>
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 

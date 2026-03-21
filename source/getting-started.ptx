@@ -338,10 +338,12 @@ help you see me perform the 8 steps above.</url>
 </section>
 
 <section>
-<title>Assignment</title>
+  <title>Assignment</title>
+  <introduction>
 <p>
 For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots of relevant steps. <em>Note for the blink code, modify blink pattern to be different from the default on Github</em>. The specific items requested are shown below.
 </p>
+  </introduction>
 
 <xi:include href="./assignment_directions.ptx"/>
 
