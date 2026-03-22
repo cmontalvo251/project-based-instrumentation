@@ -123,16 +123,15 @@ You can see that the STEPS counter is set to zero before the infinite while loop
 <p>
 For this assignment you are to run down the hallway while wearing your CPX/CPB and record acceleration. The acceleration signal will then be processed to compute the number of steps you took. While running, be sure to make a note on the number of steps you are taking.
 </p>
-  </introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-  <title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your CPX/CPB with its own battery pack - 40%</p></li>
-<li><p>Include a plot of accelerometer data vs time showing stars where the peaks are. In your description be sure to comment on how many steps the code outputted vs how many steps you took during your experiment - 40%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your CPX/CPB with its own battery pack - 40%</p></li>
+  <li><p>Include a plot of accelerometer data vs time showing stars where the peaks are. In your description be sure to comment on how many steps the code outputted vs how many steps you took during your experiment - 40%</p></li>
+  <li><p>Appendix A - Video Details - Include 2 videos: First, include a cell phone video of your partner placing the system in a pocket and running or walking, then show a video with yourself and your screen as you plot the acceleration vs time with peaks shown on your computer - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

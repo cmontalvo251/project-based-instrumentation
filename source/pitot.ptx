@@ -85,21 +85,20 @@ The code to accomplish this is relatively simple and a portion of the code is sh
 <p>
   For this assignment you are to wire up a pitot probe and record time and raw analog signal from the pitot probe as you turn a fan on and off. My suggestion is you record at least 30 seconds of data with the fan off and then 30 seconds with the fan on and then again 30 seconds with the fan off. Specific requirements are shown below.
 </p>
-  </introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-  <title>Specific Directions</title>
 <ol>
-<li><p>In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass/Fail</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p><term>In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass/Fail</term></p></li>
 <li><p>Include a photo of your circuit with your pitot probe wired up to an analog pin - 10%</p></li>
 <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%</p></li>
 <li><p>Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%</p></li>
 <li><p>Convert your raw signal to windspeed and filter your signal using an offline complementary filter. Plot both unfiltered and filtered windspeed on the same plot and include a legend. Make sure you add the saturation filter to prevent a negative in the square root - 20%</p></li>
 <li><p>What is the maximum windspeed that the CPX/CPB can read? - 10%</p></li>
 <li><p>The data sheet also suggests that you use a <m>470~pF</m> capacitor to filter the output. Select two resistors for a low pass filter such that the DC Gain would be equal to 1. Assume the total impedance of both resistors is <m>2~k\Omega</m>. Also compute the cutoff frequency. - 10%</p></li>
+<li><p>Appendix A - Video Details - Include 2 vidoes: First, film your entire team and your screen as you show the digital output change in the Plotter in Mu as the freestream airflow changes. Then, include a video of you plotting your raw digital output and converting that to windspeed on your computer - Pass/Fail</p></li>
+<li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

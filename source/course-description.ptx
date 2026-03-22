@@ -6,7 +6,10 @@
 <p>
 The course is designed to coincide with lecture content in a standard
 engineering instrumentation course. The students are guided through
-numerous projects. The specific course learning objectives, which include
+numerous projects detailed in the subsequent chapters. Following the weekly projects there is a potential for a large project which involves some systems engineering techniques. Finally, a results and discussion chapter details the over analysis of the course as experienced by anonymous survey results and quotes from actual students.
+</p>
+  <p>
+The specific course learning objectives, which include
 statistics, dynamic responses, operational amplifiers, and electronic
 circuits both analog and digital are shown below:
 
@@ -18,7 +21,6 @@ circuits both analog and digital are shown below:
 <li><p>Apply microprocessor fundamentals to gain an understanding of digital circuits used for digital to analog and analog to digital conversion</p></li>
 </ol>
 </p>
-
 <p>
 This course is not going to be a traditional lecture format and that
 hands-on projects will be assigned every Friday using the lab at home
@@ -87,5 +89,4 @@ surverys from students taking the class as well as conclusions drawn
 from the authors and faculty who have taught the course.
 </p>
 </introduction>
-
 </chapter>

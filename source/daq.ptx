@@ -413,17 +413,15 @@ now you are well versed in taking data and plotting in Python.
 <p>
 For this project you must use method 1, 2, 3 or 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
-</introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a snippet (5 lines) of your data file - 40%</p></li>
-<li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a snippet (5 lines) of your data file - 40%</p></li>
+  <li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+  <li><p>Appendix A - Video Details - File yourself and your entire screen pressing the button and showing the number change on the screen, then show yourself plotting your data on your computer - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-
-</subsection>
+</introduction>
 </section>
 </chapter>

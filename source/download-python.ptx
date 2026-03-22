@@ -233,18 +233,19 @@ Your assignment for this project is to plot the equation below from 0 to 10 seco
 <men>
   T(t) = 60(1-e^{-5t})+30
 </men>
-</p>
-  </introduction>
 
-<xi:include href="./assignment_directions.ptx"/>
 
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a screenshot (entire screen) of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%</p></li>
-<li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a screenshot (entire screen) of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%</p></li>
+  <li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen running the example code and showing the result of <em>plt.show()</em> - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
+</p>
 
-</subsection>
+</introduction>
 </section>
 </chapter>

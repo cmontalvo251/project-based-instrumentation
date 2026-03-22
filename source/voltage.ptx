@@ -100,21 +100,21 @@ time -= time[0]
 <p>
   Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <term> through the full range </term> and then plot that as a function of time. Specific requirements are shown below.
 </p>
-  </introduction>
 
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX/CPB - 10%</p></li>
-<li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%</p></li>
-<li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%</p></li>
-<li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%</p></li>
-<li><p>Plot your digital output (raw potentiometer analog value) vs time <term> make sure to rotate the potentiometer through the full range as when you take data </term> - 10%</p></li>
-<li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
-<li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX/CPB - 10%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%</p></li>
+  <li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%</p></li>
+  <li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%</p></li>
+  <li><p>Plot your digital output (raw potentiometer analog value) vs time <term> make sure to rotate the potentiometer through the full range as when you take data </term> - 10%</p></li>
+  <li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
+  <li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you rotate the potentiometer from it's maximum to minimum position. Then show yourself plotting the raw data on your computer - Pass/Faill </p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

@@ -194,20 +194,18 @@ The equations above make a time series from +-3 standard deviations from the mea
 <p>
 For this assignment you are to build another voltage divider circuit using a photocell and measure the voltage across the photocell using the analog to digital converter on the CPB/CPX. First take 30 seconds of data where you cover the photocell with your hand and also shine a flashlight on it. This will represent the min and max values of Lux as well as the min and max values of the resistance in your photocell. After that you are to run some statistics on the photocell by taking 1000 data points three separate times at three different light levels. The three light levels are low light (hand covered), ambient light (office light or shade light), and high light (flashlight or sunlight). For each set of 1000 data points, create a histogram, compute the mean, median, standard deviation and plot a Gaussian distribution curve on top of the histogram.
 </p>
-  </introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-  <title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Also, explain how you varied the light levels - 10%</p></li>
-<li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%</p></li>
-<li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10%</p></li>
-<li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%</p></li>
-<li><p>Include 3 histogram plots of low light, ambient light and high
-light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 30%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Also, explain how you varied the light levels - 10%</p></li>
+  <li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%</p></li>
+  <li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10%</p></li>
+  <li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%</p></li>
+  <li><p>Include 3 histogram plots of low light, ambient light and high light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 30%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you change the light level by putting your hand over the photocell. Then show yourself plotting a histogram - Pass/Fail </p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

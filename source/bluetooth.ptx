@@ -170,18 +170,16 @@ reader.
 <p>
 This project is similar to the Data Acquisition project only you must use method 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
-  </introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a screenshot (entire screen) from your phone showing the raw UART output - 20%</p></li>
-<li><p>Include a snippet (5 lines) of your data file - 20%</p></li>
-<li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a screenshot (entire screen) from your phone showing the raw UART output - 20%</p></li>
+  <li><p>Include a snippet (5 lines) of your data file - 20%</p></li>
+  <li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing data broadcast to your phone while you press and release the button, then show yourself plotting the data on your computer - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-
-</subsection>
+</introduction>
 </section>
 </chapter>

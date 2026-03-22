@@ -343,18 +343,17 @@ help you see me perform the 8 steps above.</url>
 <p>
 For this assignment you must appropriately set up your CPX/CPB, get the blink code to run and include some screenshots (your entire computer screen) of relevant steps. <term>Note for the blink code, modify blink pattern to be different from the default on Github</term>. The specific items requested are shown below.
 </p>
-  </introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a screenshot (entire computer screen) of your computer showing the CPLAYBOOT drive on your computer - 20%</p></li>
-<li><p>Include a screenshot (entire computer screen) of your computer showing the CIRCUITPY drive on your computer - 20%</p></li>
-<li><p>Include a screenshot (entire computer screen) of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20%</p></li>
-<li><p>Include a photo of your CPX with the red led on - 20%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of your computer showing the CPLAYBOOT drive on your computer - 20%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of your computer showing the CIRCUITPY drive on your computer - 20%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of Mu with the Serial monitor open showing the output of the blink code. Remember to modify the blink pattern - 20%</p></li>
+  <li><p>Include a photo of your CPX/CPB with the red led on - 20%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself showing the CPX/CPB blinking and your entire screen with your blink code running with the Serial monitor open - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

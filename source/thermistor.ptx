@@ -124,18 +124,17 @@ For this assignment, you are to change the ambient temperature of the CPX/CPB th
 </me>
 ,T_s</m> and <m>\tau</m>. Finally, using <xref ref="e_thermistor">equation</xref>, plot the estimate of <m>T(t)</m>.
 </p>
-</introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Take a picture of you heating or cooling the CPX/CPB - 20%</p></li>
-<li><p>Plot the raw voltage and resistance in the thermistor vs time - 20%</p></li>
-<li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20%</p></li>
-<li><p>Include a table of your estimated parameters - 20%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Take a picture of you heating or cooling the CPX/CPB - 20%</p></li>
+  <li><p>Plot the raw voltage and resistance in the thermistor vs time - 20%</p></li>
+  <li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20%</p></li>
+  <li><p>Include a table of your estimated parameters - 20%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your screen as you explain how you heated or cooled the CPX/CPB. Then show the thermistor running on your computer with the Serial Monitor open in Mu. Finally plot the regression line over your plotted data on your computer - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>

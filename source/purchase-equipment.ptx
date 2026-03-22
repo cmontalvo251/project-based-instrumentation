@@ -90,18 +90,15 @@ which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 <p>
   Your assignment for this module is to purchase the required equipment for your class. <term>Note that the specific equipment will be instructor dependent so be sure you discuss with the instructor of your course before buying everything.</term> At a minimum you must purchase a CPX or CPB but the rest of the items in your kit will depend on which modules your instructor wants you to do during the semester. <term>Also, the CPX/CPB requires a microUSB cable and that cable must have a data line. Many USB cables are just power and ground.</term>
 </p>
-</introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-  <title>Specific Directions</title>
 <ol>
-<li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device). - 60%</p></li>
-<li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a low (p=1%) failure rate. - 20% </p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>A figure of your receipt of your purchases this semester (If you already own the CPX/CPB you may just take a photo of you holding the device). - 60%</p></li>
+  <li><p>Using the number of students in your class, compute the probability that at least one CPX/CPB will be shipped DOA (dead on arrival) assuming a low (p=1%) failure rate. - 20% </p></li>
+  <li><p>Appendix A - Video Details - Use the webcam on your computer to film yourself introducing yourself to me and either show me your purchased CPX/CPB or film your screen and show the receipt that shows you've purchased the CPX/CPB. - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>  
 </ol>
-
-</subsection>
-
+</introduction>
 </section>
 </chapter>

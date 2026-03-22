@@ -142,19 +142,18 @@ In this case you can see that there were 33 cycles in 10 seconds which is 3.3 Hz
 <p>
 For this assignment you are to create a system that oscillates and capture data while oscillating. You are to sample the system at 1, 10 and 100 Hz and plot the shifted and cleaned data for all 3 sample rates on the same graph. For the data sampled at 100 Hz you are then to estimate the initial amplitude, the settling time and the period using the graph. Then compute the natural frequency and damping ratio. Finally, using <xref ref="e_secondorder">equation</xref>, plot the amplitude as a function of time on top of your 100hz sampled data. <term>Note, if you decide to make a pendulum you must ensure that the CPX/CPB does not spin when oscillating otherwise you won't be able to use your acceleration data easily.</term>
 </p>
-</introduction>
-
-<xi:include href="./assignment_directions.ptx"/>
-
-<subsection>
-<title>Specific Directions</title>
 <ol>
-<li><p>Include a photo of your experiment and explain the state that you are measuring - 10%</p></li>
-<li><p>Plot the results of your data (make sure to connect your data points) vs time for all 3 sampling frequencies (1,10, 100Hz) and include a legend - 20%</p></li>
-<li><p>Include a table of your estimated parameters as well as the natural frequency and damping ratio - 20%</p></li>
-<li><p>Plot your measured data sampled at 100hz with your fitted equation on top - 20%</p></li>
-<li><p>Based on your results and your computed natural frequency, comment on the Nyquist frequency and the Montalvo frequency of your system and whether or not you encountered aliasing in your experiment based on the figures and the Nyquist/Montalvo frequency - 10%</p></li>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your experiment and explain the state that you are measuring - 10%</p></li>
+  <li><p>Plot the results of your data (make sure to connect your data points) vs time for all 3 sampling frequencies (1,10, 100Hz) and include a legend - 20%</p></li>
+  <li><p>Include a table of your estimated parameters as well as the natural frequency and damping ratio - 20%</p></li>
+  <li><p>Plot your measured data sampled at 100hz with your fitted equation on top - 20%</p></li>
+  <li><p>Based on your results and your computed natural frequency, comment on the Nyquist frequency and the Montalvo frequency of your system and whether or not you encountered aliasing in your experiment based on the figures and the Nyquist/Montalvo frequency - 10%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the camera the experiment you used to create oscillations in the accelerometer. Then plot your accelerometer data and show the regression line fit over your oscillations - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
-</subsection>
+</introduction>
 </section>
 </chapter>
