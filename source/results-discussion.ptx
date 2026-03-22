@@ -48,11 +48,11 @@ to the following question: <em>What response does implementation of
 the kit yield from students?</em> To answer this question, the 4th
 question in the course survey will be examined. This question states:
 <em>"What did you like best about how the instructor taught the
-course?"</em> <xref ref="tab_quotes">Table</xref> includes examples of questionnaire
+course?"</em> <xref ref="tab_quotes1">Table</xref> and <xref ref="tab_quotes2">Table</xref> includes examples of questionnaire
 responses which is in the appendix.
 </p>
-<table xml:id="tab_quotes">
-  <title>Questionnaire responses to <q>What did you like best about how the instructor taught the course?</q></title>
+<table xml:id="tab_quotes1">
+  <title>Questionnaire responses to <q>What did you like best about how the instructor taught the course?</q> (2019-2022)</title>
   <tabular align="center" left="minor" right="minor" top="minor" halign="center">
     <col width="30%" />
     <col width="70%" />
@@ -111,6 +111,54 @@ responses which is in the appendix.
     </row>
   </tabular>
 </table>
+
+<table xml:id="tab_quotes2">
+  <title>Questionnaire responses to <q>What did you like best about how the instructor taught the course?</q> (2023-2025)</title>
+  <tabular align="center" left="minor" right="minor" top="minor" halign="center">
+    <col width="30%" />
+    <col width="70%" />
+    <row bottom="minor">
+      <cell>Spring 2023</cell>
+      <cell halign="left">
+        <p><q>I love how hands on everything was we would learn about a concept on either Monday or Wednesday and then Friday use that concept on the mini projects</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2023</cell>
+      <cell halign="left">
+        <p><q>Dr. Montalvo gives a very calm atmosphere to learn in. He made this subject so much better and enjoyable than I ever would of thought of before starting this class. It has gotten me interested in perusing my own projects using what I learned outside of class as well. Dr. Montalvo also showed us a handful of resources for learning and getting components for our projects, which was fascinating as well.</q></p>
+	<p><q>His method of teaching was genuinely stimulating, and encouraged students to learn. This was the only class I actually looked forward to attending</q></p>
+	<p><q>Engaging and hands-on</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+    <cell>Spring 2024</cell>
+      <cell halign="left">
+        <p><q>He makes things that seemed super hard and complicated in circuits, very easy. The labs are very engaging and he is very available and willing to help any time you have questions or issues.</q></p>
+	<p><q>Engaging and Funday fridays were actually fun</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+    <cell>Fall 2024</cell>
+      <cell halign="left">
+        <p><q>How he engaged with the class.</q></p>
+	<p><q>His in class projects</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+    <cell>Spring 2025</cell>
+      <cell halign="left">
+        <p><q>I like how he does a big project with numerous steps throughout the semester. This is very valuable in the design process learning how to keep moving forward but at the same time learning how to troubleshoot when issues do arise.</q></p>
+      </cell>
+    </row>
+    <row bottom="minor">
+    <cell>Fall 2025</cell>
+      <cell halign="left">
+        <p><em>No quotes this semester due to low response</em></p>
+      </cell>
+    </row>
+  </tabular>
+</table>
 <p>
 Note that certain semesters were during the Pandemic of COVID-19. In
 the Spring of 2020 the University transitioned to fully online
@@ -123,18 +171,18 @@ University returned to fully in person lectures without masks.
 
 <p>
 To further answer this question, results from the
-question ``How effective was the instructor in helping students
-achieve course objectives" is shown in <xref ref="tab_scores">Table</xref> also in
+question <q>How effective was the instructor in helping students
+achieve course objectives</q> is shown in <xref ref="tab_scores">Table</xref> also in
 the appendix. This table shows the response rate per semester as well
 as average score for the question The last column shows the average
 score across the department. Spring 2020 has an asterisk because the
 University of South Alabama created a different course survey due to
-the onset of COVID-19. Instead the question ``Please tell us your
+the onset of COVID-19. Instead the question <q>Please tell us your
 perception of the quality of the class prior to the transition to
-[online] on March 23rd" was used during Spring 2020. As such, the
+[online] on March 23rd</q> was used during Spring 2020. As such, the
 departmental scores are not listed.
 </p>
-<table xml:id="tab_scores" >
+<table xml:id="tab_scores">
   <title>Average Score for <q>Instructor Effectiveness in Helping Students Achieve Course Objectives</q> (*Alternate question during COVID-19 Pandemic)</title>
   <tabular align="center" left="minor" right="minor" top="minor" halign="center">
     <row bottom="medium">
@@ -186,11 +234,47 @@ departmental scores are not listed.
       <cell>4.0</cell>
     </row>
     <row bottom="minor">
+      <cell>Spring 2023</cell>
+      <cell>35%</cell>
+      <cell>4.94</cell>
+      <cell>3.93</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2023</cell>
+      <cell>92%</cell>
+      <cell>5.0</cell>
+      <cell>4.09</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2024</cell>
+      <cell>55%</cell>
+      <cell>4.81</cell>
+      <cell>4.12</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2024</cell>
+      <cell>40%</cell>
+      <cell>5.0</cell>
+      <cell>4.07</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Spring 2025</cell>
+      <cell>37%</cell>
+      <cell>4.94</cell>
+      <cell>4.08</cell>
+    </row>
+    <row bottom="minor">
+      <cell>Fall 2025</cell>
+      <cell>11%</cell>
+      <cell>5.0</cell>
+      <cell>4.01</cell>
+    </row>
+    <!--<row bottom="minor">
       <cell>Average</cell>
       <cell>41.3%</cell>
       <cell>4.70</cell>
       <cell>3.83</cell>
-    </row>
+    </row>-->
   </tabular>
 </table>
 <p>
@@ -250,7 +334,7 @@ in the survey results.
 
 <p>
 In regards to the second research question about student satisfaction
-of the course through the use of the kit, <xref ref="tab_quotes">Table</xref>
+of the course through the use of the kit, <xref ref="tab_quotes1">Table</xref> and <xref ref="tab_quotes2">Table</xref>
 clearly show a positive response in regards to the projects and the
 lab at home kit. For brevity only two to three quotes were shown but
 for some semesters at least 25 quotes were generated with many of them
@@ -260,7 +344,7 @@ reflecting on the "hands on learning" component of the course.
 <p>
 Furthermore, <xref ref="tab_scores">Table</xref> shows an on average course rating
 that is 22% higher than the departmental average. It can be said with
-confidence that the quotes in <xref ref="tab_quotes">Table</xref> are in direct
+confidence that the quotes in <xref ref="tab_quotes1">Table</xref> and <xref ref="tab_quotes2">Table</xref> are in direct
 response to the implementation of the kit and that the students would
 not have written these words had the kit not been an addition to the
 course. This proves the first research question that a kit can be

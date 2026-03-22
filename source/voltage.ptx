@@ -89,10 +89,16 @@ time -= time[0]
 </section>
 
 <section>
+  <title>Extra Help</title>
+  <p>
+  I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url>.</p>
+</section>
+    
+<section>
   <title>Assignment</title>
   <introduction>
 <p>
-  Your assignment for this lab is to do the same as I've done above. Wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url>. Remember to record both time and digital output as you rotate the potentiometer and then plot that as a function of time. Specific requirements are shown below.
+  Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <term> through the full range </term> and then plot that as a function of time. Specific requirements are shown below.
 </p>
   </introduction>
 
@@ -105,7 +111,7 @@ time -= time[0]
 <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%</p></li>
 <li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%</p></li>
 <li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%</p></li>
-<li><p>Plot your digital output (raw potentiometer analog value) vs time - 10%</p></li>
+<li><p>Plot your digital output (raw potentiometer analog value) vs time <term> make sure to rotate the potentiometer through the full range as when you take data </term> - 10%</p></li>
 <li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
 <li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
 </ol>
