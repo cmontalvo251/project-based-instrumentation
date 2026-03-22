@@ -48,13 +48,13 @@ are using the CPB you need to type <em>adafruit_circuitplayground.bluefruit</em>
 because it imports everything on the board. The problem is you can run
 into module conflicts. This happens when two different modules try to
 access the same pins on the CP. Sometimes if you import <em>adafruit_circuitplayground</em> you won't be able to import some other
-modules. <em>Note you might need to add the <em>adafruit_circuitplayground</em> library to your lib/ folder on your
-CIRCUITPY drive</em>. Due to this module conflict issue, there are some
+modules. <term>Note you might need to add the <em>adafruit_circuitplayground</em> library to your lib/ folder on your
+CIRCUITPY drive</term>. Due to this module conflict issue, there are some
 low level control commands you can use to access each of the sensors
 on board. We're obviously going to learn the low level control method
-first and then I'll show you how to access the sensors using the <em>adafruit_circuitplayground</em> module. <em>If you get a <q>currently in
-use</q> error it means you have a module conflict. Hence why I'm showing
-you the low level control method</em>. 
+first and then I'll show you how to access the sensors using the <em>adafruit_circuitplayground</em> module. <term>If you get a <em>currently in
+use</em> error it means you have a module conflict. Hence why I'm showing
+you the low level control method</term>. 
 </p>
 </section>
 
@@ -275,9 +275,7 @@ done by adding the following to the top of your code
 from adafruit_circuitplayground.express import cpx
 </pre>
 <p>
-<em>Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</em> Also, keep in mind that you will need to install modules onto your CPX/CPB so be sure to read up on how to install those (<xref ref="troubleshooting"/>). Assuming you have the right module, the line above will import the cpx module into your working code. From here the
-commands to read different things are relatively simple. Here are the
-commands for all the various sensors
+<term>Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</term> Also, keep in mind that you will need to install modules onto your CPX/CPB so be sure to read up on how to install those (<xref ref="troubleshooting"/>). Assuming you have the right module, the line above will import the cpx module into your working code. From here the commands to read different things are relatively simple. Here are the commands for all the various sensors
 </p>
 <pre>
 light = cpx.light

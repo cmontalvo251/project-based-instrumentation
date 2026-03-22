@@ -85,12 +85,12 @@ This is why speedometers are used. They are just much more accurate
 than integrating acceleration which is prone to bias and
 drift. <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/cpx_assignments/Velocity_from_Acceleration/velocity_from_acceleration.py">This
 folder on Github has some codes that will help with your
-project</url>. <em>Note, that some of those codes have a bias filter,
+project</url>. <term>Note, that some of those codes have a bias filter,
 truncation filter and complementary filter. That code may not work for
 you and you may need to tune the filters for your specific data
 set. Make sure to understand what each filter does and think about how
 it applies to your data set otherwise your code may throw an error due
-to the differences in your data set.</em>
+to the differences in your data set.</term>
 </p>
 </section>
 

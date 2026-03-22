@@ -52,7 +52,7 @@ The brown or black wire is GND, the red wire needs to go to a 5V signal so for t
   <caption>Photo of a servo connected to a CircuitPlayground Express</caption>
 </figure>
 <p>
-<em>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues.</em>
+<term>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues.</term>
 </p>
 
 <p>
@@ -60,7 +60,7 @@ As I said before, a servo takes in a square wave. The square wave has a duty cyc
 </p>
 
 <p>
-Besides making the servo move back and forth I'd like you to vary the pulses on line 16 <em>SLOWLY</em> until the servo can't move any farther. This line of code is a for loop which loops through the array currently showing [0.8,2.0]. If you change that array to [0.9,1.2,1.5,1.8] the servo will move to a pulse in milliseconds of 0.9, 1.2, 1.5 and then 1.8. The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number [0.8] the servo will just move to 1 angle and stay there forever. <em>NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY</em>.
+Besides making the servo move back and forth I'd like you to vary the pulses on line 16 <em>SLOWLY</em> until the servo can't move any farther. This line of code is a for loop which loops through the array currently showing [0.8,2.0]. If you change that array to [0.9,1.2,1.5,1.8] the servo will move to a pulse in milliseconds of 0.9, 1.2, 1.5 and then 1.8. The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number [0.8] the servo will just move to 1 angle and stay there forever. <term>NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY</term>.
 </p>
 <figure>
   <image width="80%" source="servo_code.png" />
@@ -112,7 +112,7 @@ def angle2pulse(angle):
         return 0.6 + 0.01*angle
 </pre>
 <p>
-<em>Note: Functions in python must be after all your imports but before your while loop. If you put this function inside your while loop the code will not work</em>. Using that equation, modify your servo.py script to have the servo move through the following angles, 0, 45,90,135 (your servo may not travel to 180 degrees). Verify that your equation is working correctly by placing your protractor below the servo. Much of the code required for this project is not included because it is left as an exercise for the student.
+<term>Note: Functions in python must be after all your imports but before your while loop. If you put this function inside your while loop the code will not work</term>. Using that equation, modify your servo.py script to have the servo move through the following angles, 0, 45,90,135 (your servo may not travel to 180 degrees). Verify that your equation is working correctly by placing your protractor below the servo. Much of the code required for this project is not included because it is left as an exercise for the student.
 </p>
 </section>
 

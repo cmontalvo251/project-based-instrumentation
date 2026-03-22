@@ -42,7 +42,7 @@ Here's my circuit all hooked up without a resistor in series. Two legs are conne
   <caption>Circuit Playground Express hooked up to a Potentiometer</caption>
 </figure>
 <p>
-<em>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</em> Here is my circuit with a resistor in series.
+<term>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</term> Here is my circuit with a resistor in series.
 </p>
 <figure>
   <image width="80%" source="potentiometer2.png"/>
@@ -74,13 +74,13 @@ After doing this experiment myself, this is the plot I obtain. The code is not p
 </p>
 
 <p>
-<em>NOTE THAT ON LINE 6 IT READS</em>
+<term>NOTE THAT ON LINE 6 IT READS</term>
 </p>
 <pre>
 time -= time[0]
 </pre>
 <p>
-<em>Notice the minus sign in front of the equal sign. That effects a lot.</em>
+<term>Notice the minus sign in front of the equal sign. That effects a lot.</term>
 </p>
 <figure>
   <image width="73%" source="plotting_analogio.png" />

@@ -13,11 +13,11 @@ pass/fail. Failure to include both Appendix "A" and "B" will result in
 a zero in the assignment. Appendix "A" will be a link (Youtube or
 Google Drive) to a professional video recording of you and your screen
 explaining the project and showing any of the systems operate as
-asked. <em>This includes any portion of the experiment such as
+asked. <term>This includes any portion of the experiment such as
 heating up your thermistor or rotating a potentiometer and showing the
-response in the Serial monitor</em>. Appendix "B" will be any and all code
-used in the project - <em>Failure to provide code or an adequate video
-results in a failure of the assignment.</em> - [Rubric: This is Pass/Fail]</p></li>
+response in the Serial monitor</term>. Appendix "B" will be any and all code
+used in the project - <term>Failure to provide code or an adequate video
+results in a failure of the assignment.</term> - [Rubric: This is Pass/Fail]</p></li>
 </ol>
 </p>
 </subsection>

@@ -50,10 +50,10 @@ which is enough to power the CPX. If you have the battery pack and
 some AA batteries, give it a try. If you still have the blink code
 from the last project on board you'll see the D13 LED blink as
 before. You won't be able to see the serial print() output as before
-but that code will be running which is why D13 is blinking. <em>I have
+but that code will be running which is why D13 is blinking. <term>I have
 noticed that some of the battery packs have power and ground wires
 swapped. If the battery pack doesn't work it may be because those two
-wires are backwards.</em>
+wires are backwards.</term>
 </p>
 
 <p>
@@ -75,9 +75,9 @@ If you're not familiar with how breadboards work I would recommend watching this
 breadboards work</url>. Your lab today specifically involves an external
 LED as shown above. You can read about
 <url href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/">LEDs</url>
-more online if you wish. <em>Remember that the long leg of the LED is
-the positive end and the short leg is the negative end.</em> The task today
-is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <em>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</em>
+more online if you wish. <term>Remember that the long leg of the LED is
+the positive end and the short leg is the negative end.</term> The task today
+is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <term>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</term>
 </p>
 </section>
 
