@@ -70,7 +70,7 @@ with a resistor. There is a lab on photocells (See
 about photocells. This lab is designed to simply teach you about the onboard sensors rather than how they work. The GND leg of the photocell is connected to pin
 A8. You can check the pin by looking at the graphic of an eye on the
 CPX and taking a look at the digital pin next to it. We've already
-learned how to {access analog pins (See <xref ref="voltage"/>) in a
+learned how to access analog pins (See <xref ref="voltage"/>) in a
 previous lab so just use
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">code
 from that lab</url> and change the pin to A8. Here's what my code looks
