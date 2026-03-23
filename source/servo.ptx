@@ -125,7 +125,7 @@ to drive the <q>state</q> of a <q>system</q> to a desired <q>command</q> by send
 <q>control</q> signal to the <q>system</q>. The figure below shows a standard block diagram for a dynamic system.
 </p>
 <figure>
-  <image width="40%" source="feedback.png" />
+  <image width="60%" source="feedback.png" />
   <caption>Simple feedback control block diagram</caption>
 </figure>
 <p>
@@ -268,7 +268,7 @@ The first 22 lines here will hopefully seem familiar. Line 1-7 are import comman
 </figure>
 <p>
 Line 39 uses the calibration equation from the previous experiment to convert servo angle to pulse width. You'll need to replace these numbers with your servo since all servos are different. Line 41 uses the definition created on lines 10-13 to convert pulse width to duty cycle. Line 43 makes the servo move. Line 44 prints everything to Serial for debugging purposes and line 45 pauses the script for 0.1 seconds which helps with some twitchiness in the servo. When I did this I didn't have to program a complementary filter so I guess the servo may have it's own low pass filter. Either way this circuit is ready to be placed on an aircraft. Whether or not it is effective is a completely different story. We could take an entire aircraft design course or an undergraduate controls and systems dynamics course but to start let's just simulate this control system and see how it does. First we need to write the dynamic equation for pitch of an aircraft. That is shown below.
-<men>
+<men xml:id="e_second-order">
   \frac{J}{q_{\infty}S\bar{c}}\ddot{\theta} - \frac{\bar{c}}{2V}C_{mq}\dot{\theta} - C_{m\alpha}\theta = C_{m\delta_e}\delta_e + C_{m0}
 </men>
 </p>
@@ -332,7 +332,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. Give at least 2 decimal points in your calculation - 10%</p></li>
   <li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
   <li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
-  <li><p>Write your regression equation as servo_pulse = m*servo_angle + b being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
+  <li><p>Write your regression equation as (<em>servo_pulse = m*servo_angle + b</em>) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
   <li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the servo from 0 to roughly 180 degrees. Then show yourself plotting the regression line on top of your data on your laptop - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo and code used to plot data in plain text (no screenshots) - Pass/Fail</p></li>
@@ -347,7 +347,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
   <li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%</p></li>
   <li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and 2. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
-  <li><p>Simulate the second order system above for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
+  <li><p>Simulate the second order system in Equation <xref ref="e_second-order"/> for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the CPX/CPB also showing the servo rotate in sync with your CPX/CPB. - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo as well as simulation code in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
