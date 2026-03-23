@@ -28,7 +28,9 @@
 <li><p>Analog pins can be controlled by simply using the digitalio module</p></li>
 <li><p>LEDs can be hooked up to analog pins and set to blink by changing the board pin</p></li>
 </ol>
+</section>
 
+<section><title>Getting Started</title>
 <p>
 In this project we're going to use the same blink code as before but
 modify it to blink an external LED. The purpose of this lab is to
