@@ -108,7 +108,7 @@ time -= time[0]
   <li><p>Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX/CPB - 10%</p></li>
   <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%</p></li>
   <li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%</p></li>
-  <li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis - 10%</p></li>
+  <li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis. Be sure to include the equation relating angle to voltage - 10%</p></li>
   <li><p>Plot your digital output (raw potentiometer analog value) vs time <term> make sure to rotate the potentiometer through the full range as when you take data </term> - 10%</p></li>
   <li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
   <li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
