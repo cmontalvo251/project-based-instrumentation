@@ -50,6 +50,12 @@ Note that this also creates its own .git folder so if you're already in an exist
 
 You can also run 'pretext build print' and it will do the same thing
 
+Note that if you want to generate the raw tex file you need to add
+
+<target name="latex" format="latex" />
+
+To the publication.ptx file 
+
 # HTML
 
 Running 'pretext build html' will build your project into an html file.

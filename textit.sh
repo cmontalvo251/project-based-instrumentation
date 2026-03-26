@@ -18,6 +18,13 @@ elif [ "$1" == "web" ]; then
     #make sure you have google-chrome installed
     #Download that directly from the web
     google-chrome output/web/index.html &
+elif [ "$1" == "latex" ]; then
+    pretext build latex
+else
+    echo "Invalid option. Please use either 'all, 'pdf' or 'web'."
+    echo "pdf: Compile the ptx files into a pdf and open it with evince."
+    echo "web: Compile the ptx files for the web and open it with google-chrome."
+fi
 elif [ "$1" == "all" ]; then
     ./textit.sh web
     ./textit.sh pdf
