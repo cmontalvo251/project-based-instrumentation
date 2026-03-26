@@ -45,6 +45,7 @@ Preferences: Open User Settings (JSON)
 and copy the two lines of code below
 
 "xml.validation.enabled": false,
+
 "xml.symbols.enabled": true
 
 # Pretext new
