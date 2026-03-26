@@ -49,7 +49,7 @@
     </p>
     </section>
     
-  <section>
+  <section xml:id="installing-modules">
     <title>Installing Modules</title>
     <p>
       <term>One issue you're going to run into when you run certain codes is that you won't have some of the modules on your CPB/CPX.</term> To fix this you need to download the <url href="https://circuitpython.org/libraries">CircuitPython Libraries</url>. You need to download the appropriate version: 6.x, 7.x or 8.x. The figure below is a screenshot of the libraries homepage on the CircuitPython website.

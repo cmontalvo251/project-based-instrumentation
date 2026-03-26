@@ -50,18 +50,18 @@ When you open the packaging of this breakout board you'll notice that the header
   <caption>Wiring diagram of IMU connected to a FeatherWing<xref ref="imu-wiring"/></caption>
 </figure>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need VOUT (5V) to run to (VIN), GND to GND and then SDA to SDA and SCL to SCL.
+The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>.
 </p>
 <figure>
-  <image width="73%" source="imu_circuit.jpeg" />
+  <image width="73%" source="imu_correct.jpeg" />
   <caption>Photo of IMU Connected to a CircuitPlayground Express</caption>
 </figure>
 <p>
-<term>Believe it or not the photo above was actually wired wrong. I had SDA to SCL and SCL to SDA. You need to make sure you have the proper wires going to the correct pins or it won't work. </term>SDA and SCL are 2 pins for something called I2C (pronounced I squared C) where I is I as in "I am a billy goat" or "I like to code". I2C is beyond the scope of this project but just know it's a type of serial communication that uses hexadecimal addresses.
+The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the <em>3.3V</em> pin on the CPB and then also connected to the red male-male wire which is connected to the <em>VIN</em> pin on the IMU. The black alligator clip is connected to the <em>GND</em> pin on the CPB and also connected to the brown male-male wire which is connected to the <em>GND</em> pin on the IMU. The blue alligator clip is connected directly to the <em>SDA</em> pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the <em>SCL</em> pins on both the CPB and the IMU. SDA and SCL are 2 pins for something called I2C (pronounced I squared C) where I is I as in "I am a billy goat" or "I like to code". I2C is beyond the scope of this project but just know it's a type of serial communication that uses hexadecimal addresses.
 </p>
 
 <p>
-Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date. In this example I'm using the 6.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url>. The Circuit Python Libraries download as a zip file. You need to unzip the folder and go into the lib folder and grab the following python modules.
+Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date. In this example I'm using the 6.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB). The specific modules I needed for this lab were:
 
 <ol>
 <li><p>adafruit_bus_device</p></li>
@@ -72,7 +72,7 @@ Once you have the circuit wired and soldered it's time to work on software. Firs
 </p>
 
 <p>
-There will be folders for some and just floating .mpy files for others which are python modules that you can import just like time, board and busio as we've done in the past. Put those files into your lib folder on your CIRCUITPY drive. If the lib folder doesn't exist you just need to make one. Once you have the necessary modules you can run some example code. The Adafruit Learn page has a <url href="https://learn.adafruit.com/lsm6ds33-6-dof-imu=accelerometer-gyro/python-circuitpython">tutorial for the LSM6DS33</url>. The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on <url href="https://github.com/adafruit/Adafruit_CircuitPython_LSM6DS/blob/master/examples/lsm6ds_lsm6ds33_simpletest.py">Adafruit's Github</url>. After following both tutorials I was able to make my own script and upload it to my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl_lsm6dss.py">Github</url>. <term> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</term>
+Once you have the necessary modules you can run some example code. The Adafruit Learn page has a <url href="https://learn.adafruit.com/lsm6ds33-6-dof-imu=accelerometer-gyro/python-circuitpython">tutorial for the LSM6DS33</url>. The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on <url href="https://github.com/adafruit/Adafruit_CircuitPython_LSM6DS/blob/master/examples/lsm6ds_lsm6ds33_simpletest.py">Adafruit's Github</url>. After following both tutorials I was able to make my own script and upload it to my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl_lsm6dss.py">Github</url>. <term> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</term>
 </p>
 <figure>
   <image width="80%" source="imu_code.png" />
