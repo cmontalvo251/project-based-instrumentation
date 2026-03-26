@@ -32,6 +32,21 @@ Oscar Levin has created a 'pretext-tools' in vs code so grab that from the exta 
 
 <!--This is how you make a comment in PreTeXt -->
 
+# VS Code Errors
+
+VS Code by default thinks that pretext is an XML format which it is but it's subtely different. In order to turn those errors off type
+
+CTRL+SHIFT+P
+
+then type
+
+Preferences: Open User Settings (JSON)
+
+and copy the two lines of code below
+
+"xml.validation.enabled": false,
+"xml.symbols.enabled": true
+
 # Pretext new
 
 It's a much better idea to run 'pretext new' to create a new project.
