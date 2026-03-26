@@ -112,7 +112,7 @@
 	<li> March 21st, 2026 - Book officially converted from LaTeX and published to new repo</li>
 	<li> March 22nd, 2026 - Made a few major formatting changes and updated the assignment directions to be better viewable and digestable to students</li>
   <li> March 23rd, 2026 - Updated the servo lab assignment to fix a broken png and added a link to an equation.</li>
-  <li> March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide .</li>
+  <li> March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting .</li>
       </ol>
     </p>
   </section>

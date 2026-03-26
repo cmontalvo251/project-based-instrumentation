@@ -12,7 +12,12 @@
     <section>
       <title>Updating your Bootloader</title>
       <p>
-	If you're having an issue with an old bootloader be sure to update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader for the CPB</url> or alternatively the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">bootloader for the CPX</url>. At the time of this writing here is the command you need to upload the new bootloader the CPB. If you have version 0.4.0 or later you can use the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-uf2">UF2 method</url>. If your bootloader is too old you need <em>adafruit-nrfutil</em>. Here is the command you need to upload the new bootloader to the CPB.
+	Some of the newer CircuitPython UF2s do not install correctly on old boot loaders. If you put the CPX/CPB into CPLAYBOOT mode and open the <em>INFO_UF2.TXT</em> file it will tell you the version of the bootloader that you have just like the figure below.
+  <figure xml:id="old-bootloader">
+    <image source="old_bootloader.png" width="80%"/>
+    <caption>Old Bootloader Version</caption>
+  </figure>
+  In this case the version of the bootloader is 0.2.11 which is older than most new UF2s require. If you're having an issue with an old bootloader be sure to update the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-command-line">bootloader for the CPB</url> or alternatively the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">bootloader for the CPX</url>. At the time of this writing here is the command you need to upload the new bootloader the CPB. If you have version 0.4.0 or later you can use the <url href="https://learn.adafruit.com/adafruit-circuit-playground-bluefruit/update-bootloader-use-uf2">UF2 method</url>. If your bootloader is too old you need <em>adafruit-nrfutil</em>. Here is the command you need to upload the new bootloader to the CPB.
     <pre>
       adafruit-nrfutil --verbose dfu serial --package 
       circuitplayground_nrf52840_bootloader-0.8.2_s140_6.1.1.zip -p /dev/ttyACM0 
@@ -31,24 +36,71 @@
       <li><p>You need to add your user to dialout <m>-></m> $ sudo usermod -a -G your_username</p></li>
       <li><p>Restart your computer</p></li>
     </ol>
-
-    For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is <em>update-bootloader-circuitplay_m0-v3.15.0.uf2</em>.
+    This is what it looks like when running the <em>adafruit-nrfutil</em> command on linux.
+    <figure>
+      <image source="bootloader_linux_command.png" width="80%"/>
+      <caption>Output from running the bootloader update command on linux</caption>
+    </figure>
+    For the CPX there is a UF2 that you transfer over to the CPLAYBOOT drive. At the time of this writing the version you're looking for is <em>update-bootloader-circuitplay_m0-v3.15.0.uf2</em>. Once you update the bootloader you can check the version by opening the <em>INFO_UF2.TXT</em> file again and it should show the new version. The figure below shows an example of the new bootloader version after updating. In this case the version is 0.10.0 which is much newer than the old 0.2.11 version. 
+    <figure>
+      <image source="updated_bootloader.png" width="80%"/>
+    <caption>Updated Bootloader Version</caption>
+    </figure>
     </p>
     </section>
     
   <section>
     <title>Installing Modules</title>
     <p>
-      <term>One issue you're going to run into when you run certain codes is that you won't have some of the modules on your CPB/CPX.</term> To fix this you need to download the <url href="https://circuitpython.org/libraries">CircuitPython Libraries</url>. You need to download the appropriate version: 6.x, 7.x or 8.x. How do you know what version of CircuitPython you have? Well head over to your CIRCUITPY drive and open the boot_out.txt file and it will tell you the version. Note that this is the same version as the .UF2 file installed back in the Getting Started labs (See <xref ref="getting-started">Chapter</xref>). When you download the modules it will download a .zip file. Extract the .zip file on your desktop computer and then open the <em>lib</em> folder on your desktop and your CIRCUITPY. You then need to transfer the modules (ONLY THE ONES YOU NEED) from your desktop to your CPX/CPB <em>lib</em> folder. The reason why you can't copy the entire folder is because the CPB/CPX only has 2MB of flash and the CircuitPython download is 4.1 MB at the time of this writing.
+      <term>One issue you're going to run into when you run certain codes is that you won't have some of the modules on your CPB/CPX.</term> To fix this you need to download the <url href="https://circuitpython.org/libraries">CircuitPython Libraries</url>. You need to download the appropriate version: 6.x, 7.x or 8.x. The figure below is a screenshot of the libraries homepage on the CircuitPython website.
+      <figure>
+        <image source="libraries.png" width="80%"/>
+        <caption>CircuitPython Libraries homepage</caption>
+      </figure>
+      How do you know what version of CircuitPython you have? Well head over to your CIRCUITPY drive and open the <em>boot_out.txt</em> file and it will tell you the version. The Figure below shows an example <em>boot_out.txt</em> file. In this case the version is 10.1.4 so, you would download the 10.x version of the libraries.
+      <figure>
+      <image source="example_boot_out.png" width="80%"/>
+      <caption>Example boot_out.txt file showing the version of CircuitPython</caption>
+      </figure>
+      Note that this is the same version as the .UF2 file installed back in the Getting Started labs (See <xref ref="getting-started">Chapter</xref>). When you download the modules it will download a .zip file. Extract the .zip file on your desktop computer and then open the <em>lib</em> folder on your desktop and your CIRCUITPY. You then need to transfer the modules (ONLY THE ONES YOU NEED) from your desktop to your CPX/CPB <em>lib</em> folder. The reason why you can't copy the entire folder is because the CPB/CPX only has 2MB of flash and the CircuitPython download is 4.1 MB at the time of this writing. If your CIRCUITPY drive does not have a <em>lib</em> folder you can easily create one as shown in the Figure below.
+      <figure>
+        <image source="CIRCUITPY.png" width="80%"/>
+        <caption>CIRCUITPY Drive showing lib folder</caption>
+      </figure>
     </p>
+    <p>
+    After extracting the zip folder to your computer you can begin dragging files over to your CPX/CPB. The Figure below shows an example lib folder full of modules that have been dragged from the desktop to the CIRCUITPY drive.
+    <figure>
+      <image source="lib_folder_full.png" width="80%"/>
+      <caption>Example lib folder on CIRCUITPY drive with modules dragged over from desktop</caption>
+    </figure>
+    The follow up question of course is <em>Which modules do I need?</em> The answer to that question is in the code. When you run a code that needs a specific module, the Serial monitor will say <em>ImportError: No module named 'x'</em>. In this case you will then know to install the module 'x'. You can also look at the import statements at the top of the code to see which modules are being imported and then make sure you have those modules installed. The figure below is an example of that error where the code is specifically looking for the module named <em>adafruit_circuitplayground</em>. In this case, the user would need to copy that specific module from the desktop to the CIRCUITPY drive <em>lib</em> folder.
+    <figure xml:id="moduleerror">
+      <image source="missing_module.png" width="80%"/>
+      <caption>Example of a missing module error</caption>
+    </figure>
+    Note that it's possible to import too many modules on the CPX/CPB and run out of memory. It turns out that the CPB has much more memory then the CPX. Run the commands below to see how much memory your CPX/CPX has left.
+    <pre>
+    import gc
+    gc.collect()
+    print(gc.mem_free())
+    </pre>
+    At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM. Note that RAM is different than flash. The CPX/CPB can hold about 2MB of data but only operate with 17/140 KB of working memory.
+  </p>
   </section>
 
   <section>
     <title>Reformatting your CPX/CPB</title>
-    <p>First, try and reset the CPX/CPB to CPLAYBOOT and reflash the UF2 to see if that fixes it. As a last resort you can try to download these UF2s and completely wipe the memory on your CPX/CPB. Once you do that you will have to re-insall the CircuitPython UF2 -
-    <url href="https://cdn-learn.adafruit.com/assets/assets/000/048/745/original/flash_erase_express.ino.circuitplay.uf2?1512152080">CPX</url>, <url href="https://cdn-learn.adafruit.com/assets/assets/000/082/950/original/CP_Bluefruit_QSPI_Erase.UF2?1572026649">CPB</url>
+    <p>If your CPX/CPX is completely bricked you can completely reformat it. In order to do that you simply put the CPX/CPB into CPLAYBOOT mode. Then drag either the 
+    <url href="https://cdn-learn.adafruit.com/assets/assets/000/048/745/original/flash_erase_express.ino.circuitplay.uf2?1512152080">CPX eraser tool</url> or the <url href="https://cdn-learn.adafruit.com/assets/assets/000/082/950/original/CP_Bluefruit_QSPI_Erase.UF2?1572026649">CPB eraser tool</url>. After that, you can reinstall the CircuitPython UF2 and start fresh (See <xref ref="getting-started"/>). 
 
-    If you have a linux computer you can <q>sudo screen /dev/ttyACM0</q> and then run <q>import storage</q> and then <q>storage.erase_filesystem()</q>
+    If you have a linux computer you can also access the REPL of your CPX/CPB using the commands below
+    <pre>
+      sudo screen /dev/ttyACM0
+      import storage
+      storage.erase_filesystem()
+    </pre>
+    Then you would proceed with installing the CircuitPython UF2 again and starting fresh. Note that this will erase everything on your CPX/CPB so make sure you have a backup of your code and files before doing this.
 
     If you feel like you've tried everything this <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting">troubleshooting guide</url> may have some other steps outlined to help you. However, I have had great experience with the eraser tool above.</p>
   </section>
@@ -84,7 +136,6 @@
       <li><p>Do you have boot.py on there when you don't need it?</p></li>
       <li><p>Are you editing using Thonny or Spyder? You're supposed to use Mu.</p></li>
      <li><p>Are you editing a file on your computer? Make sure you are writing to the CIRCUITPY drive.</p></li>
-     <li><p>Are you running out of memory? To figure out how much RAM you have on your CPX/CPB you need to <em>import gc</em> then run <em>gc.collect()</em> and then <em>print(gc.mem_free())</em>. At the time of this writing, the CPX has about 17 KB of RAM and the CPB has around 140 KB of RAM.</p></li>
     </ol>
   </section>
 </chapter>
