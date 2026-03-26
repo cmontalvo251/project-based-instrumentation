@@ -263,7 +263,7 @@ the accelerometer are clearly in <m>m/s^2</m>.
 <p>
 Alright so we've learned the hard way for all the sensors using low
 level control of the various sensors. Let's now import the simple
-adafruit_circuitplayground.express
+<em>adafruit_circuitplayground.express</em>
 module. <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">The
 Adafruit Learn site offers pretty much every example code snippet
 you'd ever need for all the different push buttons and sensors on the
@@ -275,7 +275,7 @@ done by adding the following to the top of your code
 from adafruit_circuitplayground.express import cpx
 </pre>
 <p>
-<term>Note that you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</term> Also, keep in mind that you will need to install modules onto your CPX/CPB so be sure to read up on how to install those (<xref ref="troubleshooting"/>). Assuming you have the right module, the line above will import the cpx module into your working code. From here the commands to read different things are relatively simple. Here are the commands for all the various sensors
+<term>Note that if you have a CPB you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb.</term> Also, keep in mind that you will need to install modules onto your CPX/CPB (See <xref ref="installing-modules"/>). Assuming you have the right module, the line above will import the cpx module into your working code. From here the commands to read different things are relatively simple. Here are the commands for all the various sensors
 </p>
 <pre>
 light = cpx.light
@@ -285,25 +285,27 @@ x,y,z = cpx.acceleration
 temperature = cpx.temperature
 </pre>
 <p>
-There unfortunately is no simple module for the sound sensor. You'll
-still need to use the low level control no matter what. According to
-Adafruit though, if you get the Circuit Playground Bluefruit there is
+There unfortunately is no simple module for the sound sensor on the CPX. You'll
+still need to use the low level control no matter what. However, if you get the Circuit Playground Bluefruit there is
 a <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/sound">simple
-way to read the sound level</url>. Implementing the various sensors into a
-while loop on my CPX looks like this.
+way to read the sound level</url> using <em>cpb.sound_level</em>. Implementing the various sensors into a while loop on my CPX looks like this.
 </p>
 <figure>
   <image width="73%" source="high_level_mu.png" />
   <caption>Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl</caption>
 </figure>
 <p>
-I left out the sound sensor stuff just because it kind of messes with
+I left out the low level sound sensor stuff just because it kind of messes with
 the simplicity of the code above. The
-adafruit_circuitplayground.express module outputs just as before
+<em>adafruit_circuitplayground.express</em> module outputs just as before
 except for the light sensor. In the low level control we simply
 computed the voltage across the photocell but the
-adafruit_circuitplayground.express module outputs data
-in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url>.
+<em>adafruit_circuitplayground.express</em> module outputs data
+in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url>. Recall, if you have a CPB you can use the high level <em>cpb.sound_level</em> command as shown in the Figure below. Notice that the import command has changed to <em>adafruit_circuitplayground.bluefruit import cpb</em>.
+<figure xml:id="cpb-sound-level">
+  <image width="73%" source="sound_level.png" />
+  <caption>Example High Level Sound Level on the CPB</caption>
+</figure>
 </p>
 </section>
 
