@@ -53,7 +53,7 @@
     If you feel like you've tried everything this <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting">troubleshooting guide</url> may have some other steps outlined to help you. However, I have had great experience with the eraser tool above.</p>
   </section>
 
-  <section xml:id="I2Cscanner">
+  <section xml:id="I2C_scanner">
     <title>Using an I2C Scanner</title>">
     <p>
       If you're having trouble getting an I2C device to work, it's a good idea to run an I2C scanner to make sure you can see the device and that you have the correct address. Here is a simple I2C scanner code that you can run on your CPX/CPB.
