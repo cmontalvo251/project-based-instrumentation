@@ -2,8 +2,57 @@
 
 <chapter xml:id="systems-engineering" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Project Based Engineering and the Systems Engineering Life Cycle</title>
-  <introduction>
+  <introduction><p>
   Systems engineering is a branch of engineering used to help in the design of complex systems. The general idea is to break down a complex system into smaller more manageable pieces. This is done by following a life cycle which includes the following steps: requirements analysis, functional analysis and allocation, design synthesis, and system analysis and control. A
   diagram for a systems engineering life cycle can be seen below.
-  </introduction>
+  <figure xml:id="v-and-v">
+    <image source="VandV.jpg" width="90%"/>
+    <caption>Example Verification and Validation (V&amp;V) Process<xref ref="vandv"/></caption>
+  </figure>
+  The left side of the V&amp;V diagram highlights all of the required design while the right side details the build. For undergraduate engineering courses the Design, Build, Test (DBT) framework is often used and has been used at the University of South Alabama for many years with much success. The systems engineering life cycle is a more detailed version of the DBT framework. The systems engineering life cycle is used in many industries including
+  aerospace, automotive, and software development. The sections that follow explain how this instrumentation course utilizes the DBT framework and the systems engineering life cylce.
+  </p></introduction>
+  <section xml:id="project-overview">
+    <title>Project Schedule</title>
+    <p>
+    A standard college semester is 16 weeks with the 17th week typically reserved for finals week. In order to help the students with engineering life cycle, the requirements are given to the students and only a prototype is requested which removes the very top of both the left and right side of the V&amp;V diagram. At the undergraduate level the following steps are used for a standard 16 week curriculum. 
+    <ol>
+      <li><p><term>Week 1:</term> <em>Title Page and Group Development</em> - Students are given an explanation of the project scope, rubric and are asked to split into teams to create a title page and team name. In Instrumentation and Experimental Methods, the project is to design, build and test a data acquisition system with at least 3 electrical components not counting the CPU, flash memory, or power supply. This also includes mechanical subsystems so that students practice both hardware and software integration. The teams are typically 1-3 students each depending on class size.</p></li>
+      <li><p><term>Week 2:</term> <em>Concept of Operations (ConOps)</em> - Students are given an explanation of the ConOps and asked to create a ConOps for their project as well as include a list of requirements which is based on the project scope given by the instructor as well as any additional requirements the students feel are necessary. Specific requirements are explained in <xref ref="requirements"/>.</p></li>
+      <li><p><term>Week 3:</term><em>Conceptual Design</em> - Students are asked to create a hand sketch of their project as well as a brief list of materials they will need to complete the project. This also includes a list of subsystems and components that will be needed to complete the project which requires the students to create a Block Definition Diagram (BDD) as well as an Internal Block Diagram (IBD).</p></li>
+      <li><p><term>Week 4:</term><em>Preliminary Design</em> - For the preliminary design phase the task is to create more detailed BDDs and IBDs for the mechanical, electrical and software subsystems as well as create an initial interface diagram (ID) for the software.</p></li>
+      <li><p><term>Weeks 5-7:</term><em>Detailed Design</em> - The detailed design phase is broken into 3 separate weeks. For Instrumentation and Experimental Methods the students need to design the mechanical, electrical and software subsystems creating schematics, wiringdiagrams and a list of all software needed to run their system. The students also need to create a detailed bill of materials with prices, weights and links. At this point the system is ready to be built.</p></li>
+      <li><p><term>Week 8:</term><em>Build Plan, Purchase materials + Break</em> - In the Fall semester, Fall break typically lands on Week 8 and in the spring Week 8 is typically spring break. As such Students are asked to create a build plan which is not something to be turned in but just something helpful to keep students on track as well as purchase all parts necessary while they are on holiday. If parts are purchased the Friday before break that typically gives the retail stores over 5 business days or 9 calendar days to ship the parts to the students before they return to class. This way students can immediately start building and testing during Week 9 when they return. Of course, in practice I have found many procrastinating students who don't order parts until well after they return and end up rushing to get their parts delivered and operational in time. However, it is not the job of the instructor to micromanage or police students. This is where time management skills are important.</p></li>
+      <li><p><term>Weeks 9-11:</term><em>Build and Subsystem Testing</em> - The build process includes building everything component by component and testing each subsystem as it is built. This is important to ensure that each subsystem works properly independently before integrating everything together. For Instrumentation and Experimental Methods the students will test each electrical component one by one and test the software for that specific component. The mechanical system is something to be built piece by piece and integrated in Week 12. Again, time management is key.</p></li>
+      <li><p><term>Weeks 12-13:</term><em>System Integration and Testing</em> - The integration process includes integrating all subsystems together and testing the entire system as a whole. For Instrumentation and Experimental Methods, the students will integrate all electrical and software subsystems (all 3 components) and perform a test without the mechanical subsystem in the way initially. The mechanical subsystem must also be fully completed at this time.</p></li>
+      <li><p><term>Weeks 14-16:</term><em>Final Testing and Validation</em> - The final testing and validation phase includes performing the final test of the entire system. For Instrumentation and Experimental Methods the students will fully integrate the mechanical subsystem and perform a final test of the entire system. Note that 3 weeks are alloted for this phase to account for weather delays, part delays and any other unforeseen issues that may arise. Many times the system fails sometimes catastrophically as in a crash or an overheated component and the students need time to rebuild and retest before the final presentation.</p></li>
+      <li><p><term>Week 17:</term><em>Final Report and Presentation</em> - Although a semester is exactly 16 weeks, the final report and presentation is typically due the first week of finals which ends up being Week 17. The final report includes a summary of the entire project including all diagrams, analyses, test results and conclusions. The final presentation is a 10-15 minute presentation to the class and any invited guests which summarizes the entire project. Note that the final report and presentation is typically worth 30-40% of the overall grade so it is important that students take this seriously and put in their best effort. Furthermore, there are no exams or quizzes in these project based courses so the final report and presentation is the only way to demonstrate what the students have learned throughout the semester. This gives the students ownership of the  project and motivates them to do their best work.</p></li>
+    </ol>
+    </p>
+  </section>
+  <section xml:id="project-examples">
+    <title>Project Examples</title>
+    <p>
+    The project schedule detailed above is a general framework that can be applied to any project. 
+    </p>
+  </section>
+
+  <section xml:id="requirements">
+    <title>Specific Final Project Requirements</title>
+
+  </section>
+
+  <section xml:id="block-diagram-definitions">
+    <title>Block Definition Diagrams (BDD)</title>
+  </section>
+
+  <section xml:id="internal-block-diagrams">
+    <title>Internal Block Diagrams (IBD)</title>
+  </section>
+
+  <section xml:id="interface-diagrams">
+    <title>Interface Diagrams (ID)</title>
+  </section>
+
+
 </chapter>
