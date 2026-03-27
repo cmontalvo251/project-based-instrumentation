@@ -13,9 +13,10 @@
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
-    <!--Include Introduction chapter -->
+    <!--Include Introduction chapters -->
     <xi:include href="./intro.ptx" />
     <xi:include href="./course-description.ptx"/>
+    <xi:include href="./systems-engineering.ptx"/>
 
     <!-- Include Projects -->
     <xi:include href="./purchase-equipment.ptx"/>

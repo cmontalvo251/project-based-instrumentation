@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="systems-engineering" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Project Based Engineering and the Systems Engineering Life Cycle</title>
+  <introduction>
+  Systems engineering is a branch of engineering used to help in the design of complex systems. The general idea is to break down a complex system into smaller more manageable pieces. This is done by following a life cycle which includes the following steps: requirements analysis, functional analysis and allocation, design synthesis, and system analysis and control. A
+  diagram for a systems engineering life cycle can be seen below.
+  </introduction>
+</chapter>

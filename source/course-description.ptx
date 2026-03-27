@@ -6,7 +6,7 @@
 <p>
 The course is designed to coincide with lecture content in a standard
 engineering instrumentation course. The students are guided through
-numerous projects detailed in the subsequent chapters. Following the weekly projects there is a potential for a large project which involves some systems engineering techniques. Finally, a results and discussion chapter details the over analysis of the course as experienced by anonymous survey results and quotes from actual students.
+numerous projects detailed in the subsequent chapters (See <xref ref="purchase-equipment"/>-<xref ref="second-order"/>). During the semester and in addition to the weekly projects, there is a large project which involves some systems engineering techniques (See <xref ref="systems-engineering"/>). Finally, a results and discussion chapter details the over analysis of the course as experienced by anonymous survey results and quotes from actual students (See <xref ref="results-discussion"/>).
 </p>
   <p>
 The specific course learning objectives, which include
@@ -22,7 +22,7 @@ circuits both analog and digital are shown below:
 </ol>
 </p>
 <p>
-This course is not going to be a traditional lecture format and that
+This course is not designed to be a traditional lecture format, rather
 hands-on projects will be assigned every Friday using the lab at home
 kit. The projects every Friday are created to enhance the course
 learning objectives as dictated above.
@@ -83,8 +83,7 @@ critical thinking. In addition to PBL aspects, the students are
 exposed to the larger network of learning through Github, the Adafruit
 Learning system and Forums as well as general Wikis online. This
 network of learning is seen in the connectivism framework. The
-chapters that follow detail the weekly projects. The chapters that
-follow the weekly projects explain results from anonymous course
+chapters that follow detail essential systems engineering techniques for the final project as well as the individual weekly projects. The ending chapters explain results from anonymous course
 surverys from students taking the class as well as conclusions drawn
 from the authors and faculty who have taught the course.
 </p>
