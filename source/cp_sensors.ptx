@@ -61,15 +61,25 @@ you the low level control method</term>.
 <section>
 <title>Low Level Control</title>
 
-<subsection>
+<subsection xml:id="light-sensor">
 <title>Light</title>
 <p>
 The light sensor on the CPX is just a simple photocell wired in series
-with a resistor. There is a lab on photocells (See
-<xref ref="photocell"/> if you'd like to do that lab first to learn more
-about photocells. This lab is designed to simply teach you about the onboard sensors rather than how they work. The GND leg of the photocell is connected to pin
-A8. You can check the pin by looking at the graphic of an eye on the
-CPX and taking a look at the digital pin next to it. We've already
+with a resistor. A photocell (or Light Dependent Resistor, LDR) is a sensor whose resistance changes significantly based on the intensity of light falling on its sensitive surface. In dimmer light, its resistance is high, and in brighter light, its resistance is low. By integrating it into a simple voltage divider circuit, Adafruit makes it possible to read the voltage across the photocell and correlate that to light level. There is a relevant <url href="https://learn.adafruit.com/photocells/circuitpython">Adafruit Tutorial on Photocells</url> and the code required to measure the voltage if you'd like to read more about it.
+</p>
+<p>
+The GND leg of the photocell is connected to pin
+A8. You can check the pin by looking at the graphic of an eye on the CPX and taking a look at the digital pin next to it. Since this circuit is connected to a voltage divider, the equations below can be used to relate the resistance in the photocell to the voltage being read by the ADC. 
+<men>
+  V_{photocell} = V_{out}\frac{R_{photocell}}{R_{series}+R_{photocell}}
+</men>
+</p>
+<p>
+In this case <m>V_{out}</m> is 3.3V and <m>R_{series}=10000 \Omega</m> is a resistor value chosen by Adafruit.  So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the Lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below <xref ref="b_photocell"/>.
+<men>
+  Lux = 500000R_{photocell}^{-0.7}
+</men>
+where <m>R_{photocell}</m> is the resistance of the photocell in Ohms. We've already
 learned how to access analog pins (See <xref ref="voltage"/>) in a
 previous lab so just use
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">code
@@ -186,7 +196,7 @@ As always lines 1-3 import the relevant modules and then line 8 create
 the thermistor object. You'll notice the input arguments are the pin
 which is A9 as well as the resistor values which are in series with
 the thermistor. These resistors are soldered to the PCB so they are
-fixed at 10 kOhms. The 25 is for the nominal resistance temperature in
+fixed at <men>10 k\Omega</men>. The 25 is for the nominal resistance temperature in
 celsius of the thermistor and 3950 is the b coefficient which is a
 heat transfer property. Running this code and then placing my finger
 on the A9 symbol causes the temperature to rise just a bit. You'll
