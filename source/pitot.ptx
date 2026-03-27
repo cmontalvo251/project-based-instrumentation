@@ -39,7 +39,7 @@ The pitot probe has two pressure taps that measure static (ambient) pressure and
 <men>
   \Delta P_{kPa} = V_{pitot} - 2.5
 </men>
-remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url>. To measure wind speed you can use a variation of Bernoulli's principle. Remember to convert the pressure <m>P</m> from kilopascals (kPa) to Pascals (Pa) by multiplying by <m>1000</m> before using it in this formula.
+remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url>. To measure wind speed you can use a variation of Bernoulli's principle. Note it is necessary to convert the pressure <m>P</m> from kilopascals (kPa) to Pascals (Pa) by multiplying by <m>1000</m> before using it in this formula.
 <me>
   U = \sqrt{\frac{2 \Delta P_{Pa}}{\rho}}
 </me>
@@ -50,10 +50,15 @@ where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the different
   <caption>Arduino connected to a pressure transducer<xref ref="pitot-author"/></caption>
 </figure>
 <p>
-It is pretty straightforward how to wire this up to a CPX/CPB but remember that +5V needs to go to VOUT, GND to GND and Analog to any analog pin. I chose pin A2 as shown in the Figure below.
+It is pretty straightforward to wire this up to a CPX/CPB as is shown in the wiring diagram below.
+<figure>
+  <image width="90%" source="pitot_wiring.png" />
+  <caption>Pitot probe wired to a CPX</caption>
+</figure>
+Remember that +5V needs to go to VOUT, GND to GND and Analog to any analog pin. I chose pin A2 as shown in the Figure below.
 </p>
 <figure>
-  <image width="73%" source="pitot_probe_circuit.jpeg" />
+  <image width="90%" source="pitot_probe_circuit.jpeg" />
   <caption>CircuitPlayground Express connected to Pitot Probe and Transducer</caption>
 </figure>
 <p>
@@ -71,7 +76,7 @@ The goal of the experiment is to take pitot probe data for 15 seconds with no wi
   <caption>Example pitot probe data showing fan off/on/off scenario</caption>
 </figure>
 <p>
-The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a <url href="https://youtu.be/zTGa4sk6UZE">complementary filter</url> is probably a good idea provided you don't over filter the signal and run into <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url>. You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m/s. It turns out that pitot probes are actually not very accurate lower than about 2 m/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.
+The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a <url href="https://youtu.be/zTGa4sk6UZE">complementary filter</url> is probably a good idea provided you don't over filter the signal and run into <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> (See <xref ref="aliasing"/>). You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m/s. It turns out that pitot probes are actually not very accurate lower than about 2 m/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.
 </p>
 <figure>
   <image width="73%" source="pitot_probe_final.png" />
