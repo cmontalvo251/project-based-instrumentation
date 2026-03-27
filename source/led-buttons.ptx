@@ -45,7 +45,7 @@ few labs.
 <p>
 If you purchased the optional
 <url href="https://www.adafruit.com/product/3287">battery pack</url> you can
-also power the CPX using 3 AA batteries. These batteries nominally
+also power the CPX using 3 AA batteries <xref ref="AdafruitMAIN"/>. These batteries nominally
 have 1.5 V but fully
 charged it's actually something like 1.8 V. So 1.8 times 3 is 5.4V
 which is enough to power the CPX. If you have the battery pack and
@@ -66,7 +66,7 @@ for ground and you need to hook the negative end of your circuit to
 this and it also has VOUT which supplies 5V to any circuit you
 build. Hook the positive end of your circuit to the VOUT pin. There is
 also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows an <url href="https://learn.adafruit.com/circuitpython-digital-inputs-and-outputs/digital-outputs
-">Arduino Metro</url> hooked up to an LED on a breadboard (Courtesy of <url href="https://learn.adafruit.com/u/tdicola">Tony Dicola</url>).
+">Arduino Metro</url> hooked up to an LED on a breadboard (Courtesy of <url href="https://learn.adafruit.com/u/tdicola">Tony Dicola</url> <xref ref="Metro"/>).
 </p>
 <figure>
 <image width="73%" source="circuitpython_01_digital_io_figure_1.png" />
@@ -74,10 +74,10 @@ also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows
 </figure>
 <p>
 If you're not familiar with how breadboards work I would recommend watching this <url href="https://www.youtube.com/watch?v=mE33WpRWrXs">video on how
-breadboards work</url>. Your lab today specifically involves an external
+breadboards work</url><xref ref="youtube"/>. Your lab today specifically involves an external
 LED as shown above. You can read about
 <url href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/">LEDs</url>
-more online if you wish. <term>Remember that the long leg of the LED is
+more online if you wish<xref ref="sparkfun"/>. <term>Remember that the long leg of the LED is
 the positive end and the short leg is the negative end.</term> The task today
 is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <term>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</term>
 </p>
@@ -178,7 +178,7 @@ signal. Here's the code I created to get it to work.
 The code above is an image. You could type exactly what you see and
 hope you don't type any errors (which is highly unlikely) or you could
 look for my code on my
-<url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython">Github</url>. Have
+<url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython">Github</url><xref ref="Github"/>. Have
 you bookmarked this link yet? I recommend you do so!!! So you're
 making a code about Buttons....hmmm. Click that Github link. Where do
 you think the code about Buttons is located? Anywho, let's talk about
@@ -198,7 +198,7 @@ pull down resistor and when it's pressed the value of the button goes
 Lines 9-11 are the same as before. We create an led variable and tell
 the CPX that the led is hooked up to pin A2. We then start the while
 loop on line 13. First if you click the Serial button you'll see the
-text ‘Button value is False'. It's False because <em>buttonA.value</em> is not
+text <em>Button value is False</em>. It's False because <em>buttonA.value</em> is not
 being pressed. On line 15 the led is set to False (turned off). On
 line 16 the button value is checked using an if statement as to
 whether or not the button is pressed (True). If the button is pressed,

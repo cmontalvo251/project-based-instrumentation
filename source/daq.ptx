@@ -29,7 +29,7 @@ methods. After you've read through this document I suggest you watch
 a youtube I created on <url href="https://youtu.be/yX0zeIfn2j4">Logging Data with the Circuit Playground
 Express</url>. I have also made video where I <url href="https://www.youtube.com/watch?v=Vc7_KxRnORI">log temperature and
 accelerometer data using on board memory with the CircuitPlayground
-Bluefruit.</url>
+Bluefruit</url><xref ref="youtube"/>.
 </p>
 </section>
 
@@ -47,7 +47,7 @@ rather than just having it spit data out via the serial monitor. For
 starters though let's get the CPX to print out something simple like
 button presses since we've touched on that already. The code I'm using
 is shown below and can also be found on
-<url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/button_presses.py">Github</url>.
+<url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/button_presses.py">Github</url><xref ref="Github"/>.
 </p>
 <figure>
   <image width="73%" source="button_presses.png" />
@@ -150,11 +150,11 @@ actively types your data into a spreadsheet. The code is very
 extensive but I'll include the simple one here so we can discuss
 it. Below are the first 30 lines of code. The first 6 lines of code
 are just comments since I heavily adopted this code from the <url href="https://learn.adafruit.com/make-it-a-keyboard/circuitpython">Adafruit
-Learn System</url>. <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/typing/record_button_presses_typing.py">My version of this code</url> can be found on my Github. Lines 8 -
+Learn System</url><xref ref="Adafruit"/>. <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/typing/record_button_presses_typing.py">My version of this code</url> can be found on my Github <xref ref="Github"/>. Lines 8 -
 14 are import commands as we've seen previously. The regular import
 modules board, time and digitalio are imported but we are also
 importing the Keyboard module so that the CPX can takeover our
-keyboard. <b>In order to import that module properly</b> you need to <url href="https://circuitpython.org">install modules</url> onto you <em>lib</em> folder (See <xref ref="troubleshooting"/>). Lines 16-22 create two buttons. First we create buttonA
+keyboard. <b>In order to import that module properly</b> you need to <url href="https://circuitpython.org">install modules</url> onto you <em>lib</em> folder (See <xref ref="troubleshooting"/>) <xref ref="CircuitPython"/>. Lines 16-22 create two buttons. First we create buttonA
 attached to pin D4 and then a switch attached to pin D7. If you look
 on the CPX there is a switch labeled D7. Before you copy this code
 onto the CPX make sure you move the switch towards the ear looking
@@ -236,14 +236,14 @@ this to work you need to allow the drive on the CPX to have read/write
 permissions. This requires you to load a piece of software called
 boot.py and put it on the CPX. I have this
 <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/boot.py">software
-on my Github</url>. The software is shown below. The first 10 lines are
+on my Github</url><xref ref="Github"/>. The software is shown below. The first 10 lines are
 probably very familiar. Import some modules and then create a switch object. Line 13
 is where all of the storage permissions are changed. If the flip is
 switched towards the A button, the storage module is used to allow you
 to write to the CPX. The problem here is that if you do this, you
 won't be able to edit code. I'll explain the procedure here in a
 minute. As always, the relevant Adafruit tutorial is on the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-storage">Adafruit
-Learn System</url> if you want to read more about it. Again make sure you
+Learn System</url><xref ref="Adafruit"/> if you want to read more about it. Again make sure you
 store this file onto the CIRCUITPY drive and save it as boot.py
 </p>
 <figure>
@@ -256,13 +256,13 @@ main.py script to only log data when the switch is moved towards the B
 button. The software to record button presses on disk is shown below
 and as always
 <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/write_button_presses_disk.py">on
-my Github</url>. In this software we again see the standard
+my Github</url><xref ref="Github"/>. In this software we again see the standard
 commands. Lines 1-3 import all the modules we need and then 5-15
 create a switch, a button and an LED. In this case we're using the LED
 soldered to the board. Line 17-20 check to see if the user has flipped
 the switch. If the switch is False the storage module on boot.py will
 allow the drive to act like a data logger and it will open a file
-called <em>Test_Data.txt</em> for writing (‘w'). If the switch is True then the
+called <em>Test_Data.txt</em> for writing <em>(<q>w</q>)</em>. If the switch is True then the
 user will be notified that the file has not been opened for
 writing. Lines 22 through 33 include the infinite while loop. Line 23
 turns the LED on and line 24 prints out the current time and the
@@ -358,7 +358,7 @@ transmitter.
 <section>
 <title>Method 5 - Logging Data to an SD Card</title>
 <p>
-A final method to log data is using a standalone <url href="https://www.adafruit.com/product/254">micro sd card breakout board</url> (See <xref ref="sdcard"/>). Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See <xref ref="troubleshooting"/>) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting <em>boot.py</em> to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter. 
+A final method to log data is using a standalone <url href="https://www.adafruit.com/product/254">micro sd card breakout board</url> (See <xref ref="sdcard"/>)<xref ref="AdafruitMAIN"/>. Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See <xref ref="troubleshooting"/>) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting <em>boot.py</em> to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter. 
 </p>
 </section>
 
@@ -386,7 +386,7 @@ provide you with a data file that you can read in Python on your
 desktop computer to plot. The simplest way to import data is by using
 the loadtxt function from the module numpy. Here is some very simple
 code to plot data from a text file. I also have a <url href="https://www.youtube.com/watch?v=tJOz-ty-2ec&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=12">Youtube video
-explaining how to plot a text file</url> if you'd rather watch something.
+explaining how to plot a text file</url> if you'd rather watch something <xref ref="youtube"/>.
 </p>
 
 <p>

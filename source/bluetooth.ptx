@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Smart Phone</p></li>
-<li><p>Adafruit BLE Connect App (<url href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect">Play Store</url>/<url href="https://apps.apple.com/us/app/bluefruit-connect/id830125974">App Store</url>)</p></li>
+<li><p>Adafruit BLE Connect App (<url href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect">Play Store</url>/<url href="https://apps.apple.com/us/app/bluefruit-connect/id830125974">App Store</url>)<xref ref="AdafruitBLE"/></p></li>
 <li><p>CircuitPlayground Bluefruit</p></li>
 <li><p>USB Cable</p></li>
 <li><p>Laptop</p></li>
@@ -39,7 +39,7 @@ video in the series</url>. The video is 30 minutes but the first 8 minutes
 goes through setting up the bluetooth module and the rest of the video
 is just on plotting the exported csv data which took me some
 time. Note that exporting data as a txt file is the preferred method
-as parsing the file is way easier.
+as parsing the file is way easier <xref ref="youtube"/>.
 </p>
 </section>
 
@@ -59,7 +59,7 @@ my <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circu
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/CPB_DataLogger/bluefruit_uart_button.py">bluetooth_uart_button.py</url>
 script which sends button data to your smart phone via something called UART
 which is a type of serial communication. It's beyond the scope of this
-lesson but serial is digital as opposed to analog which is done using the AnalogIn functions (See <xref ref="voltage"/>)
+lesson but serial is digital as opposed to analog which is done using the AnalogIn functions (See <xref ref="voltage"/>) <xref ref="Github"/>.
 </p>
 <figure>
   <image width="73%" source="bluetooth_code.png" />

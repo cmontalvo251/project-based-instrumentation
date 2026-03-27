@@ -33,7 +33,7 @@ A second order system undergoing free motion will have dynamics that look like t
 </p>
 
 <p>
-In this case, the solution to the above equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard second order differential equation techniques</url> to obtain the solution below.
+In this case, the solution to the above equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard second order differential equation techniques</url> to obtain the solution below <xref ref="youtube"/>.
 <men xml:id="e_secondorder" >
   \theta(t) = \theta_0e^{-\sigma t}cos(\omega_d t)
 </men>
