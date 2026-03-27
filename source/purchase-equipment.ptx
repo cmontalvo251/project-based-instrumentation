@@ -38,13 +38,13 @@ yourself. Here is a list of all the components in the kit
 <li><p>Photocell</p></li>
 <li><p>Two Resistors (330 Ohm and 1K Ohm)</p></li>
 <li><p>Alligator Clips x3</p></li>
-<li><p>External Battery Pack</p></li>
-<li><p>AAA Batteries x3</p></li>
+<li><p>External Battery Pack (optional)</p></li>
+<li><p>AAA Batteries x3 (optional)</p></li>
 <li><p>Breadboard</p></li>
 <li><p>Push Button</p></li>
 <li><p>LEDs x2</p></li>
-<li><p>Pitot Probe</p></li>
-<li><p>LSM6DS33 + LIS3MDL - 9 DoF IMU (Optional)</p></li>
+<li><p>Pitot Probe (not pictured below)</p></li>
+<li><p>LSM6DS33 + LIS3MDL - 9 DoF IMU </p></li>
 </ol>
 </p>
 
@@ -59,7 +59,7 @@ Adafruit <xref ref="AdafruitMAIN"/>. A photo of the kit is shown in the figure b
 protective zip lock bag.
 </p>
 <figure>
-  <image width="80%" source="components.png" />
+  <image width="80%" source="components_w_annotations.png" />
   <caption><p>Photo of CircuitPython Kit Components</p></caption>
 </figure>
 
