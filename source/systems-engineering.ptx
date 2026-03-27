@@ -49,7 +49,18 @@
   <section xml:id="project-examples">
     <title>Project Examples</title>
     <p>
-    The project schedule detailed above is a general framework that can be applied to any project. 
+    The project schedule and requirements previously shared is a general framework that can be applied to any project and has been for many many semesters. When first formulating this course I came up with a few project ideas for students to use as inspiration but of course the <url href="https://learn.adafruit.com/">Adafruit Learning System</url> provides a wealth of resources for project development<xref ref="Adafruit"/>. Still, here are a few examples that are shown below that can still be used as inspiration for future students.
+    <ol>
+      <li><p>Example 1</p></li>
+    </ol>
+    </p>
+  </section>
+
+  <section xml:id="pitot-probe-example">
+    <title>Pitot Probe Example</title>
+    <p>
+    One example project that I will use to explain future diagrams is to use a pitot probe to measure the velocity of my bicycle while riding around town. The idea overall was to place the pitot probe on the front of the bike and then use the pressure difference between the static and dynamic ports to calculate velocity (See <xref ref="pitot"/>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. 
+    TITLE, SKETCH, EXTRA REQUIREMENTS
     </p>
   </section>
 
