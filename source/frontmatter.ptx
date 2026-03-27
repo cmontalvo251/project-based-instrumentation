@@ -113,6 +113,7 @@
 	<li> March 22nd, 2026 - Made a few major formatting changes and updated the assignment directions to be better viewable and digestable to students</li>
   <li> March 23rd, 2026 - Updated the servo lab assignment to fix a broken png and added a link to an equation.</li>
   <li> March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting. The IMU wiring photo was also updated to be correct. Also added annotations to the circuitpython kit photo and added the high level sound code to the bluefruit.</li>
+  <li> March 27th, 2026 - Moved the thermistor equations into one place. </li>
       </ol>
     </p>
   </section>

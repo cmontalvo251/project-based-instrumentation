@@ -25,24 +25,10 @@
 <section>
 <title>Getting Started</title>
 <p>
-For this lab we're going to use the thermistor located on Pin A9. In a previous lab we measured the analog signal from the pin and also used the <em>adafruit_thermistor.py</em> module that converts the voltage from the thermistor to celsius. Here though we're going to explain a bit more about the thermistor. In this case, the thermistor is wired in a voltage divider circuit in series with a <m>10000~\Omega</m> resistor. This means that the voltage across the thermistor can be converted to its resistance using the voltage divider equation below similar to the equation used for the photocell.
-<men>
-  V_{thermistor} = V_{out}\frac{R_{thermistor}}{R_{series}+R_{thermistor}}
-</men>
+  For this lab we're going to use the thermistor located on Pin A9. In a previous lab we measured the analog signal from the pin and also used the <em>adafruit_thermistor.py</em> module that converts the voltage from the thermistor to celsius (See <xref ref="temperature-sensor"/>).
 </p>
-
 <p>
-Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Steinhart-Hart</url>equation.
-</p>
-<men>
-  T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
-</men>
-<p>
-where <m>\beta=3950</m> is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and <m>T_0=298.15K</m> is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.
-</p>
-
-<p>
-For this lab though, we're not just going to measure the temperature from the thermistor, we're going to analyze the dynamics of the thermistor and how it responds to an abrupt change in temperature. It is said that a themistor can be modeled as a first order system. The basic form of a first order system can be shown below.
+For this lab though, we're not only going to measure the temperature from the thermistor, we're going to analyze the dynamics of the thermistor and how it responds to an abrupt change in temperature. It is said that a themistor can be modeled as a first order system. The basic form of a first order system can be shown below.
 <men>
   \dot{T} = \sigma (T_f - T)
 </men>

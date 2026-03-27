@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="modules" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Circuit Playground (CPX/CPB) Modules</title>
+<title>Circuit Playground (CPX/CPB) Built-In Sensors</title>
 
 <section>
 <title>Parts List</title>
@@ -45,7 +45,7 @@ light and sound sensors as well as the accelerometer. For each of
 these examples there is a relatively easy way to access the sensors
 using a built-in module called <em>adafruit_circuitplayground.express</em> if you are using the CPX. If you
 are using the CPB you need to type <em>adafruit_circuitplayground.bluefruit</em>. It's a very nice module
-because it imports everything on the board. The problem is you can run
+because it imports everything on the board. Section <xref ref="installing-modules"/> goes over the steps required to install different modules on the CPX/CPB. The problem is you can run
 into module conflicts. This happens when two different modules try to
 access the same pins on the CP. Sometimes if you import <em>adafruit_circuitplayground</em> you won't be able to import some other
 modules. <term>Note you might need to add the <em>adafruit_circuitplayground</em> library to your lib/ folder on your
@@ -134,7 +134,7 @@ something will investigate in some later labs.
 </figure>
 </subsection>
 
-<subsection>
+<subsection xml:id="temperature-sensor">
 <title>Temperature</title>
 <p>
 The temperature sensor is actually
@@ -172,7 +172,7 @@ on this module</url> you'll see the relevant conversion under the
 definition temperature which at the time of this writing is on line
 86. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
 Adafruit Learn system also does a bit of work to explain the
-conversion from voltage to temperature</url> but I have also summarized it above and in <xref ref="thermistor"/>. For now though we will just
+conversion from voltage to temperature</url>. For now though we will just
 appreciate the simplicity of the code below which is
 also <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
 my Github</url>.
