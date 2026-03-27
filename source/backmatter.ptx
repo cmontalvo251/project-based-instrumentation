@@ -29,8 +29,8 @@
     <biblio xml:id="IDE"><p>Integrated development environments. IntegratedDevelopmentEnvironments, 2021. Accessed: 2021-12-09. https://wiki.python.org/moin/</p></biblio>
     <biblio xml:id="Tiobe"><p>Tiobe index. https://www.tiobe.com/tiobe-index/, 2022. Accessed: 2021-3-25.</p></biblio>
     <biblio xml:id="CodeComparison"><p>Hans Fangohr. A comparison of c, matlab, and python as teaching languages in engineering. In Marian Bubak, Geert Dick van Albada, Peter M. A. Sloot, and Jack Dongarra, editors, Computational Science - ICCS 2004, pages 1210–1217, Berlin, Heidelberg, 2004. Springer Berlin Heidelberg.</p></biblio>
-    <biblio xml:id="CircuitPython"><p>Circuitpython. https://circuitpython.org/, 2021. Accessed: 12-09-2021.</p></biblio>
-    <biblio xml:id="Gitbook"><p>Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https://github.com/cmontalvo251/LaTeX/blob/master/PBL_CircuitPython_Instrumentation/main.pdf.</p></biblio>
+    <biblio xml:id="CircuitPython"><p>CircuitPython. https://circuitpython.org/, 2021. Accessed: 12-09-2021.</p></biblio>
+    <biblio xml:id="Gitbook"><p>Carlos Montalvo, Lisa Schibelius, and Marine Leabeater. Project Based Engineering Instrumentation with CircuitPython. Github, 2023. https://cmontalvo251.github.io/project-based-instrumentation/.</p></biblio>
     <biblio xml:id="Adafruit"><p>Adafruit. Adafruit learn, 2021. Adafruit https://learn.adafruit.com/.</p></biblio>
     <biblio xml:id="Github"><p>Carlos Montalvo. Facility for aerial systems and technology github repository. cmontalvo251, 2022. https://github.com/cmontalvo251</p></biblio>
     <biblio xml:id="AdafruitMAIN"><p>Adafruit. Adafruit, 2023. Adafruit https://adafruit.com/.</p></biblio>
@@ -44,6 +44,13 @@
     <biblio xml:id="servo-wiring"><p>Ada (Fried), Lady (Limor), Rembor, Kattni, "Adafruit Circuit Playground Express - CircuitPython Servo", 12 Oct. 2017, https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo. Accessed 20 Mar. 2026 </p></biblio>
     <biblio xml:id="b_photocell"><p>Kujtim Mustafa, Ragmi Mustafa, and Refik Ramadani. Measuring the voltage, current and resistance of the ldr sensor through the arduino uno. Asian Journal of Research in Computer Science, 16:211–222, 10 2023.</p></biblio>
     <biblio xml:id="likert"><p>Andrew T. Jebb, Vincent Ng, and Louis Tay. A review of key likert scale development advances: 1995–2019. Frontiers in Psychology, 12, 2021</p></biblio>
+    <biblio xml:id="youtube"><p>Montalvo, Carlos. YouTube, 2026, www.youtube.com/@CarlosMontalvo251.</p></biblio>
+    <biblio xml:id="python"><p>Python Software Foundation. Python, 2026. https://www.python.org/.</p></biblio>
+    <biblio xml:id="thonny"><p>Aasumets, Aivar. Thonny: Python IDE for Beginners. 2026, thonny.org/.</p></biblio>
+    <biblio xml:id="spyder"><p>Spyder: The Scientific Python Development Environment. Spyder Project Contributors, 2026, www.spyder-ide.org/.</p></biblio>
+    <biblio xml:id="colab"><p>Google Colaboratory. Google, 2026. https://colab.research.google.com/.</p></biblio>
+    <biblio xml:id="pydroid"><p>IIEC / Teamux LLC Pydroid 3 - IDE for Python 3. IIEC, 2026. https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&amp;hl=en_US&amp;gl=US.</p></biblio>
+    <biblio xml:id="pythonista"><p>Zorn, Ole. Pythonista 3. Pythonista, 2026. https://apps.apple.com/us/app/pythonista-3/id1085978097.</p></biblio>
   </references>
 
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->

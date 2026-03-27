@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p><url href="https://www.python.org/">Python</url> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> or <url href="https://www.spyder-ide.org/">Spyder</url> - Do not use Python IDLE)</p></li>
+<li><p><url href="https://www.python.org/">Python</url> <xref ref="python"/> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> <xref ref="thonny"/> or <url href="https://www.spyder-ide.org/">Spyder</url> <xref ref="spyder"/> - Do not use Python IDLE)</p></li>
 </ol>
 </section>
 
@@ -30,7 +30,7 @@ program you wrote. The CPX knows how to read multiple different
 languages but in this class we are going to write everything in the
 <url href="https://www.python.org/">Python</url> language which has been ported
 to the CPX and called
-<url href="https://circuitpython.org/">CircuitPython</url>. Since we have to
+<url href="https://circuitpython.org/">CircuitPython</url> <xref ref="python"/><xref ref="CircuitPython"/>. Since we have to
 write everything in CircuitPython we
 need to first learn how to program some things in Python. You can
 easily download Python by itself but it's nice to get what's called an
@@ -51,7 +51,7 @@ get lost when searching for something so broad. You've been warned.
 <section>
 <title>Thonny</title>
 <p>
-Thonny - <url href="https://thonny.org/">https://thonny.org</url> - <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube video on how to install</url>
+Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> - <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube video on how to install</url> <xref ref="youtube"/>
 </p>
 <figure>
 <image width="73%" source="Thonny.png" />
@@ -62,7 +62,7 @@ Thonny - <url href="https://thonny.org/">https://thonny.org</url> - <url href="h
 <section>
 <title>Spyder</title>
 <p>
-Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url> - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url>
+Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url> <xref ref="youtube"/> <xref ref="youtube"/>
 </p>
 <figure>
 <image width="73%" source="Spyder.png" />
@@ -75,7 +75,7 @@ Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</ur
 <p>
 It is possible to use
 <url href="https://colab.research.google.com/drive/1-VzSDojevQZ6A0oJNol9YXV6SRp3FKeP">Google
-Colab</url> if you want to collaborate on Python projects or even get apps for your phone (<url href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&amp;hl=en_US&amp;gl=US">Pydroid</url> or <url href="https://apps.apple.com/us/app/pythonista-3/id1085978097">Pythonista</url>
+Colab</url><xref ref="colab"/> if you want to collaborate on Python projects or even get apps for your phone (<url href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&amp;hl=en_US&amp;gl=US">Pydroid</url><xref ref="pydroid"/> or <url href="https://apps.apple.com/us/app/pythonista-3/id1085978097">Pythonista</url><xref ref="pythonista"/>
 depending on Android or iPhone). You'll need to download 32 bit or 64
 bit but which one? Well you need to figure out how many bits your
 computer has. This is a great thing to Google. Type the following: "do
@@ -132,7 +132,7 @@ module.
 <p>
 Once you have numpy and matplotlib it's time to make a plot. I have a
 pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> but if
-you prefer text I will walk through a simple example.
+you prefer text I will walk through a simple example <xref ref="youtube"/>.
 </p>
 <figure>
 <image width="50%" source="matplotlib_example.png" />
@@ -203,7 +203,7 @@ the output it will even include examples on how to use the function.
 <p>
 Another way to learn certain functions is by visiting the appropriate
 documentation. The <url href="https://numpy.org/doc/">Numpy Docs</url> website
-for example has all the documentation you need for Numpy. Navigating
+for example has all the documentation you need for Numpy <xref ref="python"/>. Navigating
 that website you can find the same <url href="https://numpy.org/doc/1.19/reference/generated/numpy.arctan2.html?highlight=arctan2#numpy.arctan2">documentation for arctan2</url>.
 </p>
 
