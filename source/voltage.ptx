@@ -28,7 +28,7 @@
 <section>
 <title>Getting Started</title>
 <p>
-At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is <m>2^{16}</m> hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about <url href="https://www.build-electronic-circuits.com/potentiometer/">potentiometers online if you wish</url>. Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some <url href="https://uk.rs-online.com/web/content/discovery/ideas-and-advice/potentiometers-guide">potentiometer examples</url>. I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the <url href="https://learn.adafruit.com/sensor-plotting-with-mu-and-circuitpython/potentiometer">figure below</url> (Courtesy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>).
+At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is <m>2^{16}</m> hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about <url href="https://www.build-electronic-circuits.com/potentiometer/">potentiometers online if you wish</url><xref ref="potentiometerlearn"/>. Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some <url href="https://uk.rs-online.com/web/content/discovery/ideas-and-advice/potentiometers-guide">potentiometer examples</url>. I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the <url href="https://learn.adafruit.com/sensor-plotting-with-mu-and-circuitpython/potentiometer">figure below</url> (Courtesy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>) <xref ref="potentiometer"/>.
 </p>
 <figure>
   <image width="80%" source="sensors_PlottingMuPotentiometer_bb.jpg" />
@@ -49,7 +49,7 @@ Here's my circuit all hooked up without a resistor in series. Two legs are conne
   <caption>Potentiometer with a blue resistor in series</caption>
 </figure>
 <p>
-There is a relevant <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in">Adafruit Learn Tutorial</url> to help with the <em>analogio</em> module but I'll explain the minimum required here to get some analog values plotted in <em>Plotter</em> and Python on your computer. First let's take a look at some <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">simple example code</url> to read an analog signal and plot it using the <em>Plotter</em>.
+There is a relevant <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in">Adafruit Learn Tutorial</url> to help with the <em>analogio</em> module but I'll explain the minimum required here to get some analog values plotted in <em>Plotter</em> and Python on your computer<xref ref="Adafruit"/>. First let's take a look at some <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">simple example code</url> to read an analog signal and plot it using the <em>Plotter</em><xref ref="Github"/>.
 </p>
 <figure>
   <image width="50%" source="analogio.png" />
@@ -91,7 +91,7 @@ time -= time[0]
 <section>
   <title>Extra Help</title>
   <p>
-  I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url>.</p>
+  I've made some youtube videos on first just <url href="https://youtu.be/_gnDvPOvPqk">creating the circuit and plotting the data</url> and then another video where I <url href="https://youtu.be/9UF3OVUIYjU">write data to the CPX using method 3</url><xref ref="youtube"/>.</p>
 </section>
     
 <section>

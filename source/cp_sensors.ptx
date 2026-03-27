@@ -27,7 +27,7 @@
 If you need extra help on this assignment I have uploaded a youtube
 video where I <url href="https://www.youtube.com/watch?v=ceI0uw3ICE0">read
 the temperature and accelerometer from the CircuitPlayground
-Bluefruit</url>
+Bluefruit</url><xref ref="youtube"/>.
 </p>
 </section>
 
@@ -65,7 +65,7 @@ you the low level control method</term>.
 <title>Light</title>
 <p>
 The light sensor on the CPX is just a simple photocell wired in series
-with a resistor. A photocell (or Light Dependent Resistor, LDR) is a sensor whose resistance changes significantly based on the intensity of light falling on its sensitive surface. In dimmer light, its resistance is high, and in brighter light, its resistance is low. By integrating it into a simple voltage divider circuit, Adafruit makes it possible to read the voltage across the photocell and correlate that to light level. There is a relevant <url href="https://learn.adafruit.com/photocells/circuitpython">Adafruit Tutorial on Photocells</url> and the code required to measure the voltage if you'd like to read more about it.
+with a resistor. A photocell (or Light Dependent Resistor, LDR) is a sensor whose resistance changes significantly based on the intensity of light falling on its sensitive surface. In dimmer light, its resistance is high, and in brighter light, its resistance is low. By integrating it into a simple voltage divider circuit, Adafruit makes it possible to read the voltage across the photocell and correlate that to light level. There is a relevant <url href="https://learn.adafruit.com/photocells/circuitpython">Adafruit Tutorial on Photocells</url> and the code required to measure the voltage if you'd like to read more about it<xref ref="Adafruit"/>.
 </p>
 <p>
 The GND leg of the photocell is connected to pin
@@ -75,7 +75,7 @@ A8. You can check the pin by looking at the graphic of an eye on the CPX and tak
 </men>
 </p>
 <p>
-In this case <m>V_{out}</m> is 3.3V and <m>R_{series}=10000 \Omega</m> is a resistor value chosen by Adafruit.  So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the Lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below <xref ref="b_photocell"/>.
+In this case <m>V_{out}</m> is 3.3V and <m>R_{series}=10000 \Omega</m> is a resistor value chosen by Adafruit.  So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the Lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below <xref ref="b_photocell"/><xref ref="lux"/>.
 <men>
   Lux = 500000R_{photocell}^{-0.7}
 </men>
@@ -83,7 +83,7 @@ where <m>R_{photocell}</m> is the resistance of the photocell in Ohms. We've alr
 learned how to access analog pins (See <xref ref="voltage"/>) in a
 previous lab so just use
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">code
-from that lab</url> and change the pin to A8. Here's what my code looks
+from that lab</url> and change the pin to A8<xref ref="Github"/>. Here's what my code looks
 like when I change the pin to A8. I also brought the Plotter up and
 moved my finger in front of the light to make sure the light was
 working. Verify that your CPX responds the same way before moving on.
@@ -108,10 +108,10 @@ defined before the while true loop in the code. The code itself is
 shown below. The code starts on line 22 because the
 first <url href="https://learn.adafruit.com/adafruit-pdm-microphone-breakout/circuitpython">22
 lines are copyright from Dan Halbert, Kattni Rembor, and Tony DiCola
-from Adafruit Industries</url>. I have edited the code a bit to fit my
+from Adafruit Industries</url><xref ref="Adafruit"/>. I have edited the code a bit to fit my
 needs and
 uploaded <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Audio/record_sound_simple.py">my
-version to Github</url>. In the code line 23-27 import standard modules as
+version to Github</url><xref ref="Github"/>. In the code line 23-27 import standard modules as
 well as some new ones. The array module is used to create array like
 matrices. The math module is used to compute functions like cos, sin,
 and sqrt. Then of course the audiobusio module is used to create the
@@ -148,7 +148,7 @@ something will investigate in some later labs.
 <title>Temperature</title>
 <p>
 The temperature sensor is actually
-a <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url>. A
+a <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url><xref ref="thermistor-wikipedia"/>". A
 thermistor is basically a thermometer resistor which means the
 resistance depends on temperature. Since this thermistor on the CPX/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX
 you'll see pin A9. Therefore, it is possible to just use the analogio
@@ -165,7 +165,7 @@ In this case, the thermistor is wired in a voltage divider circuit in series wit
 </p>
 
 <p>
-Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url>
+Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url><xref ref="stein-hart"/><xref ref="steinhart-wikipedia"/>.
 </p>
 <men>
   T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
@@ -180,12 +180,12 @@ folks at Adafruit have done it again with an <em>adafruit_thermistor</em> module
 their <url href="https://github.com/adafruit/Adafruit_CircuitPython_Thermistor/blob/master/adafruit_thermistor.py">github
 on this module</url> you'll see the relevant conversion under the
 definition temperature which at the time of this writing is on line
-86. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
+86<xref ref="Github"/>. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
 Adafruit Learn system also does a bit of work to explain the
-conversion from voltage to temperature</url>. For now though we will just
+conversion from voltage to temperature</url><xref ref="Adafruit"/>. For now though we will just
 appreciate the simplicity of the code below which is
 also <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
-my Github</url>.
+my Github</url><xref ref="Github"/>.
 </p>
 <figure>
   <image width="73%" source="thermistor_code.png" />
@@ -238,16 +238,16 @@ weird name for an accelerometer but it's actually the name of the chip
 on your CPX. The chip itself is very standard and is well documented
 on multiple
 websites. <url href="https://www.st.com/en/mems-and-sensors/lis3dh.html">Here's
-one from ST</url>. You can also buy
+one from ST</url><xref ref="ST"/>. You can also buy
 the <url href="https://www.adafruit.com/product/2809?gclid=EAIaIQobChMI98qfjrC86gIVEI_ICh2JtQ-JEAAYAiAAEgJ2_fD_BwE">chip
 on a breakout board from Adafruit</url> and then of course the Adafruit
 Learn site has plenty of tutorials
 on <url href="https://learn.adafruit.com/circuitpython-hardware-lis3dh-accelerometer/software">reading
-Accelerometer data in CircuitPython</url>. As always I've learned what I
+Accelerometer data in CircuitPython</url><xref ref="Adafruit"/><xref ref="AdafruitMAIN"/>. As always I've learned what I
 can from the relevant tutorials and
 created <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/low_level_accel.py">my
 own simple version to read the accelerometer data and posted it to
-Github</url>. I digress, lines 8-11 of the code do alot. It first uses the
+Github</url><xref ref="Github"/>. I digress, lines 8-11 of the code do alot. It first uses the
 SCL and SDA pins to set up an I2C object which establishes serial
 communication to the accelerometer. Line 9 creates an interrupt which
 is beyond the scope of this course. Finally, line 10 creates the
@@ -272,7 +272,7 @@ Note that the accelerometer can be used to obtain pitch and roll angles in benig
 <men>
   \phi = tan^{-1}\left(\frac{\bar{a}_y}{\bar{a}_z}\right)
 </men>
-In the equations above, <m>a</m> is the accelerations along all 3 axes. Shorthand is used for <m>cos(\eta)=c_{\eta}</m> and <m>sin(\eta)=s_{\eta}</m>. The <m>\bar{\eta}</m> notation is used to indicate a normalization of the vector. That is <m>\bar{\eta} = \eta/||\eta||</m> where <m>||\eta||</m> is the norm of a 3 dimensional vector <m>||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}</m>. The derivation for these angles from accelerometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>.
+In the equations above, <m>a</m> is the accelerations along all 3 axes. Shorthand is used for <m>cos(\eta)=c_{\eta}</m> and <m>sin(\eta)=s_{\eta}</m>. The <m>\bar{\eta}</m> notation is used to indicate a normalization of the vector. That is <m>\bar{\eta} = \eta/||\eta||</m> where <m>||\eta||</m> is the norm of a 3 dimensional vector <m>||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}</m>. The derivation for these angles from accelerometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url><xref ref="Github"/>.
 </p>
 </subsection>
 </section>
@@ -286,7 +286,7 @@ level control of the various sensors. Let's now import the simple
 module. <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">The
 Adafruit Learn site offers pretty much every example code snippet
 you'd ever need for all the different push buttons and sensors on the
-CPX</url>. Head over there if you ever need something outside of the scope
+CPX</url><xref ref="Adafruit"/>. Head over there if you ever need something outside of the scope
 of this text. As I said before, the main module you need to import is
 done by adding the following to the top of your code
 </p>
@@ -307,7 +307,7 @@ temperature = cpx.temperature
 There unfortunately is no simple module for the sound sensor on the CPX. You'll
 still need to use the low level control no matter what. However, if you get the Circuit Playground Bluefruit there is
 a <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/sound">simple
-way to read the sound level</url> using <em>cpb.sound_level</em>. Implementing the various sensors into a while loop on my CPX looks like this.
+way to read the sound level</url> using <em>cpb.sound_level</em><xref ref="Adafruit"/>. Implementing the various sensors into a while loop on my CPX looks like this.
 </p>
 <figure>
   <image width="73%" source="high_level_mu.png" />
@@ -320,7 +320,7 @@ the simplicity of the code above. The
 except for the light sensor. In the low level control we simply
 computed the voltage across the photocell but the
 <em>adafruit_circuitplayground.express</em> module outputs data
-in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url>. Recall, if you have a CPB you can use the high level <em>cpb.sound_level</em> command as shown in the Figure below. Notice that the import command has changed to <em>adafruit_circuitplayground.bluefruit import cpb</em>.
+in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url><xref ref="lux-wikipedia"/>. Recall, if you have a CPB you can use the high level <em>cpb.sound_level</em> command as shown in the Figure below. Notice that the import command has changed to <em>adafruit_circuitplayground.bluefruit import cpb</em>.
 <figure xml:id="cpb-sound-level">
   <image width="73%" source="sound_level.png" />
   <caption>Example High Level Sound Level on the CPB</caption>

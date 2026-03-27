@@ -39,6 +39,8 @@
     <biblio xml:id="Metro"><p>DiCola, Tony. "Digital Outputs." CircuitPython Basics: Digital Inputs and Outputs, Adafruit Learning System, 28 Aug. 2017, learn.adafruit.com/circuitpython-digital-inputs-and-outputs/digital-outputs. Accessed 16 Mar. 2026.</p></biblio>
     <biblio xml:id="potentiometer"><p>Ada (Fried), Lady (Limor), and Kattni Rembor. "CircuitPython Analog In." Adafruit Circuit Playground Express, Adafruit Learning System, 12 Oct. 2017, learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in. Accessed 18 Mar. 2026.</p></biblio>
     <biblio xml:id="pitot-author"><p>Hrisko, Joshua. "Arduino Pitot Tube Wind Speed and Airspeed Indicator - Theory and Experiments." Maker Portal, 8 Feb. 2019, makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment. Accessed 18 Mar. 2026.</p></biblio>
+    <biblio xml:id="pitot-amazon"><p>“Hobbypower Airspeed Sensor Kit MPXV7002DP Differential Pressure Sensor Board for APM Pixhawk Flight Controller.” Amazon, 2026, www.amazon.com/Hobbypower-Airspeed-MPXV7002DP-Differential-controller/dp/B00WSFWO36. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="pitot-datasheet"><p>NXP Semiconductors. MPXV7002: Integrated Silicon Pressure Sensor On-Chip Signal Conditioned, Temperature Compensated and Calibrated. Rev. 4, 2017, www.nxp.com/docs/en/data-sheet/MPXV7002.pdf. Accessed 27 Mar. 2026.</p></biblio>
     <biblio xml:id="imu-wiring"><p>Siepert, Bryan. "LIS3MDL Triple-axis Magnetometer", Adafruit Learning System January 17th, 2020, https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython. Accessed 20 Mar. 2026 </p></biblio>
     <biblio xml:id="photocell-wiring"><p>Ada (Fried), Lady (Limor), "Photocells", Adafruit Learning System, July 29th, 2012, https://learn.adafruit.com/photocells/using-a-photocell, Accessed Mar 20. 2026 </p></biblio>
     <biblio xml:id="servo-wiring"><p>Ada (Fried), Lady (Limor), Rembor, Kattni, "Adafruit Circuit Playground Express - CircuitPython Servo", 12 Oct. 2017, https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo. Accessed 20 Mar. 2026 </p></biblio>
@@ -54,6 +56,14 @@
     <biblio xml:id="mu"><p>Mu Editor. Mu, 2026. https://codewith.mu/en/.</p></biblio>
     <biblio xml:id="CPXchip"><p>Microchip Technology. “ATSAMD21G18 - Microcontrollers and Processors.” Microchip Technology, 2026, www.microchip.com/wwwproducts/en/ATsamd21g18. Accessed 27 Mar. 2026.</p></biblio>
     <biblio xml:id="sparkfun"><p>SparkFun Tutorials. SparkFun Electronics, 2026, learn.sparkfun.com/tutorials/. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="potentiometerlearn"><p>Platzer, Øyvind Nydal. “How to Use a Potentiometer.” Build Electronic Circuits, 2026, www.build-electronic-circuits.com/potentiometer/. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="lux"><p>Nofrizal, et al. “Measuring the Voltage, Current and Resistance of the LDR Sensor through the Arduino UNO.” Journal of Physics: Conference Series, vol. 2596, no. 1, 2023, doi:10.1088/1742-6596/2596/1/012051. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="lux-wikipedia"><p>Lux. Wikipedia, 2026, en.wikipedia.org/wiki/Lux. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="thermistor-wikipedia"><p>Thermistor. Wikipedia, 2026, en.wikipedia.org/wiki/Thermistor. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="stein-hart"><p>Steinhart, John S., and Stanley R. Hart. “Calibration Curves for Thermistors.” Deep Sea Research and Oceanographic Abstracts, vol. 15, no. 4, 1968, pp. 497–503., doi:10.1016/0011-7471(68)90057-0. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="steinhart-wikipedia"><p>Steinhart–Hart equation. Wikipedia, 2026, en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation. Accessed 27 Mar. 2026.</p></biblio>
+    <biblio xml:id="ST"><p>STMicroelectronics. “LIS3DH: MEMS Digital Output Motion Sensor: Ultra-Low-Power High-Performance 3-Axis ‘Nano’ Accelerometer.” STMicroelectronics, 2026, www.st.com/en/mems-and-sensors/lis3dh.html. Accessed 27 Mar. 2026.</p></biblio>
+    </p>
   </references>
 
   <!-- <solutions divisional="solution"> <title>Selected Solutions</title> </solutions> -->
