@@ -118,6 +118,7 @@ def angle2pulse(angle):
 
 <section>
 <title>Feedback Control</title>
+<introduction>
 <p>
 Feedback control can be its own course or multiple courses but can be
 broken down into a few simple steps. The goal of feedback control is
@@ -133,7 +134,9 @@ In this figure, R is the reference signal or the commanded signal. The reference
 <url href="https://www.youtube.com/watch?v=PAK5V8wzVXY&amp;list=PL_D7_GvGz-v30U58EUUOdJGgO4u75DXoB&amp;index=1">controls
 overview Youtube video</url>.
 </p>
-
+</introduction>
+<subsection>
+<title>Example Feedback Control System</title>
 <p>
 An example feedback control system could be employed for the longitudinal pitch dynamics of an airplane. In this case the aircraft pitches through the angle <m>\theta</m> and the elevator <m>\delta_e</m> is used to control the pitch angle. Typically the pitch angle is measured with an angle sensor or even an accelerometer. The elevator is then typically controlled with a servo. Thus, for this lab we are going to make the bare
 bones circuitry required for pitch angle control of an airplane. The
@@ -259,16 +262,21 @@ The first 22 lines here will hopefully seem familiar. Line 1-7 are import comman
   <caption>Second part of feedback cntrol code in CircuitPython</caption>
 </figure>
 <p>
-Line 39 uses the calibration equation from the previous experiment to convert servo angle to pulse width. You'll need to replace these numbers with your servo since all servos are different. Line 41 uses the definition created on lines 10-13 to convert pulse width to duty cycle. Line 43 makes the servo move. Line 44 prints everything to Serial for debugging purposes and line 45 pauses the script for 0.1 seconds which helps with some twitchiness in the servo. When I did this I didn't have to program a complementary filter so I guess the servo may have it's own low pass filter. Either way this circuit is ready to be placed on an aircraft. Whether or not it is effective is a completely different story. We could take an entire aircraft design course or an undergraduate controls and systems dynamics course but to start let's just simulate this control system and see how it does. First we need to write the dynamic equation for pitch of an aircraft. That is shown below.
+Line 39 uses the calibration equation from the previous experiment to convert servo angle to pulse width. You'll need to replace these numbers with your servo since all servos are different. Line 41 uses the definition created on lines 10-13 to convert pulse width to duty cycle. Line 43 makes the servo move. Line 44 prints everything to Serial for debugging purposes and line 45 pauses the script for 0.1 seconds which helps with some twitchiness in the servo. When I did this I didn't have to program a complementary filter so I guess the servo may have it's own low pass filter. Either way this circuit is ready to be placed on an aircraft. Whether or not it is effective is a completely different story. 
+</p>
+</subsection>
+<subsection xml:id="second-order-dynamics">
+  <title>Second Order Pitch Dynamics</title>
+<p>
+We could take an entire aircraft design course or an undergraduate controls and systems dynamics course but to start let's just simulate this control system and see how it does. First we need to write the dynamic equation for pitch of an aircraft. That is shown below.
 <men xml:id="e_second-order">
   \frac{J}{q_{\infty}S\bar{c}}\ddot{\theta} - \frac{\bar{c}}{2V}C_{mq}\dot{\theta} - C_{m\alpha}\theta = C_{m\delta_e}\delta_e + C_{m0}
 </men>
 </p>
-
 <p>
-In the equation above <m>J</m> is the inertia of the aircraft, <m>C_{m0},C_{mq},C_{m\alpha}</m> and <m>C_{m\delta_e}</m> are non-dimensional coefficients, <m>\bar{c}</m> is the mean aerodynamic chord, V is the velocity, <m>\bar{c}</m> is the mean aerodynamic chord, S is the planform area of the wing and <m>q_{\infty}</m> is the dynamic pressure. The dynamic pressure is given by the equation below
+In the equation above <m>J</m> is the inertia of the aircraft, <m>C_{m0},C_{mq},C_{m\alpha}</m> and <m>C_{m\delta_e}</m> are non-dimensional coefficients, <m>\bar{c}</m> is the mean aerodynamic chord, <m>u_0</m> is the equilibrium velocity, <m>\bar{c}</m> is the mean aerodynamic chord, S is the planform area of the wing and <m>q_{\infty}</m> is the dynamic pressure. The dynamic pressure is given by the equation below
 <men>
-  q_{\infty} = \frac{1}{2}\rho V^2
+  q_{\infty} = \frac{1}{2}\rho {u_0}^2
 </men>
 where <m>\rho</m> is the air density. To simulate this system use the table below.
 </p>
@@ -292,7 +300,7 @@ where <m>\rho</m> is the air density. To simulate this system use the table belo
       <cell>0.1232<nbsp/><m>kg-m^2</m></cell>
     </row>
     <row bottom="minor">
-      <cell>V</cell>
+      <cell><m>u_0</m></cell>
       <cell>15<nbsp/>m/s</cell>
       <cell><m>\rho</m></cell>
       <cell>1.225<nbsp/><m>kg/m^3</m></cell>
@@ -302,8 +310,23 @@ where <m>\rho</m> is the air density. To simulate this system use the table belo
   </tabular>
 </table>
 <p>
-Now that the dynamics are written, the second order equation can be integrated using a standard numerical tool. In this case we'll assume the angular velocity is zero and the initial pitch angle is 5 degrees remembering to convert this to radians first. Note that proportional control is not sufficient to stabilize your aircraft but I'll leave that discussion to your controls professor.
+Now that the dynamics are written, the second order equation can be integrated using a standard numerical tool. In this case it's safe to assume the angular velocity is zero and the initial pitch angle is also zero. You can then use proportional control to command your pitch angle to whatever you want. Note that proportional control is not sufficient to stabilize your aircraft but I'll leave that discussion to your controls professor.
 </p>
+</subsection>
+
+<subsection>
+<title>First Order Velocity Dynamics</title>
+  <p>In order to gain some practice with simulating dynamic systems it's possible to approximate the velocity of an aircraft as a first order system. In order to accelerate a radio controlled aircraft, the motor must spin faster. It turns out that the PWM commands sent to servos to cause them to rotate back and forth is actually the same PWM signal used to control an Electronic Speed Controller (ESC) which controls a motor. So if you send around 1.1 ms to an ESC, the motor will be off and 1.9 ms will be full throttle. In this case we can make a simple equation that relates the throttle command to the velocity of the aircraft. The equation is shown below.
+    <men xml:id="e_first-order">
+      \dot{u} = \frac{1}{m}[C_{x\delta t} (\delta_t-\delta_0) - 0.5\rho u_0 S C_x u]
+    </men>
+    where <m>m=1.23 kg</m>, <m>u</m> is the velocity of the aircraft, <m>\delta_t</m> is the throttle command in <m>ms</m>, and <m>\delta_0=1.1 ms</m> is the nominal PWM pulse to an ESC. The coefficients <m>C_{x\delta t}=13.78 \frac{N}{ms}</m> and <m>C_x=0.017</m> are coefficients that relate throttle to acceleration and velocity to drag respectively. The rest of the variables are explained above in the second order system. For this simulation you can assume that proportional control works just fine and thus
+    <men>
+      \delta_t = k_p(u_c-u)
+    </men>
+    where <m>u_c</m> is the commanded velocity and <m>k_p</m> is the proportional gain. 
+  </p>
+</subsection>
 </section>
 
 <section>
@@ -325,7 +348,8 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
   <li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
   <li><p>Write your regression equation as (<em>servo_pulse = m*servo_angle + b</em>) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
-  <li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 20%</p></li>
+  <li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 10%</p></li>
+  <li><p>Simulate the first order system in Equation <xref ref="e_first-order"/> for 10 seconds with <m>k_p=1</m> and <m>k_p=10</m> for a <m>u_c=20 m/s</m>. Plot <m>u</m> vs time for both values of proportional gain. - 10%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the servo from 0 to roughly 180 degrees. Then show yourself plotting the regression line on top of your data on your laptop - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo and code used to plot data in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
@@ -338,7 +362,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Introduction with wiring diagram - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
   <li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%</p></li>
-  <li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and 2. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
+  <li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and <m>k_p=2</m>. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
   <li><p>Simulate the second order system in Equation <xref ref="e_second-order"/> for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the CPX/CPB also showing the servo rotate in sync with your CPX/CPB. - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo as well as simulation code in plain text (no screenshots) - Pass/Fail</p></li>
