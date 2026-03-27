@@ -30,16 +30,27 @@
     </ol>
     </p>
   </section>
+
+  <section xml:id="requirements">
+    <title>Specific Final Project Requirements</title>
+    <p>The final project will utilize the Circuit Playground (or any other comparable or better microcontroller) and at least 3 other electrical components to move a mechanical system that helps people in some way. The specific requirements are shown below. Note that every group will have a few additional requirements specific to their project based on how creative they decide to be.
+    <ol>
+      <li><p>System must incorporate 3 electrical components (accelerometer, lights, sound and microphone to name a few). Your power source, microcontroller, speaker amplifier or the Crikit does not count as a component. An interface is not considered a component</p></li>
+      <li><p>System must be unique as well as built and designed by your team (Tutorials may be used but you must make the system unique in some way).</p></li> 
+      <li><p>System must have one of the three components as an external part to the main microcontroller and not be something already found in the Instrumentation Kit (LEDs, buttons, servos or potentiometers to name a few).</p></li>
+      <li><p>System must take some sort of measurement to be used in the code.</p></li>
+      <li><p>System must utilize a data acquisition method so that data can be plotted in Python as a function of time.</p></li>
+      <li><p>System must help someone in some way.</p></li>
+      <li><p>System must have some sort of mechanical component to it and cannot be purely software and electrical components.</p></li>
+    </ol>
+    </p>
+  </section>
+
   <section xml:id="project-examples">
     <title>Project Examples</title>
     <p>
     The project schedule detailed above is a general framework that can be applied to any project. 
     </p>
-  </section>
-
-  <section xml:id="requirements">
-    <title>Specific Final Project Requirements</title>
-
   </section>
 
   <section xml:id="block-diagram-definitions">
