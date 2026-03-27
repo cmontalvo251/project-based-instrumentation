@@ -31,7 +31,7 @@
 In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <xref ref="light-sensor"/>). The only difference between <xref ref="light-sensor"/> and this lab is that you're going to use an external photocell which means you need to build your own voltage divider circuit.
 </p>
 <p>
-Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!).
+Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
 <figure>
   <image width="73%" source="arduino_photocell.png" />
   <caption>Photocell wired up to an Arduino<xref ref="photocell-wiring"/></caption>
@@ -48,7 +48,7 @@ For this lab you need to wire up the circuit, take data at the low and high valu
 Once you have the
 circuit wired properly you can use
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">same
-code as the potentiometer lab</url>. The example screenshot below shows the
+code as the potentiometer lab</url><xref ref="Github"/>. The example screenshot below shows the
 analog signal below showing a high spike where I placed a flashlight
 over the photocell and then a low spot where I covered the photocell
 with my finger. Remember that you can use any Analog pin on the CPX
@@ -80,7 +80,7 @@ stream. <url href="https://www.youtube.com/watch?v=bfeJfAWTqzY&amp;list=PL_D7_Gv
 a histogram in Python is fairly simple and I have a Youtube Video</url> to
 supplement this tutorial. I also have another video where I
 get <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=20&amp;t=0s">mean
-and median values for accelerometer data</url>. Still, here is my example
+and median values for accelerometer data</url><xref ref="youtube"/>. Still, here is my example
 code showing code to get mean, median, and standard deviation as well
 as create the histogram. Notice in my code I imported the statistics
 module to compute the mode. Although it worked in my code, it's not

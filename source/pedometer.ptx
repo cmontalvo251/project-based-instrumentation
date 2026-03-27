@@ -59,7 +59,7 @@ too far because the Bluetooth signal distance is only about 30
 feet. See if you can combine the Bluetooth code and the acceleration
 code into one code to send time and the 3-axis accelerometer data. If
 you're still having trouble, code for this lab can be found
-on <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/pedometer">Github</url>. Note
+on <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/pedometer">Github</url><xref ref="Github"/>. Note
 if you have a CPX you will need to combine the accelerometer code with
 the Method 3 version of data logging.
 </p>

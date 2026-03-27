@@ -9,7 +9,7 @@
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
-<li><p><url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url> (Not included in kit. Note that other Inertial Measurement or "DOF" Sensors will work for this lab you will just have to change the code to accommodate the change in hardware)</p></li>
+<li><p><url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url> (Not included in kit. Note that other Inertial Measurement or "DOF" Sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
 <li><p>Bread Board</p></li>
 <li><p>Soldering iron</p></li>
@@ -36,14 +36,14 @@ In this lab we're going to use this an external sensor to measure angular veloci
   <caption>Inertial Measurement Unit (IMU) without header pins soldered</caption>
 </figure>
 <p>
-The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url>. You basically have 2 separate microchips in one. The first (LSM6DS33) is a 3-axis accelerometer and 3-axis rate gyro. The first measures acceleration and the second measures angular velocity. The LIS3MDL is a 3-axis magnetometer which measures magnetic fields. The three of these sensors put together (accelerometer, rate gyro, magnetometer) is called an IMU (Inertial Measurement Unit). It's actually possible to measure roll and pitch of an airplane and heading using the magnetometer. Combining the angular velocity of the rate gyro can create a complete attitude estimation algorithm for spacecraft. This sensor does not come standard in the current iteration of the kit. You can purchase one on Adafruit for only $10 at the time of this writing. The interesting thing about this device is that you can actually purchase the LSM6DS33 and LIS3MDL separately but this breakout board has both chips on board. The goal of this lab is not necessarily to use this specific sensor but to understand IMUs and I2C protocol. Most if not all breakout boards on the Adafruit website use I2C communication. You'll know if the breakout board uses I2C if you find SDA/SCL pins on the board. It will also say it in the quick description of the sensor.
+The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url><xref ref="AdafruitMAIN"/>. You basically have 2 separate microchips in one. The first (LSM6DS33) is a 3-axis accelerometer and 3-axis rate gyro. The first measures acceleration and the second measures angular velocity. The LIS3MDL is a 3-axis magnetometer which measures magnetic fields. The three of these sensors put together (accelerometer, rate gyro, magnetometer) is called an IMU (Inertial Measurement Unit). It's actually possible to measure roll and pitch of an airplane and heading using the magnetometer. Combining the angular velocity of the rate gyro can create a complete attitude estimation algorithm for spacecraft. This sensor does not come standard in the current iteration of the kit. You can purchase one on Adafruit for only $10 at the time of this writing. The interesting thing about this device is that you can actually purchase the LSM6DS33 and LIS3MDL separately but this breakout board has both chips on board. The goal of this lab is not necessarily to use this specific sensor but to understand IMUs and I2C protocol. Most if not all breakout boards on the Adafruit website use I2C communication. You'll know if the breakout board uses I2C if you find SDA/SCL pins on the board. It will also say it in the quick description of the sensor.
 </p>
 <figure>
   <image width="73%" source="imu2.png" />
   <caption>IMU on Adafruit</caption>
 </figure>
 <p>
-When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <term>solder the header pins to the sensor</term>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>).
+When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <term>solder the header pins to the sensor</term>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="73%" source="sensors_python_feather_wiring_breadboard.png" />
@@ -61,7 +61,7 @@ The photo above uses a combination of alligator clips and male to male wires int
 </p>
 
 <p>
-Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date. In this example I'm using the 6.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB). The specific modules I needed for this lab were:
+Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. In this example I'm using the 6.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. The specific modules I needed for this lab were:
 
 <ol>
 <li><p>adafruit_bus_device</p></li>
@@ -72,7 +72,7 @@ Once you have the circuit wired and soldered it's time to work on software. Firs
 </p>
 
 <p>
-Once you have the necessary modules you can run some example code. The Adafruit Learn page has a <url href="https://learn.adafruit.com/lsm6ds33-6-dof-imu=accelerometer-gyro/python-circuitpython">tutorial for the LSM6DS33</url>. The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on <url href="https://github.com/adafruit/Adafruit_CircuitPython_LSM6DS/blob/master/examples/lsm6ds_lsm6ds33_simpletest.py">Adafruit's Github</url>. After following both tutorials I was able to make my own script and upload it to my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl_lsm6dss.py">Github</url>. <term> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</term>
+Once you have the necessary modules you can run some example code. The Adafruit Learn page has a <url href="https://learn.adafruit.com/lsm6ds33-6-dof-imu=accelerometer-gyro/python-circuitpython">tutorial for the LSM6DS33</url><xref ref="Adafruit"/>. The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on <url href="https://github.com/adafruit/Adafruit_CircuitPython_LSM6DS/blob/master/examples/lsm6ds_lsm6ds33_simpletest.py">Adafruit's Github</url><xref ref="Github"/>. After following both tutorials I was able to make my own script and upload it to my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl_lsm6dss.py">Github</url><xref ref="Github"/>. <term> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</term>
 </p>
 <figure>
   <image width="80%" source="imu_code.png" />
@@ -97,7 +97,7 @@ Once you've done this, try uncommenting the line of code that prints the angular
   <caption>Angular Velocity data of IMU shown in Serial Monitor or Mu</caption>
 </figure>
 <p>
-The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Adafruit Learn page</url>, along with the simple example from <url href="https://github.com/adafruit/Adafruit_CircuitPython_LIS3MDL/blob/master/examples/lis3mdl_simpletest.py">Adafruit's Github</url>. After that I was able to create <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl.py">my own code</url>. The only difference in your code is that the address will be 0x1c instead of 0x1e.
+The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Adafruit Learn page</url>, along with the simple example from <url href="https://github.com/adafruit/Adafruit_CircuitPython_LIS3MDL/blob/master/examples/lis3mdl_simpletest.py">Adafruit's Github</url>. After that I was able to create <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/external_lis3mdl.py">my own code</url><xref ref="Github"/><xref ref="Adafruit"/>. The only difference in your code is that the address will be 0x1c instead of 0x1e.
 </p>
 <figure>
   <image width="80%" source="imu_code_mag.png" />
@@ -113,7 +113,7 @@ Recall that the accelerometer can be used to measure roll and pitch (See <xref r
 </men>
 </p>
 <p>
-In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>). 
+In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>)<xref ref="Github"/>. 
 </p>
 </section>
 

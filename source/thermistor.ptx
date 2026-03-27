@@ -46,7 +46,7 @@ The time constant of the system is related to how quickly the system responds to
 </p>
 
 <p>
-The only question now of course is what is the solution <m>T(t)</m> or rather the temperature as a function of time. In this case, the solution to the above dynamics equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard first order differential equation techniques</url> to obtain the solution below.
+The only question now of course is what is the solution <m>T(t)</m> or rather the temperature as a function of time. In this case, the solution to the above dynamics equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard first order differential equation techniques</url> to obtain the solution below<xref ref="youtube"/>.
 <men xml:id="e_thermistor" >
   T(t) = (T_0-T_f)e^{-\sigma t} + T_f
 </men>
@@ -60,7 +60,7 @@ Looking at the equation now you can see some properties right away. When <m>t=0<
 <section>
 <title>Temperature Change Ideas</title>
 <p>
-In this lab we're going to get the time constant of the <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url> on board the CPX. If you take data on the CPX and walk outside or place the thermistor directly into a fridge, the temperature change will not be immediate. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. <url href="https://learn.adafruit.com/thermistor/circuitpython">The Adafruit Learn system</url> does a bit of work to explain the conversion from voltage to temperature. My version of the code is also on my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">Github</url>.
+In this lab we're going to get the time constant of the <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url> on board the CPX<xref ref="thermistor-wikipedia"/>. If you take data on the CPX and walk outside or place the thermistor directly into a fridge, the temperature change will not be immediate. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. <url href="https://learn.adafruit.com/thermistor/circuitpython">The Adafruit Learn system</url> does a bit of work to explain the conversion from voltage to temperature<xref ref="Adafruit"/>. My version of the code is also on my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">Github</url><xref ref="Github"/>.
 </p>
 <figure>
   <image width="73%" source="thermistor.png" />

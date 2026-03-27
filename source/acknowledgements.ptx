@@ -12,7 +12,7 @@ and the <url href="https://learn.adafruit.com/">Adafruit Learn</url> system and
 specifically people like Lady Ada and John Park who have helped shape
 <url href="https://circuitpython.org/">CircuitPython</url> and the
 <url href="https://www.adafruit.com/product/3333">CircuitPlayground
-  Express</url> to what it is today. I 
+  Express</url> to what it is today<xref ref="Adafruit"/><xref ref="AdafruitMAIN"/><xref ref="CircuitPython"/>. I 
 would also like to thank Dr. Saami Yazdani for creating the blueprint
 for Instrumentation at my university by creating a laboratory
 environment for an otherwise totally theoretical course. His course
@@ -24,7 +24,7 @@ and classrooms and of course help students learn and acquire knowledge
 through creating. I'd also like to thank Steven Clontz for first
   showing me PreTeXt and for Oscar Levin and all of his helpful
 replies via email and Zoom. Finally, I'd like to thank the co-authors
-Lisa and Marine for helping me add some statistical data to this
+Lisa and Marine for helping me add some statistical survey data to this
 textbook and being all around great academic colleagues and friends</p>
   </introduction>
 </chapter>

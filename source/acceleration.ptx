@@ -58,7 +58,7 @@ zero it out and subtract off the bias. Since I took some data for a
 bit before I started moving I could have averaged the first few data
 points to obtain the
 bias. <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">I've
-done this in a Youtube video if you're unsure what I mean</url>. Instead
+done this in a Youtube video if you're unsure what I mean</url><xref ref="youtube"/>. Instead
 just to get something working properly I went ahead and just used the
 first data point.
 </p>
@@ -85,7 +85,7 @@ This is why speedometers are used. They are just much more accurate
 than integrating acceleration which is prone to bias and
 drift. <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/cpx_assignments/Velocity_from_Acceleration/velocity_from_acceleration.py">This
 folder on Github has some codes that will help with your
-project</url>. <term>Note, that some of those codes have a bias filter,
+project</url><xref ref="Github"/>. <term>Note, that some of those codes have a bias filter,
 truncation filter and complementary filter. That code may not work for
 you and you may need to tune the filters for your specific data
 set. Make sure to understand what each filter does and think about how
