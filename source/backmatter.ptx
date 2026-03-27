@@ -10,8 +10,10 @@
 
   <references>
     <title>References</title>
+    <biblio xml:id="copilot"><p>GitHub. GitHub Copilot. https://copilot.github.com/, 2021. Accessed on December 5, 2025.</p></biblio>
+    <biblio xml:id="gemini"><p>Google DeepMind. Gemini: Googles multimodal ai model. https://gemini.google.com/, 2023. Accessed on December 5, 2025.</p></biblio>
     <biblio xml:id="Gardner"><p>Howard gardner’s theory of multiple intelligences. in instructional guide for university faculty and teaching assistants. https://www.niu.edu/citl/resources/guides/instructional-guide, 2020. Northern Illinois University Center for Innovative Teaching and Learning.</p></biblio>
-    <biblio xml:id="Ralph"><p>R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26–35., 2015.</p></biblio>
+    <biblio xml:id="Ralph"><p>R.A. Ralph. Post secondary project-based learning in science, technology, engineering and mathematics. Journal of Technology and Science Education (JOTSE), 6(1):26-35., 2015.</p></biblio>
     <biblio xml:id="Learning-Styles"><p>Linda K. Silverman Richard M. Felder. Learning and teaching styles in engineering education. Engineering Education, 78(7):674–681, 1988.</p></biblio>
     <biblio xml:id="Yong"><p>Tang Yong. The mode of theoretical knowledge and practical knowledge combination: The significance of internship. World Journal of Education, 2(4):55–63., 2012.</p></biblio>
     <biblio xml:id="PBL1"><p>J. C. Perrenet, P. A. J. Bouhuijs, and J. G. M. M. Smits. The suitability of problem-based learning for engineering education: Theory and practice. Teaching in Higher Education, 5(3):345–358, 2000.</p></biblio>

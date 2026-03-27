@@ -53,7 +53,9 @@
   <!-- Current Edition -->
   <section xml:id="current-edition">
     <title> Current Edition </title>
-    <p>This textbook was last updated on <today/>. The latest pdf can be found on <url href="https://github.com/cmontalvo251/project-based-instrumentation/blob/main/main.pdf">Github</url> while the most up to date web based version is on <url href="https://cmontalvo251.github.io/project-based-instrumentation/">Github Pages</url></p>
+    <p>This textbook was last updated on <today/>. The latest pdf can be found on <url href="https://github.com/cmontalvo251/project-based-instrumentation/blob/main/main.pdf">Github</url> while the most up to date web based version is on <url href="https://cmontalvo251.github.io/project-based-instrumentation/">Github Pages</url><xref ref="Github"/>.</p>
+    
+    <p>A note on AI: Note that many sections have been written with the help of Github’s Copilot <xref ref="copilot"/> and even Google’s Gemini <xref ref="gemini"/>. Originially I had plans to properly cite each section that was written with the help of AI but I lost track given it’s seamless integration with VScode and Android smart phones as well as any browser at this point. As such it is important to note that after September of 2025 you can assume that most if not all sections were written with the help of AI.</p>
   </section>
 
   <!-- Manuscript changes -->
