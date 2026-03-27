@@ -212,10 +212,10 @@ measurements. For now you can move on to the accelerometer.
 </figure>
 </subsection>
 
-<subsection>
+<subsection xml:id="accelerometer">
 <title>Accelerometer</title>
 <p>
-The accelerometer is a 3-axis sensor. As such it is going to spit out
+The accelerometer is a 3-axis sensor. As such, it is going to spit out
 not just 1 value but 3 values. Accelerations in x,y and z or North,
 East, Down or Forward, Side to Side, Up and Down. Since it's reading 3
 values we can't just read 3 analog signals (we can but the
@@ -223,9 +223,8 @@ accelerometer chip design didn't want to do that) so instead we're
 going to use the I2C (I like "Indigo" and 2C like "Squared C". So "I Squared C". Not
 "12C" or "one two C". It's "I squared C") functionality. I2C is a type of
 serial communication that allows computers to send strings rather than
-numbers. It's a much more complex form of communication but since it's
-standard we can just use the busio module which contains the I2C
-protocol.
+numbers. I2C is beyond the scope of this course but just know it's a type of serial communication that uses hexadecimal addresses. It's a much more complex form of communication but since it's a 
+standard form of communication, we can just use the busio module which contains the I2C function.
 </p>
 <figure>
   <image width="73%" source="accelerometer_code.png" />
@@ -260,11 +259,21 @@ printed to Serial on line 15. If I run this code and shake the sensor
 a bit I can get all the values to vary. If you put the CPX on a flat
 surface, the Z axis will measure something close to 9.81. The units of
 the accelerometer are clearly in <m>m/s^2</m>.
-</p>
 <figure>
   <image width="73%" source="accelerometer_mu.png" />
   <caption>Serial monitor and Plotter open in Mu showing accelerometer output in <m>m/s^2</m></caption>
 </figure>
+</p>
+<p>
+Note that the accelerometer can be used to obtain pitch and roll angles in benign environments. This is done via trigonometry. You'll notice that when you point the CPX directly at you with the cable pointing up the x axis reads around 0 and the y axis reads around gravity. If you then rotate the sensor so that the cable is coming out of the left side of the CPX, the x axis is reading about gravity while the y axis is zero. Similarly, rotating the CPX in the X/Z plane can be done by rotating the USB cable where it plugs into the CPX. In this case we can ignore the Y axis data. If you print the raw accelerometer data, you'll notice that when you place the CPX directly onto a flat surface, the x and y axes read a value around 0, while the z axis reads around gravity (9.81<m>m/s^2</m>). If you then rotate the sensor clockwise 90 degrees, the x axis is reading about gravity while the z axis is now zero. This means we can form two triangles (one for the X/Z plane and another for the Y/Z plane) and get the angles of the CPX/CPB using the equations below.
+<men>
+  \theta = -sin^{-1}(\bar{a}_x)
+</men>
+<men>
+  \phi = tan^{-1}\left(\frac{\bar{a}_y}{\bar{a}_z}\right)
+</men>
+In the equations above, <m>a</m> is the accelerations along all 3 axes. Shorthand is used for <m>cos(\eta)=c_{\eta}</m> and <m>sin(\eta)=s_{\eta}</m>. The <m>\bar{\eta}</m> notation is used to indicate a normalization of the vector. That is <m>\bar{\eta} = \eta/||\eta||</m> where <m>||\eta||</m> is the norm of a 3 dimensional vector <m>||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}</m>. The derivation for these angles from accelerometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>.
+</p>
 </subsection>
 </section>
 

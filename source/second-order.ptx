@@ -72,14 +72,10 @@ There are most likely many other options so try and get creative and find someth
 <section>
 <title>Pendulum Example</title>
 <p>
-In this example I'm going to swing a pendulum in the X/Y plane of the accelerometer sensor so that I can ignore the Z axis data. I'm going to get the actual angle of the pendulum but if you're building something else you can ignore this part. You'll notice that when you point the CPX directly at you with the cable pointing up the x axis reads around 0 and the y axis reads around gravity. If you then rotate the sensor so that the cable is coming out of the left side of the CPX, the x axis is reading about gravity while the y axis is zero. This means we can form a triangle and get the angle using these two axes using the equation below which gives angle in degrees.
-<men>
-  \theta = tan^{-1}(x/y)\frac{180}{\pi}
-</men>
+In this example I'm going to swing a pendulum in the X/Y plane of the accelerometer sensor so that I can ignore the Z axis data. I'm going to get the actual angle of the pendulum but if you're building something else you can ignore this part. In order to convert the accelerometer values to pitch angle, I'm going to use the same equations discussed in the accelerometer lab (See <xref ref="accelerometer"/>)
 </p>
-
 <p>
-On the CPX specifically we want to import the math module and use the atan2 function. When I swing the pendulum then this is the result I get from Plotter in Mu.
+Remember, on the CPX/CPB specifically you'll want to import the math module and use the atan2 function. When I swing the pendulum, this is the result I get from Plotter in Mu.
 </p>
 <figure>
   <image width="73%" source="oscillation_mu.png" />

@@ -145,18 +145,10 @@ I created in parts 1 and 2.
 </p>
 
 <p>
-To measure the pitch angle using the accelerometer we are going to use the same equation that can be used when measuring the angle of a pendulum (See <xref ref="second-order"/>). I'm going to rotate the CPX in the X/Z plane which can be done by rotating the USB cable where it plugs into the CPX. In this case we can ignore the Y axis data. If you print the raw accelerometer data, you'll notice that when you place the CPX directly onto a flat surface, the x and y axes read a value around 0, while the z axis reads around gravity (9.81<m>m/s^2</m>). If you then rotate the sensor clockwise 90 degrees, the x axis is reading about gravity while the z axis is now zero. This means we can form a triangle and get the angle using these two axes using the equation below which gives angle in degrees.
-<men>
-  \theta = tan^{-1}(x/z)\frac{180}{\pi}
-</men>
+To measure the pitch and roll angles of the CPX/CPB we're going to use the accelerometer values and convert them to angles using the same equations discussed in the accelerometer lab (See <xref ref="accelerometer"/>).
 </p>
-
 <p>
-On the CPX specifically we want to import the math module and use the atan2 function. This measurement of the pitch angle would represent the H block in the figure above.
-</p>
-
-<p>
-The elevator on an airplane is a control surface responsible for
+The measurement of the pitch angle would represent the H block in the figure above. The elevator on an airplane is a control surface responsible for
 pitching the aircraft up and down. For this example we are going to
 assume that the desired pitch angle is 0<m>^o</m>. This means our <q>error</q>
 signal is going to be 0 minus the pitch angle <m>e = \theta_C - \theta = 0 - \theta = -\theta</m> . Our <q>control</q> signal

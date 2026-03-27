@@ -57,7 +57,7 @@ The only difference between the wiring diagram above and the CPX/CPB is that you
   <caption>Photo of IMU Connected to a CircuitPlayground Express</caption>
 </figure>
 <p>
-The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the <em>3.3V</em> pin on the CPB and then also connected to the red male-male wire which is connected to the <em>VIN</em> pin on the IMU. The black alligator clip is connected to the <em>GND</em> pin on the CPB and also connected to the brown male-male wire which is connected to the <em>GND</em> pin on the IMU. The blue alligator clip is connected directly to the <em>SDA</em> pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the <em>SCL</em> pins on both the CPB and the IMU. SDA and SCL are 2 pins for something called I2C (pronounced I squared C) where I is I as in "I am a billy goat" or "I like to code". I2C is beyond the scope of this project but just know it's a type of serial communication that uses hexadecimal addresses.
+The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the <em>3.3V</em> pin on the CPB and then also connected to the red male-male wire which is connected to the <em>VIN</em> pin on the IMU. The black alligator clip is connected to the <em>GND</em> pin on the CPB and also connected to the brown male-male wire which is connected to the <em>GND</em> pin on the IMU. The blue alligator clip is connected directly to the <em>SDA</em> pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the <em>SCL</em> pins on both the CPB and the IMU. Recall that SDA and SCL are external pins for I2C. In the accelerometer lab we used the internal I2C pins to access the accelerometer (See <xref ref="accelerometer"/>). In this lab we're going to use the external I2C pads to connect different I2C sensors. 
 </p>
 
 <p>
@@ -104,20 +104,16 @@ The final part is to get the LIS3MDL (magnetometer) to work. The starting point 
   <caption>Magnetometer code in CircuitPython</caption>
 </figure>
 <p>
-The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it. Note that the accelerometer can be used to obtain pitch and roll angles and the magnetometer can be used to obtain the yaw angle. This is done via trigonometry and is shown in the equations below.
-<men>
-  \theta = -sin^{-1}(\bar{a}_x)
-</men>
-<men>
-  \phi = tan^{-1}\left(\frac{\bar{a}_y}{\bar{a}_z}\right)
-</men>
+  The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it.
+</p>
+<p>
+Recall that the accelerometer can be used to measure roll and pitch (See <xref ref="accelerometer"/>). By combining the magnetometer in this IMU, it's possible to get the compass heading of the sensor.
 <men>
   \psi = tan^{-1}\left(\frac{\bar{\beta}_z s_{\phi} - \bar{\beta}_y c_{\phi}}{\bar{\beta}_x c_{\phi} + \bar{\beta}_y s_{\theta}s_{\phi} + \bar{\beta}_z c_{\phi}s_{\theta}}\right)
 </men>
 </p>
-
 <p>
-In the equations above <m>\beta</m> is the magnetic field along all 3 axes and <m>a</m> is the accelerations along all 3 axes. Shorthand is used for <m>cos(\eta)=c_{\eta}</m> and <m>sin(\eta)=s_{\eta}</m>. The <m>\bar{\eta}</m> notation is used to indicate a normalization of the vector. That is <m>\bar{\eta} = \eta/||\eta||</m> where <m>||\eta||</m> is the norm of a 3 dimensional vector <m>||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}</m>. The derivation for these angles from accelerometers and magnetometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>.
+In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>). 
 </p>
 </section>
 
