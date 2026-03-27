@@ -43,12 +43,12 @@ remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nomin
 <me>
   U = \sqrt{\frac{2 \Delta P_{Pa}}{\rho}}
 </me>
-where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the differential pressure (in Pascals), and <m>\rho=1.225~kg/m^3</m> is the density of air. I've done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url><xref ref="youtube">. <term> There is a typo in the video. V1 is supposed to have a sqrt())</term>. As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment?srsltid=AfmBOoqrja9WFwnJNLPOLxPEG5mRa1XqM8iP86s0ZYy5Qb1aSA-GpU0D">Joshua Hrisko</url>)<xref ref="pitot-author"/>.
-</p>
+where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the differential pressure (in Pascals), and <m>\rho=1.225~kg/m^3</m> is the density of air. I've done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url><xref ref="youtube"/>. <term> There is a typo in the video. V1 is supposed to have a sqrt())</term>. As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment?srsltid=AfmBOoqrja9WFwnJNLPOLxPEG5mRa1XqM8iP86s0ZYy5Qb1aSA-GpU0D">Joshua Hrisko</url>)<xref ref="pitot-author"/>.
 <figure>
   <image width="73%" source="Arduino+MPXV7002DP+Wiring+for+Differential+Pressure+Measurement.png"/>
   <caption>Arduino connected to a pressure transducer<xref ref="pitot-author"/></caption>
 </figure>
+</p>
 <p>
 It is pretty straightforward to wire this up to a CPX/CPB as is shown in the wiring diagram below.
 <figure>
