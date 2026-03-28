@@ -37,7 +37,7 @@
     <ol>
       <li><p>System must incorporate 3 electrical components (accelerometer, lights, sound and microphone to name a few). Your power source, microcontroller, speaker amplifier or the Crikit does not count as a component. An interface is not considered a component</p></li>
       <li><p>System must be unique as well as built and designed by your team (Tutorials may be used but you must make the system unique in some way).</p></li> 
-      <li><p>System must have one of the three components as an external part to the main microcontroller and not be something already found in the Instrumentation Kit (LEDs, buttons, servos or potentiometers to name a few).</p></li>
+      <li><p>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project (buttons, servos or potentiometers to name a few).</p></li>
       <li><p>System must take some sort of measurement to be used in the code.</p></li>
       <li><p>System must utilize a data acquisition method so that data can be plotted in Python as a function of time.</p></li>
       <li><p>System must help someone in some way.</p></li>
@@ -49,32 +49,80 @@
   <section xml:id="project-examples">
     <title>Project Examples</title>
     <p>
-    The project schedule and requirements previously shared is a general framework that can be applied to any project and has been for many many semesters. When first formulating this course I came up with a few project ideas for students to use as inspiration but of course the <url href="https://learn.adafruit.com/">Adafruit Learning System</url> provides a wealth of resources for project development<xref ref="Adafruit"/>. Still, here are a few examples that are shown below that can still be used as inspiration for future students.
+    The project schedule and requirements previously shared is a general framework that can be applied to any project and has been for many many semesters. When first formulating this course I came up with a few project ideas for students to use as inspiration but of course the <url href="https://learn.adafruit.com/">Adafruit Learning System</url> provides a wealth of resources for project development<xref ref="Adafruit"/>. Still, here are a few examples that are shown below that can still be used as inspiration for future students. I've also included a few examples of projects that students have built in the past to give you an idea of what is possible with the CPX and a little creativity.
     <ol>
-      <li><p>Example 1</p></li>
+      <li><p>A light sensor to turn a servo and then external leds</p></li>
+      <li><p>Pressure plate outside that sends a text when package is stolen</p></li>
+      <li><p>Log weather data on your wifi network with a raspberry pi and Adafruit IO<xref ref="Adafruit"/></p></li>
+      <li><p>Use a computer fan you own to create a solder station filter</p></li>
+      <li><p><term>The examples below are from peers that have taken the class in the past</term></p></li>
+      <li><p>Little Robot with Adafruit Crickit</p></li>
+      <li><p>Automatic trash can - Uses an ultrasonic sensor and a servo to open a trash can</p></li>
+      <li><p>Light saber - an LED strip is used</p></li>
+      <li><p>Automatic shades - a light sensor is used to turn a relay on which runs a dc motor to open your blinds</p></li>
+      <li><p>Auto plant watering device - uses a waterproof pump and a humidity sensor to water a plant</p></li>
+      <li><p>Auto dog bowl water feeder - an ultrasonic sensor is used to detect water level and open a solenoid valve to let water flow into a bowl</p></li>
+      <li><p>Mobile for a child - a rotating platform with toys is attached to a continuous servo</p></li>
+      <li><p>Laser Tag - Two CPXes are used to play laser tag by sending and receiving IR signals</p></li>
+      <li><p>Mailbox - When mail is delivered light enters from the box from opening the mail box. This causes the CPX to send an IR signal to another CPX with says “You’ve got mail” with the built in speaker</p></li>
+      <li><p>Door Opener with Dog Bark - using a 5V relay and a large motor a door open when a sound byte over a certain value is read using a microphone</p></li>
+      <li><p>Shade Sense - Open blinds at a particular time or when sun light is bright enough using a light sensor and a servo</p></li>
+      <li><p>Security Box - The CPX is used to rotate a “lock” using a servo by pressing buttons in a predetermined sequence</p></li>
+      <li><p>Underglow that Bounces to Music - An LED strip is used that changes color by using the microphone to detect sound levels</p></li>
+      <li><p>Auto-soap dispenser - A servo presses down on soap when a hand is placed under an ultrasonic sensor.</p></li>
+      <li><p>Remote control car - A Circuit Playground Bluefruit (CPB) and Cricket are used to control a remote control car. Continuous servos are used to control the rear wheels and a front servo is used to control the front linkage. The CPB has bluetooth to allow control of the car using Bluetooth and an app on your phone.</p></li>
+      <li><p>Fortune teller - Student bought a coin machine so you could put a quarter in and it would then tell a fortune by rotating one of 4 servos.</p></li>
+      <li><p>Putt putt / skeeball / miniature bowling - 2 sonar sensors can be used to get speed of the ball</p></li>
+      <li><p>Tattle tale robot - Students used a motion sensor to detect when someone walked in the room</p></li>
     </ol>
-    </p>
+  </p>
   </section>
 
   <section xml:id="pitot-probe-example">
     <title>Pitot Probe Example</title>
     <p>
-    One example project that I will use to explain future diagrams is to use a pitot probe to measure the velocity of my bicycle while riding around town. The idea overall was to place the pitot probe on the front of the bike and then use the pressure difference between the static and dynamic ports to calculate velocity (See <xref ref="pitot"/>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. 
-    TITLE, SKETCH, EXTRA REQUIREMENTS
+    One example project that I will use to explain future diagrams is from a project I built a few years ago. The overall concept of operations was to <term>use a pitot probe to measure the velocity of my bicycle while riding around town</term>. My initial conceptual design was to place the pitot probe on the front of my bike and then use the pressure difference between the static and dynamic ports to calculate velocity (See <xref ref="pitot"/>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. The figure below shows my initial sketch for the project.
+    <figure xml:id="pitot-sketch">
+      <image source="pitot_sketch.png" width="90%"/>
+      <caption>Initial Sketch of Pitot Probe Project</caption>
+    </figure>
+    After the sketch it's important to be sure that all requirements set by the instructor are satisfied. In this case I needed 3 components so I decided to use the bluetooth, pitot probe and button on the CPB for my 3 components. The pitot probe would be the external component. The button would be used to start and stop data collection and the bluetooth would be used to send the data to my phone. Still, I needed to add extra requirements specific to my project in addition to the requirements set forth by the general requirements defined in <xref ref="requirements"/>. The extra requirements are shown in the list below.
+    <ol>
+      <li><p>The system shall measure the windspeed of the vehicle.</p></li>
+      <li><p>The system shall be calibrated on startup or during operation by pressing a button.</p></li>
+      <li><p>The system will be powered during operation of the vehicle.</p></li>
+      <li><p>The system shall not adversely affect the vehicle performance.</p></li>
+      <li><p>The system shall send windspeed data to the operators smart phone.</p></li>
+      <li><p>The system shall light up during calibration to indicate to the user that the system shall not be touched.</p></li>
+    </ol>
+    Notice that I added a requirement to have an LED blink to notify the user of the status of the CPB which means I ended up having 4 components. Note however that I failed to satisfy the requirement of <term>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project</term>. This is because the pitot probe project is a weekly project <xref ref="pitot"/>. However, I still think this is a good example of how to use the systems engineering life cycle to design a project. 
     </p>
   </section>
 
-  <section xml:id="block-diagram-definitions">
+  <section xml:id="diagrams">
+    <title>Diagrams</title>
+    <introduction>
+      <p>
+      Upon completion of the initial sketch and the requirements it is now time to move away from a conceptual sketch and begin the preliminary design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <url href="">DrawIO</url> to create these diagrams and I have a tutorial on <url href="">creating BDDs and IBDs in DrawIO</url>.  
+      </p>
+    </introduction>
+  <subsection>
     <title>Block Definition Diagrams (BDD)</title>
-  </section>
-
-  <section xml:id="internal-block-diagrams">
-    <title>Internal Block Diagrams (IBD)</title>
-  </section>
-
-  <section xml:id="interface-diagrams">
-    <title>Interface Diagrams (ID)</title>
-  </section>
-
-
+    <p>
+      BDD for Mechanical, Electrical and Software Subsystems
+    </p>
+  </subsection>
+  <subsection>
+      <title>Internal Block Diagrams (IBD)</title>
+      <p>
+        IBD for Mechanical, Electrical and Software Subsystems
+      </p>
+  </subsection>
+  <subsection xml:id="interface-diagrams">
+    <title>Detailed Diagrams</title>
+    <p>
+      Following the conceptual and preliminary design phase it is time to create a more detailed design which involves more diagrams. In this case for the mechanical lead some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="">how to create simple shapes in Blender</url>. For the electrical lead on the team wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKitDesigner</url> or <url href="https://fritzing.org/">Fritzing</url>. I also have another youtube tutorial on <url href="">how to make a simple circuit in Cirkit Designer</url>. CAD and wiring diagram examples will not be shown in this section simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself. However, for the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. It's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot to Gemini it will give you the actual code for it in any language you like<xref ref="Gemini"/>. A software flow chart for the pitot probe project is shown below.
+    </p>
+  </subsection>
+</section>
 </chapter>
