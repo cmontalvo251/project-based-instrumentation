@@ -103,7 +103,7 @@
     <title>Diagrams</title>
     <introduction>
       <p>
-      Upon completion of the initial sketch and the requirements it is now time to move away from a conceptual sketch and begin the preliminary design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <url href="">DrawIO</url> to create these diagrams and I have a tutorial on <url href="https://youtu.be/G-vQ3v1j7ZU">creating BDDs and IBDs in DrawIO</url> <xref ref="Youtube"/>.  
+      Upon completion of the initial sketch and the requirements it is now time to move away from a conceptual sketch and begin the preliminary design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <url href="https://www.drawio.com/">DrawIO</url> to create these diagrams and I have a tutorial on <url href="https://youtu.be/G-vQ3v1j7ZU">creating BDDs and IBDs in DrawIO</url> <xref ref="youtube"/><xref ref="drawio"/>.  
       </p>
     </introduction>
   <subsection>
@@ -121,10 +121,12 @@
   <subsection xml:id="interface-diagrams">
     <title>Detailed Diagrams</title>
     <p>
-      Following the conceptual and preliminary design phase it is time to create a more detailed design which involves more diagrams. In this case for the mechanical lead some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="">how to create simple shapes in Blender</url>. For the electrical lead on the team wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKitDesigner</url> or <url href="https://fritzing.org/">Fritzing</url>. I also have another youtube tutorial on <url href="">how to make a simple circuit in Cirkit Designer</url>. CAD and wiring diagram examples will not be shown in this section simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself. However, for the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. It's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. A software flow chart for the pitot probe project is shown below.
-
-      Youtube video for psuedo code flowchart - https://youtu.be/FSF-TeceGQ8
-
+      Following the conceptual and preliminary design phase it is time to create a more detailed design which involves more diagrams. In this case, for the mechanical lead, some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="https://www.youtube.com/watch?v=l4JhueUcw4U">how to create an airplane in Blender</url> which you could easily adapt to anything else<xref ref="blender"/><xref ref="solidworks"/><xref ref="autodesk"/><xref ref="youtube"/>. For the electrical lead on the team, wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKit Designer</url> or <url href="https://fritzing.org/">Fritzing</url><xref ref="cirkit"/><xref ref="fritzing"/>. I also have another youtube tutorial on <url href="https://www.youtube.com/watch?v=xZ-j7GbpLV0">how to make a simple circuit in Cirkit Designer</url><xref ref="youtube"/>. CAD and wiring diagram examples will not be shown in this section simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself. However, for the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. The flowchart created for this pitot probe bike project is shown below. In this flow chart the code starts by initializing all the different modules, then turns on the neopixels. After that it checks if the bluetooth is connected. If it is not connected, then the neopixels turn blue and the system waits until a connection is made. Once a connection is made, the system checks if the button is pressed. If the button is pressed, then the system goes into calibration mode where it takes 100 samples of the voltage and averages them to get a bias voltage which is used to calibrate the system. During calibration, the neopixels turn green to indicate to the user that they should not touch the system. If the button is not pressed, then the system takes 10 samples of the voltage and averages them to get an average voltage which is then converted to windspeed using a conversion function. Finally, the data is sent to the user's phone via bluetooth and also printed to serial for debugging purposes.
+      <figure xml:id="pitot-psuedo-code">
+        <image source="Psuedo_Code_FlowChart.jpg" width="90%"/>
+        <caption>Psuedo Code Flow Chart for Bike Project</caption>
+      </figure>
+      I actually created a tutorial where I <url href="https://www.youtube.com/watch?v=FSF-TeceGQ8">create this psuedo code flow chart</url> and then how to convert that flow chart into actual code<xref ref="youtube"/>. It's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. In the youtube tutorial I discussed previously, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.
       <pre>
         import math
         import time
@@ -136,7 +138,7 @@
         from adafruit_led_animation.animation.solid import Solid
         import neopixel
 
-        # --- Configuration & Initialization ---
+        # --- Configuration &amp; Initialization ---
         rho = 1.225
         v_bias = 0.0  # Initial calibration value
 
@@ -175,7 +177,7 @@
             dv = avg_voltage - v_bias
             dp = 1000 * dv
             # Ensure dp is not negative before square root
-            if dp < 0: dp = 0 
+            if dp &lt; 0: dp = 0 
             windspeed = math.sqrt((2 * dp) / rho)
             return windspeed
 
@@ -219,6 +221,7 @@
                 print(data_string)
                 # If you have a specific BLE UART service, you'd send data_string there.
       </pre>
+      You can see from the code generated that with the help of creating a psuedo code flowchart and the power of AI you can create code from scratch that actually flows the way you want it to. Note that the code above is not tested and may not actually work the way you intended but just by glancing at it, it is a great start and shows the power of creating this detailed flow chart.
     </p>
   </subsection>
 </section>

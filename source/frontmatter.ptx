@@ -115,7 +115,8 @@
 	<li> March 22nd, 2026 - Made a few major formatting changes and updated the assignment directions to be better viewable and digestable to students</li>
   <li> March 23rd, 2026 - Updated the servo lab assignment to fix a broken png and added a link to an equation.</li>
   <li> March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting. The IMU wiring photo was also updated to be correct. Also added annotations to the circuitpython kit photo and added the high level sound code to the bluefruit.</li>
-  <li> March 27th, 2026 - Moved the thermistor, accelerometer angles and photocell equations into one place. Also added another simulation to the servo lab.Also added the pitot probe wiring diagram. Also added proper citations for all links. </li>
+  <li> March 27th, 2026 - Moved the thermistor, accelerometer angles and photocell equations into one place. Also added another simulation to the servo lab.Also added the pitot probe wiring diagram. Also added proper citations for all links. Also started the systems engineering chapter. </li>
+  <li> March 28th/29th, 2026 - Continued to work on the systems engineering chapter.</li>
       </ol>
     </p>
   </section>
