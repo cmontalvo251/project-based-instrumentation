@@ -121,7 +121,102 @@
   <subsection xml:id="interface-diagrams">
     <title>Detailed Diagrams</title>
     <p>
-      Following the conceptual and preliminary design phase it is time to create a more detailed design which involves more diagrams. In this case for the mechanical lead some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="">how to create simple shapes in Blender</url>. For the electrical lead on the team wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKitDesigner</url> or <url href="https://fritzing.org/">Fritzing</url>. I also have another youtube tutorial on <url href="">how to make a simple circuit in Cirkit Designer</url>. CAD and wiring diagram examples will not be shown in this section simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself. However, for the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. It's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot to Gemini it will give you the actual code for it in any language you like<xref ref="Gemini"/>. A software flow chart for the pitot probe project is shown below.
+      Following the conceptual and preliminary design phase it is time to create a more detailed design which involves more diagrams. In this case for the mechanical lead some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="">how to create simple shapes in Blender</url>. For the electrical lead on the team wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKitDesigner</url> or <url href="https://fritzing.org/">Fritzing</url>. I also have another youtube tutorial on <url href="">how to make a simple circuit in Cirkit Designer</url>. CAD and wiring diagram examples will not be shown in this section simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself. However, for the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. It's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. A software flow chart for the pitot probe project is shown below.
+
+      <pre>
+        import math
+        import time
+        import board
+        import analogio
+        import digitalio
+        import adafruit_ble
+        from adafruit_ble.advertising.standard import SolitaryAdvertisement
+        from adafruit_led_animation.animation.solid import Solid
+        import neopixel
+
+        # --- Configuration & Initialization ---
+        rho = 1.225
+        v_bias = 0.0  # Initial calibration value
+
+        # Setup Analog Input (Change 'A1' to your sensor pin)
+        airspeed_sensor = analogio.AnalogIn(board.A1)
+
+        # Setup Button A
+        button = digitalio.DigitalInOut(board.BUTTON_A)
+        button.direction = digitalio.Direction.INPUT
+        button.pull = digitalio.Pull.DOWN # Adjust to Pull.UP if your button logic is inverted
+
+        # Setup NeoPixels
+        pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.2)
+        RED = (255, 0, 0)
+        BLUE = (0, 0, 255)
+        GREEN = (0, 255, 0)
+        OFF = (0, 0, 0)
+
+        # Setup Bluetooth
+        ble = adafruit_ble.BLERadio()
+        advertisement = SolitaryAdvertisement()
+
+        def get_voltage():
+            # Helper to convert 16-bit ADC value to Voltage (0-3.3V)
+            return (airspeed_sensor.value * 3.3) / 65535
+
+        def get_wind_data(samples):
+            """Measures analog value, converts to voltage, and averages."""
+            total_voltage = 0
+            for _ in range(samples):
+                total_voltage += get_voltage()
+            return total_voltage / samples
+
+        def convert_2_windspeed(avg_voltage):
+            """Converts voltage to windspeed using dP = 1000 * dV."""
+            dv = avg_voltage - v_bias
+            dp = 1000 * dv
+            # Ensure dp is not negative before square root
+            if dp < 0: dp = 0 
+            windspeed = math.sqrt((2 * dp) / rho)
+            return windspeed
+
+        def neo_pixel_run(state, color=OFF):
+            """Sets the NeoPixel state and color."""
+            if state:
+                pixels.fill(color)
+            else:
+                pixels.fill(OFF)
+            pixels.show()
+
+        # --- Main Loop ---
+        print("System Initialized...")
+
+        while True:
+            # Bluetooth Connection Check
+            if not ble.connected:
+                neo_pixel_run(True, BLUE)
+                if not ble.advertising:
+                    ble.start_advertising(advertisement)
+                # Flowchart shows loop back to start/check if disconnected
+                continue 
+            
+            # Check Button Routine
+            if button.value:
+                # Calibration Branch
+                neo_pixel_run(True, GREEN)
+                avg_v = get_wind_data(100)
+                v_bias = avg_v  # Calibrate() routine
+                print(f"Calibrated! New V_Bias: {v_bias}")
+            else:
+                # Standard Measurement Branch
+                neo_pixel_run(False)
+                avg_v = get_wind_data(10)
+                speed = convert_2_windspeed(avg_v)
+                
+                current_time = time.monotonic() # GetTime()
+                
+                # SendData() routine (Printing to Serial/BLE)
+                data_string = f"Time: {current_time:.2f}s | Windspeed: {speed:.2f} m/s"
+                print(data_string)
+                # If you have a specific BLE UART service, you'd send data_string there.
+      </pre>
     </p>
   </subsection>
 </section>
