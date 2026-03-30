@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pitot Probe Example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Project Based Engineering Instrumentation">
+<meta property="book:author" content="Carlos Montalvo">
+<meta property="book:author" content="Marine Feron Leabeater">
+<meta property="book:author" content="Lisa Schibelius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.12.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="project-based-instrumentation.html"><span class="title">Project Based Engineering Instrumentation</span> <span class="subtitle">Using CircuitPython and the Circuit Playground</span></a></h1>
+<p class="byline">Carlos Montalvo, Marine Feron Leabeater, Lisa Schibelius</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="project-examples.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="systems-engineering.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="purchase-equipment.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="current-edition.html" class="internal"><span class="codenumber">1</span> <span class="title">Current Edition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="manuscript-changes.html" class="internal"><span class="codenumber">2</span> <span class="title">Manuscript Changes</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="future-changes.html" class="internal"><span class="codenumber">3</span> <span class="title">Changes Needed and Future Project Ideas</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-descripion.html" class="internal"><span class="codenumber">2</span> <span class="title">Course Description</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="systems-engineering.html" class="internal"><span class="codenumber">3</span> <span class="title">Project Based Engineering and the Systems Engineering Life Cycle</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="project-overview.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Project Schedule</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="requirements.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Specific Final Project Requirements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="project-examples.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Project Examples</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="pitot-probe-example.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Pitot Probe Example</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#diagrams" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Diagrams</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#pitot-probe-example-4" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Electrical Subsystem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#subsec-Software-Subsystem" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Software Subsystem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#subsec-Mechanical-Subsystem" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Mechanical Subsystem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#detailed-diagrams" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Preliminary Diagrams</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#detailed-design" class="internal"><span class="codenumber">3.4.6</span> <span class="title">Detailed Design</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#subsec-final" class="internal"><span class="codenumber">3.4.7</span> <span class="title">Critical Design Review</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#subsec-subsystem-testing" class="internal"><span class="codenumber">3.4.8</span> <span class="title">Subsystem Testing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="pitot-probe-example.html#subsec-final-verification" class="internal"><span class="codenumber">3.4.9</span> <span class="title">Final Verification and Validation</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="purchase-equipment.html" class="internal"><span class="codenumber">4</span> <span class="title">Purchase Equipment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-2.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">CircuitPython Kit</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">5</span> <span class="title">Download Python for Desktop</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Thonny</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Spyder</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Other Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Setting up your IDE</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Scripting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-10.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">6</span> <span class="title">Getting Started with the CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Setting up your Circuit Playground</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">6.4</span> <span class="title">TL;DR</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">7</span> <span class="title">Installing Modules and Troubleshooting your CPX/CPB</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Updating your Bootloader</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="installing-modules.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Installing Modules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-5.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Reformatting your CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="I2C_scanner.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Using an I2C Scanner</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-7.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Common Mishaps</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="led-buttons.html" class="internal"><span class="codenumber">8</span> <span class="title">External LEDs and Push Buttons</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">LED with no Code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">LED with a push button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">8.6</span> <span class="title">LED with code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-8.html" class="internal"><span class="codenumber">8.7</span> <span class="title">LED with CPX button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-9.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">9</span> <span class="title">Using the CPX/CPB as a Data Acquisition System (DAQ)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">9.8</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">9.9</span> <span class="title">Method 5 - Logging Data to an SD Card</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">9.10</span> <span class="title">Plotting Logged Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-12.html" class="internal"><span class="codenumber">9.11</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">10</span> <span class="title">Bluetooth on the CircuitPlayground Bluefruit - Method 4</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-6.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">11</span> <span class="title">Logging Data to an SD Card - Method 5</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-2.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-5.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">12</span> <span class="title">Measuring Voltage Across a Potentiometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-2.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-6.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">13</span> <span class="title">Wind Speed from Pitot Probe</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-2.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-3.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-5.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">14</span> <span class="title">Circuit Playground (CPX/CPB) Built-In Sensors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-2.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">14.5</span> <span class="title">Low Level Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#light-sensor" class="internal"><span class="codenumber">14.5.1</span> <span class="title">Light</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-3" class="internal"><span class="codenumber">14.5.2</span> <span class="title">Sound</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#temperature-sensor" class="internal"><span class="codenumber">14.5.3</span> <span class="title">Temperature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#accelerometer" class="internal"><span class="codenumber">14.5.4</span> <span class="title">Accelerometer</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-7.html" class="internal"><span class="codenumber">14.6</span> <span class="title">High Level Control</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-8.html" class="internal"><span class="codenumber">14.7</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="acceleration.html" class="internal"><span class="codenumber">15</span> <span class="title">Integrating Acceleration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-2.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-3.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-4.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-5.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="pedometer.html" class="internal"><span class="codenumber">16</span> <span class="title">Building a Pedometer using an Accelerometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-3.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-4.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-5.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Gathering Accelerometer Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-6.html" class="internal"><span class="codenumber">16.5</span> <span class="title">Computing Number of Steps: Post-Processing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-7.html" class="internal"><span class="codenumber">16.6</span> <span class="title">Computing Number of Steps: Online</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-8.html" class="internal"><span class="codenumber">16.7</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">17</span> <span class="title">Inertial Measurement Unit - Accelerometer, Rate Gyro, Magnetometer</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-2.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-5.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="photocell.html" class="internal"><span class="codenumber">18</span> <span class="title">Histograms and Normal Distribution of Photocell Readings</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-2.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-3.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-4.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-5.html" class="internal"><span class="codenumber">18.4</span> <span class="title">Throwing Out Outliers</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-6.html" class="internal"><span class="codenumber">18.5</span> <span class="title">Normal Distribution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-7.html" class="internal"><span class="codenumber">18.6</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="servo.html" class="internal"><span class="codenumber">19</span> <span class="title">Servo Calibration (PulseWidthModulation(PWM) = f(angle)) and Feedback Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-2.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-3.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-calibration.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="servo-5.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Feedback Control</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-3" class="internal"><span class="codenumber">19.4.1</span> <span class="title">Example Feedback Control System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#second-order-dynamics" class="internal"><span class="codenumber">19.4.2</span> <span class="title">Second Order Pitch Dynamics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-5" class="internal"><span class="codenumber">19.4.3</span> <span class="title">First Order Velocity Dynamics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="servo-6.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Assignment</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-3" class="internal"><span class="codenumber">19.5.1</span> <span class="title">Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4" class="internal"><span class="codenumber">19.5.2</span> <span class="title">Part 2</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="thermistor.html" class="internal"><span class="codenumber">20</span> <span class="title">Time Constant of a Thermistor</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-2.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-3.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-4.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Temperature Change Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-6.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Estimating Time Constant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-7.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="second-order.html" class="internal"><span class="codenumber">21</span> <span class="title">Natural Frequency and Damping of a Second Order System and Issues with Aliasing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-2.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Parts List</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-3.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Learning Objectives</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-4.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-5.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Oscillatory Ideas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-6.html" class="internal"><span class="codenumber">21.5</span> <span class="title">Pendulum Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="aliasing.html" class="internal"><span class="codenumber">21.6</span> <span class="title">Aliasing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-8.html" class="internal"><span class="codenumber">21.7</span> <span class="title">Assignment</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="results-discussion.html" class="internal"><span class="codenumber">22</span> <span class="title">Results and Discussion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-3.html" class="internal"><span class="codenumber">22.1</span> <span class="title">Data Collection and Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-4.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Results</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-5.html" class="internal"><span class="codenumber">22.3</span> <span class="title">Discussion</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="results-discussion-6.html" class="internal"><span class="codenumber">22.4</span> <span class="title">Limitations of Findings</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="conclusions.html" class="internal"><span class="codenumber">23</span> <span class="title">Conclusions</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="acknowledgements.html" class="internal"><span class="codenumber">24</span> <span class="title">Acknowledgements</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-1.html" class="internal"><span class="title">References</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="pitot-probe-example"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pitot Probe Example</span>
+</h2>
+<section class="introduction" id="pitot-probe-example-2"><div class="para logical" id="pitot-probe-example-2-1">
+<div class="para">One example project that I will use to explain future diagrams is from a project I built a few years ago. The overall mission goal was to <dfn class="terminology">use a pitot probe to measure the velocity of my bicycle while riding around town</dfn>. My initial hand sketch showed the pitot probe on the front of my bike which would use the pressure difference between the static and dynamic ports to calculate velocity (See <a href="pitot.html" class="internal" title="Chapter 13: Wind Speed from Pitot Probe">Chapter 13</a>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. The figure below showed my initial sketch for the project. <figure class="figure figure-like" id="pitot-sketch"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/pitot_sketch.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Initial Sketch of Pitot Probe Project<div class="autopermalink" data-description="Figure 3.4.1"><a href="#pitot-sketch" title="Copy heading and permalink for Figure 3.4.1" aria-label="Copy heading and permalink for Figure 3.4.1">🔗</a></div></figcaption></figure> After the sketch it’s important to be sure that all requirements set by the instructor are satisfied. In this case I needed 3 components so I decided to use the bluetooth transmitter, pitot probe, neopixels and button on the CPB which ended up being 4 components but I thought it would be nice to have visual feedback so I added the neopixels. The pitot probe would be the external component and the button would be used to calibrate the pitot probe. Finally, the bluetooth would be used to send the data to my phone. Although the course has a set of general requirements defined in <a href="requirements.html" class="internal" title="Section 3.2: Specific Final Project Requirements">Section 3.2</a>, I still needed to add a few specific requirements as shown below.</div>
+<ol class="decimal" id="pitot-probe-example-2-1-5">
+<li id="pitot-probe-example-2-1-5-1">
+<div class="para" id="pitot-probe-example-2-1-5-1-1">The system shall measure the windspeed of the vehicle.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#pitot-probe-example-2-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="pitot-probe-example-2-1-5-2">
+<div class="para" id="pitot-probe-example-2-1-5-2-1">The system shall be calibrated on startup or during operation by pressing a button.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#pitot-probe-example-2-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="pitot-probe-example-2-1-5-3">
+<div class="para" id="pitot-probe-example-2-1-5-3-1">The system will be powered during operation of the vehicle.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#pitot-probe-example-2-1-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="pitot-probe-example-2-1-5-4">
+<div class="para" id="pitot-probe-example-2-1-5-4-1">The system shall not adversely affect the vehicle performance.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#pitot-probe-example-2-1-5-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="pitot-probe-example-2-1-5-5">
+<div class="para" id="pitot-probe-example-2-1-5-5-1">The system shall send windspeed data to the operators smart phone.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#pitot-probe-example-2-1-5-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="pitot-probe-example-2-1-5-6">
+<div class="para" id="pitot-probe-example-2-1-5-6-1">The system shall light up during calibration to indicate to the user that the system shall not be touched.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1-5-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#pitot-probe-example-2-1-5-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="para">Note however that I failed to satisfy the requirement of <dfn class="terminology">System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project</dfn>. This is because the pitot probe project is a weekly project (See <a href="pitot.html" class="internal" title="Chapter 13: Wind Speed from Pitot Probe">Chapter 13</a>). However, I still think this is a good example of how to use the systems engineering life cycle to design an electrial subsystem so I will continue with this example.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="diagrams"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Diagrams</span>
+</h3>
+<div class="para" id="diagrams-2">Upon completion of the initial sketch and the requirements it is now time to move away from a mission goal with requirements and begin the conceptual design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <a class="external" href="https://www.drawio.com/" target="_blank">DrawIO</a> to create these diagrams and I have a tutorial on <a class="external" href="https://youtu.be/G-vQ3v1j7ZU" target="_blank">creating BDDs and IBDs in DrawIO</a> <a href="backmatter-1.html#youtube" class="xref" data-knowl="./knowl/xref/youtube.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 47">[47]</a><a href="backmatter-1.html#drawio" class="xref" data-knowl="./knowl/xref/drawio.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 4">[4]</a>.<div class="autopermalink" data-description="Paragraph"><a href="#diagrams-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.1: Diagrams"><a href="#diagrams" title="Copy heading and permalink for Subsection 3.4.1: Diagrams" aria-label="Copy heading and permalink for Subsection 3.4.1: Diagrams">🔗</a></div></section><section class="subsection" id="pitot-probe-example-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Electrical Subsystem</span>
+</h3>
+<div class="para" id="pitot-probe-example-4-2">Block Definition Diagrams (BDD) are used to show the different components and modules of a system and how they are related to each other. For the pitot probe project, the electrical BDD is the easiest and most intuitive to complete first and is shown below. <figure class="figure figure-like" id="bdd-electrical"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/BDD_Electrical.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>BDD of Electrical Components<div class="autopermalink" data-description="Figure 3.4.2"><a href="#bdd-electrical" title="Copy heading and permalink for Figure 3.4.2" aria-label="Copy heading and permalink for Figure 3.4.2">🔗</a></div></figcaption></figure> The BDD shows the different components of the system which includes general names for all subsystems included. Notice that instead of writing pitot probe specifically I wrote “Windspeed Sensor”. This was I can elect to change to something different later on in the design process if I decide to do a last minute design change. Once you have the BDD completed it is time to move on to the Internal Block Diagram (IBD) which shows how the different components are connected to each other. The IBD for the electrical subsystem is shown below. <figure class="figure figure-like" id="ibd-electrical"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/IBD_Electrical.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>IBD of Electrical Components<div class="autopermalink" data-description="Figure 3.4.3"><a href="#ibd-electrical" title="Copy heading and permalink for Figure 3.4.3" aria-label="Copy heading and permalink for Figure 3.4.3">🔗</a></div></figcaption></figure> The IBD shows how the different components are connected to each other. In this case, the Windspeed Sensor is connected to the CPU, the Notification UI(most likely neopixels) is connected to the CPU as well as the Calibration UI (most likely a button) and the CPU will send data to the Wireless Communications module (most likely bluetooth). The IBD also shows the flow of data between the different components and using annotations via text boxes also shows what information is passed from one block to the next. Notice also that every block shown in the BDD is in the IBD except for the central block which is merely the name of the system. Finally, I want to draw attention to the fact that I do not have a data storage module because all data will be sent to my smart phone and logged there which satisfies one of my major requirements. The IBD is an important step in the design process as it helps to ensure that all components are properly connected and that the flow of data is correct. It also helps to identify any potential issues with the design before moving on to the detailed design phase.<div class="autopermalink" data-description="Paragraph"><a href="#pitot-probe-example-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.2: Electrical Subsystem"><a href="#pitot-probe-example-4" title="Copy heading and permalink for Subsection 3.4.2: Electrical Subsystem" aria-label="Copy heading and permalink for Subsection 3.4.2: Electrical Subsystem">🔗</a></div></section><section class="subsection" id="subsec-Software-Subsystem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Software Subsystem</span>
+</h3>
+<div class="para" id="subsec-Software-Subsystem-2">Once you have completed the electrical BDD and IBD the software IBD is almost identical. The only difference is you need to first identify which components require software. For example, the power supply does not require any software but the wireless communication module does. The software BDD is shown below.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Software-Subsystem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="bdd-software"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/BDD_Software.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>BDD of Software Components<div class="autopermalink" data-description="Figure 3.4.4"><a href="#bdd-software" title="Copy heading and permalink for Figure 3.4.4" aria-label="Copy heading and permalink for Figure 3.4.4">🔗</a></div></figcaption></figure><div class="para" id="subsec-Software-Subsystem-4">Notice that every software name contains () to indicate that it will eventually be a function. This is useful at this stage to help later on in the preliminary design phase. The CPU requires much software to run the system but since we’re programming everything in a very high level programming language like Python, CircuitPython or Arduino we’re assuming that the only software required by the user is just a main loop. In Python/CircuitPython the main loop is typically just a <em class="emphasis">while True:</em> loop and in Arduino it is the <em class="emphasis">loop()</em> function. Once the BDD is completed, the blocks in the BDD can be used to create the IBD which is shown below.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Software-Subsystem-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="ibd-software"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/IBD_Software.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>IBD of Software Components<div class="autopermalink" data-description="Figure 3.4.5"><a href="#ibd-software" title="Copy heading and permalink for Figure 3.4.5" aria-label="Copy heading and permalink for Figure 3.4.5">🔗</a></div></figcaption></figure><div class="para" id="subsec-Software-Subsystem-6">Again, The flow of data is similar to the electrical IBD but now we can see what information is being passed from one function to the next which again will be helpful when we get to the preliminary design phase.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Software-Subsystem-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.3: Software Subsystem"><a href="#subsec-Software-Subsystem" title="Copy heading and permalink for Subsection 3.4.3: Software Subsystem" aria-label="Copy heading and permalink for Subsection 3.4.3: Software Subsystem">🔗</a></div></section><section class="subsection" id="subsec-Mechanical-Subsystem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mechanical Subsystem</span>
+</h3>
+<div class="para" id="subsec-Mechanical-Subsystem-2">The mechanical subsystem is a bit more difficult to create BDDs and IBDs for mostly because of how trivial and simple the systems are. Typically these diagrams are so simple that students often get confused and over complicate these diagrams. However, if you look at the diagrams below it’s easy to see that mechanical system is important but much smaller and less complex than the electrical and software subsystems. The BDD for the mechanical subsystem is shown below. <figure class="figure figure-like" id="bdd-mechanical"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/BDD_Mechanical.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>BDD of Mechanical Components<div class="autopermalink" data-description="Figure 3.4.6"><a href="#bdd-mechanical" title="Copy heading and permalink for Figure 3.4.6" aria-label="Copy heading and permalink for Figure 3.4.6">🔗</a></div></figcaption></figure> In this case my plan was to attach the windspeed sensor to my handelbars somehow and then put all the other electrical components into a main houseing. Then all I would have to do is figure out how to run the wires from the main housing to the windspeed sensor. So the BDD only has 3 components. With the BDD completed, I moved on to the mechanical IBD which is shown below. <figure class="figure figure-like" id="ibd-mechanical"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/IBD_Mechanical.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>IBD of Mechanical Components<div class="autopermalink" data-description="Figure 3.4.7"><a href="#ibd-mechanical" title="Copy heading and permalink for Figure 3.4.7" aria-label="Copy heading and permalink for Figure 3.4.7">🔗</a></div></figcaption></figure> In this case I elected to add the bicycle to the IBD because even though the bicycle is an interface I still wanted to show how the system would be attached to the bicycle and how the different components would be connected to it. The IBD shows that the main housing is attached to the bicycle via velcro strap and the windspeed sensor is attached to the bicycle via zip ties.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Mechanical-Subsystem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.4: Mechanical Subsystem"><a href="#subsec-Mechanical-Subsystem" title="Copy heading and permalink for Subsection 3.4.4: Mechanical Subsystem" aria-label="Copy heading and permalink for Subsection 3.4.4: Mechanical Subsystem">🔗</a></div></section><section class="subsection" id="detailed-diagrams"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Preliminary Diagrams</span>
+</h3>
+<div class="para" id="detailed-diagrams-2">Following the conceptual design phase where missions goals, requirements, hand sketches, BDDs and IBDs are created, it is time to work out component selection. For example, instead of calling the module “Windspeed Sensor” it is time to select the component and call it a pitot probe. Similarly, buttons, neopixels and bluetooth must be selected. In the preliminary design phase the mechanical lead must create a simple layout of the system. This requires a simple top down layout of the system with dimensions to give the designer an idea of how that’s going to go together. For this, a simple sketchup tool can be used like <a class="external" href="inkscape.org" target="_blank">Inkscape</a><a href="backmatter-1.html#inkscape" class="xref" data-knowl="./knowl/xref/inkscape.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 10">[10]</a>. Because my project was so simple I did not create a simple layout for this system. For the electrical lead, a connections diagram is necessary to show how the different components are connected to each other. This would be similar to the electrical IBD except this would be actual components with references to actual parts. For this project the connections diagram is super simple because the CPU, clock, bluetooth module, buttons, and the neopixels are all built into the CPB so the only external component is the pitot probe which is connected to the CPB. So my connections diagram just has 3 components: the CPB, pitot probe and power supply. <figure class="figure figure-like" id="connections-diagram"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/Connections_Diagram.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Connections Diagram for Bike Project<div class="autopermalink" data-description="Figure 3.4.8"><a href="#connections-diagram" title="Copy heading and permalink for Figure 3.4.8" aria-label="Copy heading and permalink for Figure 3.4.8">🔗</a></div></figcaption></figure> For the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. The flowchart created for this pitot probe bike project is shown below. I have youtube tutorial where I <a class="external" href="https://www.youtube.com/watch?v=FSF-TeceGQ8" target="_blank">create this psuedo code flow chart</a><a href="backmatter-1.html#youtube" class="xref" data-knowl="./knowl/xref/youtube.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 47">[47]</a>. <figure class="figure figure-like" id="pitot-psuedo-code"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="external/Psuedo_Code_FlowChart.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Psuedo Code Flow Chart for Bike Project<div class="autopermalink" data-description="Figure 3.4.9"><a href="#pitot-psuedo-code" title="Copy heading and permalink for Figure 3.4.9" aria-label="Copy heading and permalink for Figure 3.4.9">🔗</a></div></figcaption></figure> In this flow chart the code starts by initializing all the different modules, then turns on the neopixels. After that it checks if the bluetooth is connected. If it is not connected, then the neopixels turn blue and the system waits until a connection is made. Once a connection is made, the system checks if the button is pressed. If the button is pressed, then the system goes into calibration mode where it takes 100 samples of the voltage and averages them to get a bias voltage which is used to calibrate the system. During calibration, the neopixels turn green to indicate to the user that they should not touch the system. If the button is not pressed, then the system takes 10 samples of the voltage and averages them to get an average voltage which is then converted to windspeed using a conversion function. Finally, the data is sent to the user’s phone via bluetooth and also printed to serial for debugging purposes.<div class="autopermalink" data-description="Paragraph"><a href="#detailed-diagrams-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.5: Preliminary Diagrams"><a href="#detailed-diagrams" title="Copy heading and permalink for Subsection 3.4.5: Preliminary Diagrams" aria-label="Copy heading and permalink for Subsection 3.4.5: Preliminary Diagrams">🔗</a></div></section><section class="subsection" id="detailed-design"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Detailed Design</span>
+</h3>
+<div class="para" id="detailed-design-2">Once the conceptual and preliminary design phase is over it is time to create the detailed design. The detailed design needs to be so detailed that anyone following the design on paper to turn the system into a reality just by reading all of the schematics. Thus, for the mechanical lead, some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <a class="external" href="https://www.blender.org/" target="_blank">Blender</a>, <a class="external" href="https://www.solidworks.com/" target="_blank">SolidWorks</a>, <a class="external" href="https://www.autodesk.com/products/fusion-360" target="_blank">Fusion 360</a> or anything you’re comfortable with. I have a youtube tutorial on <a class="external" href="https://www.youtube.com/watch?v=l4JhueUcw4U" target="_blank">how to create an airplane in Blender</a> which you could easily adapt to anything else<a href="backmatter-1.html#blender" class="xref" data-knowl="./knowl/xref/blender.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 5">[5]</a><a href="backmatter-1.html#solidworks" class="xref" data-knowl="./knowl/xref/solidworks.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 7">[7]</a><a href="backmatter-1.html#autodesk" class="xref" data-knowl="./knowl/xref/autodesk.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 8">[8]</a><a href="backmatter-1.html#youtube" class="xref" data-knowl="./knowl/xref/youtube.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 47">[47]</a>. For the electrical lead on the team, wiring diagrams are necessary and I recommend using either <a class="external" href="https://app.cirkitdesigner.com/" target="_blank">CirKit Designer</a> or <a class="external" href="https://fritzing.org/" target="_blank">Fritzing</a><a href="backmatter-1.html#cirkit" class="xref" data-knowl="./knowl/xref/cirkit.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 9">[9]</a><a href="backmatter-1.html#fritzing" class="xref" data-knowl="./knowl/xref/fritzing.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 6">[6]</a>. I also have another youtube tutorial on <a class="external" href="https://www.youtube.com/watch?v=xZ-j7GbpLV0" target="_blank">how to make a simple circuit in Cirkit Designer</a><a href="backmatter-1.html#youtube" class="xref" data-knowl="./knowl/xref/youtube.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 47">[47]</a>. CAD and wiring diagram examples will not be shown in this chapter simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself.<div class="autopermalink" data-description="Paragraph"><a href="#detailed-design-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="detailed-design-3">
+<div class="para">For the software lead it is time to figure out what software is required to run each component. For example, the pitot probe as explained in <a href="pitot.html" class="internal" title="Chapter 13: Wind Speed from Pitot Probe">Chapter 13</a> is an analog sensor which means you need the <em class="emphasis">analogio</em> module. The neopixels need the <em class="emphasis">neopixel</em>. This process must be repeated for every component to be sure that you have all the modules necessary to run the program. Although this is a lot of work it helps tremendously later on in the subsystem testing phase. In this case the list below contains all the modules I need to run this system<a href="backmatter-1.html#CircuitPython" class="xref" data-knowl="./knowl/xref/CircuitPython.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 30">[30]</a>.</div>
+<ol class="decimal" id="detailed-design-3-5">
+<li id="detailed-design-3-5-1">
+<div class="para" id="p-derived-detailed-design-3-5-1">
+<a class="external" href="https://docs.circuitpython.org/en/latest/shared-bindings/time/" target="_blank">time</a> - for the clock</div>
+<div class="autopermalink" data-description="Item 1"><a href="#detailed-design-3-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="detailed-design-3-5-2">
+<div class="para" id="p-derived-detailed-design-3-5-2">
+<a class="external" href="https://docs.circuitpython.org/en/latest/shared-bindings/analogio/" target="_blank">analogio</a> - for the pitot probe</div>
+<div class="autopermalink" data-description="Item 2"><a href="#detailed-design-3-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="detailed-design-3-5-3">
+<div class="para" id="p-derived-detailed-design-3-5-3">
+<a class="external" href="https://docs.circuitpython.org/projects/ble/en/latest/" target="_blank">adafruit_ble</a> - for the bluetooth connection</div>
+<div class="autopermalink" data-description="Item 3"><a href="#detailed-design-3-5-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="detailed-design-3-5-4">
+<div class="para" id="p-derived-detailed-design-3-5-4">
+<a class="external" href="https://docs.circuitpython.org/en/latest/shared-bindings/digitalio/" target="_blank">digitalio</a> - for the button</div>
+<div class="autopermalink" data-description="Item 4"><a href="#detailed-design-3-5-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="detailed-design-3-5-5">
+<div class="para" id="p-derived-detailed-design-3-5-5">
+<a class="external" href="https://docs.circuitpython.org/projects/neopixel/en/latest/" target="_blank">neopixel</a> - for the neopixels</div>
+<div class="autopermalink" data-description="Item 5"><a href="#detailed-design-3-5-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="detailed-design-3-5-6">
+<div class="para" id="p-derived-detailed-design-3-5-6">
+<a class="external" href="https://circuitpython.org/" target="_blank">CircuitPython</a> - for the main programming language</div>
+<div class="autopermalink" data-description="Item 6"><a href="#detailed-design-3-5-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="para">Notice that I didn’t need anything for the battery since that’s just hardware. An interesting corollary is that it’s actually possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot of the psuedo code flowchart to Gemini it will give you the actual code for it in any language you like<a href="backmatter-1.html#gemini" class="xref" data-knowl="./knowl/xref/gemini.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 2">[2]</a>. In the youtube tutorial I discussed previously, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.<pre class="code-block tex2jax_ignore clipboardable">import math
+import time
+import board
+import analogio
+import digitalio
+import adafruit_ble
+from adafruit_ble.advertising.standard import SolitaryAdvertisement
+from adafruit_led_animation.animation.solid import Solid
+import neopixel
+
+# --- Configuration &amp; Initialization ---
+rho = 1.225
+v_bias = 0.0  # Initial calibration value
+
+# Setup Analog Input (Change 'A1' to your sensor pin)
+airspeed_sensor = analogio.AnalogIn(board.A1)
+
+# Setup Button A
+button = digitalio.DigitalInOut(board.BUTTON_A)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.DOWN # Adjust to Pull.UP if your button logic is inverted
+
+# Setup NeoPixels
+pixels = neopixel.NeoPixel(board.NEOPIXEL, 10, brightness=0.2)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
+OFF = (0, 0, 0)
+
+# Setup Bluetooth
+ble = adafruit_ble.BLERadio()
+advertisement = SolitaryAdvertisement()
+
+def get_voltage():
+    # Helper to convert 16-bit ADC value to Voltage (0-3.3V)
+    return (airspeed_sensor.value * 3.3) / 65535
+
+def get_wind_data(samples):
+    """Measures analog value, converts to voltage, and averages."""
+    total_voltage = 0
+    for _ in range(samples):
+        total_voltage += get_voltage()
+    return total_voltage / samples
+
+def convert_2_windspeed(avg_voltage):
+    """Converts voltage to windspeed using dP = 1000 * dV."""
+    dv = avg_voltage - v_bias
+    dp = 1000 * dv
+    # Ensure dp is not negative before square root
+    if dp &lt; 0: dp = 0 
+    windspeed = math.sqrt((2 * dp) / rho)
+    return windspeed
+
+def neo_pixel_run(state, color=OFF):
+    """Sets the NeoPixel state and color."""
+    if state:
+        pixels.fill(color)
+    else:
+        pixels.fill(OFF)
+    pixels.show()
+
+# --- Main Loop ---
+print("System Initialized...")
+
+while True:
+    # Bluetooth Connection Check
+    if not ble.connected:
+        neo_pixel_run(True, BLUE)
+        if not ble.advertising:
+            ble.start_advertising(advertisement)
+        # Flowchart shows loop back to start/check if disconnected
+        continue 
+    
+    # Check Button Routine
+    if button.value:
+        # Calibration Branch
+        neo_pixel_run(True, GREEN)
+        avg_v = get_wind_data(100)
+        v_bias = avg_v  # Calibrate() routine
+        print(f"Calibrated! New V_Bias: {v_bias}")
+    else:
+        # Standard Measurement Branch
+        neo_pixel_run(False)
+        avg_v = get_wind_data(10)
+        speed = convert_2_windspeed(avg_v)
+        
+        current_time = time.monotonic() # GetTime()
+        
+        # SendData() routine (Printing to Serial/BLE)
+        data_string = f"Time: {current_time:.2f}s | Windspeed: {speed:.2f} m/s"
+        print(data_string)
+        # If you have a specific BLE UART service, you'd send data_string there.
+</pre>You can see from the code generated that with the help of creating a psuedo code flowchart and the power of AI you can create code from scratch that actually flows the way you want it to. Note that the code above was not tested and may not actually work the way you intended. However, just by glancing at it, it is a great start and shows the power of creating this detailed flow chart. Just to be thorough, <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/CPB_DataLogger/pitot_datalogger_bluetooth.py" target="_blank">the code I ended up using</a> is on Github and you can see how similar the code is between the autogenerated code and my code that I built from scratch before AI was widely adopted <a href="backmatter-1.html#Github" class="xref" data-knowl="./knowl/xref/Github.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 33">[33]</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#detailed-design-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.6: Detailed Design"><a href="#detailed-design" title="Copy heading and permalink for Subsection 3.4.6: Detailed Design" aria-label="Copy heading and permalink for Subsection 3.4.6: Detailed Design">🔗</a></div></section><section class="subsection" id="subsec-final"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Critical Design Review</span>
+</h3>
+<div class="para" id="subsec-final-2">After the detailed design, the Critical Design Review (CDR) is conducted to evaluate the design against its requirements. This involves a live presentation to stakeholders and peers. In this presentation the students are required to explain their current design and respond to any quesitons from the audience. This is a good way to receive feedback about the project before moving into subsystem testing and final verification and validation. Of course, for my project I did not do a CDR and moved directly into subsystem testing.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-final-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.7: Critical Design Review"><a href="#subsec-final" title="Copy heading and permalink for Subsection 3.4.7: Critical Design Review" aria-label="Copy heading and permalink for Subsection 3.4.7: Critical Design Review">🔗</a></div></section><section class="subsection" id="subsec-subsystem-testing"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Subsystem Testing</span>
+</h3>
+<div class="para" id="subsec-subsystem-testing-2">For my first test, I elected to deal with the pitot probe and used Method 1 (<a href="daq.html" class="internal" title="Chapter 9: Using the CPX/CPB as a Data Acquisition System (DAQ)">Chapter 9</a>) to record data with my laptop. Then I had my parents drive down the highway while I hung the pitot probe out the window. I was able to get a nice plot of windspeed. One issue I ran into was that when the car came to a stop the speed did not. I realized I needed to go ahead and add the button press so that I could calibrate often. Hence why having the button press was so crucial. Once I was sure the pitot probe worked and my button was able to calibrate I added the bluetooth module and repeated the same experiment only this time I plotted the data on my phone as shown below. <figure class="figure figure-like" id="calibration-plot"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Calibration_Plot.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Plot of Windspeed Data During Calibration Test<div class="autopermalink" data-description="Figure 3.4.10"><a href="#calibration-plot" title="Copy heading and permalink for Figure 3.4.10" aria-label="Copy heading and permalink for Figure 3.4.10">🔗</a></div></figcaption></figure> Once I knew the button, pitot probe and bluetooth were working I added the neopixels and tested that as well although I do not have a photo of that particular test.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-subsystem-testing-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.8: Subsystem Testing"><a href="#subsec-subsystem-testing" title="Copy heading and permalink for Subsection 3.4.8: Subsystem Testing" aria-label="Copy heading and permalink for Subsection 3.4.8: Subsystem Testing">🔗</a></div></section><section class="subsection" id="subsec-final-verification"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Final Verification and Validation</span>
+</h3>
+<div class="para" id="subsec-final-verification-2">Once I tested all the components it was time to integrate everything together by placing everything into a small case on my bike. I then took the system on a bike ride around town and was able to get some good data. The final product is shown below. <figure class="figure figure-like" id="final-product"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/pitot_box.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Main Housing of Pitot Probe Bike Project<div class="autopermalink" data-description="Figure 3.4.11"><a href="#final-product" title="Copy heading and permalink for Figure 3.4.11" aria-label="Copy heading and permalink for Figure 3.4.11">🔗</a></div></figcaption></figure> Overall the prototype worked as intended. It recorded wind speed and had a button to re-calibrate. While the system is recalibrating the neopixels light up to notify the user not to start biking yet. The housing mounted to the top tube of my bike as shown in the figure above and I ended up using zip ties to secure the pitot tube to the front of my bike like in the photo below. <figure class="figure figure-like" id="final-product-2"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="external/pitot_zip_tie.jpg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Final Product with Pitot Probe Mounted to Front of Bike<div class="autopermalink" data-description="Figure 3.4.12"><a href="#final-product-2" title="Copy heading and permalink for Figure 3.4.12" aria-label="Copy heading and permalink for Figure 3.4.12">🔗</a></div></figcaption></figure> I have future ideas where I could upgrade the power supply and even install a waterproof toggle switch so that I can turn the device on and off without having to remove the entire housing. It would also be nice to have a button on the outside to recalibrate without having to remove the entire housing. Still, all requirements were satisfied and the project was a success as shown in the table below. Note that satisfied requirements are in plain text, partially satisfied comments are in italics and bold text are requirements that were not satisfied. In this case, all requirements were satisfied except for 1 which was partially satisfied.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-final-verification-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="table-system-verification"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.4.13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>System Requirements Verification Matrix<div class="autopermalink" data-description="Table 3.4.13: System Requirements Verification Matrix"><a href="#table-system-verification" title="Copy heading and permalink for Table 3.4.13: System Requirements Verification Matrix" aria-label="Copy heading and permalink for Table 3.4.13: System Requirements Verification Matrix">🔗</a></div></figcaption><div class="tabular-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b1 r1 l1 t1 lines">Requirement</th>
+<th scope="col" class="l m b1 r1 l0 t1 lines">Verification / Status</th>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-4-1-1">The system shall measure the windspeed of the vehicle<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-4-2-1">Yes, with a pitot probe<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-5-1-1">The system shall be calibrated on startup or during operation by pressing a button<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-5-2-1">Yes, on start up and by pressing button A<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-6-1-1">The system will be powered during operation of the vehicle<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-6-2-1">Yes, with a portable battery pack<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-7-1-1">The system shall not adversely affect the vehicle performance.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-7-2-1">Yes, the user did not report any issues while biking.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-8-1-1">The system shall send windspeed data to the operators smart phone.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-8-2-1">Yes, with bluetooth<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-9-1-1">The system shall light up during calibration to indicate to the user that the system shall not be touched.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-9-2-1">Yes, it lights up green<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-10-1-1">System must incorporate 3 electrical components<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-10-2-1">System had four: pitot probe, neopixels, button, and bluetooth.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-11-1-1">System must be unique as well as built and designed by your team<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-11-2-1">Yes, I created the entire project from scratch and only grabbed inspiration from other projects.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-12-1-1">
+<em class="emphasis">System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project.</em><div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-12-2-1">
+<em class="emphasis">Partially, the pitot probe was external but already a part of the weekly projects.</em><div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-13-1-1">System must take some sort of measurement to be used in the code<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-13-2-1">Yes, it took time and windspeed data.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-14-1-1">System must utilize a data acquisition method so that data can be plotted in Python as a function of time<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-14-2-1">Yes, Method 5 was utilized<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-15-1-1">System must help someone in some way<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-15-2-1">Yes, it allowed the user to ascertain its wind windspeed.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-16-1-1">System must have some sort of mechanical component to it and cannot be purely software and electrical components.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+<td class="l m b1 r1 l0 t0" style="max-width:300px;"><div class="para" id="table-system-verification-2-16-2-1">Yes, it had a main housing and pitot probe zip tied to the handlebars.<div class="autopermalink" data-description="Paragraph"><a href="#table-system-verification-2-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></td>
+</tr>
+</table></div></figure><div class="para" id="subsec-final-verification-4">This is just one example of how to use the systems engineering life cycle to design and build a project. The same process can be applied to any project and can be used to help ensure that the project is successful. The key is to follow the process and not skip any steps. By following the process, you can ensure that your project is well designed, well built and meets all of its requirements. Hopefully this example gets you excited about the CPX/CPB and the entire Adafruit ecosystem as well as a quick preview of what they can do. Hopefully you enjoy the following chapters which details individual weekly projects geared to help you learn simple sensors and electrical components that you can piece together and build your own DIY electro-mechanical system.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-final-verification-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.4.9: Final Verification and Validation"><a href="#subsec-final-verification" title="Copy heading and permalink for Subsection 3.4.9: Final Verification and Validation" aria-label="Copy heading and permalink for Subsection 3.4.9: Final Verification and Validation">🔗</a></div></section><div class="autopermalink" data-description="Section 3.4: Pitot Probe Example"><a href="#pitot-probe-example" title="Copy heading and permalink for Section 3.4: Pitot Probe Example" aria-label="Copy heading and permalink for Section 3.4: Pitot Probe Example">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="project-examples.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="purchase-equipment.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
