@@ -171,7 +171,16 @@
   <subsection xml:id="detailed-design">
     <title>Detailed Design</title>
     <p>Once the conceptual and preliminary design phase is over it is time to create the detailed design. The detailed design needs to be so detailed that anyone following the design on paper to turn the system into a reality just by reading all of the schematics. Thus, for the mechanical lead, some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="https://www.youtube.com/watch?v=l4JhueUcw4U">how to create an airplane in Blender</url> which you could easily adapt to anything else<xref ref="blender"/><xref ref="solidworks"/><xref ref="autodesk"/><xref ref="youtube"/>. For the electrical lead on the team, wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKit Designer</url> or <url href="https://fritzing.org/">Fritzing</url><xref ref="cirkit"/><xref ref="fritzing"/>. I also have another youtube tutorial on <url href="https://www.youtube.com/watch?v=xZ-j7GbpLV0">how to make a simple circuit in Cirkit Designer</url><xref ref="youtube"/>. CAD and wiring diagram examples will not be shown in this chapter simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself.</p>
-    <p>For the software lead it is time to figure out what software is required to run each component. For example, the pitot probe as explained in <xref ref="pitot"/> is an analog sensor which means you need the <em>analogio</em> module. The neopixels need the <em>neopixel</em>. This process must be repeated for every component to be sure that you have all the modules necessary to run the program. Although this is a lot of work it helps tremendously later on in the subsystem testing phase. Note that it's acutally possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot of the psuedo code flowchart to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. In the youtube tutorial I discussed previously, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.
+    <p>For the software lead it is time to figure out what software is required to run each component. For example, the pitot probe as explained in <xref ref="pitot"/> is an analog sensor which means you need the <em>analogio</em> module. The neopixels need the <em>neopixel</em>. This process must be repeated for every component to be sure that you have all the modules necessary to run the program. Although this is a lot of work it helps tremendously later on in the subsystem testing phase. In this case the list below contains all the modules I need to run this system<xref ref="CircuitPython"/>.
+    <ol>
+      <li><url href="https://docs.circuitpython.org/en/latest/shared-bindings/time/">time</url> - for the clock</li>
+      <li><url href="https://docs.circuitpython.org/en/latest/shared-bindings/analogio/">analogio</url> - for the pitot probe</li>
+      <li><url href="https://docs.circuitpython.org/projects/ble/en/latest/">adafruit_ble</url> - for the bluetooth connection</li>
+      <li><url href="https://docs.circuitpython.org/en/latest/shared-bindings/digitalio/">digitalio</url> - for the button</li>
+      <li><url href="https://docs.circuitpython.org/projects/neopixel/en/latest/">neopixel</url> - for the neopixels</li>
+      <li><url href="https://circuitpython.org/">CircuitPython</url> - for the main programming language</li>
+    </ol>
+    Notice that I didn't need anything for the battery since that's just hardware. An interesting corollary is that it's actually possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot of the psuedo code flowchart to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. In the youtube tutorial I discussed previously, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.
     <pre>
     import math
     import time
@@ -266,12 +275,100 @@
             print(data_string)
             # If you have a specific BLE UART service, you'd send data_string there.
       </pre>
-    You can see from the code generated that with the help of creating a psuedo code flowchart and the power of AI you can create code from scratch that actually flows the way you want it to. Note that the code above was not tested and may not actually work the way you intended. However, just by glancing at it, it is a great start and shows the power of creating this detailed flow chart.</p>
+    You can see from the code generated that with the help of creating a psuedo code flowchart and the power of AI you can create code from scratch that actually flows the way you want it to. Note that the code above was not tested and may not actually work the way you intended. However, just by glancing at it, it is a great start and shows the power of creating this detailed flow chart. Just to be thorough, <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/CPB_DataLogger/pitot_datalogger_bluetooth.py">the code I ended up using</url> is on Github and you can see how similar the code is between the autogenerated code and my code that I built from scratch before AI was widely adopted <xref ref="Github"/>.</p>
   </subsection>
   <subsection xml:id="subsec-final">
-    <title>Final Bits</title>
-    Explain the CDR, subsystem testing and then finally show photos of the final product. 
-    Copy and paste stuff from the design report as I'm sure there's a lot of text there
+    <title>Critical Design Review</title>
+    <p>After the detailed design, the Critical Design Review (CDR) is conducted to evaluate the design against its requirements. This involves a live presentation to stakeholders and peers. In this presentation the students are required to explain their current design and respond to any quesitons from the audience. This is a good way to receive feedback about the project before moving into subsystem testing and final verification and validation. Of course, for my project I did not do a CDR and moved directly into subsystem testing.</p>
+    </subsection>
+  <subsection xml:id="subsec-subsystem-testing">
+    <title>Subsystem Testing</title>
+    <p>
+    For my first test, I elected to deal with the pitot probe and used Method 1 (<xref ref="daq"/>) to record data with my laptop. Then I had my parents drive down the highway while I hung the pitot probe out the window. I was able to get a nice plot of windspeed. One issue I ran into was that when the car came to a stop the speed did not. I realized I needed to go ahead and add the button press so that I could calibrate often. Hence why having the button press was so crucial. Once I was sure the pitot probe worked and my button was able to calibrate I added the bluetooth module and repeated the same experiment only this time I plotted the data on my phone as shown below.
+    <figure xml:id="calibration-plot">
+      <image source="Calibration_Plot.png" width="50%"/>
+      <caption>Plot of Windspeed Data During Calibration Test</caption>
+    </figure>
+    Once I knew the button, pitot probe and bluetooth were working I added the neopixels and tested that as well although I do not have a photo of that particular test.</p>
+  </subsection>
+  <subsection xml:id="subsec-final-verification">
+    <title>Final Verification and Validation</title>
+    <p>Once I tested all the components it was time to integrate everything together by placing everything into a small case on my bike. I then took the system on a bike ride around town and was able to get some good data. The final product is shown below.
+    <figure xml:id="final-product">
+      <image source="pitot_box.jpg" width="70%"/>
+      <caption>Main Housing of Pitot Probe Bike Project</caption>
+    </figure>
+    Overall the prototype worked as intended. It recorded wind speed and had a button to re-calibrate. While the system is recalibrating the neopixels light up to notify the user not to start biking yet. The housing mounted to the top tube of my bike as shown in the figure above and I ended up using zip ties to secure the pitot tube to the front of my bike like in the photo below. 
+    <figure xml:id="final-product-2">
+      <image source="pitot_zip_tie.jpg" width="70%"/>
+      <caption>Final Product with Pitot Probe Mounted to Front of Bike</caption>
+    </figure>
+    I have future ideas where I could upgrade the power supply and even install a waterproof toggle switch so that I can turn the device on and off without having to remove the entire housing. It would also be nice to have a button on the outside to recalibrate without having to remove the entire housing. Still, all requirements were satisfied and the project was a success as shown in the table below. Note that satisfied requirements are in plain text, partially satisfied comments are in italics and bold text are requirements that were not satisfied. In this case, all requirements were satisfied except for 1 which was partially satisfied.</p>
+    <table xml:id="table-system-verification">
+    <title>System Requirements Verification Matrix</title>
+    <tabular width="100%" bottom="minor" top="minor" left="minor" right="minor">
+    <col width="50%"/>
+    <col width="50%"/>
+    <row header="yes">
+      <cell>Requirement</cell>
+      <cell>Verification / Status</cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system shall measure the windspeed of the vehicle</p></cell>
+      <cell><p>Yes, with a pitot probe</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system shall be calibrated on startup or during operation by pressing a button</p></cell>
+      <cell><p>Yes, on start up and by pressing button A</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system will be powered during operation of the vehicle</p></cell>
+      <cell><p>Yes, with a portable battery pack</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system shall not adversely affect the vehicle performance.</p></cell>
+      <cell><p>Yes, the user did not report any issues while biking.</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system shall send windspeed data to the operators smart phone.</p></cell>
+      <cell><p>Yes, with bluetooth</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>The system shall light up during calibration to indicate to the user that the system shall not be touched.</p></cell>
+      <cell><p>Yes, it lights up green</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must incorporate 3 electrical components</p></cell>
+      <cell><p>System had four: pitot probe, neopixels, button, and bluetooth.</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must be unique as well as built and designed by your team</p></cell>
+      <cell><p>Yes, I created the entire project from scratch and only grabbed inspiration from other projects.</p></cell>
+    </row>
+    <row set="objection">
+      <cell><p><em>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project.</em></p></cell>
+      <cell><p><em>Partially, the pitot probe was external but already a part of the weekly projects.</em></p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must take some sort of measurement to be used in the code</p></cell>
+      <cell><p>Yes, it took time and windspeed data.</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must utilize a data acquisition method so that data can be plotted in Python as a function of time</p></cell>
+      <cell><p>Yes, Method 5 was utilized</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must help someone in some way</p></cell>
+      <cell><p>Yes, it allowed the user to ascertain its wind windspeed.</p></cell>
+    </row>
+    <row set="recommended">
+      <cell><p>System must have some sort of mechanical component to it and cannot be purely software and electrical components.</p></cell>
+      <cell><p>Yes, it had a main housing and pitot probe zip tied to the handlebars.</p></cell>
+    </row>
+    </tabular>
+    </table>
+    <p>
+    This is just one example of how to use the systems engineering life cycle to design and build a project. The same process can be applied to any project and can be used to help ensure that the project is successful. The key is to follow the process and not skip any steps. By following the process, you can ensure that your project is well designed, well built and meets all of its requirements. Hopefully this example gets you excited about the CPX/CPB and the entire Adafruit ecosystem as well as a quick preview of what they can do. Hopefully you enjoy the following chapters which details individual weekly projects geared to help you learn simple sensors and electrical components that you can piece together and build your own DIY electro-mechanical system.</p>
   </subsection>
 </section>
 </chapter>
