@@ -117,7 +117,7 @@
   <li> March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting. The IMU wiring photo was also updated to be correct. Also added annotations to the circuitpython kit photo and added the high level sound code to the bluefruit.</li>
   <li> March 27th, 2026 - Moved the thermistor, accelerometer angles and photocell equations into one place. Also added another simulation to the servo lab.Also added the pitot probe wiring diagram. Also added proper citations for all links. Also started the systems engineering chapter. </li>
   <li> March 30th, 2026 - Finished the systems engineering chapter and printed and deployed book.</li>
-  <li> March 31st, 2026 - Added a new assignment to the photocell histogram lab</li>
+  <li> March 31st, 2026 - Added a new assignment to the photocell histogram lab and underlined all hyperlinks in LaTeX document</li>
       </ol>
     </p>
   </section>

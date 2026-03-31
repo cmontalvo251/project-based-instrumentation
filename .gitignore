@@ -1,6 +1,7 @@
 ASAC_Derivations
 *.docx
 *.zip
+.cache
 *.log
 *.out
 *.log

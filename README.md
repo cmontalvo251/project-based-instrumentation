@@ -18,6 +18,20 @@ If this gives you an error about breaking system packages go ahead and do that
 
 pip3 install pretext --break-system-packages
 
+If you ever need to upgrade type
+
+pip3 install pretext --upgrade
+
+If you ever want to install a nightly build run 
+
+pip3 install pretext --upgrade --pre
+
+and then run 
+
+pretext update
+
+to update all of your manifest files
+
 # Bashrc
 
 Then open ~/.bashrc and add the following line of code
