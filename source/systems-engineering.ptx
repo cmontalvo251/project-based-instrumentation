@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="systems-engineering" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Project Based Engineering and the Systems Engineering Life Cycle</title>
+  <title>Project Based Engineering</title>
   <introduction><p>
   Systems engineering is a branch of engineering used to help in the design of complex systems. The general idea is to break down a complex system into smaller more manageable pieces. This is done by following a life cycle which includes the following steps: requirements analysis, functional analysis and allocation, design synthesis, and system analysis and control. A
   diagram for a systems engineering life cycle can be seen below.
   <figure xml:id="v-and-v">
     <image source="VandV.jpg" width="90%"/>
-    <caption>Example Verification and Validation (V&amp;V) Process<xref ref="vandv"/></caption>
+    <caption>The Systems Engineering Life Cycle: Example Verification and Validation (V&amp;V) Process<xref ref="vandv"/></caption>
   </figure>
   The left side of the V&amp;V diagram highlights all of the required design while the right side details the build. For undergraduate engineering courses the Design, Build, Test (DBT) framework is often used and has been used at the University of South Alabama for many years with much success. The systems engineering life cycle is a more detailed version of the DBT framework. The systems engineering life cycle is used in many industries including
   aerospace, automotive, and software development. The sections that follow explain how this instrumentation course utilizes the DBT framework and the systems engineering life cylce.

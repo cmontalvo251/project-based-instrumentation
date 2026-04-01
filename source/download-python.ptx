@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="download-python" xmlns:xi="http://www.w3.org/2001/XInclude">
-	 <title>Download Python for Desktop</title>
-  
-<section>
-<title>Parts List</title>
-<ol>
-<li><p>Laptop</p></li>
-<li><p><url href="https://www.python.org/">Python</url> <xref ref="python"/> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> <xref ref="thonny"/> or <url href="https://www.spyder-ide.org/">Spyder</url> <xref ref="spyder"/> - Do not use Python IDLE)</p></li>
-</ol>
-</section>
-
-<section>
-<title>Learning Objectives</title>
-<ol>
-<li><p>How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)</p></li>
-<li><p>Plot a simple function in Python</p></li>
-</ol>
-
-<p>
+	 <title>Python</title>
+  <introduction>
+  <list>
+  <title>Parts List</title>
+  <ol>
+  <li><p>Laptop</p></li>
+  <li><p><url href="https://www.python.org/">Python</url> <xref ref="python"/> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> <xref ref="thonny"/> or <url href="https://www.spyder-ide.org/">Spyder</url> <xref ref="spyder"/> - Do not use Python IDLE)</p></li>
+  </ol>
+  </list>
+  <list>
+  <title>Learning Objectives</title>
+  <ol>
+  <li><p>How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)</p></li>
+  <li><p>Plot a simple function in Python</p></li>
+  </ol>
+  </list>
+  <p>
 As you learn Instrumentation throughout the semester, you will be
 tasked with creating computer programs on the Circuit Playground
 Express (CPX). The CPX itself has it's own RAM, CPU, HDD and many
@@ -36,22 +35,18 @@ need to first learn how to program some things in Python. You can
 easily download Python by itself but it's nice to get what's called an
 Integrated Development Environment (IDE). This way you can practice
 writing Python code on your computer while you wait for your purchases
-to arrive in the mail.
+to arrive in the mail. This chapter is all about getting Python and an IDE downloaded on your computer and learning how to use it.
 </p>
-
 <p>
 So which IDE can you download and which is recommended? I recommend
-two IDEs. They are listed below. I recommend getting either one. If
-you just Google <q>Python download</q> you will find a humongous list of
-editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to
-get lost when searching for something so broad. You've been warned.
+two IDEs. They are explained in the next two sections. I recommend getting either one. If you just Google <q>Python download</q> you will find a humongous list of editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to get lost when searching for something so broad. You've been warned. I recommend just using Spyder or Thonny. 
 </p>
-</section>
+</introduction>
 
 <section>
 <title>Thonny</title>
 <p>
-Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> - <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">Youtube video on how to install</url> <xref ref="youtube"/>
+Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> is a great, easy, simple and lightweight IDE that I've been using for year. The figure below is a screenshot of what Thonny looks like with a sine graph plotted. I also have a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install</url> it. <xref ref="youtube"/>
 </p>
 <figure>
 <image width="73%" source="Thonny.png" />
@@ -62,7 +57,7 @@ Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thon
 <section>
 <title>Spyder</title>
 <p>
-Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> - <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">Youtube video on how to install</url> <xref ref="youtube"/> <xref ref="youtube"/>
+Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> is a powerful IDE that is widely used in the scientific Python community. The figure below is a screenshot of what Spyder looks like with a sine graph plotted. I also have a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install</url> it. <xref ref="youtube"/>
 </p>
 <figure>
 <image width="73%" source="Spyder.png" />
