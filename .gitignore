@@ -1,6 +1,8 @@
 ASAC_Derivations
 *.docx
 *.zip
+.devcontainer
+.github
 .cache
 *.log
 *.out
