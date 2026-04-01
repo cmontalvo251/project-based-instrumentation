@@ -30,7 +30,7 @@ to get your CPX up and running. A very in depth and detailed tutorial
 can be found on the
 <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/first-things-first">Adafruit
 Learn site</url><xref ref="Adafruit"/>. This chapter is a summary
-of what you need to do to get the CPX up and running.
+of what you need to do to get the CPX up and running as well as writing a simple blink code. 
 </p>
 </introduction>
 
