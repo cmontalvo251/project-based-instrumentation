@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="pitot" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Wind Speed from Pitot Probe</title>
-
-<section>
+<title>Pitot Probe</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -13,22 +13,17 @@
 <li><p>Pitot Probe (Not included in kit at the moment so will need to buy this separately or borrow one)</p></li>
 <li><p>Breadboard</p></li>
 </ol>
-</section>
-
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand how pitot probes works</p></li>
 <li><p>Understand the relationship between a voltage signal from a pitot probe to a pressure value</p></li>
 <li><p>Understand the relationship between pressure and windspeed</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
-Although a CPX has numerous sensors built in, you can easily augment the capabilities of the CPX using either I2C or just the ADC on board the CPX. In this lab, if you purchased a <url href="https://www.amazon.com/Hobbypower-Airspeed-MPXV7002DP-Differential-controller/dp/B00WSFWO36/ref=sr_1_3?dchild=1&amp;keywords=Airspeed+sensor+kit&amp;qid=1590532161&amp;sr=8-3">pitot probe</url> you will be able to do this assignment<xref ref="pitot-amazon"/>. Since you don't need the pitot probe for very long you can always borrow one from some other team. Let's talk about the hardware and the wiring to get this to work. First, pitot probes work by mechanically changing the dynamic pressure of the incoming airflow as shown in the <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment">figure below</url> (Courtesy of <url href="https://makersportal.com/blog?author=59b036fc6073554c1cfffef7">Joshua Hrisko</url>) <xref ref="pitot-author"/>.
+Although a CPX has numerous sensors built in, you can easily augment the capabilities of the CPX using either I2C or just the ADC on board the CPX. In this lab, if you purchased a <url href="https://www.amazon.com/Hobbypower-Airspeed-MPXV7002DP-Differential-controller/dp/B00WSFWO36/ref=sr_1_3?dchild=1&amp;keywords=Airspeed+sensor+kit&amp;qid=1590532161&amp;sr=8-3">pitot probe</url> you will be able to do this assignment<xref ref="pitot-amazon"/>. Since you don't need the pitot probe for very long you can always borrow one from some other team or from your instructor if they have one. Let's talk about the hardware and the wiring to get this to work. First, pitot probes work by mechanically changing the dynamic pressure of the incoming airflow as shown in the <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment">figure below</url> (Courtesy of <url href="https://makersportal.com/blog?author=59b036fc6073554c1cfffef7">Joshua Hrisko</url>) <xref ref="pitot-author"/>.
 </p>
 <figure>
   <image width="73%" source="pitot_tube_drawing_transparent_cleaner.png" />
@@ -55,7 +50,11 @@ It is pretty straightforward to wire this up to a CPX/CPB as is shown in the wir
   <image width="90%" source="pitot_wiring.png" />
   <caption>Pitot probe wired to a CPX</caption>
 </figure>
-Remember that +5V needs to go to VOUT, GND to GND and Analog to any analog pin. I chose pin A2 as shown in the Figure below.
+Remember that +5V needs to go to VOUT, GND to GND and Analog to any analog pin. Continue to read on to setup your own CPX/CPB and complete this assignment</p>
+</introduction>
+<section xml:id="setup">
+  <title>Setup</title>
+<p>To complete this lab, I chose pin A2 as shown in the Figure below.
 </p>
 <figure>
   <image width="90%" source="pitot_probe_circuit.jpeg" />
