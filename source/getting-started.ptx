@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="getting-started" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Getting Started with the CPX/CPB</title>
-
-<section>
+  <title>Setting up the CPX/CPB</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -13,9 +13,8 @@
 <li><p>USB Cable (with a data line. Not all USB cables have data
     lines)</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Learn how to setup your Circuit Playground Express</p></li>
@@ -24,19 +23,19 @@
 <li><p>Learn about hardware and software debugging</p></li>
 <li><p>Learn the difference between Python and CircuitPython</p></li>
 </ol>
-</section>
-
-<section>
-<title>Setting up your Circuit Playground</title>
+</list>
 <p>
-By now you hopefully have your Circuit Playground (CPX) and it's time
+By now you hopefully have your Circuit Playground Express (CPX) or a Circuit Playground Bluefruit (CPB) and it's time
 to get your CPX up and running. A very in depth and detailed tutorial
 can be found on the
 <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/first-things-first">Adafruit
-Learn site</url><xref ref="Adafruit"/>. The text below is a summary
+Learn site</url><xref ref="Adafruit"/>. This chapter is a summary
 of what you need to do to get the CPX up and running.
 </p>
+</introduction>
 
+<section xml:id="getting-started-setup">
+<title>Getting Started</title>
 <p>
 When you get your CPX and plug it into the computer via USB it
 actually won't run Python just yet. First you need to double click the
