@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="pedometer" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Building a Pedometer using an Accelerometer</title>
-
-<section>
+<title>Pedometer</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -11,9 +11,8 @@
 <li><p>USB Cable</p></li>
 <li><p>External Battery Pack</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand how to run CPB/CPX while not tethered to a computer</p></li>
@@ -21,10 +20,7 @@
 <li><p>Understand post-processing for debugging to be used for online calculations</p></li>
 <li><p>Understand the fundamentals of how a pedometer works</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
 A pedometer is a device that counts the number of steps. Typically
 these are worn as watches with popular brands like Garmin or Fitit
@@ -35,7 +31,7 @@ measuring the acceleration, angular velocity and potentially even the
 angles (using a magnetometer) to count steps. In this lab this we will
 just focus on attempting to get steps using accelerometer data.
 </p>
-</section>
+</introduction>
 
 <section>
 <title>Gathering Accelerometer Data</title>
