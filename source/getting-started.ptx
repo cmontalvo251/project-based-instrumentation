@@ -35,7 +35,7 @@ of what you need to do to get the CPX up and running as well as writing a simple
 </introduction>
 
 <section xml:id="getting-started-setup">
-<title>Getting Started</title>
+<title>Setup</title>
 <p>
 When you get your CPX and plug it into the computer via USB it
 actually won't run Python just yet. First you need to double click the

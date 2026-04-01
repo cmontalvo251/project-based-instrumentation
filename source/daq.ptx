@@ -1,51 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="daq" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Using the CPX/CPB as a Data Acquisition System (DAQ)</title>
-
-<section>
+<title>Logging Data</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Record real time measurements from the CircuitPlayground using the Serial monitor</p></li>
 <li><p>Learn how to use the typing module to type data directly into a spreadsheet or text file</p></li>
 <li><p>Learn how to log data on the on board memory of the CircuitPlayground</p></li>
 </ol>
-</section>
-
-<section>
-<title>Extra Help</title>
-<p>
-This is a pretty hard project to do with multiple different
-methods. After you've read through this document I suggest you watch
-a youtube I created on <url href="https://youtu.be/yX0zeIfn2j4">Logging Data with the Circuit Playground
-Express</url>. I have also made video where I <url href="https://www.youtube.com/watch?v=Vc7_KxRnORI">log temperature and
-accelerometer data using on board memory with the CircuitPlayground
-Bluefruit</url><xref ref="youtube"/>.
-</p>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
 Taking data is the core of any instrumentation project. Data
-Acquisition Systems or DAQ for short come in all shapes and
+Acquisition Systems (DAQ) come in all shapes and
 sizes. Believe it or not the CPX can be used as a crude and cheap
 DAQ. The CPX can easily take temperature data and monitor the
 temperature in a greenhouse or take humidity readings of a plant to
 monitor soil content. Before we learn about the different sensors on
 board the CPX, we want to make sure we can store that data later
-rather than just having it spit data out via the serial monitor. For
-starters though let's get the CPX to print out something simple like
-button presses since we've touched on that already. The code I'm using
+rather than just having it spit data out via the serial monitor. In this chapter you're going to make a simple script that prints button presses and then log that in multiple different ways. The button presses are just a simple example but the same methods can be used to log any data you want from the CPX.
+</p>
+</introduction>
+<section xml:id="start">
+<title>Initial Setup</title>
+<p>For starters, let's get the CPX to print
+button presses. The code I'm using
 is shown below and can also be found on
 <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/button_presses.py">Github</url><xref ref="Github"/>.
 </p>
@@ -404,6 +392,18 @@ imports data from the <em>Test_Data.txt</em> file and then 6 and 7 save the
 first and second columns into time and button. The remaining lines
 plot the data and create x and y labels as well as a grid. Hopefully
 now you are well versed in taking data and plotting in Python.
+</p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+This is a pretty hard project to do with multiple different
+methods. After you've read through this document I suggest you watch
+a youtube I created on <url href="https://youtu.be/yX0zeIfn2j4">Logging Data with the Circuit Playground
+Express</url>. I have also made video where I <url href="https://www.youtube.com/watch?v=Vc7_KxRnORI">log temperature and
+accelerometer data using on board memory with the CircuitPlayground
+Bluefruit</url><xref ref="youtube"/>.
 </p>
 </section>
 

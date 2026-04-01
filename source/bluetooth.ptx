@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="bluetooth" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Bluetooth on the CircuitPlayground Bluefruit - Method 4</title>
-
-<section>
+<title>Bluetooth - Method 4</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Smart Phone</p></li>
@@ -12,50 +12,30 @@
 <li><p>USB Cable</p></li>
 <li><p>Laptop</p></li>
 </ol>
-</section>
-
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand the bluetooth module on the CircuitPlayground Bluefruit</p></li>
 <li><p>Learn how to send data via the Bluefruit to your smart phone</p></li>
 <li><p>Understand how to plot data sent via UART</p></li>
 </ol>
-</section>
-
-<section>
-<title>Extra Help</title>
+</list>
 <p>
-You might find plotting data via bluetooth to be rather difficult and
-it was pretty difficult for me until I learned that you can export
-data as a txt file rather than a csv file. Before I learned how to do
-that I put together
-a <url href="https://www.youtube.com/playlist?list=PL_D7_GvGz-v0-U3JACRMgldvqQqn2mje9">4
-part series</url> describing everything in this module. Worst case you can
-just watch
-the <url href="https://www.youtube.com/watch?v=9EHNFdVX9O8&amp;list=PL_D7_GvGz-v0-U3JACRMgldvqQqn2mje9&amp;index=3">third
-video in the series</url>. The video is 30 minutes but the first 8 minutes
-goes through setting up the bluetooth module and the rest of the video
-is just on plotting the exported csv data which took me some
-time. Note that exporting data as a txt file is the preferred method
-as parsing the file is way easier <xref ref="youtube"/>.
-</p>
-</section>
-
-<section>
-<title>Getting Started</title>
-<p>
-I mentioned in the DAQ project that there is technically a
-Method4. This is because with bluetooth you can send data from your
+I mentioned in the DAQ project that Method 4 can be used to log data by using bluetooth to send data from your
 phone to your Circuitplayground Bluefruit
-(CPB) and you can also send data to your smart phone. Once
+(CPB) and vice versa. Once
 the data is on your phone you can export the data to a text file. That
 basically means you can use the bluetooth module as another method to
 save data from the CPB. There is a lot you can do
-with bluetooth but the bottom line is that All
+with bluetooth but for starters all
 code required for this module is on
-my <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/CPB_DataLogger">Github</url>. First we're going to run
+my <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/CPB_DataLogger">Github</url>. This chapter walks through how to write some example bluetooth code and get the app to receive the data on your smart phone. </p>
+</introduction>
+<section>
+<title>Setup</title>
+<p>
+First we're going to run
 the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/CPB_DataLogger/bluefruit_uart_button.py">bluetooth_uart_button.py</url>
 script which sends button data to your smart phone via something called UART
 which is a type of serial communication. It's beyond the scope of this
@@ -161,6 +141,25 @@ spaces or use the np.loadtxt('buttonble.txt',delimiter=',')
 command. Plotting your button presses should be as simple as the
 previous lab thus plotting the button is left as an exercise to the
 reader.
+</p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+You might find plotting data via bluetooth to be rather difficult and
+it was pretty difficult for me until I learned that you can export
+data as a txt file rather than a csv file. Before I learned how to do
+that I put together
+a <url href="https://www.youtube.com/playlist?list=PL_D7_GvGz-v0-U3JACRMgldvqQqn2mje9">4
+part series</url> describing everything in this module. Worst case you can
+just watch
+the <url href="https://www.youtube.com/watch?v=9EHNFdVX9O8&amp;list=PL_D7_GvGz-v0-U3JACRMgldvqQqn2mje9&amp;index=3">third
+video in the series</url>. The video is 30 minutes but the first 8 minutes
+goes through setting up the bluetooth module and the rest of the video
+is just on plotting the exported csv data which took me some
+time. Note that exporting data as a txt file is the preferred method
+as parsing the file is way easier <xref ref="youtube"/>.
 </p>
 </section>
 
