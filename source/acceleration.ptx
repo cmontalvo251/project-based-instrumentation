@@ -2,8 +2,8 @@
 
 <chapter xml:id="acceleration" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Integrating Acceleration</title>
-
-<section>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>CPX/CPB</p></li>
@@ -12,21 +12,21 @@
 <li><p>Some sort of temporary adhesive</p></li>
 <li><p>Automobile</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Taking acceleration data of real systems</p></li>
 <li><p>Numerical Integration</p></li>
 <li><p>The dangers of integration bias</p></li>
 </ol>
-</section>
-
+</list>
+<p>The main goal for this lab is for you to secure your CPX/CPB on the dashboard of your car and take acceleration data while you accelerate and decelerate. You will then plot that data and integrate it to get velocity and position. You will also compare your results to GPS data taken on your phone using PhyPhox. This is a pretty fun lab and it's really cool to see the acceleration data coming from your car. It's also really interesting to see how the velocity and position plots look after integrating the acceleration data. You will probably be surprised at how bad the velocity and position plots look after integrating the acceleration data. This is because of bias in the accelerometer data which gets integrated as well and causes the velocity and position plots to drift over time. <alert>Note that you will be using a vehicle to do this lab and you should be very careful when doing this lab. Make sure to do this in a safe location and only accelerate to speeds you are comfortable with. I also require you to have a partner in the car with you while you take data so that you are not driving and taking data at the same time. I am not responsible for any damage done to your vehicle or anyone else because you are doing this project.</alert></p>
+</introduction>
 <section>
-<title>Getting Started</title>
+<title>Setup</title>
 <p>
-The code for this lab is to have the CPX log acceleration. So when you're done with this lab you will hopefully have a data file with 4 columjns of data: time, acceleration x, acceleration y, acceleration z. The code I'm using is the same as the lab on accelerometers (See <xref ref="modules"/>). I'm using method 1 for datalogging so I'm just having it print to Serial (See <xref ref="daq"/>).
+The code for this lab is to have the CPX log acceleration. So when you're done with this lab you will hopefully have a data file with 4 columns of data: time, acceleration x, acceleration y, acceleration z. The code I'm using is the same as the lab on accelerometers (See <xref ref="modules"/>). I'm using method 1 for datalogging so I'm just having it print to Serial (See <xref ref="daq"/>).
 </p>
 <figure>
   <image width="80%" source="accelerometer_code1.png" />
