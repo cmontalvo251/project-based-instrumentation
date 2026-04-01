@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="voltage" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Measuring Voltage Across a Potentiometer</title>
-
-<section>
+<title>Potentiometer</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -13,27 +13,28 @@
 <li><p>Resistor (the Ohms depends on how large your potentiometer is)</p></li>
 <li><p>Breadboard</p></li>
 </ol>
-</section>
-
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand voltage division of resistors in series</p></li>
 <li><p>Measure an analog signal on the CircuitPlayground</p></li>
 <li><p>Understand the binary measurement done by the analog to digital conversion (ADC)</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
-At this point you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is <m>2^{16}</m> hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about <url href="https://www.build-electronic-circuits.com/potentiometer/">potentiometers online if you wish</url><xref ref="potentiometerlearn"/>. Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some <url href="https://uk.rs-online.com/web/content/discovery/ideas-and-advice/potentiometers-guide">potentiometer examples</url>. I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the <url href="https://learn.adafruit.com/sensor-plotting-with-mu-and-circuitpython/potentiometer">figure below</url> (Courtesy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>) <xref ref="potentiometer"/>.
+At this point in a standard Instrumentation course, you've learned about analog to digital converters (ADC). It turns out that the CPX has 8 analog ports hooked up to a 3.3V logic 16 bit ADC. The input range on the ADC is 0 to 3.3V and the output range is 0 to 65536 which is <m>2^{16}</m> hence 16 bits. In order to get accustomed to the ADC on the CPX, we're going to do a simple example where we measure the voltage drop across a potentiometer. You can read about <url href="https://www.build-electronic-circuits.com/potentiometer/">potentiometers online if you wish</url><xref ref="potentiometerlearn"/>. Basically though, a potentiometer is a variable resistance resistor that changes resistance by turning a knob. The knob changes the connection point of a wire and thus the length of the wire. This in turn changes the resistance. Potentiometers come in all shapes and sizes. Here are some <url href="https://uk.rs-online.com/web/content/discovery/ideas-and-advice/potentiometers-guide">potentiometer examples</url>. I've done this lab with a few potentiometer. Ideally you'd like to have the potentiometer hooked up in series with another resistor so that you end up building a voltage divider but it' possible you can do it without it as shown in the <url href="https://learn.adafruit.com/sensor-plotting-with-mu-and-circuitpython/potentiometer">figure below</url> (Courtesy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>) <xref ref="potentiometer"/>.
 </p>
 <figure>
   <image width="80%" source="sensors_PlottingMuPotentiometer_bb.jpg" />
   <caption>Wiring Diagram of a Circuit Playground Express hooked up to a Potentiometer<xref ref="potentiometer"/></caption>
 </figure>
+<p>
+  In this chapter you're going to wire up a potentiometer to the CPX and read the voltage across it as you turn the knob. 
+</p>
+</introduction>
+<section>
+  <title>Setup</title>
 <p>
 Here's my circuit all hooked up without a resistor in series. Two legs are connected to 3.3V and GND while the middle leg of the potentiometer is connected to pin A2.
 </p>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="sdcard" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Logging Data to an SD Card - Method 5</title>
-
-<section>
+<title>SD Card Logging - Method 5</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>TBD</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>TBD</p></li>
 </ol>
-</section>
+</list>
+</introduction>
 
 <section>
-<title>Getting Started</title>
+<title>Initial Setup</title>
 <p>
 TBD
 </p>
@@ -26,7 +26,6 @@ TBD
 
 <section>
   <title>Assignment</title>
-  <introduction>
 <p>
 This project is similar to the Data Acquisition project only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
@@ -41,6 +40,5 @@ This project is similar to the Data Acquisition project only you must use method
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 </ol>
 
-</introduction>
 </section>
 </chapter>
