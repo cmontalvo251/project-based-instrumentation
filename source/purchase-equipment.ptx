@@ -2,34 +2,35 @@
 
 <chapter xml:id="purchase-equipment" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Purchase Equipment</title>
-
-<section>
-<title>Parts List</title>
-<ol>
-<li><p>Laptop with internet connectivity</p></li>
-<li><p>Credit/Debit Card to Purchase items</p></li>
-</ol>
-</section>
-
-<section>
-<title>Learning Objectives</title>
-<ol>
-<li><p>Understand the world of microcontrollers</p></li>
-<li><p>Learn about the Adafruit eco-system</p></li>
-<li><p>Learn about the Circuit Playground Express/Bluefruit</p></li>
-</ol>
-</section>
-
-<section>
-<title>CircuitPython Kit</title>
-<p>
-In this class you're going to build some circuits that will enhance
+  <introduction>
+  <list>
+  <title>Parts List</title>
+  <ol>
+  <li><p>Laptop with internet connectivity</p></li>
+  <li><p>Credit/Debit Card to Purchase items</p></li>
+  </ol>
+  </list>
+  <list>
+  <title>Learning Objectives</title>
+  <ol>
+  <li><p>Understand the world of microcontrollers</p></li>
+  <li><p>Learn about the Adafruit eco-system</p></li>
+  <li><p>Learn about the Circuit Playground Express/Bluefruit</p></li>
+  </ol>
+  </list>
+  <p>In this class you're going to build some circuits that will enhance
 your learning experience. Rather than just solving problems by hand
 you're going to take and analyze data. Over the summer of 2020, I
 began to work with Tangibles that Teach and at the time they bundled
 all components together. Unfortunately, that company has gone out of
 business and as such for the time being you must build the kit
-yourself. Here is a list of all the components in the kit
+yourself. This project is all about what parts you need to complete the subsequent chapters and what to purchase to get started.</p>
+  </introduction>
+
+<section>
+<title>CircuitPython Kit</title>
+<p>
+Here is a list of all the components in the kit
 
 <ol>
 <li><p>Circuit Playground Bluefruit or Express + Included USB Cable</p></li>
