@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="imu" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Inertial Measurement Unit - Accelerometer, Rate Gyro, Magnetometer</title>
-
-<section>
+<title>Inertial Measurement Unit</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -14,9 +14,8 @@
 <li><p>Bread Board</p></li>
 <li><p>Soldering iron</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>See and understand the concept of soldering</p></li>
@@ -24,10 +23,7 @@
 <li><p>Learn the components of an IMU (Accelerometer, Rate Gyro, Magnetometer)</p></li>
 <li><p>Read IMU data and plot</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
 In this lab we're going to use this an external sensor to measure angular velocity and the magnetic field of the surrounding environment.
 </p>
@@ -36,14 +32,18 @@ In this lab we're going to use this an external sensor to measure angular veloci
   <caption>Inertial Measurement Unit (IMU) without header pins soldered</caption>
 </figure>
 <p>
-The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url><xref ref="AdafruitMAIN"/>. You basically have 2 separate microchips in one. The first (LSM6DS33) is a 3-axis accelerometer and 3-axis rate gyro. The first measures acceleration and the second measures angular velocity. The LIS3MDL is a 3-axis magnetometer which measures magnetic fields. The three of these sensors put together (accelerometer, rate gyro, magnetometer) is called an IMU (Inertial Measurement Unit). It's actually possible to measure roll and pitch of an airplane and heading using the magnetometer. Combining the angular velocity of the rate gyro can create a complete attitude estimation algorithm for spacecraft. This sensor does not come standard in the current iteration of the kit. You can purchase one on Adafruit for only $10 at the time of this writing. The interesting thing about this device is that you can actually purchase the LSM6DS33 and LIS3MDL separately but this breakout board has both chips on board. The goal of this lab is not necessarily to use this specific sensor but to understand IMUs and I2C protocol. Most if not all breakout boards on the Adafruit website use I2C communication. You'll know if the breakout board uses I2C if you find SDA/SCL pins on the board. It will also say it in the quick description of the sensor.
+The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url><xref ref="AdafruitMAIN"/>. You basically have 2 separate microchips in one. The first (LSM6DS33) is a 3-axis accelerometer and 3-axis rate gyro. The first measures acceleration and the second measures angular velocity. The LIS3MDL is a 3-axis magnetometer which measures magnetic fields. The three of these sensors put together (accelerometer, rate gyro, magnetometer) is called an IMU (Inertial Measurement Unit). It's actually possible to measure roll and pitch of an airplane using the accelerometer and heading using the magnetometer. Combining the angular velocity of the rate gyro can create a complete attitude estimation algorithm for six-degree-of-freedom vehicles (6DOF). This sensor does not come standard in the current iteration of the kit but you can purchase one on Adafruit for only $10 at the time of this writing. The interesting thing about this device is that you can actually purchase the LSM6DS33 and LIS3MDL separately but this breakout board has both chips on board. The goal of this lab is not only to use this specific sensor but to understand IMUs and I2C protocol.Most if not all breakout boards on the Adafruit website use I2C communication. You'll know if the breakout board uses I2C if you find SDA/SCL pins on the board. It will also say it in the quick description of the sensor.
 </p>
 <figure>
   <image width="73%" source="imu2.png" />
   <caption>IMU on Adafruit</caption>
 </figure>
 <p>
-When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <term>solder the header pins to the sensor</term>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
+ </p>
+</introduction>
+<section>
+  <title>Wiring and Software</title>
+<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <term>solder the header pins to the sensor</term>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="73%" source="sensors_python_feather_wiring_breadboard.png" />
