@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="second-order" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Natural Frequency and Damping of a Second Order System and Issues with Aliasing</title>
-
-<section>
+<title>Second Order Systems and Aliasing</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -10,9 +10,8 @@
 <li><p>USB Cable</p></li>
 <li><p>Some sort of oscillating system like a swinging pendulum or vibrating ruler</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Learn the basic form of a second order system</p></li>
@@ -21,10 +20,7 @@
 <li><p>Applied Estimation of a Second Order system</p></li>
 <li><p>Understand the pitfalls of aliasing</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
 A second order system undergoing free motion will have dynamics that look like this
 <men>
@@ -44,14 +40,9 @@ In this case, the solution to the above equation can be solved using <url href="
   \zeta = \frac{\sigma}{\omega_n}
 </men>
 </p>
-
 <p>
 Looking at the equations you can see that if the time series of the oscillations are known, the damping constant and damped natural frequency can be obtained. These two values can be combined to obtain the natural frequency and the damping ratio. So let's get some data.
 </p>
-</section>
-
-<section>
-<title>Oscillatory Ideas</title>
 <p>
 What I'd like you to do for this lab is to find some sort of parameter that varies in some sort of sinusoidal way. I've come up with a few ideas below. You may pick anyone you want although some are easier than others.
 
@@ -62,14 +53,13 @@ What I'd like you to do for this lab is to find some sort of parameter that vari
 <li><p>Build a Pendulum: If you decide to build a pendulum, you need to hang a weight on the CPX or attach the CPX to something heavy. This will make the ratio between cable to end mass much smaller and thus better for data and fitting. An example includes  duct taping your CPX to a water bottle or something. It would also be better to use a string and mount the CPX to the string with an external battery pack and have the CPX log data internally. This way most of the mass would be concentrated at the tip of the pendulum. Another idea is to take a paper towel cardboard tube and tape the cpx inside it with the cable running through it. Then duct a large weight on the end of the paper towel tube and then hinge the top of the tube by skewering a screwdriver through it. This will allow the tube to swing like a pendulum rather than the string.</p></li>
 </ol>
 </p>
-
 <p>
 There are most likely many other options so try and get creative and find something oscillatory or dynamic in some way. Try to find something that changes relatively quickly. The temperature outside changes in a sinusoidal fashion but it's so slow it would take you days to do this experiment.
 </p>
-</section>
+</introduction>
 
 <section>
-<title>Pendulum Example</title>
+<title>Setup Pendulum Example</title>
 <p>
 In this example I'm going to swing a pendulum in the X/Y plane of the accelerometer sensor so that I can ignore the Z axis data. I'm going to get the actual angle of the pendulum but if you're building something else you can ignore this part. In order to convert the accelerometer values to pitch angle, I'm going to use the same equations discussed in the accelerometer lab (See <xref ref="accelerometer"/>)
 </p>
@@ -81,12 +71,15 @@ Remember, on the CPX/CPB specifically you'll want to import the math module and 
   <caption>Oscillations shown from atan2 measurement of accelerometer in Mu</caption>
 </figure>
 <p>
-If I then bring this into Python I get the following plot below. In my data set I only logged the angle. Since the time step between each point was 0.01 seconds I was able to just create a time series. It's pretty clear that there is some nonlinearity in the data so I chose to start the data at 0.5 seconds. Another thing I noticed was that the angle settled out to around 8 degrees so I chose to subtract off that bias from the angle data.
+If I then bring this into Python I get the following plot below. In my data set I only logged the angle. Since the time step between each point was 0.01 seconds I was able to create a time series. It's pretty clear that there is some nonlinearity in the data so I chose to start the data at 0.5 seconds. Another thing I noticed was that the angle settled out to around 8 degrees so I chose to subtract off that bias from the angle data.
 </p>
 <figure>
   <image width="73%" source="oscillation_plots.png" />
   <caption>Oscillation data plotted in Thonny</caption>
 </figure>
+</section>
+<section>
+<title>Estimating Parameters</title>
 <p>
 After trimming the data and removing some bias it was time to get my damping constant and damped natural frequency. There are a few equations that can help you obtain these parameters. First, the settling time is the length of time it takes for the oscillations to settle. The settling time can be used to find the damping constant. This is equal to:
 <men>

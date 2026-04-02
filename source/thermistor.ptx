@@ -2,17 +2,16 @@
 
 <chapter xml:id="thermistor" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Time Constant of a Thermistor</title>
-
-<section>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 <li><p>Laptop</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Learn the basic form of a first order system</p></li>
@@ -20,12 +19,9 @@
 <li><p>Understand settling time and how that effects engineering</p></li>
 <li><p>Applied Estimation of a First Order system</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
-  For this lab we're going to use the thermistor located on Pin A9. In a previous lab we measured the analog signal from the pin and also used the <em>adafruit_thermistor.py</em> module that converts the voltage from the thermistor to celsius (See <xref ref="temperature-sensor"/>).
+  For this lab we're going to use the thermistor located on Pin A9 of the CPX/CPB. In a previous lab we measured the analog signal from the pin and also used the <em>adafruit_thermistor.py</em> module that converts the voltage from the thermistor to celsius (See <xref ref="temperature-sensor"/>).
 </p>
 <p>
 For this lab though, we're not only going to measure the temperature from the thermistor, we're going to analyze the dynamics of the thermistor and how it responds to an abrupt change in temperature. It is said that a themistor can be modeled as a first order system. The basic form of a first order system can be shown below.
@@ -53,43 +49,39 @@ The only question now of course is what is the solution <m>T(t)</m> or rather th
 </p>
 
 <p>
-Looking at the equation now you can see some properties right away. When <m>t=0</m>, the first term reduces to <m>(T_0-T_f)</m> which means the initial temperature is <m>T_0</m> or the initial temperature. When <m>t\rightarrow\infty</m>, the first term drops to zero and thus the temperature is <m>T_f</m> or final temperature.
+Looking at the equation now you can see some properties right away. When <m>t=0</m>, the first term reduces to <m>(T_0-T_f)</m> which means the initial temperature is <m>T_0</m> or the initial temperature. When <m>t\rightarrow\infty</m>, the first term drops to zero and thus the temperature is <m>T_f</m> or final temperature. In this lab we're going to get the time constant of the <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url> on board the CPX<xref ref="thermistor-wikipedia"/>. If you take data on the CPX and walk outside or place the thermistor directly into a fridge, the temperature change will not be immediate. In order to estimate the time constant of a thermistor you need to change the temperature somehow. Blelow are some ideas for how to change the temperature of the CPX/CPB. You can do one or more of these methods to get data for this lab but you're only required to pick one.
+<ol>
+<li><p>Start logging data and then place the CPX into the fridge</p></li>
+<li><p>Put the CPX into the fridge and then pull the CPX out of the fridge and watch the temperature return to ambient</p></li>
+<li><p>Walk outside on a hot (or cold) day and watch the CPX change temperature due to your A/C.</p></li>
+<li><p>Walk inside and watch the CPX get warmer (or colder) as your HVAC changes the CPX temperature.</p></li>
+<li><p>Use a hair dryer to heat up the CPX and then watch it cool down.</p></li>
+</ol>
 </p>
-</section>
+</introduction>
 
 <section>
-<title>Temperature Change Ideas</title>
+<title>Initial Setup</title>
 <p>
-In this lab we're going to get the time constant of the <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url> on board the CPX<xref ref="thermistor-wikipedia"/>. If you take data on the CPX and walk outside or place the thermistor directly into a fridge, the temperature change will not be immediate. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. <url href="https://learn.adafruit.com/thermistor/circuitpython">The Adafruit Learn system</url> does a bit of work to explain the conversion from voltage to temperature<xref ref="Adafruit"/>. My version of the code is also on my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">Github</url><xref ref="Github"/>.
+There is no wiring diagram for this project because we're using the thermistor that's already on the CPX/CPB. The code to read the thermistor is pretty simple and is shown below. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. <url href="https://learn.adafruit.com/thermistor/circuitpython">The Adafruit Learn system</url> does a bit of work to explain the conversion from voltage to temperature and is also explained in <xref ref="temperature-sensor"/><xref ref="Adafruit"/>. My version of the code is also on my <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">Github</url><xref ref="Github"/>.
 </p>
 <figure>
   <image width="73%" source="thermistor.png" />
   <caption>Read thermistor data code in CircuitPython</caption>
 </figure>
-<p>
-For this lab in order to estimate the time constant of a thermistor you need to change the temperature somehow.
-
-<ol>
-<li><p>Start logging data and then place the CPX into the fridge</p></li>
-<li><p>Put the CPX into the fridge and then pull the CPX out of the fridge and watch the temperature return to ambient</p></li>
-<li><p>Walk outside on a hot (or cold) day and watch the CPX change temperature due to your A/C</p></li>
-<li><p>Walk inside and watch the CPX get warmer (or colder) as your HVAC changes the CPX temperature.</p></li>
-</ol>
-
-</p>
 </section>
 
 <section>
-<title>Estimating Time Constant</title>
+<title>Estimating the Time Constant</title>
 <p>
-I did the first two examples and plotted both data sets in the same script as shown below. I opted to use method 1 (see <xref ref="daq">chapter</xref>) from the datalogging project and just have the data print to Serial and then unplug the CPX when I'm done taking data and copy and paste the data into a text file.
+I did the first two examples (using a fridge) and plotted both data sets in the same script as shown below. I opted to use method 1 (see <xref ref="daq">chapter</xref>) from the datalogging project and just have the data print to Serial and then unplug the CPX when I'm done taking data and copy and paste the data into a text file.
 </p>
 <figure>
   <image width="73%" source="thermistor_plots.png" />
   <caption>Heating and cooling examples plotted in Thonny</caption>
 </figure>
 <p>
-At this point it's possible to get the time constant by remember that the settling time (time it takes the temperature to settle out) is equal to 4 times the time constant (<m>\tau</m>) and thus the time constant is the settling time divided by 4. After computing the settling time for both data sets and overlaying the equations on the measured data I get these two plots.
+At this point it's possible to get the time constant by remembering that the settling time (time it takes the temperature to settle out) is equal to 4 times the time constant (<m>\tau</m>) and thus the time constant is the settling time divided by 4. After computing the settling time for both data sets and overlaying the equations on the measured data I get these two plots.
 </p>
 <figure>
   <image width="73%" source="thermistor_plots2.png" />

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="servo" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Servo Calibration (PulseWidthModulation(PWM) =
-  f(angle)) and Feedback Control</title>
-
-<section>
+<title>Servo Control</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>CPX/CPB</p></li>
@@ -14,9 +13,8 @@
 <li><p>servo</p></li>
 <li><p>Alligator clips (x3)</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand what a PWM signal is and how it affects a servo</p></li>
@@ -26,19 +24,24 @@
 <li><p>Learn the fundamental concepts of feedback control</p></li>
 <li><p>Learn how to Combine two codes (servo code and accelerometer code into one)</p></li>
 </ol>
-</section>
-
-<section xml:id="servo-calibration">
-<title>Getting Started</title>
+</list>
 <p>
-For this lab we are going to learn how to drive a <url href="https://www.adafruit.com/product/1143">servo</url><xref ref="AdafruitMAIN"/>. Servos accept what are called PWM signals which are basically square waves of varying frequency. The servo itself has a microprocessor on board that turns a DC motor based on the incoming PWM frequency which is typically called a duty cycle. The DC motor runs through some gear to rotate a shaft. Because of this rotation, you can make a number of things move! Servos are used for all sorts of things, opening doors, deflecting control surfaces on RC aircraft and many more! The neat thing about PWM signals is that they can not only move servos but they can also drive speed controllers to turn 3 phase motors and even change the light intensity of LEDs. Servos typically come in two different color schemes as shown below.
+For this lab we are going to learn how to drive a <url href="https://www.adafruit.com/product/1143">servo</url><xref ref="AdafruitMAIN"/>. Servos accept what are called Pulse-Width-Modulation(PWM) signals which are basically square waves of varying frequency. The servo itself has a microprocessor on board that turns a DC motor based on the incoming PWM frequency which is typically called a duty cycle. The DC motor runs through some gears to rotate a shaft. Because of this rotation, you can make a number of things move! Servos are used for all sorts of things, opening doors, deflecting control surfaces on RC aircraft and many more. The neat thing about PWM signals is that they can not only move servos but they can also drive electronic speed controllers (ESCs) to turn 3 phase motors and even change the light intensity of LEDs. Servos typically come in two different color schemes as shown below.
 </p>
 <figure>
   <image width="80%" source="servo.jpeg" />
   <caption>Example servos</caption>
 </figure>
 <p>
-As you can see, servos have 3 pins (GND, PWR, SIGNAL). A wiring diagram of a servo connected to the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo">CPX/CPB</url> is shown below (Couresy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>)<xref ref="Adafruit"/>.
+The servo on the right is a micro servo and the one on the left is a standard servo. The micro servo is smaller and typically has less torque than the standard servo. For this lab you can use either one but I recommend using the micro servo since it draws less current and thus is less likely to cause your CPX to brown out. If you have a standard servo you may want to consider powering it with an external power supply instead of the CPX. The wiring for both servos is the same so it doesn't matter which one you use.
+</p>
+<p>
+For this lab we are going to first learn how to change the PWM frequency on the CPX/CPB and turn the servo. Then we are going to experimentally find the limits of the servo and create a calibration curve to relate servo angle (deg) to PWM signal (ms). Finally, we are going to use the accelerometer on the CPX/CPB to measure pitch and roll (See <xref ref="accelerometer"/>) and use that information to feedback to the servo. This is a very common control problem in aerospace engineering and is a great example of how to combine different pieces of code together to create a more complex piece of software.</p>
+</introduction>
+
+<section xml:id="servo-setup">
+  <title>Servo Setup</title>
+<p>As can be easily seen when you look at the servo, servos have 3 pins (GND, PWR, SIGNAL). A wiring diagram of a servo connected to the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo">CPX/CPB</url> is shown below (Couresy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="80%" source="circuitpython_CPXServo_bb.jpg" />
@@ -56,7 +59,7 @@ The brown or black wire is GND, the red wire needs to go to a 5V signal so for t
 </p>
 
 <p>
-As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the <url href="https://learn.adafruit.com/using-servos-with-circuitpython/overview">Adafruit Learn system</url><xref ref="Adafruit"/>. I also have a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Servo/servo.py">simple servo.py script</url> on Github<xref ref="Github"/>. In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You'll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals. I did this project myself and <url href="https://youtu.be/ynlGiPZk5VM">posted a YouTube video about it</url><xref ref="youtube"/>.
+As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the <url href="https://learn.adafruit.com/using-servos-with-circuitpython/overview">Adafruit Learn system</url><xref ref="Adafruit"/>. I also have a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Servo/servo.py">simple servo.py script</url> on Github<xref ref="Github"/>. In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You'll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals. 
 </p>
 
 <p>
@@ -66,6 +69,9 @@ Besides making the servo move back and forth I'd like you to vary the pulses on 
   <image width="80%" source="servo_code.png" />
   <caption>CircuitPython code to move a servo</caption>
 </figure>
+</section>
+<section xml:id="servo-calibration">
+  <title>Servo Calibration</title>
 <p>
 If you notice, sending a pulse signal in microseconds moved the servo to a specific angle. Thing is I would like to be able to move the servo to a specific angle rather than having to just guess and check like we did in the last lab. So what we're going to do is start at the minimum pulse signal you computed in the last project and then change the servo pulse in equal increments until we reach the maximum servo pulse signal. When I did this lab I found that 0.6 ms was just about the smallest I could get the servo to move. We're going to call this 0 degrees. My maximum pulse signal ended up being about 2.4 ms. So I want you to test 10 different points between your specific maximum and minimum value which will hopefully be different for all of you. Everytime you test a pulse I want to measure the angle the servo makes with the minimum value being 0 degrees. Create a table of data with two columns. In the first column put pulse in milliseconds and in the second column put angle of servo in degrees. Use a protractor to measure the angle. <url href="https://www.youtube.com/watch?v=XSLzcwTOsWk">If you don't have a protractor make one</url> or you can download a picture and hold your servo up to the screen<xref ref="youtube"/>. I did this project with just 3 data points and here are my data points. Again you need to have around 10 data points.
 </p>
@@ -328,6 +334,11 @@ Now that the dynamics are written, the second order equation can be integrated u
   </p>
 </subsection>
 </section>
+
+<section>
+  <title>Extra Help</title>
+  <p>If you're having trouble with this lab, I did the calibration part of the project myself and <url href="https://youtu.be/ynlGiPZk5VM">posted a YouTube video about it</url><xref ref="youtube"/>.</p>
+</section>  
 
 <section>
   <title>Assignment</title>
