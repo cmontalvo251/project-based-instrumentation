@@ -34,11 +34,11 @@ The pitot probe has two pressure taps that measure static (ambient) pressure and
 <men>
   \Delta P_{kPa} = V_{pitot} - 2.5
 </men>
-remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url><xref ref="youtube"/>. To measure wind speed you can use a variation of Bernoulli's principle. Note it is necessary to convert the pressure <m>P</m> from kilopascals (kPa) to Pascals (Pa) by multiplying by <m>1000</m> before using it in this formula.
+remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. To measure wind speed you can use a variation of Bernoulli's principle. Note it is necessary to convert the pressure <m>P</m> from kilopascals (kPa) to Pascals (Pa) by multiplying by <m>1000</m> before using it in this formula.
 <me>
   U = \sqrt{\frac{2 \Delta P_{Pa}}{\rho}}
 </me>
-where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the differential pressure (in Pascals), and <m>\rho=1.225~kg/m^3</m> is the density of air. I've done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url><xref ref="youtube"/>. <term> There is a typo in the video. V1 is supposed to have a sqrt())</term>. As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment?srsltid=AfmBOoqrja9WFwnJNLPOLxPEG5mRa1XqM8iP86s0ZYy5Qb1aSA-GpU0D">Joshua Hrisko</url>)<xref ref="pitot-author"/>.
+where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the differential pressure (in Pascals), and <m>\rho=1.225~kg/m^3</m> is the density of air. As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment?srsltid=AfmBOoqrja9WFwnJNLPOLxPEG5mRa1XqM8iP86s0ZYy5Qb1aSA-GpU0D">Joshua Hrisko</url>)<xref ref="pitot-author"/>.
 <figure>
   <image width="73%" source="Arduino+MPXV7002DP+Wiring+for+Differential+Pressure+Measurement.png"/>
   <caption>Arduino connected to a pressure transducer<xref ref="pitot-author"/></caption>
@@ -75,12 +75,18 @@ The goal of the experiment is to take pitot probe data for 15 seconds with no wi
   <caption>Example pitot probe data showing fan off/on/off scenario</caption>
 </figure>
 <p>
-The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a <url href="https://youtu.be/zTGa4sk6UZE">complementary filter</url> is probably a good idea provided you don't over filter the signal and run into <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> (See <xref ref="aliasing"/>)<xref ref="youtube"/>. You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m/s. It turns out that pitot probes are actually not very accurate lower than about 2 m/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.
+The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a complementary filter is probably a good idea provided you don't over filter the signal and run into aliasing issues (See <xref ref="aliasing"/>). You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m/s. It turns out that pitot probes are actually not very accurate lower than about 2 m/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.
 </p>
 <figure>
   <image width="73%" source="pitot_probe_final.png" />
   <caption>Example windspeed data showing complementary filter in Thonny</caption>
 </figure>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url>. That may help you figure out how to subtract off the bias of your initial pitot probe data. I've also done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url>. <term> There is a typo in the video though. V1 is supposed to have a sqrt())</term>. I also have a video about <url href="https://youtu.be/zTGa4sk6UZE">complementary filters</url> and another about <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> <xref ref="youtube"/>.</p>
 </section>
 
 <section>

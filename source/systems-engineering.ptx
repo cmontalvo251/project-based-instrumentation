@@ -103,7 +103,7 @@
   <subsection xml:id="diagrams">
     <title>Diagrams</title>
       <p>
-      Upon completion of the initial sketch and the requirements it is now time to move away from a mission goal with requirements and begin the conceptual design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <url href="https://www.drawio.com/">DrawIO</url> to create these diagrams and I have a tutorial on <url href="https://youtu.be/G-vQ3v1j7ZU">creating BDDs and IBDs in DrawIO</url> <xref ref="youtube"/><xref ref="drawio"/>.  
+      Upon completion of the initial sketch and the requirements it is now time to move away from a mission goal with requirements and begin the conceptual design process. This requires using the requirements to figure out what components and modules are necessary to accomplish the system you are trying to build. In order to do this, many diagrams are going to be created namely Block Definition Diagrams (BDDs) and Internal Block Diagrams (IBDs). I am going to be using <url href="https://www.drawio.com/">DrawIO</url> to create these diagrams<xref ref="drawio"/>.  
       </p>
   </subsection> 
   <subsection>
@@ -160,7 +160,7 @@
         <image source="Connections_Diagram.jpg" width="90%"/>
         <caption>Connections Diagram for Bike Project</caption>
       </figure>
-      For the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. The flowchart created for this pitot probe bike project is shown below. I have youtube tutorial where I <url href="https://www.youtube.com/watch?v=FSF-TeceGQ8">create this psuedo code flow chart</url><xref ref="youtube"/>. 
+      For the software lead it is important to create psuedo code in the form of a software flow chart. These charts are something that is often overlooked but can be very helpful in the design process. The flowchart created for this pitot probe bike project is shown below. 
       <figure xml:id="pitot-psuedo-code">
         <image source="Psuedo_Code_FlowChart.jpg" width="90%"/>
         <caption>Psuedo Code Flow Chart for Bike Project</caption>
@@ -170,7 +170,7 @@
   </subsection>
   <subsection xml:id="detailed-design">
     <title>Detailed Design</title>
-    <p>Once the conceptual and preliminary design phase is over it is time to create the detailed design. The detailed design needs to be so detailed that anyone following the design on paper to turn the system into a reality just by reading all of the schematics. Thus, for the mechanical lead, some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with. I have a youtube tutorial on <url href="https://www.youtube.com/watch?v=l4JhueUcw4U">how to create an airplane in Blender</url> which you could easily adapt to anything else<xref ref="blender"/><xref ref="solidworks"/><xref ref="autodesk"/><xref ref="youtube"/>. For the electrical lead on the team, wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKit Designer</url> or <url href="https://fritzing.org/">Fritzing</url><xref ref="cirkit"/><xref ref="fritzing"/>. I also have another youtube tutorial on <url href="https://www.youtube.com/watch?v=xZ-j7GbpLV0">how to make a simple circuit in Cirkit Designer</url><xref ref="youtube"/>. CAD and wiring diagram examples will not be shown in this chapter simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself.</p>
+    <p>Once the conceptual and preliminary design phase is over it is time to create the detailed design. The detailed design needs to be so detailed that anyone following the design on paper to turn the system into a reality just by reading all of the schematics. Thus, for the mechanical lead, some sort of CAD (Computer Aided Design) tool is necessary for dimensioned drawings and detailed schematics. In this case I recommend using your favourite CAD program such as <url href="https://www.blender.org/">Blender</url>, <url href="https://www.solidworks.com/">SolidWorks</url>, <url href="https://www.autodesk.com/products/fusion-360">Fusion 360</url> or anything you're comfortable with <xref ref="blender"/><xref ref="solidworks"/><xref ref="autodesk"/>. For the electrical lead on the team, wiring diagrams are necessary and I recommend using either <url href="https://app.cirkitdesigner.com/">CirKit Designer</url> or <url href="https://fritzing.org/">Fritzing</url><xref ref="cirkit"/><xref ref="fritzing"/>. CAD and wiring diagram examples will not be shown in this chapter simply because numerous examples of wiring diagrams are shown in virtually every weekly project and 3D CAD is the subject of an entire course in and of itself.</p>
     <p>For the software lead it is time to figure out what software is required to run each component. For example, the pitot probe as explained in <xref ref="pitot"/> is an analog sensor which means you need the <em>analogio</em> module. The neopixels need the <em>neopixel</em>. This process must be repeated for every component to be sure that you have all the modules necessary to run the program. Although this is a lot of work it helps tremendously later on in the subsystem testing phase. In this case the list below contains all the modules I need to run this system<xref ref="CircuitPython"/>.
     <ol>
       <li><url href="https://docs.circuitpython.org/en/latest/shared-bindings/time/">time</url> - for the clock</li>
@@ -180,7 +180,7 @@
       <li><url href="https://docs.circuitpython.org/projects/neopixel/en/latest/">neopixel</url> - for the neopixels</li>
       <li><url href="https://circuitpython.org/">CircuitPython</url> - for the main programming language</li>
     </ol>
-    Notice that I didn't need anything for the battery since that's just hardware. An interesting corollary is that it's actually possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot of the psuedo code flowchart to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. In the youtube tutorial I discussed previously, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.
+    Notice that I didn't need anything for the battery since that's just hardware. An interesting corollary is that it's actually possible to create a software flow chart that is so good that at the time of this writing if you upload the screenshot of the psuedo code flowchart to Gemini it will give you the actual code for it in any language you like<xref ref="gemini"/>. In the youtube tutorial discussed in <xref ref="sys-eng-extra-help"/>, I show how to do this but for the sake of this book I will show the code that was generated from the flow chart.
     <pre>
     import math
     import time
@@ -370,5 +370,9 @@
     <p>
     This is just one example of how to use the systems engineering life cycle to design and build a project. The same process can be applied to any project and can be used to help ensure that the project is successful. The key is to follow the process and not skip any steps. By following the process, you can ensure that your project is well designed, well built and meets all of its requirements. Hopefully this example gets you excited about the CPX/CPB and the entire Adafruit ecosystem as well as a quick preview of what they can do. Hopefully you enjoy the following chapters which details individual weekly projects geared to help you learn simple sensors and electrical components that you can piece together and build your own DIY electro-mechanical system.</p>
   </subsection>
+</section>
+<section xml:id="sys-eng-extra-help">
+<title>Extra Help</title>
+<p>I have a youtube tutorial on <url href="https://www.youtube.com/watch?v=l4JhueUcw4U">how to create an airplane in Blender</url> which you could easily adapt to anything else if you're having trouble making 3D objects. I similarly, have a tutorial on <url href="https://youtu.be/G-vQ3v1j7ZU">creating BDDs and IBDs in DrawIO</url> I also have a youtube tutorial where I <url href="https://www.youtube.com/watch?v=FSF-TeceGQ8">create a psuedo code flow chart</url> just like the chart in this chapter. Finally, I have another youtube tutorial on <url href="https://www.youtube.com/watch?v=xZ-j7GbpLV0">how to make a simple circuit in Cirkit Designer</url><xref ref="youtube"/>.</p>
 </section>
 </chapter>

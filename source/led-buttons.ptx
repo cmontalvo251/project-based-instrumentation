@@ -64,8 +64,7 @@ also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows
 <caption>Fritzing diagram of an Arduino Metro hooked up to an LED <xref ref="Metro"/></caption>
 </figure>
 <p>
-If you're not familiar with how breadboards work I would recommend watching this <url href="https://www.youtube.com/watch?v=mE33WpRWrXs">video on how
-breadboards work</url><xref ref="youtube"/>. Your lab today specifically involves an external
+Your lab today specifically involves an external
 LED as shown above. You can read about
 <url href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/">LEDs</url>
 more online if you wish<xref ref="sparkfun"/>. <term>Remember that the long leg of the LED is
@@ -216,6 +215,13 @@ it's all just soldered to the PCB so you don't have to build it using
 a breadboard. Hopefully now you have some appreciation for buttons and
 LEDs!!
 </p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+If you're not familiar with how breadboards work I would recommend watching this <url href="https://www.youtube.com/watch?v=mE33WpRWrXs">video on how
+breadboards work</url><xref ref="youtube"/>.</p>
 </section>
 
 <section>

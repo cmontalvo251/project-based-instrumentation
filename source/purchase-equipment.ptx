@@ -51,9 +51,7 @@ Here is a list of all the components in the kit
 
 <p>
 Below is also a photo of all the components listed above. When you get
-your kit familiarize yourself with all of the components. I created
-an <url href="https://youtu.be/6sNNQrhnzLE">unboxing video on Youtube</url>
-for you to take a look <xref ref="youtube"/>. The hardware kit is a collection of multiple
+your kit familiarize yourself with all of the components. The hardware kit is a collection of multiple
 items. At the time of this writing the entire kit cannot be purchased
 however the CircuitPlayground Express (CPX) can be purchased on
 Adafruit <xref ref="AdafruitMAIN"/>. A photo of the kit is shown in the figure below. The photo shows the CPX on the left inside it's
@@ -83,6 +81,12 @@ does not have an infrared sensor but does contain bluetooth
 functionality to send data wirelessly to the Adafruit Connect App
 which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 </p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>I created an <url href="https://youtu.be/6sNNQrhnzLE">unboxing video on Youtube</url>
+for you to take a look and see the actual hardware as I talk about each piece of equipment<xref ref="youtube"/>.</p>
 </section>
 
 <section>

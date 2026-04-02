@@ -69,7 +69,7 @@ Besides making the servo move back and forth I'd like you to vary the pulses on 
 <section xml:id="servo-calibration">
   <title>Servo Calibration</title>
 <p>
-If you notice, sending a pulse signal in microseconds moved the servo to a specific angle. Thing is I would like to be able to move the servo to a specific angle rather than having to just guess and check like we did in the last lab. So what we're going to do is start at the minimum pulse signal you computed in the last project and then change the servo pulse in equal increments until we reach the maximum servo pulse signal. When I did this lab I found that 0.6 ms was just about the smallest I could get the servo to move. We're going to call this 0 degrees. My maximum pulse signal ended up being about 2.4 ms. So I want you to test 10 different points between your specific maximum and minimum value which will hopefully be different for all of you. Everytime you test a pulse I want to measure the angle the servo makes with the minimum value being 0 degrees. Create a table of data with two columns. In the first column put pulse in milliseconds and in the second column put angle of servo in degrees. Use a protractor to measure the angle. <url href="https://www.youtube.com/watch?v=XSLzcwTOsWk">If you don't have a protractor make one</url> or you can download a picture and hold your servo up to the screen<xref ref="youtube"/>. I did this project with just 3 data points and here are my data points. Again you need to have around 10 data points.
+If you notice, sending a pulse signal in microseconds moved the servo to a specific angle. Thing is I would like to be able to move the servo to a specific angle rather than having to just guess and check like we did in the last lab. So what we're going to do is start at the minimum pulse signal you computed in the last project and then change the servo pulse in equal increments until we reach the maximum servo pulse signal. When I did this lab I found that 0.6 ms was just about the smallest I could get the servo to move. We're going to call this 0 degrees. My maximum pulse signal ended up being about 2.4 ms. So I want you to test 10 different points between your specific maximum and minimum value which will hopefully be different for all of you. Everytime you test a pulse I want to measure the angle the servo makes with the minimum value being 0 degrees. Create a table of data with two columns. In the first column put pulse in milliseconds and in the second column put angle of servo in degrees. Use a protractor to measure the angle. If you don't have a protractor you can actually build one or just pull up a protractor on your computer screen and use that. I did this project with just 3 data points and here are my data points. Again you need to have around 10 data points.
 </p>
 <table xml:id="table-servo-calibration">
   <title>Example Data taken for Calibration of Servo</title>
@@ -93,7 +93,7 @@ If you notice, sending a pulse signal in microseconds moved the servo to a speci
   </tabular>
 </table>
 <p>
-Take your table of data and put it into a spreadsheet and save the data as a CSV or simply put your data into a text file. Since I only had 3 data points I just put them into a text file. Plot the data in Python on your desktop computer with servo angle on the x-axis and duty cycle on the y axis. Using the data, determine if the data set is linear, quadratic or cubic. Fit a trend line to the data and plot your trend line on top of the data. <url href="https://www.youtube.com/watch?v=4vYYPHRMdqM&amp;feature=youtu.be">If you need help with trend lines in Python you can watch this video I posted on Youtube</url><xref ref="youtube"/>. I also made a helpful <url href="https://github.com/cmontalvo251/Python/blob/master/instrumentation/book_problems/least_squares_regression.py">python script with some fictitious data on Github</url> that fits the data with linear and quadratic fits<xref ref="Github"/>. Here is my data plotted alongside the trendline in Python. I sort of made up the data and made it perfect on purpose so my trendline is perfect. Yours will not be so perfect.
+Take your table of data and put it into a spreadsheet and save the data as a CSV or simply put your data into a text file. Since I only had 3 data points I just put them into a text file. Plot the data in Python on your desktop computer with servo angle on the x-axis and duty cycle on the y axis. Using the data, determine if the data set is linear, quadratic or cubic. Fit a trend line to the data and plot your trend line on top of the data. I made a helpful <url href="https://github.com/cmontalvo251/Python/blob/master/instrumentation/book_problems/least_squares_regression.py">python script with some fictitious data on Github</url> that fits the data with linear and quadratic fits<xref ref="Github"/>. Here is my data plotted alongside the trendline in Python. I sort of made up the data and made it perfect on purpose so my trendline is perfect. Yours will not be so perfect.
 </p>
 <figure>
   <image width="80%" source="trendline.png" />
@@ -132,9 +132,7 @@ to drive the <q>state</q> of a <q>system</q> to a desired <q>command</q> by send
   <caption>Simple feedback control block diagram</caption>
 </figure>
 <p>
-In this figure, R is the reference signal or the commanded signal. The reference signal feeds into a summation block where the reference signal is substracted from the measured signal. The measured signal is the output of the H block which represents the sensor. The output of the summation block is the error signal E. The error signal feeds into the controller C and outputs the control signal U to the plant system G. The output of the plant G is Y or the state. The state Y feeds into the sensor block H to measure this signal and out the measured signal to the summation block. I explain this in much more detail in a
-<url href="https://www.youtube.com/watch?v=PAK5V8wzVXY&amp;list=PL_D7_GvGz-v30U58EUUOdJGgO4u75DXoB&amp;index=1">controls
-overview Youtube video</url><xref ref="youtube"/>.
+In this figure, R is the reference signal or the commanded signal. The reference signal feeds into a summation block where the reference signal is substracted from the measured signal. The measured signal is the output of the H block which represents the sensor. The output of the summation block is the error signal E. The error signal feeds into the controller C and outputs the control signal U to the plant system G. The output of the plant G is Y or the state. The state Y feeds into the sensor block H to measure this signal and out the measured signal to the summation block.
 </p>
 </introduction>
 <subsection>
@@ -333,7 +331,9 @@ Now that the dynamics are written, the second order equation can be integrated u
 
 <section>
   <title>Extra Help</title>
-  <p>If you're having trouble with this lab, I did the calibration part of the project myself and <url href="https://youtu.be/ynlGiPZk5VM">posted a YouTube video about it</url><xref ref="youtube"/>.</p>
+  <p>If you're having trouble with this lab, I did the calibration part of the project myself and <url href="https://youtu.be/ynlGiPZk5VM">posted a YouTube video about it</url>.If you need help with trend lines in Python you can watch this video where I  <url href="https://www.youtube.com/watch?v=4vYYPHRMdqM&amp;feature=youtu.be">create a regression line</url>. There is a video about <url href="https://www.youtube.com/watch?v=XSLzcwTOsWk">making a protractor with paper</url> if you don't have one.  I explain feedback control in much more detail in a
+<url href="https://www.youtube.com/watch?v=PAK5V8wzVXY&amp;list=PL_D7_GvGz-v30U58EUUOdJGgO4u75DXoB&amp;index=1">controls
+overview Youtube video</url> if you'd like to learn more about Control Theory <xref ref="youtube"/>.</p>
 </section>  
 
 <section>

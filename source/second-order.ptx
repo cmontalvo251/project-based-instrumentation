@@ -125,6 +125,12 @@ In this case you can see that there were 33 cycles in 10 seconds which is 3.3 Hz
 </section>
 
 <section>
+<title>Extra Help</title>
+<p>
+I have an accompanying youtube video where I discuss <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> which might help you better understand aliasing in general<xref ref="youtube"/>.</p>
+</section>
+
+<section>
 <title>Assignment</title>
 <introduction>	
 <p>

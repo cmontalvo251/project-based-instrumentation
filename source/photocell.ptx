@@ -77,11 +77,7 @@ flashlight as your third light source. With the three
 different data streams, create a histogram of the data with
 appropriate labels and compute the mean, median, and standard
 deviation of the data
-stream. <url href="https://www.youtube.com/watch?v=bfeJfAWTqzY&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=22&amp;t=0s">Creating
-a histogram in Python is fairly simple and I have a Youtube Video</url> to
-supplement this tutorial. I also have another video where I
-get <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=20&amp;t=0s">mean
-and median values for accelerometer data</url><xref ref="youtube"/>. Still, here is my example
+stream. Here is my example
 code showing code to get mean, median, and standard deviation as well
 as create the histogram. Notice in my code I imported the statistics
 module to compute the mode. Although it worked in my code, it's not
@@ -147,6 +143,16 @@ pdf = 1.0/(s*np.sqrt(2*np.pi))*np.exp((-(x-mu)**2)/(2.0*s**2)) * (s*np.sqrt(2*np
 <p>
 The equations above make a time series from +-3 standard deviations from the mean and then plot the PDF of a normal Gaussian distribution. The only extra thing you have to do is multiply by (s*np.sqrt(2*np.pi)) * 72 which first causes the height of the PDF to be 1 and then multiply by 72 which again is the height of the histogram which will be different for your system.
 </p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+<url href="https://www.youtube.com/watch?v=bfeJfAWTqzY&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=22&amp;t=0s">Creating
+a histogram in Python</url> is fairly simple as explained above but I have a Youtube Vide to
+supplement this tutorial. I also have another video where I
+get <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=20&amp;t=0s">mean
+and median values for accelerometer data</url><xref ref="youtube"/>.</p>
 </section>
 
 <section>

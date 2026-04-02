@@ -46,7 +46,7 @@ two IDEs. They are explained in the next two sections. I recommend getting eithe
 <section>
 <title>Thonny</title>
 <p>
-Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> is a great, easy, simple and lightweight IDE that I've been using for year. The figure below is a screenshot of what Thonny looks like with a sine graph plotted. I also have a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install</url> it. <xref ref="youtube"/>
+Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> is a great, easy, simple and lightweight IDE that I've been using for year. The figure below is a screenshot of what Thonny looks like with a sine graph plotted. 
 </p>
 <figure>
 <image width="73%" source="Thonny.png" />
@@ -57,7 +57,7 @@ Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thon
 <section>
 <title>Spyder</title>
 <p>
-Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> is a powerful IDE that is widely used in the scientific Python community. The figure below is a screenshot of what Spyder looks like with a sine graph plotted. I also have a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install</url> it. <xref ref="youtube"/>
+Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> is a powerful IDE that is widely used in the scientific Python community. The figure below is a screenshot of what Spyder looks like with a sine graph plotted. 
 </p>
 <figure>
 <image width="73%" source="Spyder.png" />
@@ -125,9 +125,8 @@ module.
 <section>
 <title>Scripting</title>
 <p>
-Once you have numpy and matplotlib it's time to make a plot. I have a
-pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> but if
-you prefer text I will walk through a simple example <xref ref="youtube"/>.
+Once you have numpy and matplotlib it's time to make a plot. Here is a simple example
+you prefer text I will walk through a simple example.
 </p>
 <figure>
 <image width="50%" source="matplotlib_example.png" />
@@ -218,6 +217,13 @@ Google which is also another way to learn information although when I
 want to find information quickly I just use the documentation. It's
 the best in my opinion.
 </p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>
+If you need extra help with this assignment I have a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install Thonny </url> as well as a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install Spyder</url>. I also have a
+pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> <xref ref="youtube"/>.</p>
 </section>
 
 <section>

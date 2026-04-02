@@ -138,4 +138,8 @@
      <li><p>Are you editing a file on your computer? Make sure you are writing to the CIRCUITPY drive.</p></li>
     </ol>
   </section>
+  <section>
+  <title>Extra Help</title>
+  <p>I have a youtube video where I <url href="https://www.youtube.com/watch?v=xVMPgU5z9gE">update the bootloader on a CPB</url><xref ref="youtube"/> That may help you if you're having trouble following the bootloader tutorial above.</p>
+  </section>
 </chapter>

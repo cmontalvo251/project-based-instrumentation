@@ -57,8 +57,7 @@ also subtracted the first data point from each accelerometer axis to
 zero it out and subtract off the bias. Since I took some data for a
 bit before I started moving I could have averaged the first few data
 points to obtain the
-bias. <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">I've
-done this in a Youtube video if you're unsure what I mean</url><xref ref="youtube"/>. Instead
+bias. Instead
 just to get something working properly I went ahead and just used the
 first data point.
 </p>
@@ -92,6 +91,11 @@ set. Make sure to understand what each filter does and think about how
 it applies to your data set otherwise your code may throw an error due
 to the differences in your data set.</term>
 </p>
+</section>
+
+<section>
+<title>Extra Help</title>
+<p>I explain how to get <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">mean and standard deviation on Youtube</url> if you need help subtracting the bias from your data<xref ref="youtube"/>.</p>
 </section>
 
 <section>

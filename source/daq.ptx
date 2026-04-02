@@ -373,8 +373,7 @@ remainder of the semester. Whatever option you choose though will
 provide you with a data file that you can read in Python on your
 desktop computer to plot. The simplest way to import data is by using
 the loadtxt function from the module numpy. Here is some very simple
-code to plot data from a text file. I also have a <url href="https://www.youtube.com/watch?v=tJOz-ty-2ec&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=12">Youtube video
-explaining how to plot a text file</url> if you'd rather watch something <xref ref="youtube"/>.
+code to plot data from a text file. 
 </p>
 
 <p>
@@ -403,7 +402,8 @@ methods. After you've read through this document I suggest you watch
 a youtube I created on <url href="https://youtu.be/yX0zeIfn2j4">Logging Data with the Circuit Playground
 Express</url>. I have also made video where I <url href="https://www.youtube.com/watch?v=Vc7_KxRnORI">log temperature and
 accelerometer data using on board memory with the CircuitPlayground
-Bluefruit</url><xref ref="youtube"/>.
+Bluefruit</url>. Finally, I also have a <url href="https://www.youtube.com/watch?v=tJOz-ty-2ec&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=12">Youtube video
+explaining how to plot a text file</url><xref ref="youtube"/>.
 </p>
 </section>
 
