@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="photocell" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Histograms and Normal Distribution of Photocell Readings</title>
-
-<section>
+<title>Statistics using Photocells</title>
+<introduction>
+<list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
@@ -14,22 +14,21 @@
 <li><p>Alligator Clips (x3)</p></li>
 <li><p>Breadboard</p></li>
 </ol>
-</section>
-
-<section>
+</list>
+<list>
 <title>Learning Objectives</title>
 <ol>
 <li><p>Understand how a photocell responds to light level by measuring the voltage across the photocell in different light conditions</p></li>
 <li><p>Learn how to create histograms of a noisy data signal</p></li>
 <li><p>Understand mean and standard deviation and how that applies to Normal distributions.</p></li>
 </ol>
-</section>
-
-<section>
-<title>Getting Started</title>
+</list>
 <p>
-In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <xref ref="light-sensor"/>). The only difference between <xref ref="light-sensor"/> and this lab is that you're going to use an external photocell which means you need to build your own voltage divider circuit.
+In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <xref ref="light-sensor"/>). The only difference between <xref ref="light-sensor"/> and this lab is that you're going to use an external photocell which means you need to build your own voltage divider circuit. Once you have the photocell wired up to the CPX/CPB you can use the same code as the potentiometer lab to take data and then plot that data in Python on your desktop computer. The second part of this lab is to take 1000 data points at three different light levels and create a histogram of the data as well as compute the mean, median, and standard deviation of the data. Finally, you are going to superimpose a Gaussian distribution on top of your histogram to see how close your data is to a normal distribution. This will be a good exercise in understanding the noise in your system and how that noise is distributed.
 </p>
+</introduction>
+<section>
+<title>Wiring the Photocell and Taking Data</title>
 <p>
 Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
 <figure>
@@ -65,10 +64,12 @@ Once you've gotten some example data you can plot the result in Python as you di
   <image width="73%" source="photocell_plots.png" />
   <caption>Photocell data plotted in Thonny</caption>
 </figure>
+</section>
+<section>
+<title>Statistics of your Data</title>
 <p>
-If you noticed the data you obtained even when the light source was
-constant was quite noisy. What I'd like you to do for part 2 of this
-lab is take 100 data points with the photocell with as constant of a
+If you allow the light source to be constant you'll notice that the data is quite noisy. What I'd like you to do for part 2 of this
+lab is take 1000 data points with the photocell with as constant of a
 light source as possible. Do this for three different light
 ranges. Low Light, ambient light and then sunlight if you're
 outside. If you're completing this assignment late you can use a
@@ -93,31 +94,7 @@ compute the mode if you so desire.
   <caption>Histogram of photocell data</caption>
 </figure>
 <p>
-Again make sure to convert to voltage before you plot that way you can see what the noise level is in volts. Notice that I import the data and convert to voltage all in one line. However, note that my text file only has 1 column of data. It's possible your data has time in the first column and light value in the second column at which point you will need to extract the second column first and then convert to voltage. If you have two columns of data you'll need to add a few things. First, don't convert to voltage when you import the data.
-</p>
-<pre>
-data = np.loadtxt(‘Light_Hist_Data.txt')
-</pre>
-<p>
-Then extract the second column (assuming your photocell readings are in that column)
-</p>
-<pre>
-second_column = data[:,1]
-</pre>
-<p>
-Finally convert to voltage
-</p>
-<pre>
-voltage = second_column*3.3/2.0**16
-</pre>
-<p>
-Then replace data in the rest of your code with voltage. Remember to remove st.mode since it does not work all ofthe time for continuous data sets.
-</p>
-</section>
-
-<section>
-<title>Throwing Out Outliers</title>
-<p>
+Again make sure to convert to voltage and then Lux before you plot that way you can see what the noise level is in volts and Lux. 
 When I ran this experiment for a second time my CPX started and stopped 3 separate times. You'll see in the time series plot below that the voltage dipped in the first set and the second data set had some weird bumps probably from me changing tabs on my chrome tab. The photocell was close to my computer so that effected it. Thankfully the 3rd data set looked pretty good.
 </p>
 <figure>
@@ -157,10 +134,6 @@ Once I did all that clean up I was able to get a nice time series plot of my dat
   <image width="73%" source="histogram_good.png" />
   <caption>Photocell data plotted as a histogram with Gaussian Distribution plotted on top</caption>
 </figure>
-</section>
-
-<section>
-<title>Normal Distribution</title>
 <p>
 I also was able to plot the Normal Gaussian Distribution on top of the histogram. You can see that in the left plot in orange. The code to do that is shown below where the 72 in the plot is the "height" of the histogram. Note that your histogram will have a different height and you will need to get that specifically from your plot.
 </p>
