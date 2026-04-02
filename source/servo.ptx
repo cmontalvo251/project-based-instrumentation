@@ -37,10 +37,6 @@ The servo on the right is a micro servo and the one on the left is a standard se
 </p>
 <p>
 For this lab we are going to first learn how to change the PWM frequency on the CPX/CPB and turn the servo. Then we are going to experimentally find the limits of the servo and create a calibration curve to relate servo angle (deg) to PWM signal (ms). Finally, we are going to use the accelerometer on the CPX/CPB to measure pitch and roll (See <xref ref="accelerometer"/>) and use that information to feedback to the servo. This is a very common control problem in aerospace engineering and is a great example of how to combine different pieces of code together to create a more complex piece of software.</p>
-</introduction>
-
-<section xml:id="servo-setup">
-  <title>Servo Setup</title>
 <p>As can be easily seen when you look at the servo, servos have 3 pins (GND, PWR, SIGNAL). A wiring diagram of a servo connected to the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-servo">CPX/CPB</url> is shown below (Couresy of <url href="https://learn.adafruit.com/u/kattni">Kattni Rembor</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
@@ -48,27 +44,27 @@ For this lab we are going to first learn how to change the PWM frequency on the 
   <caption>Wiring diagram of a servo connected to a CircuitPlayground Express<xref ref="servo-wiring"/></caption>
 </figure>
 <p>
-The brown or black wire is GND, the red wire needs to go to a 5V signal so for the CPX it needs to go to the VOUT pin and the yellow or white wire is the signal wire which need to go to an analog port on the CPX that supports PWM signals. Which ones support PWM signals? <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts">Adafruit Learn</url> has a great description of which pins support PWM signals but as a quick check you can use the following analog pins: A1, A2, A3, A6 and A7. In my circuit I just picked pin A2 since I've been using it so much in the past<xref ref="Adafruit"/>.
+The brown or black wire is GND, the red wire needs to go to a 5V signal so for the CPX it needs to go to the VOUT pin and the yellow or white wire is the signal wire which need to go to an analog port on the CPX that supports PWM signals. Which ones support PWM signals? <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts">Adafruit Learn</url> has a great description of which pins support PWM signals but as a quick check you can use the following analog pins: A1, A2, A3, A6 and A7.<xref ref="Adafruit"/>.
 </p>
+</introduction>
+<section>
+<title>Moving the Servo</title>
+<p>
+To start, make sure you follow the wiring diagram in the introduction and wire up your servo to the CPX/CPB. In my circuit I just picked pin A2 since I've been using it so much in the past. <term>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues.</term>
 <figure>
   <image width="80%" source="servo_circuit.jpeg" />
   <caption>Photo of a servo connected to a CircuitPlayground Express</caption>
 </figure>
-<p>
-<term>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues.</term>
-</p>
-
-<p>
-As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the <url href="https://learn.adafruit.com/using-servos-with-circuitpython/overview">Adafruit Learn system</url><xref ref="Adafruit"/>. I also have a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Servo/servo.py">simple servo.py script</url> on Github<xref ref="Github"/>. In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You'll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals. 
-</p>
-
-<p>
-Besides making the servo move back and forth I'd like you to vary the pulses on line 16 <em>SLOWLY</em> until the servo can't move any farther. This line of code is a for loop which loops through the array currently showing <em>[0.8,2.0].</em> If you change that array to <em>[0.9,1.2,1.5,1.8]</em> the servo will move to a pulse in milliseconds of <em>0.9, 1.2, 1.5 and then 1.8</em>. The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number <em>[0.8]</em> the servo will just move to 1 angle and stay there forever. <term>NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY</term>.
-</p>
+As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the <url href="https://learn.adafruit.com/using-servos-with-circuitpython/overview">Adafruit Learn system</url><xref ref="Adafruit"/>. I also have a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Servo/servo.py">simple servo.py script</url> on Github<xref ref="Github"/>. 
 <figure>
   <image width="80%" source="servo_code.png" />
   <caption>CircuitPython code to move a servo</caption>
 </figure>
+In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You'll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals. 
+</p>
+<p>
+Besides making the servo move back and forth I'd like you to vary the pulses on line 16 <em>SLOWLY</em> until the servo can't move any farther. This line of code is a for loop which loops through the array currently showing <em>[0.8,2.0].</em> If you change that array to <em>[0.9,1.2,1.5,1.8]</em> the servo will move to a pulse in milliseconds of <em>0.9, 1.2, 1.5 and then 1.8</em>. The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number <em>[0.8]</em> the servo will just move to 1 angle and stay there forever. <term>NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY</term>.
+</p>
 </section>
 <section xml:id="servo-calibration">
   <title>Servo Calibration</title>

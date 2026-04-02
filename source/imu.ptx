@@ -20,12 +20,12 @@
 <ol>
 <li><p>See and understand the concept of soldering</p></li>
 <li><p>Understand the I2C protocol at a high level</p></li>
-<li><p>Learn the components of an IMU (Accelerometer, Rate Gyro, Magnetometer)</p></li>
+<li><p>Learn the components of an Inertial Measurement Unit (IMU) (Accelerometer, Rate Gyro, Magnetometer)</p></li>
 <li><p>Read IMU data and plot</p></li>
 </ol>
 </list>
 <p>
-In this lab we're going to use this an external sensor to measure angular velocity and the magnetic field of the surrounding environment.
+In this lab we're going to use an Inertial Measurement Unit (IMU) sensor to measure angular velocity and the magnetic field of the surrounding environment.
 </p>
 <figure>
   <image width="73%" source="imu.jpeg" />
