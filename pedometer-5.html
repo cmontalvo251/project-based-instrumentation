@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Gathering Accelerometer Data</title>
+<title>Computing Number of Steps: Online</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -153,7 +153,7 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="Preface.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-descripion.html" class="internal"><span class="codenumber">2</span> <span class="title">Course Description</span></a></div></li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="systems-engineering.html" class="internal"><span class="codenumber">3</span> <span class="title">Project Based Engineering and the Systems Engineering Life Cycle</span></a></div>
+<div class="toc-title-box"><a href="systems-engineering.html" class="internal"><span class="codenumber">3</span> <span class="title">Project Based Engineering</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="project-overview.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Project Schedule</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="requirements.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Specific Final Project Requirements</span></a></div></li>
@@ -177,38 +177,32 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="purchase-equipment.html" class="internal"><span class="codenumber">4</span> <span class="title">Purchase Equipment</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-2.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">4.3</span> <span class="title">CircuitPython Kit</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-5.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-3.html" class="internal"><span class="codenumber">4.1</span> <span class="title">CircuitPython Kit</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="purchase-equipment-4.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">5</span> <span class="title">Download Python for Desktop</span></a></div>
+<div class="toc-title-box"><a href="download-python.html" class="internal"><span class="codenumber">5</span> <span class="title">Python</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-2.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Thonny</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Spyder</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Other Options</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Setting up your IDE</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Scripting</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">5.8</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-10.html" class="internal"><span class="codenumber">5.9</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-3.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Thonny</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-4.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Spyder</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-5.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Other Options</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-6.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Setting up your IDE</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-7.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Scripting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-8.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Built-In Help Function and dir()</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="download-python-9.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">6</span> <span class="title">Getting Started with the CPX/CPB</span></a></div>
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">6</span> <span class="title">Setting up the CPX/CPB</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-2.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-3.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Setting up your Circuit Playground</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">6.4</span> <span class="title">TL;DR</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-setup.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">TL;DR</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">7</span> <span class="title">Installing Modules and Troubleshooting your CPX/CPB</span></a></div>
+<div class="toc-title-box"><a href="troubleshooting.html" class="internal"><span class="codenumber">7</span> <span class="title">Help</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="troubleshooting-3.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Updating your Bootloader</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="installing-modules.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Installing Modules</span></a></div></li>
@@ -220,150 +214,124 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="led-buttons.html" class="internal"><span class="codenumber">8</span> <span class="title">External LEDs and Push Buttons</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-2.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">8.4</span> <span class="title">LED with no Code</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">8.5</span> <span class="title">LED with a push button</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">8.6</span> <span class="title">LED with code</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-8.html" class="internal"><span class="codenumber">8.7</span> <span class="title">LED with CPX button</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-9.html" class="internal"><span class="codenumber">8.8</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-3.html" class="internal"><span class="codenumber">8.1</span> <span class="title">LED with no Code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-4.html" class="internal"><span class="codenumber">8.2</span> <span class="title">LED with a push button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-5.html" class="internal"><span class="codenumber">8.3</span> <span class="title">LED with code</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-6.html" class="internal"><span class="codenumber">8.4</span> <span class="title">LED with CPX button</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="led-buttons-7.html" class="internal"><span class="codenumber">8.5</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">9</span> <span class="title">Using the CPX/CPB as a Data Acquisition System (DAQ)</span></a></div>
+<div class="toc-title-box"><a href="daq.html" class="internal"><span class="codenumber">9</span> <span class="title">Logging Data</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-2.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-3.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">9.8</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">9.9</span> <span class="title">Method 5 - Logging Data to an SD Card</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">9.10</span> <span class="title">Plotting Logged Data</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-12.html" class="internal"><span class="codenumber">9.11</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="start.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Initial Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Method 1 - Copying Serial Monitor Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-5.html" class="internal"><span class="codenumber">9.3</span> <span class="title">Method 2 - Automatically Populate a Spreadsheet</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-6.html" class="internal"><span class="codenumber">9.4</span> <span class="title">Method 3 - Logging Data Directly to on board memory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-7.html" class="internal"><span class="codenumber">9.5</span> <span class="title">Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-8.html" class="internal"><span class="codenumber">9.6</span> <span class="title">Method 5 - Logging Data to an SD Card</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-9.html" class="internal"><span class="codenumber">9.7</span> <span class="title">Plotting Logged Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-10.html" class="internal"><span class="codenumber">9.8</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="daq-11.html" class="internal"><span class="codenumber">9.9</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">10</span> <span class="title">Bluetooth on the CircuitPlayground Bluefruit - Method 4</span></a></div>
+<div class="toc-title-box"><a href="bluetooth.html" class="internal"><span class="codenumber">10</span> <span class="title">Bluetooth Logging - Method 4</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-2.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-6.html" class="internal"><span class="codenumber">10.5</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-3.html" class="internal"><span class="codenumber">10.1</span> <span class="title">Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-4.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="bluetooth-5.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">11</span> <span class="title">Logging Data to an SD Card - Method 5</span></a></div>
+<div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">11</span> <span class="title">SD Card Logging - Method 5</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-2.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-5.html" class="internal"><span class="codenumber">11.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Initial Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">12</span> <span class="title">Measuring Voltage Across a Potentiometer</span></a></div>
+<div class="toc-title-box"><a href="voltage.html" class="internal"><span class="codenumber">12</span> <span class="title">Potentiometer</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-2.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">12.4</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-6.html" class="internal"><span class="codenumber">12.5</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-3.html" class="internal"><span class="codenumber">12.1</span> <span class="title">Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-4.html" class="internal"><span class="codenumber">12.2</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="voltage-5.html" class="internal"><span class="codenumber">12.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">13</span> <span class="title">Wind Speed from Pitot Probe</span></a></div>
+<div class="toc-title-box"><a href="pitot.html" class="internal"><span class="codenumber">13</span> <span class="title">Pitot Probe</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-2.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-3.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">13.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-5.html" class="internal"><span class="codenumber">13.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="setup.html" class="internal"><span class="codenumber">13.1</span> <span class="title">Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pitot-4.html" class="internal"><span class="codenumber">13.2</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">14</span> <span class="title">Circuit Playground (CPX/CPB) Built-In Sensors</span></a></div>
+<div class="toc-title-box"><a href="modules.html" class="internal"><span class="codenumber">14</span> <span class="title">Built-In Sensors</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-2.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">14.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Getting Started</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">14.5</span> <span class="title">Low Level Control</span></a></div>
+<div class="toc-title-box"><a href="modules-3.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Low Level Control</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#light-sensor" class="internal"><span class="codenumber">14.5.1</span> <span class="title">Light</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#modules-6-3" class="internal"><span class="codenumber">14.5.2</span> <span class="title">Sound</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#temperature-sensor" class="internal"><span class="codenumber">14.5.3</span> <span class="title">Temperature</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-6.html#accelerometer" class="internal"><span class="codenumber">14.5.4</span> <span class="title">Accelerometer</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-3.html#light-sensor" class="internal"><span class="codenumber">14.1.1</span> <span class="title">Light</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-3.html#modules-3-3" class="internal"><span class="codenumber">14.1.2</span> <span class="title">Sound</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-3.html#temperature-sensor" class="internal"><span class="codenumber">14.1.3</span> <span class="title">Temperature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="modules-3.html#accelerometer" class="internal"><span class="codenumber">14.1.4</span> <span class="title">Accelerometer</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-7.html" class="internal"><span class="codenumber">14.6</span> <span class="title">High Level Control</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-8.html" class="internal"><span class="codenumber">14.7</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-4.html" class="internal"><span class="codenumber">14.2</span> <span class="title">High Level Control</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-5.html" class="internal"><span class="codenumber">14.3</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="modules-6.html" class="internal"><span class="codenumber">14.4</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="acceleration.html" class="internal"><span class="codenumber">15</span> <span class="title">Integrating Acceleration</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-2.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-3.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-4.html" class="internal"><span class="codenumber">15.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-5.html" class="internal"><span class="codenumber">15.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-3.html" class="internal"><span class="codenumber">15.1</span> <span class="title">Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="acceleration-4.html" class="internal"><span class="codenumber">15.2</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="pedometer.html" class="internal"><span class="codenumber">16</span> <span class="title">Building a Pedometer using an Accelerometer</span></a></div>
+<div class="toc-title-box"><a href="pedometer.html" class="internal"><span class="codenumber">16</span> <span class="title">Pedometer</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-2.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-3.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-4.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="pedometer-5.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Gathering Accelerometer Data</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-6.html" class="internal"><span class="codenumber">16.5</span> <span class="title">Computing Number of Steps: Post-Processing</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-7.html" class="internal"><span class="codenumber">16.6</span> <span class="title">Computing Number of Steps: Online</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-8.html" class="internal"><span class="codenumber">16.7</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-3.html" class="internal"><span class="codenumber">16.1</span> <span class="title">Gathering Accelerometer Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-4.html" class="internal"><span class="codenumber">16.2</span> <span class="title">Computing Number of Steps: Post-Processing</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="pedometer-5.html" class="internal"><span class="codenumber">16.3</span> <span class="title">Computing Number of Steps: Online</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pedometer-6.html" class="internal"><span class="codenumber">16.4</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">17</span> <span class="title">Inertial Measurement Unit - Accelerometer, Rate Gyro, Magnetometer</span></a></div>
+<div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">17</span> <span class="title">Inertial Measurement Unit</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-2.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">17.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-5.html" class="internal"><span class="codenumber">17.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">17.1</span> <span class="title">Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">17.2</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="photocell.html" class="internal"><span class="codenumber">18</span> <span class="title">Histograms and Normal Distribution of Photocell Readings</span></a></div>
+<div class="toc-title-box"><a href="photocell.html" class="internal"><span class="codenumber">18</span> <span class="title">Statistics using Photocells</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-2.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-3.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-4.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-5.html" class="internal"><span class="codenumber">18.4</span> <span class="title">Throwing Out Outliers</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-6.html" class="internal"><span class="codenumber">18.5</span> <span class="title">Normal Distribution</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-7.html" class="internal"><span class="codenumber">18.6</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-3.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Taking Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-4.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Statistics of your Data</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="photocell-5.html" class="internal"><span class="codenumber">18.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="servo.html" class="internal"><span class="codenumber">19</span> <span class="title">Servo Calibration (PulseWidthModulation(PWM) = f(angle)) and Feedback Control</span></a></div>
+<div class="toc-title-box"><a href="servo.html" class="internal"><span class="codenumber">19</span> <span class="title">Servo Control</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-2.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-3.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-calibration.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Getting Started</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-3.html" class="internal"><span class="codenumber">19.1</span> <span class="title">Moving the Servo</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-calibration.html" class="internal"><span class="codenumber">19.2</span> <span class="title">Servo Calibration</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="servo-5.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Feedback Control</span></a></div>
+<div class="toc-title-box"><a href="servo-5.html" class="internal"><span class="codenumber">19.3</span> <span class="title">Feedback Control</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-3" class="internal"><span class="codenumber">19.4.1</span> <span class="title">Example Feedback Control System</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#second-order-dynamics" class="internal"><span class="codenumber">19.4.2</span> <span class="title">Second Order Pitch Dynamics</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-5" class="internal"><span class="codenumber">19.4.3</span> <span class="title">First Order Velocity Dynamics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-3" class="internal"><span class="codenumber">19.3.1</span> <span class="title">Example Feedback Control System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#second-order-dynamics" class="internal"><span class="codenumber">19.3.2</span> <span class="title">Second Order Pitch Dynamics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-5.html#servo-5-5" class="internal"><span class="codenumber">19.3.3</span> <span class="title">First Order Velocity Dynamics</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="servo-6.html" class="internal"><span class="codenumber">19.4</span> <span class="title">Extra Help</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="servo-6.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Assignment</span></a></div>
+<div class="toc-title-box"><a href="servo-7.html" class="internal"><span class="codenumber">19.5</span> <span class="title">Assignment</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-3" class="internal"><span class="codenumber">19.5.1</span> <span class="title">Part 1</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-6.html#servo-6-4" class="internal"><span class="codenumber">19.5.2</span> <span class="title">Part 2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-7.html#servo-7-3" class="internal"><span class="codenumber">19.5.1</span> <span class="title">Part 1</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="servo-7.html#servo-7-4" class="internal"><span class="codenumber">19.5.2</span> <span class="title">Part 2</span></a></div></li>
 </ul>
 </li>
 </ul>
@@ -371,24 +339,18 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="thermistor.html" class="internal"><span class="codenumber">20</span> <span class="title">Time Constant of a Thermistor</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-2.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-3.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-4.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-5.html" class="internal"><span class="codenumber">20.4</span> <span class="title">Temperature Change Ideas</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-6.html" class="internal"><span class="codenumber">20.5</span> <span class="title">Estimating Time Constant</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-7.html" class="internal"><span class="codenumber">20.6</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-3.html" class="internal"><span class="codenumber">20.1</span> <span class="title">Initial Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-4.html" class="internal"><span class="codenumber">20.2</span> <span class="title">Estimating the Time Constant</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="thermistor-5.html" class="internal"><span class="codenumber">20.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="second-order.html" class="internal"><span class="codenumber">21</span> <span class="title">Natural Frequency and Damping of a Second Order System and Issues with Aliasing</span></a></div>
+<div class="toc-title-box"><a href="second-order.html" class="internal"><span class="codenumber">21</span> <span class="title">Second Order Systems and Aliasing</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-2.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Parts List</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-3.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Learning Objectives</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-4.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Getting Started</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-5.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Oscillatory Ideas</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-6.html" class="internal"><span class="codenumber">21.5</span> <span class="title">Pendulum Example</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="aliasing.html" class="internal"><span class="codenumber">21.6</span> <span class="title">Aliasing</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-8.html" class="internal"><span class="codenumber">21.7</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-3.html" class="internal"><span class="codenumber">21.1</span> <span class="title">Setup Pendulum Example</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-4.html" class="internal"><span class="codenumber">21.2</span> <span class="title">Estimating Parameters</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="aliasing.html" class="internal"><span class="codenumber">21.3</span> <span class="title">Aliasing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="second-order-6.html" class="internal"><span class="codenumber">21.4</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -408,14 +370,14 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="pedometer-5"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gathering Accelerometer Data</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computing Number of Steps: Online</span>
 </h2>
-<div class="para" id="pedometer-5-2">First we need to make sure we can gather accelerometer data. The low level accelerometer code is relatively simple and is explained in the Modules lab (<a href="modules.html" class="internal" title="Chapter 14: Circuit Playground (CPX/CPB) Built-In Sensors">Chapter 14</a>). In order to gather the accelerometer data while running you’ll need to be able to operate the CPB/CPX untethered from a computer. This means you have to use Method 3,4 or 5 (See <a href="daq.html" class="internal" title="Chapter 9: Using the CPX/CPB as a Data Acquisition System (DAQ)">Chapter 9</a>, <a href="bluetooth.html" class="internal" title="Chapter 10: Bluetooth on the CircuitPlayground Bluefruit - Method 4">Chapter 10</a> or <a href="sdcard.html" class="internal" title="Chapter 11: Logging Data to an SD Card - Method 5">Chapter 11</a>. Remember that Method 1 and 2 require a computer and running with a computer would be difficult if not impossible. Method 3 requires a lot of setup to log data directly to the disk and Method 5 needs extra hardware. So, for this lab we will just use the Bluetooth module to send data directly to your phone. Note that if you have a CPX you will have to use Method 3 or 5. The best way to do this experiment is with a partner. Have the CPB/CPX measure acceleration and place the entire device with a battery pack inside the runners pocket. Then have your partner connect to the CPB with the Adafruit Connect app and log data using the UART and Export to txt function. Remember not to run too far because the Bluetooth signal distance is only about 30 feet. See if you can combine the Bluetooth code and the acceleration code into one code to send time and the 3-axis accelerometer data. If you’re still having trouble, code for this lab can be found on <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/pedometer" target="_blank">Github</a><a href="backmatter-1.html#Github" class="xref" data-knowl="./knowl/xref/Github.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 33">[33]</a>. Note if you have a CPX you will need to combine the accelerometer code with the Method 3 version of data logging.<div class="autopermalink" data-description="Paragraph"><a href="#pedometer-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="pedometer-5-2">The benefit of post-processing in Python is that the CPX/CPB run a almost identical derivative of Python called CircuitPython. This means that almost any line of code used in Python can be copied directly onto the CPX/CPB as shown in the Figure below.<div class="autopermalink" data-description="Paragraph"><a href="#pedometer-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="pedometer-5-3">Running the CPX/CPB untethered does require a few extra steps besides writing the code. The first step is obviously to write the software that you want to run on the CPX/CPB. I recommend testing the code extensively while tethered to the computer so you can debug using the REPL. Once you’re certain the code works you can disconnect the CPX/CPB and connect it to a battery pack. Once again I recommend testing the code with the battery back before you perform the experiment. In this experiment I used an external USB battery bank as shown in the photo below. My code also utilizes the neopixel library to turn on some LEDs.<div class="autopermalink" data-description="Paragraph"><a href="#pedometer-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="pedometer-5-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/Pedometer4.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.3.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPython code to count steps on the CircuitPlayground Express<div class="autopermalink" data-description="Figure 16.3.1"><a href="#pedometer-5-3" title="Copy heading and permalink for Figure 16.3.1" aria-label="Copy heading and permalink for Figure 16.3.1">🔗</a></div></figcaption></figure><div class="para" id="pedometer-5-4">You can see that the STEPS counter is set to zero before the infinite while loop and then after connection the RESET flag and bias value are checked for a switch from positive to negative. Some code is added to change the pixels on the CPB so that the user can see a step change. The raw data is still transmitted via bluetooth but it would be a neat exercise to have the CPB transmit the number of steps to a cell phone for instant feedback of the number of steps.<div class="autopermalink" data-description="Paragraph"><a href="#pedometer-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="pedometer-5-4"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/External_Battery_Pack.jpg" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16.4.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>CircuitPlayground Bluefruit connected to an external battery pack<div class="autopermalink" data-description="Figure 16.4.1"><a href="#pedometer-5-4" title="Copy heading and permalink for Figure 16.4.1" aria-label="Copy heading and permalink for Figure 16.4.1">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Section 16.4: Gathering Accelerometer Data"><a href="#pedometer-5" title="Copy heading and permalink for Section 16.4: Gathering Accelerometer Data" aria-label="Copy heading and permalink for Section 16.4: Gathering Accelerometer Data">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Section 16.3: Computing Number of Steps: Online"><a href="#pedometer-5" title="Copy heading and permalink for Section 16.3: Computing Number of Steps: Online" aria-label="Copy heading and permalink for Section 16.3: Computing Number of Steps: Online">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="pedometer-4.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="pedometer-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
