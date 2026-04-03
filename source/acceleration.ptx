@@ -84,12 +84,12 @@ This is why speedometers are used. They are just much more accurate
 than integrating acceleration which is prone to bias and
 drift. <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/cpx_assignments/Velocity_from_Acceleration/velocity_from_acceleration.py">This
 folder on Github has some codes that will help with your
-project</url><xref ref="Github"/>. <term>Note, that some of those codes have a bias filter,
+project</url><xref ref="Github"/>. <alert>Note, that some of those codes have a bias filter,
 truncation filter and complementary filter. That code may not work for
 you and you may need to tune the filters for your specific data
 set. Make sure to understand what each filter does and think about how
 it applies to your data set otherwise your code may throw an error due
-to the differences in your data set.</term>
+to the differences in your data set.</alert>
 </p>
 </section>
 
@@ -102,7 +102,7 @@ to the differences in your data set.</term>
   <title>Assignment</title>
   <introduction>
 <p>
-For this assignment you are to find a safe place to accelerate and decelerate your vehicle while recording acceleration data on the Circuit Playground. I also want you to take GPS data using PhyPhox so you can compare data. I suggest using a temporary adhesive to secure your CPX/CPB to your dashboard (making sure it's level) and have a passenger in the car to help you record data as well as operate Phyphox and verify that you have a GPS lock. <alert>Again for safety's sake I suggest finding an empty parking lot and only accelerating to 20 mph or less.</term>
+For this assignment you are to find a safe place to accelerate and decelerate your vehicle while recording acceleration data on the Circuit Playground. I also want you to take GPS data using PhyPhox so you can compare data. I suggest using a temporary adhesive to secure your CPX/CPB to your dashboard (making sure it's level) and have a passenger in the car to help you record data as well as operate Phyphox and verify that you have a GPS lock. <alert>Again for safety's sake I suggest finding an empty parking lot and only accelerating to 20 mph or less.</alert>
 <ol>
   <li><p>Title page with name,title and date - 5%</p></li>
   <li><p>Introduction - 5%</p></li>

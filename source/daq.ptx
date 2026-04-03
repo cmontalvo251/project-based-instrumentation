@@ -110,9 +110,9 @@ do Bluetooth if you have the Circuit Playground Bluefruit (CPB).
 <title>Method 1 - Copying Serial Monitor Data</title>
 <p>
 If you open up the serial monitor you can see the data output. If you
-unplug the CPX while it's taking data the code will stop. <term>Note: In
+unplug the CPX while it's taking data the code will stop. <alert>Note: In
 newer versions, unplugging your CPX will result in a loss of data. If
-this happens try pressing CTRL+C after you click the REPL window.</term> With
+this happens try pressing CTRL+C after you click the REPL window.</alert> With
 the code stopped you can select all the data in the Serial monitor and
 then copy and paste the data into a text file on your computer. You
 can actually copy this into a new file on Thonny and just save it as a
@@ -264,7 +264,7 @@ data to be fully written before moving on. It also turns the LED off
 so we know the CPX took data even when we aren't looking at the Serial
 monitor. If the switch value is true it means that the we never opened
 the data file and thus we tell the user we aren't logging data and
-it's time to flip the switch and hit reset. <term>NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.</term>
+it's time to flip the switch and hit reset. <alert>NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.</alert>
 </p>
 
 <figure>

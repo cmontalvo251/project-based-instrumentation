@@ -55,7 +55,7 @@
       <li><p>Pressure plate outside that sends a text when package is stolen</p></li>
       <li><p>Log weather data on your wifi network with a raspberry pi and Adafruit IO<xref ref="Adafruit"/></p></li>
       <li><p>Use a computer fan you own to create a solder station filter</p></li>
-      <li><p><term>The examples below are from peers that have taken the class in the past</term></p></li>
+      <li><p><alert>The examples below are from peers that have taken the class in the past</alert></p></li>
       <li><p>Little Robot with Adafruit Crickit</p></li>
       <li><p>Automatic trash can - Uses an ultrasonic sensor and a servo to open a trash can</p></li>
       <li><p>Light saber - an LED strip is used</p></li>
@@ -82,7 +82,7 @@
     <title>Pitot Probe Example</title>
     <introduction>
     <p>
-    One example project that I will use to explain future diagrams is from a project I built a few years ago. The overall mission goal was to <term>use a pitot probe to measure the velocity of my bicycle while riding around town</term>. My initial hand sketch showed the pitot probe on the front of my bike which would use the pressure difference between the static and dynamic ports to calculate velocity (See <xref ref="pitot"/>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. The figure below showed my initial sketch for the project.
+    One example project that I will use to explain future diagrams is from a project I built a few years ago. The overall mission goal was to <q>use a pitot probe to measure the velocity of my bicycle while riding around town</q>. My initial hand sketch showed the pitot probe on the front of my bike which would use the pressure difference between the static and dynamic ports to calculate velocity (See <xref ref="pitot"/>). The project was successful and I was able to get some good data on my bike rides around town. The project also included a mechanical subsystem which was a simple plastic case for the electronics and zip ties to mount the pitot probe as well as a data acquisition system using the CPB and a Bluetooth module to send the data to my phone in real time. The figure below showed my initial sketch for the project.
     <figure xml:id="pitot-sketch">
       <image source="pitot_sketch.png" width="90%"/>
       <caption>Initial Sketch of Pitot Probe Project</caption>
@@ -96,7 +96,7 @@
       <li><p>The system shall send windspeed data to the operators smart phone.</p></li>
       <li><p>The system shall light up during calibration to indicate to the user that the system shall not be touched.</p></li>
     </ol>
-    Note however that I failed to satisfy the requirement of <term>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project</term>. This is because the pitot probe project is a weekly project (See <xref ref="pitot"/>). However, I still think this is a good example of how to use the systems engineering life cycle to design an electrial subsystem so I will continue with this example. 
+    Note however that I failed to satisfy the requirement of <em>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project</em>. This is because the pitot probe project is a weekly project (See <xref ref="pitot"/>). However, I still think this is a good example of how to use the systems engineering life cycle to design an electrial subsystem so I will continue with this example. 
     </p>
   </introduction>
 

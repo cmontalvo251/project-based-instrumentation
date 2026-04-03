@@ -43,7 +43,7 @@ Here's my circuit all hooked up without a resistor in series. Two legs are conne
   <caption>Circuit Playground Express hooked up to a Potentiometer</caption>
 </figure>
 <p>
-<term>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</term> Here is my circuit with a resistor in series.
+<alert>As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer.</alert> Here is my circuit with a resistor in series.
 </p>
 <figure>
   <image width="80%" source="potentiometer2.png"/>
@@ -75,13 +75,13 @@ After doing this experiment myself, this is the plot I obtain. The code is not p
 </p>
 
 <p>
-<term>NOTE THAT ON LINE 6 IT READS</term>
+<alert>NOTE THAT ON LINE 6 IT READS</alert>
 </p>
 <pre>
 time -= time[0]
 </pre>
 <p>
-<term>Notice the minus sign in front of the equal sign. That effects a lot.</term>
+<alert>Notice the minus sign in front of the equal sign. That effects a lot.</alert>
 </p>
 <figure>
   <image width="73%" source="plotting_analogio.png" />
@@ -99,7 +99,7 @@ time -= time[0]
   <title>Assignment</title>
   <introduction>
 <p>
-  Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <term> through the full range </term> and then plot that as a function of time. Specific requirements are shown below.
+  Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <alert> through the full range </alert> and then plot that as a function of time. Specific requirements are shown below.
 </p>
 
 <ol>
@@ -110,7 +110,7 @@ time -= time[0]
   <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%</p></li>
   <li><p>Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%</p></li>
   <li><p>Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis. Be sure to include the equation relating angle to voltage - 10%</p></li>
-  <li><p>Plot your digital output (raw potentiometer analog value) vs time <term> make sure to rotate the potentiometer through the full range as when you take data </term> - 10%</p></li>
+  <li><p>Plot your digital output (raw potentiometer analog value) vs time <alert> make sure to rotate the potentiometer through the full range as when you take data </alert> - 10%</p></li>
   <li><p>Then convert your digital output (Do) to voltage and plot that vs time - 10%</p></li>
   <li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you rotate the potentiometer from it's maximum to minimum position. Then show yourself plotting the raw data on your computer - Pass/Faill </p></li>

@@ -43,10 +43,10 @@ which is enough to power the CPX. If you have the battery pack and
 some AA batteries, give it a try. If you still have the blink code
 from the last project on board you'll see the D13 LED blink as
 before. You won't be able to see the serial print() output as before
-but that code will be running which is why D13 is blinking. <term>I have
+but that code will be running which is why D13 is blinking. <alert>I have
 noticed that some of the battery packs have power and ground wires
 swapped. If the battery pack doesn't work it may be because those two
-wires are backwards.</term>
+wires are backwards.</alert>
 </p>
 
 <p>
@@ -67,9 +67,9 @@ also a port labeled 3.3V and obviously that outputs 3.3V. The Figure below shows
 Your lab today specifically involves an external
 LED as shown above. You can read about
 <url href="https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/">LEDs</url>
-more online if you wish<xref ref="sparkfun"/>. <term>Remember that the long leg of the LED is
-the positive end and the short leg is the negative end.</term> The task today
-is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <term>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</term>
+more online if you wish<xref ref="sparkfun"/>. <alert>Remember that the long leg of the LED is
+the positive end and the short leg is the negative end.</alert> The task today
+is to wire an LED up to the CPX in multiple ways. The figure above shows the LED connected to the A1 pin but we will be wiring up the LED to multiple pins on the CPX/CPB to gain understanding in how the circuit works. <alert>Note, whenever you modify a circuit on the breadboard, always be sure to remove power from the CPX. You can damage multiple components if you're not careful.</alert>
 </p>
 </introduction>
 

@@ -86,7 +86,7 @@ The code to accomplish this is relatively simple and a portion of the code is sh
 <section>
 <title>Extra Help</title>
 <p>
-I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url>. That may help you figure out how to subtract off the bias of your initial pitot probe data. I've also done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url>. <term> There is a typo in the video though. V1 is supposed to have a sqrt())</term>. I also have a video about <url href="https://youtu.be/zTGa4sk6UZE">complementary filters</url> and another about <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> <xref ref="youtube"/>.</p>
+I explain the process of substracting off bias in this <url href="https://www.youtube.com/watch?v=e4xs9Ky7_YI&amp;feature=youtu.be">accelerometer video</url>. That may help you figure out how to subtract off the bias of your initial pitot probe data. I've also done this pitot project before and have posted a video on Youtube about <url href="https://youtu.be/jSLIRC1cfvE">Converting Pitot Probe Data to Windspeed</url>. <alert> There is a typo in the video though. V1 is supposed to have a sqrt())</alert>. I also have a video about <url href="https://youtu.be/zTGa4sk6UZE">complementary filters</url> and another about <url href="https://youtu.be/8F_8st_8MmA">aliasing issues</url> <xref ref="youtube"/>.</p>
 </section>
 
 <section>
@@ -99,7 +99,7 @@ I explain the process of substracting off bias in this <url href="https://www.yo
   <li><p>Title page with name,title and date - 5%</p></li>
   <li><p>Introduction with wiring diagram - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
-  <li><p><term>In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass/Fail</term></p></li>
+  <li><p><alert>In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass/Fail</alert></p></li>
 <li><p>Include a photo of your circuit with your pitot probe wired up to an analog pin - 10%</p></li>
 <li><p>Include a screenshot (entire computer screen) of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%</p></li>
 <li><p>Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%</p></li>
