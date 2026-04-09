@@ -32,11 +32,18 @@ Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and
   <image width="73%" source="arduino_photocell.png" />
   <caption>Photocell wired up to an Arduino<xref ref="photocell-wiring"/> <alert>Note that any <m>\Omega</m> value will do for the resistor.</alert></caption>
 </figure>
-Wiring this circuit to a CPX is almost identical to the Arduino. The only difference is that you need to use alligator clips instead of using jumper wires and a breadboard. You also need to use 3.3V instead of 5V since the CPX is running on 3.3V logic.The wiring diagram is shown below.
+Wiring this circuit to a CPX is almost identical to the Arduino. The only difference is that you need to use alligator clips instead of using jumper wires and a breadboard. You also need to use 3.3V instead of 5V since the CPX is running on 3.3V logic.The wiring diagram is shown below. Again, the diagram below shows a 150 <m>\Omega</m> resistor but you can use any value you like.
 <figure>
   <image width="73%" source="photocell_wiring.png" />
   <caption>Wiring diagram for photocell circuit on CPX</caption>
 </figure>
+<alert>Note that in this case the resistor is before the photocell but it doesn't matter which way you wire it as long as the resistor and photocell are in series and you measure the voltage across the photocell. If you end up measuring the voltage across the resistor as is shown in the figure above, the voltage divider equations will change and thus effect your light level measurement. Notice the difference in equations below depending on where you measure the voltage</alert>.
+<men>
+  V_{resistor} = V_{out}\frac{R_{resistor}}{R_{series}+R_{photocell}}
+</men>
+<men>
+  V_{photocell} = V_{out}\frac{R_{photocell}}{R_{series}+R_{photocell}}
+</men>
 </p>
 </introduction>
 <section>
