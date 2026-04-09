@@ -10,7 +10,7 @@
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
 <li><p>Photocell</p></li>
-<li><p>Resistor (10 kOhm)</p></li>
+<li><p>Resistor (Any <m>\Omega</m> value will do)</p></li>
 <li><p>Alligator Clips (x3)</p></li>
 <li><p>Breadboard</p></li>
 </ol>
@@ -30,14 +30,14 @@ In order to prepare for this lab, be sure you are familiar with photocells and h
 Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
 <figure>
   <image width="73%" source="arduino_photocell.png" />
-  <caption>Photocell wired up to an Arduino<xref ref="photocell-wiring"/></caption>
+  <caption>Photocell wired up to an Arduino<xref ref="photocell-wiring"/> <alert>Note that any <m>\Omega</m> value will do for the resistor.</alert></caption>
 </figure>
 </p>
 </introduction>
 <section>
 <title>Taking Data</title>
 <p>
-For this lab you need to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set in Python on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell.
+For this lab you need to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set in Python on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell. <alert>Again any <m>\Omega</m> value will do for the resistor. I used a 10k resistor but you can use a 1k or even a 330 resistor and it will work just fine. The only thing that will change is the range of voltages you get across the photocell. Recall that the equations for the photocell in a voltage divider are in <xref ref="light-sensor"/>.</alert>
 </p>
 <figure>
   <image width="73%" source="photocell_circuit.jpeg" />
@@ -165,11 +165,11 @@ For this assignment you are to build another voltage divider circuit using a pho
   <li><p>Title page with name,title and date - 5%</p></li>
   <li><p>Introduction with wiring diagram - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
-  <li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Also, explain how you varied the light levels - 10%</p></li>
+  <li><p>Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Again, the value of the resistor can be whatever you want. Also, explain how you varied the light levels - 10%</p></li>
   <li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%</p></li>
   <li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10%</p></li>
   <li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%</p></li>
-  <li><p>Similarly, using the mean and standard deviation of your low light level, compute the probability that you would get a reading greater than <m>L=100</m> Lux. - 10%</p></li>
+  <li><p>Similarly, using the mean and standard deviation of your low light level, compute the probability that you would get a reading greater than the mean of your medium light level - 10%</p></li>
   <li><p>Include 3 histogram plots of low light, ambient light and high light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you change the light level by putting your hand over the photocell and then shining a light on the photocell. Then show yourself plotting a histogram - Pass/Fail </p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
