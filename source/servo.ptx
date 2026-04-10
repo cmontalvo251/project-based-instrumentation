@@ -351,7 +351,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Introduction with wiring diagram - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
   <li><p>Include 2 photos of your servo with one photo rotated to the maximum and the other photo rotated to the minimum degrees. Also, include a screenshot (entire computer screen) of Mu showing the PWM pulse in the serial monitor for both rotations. - 10%</p></li>
-  <li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. Give at least 2 decimal points in your calculation - 10%</p></li>
+  <li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. - 10%</p></li>
   <li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
   <li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
   <li><p>Write your regression equation as (<em>servo_pulse = m*servo_angle + b</em>) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
