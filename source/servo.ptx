@@ -50,7 +50,7 @@ The brown or black wire is GND, the red wire needs to go to a 5V signal so for t
 <section>
 <title>Moving the Servo</title>
 <p>
-To start, make sure you follow the wiring diagram in the introduction and wire up your servo to the CPX/CPB. In my circuit I just picked pin A2 since I've been using it so much in the past. <alert>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues.</alert>
+To start, make sure you follow the wiring diagram in the introduction and wire up your servo to the CPX/CPB. In my circuit I just picked pin A2 since I've been using it so much in the past. <alert>Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will <q>brown out</q> which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues. However, on the off chance your servo does put you into safe mode I recommend making small movements in your code to drive your servo. For example, if moving the servo directly from 0 to 180 puts your system into safe mode, try moving from 0 to 45 degrees instead.</alert>
 <figure>
   <image width="80%" source="servo_circuit.jpeg" />
   <caption>Photo of a servo connected to a CircuitPlayground Express</caption>
@@ -351,7 +351,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Introduction with wiring diagram - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
   <li><p>Include 2 photos of your servo with one photo rotated to the maximum and the other photo rotated to the minimum degrees. Also, include a screenshot (entire computer screen) of Mu showing the PWM pulse in the serial monitor for both rotations. - 10%</p></li>
-  <li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. Give at least 2 decimal points in your calculation - 10%</p></li>
+  <li><p>Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. - 10%</p></li>
   <li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
   <li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
   <li><p>Write your regression equation as (<em>servo_pulse = m*servo_angle + b</em>) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>

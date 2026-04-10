@@ -119,6 +119,10 @@
   <li> March 30th, 2026 - Finished the systems engineering chapter and printed and deployed book.</li>
   <li> March 31st, 2026 - Added a new assignment to the photocell histogram lab and underlined all hyperlinks in LaTeX document</li>
   <li> April 2nd, 2026 - Edited all the titles to be shorter and made the parts lists/objectives lists rather than sections and also moved all youtube tutorials into an Extra Help section.</li>
+  <li> April 3rd, 2026 - Updated the pitot wiring photo. </li>
+  <li> April 4th, 2026 - Added more alerts to acceleration lab.</li>
+  <li> April 9th, 2026 - Edited the photocell lab to explain that the resistor can be whatever value the student wants. Also added a CPX wiring diagram for the CPX and also added the voltage divider equations depending on where you measure the voltage.</li>
+  <li> April 10th, 2026 - Added an extra explanation to the servo lab for going into safe mode when drawing too much current. </li>
       </ol>
     </p>
   </section>
