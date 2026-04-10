@@ -181,7 +181,7 @@ For this assignment you are to build another voltage divider circuit using a pho
   <li><p>Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%</p></li>
   <li><p>Include the mean, median, and standard deviation of all light levels in Lux - 10%</p></li>
   <li><p>Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%</p></li>
-  <li><p>Similarly, using the mean and standard deviation of your low light level, compute the probability that you would get a reading greater than the mean of your medium light level - 10%</p></li>
+  <li><p>Similarly, using the mean and standard deviation of your low light level, compute the probability that you would get a reading greater than the mean plus 1 standard deviation of your low light level data set <m>P(L>\mu+\sigma)</m>. Remember to show your work - 10%</p></li>
   <li><p>Include 3 histogram plots of low light, ambient light and high light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you change the light level by putting your hand over the photocell and then shining a light on the photocell. Then show yourself plotting a histogram - Pass/Fail </p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
