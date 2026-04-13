@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -103,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.12.2';
+eBookConfig.runestone_version = '7.13.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -413,7 +411,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 <div class="autopermalink" data-description="Item 14.0.2:3"><a href="#modules-2-2-2-3" title="Copy heading and permalink for Item 14.0.2:3" aria-label="Copy heading and permalink for Item 14.0.2:3">🔗</a></div>
 </li>
-</ol></div></figure><div class="para" id="modules-2-3">The CPX has numerous built-in sensors. These include a light sensor, an IR sensor, an accelerometer, a microphone, a speaker, some neopixels, a temperature sensor and 8 analog inputs with ADCs and even I2C (pronounced I squared C - it’s a kind of serial communication) that you can use to easily hook up more sensors to it. We’re not going to utilize all of these sensors since that would be a rather large project. Instead we’re going to learn how to use the temperature, light and sound sensors as well as the accelerometer. For each of these examples there is a relatively easy way to access the sensors using a built-in module called <em class="emphasis">adafruit_circuitplayground.express</em> if you are using the CPX. If you are using the CPB you need to type <em class="emphasis">adafruit_circuitplayground.bluefruit</em>. It’s a very nice module because it imports everything on the board. Section <a href="installing-modules.html" class="internal" title="Section 7.2: Installing Modules">Section 7.2</a> goes over the steps required to install different modules on the CPX/CPB. The problem is you can run into module conflicts. This happens when two different modules try to access the same pins on the CP. Sometimes if you import <em class="emphasis">adafruit_circuitplayground</em> you won’t be able to import some other modules. <dfn class="terminology">Note you might need to add the <em class="emphasis">adafruit_circuitplayground</em> library to your lib/ folder on your CIRCUITPY drive</dfn>. Due to this module conflict issue, there are some low level control commands you can use to access each of the sensors on board. We’re obviously going to learn the low level control method first and then I’ll show you how to access the sensors using the <em class="emphasis">adafruit_circuitplayground</em> module. <dfn class="terminology">If you get a <em class="emphasis">currently in use</em> error it means you have a module conflict. Hence why I’m showing you the low level control method</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#modules-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</ol></div></figure><div class="para" id="modules-2-3">The CPX has numerous built-in sensors. These include a light sensor, an IR sensor, an accelerometer, a microphone, a speaker, some neopixels, a temperature sensor and 8 analog inputs with ADCs and even I2C (pronounced I squared C - it’s a kind of serial communication) that you can use to easily hook up more sensors to it. We’re not going to utilize all of these sensors since that would be a rather large project. Instead we’re going to learn how to use the temperature, light and sound sensors as well as the accelerometer. For each of these examples there is a relatively easy way to access the sensors using a built-in module called <em class="emphasis">adafruit_circuitplayground.express</em> if you are using the CPX. If you are using the CPB you need to type <em class="emphasis">adafruit_circuitplayground.bluefruit</em>. It’s a very nice module because it imports everything on the board. Section <a href="installing-modules.html" class="internal" title="Section 7.2: Installing Modules">Section 7.2</a> goes over the steps required to install different modules on the CPX/CPB. The problem is you can run into module conflicts. This happens when two different modules try to access the same pins on the CP. Sometimes if you import <em class="emphasis">adafruit_circuitplayground</em> you won’t be able to import some other modules. <em class="alert">Note you might need to add the <em class="emphasis">adafruit_circuitplayground</em> library to your lib/ folder on your CIRCUITPY drive</em>. Due to this module conflict issue, there are some low level control commands you can use to access each of the sensors on board. We’re obviously going to learn the low level control method first and then I’ll show you how to access the sensors using the <em class="emphasis">adafruit_circuitplayground</em> module. <em class="alert">If you get a <em class="emphasis">currently in use</em> error it means you have a module conflict. Hence why I’m showing you the low level control method</em>.<div class="autopermalink" data-description="Paragraph"><a href="#modules-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><nav class="summary-links"><ul>
 <li><a href="modules-3.html" class="internal"><span class="codenumber">14.1</span> <span class="title">Low Level Control</span></a></li>
 <li><a href="modules-4.html" class="internal"><span class="codenumber">14.2</span> <span class="title">High Level Control</span></a></li>

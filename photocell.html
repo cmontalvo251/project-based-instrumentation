@@ -35,7 +35,6 @@ window.MathJax = {
     "packages": {
       "[+]": [
         "base",
-        "extpfeil",
         "ams",
         "amscd",
         "color",
@@ -55,7 +54,6 @@ window.MathJax = {
   "loader": {
     "load": [
       "input/asciimath",
-      "[tex]/extpfeil",
       "[tex]/amscd",
       "[tex]/color",
       "[tex]/newcommand",
@@ -103,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.12.2';
+eBookConfig.runestone_version = '7.13.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.d2d4c56cb9826035.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.a4a209ed3a55c515.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.b76b8eace4405b9e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -403,7 +401,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="autopermalink" data-description="Item 18.0.1:4"><a href="#photocell-2-1-2-4" title="Copy heading and permalink for Item 18.0.1:4" aria-label="Copy heading and permalink for Item 18.0.1:4">🔗</a></div>
 </li>
 <li id="photocell-2-1-2-5">
-<div class="para" id="photocell-2-1-2-5-1">Resistor (10 kOhm)<div class="autopermalink" data-description="Paragraph"><a href="#photocell-2-1-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="photocell-2-1-2-5-1">Resistor (Any <span class="process-math">\(\Omega\)</span> value will do)<div class="autopermalink" data-description="Paragraph"><a href="#photocell-2-1-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 18.0.1:5"><a href="#photocell-2-1-2-5" title="Copy heading and permalink for Item 18.0.1:5" aria-label="Copy heading and permalink for Item 18.0.1:5">🔗</a></div>
 </li>
@@ -435,8 +433,21 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ol></div></figure><div class="para" id="photocell-2-3">In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <a href="modules-3.html#light-sensor" class="internal" title="Subsection 14.1.1: Light">Subsection 14.1.1</a>). The only difference between <a href="modules-3.html#light-sensor" class="internal" title="Subsection 14.1.1: Light">Subsection 14.1.1</a> and this lab is that you’re going to use an external photocell which means you need to build your own voltage divider circuit. Once you have the photocell wired up to the CPX/CPB you can use the same code as the potentiometer lab to take data and then plot that data in Python on your desktop computer. The second part of this lab is to take 1000 data points at three different light levels and create a histogram of the data as well as compute the mean, median, and standard deviation of the data. Finally, you are going to superimpose a Gaussian distribution on top of your histogram to see how close your data is to a normal distribution. This will be a good exercise in understanding the noise in your system and how that noise is distributed.<div class="autopermalink" data-description="Paragraph"><a href="#photocell-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="photocell-2-4">Wiring a photocell is similar to a potentiometer (See <a href="voltage.html" class="internal" title="Chapter 12: Potentiometer">Chapter 12</a>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <a class="external" href="https://learn.adafruit.com/photocells/arduino-code" target="_blank">Arduino</a> (Courtesy of <a class="external" href="https://learn.adafruit.com/u/adafruit2" target="_blank">Lady Ada</a> herself!)<a href="backmatter-1.html#Adafruit" class="xref" data-knowl="./knowl/xref/Adafruit.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 32">[32]</a>. <figure class="figure figure-like" id="photocell-2-4-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/arduino_photocell.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.0.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Photocell wired up to an Arduino<a href="backmatter-1.html#photocell-wiring" class="xref" data-knowl="./knowl/xref/photocell-wiring.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 43">[43]</a><div class="autopermalink" data-description="Figure 18.0.3"><a href="#photocell-2-4-5" title="Copy heading and permalink for Figure 18.0.3" aria-label="Copy heading and permalink for Figure 18.0.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Paragraph"><a href="#photocell-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="photocell-2-4">
+<div class="para">Wiring a photocell is similar to a potentiometer (See <a href="voltage.html" class="internal" title="Chapter 12: Potentiometer">Chapter 12</a>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <a class="external" href="https://learn.adafruit.com/photocells/arduino-code" target="_blank">Arduino</a> (Courtesy of <a class="external" href="https://learn.adafruit.com/u/adafruit2" target="_blank">Lady Ada</a> herself!)<a href="backmatter-1.html#Adafruit" class="xref" data-knowl="./knowl/xref/Adafruit.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 32">[32]</a>. <figure class="figure figure-like" id="photocell-2-4-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/arduino_photocell.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.0.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Photocell wired up to an Arduino<a href="backmatter-1.html#photocell-wiring" class="xref" data-knowl="./knowl/xref/photocell-wiring.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 43">[43]</a> <em class="alert">Note that any <span class="process-math">\(\Omega\)</span> value will do for the resistor.</em><div class="autopermalink" data-description="Figure 18.0.3"><a href="#photocell-2-4-5" title="Copy heading and permalink for Figure 18.0.3" aria-label="Copy heading and permalink for Figure 18.0.3">🔗</a></div></figcaption></figure> Wiring this circuit to a CPX is almost identical to the Arduino. The only difference is that you need to use alligator clips instead of using jumper wires and a breadboard. You also need to use 3.3V instead of 5V since the CPX is running on 3.3V logic.The wiring diagram is shown below. Again, the diagram below shows a 150 <span class="process-math">\(\Omega\)</span> resistor but you can use any value you like. <figure class="figure figure-like" id="photocell-2-4-7"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/photocell_wiring.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18.0.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Wiring diagram for photocell circuit on CPX<div class="autopermalink" data-description="Figure 18.0.4"><a href="#photocell-2-4-7" title="Copy heading and permalink for Figure 18.0.4" aria-label="Copy heading and permalink for Figure 18.0.4">🔗</a></div></figcaption></figure> <em class="alert">Note that in this case the resistor is before the photocell but it doesn’t matter which way you wire it as long as the resistor and photocell are in series and you measure the voltage across the photocell. If you end up measuring the voltage across the resistor as is shown in the figure above, the voltage divider equations will change and thus effect your light level measurement. Notice the difference in equations below depending on where you measure the voltage</em>.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/voltage.html ./knowl/xref/Adafruit.html ./knowl/xref/photocell-wiring.html" id="photocell-2-4-9">
+\begin{equation}
+V_{resistor} = V_{out}\frac{R_{resistor}}{R_{series}+R_{photocell}}\tag{18.0.1}
+\end{equation}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/voltage.html ./knowl/xref/Adafruit.html ./knowl/xref/photocell-wiring.html" id="photocell-2-4-10">
+\begin{equation}
+V_{photocell} = V_{out}\frac{R_{photocell}}{R_{series}+R_{photocell}}\tag{18.0.2}
+\end{equation}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#photocell-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section><nav class="summary-links"><ul>
 <li><a href="photocell-3.html" class="internal"><span class="codenumber">18.1</span> <span class="title">Taking Data</span></a></li>
 <li><a href="photocell-4.html" class="internal"><span class="codenumber">18.2</span> <span class="title">Statistics of your Data</span></a></li>
