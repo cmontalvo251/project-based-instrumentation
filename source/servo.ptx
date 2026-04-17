@@ -355,10 +355,11 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%</p></li>
   <li><p>Include a Figure of your calibration data plotted in Python with your trend line on top. Put your <m>r^2</m> value in the title of the plot - 20%</p></li>
   <li><p>Write your regression equation as (<em>servo_pulse = m*servo_angle + b</em>) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%</p></li>
-  <li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 45 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 10%</p></li>
+  <li><p>Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 90 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 10%</p></li>
   <li><p>Simulate the first order system in Equation <xref ref="e_first-order"/> for 10 seconds with <m>k_p=1</m> and <m>k_p=10</m> for a <m>u_c=20 m/s</m>. Plot <m>u</m> vs time for both values of proportional gain. - 10%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the servo from 0 to roughly 180 degrees. Then show yourself plotting the regression line on top of your data on your laptop - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo and code used to plot data in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </subsection>
 
