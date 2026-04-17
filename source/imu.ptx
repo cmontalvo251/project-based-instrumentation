@@ -135,6 +135,7 @@ For this assignment you are to wire up the external IMU and get data from it. Yo
   <li><p>Plot the roll, pitch and yaw angles in degrees from the accelerometer/magnetometer as well as the integrated rate gyro angles. Add a legend to clearly indicate which line is which. - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>
 </section>

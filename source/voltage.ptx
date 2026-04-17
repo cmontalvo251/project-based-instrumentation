@@ -115,6 +115,7 @@ time -= time[0]
   <li><p>Finally convert your voltage to angle in degrees and plot that vs time - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you rotate the potentiometer from it's maximum to minimum position. Then show yourself plotting the raw data on your computer - Pass/Faill </p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>
 </section>

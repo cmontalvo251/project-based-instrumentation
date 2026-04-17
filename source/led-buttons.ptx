@@ -250,6 +250,7 @@ For this specific project you must get your LED to turn on and off using buttons
   <li><p>Include a photo of your circuit with your LED turned on by pressing a button on the CPX/CPB and then also include a screenshot (entire computer screen) of your Mu code showing the line of code used to read the button press and blink the LED. - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial Monitor open in Mu while you press and hold a button on the CPX/CPB and show the LED on your breadboard blink while you hold the button down</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>
 </section>

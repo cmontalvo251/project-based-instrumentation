@@ -148,6 +148,7 @@ For this assignment you are to create a system that oscillates and capture data 
   <li><p>Using the natural frequency and damping ratio you computed, simulate your system for an initial amplitude of 1 for two times the settling time. - 10%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the camera the experiment you used to create oscillations in the accelerometer. Then plot your accelerometer data and show the regression line fit over your oscillations - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>
 </section>
