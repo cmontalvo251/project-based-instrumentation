@@ -169,8 +169,8 @@ definition temperature which at the time of this writing is on line
 86<xref ref="Github"/>. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
 Adafruit Learn system also does a bit of work to explain the
 conversion from voltage to temperature</url><xref ref="Adafruit"/>. For now though we will just
-appreciate the simplicity of the code below which is
-also <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
+appreciate the simplicity of the code below which uses the <em>adafruit_thermistor</em> module. I've also created a simple version of the code to read the thermistor and posted it
+<url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
 my Github</url><xref ref="Github"/>.
 </p>
 <figure>
@@ -182,7 +182,7 @@ As always lines 1-3 import the relevant modules and then line 8 create
 the thermistor object. You'll notice the input arguments are the pin
 which is A9 as well as the resistor values which are in series with
 the thermistor. These resistors are soldered to the PCB so they are
-fixed at <men>10 k\Omega</men>. The 25 is for the nominal resistance temperature in
+fixed at <m>10 k\Omega</m>. The 25 is for the nominal resistance temperature in
 celsius of the thermistor and 3950 is the b coefficient which is a
 heat transfer property. Running this code and then placing my finger
 on the A9 symbol causes the temperature to rise just a bit. You'll
