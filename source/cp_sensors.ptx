@@ -135,7 +135,7 @@ something will investigate in some later labs.
 <p>
 The temperature sensor is actually
 a <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url><xref ref="thermistor-wikipedia"/>". A
-thermistor is basically a thermometer resistor which means the
+thermistor is basically a <q>thermometer resistor</q> which means the
 resistance depends on temperature. Since this thermistor on the CPX/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX
 you'll see pin A9. Therefore, it is possible to just use the analogio
 library and just read in the analog voltage but in order to convert to
@@ -144,14 +144,24 @@ equations to convert the analog signal to celsius.
 </p>
 
 <p>
-In this case, the thermistor is wired in a voltage divider circuit in series with a <m>10000~\Omega</m> resistor. This means that the voltage across the thermistor can be converted to its resistance using the voltage divider equation below similar to the equation used for the photocell.
+In this case, the thermistor is wired in a voltage divider circuit in series with a <m>10000~\Omega</m> resistor. For this circuit though, it turns out that the thermistor is actually wired to the high side of the voltage divider. That means when you measure pin A9 you're actually measuring the voltage across the series resistor rather than the thermistor. This means that the voltage across the series resistor must be inverted to compute the resistance across the thermistor. This is done using the equation below similar to the equation used for the photocell.
 <men>
-  V_{thermistor} = V_{out}\frac{R_{thermistor}}{R_{series}+R_{thermistor}}
+  V_{measured} = V_{out}\frac{R_{series}}{R_{series}+R_{thermistor}}
 </men>
 </p>
 
 <p>
-Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor which can then be converted to Kelvin. This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that <m>V_{thermistor} = V_{out}D_o/65535</m> where <m>D_o</m> is the digital output from the ADC. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url><xref ref="stein-hart"/><xref ref="steinhart-wikipedia"/>.
+Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor . This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that the ADC on boad the CPX/CPB is actually measuring the digital output <m>D_o</m>. This can be converted to measured voltage as shown in the equation below
+<men>V_{measured} = V_{out}\frac{D_o}{65535}</men> 
+If you absolutely must have the voltage across the thermistor you simply use Kirchhoff's Voltage Law given in the equation below
+<men>
+  V_{thermistor} = V_{out}-V_{measured}
+</men>
+So the process is to first read the digital output from the ADC, convert that to voltage, then use the voltage to compute the resistance in the thermistor and finally use the resistance to compute the temperature in Kelvin. In order to convert measured voltage to resistance, we can rearrange the equations above to get the equation below
+<men>
+R_{thermistor} = R_{series}\left(\frac{V_{out}}{V_{measured}}-1\right)
+</men>
+Note that <m>V_{out}/V_{measured}=65535/D_o</m>. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url><xref ref="stein-hart"/><xref ref="steinhart-wikipedia"/> to convert the resistance to temperature in Celsius.
 </p>
 <men>
   T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
@@ -161,24 +171,23 @@ where <m>\beta=3950</m> is a heat transfer coefficient specific to the bulk semi
 </p>
 
 <p>
-Thankfully, the
-folks at Adafruit have done it again with an <em>adafruit_thermistor</em> module. If you head over to
+If this all seems complex, the folks at Adafruit have done it again with an <em>adafruit_thermistor</em> module. If you head over to
 their <url href="https://github.com/adafruit/Adafruit_CircuitPython_Thermistor/blob/master/adafruit_thermistor.py">github
 on this module</url> you'll see the relevant conversion under the
 definition temperature which at the time of this writing is on line
-86<xref ref="Github"/>. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
+127<xref ref="Github"/>. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
 Adafruit Learn system also does a bit of work to explain the
-conversion from voltage to temperature</url><xref ref="Adafruit"/>. For now though we will just
-appreciate the simplicity of the code below which uses the <em>adafruit_thermistor</em> module. I've also created a simple version of the code to read the thermistor and posted it
+conversion from voltage to temperature</url><xref ref="Adafruit"/> but understand that the tutorial on that page assumes that the thermistor is on the low (grounded) side and thus the voltage divider equation is different. If you look at the <em>adafruit_thermistor</em> module you'll see that there is a <em>self.high_side</em> boolean that changes between either a thermistor on the high side or the low side. In this case, for the built-in A9 thermistor the thermistor is on the high side. Given all this complexity, we will just
+appreciate the simplicity of the code below which uses the <em>adafruit_thermistor</em> module. I've also created a simple version of the code to read the analog value of the thermistor and posted it
 <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
-my Github</url><xref ref="Github"/>.
+my Github</url><xref ref="Github"/>. <alert>Note the code below is from a much earlier and simpler version of my code which only reads the temperature in Celsius. The code on my Github has more functionality such as printing the raw ADC value and the voltage.</alert>
 </p>
 <figure>
   <image width="73%" source="thermistor_code.png" />
   <caption>CircuitPython code to read the onboard thermistor</caption>
 </figure>
 <p>
-As always lines 1-3 import the relevant modules and then line 8 create
+For the code above, lines 1-3 import the relevant modules and then line 8 create
 the thermistor object. You'll notice the input arguments are the pin
 which is A9 as well as the resistor values which are in series with
 the thermistor. These resistors are soldered to the PCB so they are
