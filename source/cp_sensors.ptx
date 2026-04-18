@@ -92,11 +92,8 @@ microphones but it will do. After creating the mic object we have to
 compute some root mean squared values and thus two functions are
 defined before the while true loop in the code. The code itself is
 shown below. The code starts on line 22 because the
-first <url href="https://learn.adafruit.com/adafruit-pdm-microphone-breakout/circuitpython">22
-lines are copyright from Dan Halbert, Kattni Rembor, and Tony DiCola
-from Adafruit Industries</url><xref ref="Adafruit"/>. I have edited the code a bit to fit my
-needs and
-uploaded <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Audio/record_sound_simple.py">my
+first 22 lines are copyright from <url href="https://learn.adafruit.com/adafruit-pdm-microphone-breakout/circuitpython">Dan Halbert, Kattni Rembor, and Tony DiCola</url> from Adafruit Industries<xref ref="Adafruit"/>. I have edited the code a bit to fit my
+needs and uploaded <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Audio/record_sound_simple.py">my
 version to Github</url><xref ref="Github"/>. In the code line 23-27 import standard modules as
 well as some new ones. The array module is used to create array like
 matrices. The math module is used to compute functions like cos, sin,
@@ -134,7 +131,7 @@ something will investigate in some later labs.
 <title>Temperature</title>
 <p>
 The temperature sensor is actually
-a <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url><xref ref="thermistor-wikipedia"/>". A
+a <url href="https://en.wikipedia.org/wiki/Thermistor">thermistor</url><xref ref="thermistor-wikipedia"/>. A
 thermistor is basically a <q>thermometer resistor</q> which means the
 resistance depends on temperature. Since this thermistor on the CPX/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX
 you'll see pin A9. Therefore, it is possible to just use the analogio
@@ -176,8 +173,8 @@ their <url href="https://github.com/adafruit/Adafruit_CircuitPython_Thermistor/b
 on this module</url> you'll see the relevant conversion under the
 definition temperature which at the time of this writing is on line
 127<xref ref="Github"/>. <url href="https://learn.adafruit.com/thermistor/circuitpython">The
-Adafruit Learn system also does a bit of work to explain the
-conversion from voltage to temperature</url><xref ref="Adafruit"/> but understand that the tutorial on that page assumes that the thermistor is on the low (grounded) side and thus the voltage divider equation is different. If you look at the <em>adafruit_thermistor</em> module you'll see that there is a <em>self.high_side</em> boolean that changes between either a thermistor on the high side or the low side. In this case, for the built-in A9 thermistor the thermistor is on the high side. Given all this complexity, we will just
+Adafruit Learn system</url> also does a bit of work to explain the
+conversion from voltage to temperature<xref ref="Adafruit"/> but understand that the tutorial on that page assumes that the thermistor is on the low (grounded) side and thus the voltage divider equation is different. If you look at the <em>adafruit_thermistor</em> module you'll see that there is a <em>self.high_side</em> boolean that changes between either a thermistor on the high side or the low side. In this case, for the built-in A9 thermistor the thermistor is on the high side. Given all this complexity, we will just
 appreciate the simplicity of the code below which uses the <em>adafruit_thermistor</em> module. I've also created a simple version of the code to read the analog value of the thermistor and posted it
 <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Temp/record_temperature_thermistor.py">on
 my Github</url><xref ref="Github"/>. <alert>Note the code below is from a much earlier and simpler version of my code which only reads the temperature in Celsius. The code on my Github has more functionality such as printing the raw ADC value and the voltage.</alert>
@@ -241,8 +238,8 @@ on <url href="https://learn.adafruit.com/circuitpython-hardware-lis3dh-accelerom
 Accelerometer data in CircuitPython</url><xref ref="Adafruit"/><xref ref="AdafruitMAIN"/>. As always I've learned what I
 can from the relevant tutorials and
 created <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Accelerometer/low_level_accel.py">my
-own simple version to read the accelerometer data and posted it to
-Github</url><xref ref="Github"/>. I digress, lines 8-11 of the code do alot. It first uses the
+own simple version to read the accelerometer data</url> and posted it to
+Github<xref ref="Github"/>. I digress, lines 8-11 of the code do alot. It first uses the
 SCL and SDA pins to set up an I2C object which establishes serial
 communication to the accelerometer. Line 9 creates an interrupt which
 is beyond the scope of this course. Finally, line 10 creates the
@@ -279,9 +276,9 @@ Alright so we've learned the hard way for all the sensors using low
 level control of the various sensors. Let's now import the simple
 <em>adafruit_circuitplayground.express</em>
 module. <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">The
-Adafruit Learn site offers pretty much every example code snippet
+Adafruit Learn site</url> offers pretty much every example code snippet
 you'd ever need for all the different push buttons and sensors on the
-CPX</url><xref ref="Adafruit"/>. Head over there if you ever need something outside of the scope
+CPX<xref ref="Adafruit"/>. Head over there if you ever need something outside of the scope
 of this text. As I said before, the main module you need to import is
 done by adding the following to the top of your code
 </p>
@@ -328,8 +325,8 @@ in <url href="https://en.wikipedia.org/wiki/Lux">Lux</url><xref ref="lux-wikiped
 <p>
 If you need extra help on this assignment I have uploaded a youtube
 video where I <url href="https://www.youtube.com/watch?v=ceI0uw3ICE0">read
-the temperature and accelerometer from the CircuitPlayground
-Bluefruit</url><xref ref="youtube"/>.
+the temperature and accelerometer</url> from the CircuitPlayground
+Bluefruit<xref ref="youtube"/>.
 </p>
 </section>
 
