@@ -49,7 +49,7 @@ parking lot for safety reasons. I am not responsible for any damage
 done to your vehicle or anyone else because you are doing this
 project. Once you have the CPX anchored, accelerate your vehicle to 20
 mph (or however fast you are comfortable driving) and then slam on the
-brakes. Once your data is logged, plot your acceleration in Python on
+brakes. Once your data is logged, plot your acceleration on
 your desktop computer. After doing the experiment myself, this is what
 my acceleration plot looks like. I had to clip the time series to only
 include the part from where I accelerated and decelerated quickly. I

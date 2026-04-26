@@ -106,7 +106,7 @@ For this assignment, you are to change the ambient temperature of the CPX/CPB th
   <li><p>Plot the raw voltage and resistance in the thermistor vs time - 20%</p></li>
   <li><p>Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20%</p></li>
   <li><p>Include a table of your estimated parameters - 20%</p></li>
-  <li><p>Using the time constant you computed, assume you accidentally put your CPX/CPB in the oven at 400F. Simulate your system heating up from room temperatue to 400F and tell me how long I would have before I destroy my CPX/CPB - 10%</p></li>
+  <li><p>Using the time constant you computed, assume you accidentally put your CPX/CPB in the oven at 400F. Simulate your system heating up from room temperatue (25C) to 400F and tell me how long I would have before I destroy my CPX/CPB. Make sure to show your work or you receive no credit - 10%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your screen as you explain how you heated or cooled the CPX/CPB. Then show the thermistor running on your computer with the Serial Monitor open in Mu. Finally plot the regression line over your plotted data on your computer - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>

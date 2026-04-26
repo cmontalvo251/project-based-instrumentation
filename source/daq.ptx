@@ -117,8 +117,8 @@ the code stopped you can select all the data in the Serial monitor and
 then copy and paste the data into a text file on your computer. You
 can actually copy this into a new file on Thonny and just save it as a
 *.txt file. Once you have the data in a text file you can proceed to
-plotting in Python on your desktop which I discuss in the last
-section.Here's some example data in Gedit which is a simple text
+plotting on your desktop which I discuss in the last
+section. Here's some example data in Gedit which is a simple text
 editing program.
 </p>
 <figure>
@@ -155,7 +155,7 @@ it layout for this example code.
 </figure>
 <p>
 The next 30 lines are shown below. Lines 32-35 define a
-function. Functions in Python have a pretty standard structure. The
+function. Functions in CircuitPython have a pretty standard structure. The
 keyword def is used to denote that the next line is a definition for a
 function. The name of the function is <em>slow_write()</em>. The input to the
 function is string which ironically enough is a string object. Line
@@ -209,7 +209,7 @@ You'll see that the first column is time with 1 decimal point and the
 second column is the button press values. At this point you must click
 <em>Save As...</em> and save the document as a CSV which stands for Comma
 Separated Value. Once you have the file saved you can proceed to
-plotting in Python on your Desktop.
+plotting on your Desktop.
 </p>
 </section>
 
@@ -278,7 +278,7 @@ So here is the flow of what you want to do for method 3.
 <ol>
 <li><p>Unplug the CPX</p></li>
 <li><p>Flip the switch towards the A button.</p></li>
-<li><p>Plug in the CPX and save the boot.py and main.py files. Remember you can only save Python scripts when the switch is flipped towards the A button.</p></li>
+<li><p>Plug in the CPX and save the boot.py and main.py files. Remember you can only save CircuitPython scripts when the switch is flipped towards the A button.</p></li>
 <li><p>When you are ready to start recording data, flip the switch towards the B button. If you're looking at the Serial monitor, the software will throw an error. Just ignore it and hit the reset button. When your computer recognizes the CPX you can turn the Serial monitor on and off.</p></li>
 <li><p>When you are done taking data simply slide the switch over towards the A button and hit reset again. This is what my Serial monitor looks like when I do this. You'll see that I was writing to disk for like 25 seconds and then I flipped the switch back towards the A button.</p></li>
 </ol>
@@ -291,7 +291,7 @@ So here is the flow of what you want to do for method 3.
 <p>
 With the switch flipped and data taken, open your folder manager and
 take a look at the CIRCUITPY drive. This is what mine looks
-like. You'll see I have two Python files and a file <em>Test_Data.txt</em> with
+like. You'll see I have two CircuitPython files and a file <em>Test_Data.txt</em> with
 all my data in it.
 </p>
 
@@ -307,7 +307,7 @@ If you open the <em>Test_Data.txt</em> file you will hopefully see data in it.
   <caption>Example text file from Method 3</caption>
 </figure>
 <p>
-At this point you can copy this text file over to your desktop computer and proceed to the Python plotting portion.
+At this point you can copy this text file over to your desktop computer and proceed to the plotting portion.
 Ok so let's recap method 3 one more time.
 
 <ol>
@@ -346,9 +346,17 @@ transmitter.
 <section>
 <title>Method 5 - Logging Data to an SD Card</title>
 <p>
-A final method to log data is using a standalone <url href="https://www.adafruit.com/product/254">micro sd card breakout board</url> (See <xref ref="sdcard"/>)<xref ref="AdafruitMAIN"/>. Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See <xref ref="troubleshooting"/>) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting <em>boot.py</em> to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter. 
+Another to log data is using a standalone <url href="https://www.adafruit.com/product/254">micro sd card breakout board</url> (See <xref ref="sdcard"/>)<xref ref="AdafruitMAIN"/>. Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See <xref ref="troubleshooting"/>) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting <em>boot.py</em> to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter. 
 </p>
 </section>
+
+<section>
+<title>Method 6 - Logging Data via Serial</title>
+<p>
+Yet another method to log data is using the same serial communication that is used in Mu (See <xref ref="serial"/>). In this case you need your laptop just like method 1 and 2 but you forgo having to copy and paste the Serial monitor yourself. In this method you would have a program on your computer that automatically reads the serial output from the CPX and saves that to a text file. It reduces the complexity of the CircuitPython code and allows you to focus on the experiment while your computer handles logging data. 
+</p>
+</section>
+
 
 <section>
 <title>Plotting Logged Data</title>
@@ -370,7 +378,7 @@ the CPX</p></li>
 All methods will work but some will obviously have their pros and
 cons. I suggest you get comfortable with 1 method and use that for the
 remainder of the semester. Whatever option you choose though will
-provide you with a data file that you can read in Python on your
+provide you with a data file that you can open on your
 desktop computer to plot. The simplest way to import data is by using
 the loadtxt function from the module numpy. Here is some very simple
 code to plot data from a text file. 
@@ -390,7 +398,7 @@ In this example lines 1 and 2 import numpy and matplotlib. Line 4
 imports data from the <em>Test_Data.txt</em> file and then 6 and 7 save the
 first and second columns into time and button. The remaining lines
 plot the data and create x and y labels as well as a grid. Hopefully
-now you are well versed in taking data and plotting in Python.
+now you are well versed in taking data and plotting on your desktop computer.
 </p>
 </section>
 

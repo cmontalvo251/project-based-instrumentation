@@ -24,7 +24,7 @@
 </ol>
 </list>
 <p>
-In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <xref ref="light-sensor"/>). The only difference between <xref ref="light-sensor"/> and this lab is that you're going to use an external photocell which means you need to build your own voltage divider circuit. Once you have the photocell wired up to the CPX/CPB you can use the same code as the potentiometer lab to take data and then plot that data in Python on your desktop computer. The second part of this lab is to take 1000 data points at three different light levels and create a histogram of the data as well as compute the mean, median, and standard deviation of the data. Finally, you are going to superimpose a Gaussian distribution on top of your histogram to see how close your data is to a normal distribution. This will be a good exercise in understanding the noise in your system and how that noise is distributed.
+In order to prepare for this lab, be sure you are familiar with photocells and how they work (See <xref ref="light-sensor"/>). The only difference between <xref ref="light-sensor"/> and this lab is that you're going to use an external photocell which means you need to build your own voltage divider circuit. Once you have the photocell wired up to the CPX/CPB you can use the same code as the potentiometer lab to take data and then plot that data on your desktop computer. The second part of this lab is to take 1000 data points at three different light levels and create a histogram of the data as well as compute the mean, median, and standard deviation of the data. Finally, you are going to superimpose a Gaussian distribution on top of your histogram to see how close your data is to a normal distribution. This will be a good exercise in understanding the noise in your system and how that noise is distributed.
 </p>
 <p>
 Wiring a photocell is similar to a potentiometer (See <xref ref="voltage"/>) and remember that you need a resistor in series with the photocell to create the voltage divider circuit. The photo below also shows a voltage divider circuit of a photocell using an <url href="https://learn.adafruit.com/photocells/arduino-code">Arduino</url> (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
@@ -49,7 +49,7 @@ Wiring this circuit to a CPX is almost identical to the Arduino. The only differ
 <section>
 <title>Taking Data</title>
 <p>
-For this lab you need to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set in Python on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell. <alert>Again any <m>\Omega</m> value will do for the resistor. I used a 10k resistor but you can use a 1k or even a 330 resistor and it will work just fine. The only thing that will change is the range of voltages you get across the photocell. Recall that the equations for the photocell in a voltage divider are in <xref ref="light-sensor"/>.</alert>
+For this lab you need to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell. <alert>Again any <m>\Omega</m> value will do for the resistor. I used a 10k resistor but you can use a 1k or even a 330 resistor and it will work just fine. The only thing that will change is the range of voltages you get across the photocell. Recall that the equations for the photocell in a voltage divider are in <xref ref="light-sensor"/>.</alert>
 </p>
 <figure>
   <image width="73%" source="photocell_circuit.jpeg" />
@@ -70,7 +70,7 @@ provided you change line 5 to the same pin.
   <caption>Serial monitor open showing Photocell output in Mu</caption>
 </figure>
 <p>
-Once you've gotten some example data you can plot the result in Python as you did for the potentiometer lab. Here's what your plot may look like.
+Once you've gotten some example data you can plot the result as you did for the potentiometer lab. Here's what your plot may look like.
 </p>
 <figure>
   <image width="73%" source="photocell_plots.png" />

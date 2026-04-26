@@ -162,7 +162,7 @@ signal. Here's the code I created to get it to work.
 </p>
 <figure>
 <image width="73%" source="button_blink.png" />
-<caption>Circuitpython code to power an LED with an on-board button</caption>
+<caption>CircuitPython code to power an LED with an on-board button</caption>
 </figure>
 <p>
 The code above is an image. You could type exactly what you see and
@@ -203,7 +203,7 @@ button. When I press the button down here is the output I get from the
 </p>
 <figure>
 <image width="73%" source="MuButton.png" />
-<caption>Circuitpython code to power an LED with an on-board button in Mu</caption>
+<caption>CircuitPython code to power an LED with an on-board button in Mu</caption>
 </figure>
 <p>
 Here you'll see 4 lines that say <q>Button value is False</q> and then two

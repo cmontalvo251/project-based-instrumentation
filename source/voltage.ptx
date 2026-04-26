@@ -50,7 +50,7 @@ Here's my circuit all hooked up without a resistor in series. Two legs are conne
   <caption>Potentiometer with a blue resistor in series</caption>
 </figure>
 <p>
-There is a relevant <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in">Adafruit Learn Tutorial</url> to help with the <em>analogio</em> module but I'll explain the minimum required here to get some analog values plotted in <em>Plotter</em> and Python on your computer<xref ref="Adafruit"/>. First let's take a look at some <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">simple example code</url> to read an analog signal and plot it using the <em>Plotter</em><xref ref="Github"/>.
+There is a relevant <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-analog-in">Adafruit Learn Tutorial</url> to help with the <em>analogio</em> module but I'll explain the minimum required here to get some analog values plotted in <em>Plotter</em> and on your computer<xref ref="Adafruit"/>. First let's take a look at some <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Analog/analog_simple.py">simple example code</url> to read an analog signal and plot it using the <em>Plotter</em><xref ref="Github"/>.
 </p>
 <figure>
   <image width="50%" source="analogio.png" />
@@ -99,7 +99,7 @@ time -= time[0]
   <title>Assignment</title>
   <introduction>
 <p>
-  Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it in Python on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <alert> through the full range </alert> and then plot that as a function of time. Specific requirements are shown below.
+  Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer <alert> through the full range </alert> and then plot that as a function of time. Specific requirements are shown below.
 </p>
 
 <ol>

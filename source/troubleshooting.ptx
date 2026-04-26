@@ -129,7 +129,7 @@
   <section>
     <title>Common Mishaps</title>
     <ol>
-      <li><p>Your CPX is a USB stick that can hold as many Python files as 2MB will allow but it can only run or execute one python script at a time. It will look for code.py and then main.py and that's it.</p></li>
+      <li><p>Your CPX is a USB stick that can hold as many CircuitPython files as 2MB will allow but it can only run or execute one CircuitPython script at a time. It will look for code.py and then main.py and that's it.</p></li>
       <li><p>Make sure you're using Mu in the right Mode (CircuitPython)</p></li>
       <li><p>Make sure main.py or code.py is on the CIRCUITPY drive and not somewhere on your computer.</p></li>
       <li><p>Make sure you are editing the right file in Mu. Do you have two versions of main.py or perhaps main.py and code.py?</p></li>

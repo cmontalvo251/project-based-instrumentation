@@ -39,7 +39,7 @@
       <li><p>System must be unique as well as built and designed by your team (Tutorials may be used but you must make the system unique in some way).</p></li> 
       <li><p>System must have one of the three components as an external part to the main microcontroller and not be something already taught in a weekly project (buttons, servos or potentiometers to name a few).</p></li>
       <li><p>System must take some sort of measurement to be used in the code.</p></li>
-      <li><p>System must utilize a data acquisition method so that data can be plotted in Python as a function of time.</p></li>
+      <li><p>System must utilize a data acquisition method so that data can be plotted on your computer as a function of time.</p></li>
       <li><p>System must help someone in some way.</p></li>
       <li><p>System must have some sort of mechanical component to it and cannot be purely software and electrical components.</p></li>
     </ol>
@@ -354,7 +354,7 @@
       <cell><p>Yes, it took time and windspeed data.</p></cell>
     </row>
     <row set="recommended">
-      <cell><p>System must utilize a data acquisition method so that data can be plotted in Python as a function of time</p></cell>
+      <cell><p>System must utilize a data acquisition method so that data can be plotted on your computer as a function of time</p></cell>
       <cell><p>Yes, Method 5 was utilized</p></cell>
     </row>
     <row set="recommended">

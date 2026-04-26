@@ -38,7 +38,7 @@ of what you need to do to get the CPX up and running as well as writing a simple
 <title>Setup</title>
 <p>
 When you get your CPX and plug it into the computer via USB it
-actually won't run Python just yet. First you need to double click the
+actually won't run CircuitPython just yet. First you need to double click the
 reset button (the button in the center. It says RESET above the
 button) and put it into boot mode. All the neopixels (the ring lights
 on the CPX) will light up green.
@@ -72,8 +72,8 @@ USB stick with 2MB of storage. <alert>Note that if you have an old bootloader yo
 <caption>Contents of the CIRCUITPY Folder</caption>
 </figure>
 <p>
-At this point the CPX is like a mini computer. If you put Python code
-on the <q>flash drive</q> it will run python code. Since I've done this
+At this point the CPX is like a mini computer. If you put CircuitPython code
+on the <q>flash drive</q> it will run the code. Since I've done this
 before, there are a number of files already on my CPX. You may have
 some or none of these. The <q>boot_out.txt</q> file will tell you the
 version of CircuitPython you have on the CPX. Mine says this:
@@ -85,10 +85,10 @@ Adafruit CircuitPython 5.3.0 on 2020-04-29; Adafruit CircuitPlayground Express w
 Which means I have CircuitPython version 5.3.0 last updated on April
 29th, 2020. The CPX itself is using the <url href="https://www.microchip.com/wwwproducts/en/ATsamd21g18">ATSAMD21G18</url>
 microprocessor <xref ref="CPXchip"/>. The folder lib is a folder with extra libraries that
-you may need to install later. The file main.py is the Python file
-that the CPX is currently running. <alert>The CPX can store as many Python
+you may need to install later. The file main.py is the CircuitPython file
+that the CPX is currently running. <alert>The CPX can store as many CircuitPython
 files as possible for a 2MB flash drive but it will only run ONE
-Python script at a time and that file must be named main.py</alert> The folder
+CircuitPython script at a time and that file must be named main.py</alert> The folder
 <em>System_Volume_Information</em> is a file management folder that we will
 never use.
 </p>
@@ -102,11 +102,11 @@ has alot of debugging options and it is recommended to use a program
 called <q><url href="https://codewith.mu/en/download">Mu</url></q><xref ref="mu"/>. Mu is a good way to write and debug code on the
 CPX. Note that Mu is only used to program the CPX. If you want to run
 Python code on your laptop you need to use Thonny or Spyder (or
-whatever other IDE you downloaded). If you want to run Python code on
+whatever other IDE you downloaded). If you want to run CircuitPython code on
 your CPX you must use Mu. Once you've downloaded and installed Mu and
 open it up it will look like this (Note it's possible the the software
 gets updated from the time this book is published. As such be sure to
-select the Circuitpython Mode for board development).
+select the CircuitPython Mode for board development).
 </p>
 <figure>
 <image width="73%" source="Mu.png" />
@@ -115,7 +115,7 @@ select the Circuitpython Mode for board development).
 <p>
 Make sure to select the <q>Adafruit CircuitPython</q> option. If the
 software has been updated and that option no longer exists, be sure to
-select the option that says Circuitpython for board development.
+select the option that says CircuitPython for board development.
 </p>
 
 <p>
@@ -139,8 +139,8 @@ anything.
 
 <p>
 <alert> Now this is really important. Your CPX is a USB stick that can hold as
-many Python files as 2MB will allow but it can only run or execute one
-python script at a time. Furthermore it will only run two types of
+many CircuitPython files as 2MB will allow but it can only run or execute one
+CircuitPython script at a time. Furthermore it will only run two types of
 files. It will run code.py if it exists and if it can't find code.py
 it will run main.py If the CPX can't find main.py or code.y it will
 just not do anything. If you have two versions of main.py or a
@@ -214,7 +214,7 @@ want to write to the LED.
 Lines 10 through 19 kick off an infinite loop that never ends. The
 line that says <em>while True:</em> means loop while <em>True</em>. Well
 <em>True</em> is always true which means it will loop forever. The colon
-at the end of the line tells Python that the loop condition statement
+at the end of the line tells CircuitPython that the loop condition statement
 ends and to begin looping from 11 through 19.
 </p>
 
