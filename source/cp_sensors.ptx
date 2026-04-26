@@ -345,6 +345,7 @@ of data using the microphone, photocell, accelerometer and thermistor on your CP
   <li><p>Include 4 plots with time on the x-axis and sensor data on the y-axis (No screenshots) - 10% per plot</p></li>
   <li><p>Appendix A - Video Details - Filmd yourself and your entire screen with the Plotter open in Mu as you demonstrate the output of all 4 sensors. The values on the Plotter must change due to your inputs - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>

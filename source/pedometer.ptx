@@ -127,6 +127,7 @@ For this assignment you are to run down the hallway while wearing your CPX/CPB a
   <li><p>Include a plot of accelerometer data vs time showing stars where the peaks are. In your description be sure to comment on how many steps the code outputted vs how many steps you took during your experiment - 40%</p></li>
   <li><p>Appendix A - Video Details - Include 2 videos: First, include a cell phone video of your partner placing the system in a pocket and running or walking, then show a video with yourself and your screen as you plot the acceleration vs time with peaks shown on your computer - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>

@@ -374,6 +374,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
   <li><p>Simulate the second order system in Equation <xref ref="e_second-order"/> for 10 seconds with <m>k_p=-1</m> and <m>k_p=-10</m> for a <m>\theta_c=45^o</m>. Plot <m>\theta</m> vs time for both values of proportional gain. - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the CPX/CPB also showing the servo rotate in sync with your CPX/CPB. - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to rotate servo as well as simulation code in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </subsection>

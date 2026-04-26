@@ -185,6 +185,7 @@ For this assignment you are to build another voltage divider circuit using a pho
   <li><p>Include 3 histogram plots of low light, ambient light and high light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 20%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you change the light level by putting your hand over the photocell and then shining a light on the photocell. Then show yourself plotting a histogram - Pass/Fail </p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </introduction>

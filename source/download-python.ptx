@@ -244,6 +244,7 @@ Your assignment for this project is to plot the equation below from 0 to 10 seco
   <li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen running the example code and showing the result of <em>plt.show()</em> - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </p>

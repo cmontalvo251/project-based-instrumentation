@@ -109,6 +109,7 @@ For this assignment you are to find a safe place to accelerate and decelerate yo
   <li><p>Integrate the velocity and compute position. Plot your position as a function of time and include that in your report. Also include the position of your car using your GPS coordinates keeping in mind that you may need to convert your Lat/Lon coordinates to meters. Although you didn't measure how far you went, comment on the accuracy of the plot and whether or not you think you traveled that far especially given the superimposed data from your GPS. - 20%</p></li>
   <li><p>Appendix A - Video Details - Include 2 videos: The first is of yourself and your passenger in the car taking data showing the Plotter open in Mu, the second is plotting the acceleration data and converting that to velocity <alert>(Note, if your partner is in this class they must submit their own videos with their own data)</alert>. - Pass/Fail </p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail </p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 </p>
