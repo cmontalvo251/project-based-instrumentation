@@ -367,7 +367,7 @@ This servo project can be split into 2 projects at your instructors discretion. 
 <title>Part 2</title>
 <ol>
   <li><p>Title page with name,title and date - 5%</p></li>
-  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
   <li><p>Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%</p></li>
   <li><p>Include a photo of your CPX rotated to 45 degrees and your servo rotated with <m>k_p=1</m> and <m>k_p=2</m>. Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%</p></li>
