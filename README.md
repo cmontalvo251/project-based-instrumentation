@@ -1,14 +1,18 @@
 # Instrumentation Textbook in PreTeXt
 
-This repo contains my project based instrumentation textbook that I use at the undergraduate level. Multiple authors have contributed to this textbook and they have been placed on the cover page. Note that some authors did not push directly to github but are still shown in the title page.
+This repo contains my project based instrumentation textbook that I use at the undergraduate level.  Other authors have contributed to this textbook and they have been placed on the cover page. Note that these extra authors may have not pushed directly to github but are still shown in the title page.
 
 PDF: This is the main.pdf file in the root directory
 
 WEB: https://cmontalvo251.github.io/project-based-instrumentation/
 
-The Archive LaTeX version of this textbook is in the Archive/ folder with a separate readme that you can use to compile that version of the textbook. I don't recommend using that version but it is here for thoroughness as it was used to convert to the current version of PreTeXt shown here. All LaTeX directions are in that readme and left of of this readme for brevity. It is assumed that you have all latex compilers on your computer and are well versed in LaTeX before continuing on with this readme.
+The Archive LaTeX version of this textbook is in the Archive/ folder with a separate readme that you can use to compile that version of the textbook. I don't recommend using that version because it is significantly outdated as this point but it is here for thoroughness as it was used to convert to the current version of PreTeXt shown here. All LaTeX directions are in that readme and left out of this readme for brevity. 
 
-Using PreTeXt on Ubuntu 24.03
+# LaTeX Pre-requisites
+
+It is assumed that you have all latex compilers on your computer and are well versed in LaTeX before continuing on with this readme. Again LaTeX directions are in the Archive folder.
+
+I also failed to mention that at the time of this writing I am using PreTeXt on Ubuntu 24.03. Thus the directions below are shown for that OS with terminal commands all presented on a separate line.
 
 # First install pretext
 
@@ -76,7 +80,7 @@ Note that this also creates its own .git folder so if you're already in an exist
 
 # PDF
 
- Running 'pretext build pdf' will compile your project into a pdf. 
+Running 'pretext build pdf' will compile your project into a pdf. 
 
 You can also run 'pretext build print' and it will do the same thing
 
