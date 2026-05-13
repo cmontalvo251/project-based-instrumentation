@@ -16,6 +16,7 @@
   <li><p>Understand the world of microcontrollers</p></li>
   <li><p>Learn about the Adafruit eco-system</p></li>
   <li><p>Learn about the Circuit Playground Express/Bluefruit</p></li>
+  <li><p>Learn about the main alternative: the Arduino</p></li>
   </ol>
   </list>
   <p>In this class you're going to build some circuits that will enhance
@@ -81,6 +82,12 @@ does not have an infrared sensor but does contain bluetooth
 functionality to send data wirelessly to the Adafruit Connect App
 which runs on Apple/Android <xref ref="AdafruitBLE"/>.
 </p>
+</section>
+
+<section> 
+<title>Arduino as an Alternatives</title>
+
+
 </section>
 
 <section>

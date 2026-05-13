@@ -33,7 +33,7 @@
 
   <section xml:id="requirements">
     <title>Specific Final Project Requirements</title>
-    <p>The final project will utilize the Circuit Playground (or any other comparable or better microcontroller) and at least 3 other electrical components to move a mechanical system that helps people in some way. The specific requirements are shown below. Note that every group will have a few additional requirements specific to their project based on how creative they decide to be.
+    <p>The final project will utilize the Circuit Playground (or any other comparable or better microcontroller such as the Arduino or Raspberry Pi) and at least 3 other electrical components to move a mechanical system that helps people in some way. The specific requirements are shown below. Note that every group will have a few additional requirements specific to their project based on how creative they decide to be.
     <ol>
       <li><p>System must incorporate 3 electrical components (accelerometer, lights, sound and microphone to name a few). Your power source, microcontroller, speaker amplifier or the Crikit does not count as a component. An interface is not considered a component</p></li>
       <li><p>System must be unique as well as built and designed by your team (Tutorials may be used but you must make the system unique in some way).</p></li> 
@@ -44,6 +44,9 @@
       <li><p>System must have some sort of mechanical component to it and cannot be purely software and electrical components.</p></li>
     </ol>
     </p>
+
+    <p><term>Microcontroller Choice: </term> Note, you have the choice to use any type of microcontroller (MCU) for your final project. In my experience teaching this course, many groups choose to use an Arduino UNO/Mega/Nano or ESP32 for their final project. Although the CPX/CPB is a cheap MCU that has many built-in sensors, it is severely lacking in stability, memory and power capabilities. The course is designed around CircuitPython and the CPX/CPB due to the simplicity of the programming language and versatility of the MCU. However, for your final project, using an Arduino will open your project up to a larger world of possibilities and your CPX/CPB programming/hardware skills will transfer very easily to Arduino. Combine that with GenAI and you’ll have an easy time getting code to work on the Arduino. I would say about half the class ends up using an Arduino so although you can absolutely make some very cool projects with the CPX/CPB, my experience is that about 50% of the class would benefit from using an Arduino. Why isn’t the entire class just built around Arduino? Because for $20 you get two push buttons, a slide switch, an accelerometer, a temperature sensor, 8 neopixels, PWM support, a light sensor, multiple 16 bit ADCs, a microphone, a speaker and a much simpler programming language. The CPX also has an IR sensor and the CPB supports bluetooth communication. I think students get more out of learning on a CPX/CPB and then they can take those skills to something more reliable like the Arduino MCU or even something more complex like a Raspberry Pi. </p>
+
   </section>
 
   <section xml:id="project-examples">
@@ -129,7 +132,7 @@
       <image source="BDD_Software.jpg" width="90%"/>
       <caption>BDD of Software Components</caption>
     </figure>
-    <p>Notice that every software name contains () to indicate that it will eventually be a function. This is useful at this stage to help later on in the preliminary design phase. The CPU requires much software to run the system but since we're programming everything in a very high level programming language like Python, CircuitPython or Arduino we're assuming that the only software required by the user is just a main loop. In Python/CircuitPython the main loop is typically just a <em>while True:</em> loop and in Arduino it is the <em>loop()</em> function. Once the BDD is completed, the blocks in the BDD can be used to create the IBD which is shown below. </p>
+    <p>Notice that every software name contains () to indicate that it will eventually be a function. This is useful at this stage to help later on in the preliminary design phase. The CPU requires much software to run the system but since we're programming everything in a very high level programming language like Python, CircuitPython or Arduino, we're assuming that the only software required by the user is just a main loop. In Python/CircuitPython the main loop is typically just a <em>while True:</em> loop and in Arduino it is the <em>loop()</em> function. Once the BDD is completed, the blocks in the BDD can be used to create the IBD which is shown below. </p>
     <figure xml:id="ibd-software">
       <image source="IBD_Software.jpg" width="90%"/>
       <caption>IBD of Software Components</caption>

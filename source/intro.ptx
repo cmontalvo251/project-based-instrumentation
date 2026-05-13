@@ -13,10 +13,10 @@
     <p>This textbook describes an instrumentation kit used for an
 Instrumentation and Experimental Methods course at the undergraduate
 level. This textbook has been designed with the student and faculty member in
-mind. The kit contains the CircuitPlayground
+mind. The kit primarily discusses the CircuitPlayground
 Express/Bluefruit running CircuitPython and is used to teach
 fundamentals of instrumentation and provide a hands-on way of
-learning. Engineering is usually taught in a
+learning. Note that there are some references to Arduino in the text, but the focus is on the CircuitPython implementation. Engineering is usually taught in a
 traditional lecture format, involving theory in the classroom,
 homework outside of class, and routine examinations. Progressive forms
 of learning such as flipped classrooms and project based learning
@@ -37,7 +37,7 @@ the project based learning method. Students will be tasked with
 downloading code, building circuitry, taking data all from the ground
 up. By the end of this course students will be well versed in the
 desktop version of Python while also the variant CircuitPython
-designed specifically for microelectronics from Adafruit. After this
+designed specifically for microelectronics from Adafruit. Again, some chapters have references to the Arduino IDE and thus some students may also gain some knowledge and expertise in the Arduino programming language. After this
 course students will be able to understand Instrumentation at the
 fundamental level as well as generate code that can be used in future
 projects and research to take and analyze data. Python is such a broad
@@ -207,7 +207,7 @@ Python, the University of South Alabama (USA) has implemented such a
 kit for Instrumentation &amp; Experimental Methods (ME 316) using
 CircuitPython. CircuitPython is a derivative of Python written for
 embedded systems and designed to simplify experimenting and learning
-to code <xref ref="CircuitPython"/>. The learning objectives for ME316
+to code <xref ref="CircuitPython"/>. As mentioned previously, some experiments have a supplemental Arduino component in the event the students want to use the more robust yet more complex Arduino programming language<xref ref="Arduino"/>. The learning objectives for ME316
 include: statistics, dynamic response of measurement systems,
 operational amplifiers, signal conditioners and fundamentals of
 microprocessors. This course could be taught with theory as the main
