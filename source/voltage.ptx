@@ -65,9 +65,9 @@ In the example code above, lines 1-3 again import the necessary modules with <em
 </figure>
 <p>
 For this lab I want you to spin the potentiometer all the way to one side and then the other while recording time and the analog value. I then want you to plot the data with time on the x-axis and voltage on the y-axis. Remember to convert a digital output to voltage you just need to use the equation below where D is the raw value from the analog port. 3.3V is the range of the ADC and <m>2^{16}</m> is the maximum value the ADC can represent.
-<men>
+<md number="yes">
   V = \frac{3.3D}{2^{16}}
-</men>
+</md>
 </p>
 
 <p>

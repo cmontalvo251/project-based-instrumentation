@@ -31,13 +31,13 @@ Although a CPX has numerous sensors built in, you can easily augment the capabil
 </figure>
 <p>
 The pitot probe has two pressure taps that measure static (ambient) pressure and dynamic (stagnation) pressure. These taps move through two silicon tubes to a pressure transducer that has a strain gauge that separates both pressures. When the pressure on one side of the transducer is larger than the other, it will flex the membrane and create strain. This strain runs through a wheatstone bridge with a voltage offset to the pin labeled analog. The analog signal from the analog pin will be denoted as <m>V_{pitot}</m>. The pressure transducer used in this lab is the MPXV7002 which is a differential pressure sensor. The <url href="https://www.nxp.com/docs/en/data-sheet/MPXV7002.pdf">datasheet</url> indicates that the voltage offset of the pitot probe is 2.5V and the change in voltage is proportional to the change in pressure in units of kPa<xref ref="pitot-datasheet"/>. This means that <m>\Delta P</m> is given by the equation below.
-<men>
-  \Delta P_{kPa} = V_{pitot} - 2.5
-</men>
+<md number="yes">
+    \Delta P_{kPa} = V_{pitot} - 2.5
+</md>
 remembering that <m>V_{pitot}=3.3D_o/65535</m>. Also note that 2.5V is the nominal voltage even though your sensor might have something slightly different like 2.4V or 2.6V. To measure wind speed you can use a variation of Bernoulli's principle. Note it is necessary to convert the pressure <m>P</m> from kilopascals (kPa) to Pascals (Pa) by multiplying by <m>1000</m> before using it in this formula.
-<me>
+<md number="yes">
   U = \sqrt{\frac{2 \Delta P_{Pa}}{\rho}}
-</me>
+</md>
 where <m>U</m> is the wind speed in <m>m/s</m>, <m>\Delta P</m> is the differential pressure (in Pascals), and <m>\rho=1.225~kg/m^3</m> is the density of air. As for wiring up the circuit itself, the transducer has 3 pins, +5V, GND and Analog. The figure below shows the transducer connected to an Arduino (Courtesy of <url href="https://makersportal.com/blog/2019/02/06/arduino-pitot-tube-wind-speed-theory-and-experiment?srsltid=AfmBOoqrja9WFwnJNLPOLxPEG5mRa1XqM8iP86s0ZYy5Qb1aSA-GpU0D">Joshua Hrisko</url>)<xref ref="pitot-author"/>.
 <figure>
   <image width="73%" source="Arduino+MPXV7002DP+Wiring+for+Differential+Pressure+Measurement.png"/>

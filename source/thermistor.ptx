@@ -25,27 +25,27 @@
 </p>
 <p>
 For this lab though, we're not only going to measure the temperature from the thermistor, we're going to analyze the dynamics of the thermistor and how it responds to an abrupt change in temperature. It is said that a themistor can be modeled as a first order system. The basic form of a first order system can be shown below.
-<men>
+<md number="yes">
   \dot{T} = \sigma (T_f - T)
-</men>
+</md>
 where <m>T</m> is our state variable and <m>\dot{T}</m> is the derivative of our state. For this example let's assume that <m>T</m> is temperature. In this case <m>T_f</m> is an external temperature that is either higher or lower than current temperature causing the derivative of temperature to be non-zero. You can see in this case that once the temperature of the system is equal to the external forcing temperature, the derivative of the temperature of the system goes to zero. This implies that the system has reached equilibrium. The variable <m>\sigma</m> has units of <m>Hz</m> or <m>1/sec</m>. The inverse of <m>\sigma</m> is <m>\tau</m> the time constant.
-<men>
+<md number="yes">
   \tau = \frac{1}{\sigma}
-</men>
+</md>
 </p>
 
 <p>
 The time constant of the system is related to how quickly the system responds to change or even how long it takes for the system to reach equilibrium. Reaching equilibrium quantitatively happens when the state has changed 98%. In other words the state of the system is within 2% of the equilibrium state. This is called the settling time <m>t_s</m>. The time constant is related to the settling time using the equation below.
-<men>
+<md number="yes">
   \tau = \frac{t_s}{4}
-</men>
+</md>
 </p>
 
 <p>
 The only question now of course is what is the solution <m>T(t)</m> or rather the temperature as a function of time. In this case, the solution to the above dynamics equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard first order differential equation techniques</url> to obtain the solution below<xref ref="youtube"/>.
-<men xml:id="e_thermistor" >
+<md number="yes" xml:id="e_thermistor" >
   T(t) = (T_0-T_f)e^{-\sigma t} + T_f
-</men>
+</md>
 </p>
 
 <p>

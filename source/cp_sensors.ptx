@@ -56,15 +56,15 @@ with a resistor. A photocell (or Light Dependent Resistor, LDR) is a sensor whos
 <p>
 The GND leg of the photocell is connected to pin
 A8. You can check the pin by looking at the graphic of an eye on the CPX and taking a look at the digital pin next to it. Since this circuit is connected to a voltage divider, the equations below can be used to relate the resistance in the photocell to the voltage being read by the ADC. 
-<men>
+<md number="yes">
   V_{photocell} = V_{out}\frac{R_{photocell}}{R_{series}+R_{photocell}}
-</men>
+</md>
 </p>
 <p>
 In this case <m>V_{out}</m> is 3.3V and <m>R_{series}=10000 \Omega</m> is a resistor value chosen by Adafruit.  So, if you measure <m>V_{photocell}</m> using the ADC on the CPX/CPB you'll be able to solve for the resistance in the photocell <m>R_{photocell}</m>. The resistance can then be used to determine the Lux value. Some <url href="https://www.researchgate.net/publication/375038565_Measuring_the_Voltage_Current_and_Resistance_of_the_LDR_Sensor_through_the_Arduino_UNO">sources</url> suggest that Lux is a power law given by the equation below <xref ref="b_photocell"/><xref ref="lux"/>.
-<men>
+<md number="yes">
   Lux = 500000R_{photocell}^{-0.7}
-</men>
+</md>
 where <m>R_{photocell}</m> is the resistance of the photocell in Ohms. We've already
 learned how to access analog pins (See <xref ref="voltage"/>) in a
 previous lab so just use
@@ -142,27 +142,29 @@ equations to convert the analog signal to celsius.
 
 <p>
 In this case, the thermistor is wired in a voltage divider circuit in series with a <m>10000~\Omega</m> resistor. For this circuit though, it turns out that the thermistor is actually wired to the high side of the voltage divider. That means when you measure pin A9 you're actually measuring the voltage across the series resistor rather than the thermistor. This means that the voltage across the series resistor must be inverted to compute the resistance across the thermistor. This is done using the equation below similar to the equation used for the photocell.
-<men>
+<md number="yes">
   V_{measured} = V_{out}\frac{R_{series}}{R_{series}+R_{thermistor}}
-</men>
+</md>
 </p>
 
 <p>
 Where <m>V_{out}=3.3V</m> and <m>R_{series}=10000~\Omega</m>. The equation above can be inverted to obtain the resistance in the thermistor . This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that the ADC on boad the CPX/CPB is actually measuring the digital output <m>D_o</m>. This can be converted to measured voltage as shown in the equation below
-<men>V_{measured} = V_{out}\frac{D_o}{65535}</men> 
+<md number="yes">
+  V_{measured} = V_{out}\frac{D_o}{65535}
+</md>
 If you absolutely must have the voltage across the thermistor you simply use Kirchhoff's Voltage Law given in the equation below
-<men>
+<md number="yes">
   V_{thermistor} = V_{out}-V_{measured}
-</men>
+</md>
 So the process is to first read the digital output from the ADC, convert that to voltage, then use the voltage to compute the resistance in the thermistor and finally use the resistance to compute the temperature in Kelvin. In order to convert measured voltage to resistance, we can rearrange the equations above to get the equation below
-<men>
+<md number="yes">
 R_{thermistor} = R_{series}\left(\frac{V_{out}}{V_{measured}}-1\right)
-</men>
+</md>
 Note that <m>V_{out}/V_{measured}=65535/D_o</m>. Once you have the resistance from the thermistor, you can use a modified version of the <url href="https://en.wikipedia.org/wiki/Steinhart">Stein-Hart</url><xref ref="stein-hart"/><xref ref="steinhart-wikipedia"/> to convert the resistance to temperature in Celsius.
 </p>
-<men>
+<md number="yes">
   T_{thermistor}=\left(\frac{1}{T_0}+\frac{1}{\beta}log(R_{thermistor}/R_{series})\right)^{-1}
-</men>
+</md>
 <p>
 where <m>\beta=3950</m> is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and <m>T_0=298.15K</m> is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.
 </p>
@@ -258,12 +260,12 @@ the accelerometer are clearly in <m>m/s^2</m>.
 </p>
 <p>
 Note that the accelerometer can be used to obtain pitch and roll angles in benign environments. This is done via trigonometry. You'll notice that when you point the CPX directly at you with the cable pointing up the x axis reads around 0 and the y axis reads around gravity. If you then rotate the sensor so that the cable is coming out of the left side of the CPX, the x axis is reading about gravity while the y axis is zero. Similarly, rotating the CPX in the X/Z plane can be done by rotating the USB cable where it plugs into the CPX. In this case we can ignore the Y axis data. If you print the raw accelerometer data, you'll notice that when you place the CPX directly onto a flat surface, the x and y axes read a value around 0, while the z axis reads around gravity (9.81<m>m/s^2</m>). If you then rotate the sensor clockwise 90 degrees, the x axis is reading about gravity while the z axis is now zero. This means we can form two triangles (one for the X/Z plane and another for the Y/Z plane) and get the angles of the CPX/CPB using the equations below.
-<men>
+<md number="yes">
   \theta = -sin^{-1}(\bar{a}_x)
-</men>
-<men>
+</md>
+<md number="yes">
   \phi = tan^{-1}\left(\frac{\bar{a}_y}{\bar{a}_z}\right)
-</men>
+</md>
 In the equations above, <m>a</m> is the accelerations along all 3 axes. Shorthand is used for <m>cos(\eta)=c_{\eta}</m> and <m>sin(\eta)=s_{\eta}</m>. The <m>\bar{\eta}</m> notation is used to indicate a normalization of the vector. That is <m>\bar{\eta} = \eta/||\eta||</m> where <m>||\eta||</m> is the norm of a 3 dimensional vector <m>||\eta||=\sqrt{\eta_x^2+\eta_y^2+\eta_z^2}</m>. The derivation for these angles from accelerometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url><xref ref="Github"/>.
 </p>
 </subsection>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="download-python" xmlns:xi="http://www.w3.org/2001/XInclude">
-	 <title>Python</title>
+<chapter xml:id="plotting" xmlns:xi="http://www.w3.org/2001/XInclude">
+	 <title>Plotting</title>
   <introduction>
   <list>
   <title>Parts List</title>
   <ol>
   <li><p>Laptop</p></li>
   <li><p><url href="https://www.python.org/">Python</url> <xref ref="python"/> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> <xref ref="thonny"/> or <url href="https://www.spyder-ide.org/">Spyder</url> <xref ref="spyder"/> - Do not use Python IDLE)</p></li>
+  <li><p>Optional: Google Colab <xref ref="colab"/></p></li>  
+  <li><p>Optional: Google Sheets <xref ref="sheets"/></p></li>
+  <li><p>Optional: Octave <xref ref="octave"/></p></li>
   </ol>
   </list>
   <list>
@@ -222,7 +225,7 @@ the best in my opinion.
 <section>
 <title>Extra Help</title>
 <p>
-If you need extra help with this assignment I have a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install Thonny </url> as well as a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install Spyder</url>. I also have a
+If you need extra help with this assignment there is a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install Thonny </url> as well as a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install Spyder</url>. I also have a
 pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> <xref ref="youtube"/>.</p>
 </section>
 
@@ -231,9 +234,9 @@ pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvG
   <introduction>
 <p>
 Your assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in your report. You must add a grid and label the x-axis ‘Time (sec)' and the y-axis ‘Temperature (F)'
-<men>
+<md number="yes">
   T(t) = 60(1-e^{-5t})+30
-</men>
+</md>
 
 
 <ol>

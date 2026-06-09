@@ -23,22 +23,22 @@
 </list>
 <p>
 A second order system undergoing free motion will have dynamics that look like this
-<men>
+<md number="yes">
   \ddot{\theta} + 2\zeta \omega_n \dot{\theta} + {\omega_n}^2
-</men>
+</md>
 </p>
 
 <p>
 In this case, the solution to the above equation can be solved using <url href="https://www.youtube.com/watch?v=VOv2HI3i7oo">standard second order differential equation techniques</url> to obtain the solution below <xref ref="youtube"/>.
-<men xml:id="e_secondorder" >
+<md number="yes" xml:id="e_secondorder" >
   \theta(t) = \theta_0e^{-\sigma t}cos(\omega_d t)
-</men>
-<men>
+</md>
+<md number="yes">
   \omega_n = \sqrt{\sigma^2 + {\omega_d}^2}
-</men>
-<men>
+</md>
+<md number="yes">
   \zeta = \frac{\sigma}{\omega_n}
-</men>
+</md>
 </p>
 <p>
 Looking at the equations you can see that if the time series of the oscillations are known, the damping constant and damped natural frequency can be obtained. These two values can be combined to obtain the natural frequency and the damping ratio. So let's get some data.
@@ -82,16 +82,16 @@ If I then bring this into Python I get the following plot below. In my data set 
 <title>Estimating Parameters</title>
 <p>
 After trimming the data and removing some bias it was time to get my damping constant and damped natural frequency. There are a few equations that can help you obtain these parameters. First, the settling time is the length of time it takes for the oscillations to settle. The settling time can be used to find the damping constant. This is equal to:
-<men>
+<md number="yes">
   \sigma = \frac{4}{T_s}
-</men>
+</md>
 </p>
 
 <p>
 For my data set the settling time was about 1.25 seconds which gave a damping constant of 3.2. Once I had the damping constant I could obtain the damped natural frequency. This was done by measuring the distance between two peaks in the data set. There is a peak at around 0.5 seconds and another at around 0.95 seconds. I can use this to compute a period T. Period can be computed to angular frequency using the equation below.
-<men>
+<md number="yes">
   \omega_d = \frac{2\pi}{T}
-</men>
+</md>
 </p>
 
 <p>

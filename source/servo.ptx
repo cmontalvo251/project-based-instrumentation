@@ -101,9 +101,9 @@ Take your table of data and put it into a spreadsheet and save the data as a CSV
 </figure>
 <p>
 You'll notice that I first import the data from the text file using the np.loadtxt function and then I use the polyfit and polyval functions to create the trendline. The polyfit function requires you to give it the X and Y axes and the order of the trendline which since the trend line is linear I sent it a 1 but you could easily do 2 for quadratic or 3 for cubic. I then print the coefficients which are [0.01 0.6]. This means my trend line looks like this.
-<men>
+<md number="yes">
   Pulse = 0.6 + 0.01*Angle
-</men>
+</md>
 </p>
 
 <p>
@@ -189,20 +189,20 @@ angle. I've made a table below to explain what I mean.
 </table>
 <p>
 This table basically says that if the aircraft is level with a pitch angle of zero I want the elevator to be zero as well. If the aircraft pitches down, I want the elevator to pitch up and counteract that rotation. Using these three data points I can create a simple equation to relate elevator angle to pitch angle.
-<men xml:id="e_kpeasy" >
+<md number="yes" xml:id="e_kpeasy" >
   \delta_e = -\theta
-</men>
+</md>
 </p>
 
 <p>
 This is a simplified version of proportional control however. In reality the control signal should be given by the equation below.
-<men>
+<md number="yes">
   \delta_e = Ce
-</men>
+</md>
 where C is the controller and e is the error signal. If we replace the error signal with <m>e=\theta_c-\theta</m> and the controller with just proportional gain <m>k_p</m> we arrive at the equation below.
-<men>
+<md number="yes">
   \delta_e = kp(\theta_c-\theta)
-</men>
+</md>
 </p>
 
 <p>
@@ -231,16 +231,16 @@ It's easy to see that if <m>k_p=1</m> and <m>\theta_c=0</m> the equation for the
 </table>
 <p>
 This also results in a simple equation to relate servo angle <m>(s)</m> to elevator angle <m>(\delta_e)</m>.
-<men>
+<md number="yes">
   s = \delta_e + 90
-</men>
+</md>
 </p>
 
 <p>
 Finally, we can then use our calibration coefficients (See <xref ref="servo-calibration"/>) to relate servo angle to pulse width. When I calibrated my servo I obtained the following equation where <m>\mu</m> is the pulse in PWM.
-<men>
+<md number="yes">
   \mu = 0.6 + 0.01s
-</men>
+</md>
 </p>
 
 <p>
@@ -269,15 +269,15 @@ Line 39 uses the calibration equation from the previous experiment to convert se
   <title>Second Order Pitch Dynamics</title>
 <p>
 We could take an entire aircraft design course or an undergraduate controls and systems dynamics course but to start let's just simulate this control system and see how it does. First we need to write the dynamic equation for pitch of an aircraft. That is shown below.
-<men xml:id="e_second-order">
+<md number="yes" xml:id="e_second-order">
   \frac{J}{q_{\infty}S\bar{c}}\ddot{\theta} - \frac{\bar{c}}{2u_0}C_{mq}\dot{\theta} - C_{m\alpha}\theta = C_{m\delta_e}\delta_e + C_{m0}
-</men>
+</md>
 </p>
 <p>
 In the equation above <m>J</m> is the inertia of the aircraft, <m>C_{m0},C_{mq},C_{m\alpha}</m> and <m>C_{m\delta_e}</m> are non-dimensional coefficients, <m>\bar{c}</m> is the mean aerodynamic chord, <m>u_0</m> is the equilibrium velocity, <m>\bar{c}</m> is the mean aerodynamic chord, S is the planform area of the wing and <m>q_{\infty}</m> is the dynamic pressure. The dynamic pressure is given by the equation below
-<men>
+<md number="yes">
   q_{\infty} = \frac{1}{2}\rho {u_0}^2
-</men>
+</md>
 where <m>\rho</m> is the air density. To simulate this system use the table below.
 </p>
 <table>
@@ -317,13 +317,13 @@ Now that the dynamics are written, the second order equation can be integrated u
 <subsection>
 <title>First Order Velocity Dynamics</title>
   <p>In order to gain some practice with simulating dynamic systems it's possible to approximate the velocity of an aircraft as a first order system. In order to accelerate a radio controlled aircraft, the motor must spin faster. It turns out that the PWM commands sent to servos to cause them to rotate back and forth is actually the same PWM signal used to control an Electronic Speed Controller (ESC) which controls a motor. So if you send around 1.1 ms to an ESC, the motor will be off and 1.9 ms will be full throttle. In this case we can make a simple equation that relates the throttle command to the velocity of the aircraft. The equation is shown below.
-    <men xml:id="e_first-order">
+    <md number="yes" xml:id="e_first-order">
       \dot{u} = \frac{1}{m}[C_{x\delta t} (\delta_t-\delta_0) - 0.5\rho u_0 S C_x u]
-    </men>
+    </md>
     where <m>m=1.23 kg</m>, <m>u</m> is the velocity of the aircraft, <m>\delta_t</m> is the throttle command in <m>ms</m>, and <m>\delta_0=1.1 ms</m> is the nominal PWM pulse to an ESC. The coefficients <m>C_{x\delta t}=13.78 \frac{N}{ms}</m> and <m>C_x=0.017</m> are coefficients that relate throttle to acceleration and velocity to drag respectively. The rest of the variables are explained above in the second order system. For this simulation you can assume that proportional control works just fine and thus
-    <men>
+    <md number="yes">
       \delta_t = k_p(u_c-u)
-    </men>
+    </md>
     where <m>u_c</m> is the commanded velocity and <m>k_p</m> is the proportional gain. 
   </p>
 </subsection>

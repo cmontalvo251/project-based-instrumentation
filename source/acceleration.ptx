@@ -67,9 +67,9 @@ first data point.
 </figure>
 <p>
 It's clear from the plots that the z axis was oriented towards the nose of the car. In this case I am going to have to flip the z-axis since the beginning is acceleration and the end is deceleration. I also through the acceleration in the z-axis through a complementary filter with a filter value of 0.25. I think it makes the acceleration profile a bit less jumpy. I then used a Reimann sum and integrated the acceleration data points to get velocity. The equation itself looks like this:
-<men>
+<md number="yes">
   V_i = \sum\limits_{n=0}^{i}{(a_i-a_0)\Delta t}
-</men>
+</md>
 </p>
 
 <p>

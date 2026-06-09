@@ -108,9 +108,9 @@ The final part is to get the LIS3MDL (magnetometer) to work. The starting point 
 </p>
 <p>
 Recall that the accelerometer can be used to measure roll and pitch (See <xref ref="accelerometer"/>). By combining the magnetometer in this IMU, it's possible to get the compass heading of the sensor.
-<men>
+<md number="yes">
   \psi = tan^{-1}\left(\frac{\bar{\beta}_z s_{\phi} - \bar{\beta}_y c_{\phi}}{\bar{\beta}_x c_{\phi} + \bar{\beta}_y s_{\theta}s_{\phi} + \bar{\beta}_z c_{\phi}s_{\theta}}\right)
-</men>
+</md>
 </p>
 <p>
 In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>)<xref ref="Github"/>. 
