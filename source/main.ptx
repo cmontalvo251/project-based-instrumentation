@@ -24,10 +24,10 @@
     <xi:include href="./getting-started.ptx"/>
     <xi:include href="./troubleshooting.ptx"/>
     <xi:include href="./led-buttons.ptx"/>
-    <xi:include href="./daq.ptx"/>
-    <xi:include href="./bluetooth.ptx"/>
-    <xi:include href="./sdcard.ptx"/>
-    <xi:include href="./serial.ptx"/>
+    <xi:include href="./daq.ptx"/> <!-- Methods 1-3 -->
+    <xi:include href="./bluetooth.ptx"/> <!-- Method 4 -->
+    <xi:include href="./sdcard.ptx"/> <!-- Method 5 -->
+    <xi:include href="./serial.ptx"/> <!-- Method 6-->
     <xi:include href="./voltage.ptx"/>
     <xi:include href="./pitot.ptx"/>
     <xi:include href="./cp_sensors.ptx"/>

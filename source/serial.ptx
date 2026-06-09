@@ -6,22 +6,55 @@
 <list>
 <title>Parts List</title>
 <ol>
-<li><p>TBD</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Computer with Python installed</p></li>
+<li><p>CircuitPlayground Express or Bluefruit</p></li>
 </ol>
 </list>
 <list>
 <title>Learning Objectives</title>
 <ol>
-<li><p>TBD</p></li>
+<li><p>Understand how to use serial communication to log data from a microcontroller</p></li>
+<li><p>Learn to read and interpret serial data in Python</p></li>
+<li><p>Create a simple data logging script using the serial library</p></li>
 </ol>
 </list>
+<p>
+Method 6 is another "automatic" way to log data from your microcontroller. This method uses the serial library in Python to read data sent from your CircuitPlayground Express or Bluefruit. The idea is to have the Circuit Playground send data via USB to your laptop just like the REPL in Mu but instead of just viewing the output in Mu a Python script on a laptop can read and process the data. Serial communication is a fundamental method for microcontrollers to send data to a computer. In this chapter, we will explore how to use the serial library in Python to read data from your CircuitPlayground Express or Bluefruit. This method allows you to log data in real-time and can be a powerful tool for data acquisition and analysis. The code on the CPX/CPB is the same button press code used for the last few chapters and again can be found on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/button_presses.py">Github</url>. The code itself is discussed in detail in Chapter <xref ref="daq"/>.
+</p>
 </introduction>
 
 <section>
-<title>Initial Setup</title>
+<title>Serial Setup</title>
 <p>
-TBD
+In order to read serial data from a microcontroller, the serial library must be installed in Python. The serial library allows the computer to communicate with the serial port on a computer and read data sent from the microcontroller. The steps to install the serial module is the same as installing <em>numpy</em> or <em>matplotlib</em> explained in Chapter <xref ref="plotting"/>. If using Spyder or command line the command is shown below.
 </p>
+<pre>
+!pip install serial
+</pre>
+<p>or</p>
+<pre>
+!pip3 install serial
+</pre>
+<p>if using Python3. If using Thonny, the process is the same as installing any other module by going to Tools > Manage Packages. The code to read serial data from the CPX/CPB is shown below and can also be found on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Serial_Handshake/read_serial_cpb.py">Github</url>.
+</p>
+<figure>
+  <image width="73%" source="Serial_Code.png" />
+  <caption>Example Serial code in Python</caption>
+</figure>
+<p>
+The code above is pretty advanced and uses a class called <em>CPX</em> to handle all of the serial communication as well as saving the text file and plotting. The <em>__init__</em> function creates a filename and opens a serial port on "/dev/ttyACM0" which is a serial port for Linux. If using Windows the port will be something like "COM3" and if using Mac it will be something like "/dev/tty.usbmodem14101". The <em>read</em> function reads the serial data and saves it to a text file by first stripping the binary information, line feeds and converts the number of a 64 bit number. The <em>extractdata</em> function plots the data after the serial reading is done. The main part of the code is in the while loop at the bottom which continuously reads serial data for 10 seconds in this case. So basically, the CPX/CPB is coded using Mu to send serial data to the computer just like the REPL in Mu and then the laptop program is run to save 10 second of data to a text file and then plot the data. The figure below shows the result of running the example script.
+<figure>
+  <image width="73%" source="Plot_Serial.png" />
+  <caption>Example Serial Plot of Button Presses vs Time</caption>
+</figure>
+</p>
+</section>
+
+<section>
+  <title>Extra Help</title>
+  <p>
+  There are two great youtube videos on this topic. The first video discusses <url href="https://www.youtube.com/watch?v=ULAeE9UxtHc">how to use the "screen" program on Ubuntu (Linux) to read serial data from a microcontroller without the use of Mu</url>. This is a great starting point to see how serial communication is sent to a laptop via USB. The second video is a bit more advanced and shows <url href="https://www.youtube.com/watch?v=UG6aolK8p3I">how to use the serial library in Python to read serial data from a microcontroller</url>. The video walks through the code explained in the previous sections and is a great starting point if video lectures are preferred to text </p>
 </section>
 
 <section>

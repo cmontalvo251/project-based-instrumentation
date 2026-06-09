@@ -30,7 +30,7 @@ basically means you can use the bluetooth module as another method to
 save data from the CPB. There is a lot you can do
 with bluetooth but for starters all
 code required for this module is on
-my <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/CPB_DataLogger">Github</url>. This chapter walks through how to write some example bluetooth code and get the app to receive the data on your smart phone. </p>
+<url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/CPB_DataLogger">Github</url>. This chapter walks through how to write some example bluetooth code and get the app to receive the data on your smart phone. </p>
 </introduction>
 <section>
 <title>Setup</title>
