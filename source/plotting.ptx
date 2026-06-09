@@ -8,56 +8,59 @@
   <ol>
   <li><p>Laptop</p></li>
   <li><p><url href="https://www.python.org/">Python</url> <xref ref="python"/> Integrated Development Environment (IDE) (<url href="https://thonny.org/">Thonny</url> <xref ref="thonny"/> or <url href="https://www.spyder-ide.org/">Spyder</url> <xref ref="spyder"/> - Do not use Python IDLE)</p></li>
-  <li><p>Optional: Google Colab <xref ref="colab"/></p></li>  
-  <li><p>Optional: Google Sheets <xref ref="sheets"/></p></li>
-  <li><p>Optional: Octave <xref ref="octave"/></p></li>
+  <li><p>Optional: <url href="https://colab.research.google.com/">Google Colab</url> <xref ref="colab"/></p></li>  
+  <li><p>Optional: <url href="https://sheets.google.com/">Google Sheets</url> <xref ref="sheets"/></p></li>
+  <li><p>Optional: <url href="https://www.gnu.org/software/octave/">Octave</url> <xref ref="octave"/></p></li>
   </ol>
   </list>
   <list>
   <title>Learning Objectives</title>
   <ol>
   <li><p>How to download and use a Python IDE (Thonny or Spyder is suggested. Do not use Python IDLE)</p></li>
-  <li><p>Plot a simple function in Python</p></li>
+  <li><p>How to install Python modules such as numpy and matplotlib</p></li>
+  <li><p>Learn how to use Google Colab, Google Sheets and Octave if you choose to use those platforms</p></li>
+  <li><p>Plot a simple function in Python, Octave or Sheets</p></li>
   </ol>
   </list>
   <p>
 As you learn Instrumentation throughout the semester, you will be
 tasked with creating computer programs on the Circuit Playground
-Express (CPX). The CPX itself has it's own RAM, CPU, HDD and many
-sensors. Your CPX is kind of like a mini computer! You can plug the
+Express (CPX) or Arduino. The CPX itself has it's own RAM, CPU, HDD and many
+sensors while the Arduino is a simple microcontroller with no sensors, or harddrive. The CPX though is kind of like a mini computer! You can plug the
 CPX into your computer via USB and access the hard drive (HDD) from
 your own computer. When you program on the CPX you need to write
 programs on the CPX itself so that the mini computer can run the
 program you wrote. The CPX knows how to read multiple different
-languages but in this class we are going to write everything in the
+languages but in this class the main languate will be the 
 <url href="https://www.python.org/">Python</url> language which has been ported
 to the CPX and called
-<url href="https://circuitpython.org/">CircuitPython</url> <xref ref="python"/><xref ref="CircuitPython"/>. Since we have to
-write everything in CircuitPython we
-need to first learn how to program some things in Python. You can
-easily download Python by itself but it's nice to get what's called an
-Integrated Development Environment (IDE). This way you can practice
-writing Python code on your computer while you wait for your purchases
-to arrive in the mail. This chapter is all about getting Python and an IDE downloaded on your computer and learning how to use it.
-</p>
-<p>
-So which IDE can you download and which is recommended? I recommend
-two IDEs. They are explained in the next two sections. I recommend getting either one. If you just Google <q>Python download</q> you will find a humongous list of editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to get lost when searching for something so broad. You've been warned. I recommend just using Spyder or Thonny. 
+<url href="https://circuitpython.org/">CircuitPython</url> <xref ref="python"/><xref ref="CircuitPython"/>. Since many programs will be 
+written in CircuitPython it is import to first learn how to program some things in Python. Python can be easily downloaded by itself but it's nice to get what's called an
+Integrated Development Environment (IDE). This way programs can be written on the computer for practice and better debugging. This chapter is all about getting Python and an IDE downloaded on the computer and learning how to use it. Extra sections have been written to briefly discuss Octave, Google Sheets and Google Colab as well. You can use any of those platforms to complete the assignment.
 </p>
 </introduction>
 
 <section>
-<title>Thonny</title>
+  <title>Python IDEs</title>
+  <introduction>
+  <p>
+  So which IDE is the best and which is recommended? Two IDEs are recommended for Python. They are explained in the next two sections. Either one is totally fine. If you just Google <q>Python download</q> you will find a humongous list of editors (Scratch, Anaconda, Canopy, Eclipse, PyDev, etc). It's easy to get lost when searching for something so broad. Again, just using Spyder or Thonny.</p>
+  </introduction>
+  <subsection>
+    <title>Thonny</title>
 <p>
-Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> is a great, easy, simple and lightweight IDE that I've been using for year. The figure below is a screenshot of what Thonny looks like with a sine graph plotted. 
+Thonny - <url href="https://thonny.org/">https://thonny.org</url><xref ref="thonny"/> is a great, easy, simple and lightweight IDE that has been around for years. Note that there is a 32 bit and 64
+bit version. Which one is necessary? Well that depends on how many bits the
+computer has. This is a great thing to Google. Type the following: "do
+I have a 32 bit or 64 bit computer" into Google. It's more than likely that everyone reading this has a 64 bit computer but it's always a good idea to check. Learning the difference between 32 and 64 bit computers is the topic of another chapter (<xref ref="voltage"/>).
+The figure below is a screenshot of what Thonny looks like with a sine graph plotted. 
 </p>
 <figure>
 <image width="73%" source="Thonny.png" />
 <caption>Example Sine Graph in Thonny</caption>
 </figure>
-</section>
-
-<section>
+</subsection>
+<subsection>
 <title>Spyder</title>
 <p>
 Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</url><xref ref="spyder"/> is a powerful IDE that is widely used in the scientific Python community. The figure below is a screenshot of what Spyder looks like with a sine graph plotted. 
@@ -66,42 +69,24 @@ Spyder - <url href="https://www.spyder-ide.org/">https://www.spyder-ide.org/</ur
 <image width="73%" source="Spyder.png" />
 <caption>Example Sine Graph in Spyder</caption>
 </figure>
-</section>
+</subsection>
 
-<section>
-<title>Other Options</title>
+<subsection>
+<title>Setting up the IDE</title>
 <p>
-It is possible to use
-<url href="https://colab.research.google.com/drive/1-VzSDojevQZ6A0oJNol9YXV6SRp3FKeP">Google
-Colab</url><xref ref="colab"/> if you want to collaborate on Python projects or even get apps for your phone (<url href="https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&amp;hl=en_US&amp;gl=US">Pydroid</url><xref ref="pydroid"/> or <url href="https://apps.apple.com/us/app/pythonista-3/id1085978097">Pythonista</url><xref ref="pythonista"/>
-depending on Android or iPhone). You'll need to download 32 bit or 64
-bit but which one? Well you need to figure out how many bits your
-computer has. This is a great thing to Google. Type the following: "do
-I have a 32 bit or 64 bit computer" into Google. I'm willing to bet
-you have a 64 bit computer but you may as well check. We'll learn
-about the difference between 32 and 64 bit computers when we get to
-the projects on Binary.
-</p>
-</section>
-
-<section>
-<title>Setting up your IDE</title>
-<p>
-Once you have Thonny or Spyder installed you need to install numpy and
-matplotlib which are modules within Python that allow us to do some
+Once Thonny or Spyder is installed, numpy and
+matplotlib are necessary modules within Python that allow Python to do some
 extra things like numerical computation with Python (numpy) and Matlab
-style Plotting libraries (matplotlib). I explain how to install
-modules in my Youtube videos above; however, you need to head over to
-Tools>Manage Packages in Thonny. You can see in the image below I
-already have version 3.1.2 but I can upgrade to 3.2.2
+style Plotting libraries (matplotlib). How to install
+modules in Youtube is in the Extra Help section <xref ref="extra-help"/>; however, the simple way is to head over to
+Tools>Manage Packages in Thonny. The image below shows that version 3.1.2 is already installed but can be upgraded to 3.2.2
 </p>
 <figure>
 <image width="73%" source="IDE_upgrades.png" />
 <caption>Installing Matplotlib in Thonny</caption>
 </figure>
 <p>
-If numpy or matplotlib is not already included in Spyder then you need
-to type the following into the Python Console in the lower right hand
+If numpy or matplotlib is not already included in Spyder then type the following into the Python Console in the lower right hand
 corner of Spyder which is called the IPython console.
 </p>
 <pre>
@@ -114,22 +99,21 @@ If that doesn't work try
 !pip3 install matplotlib
 </pre>
 <p>
-You can see in the output example below that I already have matplotlib
-installed as it says <q>requirement already satisfied</q>. Assuming you
-have a valid internet connection it will install the necessary
+The output example below shows that matplotlib is already installed
+installed as it says <q>requirement already satisfied</q>. Assuming there is
+a valid internet connection it will install the necessary
 module.
 </p>
 <figure>
 <image width="50%" source="console_thonny.png" />
 <caption>Installing Python Modules via Thonny Console</caption>
 </figure>
-</section>
+</subsection>
 
-<section>
+<subsection>
 <title>Scripting</title>
 <p>
-Once you have numpy and matplotlib it's time to make a plot. Here is a simple example
-you prefer text I will walk through a simple example.
+Once numpy and matplotlib is installed it's time to make a plot. Here is a simple example.
 </p>
 <figure>
 <image width="50%" source="matplotlib_example.png" />
@@ -146,9 +130,60 @@ uses the sine function to create the vector <q>y</q>. Finally <q>x</q> and <q>y<
 are plotted and the figure is instructed to pop up on your screen
 using the show() function.
 </p>
+</subsection>
 </section>
 
 <section>
+<title>Other Plotting Tools</title>
+<subsection>
+  <title>Google Colab</title>
+<p>
+It is possible to use
+<url href="https://colab.research.google.com">Google
+Colab</url><xref ref="colab"/> to collaborate on Python projects, run in the cloud/browser. In order to get Colab to work a Google account is necessary. Colab is a great tool for collaborating on Python projects and sharing code with others. It also has the advantage of running in the cloud so it can be accessed from any device with an internet connection. Although it's possible to head directly to the Colab website, it is recommended to open Colab through Google Drive. To do that simply open Google Drive>+New>More>Connect more apps and then install Google Colab as shown in the figure below.
+</p>
+<figure>
+<image width="73%" source="Google_Colab_Install.png" />
+<caption>Installing Google Colab through Google Drive</caption>
+</figure>
+<p>
+Once that's done it will be possible to open a new Google Colab notebook. The figure below is a screenshot of what Colab looks like with a sine graph plotted. The other benefit to using Google Colab is that Gemini is imbedded into Google Colab for easy AI integration.
+</p>
+<figure>
+<image width="73%" source="Colab.png" />
+<caption>Example Sine Graph in Google Colab</caption>
+</figure>
+</subsection>
+<subsection>
+  <title>Octave</title>
+  <p>
+  Octave is very similar to MATLAB but free. The only major downside is that Octave is much slower and doesn't have a lot of extra utilities that MATLAB does. However, if it's not possible to get MATLAB, Octave is a great alternative. The figure below is a screenshot of what Octave looks like with a sine graph plotted.
+  </p>  
+  <figure>
+  <image width="73%" source="Octave.png" />
+  <caption>Example Sine Graph in Octave</caption>
+  </figure>
+  <p>Notice that the syntax is very similar to Python but slightly different. Deep diving into programming is not the focus of this class but anyone wanting to learn more about programming in Python or Octave can find plenty of resources online. The best way to learn is to just start writing code and then Google any errors that come up. The error messages are usually pretty descriptive and will lead to the answer. Furthermore, with the spawn of Generative AI many students often code better than ever before with a few prompts into any AI tool like Gemini, Copilot, Grok or ChatGPT. Also, the extra help section (xref ref="extra-help"/>) has many youtube videos on how to program if videos are preferred to AI or text. </p>
+</subsection>
+<subsection>
+  <title>Google Sheets</title>
+  <p>
+  Google Sheets is typically already installed in all browsers again provided a Google account is created first. However, Microsoft Excel can also be used if a Google account is not available. The figure below is a screenshot of what Google Sheets looks like with a sine graph plotted. Plotting in spreadsheet programs can be cumbersome but it is possible to do and is a good option for those who are not interested in learning Python or Octave or programming in general. Futhermore, there is a tongue-in-cheek comment from recently graduated engineers that no one knows how to code and everyone just uses Excel. So if that's the future of engineering, Google Sheets or Excel is the way to go.</p>
+  <figure>
+  <image width="73%" source="Sheets.png" />
+  <caption>Example Sine Graph in Google Sheets</caption>
+  </figure>
+</subsection>
+</section>
+
+<section xml:id="extra-help">
+<title>Extra Help</title>
+<introduction>
+<p>
+If extra help is needed with this assignment there is a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install Thonny </url> as well as a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install Spyder</url>. There is also a
+pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> <xref ref="youtube"/>.</p>
+</introduction>
+<subsection>
 <title>Built-In Help Function and dir()</title>
 <p>
 Running code will always create syntax errors. Typing your syntax
@@ -220,30 +255,23 @@ Google which is also another way to learn information although when I
 want to find information quickly I just use the documentation. It's
 the best in my opinion.
 </p>
-</section>
-
-<section>
-<title>Extra Help</title>
-<p>
-If you need extra help with this assignment there is a <url href="https://www.youtube.com/watch?v=qaxukpYRqfA&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=14">youtube video on how to install Thonny </url> as well as a <url href="https://www.youtube.com/watch?v=OjYwET-6QtE&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=35">youtube video on how to install Spyder</url>. I also have a
-pretty <url href="https://www.youtube.com/watch?v=7nAzHPURYW0&amp;list=PL_D7_GvGz-v1RsDs_OdNW65qRjEjmpfQx&amp;index=8">comprehensive youtube video on how to plot in matplotlib</url> <xref ref="youtube"/>.</p>
+</subsection>
 </section>
 
 <section>
   <title>Assignment</title>
   <introduction>
 <p>
-Your assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in your report. You must add a grid and label the x-axis ‘Time (sec)' and the y-axis ‘Temperature (F)'
+The assignment for this project is to plot the equation below from 0 to 10 seconds and include that Figure in a report. The Figure must include a grid and an x-axis label (‘Time (sec)') and y-axis label (‘Temperature (F)'). Any plotting tool Sheets, Excel, Colab, Python, Octave or similar is acceptable provided the figure conforms to the requirements above and the specific rubric below.
 <md number="yes">
   T(t) = 60(1-e^{-5t})+30
 </md>
-
 
 <ol>
   <li><p>Title page with name,title and date - 5%</p></li>
   <li><p>Introduction - 5%</p></li>
   <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
-  <li><p>Include a screenshot (entire screen) of your Python IDE (Thonny or Spyder is suggested. Do no use Python IDLE) with your code pasted into the workspace - 40%</p></li>
+  <li><p>Include a screenshot (entire screen) of your plotting environment with your code pasted into the workspace - 40%</p></li>
   <li><p>Include the plot of temperature vs time being sure to save the figure so it is in high resolution - 40%</p></li>
   <li><p>Appendix A - Video Details - Film yourself and your entire screen running the example code and showing the result of <em>plt.show()</em> - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
