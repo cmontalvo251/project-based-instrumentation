@@ -9,7 +9,7 @@
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
-<li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Not included in kit. Note that other pressure sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
+<li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Note that other pressure sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
 <li><p>Bread Board</p></li>
 <li><p>Soldering iron</p></li>

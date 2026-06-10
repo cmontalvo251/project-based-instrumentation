@@ -9,7 +9,7 @@
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
-<li><p><url href="https://www.adafruit.com/product/746">GPS</url> (Not included in kit. Note that other GPS modules will work for this lab provided they output standard NMEA sentences)<xref ref="AdafruitMAIN"/></p></li>
+<li><p><url href="https://www.adafruit.com/product/746">GPS</url> (Note that other GPS modules will work for this lab provided they output standard NMEA sentences)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
 <li><p>Bread Board</p></li>
 <li><p>Soldering iron</p></li>
