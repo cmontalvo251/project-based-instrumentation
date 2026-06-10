@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="pressure" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Pressure</title>
+<introduction>
+<list>
+<title>Parts List</title>
+<ol>
+<li><p>Laptop</p></li>
+<li><p>CPX/CPB</p></li>
+<li><p>USB Cable</p></li>
+<li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Not included in kit. Note that other pressure sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
+<li><p>Alligator Clips (x4)</p></li>
+<li><p>Bread Board</p></li>
+<li><p>Soldering iron</p></li>
+</ol>
+</list>
+<list>
+<title>Learning Objectives</title>
+<ol>
+<li><p>Continue to understand the concept of soldering</p></li>
+<li><p>Reinforce the I2C protocol at a high level</p></li>
+<li><p>Learn the components of a Pressure Sensor (Barometer)</p></li>
+<li><p>Read Pressure data and plot</p></li>
+</ol>
+</list>
+<p>
+In this lab we're going to use a Pressure Sensor (Barometer) to measure atmospheric pressure.
+</p>
+<figure>
+  <image width="73%" source="lps22.jpg" />
+  <caption>Pressure Sensor (Barometer) without header pins soldered</caption>
+</figure>
+<p>
+The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22</url><xref ref="AdafruitMAIN"/>. The first (LPS22) is a pressure sensor. The second is a temperature sensor. The two of these sensors put together (pressure, temperature) is called a Barometer. This sensor does not come standard in the current iteration of the kit but you can purchase one on Adafruit for only $7 at the time of this writing. The interesting thing about this device is that you can actually purchase the LPS22 and the temperature sensor separately but this breakout board has both chips on board. The goal of this lab is not only to use this specific sensor but to understand Barometers and reinforce I2C protocol like has been discussed in previous chapters (<xref ref="imu"/> and <xref ref="accelerometer"/>).
+</p>
+</introduction>
+<section>
+  <title>Wiring and Software</title>
+<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to ....INSERT FIGURE OF WIRING DIAGRAM HERE....
+</p>
+<p>
+The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. ....INSERT FIGURE OF ALLIGATOR CLIP WIRING HERE....
+</p>
+<p>
+Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. The specific modules I needed for this lab were:
+
+<ol>
+<li><p>create a list of modules you need</p></li>
+</ol>
+</p>
+
+<p>
+Once you have the necessary modules you can run some example code. INSERT LINKS TO CODE <alert> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</alert> INSERT FIGURE OF EXAMPLE CODE AND THEN DISCUSS RESULTS FROM STUDENTS LAUNCHING A ROCKET. INCLUDE THE EQUATION TO CONVERT TO ALTITUDE FROM PRESSURE
+</p>
+</section>
+
+<section>
+  <title>Assignment</title>
+  <introduction>
+<p>
+For this assignment you are to wire up the external IMU and get data from it. You need to mount the CPX/CPB and the pressure sensor to some sort of hard surface so that when you move the CPX/CPB the pressure moves as well. In order to get the pressure to change significantly you'll need to change your altitude by a lot. My recommendation is to ride the elevator of a tall building or drive up a really big hill. 
+</p>
+<ol>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your CPX/CPB mounted to a hard surface with the pressure sensor on a breadboard. - 10%</p></li>
+  <li><p>Include a selfie of you right before you change altitude either by going up a big hill or by riding the elevator. Explain how you plan on changing altitude significantly in the supporting text. - 10%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of Mu showing the Plotter open showing pressure - 20%</p></li>
+  <li><p>Plot pressure vs time for your experiment where pressure significantly changes. - 20%</p></li>
+  <li><p>Convert pressure to altitude and plot altitude vs time for your experiment where altitude significantly changes. - 20%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
+</ol>
+</introduction>
+</section>
+</chapter>

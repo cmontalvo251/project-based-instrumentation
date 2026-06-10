@@ -31,7 +31,7 @@ yourself. This project is all about what parts you need to complete the subseque
 <section>
 <title>CircuitPython Kit</title>
 <p>
-Here is a list of all the components in the kit
+Here is a list of all the components in the kit <alert> Note that every semester is different and every instructor is different. Some instructors may choose to add or remove components from the kit. The list below is just a recommendation and is based on the components used in the labs in this book. Given a standard 16 week semester, I have personally found it impossible to do more than 12 or 13 labs which means we don't use everything in this list. Be sure to check with your instructor before buying everything on this list. </alert>
 
 <ol>
 <li><p>Circuit Playground Bluefruit or Express + Included USB Cable</p></li>
@@ -45,8 +45,10 @@ Here is a list of all the components in the kit
 <li><p>Breadboard</p></li>
 <li><p>Push Button</p></li>
 <li><p>LEDs x2</p></li>
-<li><p>Pitot Probe (not pictured below)</p></li>
-<li><p>LSM6DS33 + LIS3MDL - 9 DoF IMU </p></li>
+<li><p>LSM6DS33 + LIS3MDL - 9 DoF IMU (<xref ref="imu"/>)</p></li>
+<li><p>Pitot Probe (not pictured below)(<xref ref="pitot"/>)</p></li>
+<li><p>LPS22 Pressure Sensor (not pictured below)(<xref ref="pressure"/>)</p></li>
+<li><p>GPS Sensor (not pictured below)(<xref ref="gps"/>)</p></li>
 </ol>
 </p>
 
