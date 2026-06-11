@@ -136,7 +136,7 @@ For this assignment you are to wire up the external pressure sensor and get data
   <li><p>Include a screenshot (entire computer screen) of Mu showing the Plotter open showing pressure - 20%</p></li>
   <li><p>Plot pressure vs time for your experiment where pressure significantly changes. - 20%</p></li>
   <li><p>Convert pressure to altitude and plot altitude vs time for your experiment where altitude significantly changes. - 20%</p></li>
-  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass/Fail</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the pressure value in the serial Monitor in Mu. Also explain what you plan on doing to significantly change the altitude.- Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
   <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
