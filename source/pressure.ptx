@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="pressure" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Pressure</title>
+<title>Barometers</title>
 <introduction>
 <list>
 <title>Parts List</title>
@@ -9,7 +9,7 @@
 <li><p>Laptop</p></li>
 <li><p>CPX/CPB</p></li>
 <li><p>USB Cable</p></li>
-<li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Note that other pressure sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
+<li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Note that other barometers will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
 <li><p>Bread Board</p></li>
 <li><p>Soldering iron</p></li>
@@ -20,46 +20,95 @@
 <ol>
 <li><p>Continue to understand the concept of soldering</p></li>
 <li><p>Reinforce the I2C protocol at a high level</p></li>
-<li><p>Learn the components of a Pressure Sensor (Barometer)</p></li>
+<li><p>Learn the components of a Pressure and temperature Sensor (Barometer)</p></li>
 <li><p>Read Pressure data and plot</p></li>
 </ol>
 </list>
 <p>
-In this lab we're going to use a Pressure Sensor (Barometer) to measure atmospheric pressure.
+In this lab we're going to use a pressure and temperature sensor (Barometer) to measure atmospheric pressure and temperature. Although <xref ref="temperature-sensor"/> already discussed temperature sensors, this external device has a pressure sensor as well adding the ability to measure more atmospheric conditions. Assuming a standard atmosphere model it's also possible to convert pressure to altitude.
 </p>
 <figure>
   <image width="73%" source="lps22.jpg" />
   <caption>Pressure Sensor (Barometer) without header pins soldered</caption>
 </figure>
 <p>
-The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22</url><xref ref="AdafruitMAIN"/>. The first (LPS22) is a pressure sensor. The second is a temperature sensor. The two of these sensors put together (pressure, temperature) is called a Barometer. This sensor does not come standard in the current iteration of the kit but you can purchase one on Adafruit for only $7 at the time of this writing. The interesting thing about this device is that you can actually purchase the LPS22 and the temperature sensor separately but this breakout board has both chips on board. The goal of this lab is not only to use this specific sensor but to understand Barometers and reinforce I2C protocol like has been discussed in previous chapters (<xref ref="imu"/> and <xref ref="accelerometer"/>).
+The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22</url><xref ref="AdafruitMAIN"/>. The first sensor on board is a pressure sensor which uses a pressure transducer (something that creates a voltage when pressure is applied). The second is a temperature sensor which is more than likely a thermistor. The two of these sensors put together (pressure, temperature) is called a Barometer. This can bed purchased on Adafruit for only $7 at the time of this writing. The interesting thing about this device is that you can actually purchase the LPS22 and the temperature sensor separately but this breakout board has both chips on board. The goal of this lab is not only to use this specific sensor but to understand Barometers and reinforce I2C protocol like has been discussed in previous chapters (<xref ref="imu"/> and <xref ref="accelerometer"/>).
 </p>
 </introduction>
 <section>
   <title>Wiring and Software</title>
-<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to ....INSERT FIGURE OF WIRING DIAGRAM HERE....
+<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
 </p>
+<figure xml:id="pressure-bryan">
+  <image width="73%" source="adafruit_products_d_cp_feather_wiring_bb.png" />
+  <caption>Pressure Sensor Connected to a Feather M4</caption>
+</figure>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. ....INSERT FIGURE OF ALLIGATOR CLIP WIRING HERE....
+The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. The two figures below show a CPB wired to the LPS22.
 </p>
+<figure>
+  <image width="73%" source="lps22_CPB.jpeg" />
+  <caption>Pressure Sensor Connected to a CPB</caption>
+</figure>
 <p>
-Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. The specific modules I needed for this lab were:
+In the photos above and below, the red alligator clip is connected to <em>3.3V</em> and is then connected to a red male-male wire which is then connected to the <em>VIN</em> pin on the LPS22. The black alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the LPS22. The white alligator clip is connected to the <em>SCL</em> pin connected to an orange male-male wire connected to the <em>SCL</em> pin on the LPS22. Finally, the yellow alligator clip is connected to the <em>SDA</em> pin connected to a yellow male-male wire connected to the <em>SDA</em> pin on the LPS22.
+</p>
+<figure>
+  <image width="73%" source="lps22.jpeg" />
+  <caption>Pressure Sensor Connected to a CPB with a Breadboard</caption>
+</figure>
+<p>
+Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:
 
 <ol>
-<li><p>create a list of modules you need</p></li>
+<li><p>adafruit_lis3dh</p></li>
+<li><p>adafruit_lps2x</p></li>
+<li><p>adafruit_thermistor</p></li>
+<li><p>neopixel</p></li>
+<li><p>adafruit_ble</p></li>
 </ol>
 </p>
 
 <p>
-Once you have the necessary modules you can run some example code. INSERT LINKS TO CODE <alert> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</alert> INSERT FIGURE OF EXAMPLE CODE AND THEN DISCUSS RESULTS FROM STUDENTS LAUNCHING A ROCKET. INCLUDE THE EQUATION TO CONVERT TO ALTITUDE FROM PRESSURE
+Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. <alert> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</alert> Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/Pressure_Accel_Datalogging">log pressure and acceleration data</url>. Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.</p>
+<figure>
+  <image width="73%" source="Pressure_Logging.png" />
+  <caption>Pressure Data in the Plotter</caption>
+</figure>
+<p>
+The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. The pressure data is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows:
+<md number="yes">
+  h = \frac{1.0-(\frac{p}{p_0}^{1.0/5.25588})}{2.2557 \times 10^{-5.0}}
+</md>
+where <em>p</em> is pressure and <m>p_0</m> is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket this equation will work just fine.  Note that it's also possible to convert altitude to velocity using a first order derivative but students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results are left to the reader as an assignment.
+<md number="yes">
+  v = \frac{h_{i+1}-h_i}{t_{i+1}-t_i}
+</md>
 </p>
+</section>
+<section>
+  <title>Data from a Rocket Launch</title>
+<p>
+My students have placed this entire data logger into a rocket and launched it. The figure below shows pressure as a function of time.
+</p>
+<figure>
+  <image width="73%" source="pressure_rocket.png" />
+  <caption>Pressure Data from a Rocket Launch</caption>
+</figure>
+<p>
+It's clear from the data that pressure drops as the flight continues showing the boost phase of the rocket. There is a small oscillation near the apogee of the flight. This is due to the delay charge to blow the nose cone off the rocket body to deploy the parachute. The pressure sensor is measuring local atmospheric pressure. So if there is a small explosion inside the rocket to deploy the parachute, the data will show a slight oscillation. </p>
+<figure>
+  <image width="73%" source="altitude_rocket.png" />
+  <caption>Altitude Data from a Rocket Launch</caption>
+</figure>
+<p>The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set <m>p_0</m> equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn't true but indicative of the explosion to deploy the parachute.</p>
 </section>
 
 <section>
   <title>Assignment</title>
   <introduction>
 <p>
-For this assignment you are to wire up the external IMU and get data from it. You need to mount the CPX/CPB and the pressure sensor to some sort of hard surface so that when you move the CPX/CPB the pressure moves as well. In order to get the pressure to change significantly you'll need to change your altitude by a lot. My recommendation is to ride the elevator of a tall building or drive up a really big hill. 
+For this assignment you are to wire up the external pressure sensor and get data from it. You need to mount the CPX/CPB and the pressure sensor to some sort of hard surface so that when you move the CPX/CPB the pressure moves as well. In order to get the pressure to change significantly you'll need to change your altitude by a lot. My recommendation is to ride the elevator of a tall building or drive up a really big hill. If you have the ability to do so, place the sensor in a rocket or an airplane!
 </p>
 <ol>
   <li><p>Title page with name,title and date - 5%</p></li>
