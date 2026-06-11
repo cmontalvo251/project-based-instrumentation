@@ -73,7 +73,7 @@ Once you have the circuit wired and soldered it's time to work on software. Firs
 Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. <alert> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</alert> Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/Pressure_Accel_Datalogging">log pressure and acceleration data</url>. Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.</p>
 <figure>
   <image width="73%" source="Pressure_Logging.png" />
-  <caption>Pressure Data in the Plotter</caption>
+  <caption>Pressure Data in Mu</caption>
 </figure>
 <p>
 The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. The pressure data is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows:
@@ -89,7 +89,19 @@ where <em>p</em> is pressure and <m>p_0</m> is the standard atmospheric pressure
 <section>
   <title>Data from a Rocket Launch</title>
 <p>
-My students have placed this entire data logger into a rocket and launched it. The figure below shows pressure as a function of time.
+My students have placed this entire data logger into a rocket and launched it. The figure below shows the rocket on the launch pad in Samson,AL.
+</p>
+<figure>
+  <image width="73%" source="rocket.png" />
+  <caption>Rocket on the Launch Pad</caption>
+</figure>
+<p> The datalogger itself is attached to a piece of wood that is called a sled and then placed into the rocket prior to launch. 
+</p>
+<figure>
+  <image width="73%" source="pressure_sled.png" />
+  <caption>Datalogger Attached to Sled</caption>
+</figure>
+<p>In the figure above the small gray piece below the CPB is a small 1S Lipo battery and the LPS22 is on the other side of the sled. The figure below shows pressure as a function of time.
 </p>
 <figure>
   <image width="73%" source="pressure_rocket.png" />
@@ -103,7 +115,12 @@ It's clear from the data that pressure drops as the flight continues showing the
 </figure>
 <p>The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set <m>p_0</m> equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn't true but indicative of the explosion to deploy the parachute.</p>
 </section>
-
+<section>
+  <title>Extra Help</title>
+<p>
+  There is one youtube video on <url href="https://www.youtube.com/watch?v=MKq2glxVkMI">logging pressure data with the LPS22</url>. If you need a refresher on Method 3 be sure to go back to <xref ref="daq"/> for more help on that. 
+</p>
+</section>
 <section>
   <title>Assignment</title>
   <introduction>

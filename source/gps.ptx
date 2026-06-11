@@ -33,26 +33,95 @@ In this lab we're going to use a GPS module to obtain location information, conv
   <caption>GPS Module without header pins soldered</caption>
 </figure>
 <p>
-The sensor above is the <url href="https://www.adafruit.com/product/746">GPS</url><xref ref="AdafruitMAIN"/>. The large square is the GPS receiver and the breakout board sends serial data via TX/RX pins to any microcontroller listening. So this is different than I2C as has been done in the previous labs with accelerometers, IMUs, or pressure sensors (<xref ref="imu"/><xref ref="accelerometer"/>) but due to the high level coding it's still just as simple to parse the data . This sensor does not come standard in the current iteration of the kit but you can purchase one on Adafruit for $30 at the time of this writing. The interesting thing about this device is that you can actually purchase the GPS separately but this breakout board has simple <em>TX/RX</em> outputs for ease of communication. The goal of this lab is not only to use this specific sensor but to understand GNSS and reinforce UART protocol.
+The sensor above is the <url href="https://www.adafruit.com/product/746">GPS</url><xref ref="AdafruitMAIN"/>. The large square is the GPS receiver and the breakout board sends serial data via TX/RX pins to any microcontroller listening. So this is different than I2C as has been done in the previous labs with accelerometers, IMUs, or pressure sensors (<xref ref="imu"/><xref ref="accelerometer"/>) but due to the high level coding it's still just as simple to parse the data . This can be purchased on Adafruit for $30 at the time of this writing. The interesting thing about this device is that you can actually purchase the GPS separately but this breakout board has simple <em>TX/RX</em> outputs for ease of communication. The goal of this lab is not only to use this specific sensor but to understand GNSS and reinforce UART protocol.
 </p>
 </introduction>
 <section>
   <title>Wiring and Software</title>
-<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to ....INSERT FIGURE OF WIRING DIAGRAM HERE....
+<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an <url href="https://learn.adafruit.com/adafruit-ultimate-gps/circuitpython-parsing">Adafruit Metro M0</url>. (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
 </p>
+<figure>
+  <image width="73%" source="adafruit_products_m0_express_gps_bb.png" />
+  <caption>GPS Wiring Diagram for Adafruit Metro M0<xref ref="gps-wiring"/></caption>
+</figure>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>TX</em> to <em>RX</em> and <em>RX</em> to <em>TX</em>. That is the <em>TX</em> and <em>RX</em> pins are swapped so that the transmit wire goes to the receive wire on the other device. ....INSERT FIGURE OF ALLIGATOR CLIP WIRING HERE....
+The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>TX</em> to <em>RX</em> and <em>RX</em> to <em>TX</em>. That is the <em>TX</em> and <em>RX</em> pins are swapped so that the transmit wire goes to the receive wire on the other device.
 </p>
+<figure>
+  <image width="73%" source="gps_CPB.jpeg" />
+  <caption>GPS Module Connected to a CPB</caption>
+</figure>
 <p>
-Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. The specific modules I needed for this lab were:
+In the photos above and below, the red alligator clip is connected to <em>3.3V</em> and is then connected to a red male-male wire which is then connected to the <em>VIN</em> pin on the GPS. The black alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the GPS. The white alligator clip is connected to the <em>TX</em> pin connected to an orange male-male wire connected to the <em>RX</em> pin on the GPS. Finally, the yellow alligator clip is connected to the <em>RX</em> pin connected to a yellow male-male wire connected to the <em>TX</em> pin on the GPS.
+</p>
+<figure>
+  <image width="73%" source="gps.jpeg" />
+  <caption>GPS Module Connected to a CPB with a Breadboard</caption>
+</figure>
+<p>
+Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Flight Dynamics and Aircraft Design have to build a hobbyist radio controlled aircraft and get GPS data during the flight. This way they know where they flew and how fast. As such they need to build a standalone datalogger that can be placed into an airplane. The specific modules I needed for this lab for all of that functionality is as follows:
 
 <ol>
-<li><p>create a list of modules you need</p></li>
+<li><p>adafruit_lis3dh</p></li>
+<li><p>adafruit_gps</p></li>
+<li><p>adafruit_thermistor</p></li>
+<li><p>neopixel</p></li>
+<li><p>adafruit_ble</p></li>
 </ol>
 </p>
 
 <p>
-Once you have the necessary modules you can run some example code. INSERT LINKS TO CODE. INSERT FIGURE OF EXAMPLE CODE AND THEN DISCUSS RESULTS FROM STUDENTS FLYING AN AIRPLANE. INCLUDE THE EQUATION TO CONVERT GPS COORDINATES TO POSITION AND THEN A DERIVATIVE TO GET VELOCITY
+Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Once you have all the modules, you can run the example code to <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/GPS">log gps and acceleration data</url>. Note that the link previously shown is to a folder of a few different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.</p>
+<figure>
+  <image width="73%" source="GPS_No_Lock_Mu.PNG" />
+  <caption>GPS Data in Mu</caption>
+</figure>
+<p>
+Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this
+<pre>
+$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
+</pre>
+This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N/S, longitude, E/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the -99 values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.
+<md number="yes">
+  x = R cos(\lambda)(\phi - \phi_0) 
+</md>
+<md>
+  y = R (\lambda - \lambda_0)
+</md>
+where <m>R</m> is the radius of the Earth, <m>\phi</m> is the longitude, <m>\lambda</m> is the latitude and <m>\lambda_0</m> and <m>\phi_0</m> are the latitude and longitude of the origin point. In this case the x-axis is East-West and the y-axis is North-South. Once you have position you can take the derivative to get velocity typically doing a heavily filtered moving average derivative to get a smooth velocity plot. To start though a simple first order derivative will at least get you started.
+<md number="yes">
+  v_x = \frac{x_{i+1}-x_i}{t_{i+1}-t_i} 
+</md>
+<md>
+  v_y = \frac{y_{i+1}-y_i}{t_{i+1}-t_i}
+</md>
+</p>
+</section>
+<section>
+  <title>Results from an aircraft flight</title>
+  <p>
+My students have placed this entire data logger into an airplane and flown it. The aircraft itself was a P-51 clone made out of balsa and clear monokote.
+</p>
+<figure>
+  <image width="73%" source="Aircraft.png" />
+  <caption>Aircraft with my students after their maiden flight</caption>
+</figure>
+<p>The datalogger itself was soldered to a custom printed circuit board courtesy of Aker Solutions and permanently soldered to a <url href="https://www.adafruit.com/product/4600">QtPy</url><xref ref="Adafruit"/>. The QtPy is a super small microcontroller without any extra sensors so the students only measured GPS and nothing else. </p>
+<figure>
+  <image width="73%" source="GPS_Datalogger_Aircraft.png" />
+  <caption>Datalogger inside balsa airplane</caption>
+</figure>
+<p>After the flight at the ACMA (Azalea City of Model Aeronautics) airfield in Irvington, AL, the students were able to plot the GPS position of the flight. The color code indicates speed throughout the flight.</p>
+<figure>
+  <image width="73%" source="GPS_Flight.png" />
+  <caption>Latitude vs Longitude for Aircraft Flight</caption>
+</figure>
+<p>It's clear from the data that the pilot took off and landed on the runway after flying a few loops around the radio controlled flying field. </p>
+</section>
+<section>
+  <title>Extra Help</title>
+<p>
+There is one youtube video on <url href="https://www.youtube.com/watch?v=h1u0EiZqVLI">logging GPS data with the Adafruit Ultimate GPS</url>. If you need a refresher on Method 3 be sure to go back to <xref ref="daq"/> for more help on that. 
 </p>
 </section>
 
