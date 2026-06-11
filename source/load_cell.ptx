@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="load-cell" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Load Cells</title>
+<introduction>
+<list>
+<title>Parts List</title>
+<ol>
+<li><p>Laptop</p></li>
+<li><p>CPX/CPB</p></li>
+<li><p>USB Cable</p></li>
+<li><p><url href="https://www.adafruit.com/product/5974">HX711 Load Cell Amplifier</url> (Note that other amplifiers will work)<xref ref="AdafruitMAIN"/></p></li>
+<li><p><url href="https://www.adafruit.com/product/5974">Strain Gauge Load Cell</url> <xref ref="AdafruitMAIN"/></p></li>
+<li><p>Alligator Clips (x4)</p></li>
+<li><p>Bread Board</p></li>
+<li><p>Soldering iron</p></li>
+<li><p>Digital Scale</p></li>
+</ol>
+</list>
+<list>
+<title>Learning Objectives</title>
+<ol>
+<li><p>Continue to understand the concept of soldering</p></li>
+<li><p>Load Cell calibration</p></li>
+<li><p>Read load cell data and plot it</p></li>
+</ol>
+</list>
+<p>
+In this lab we're going to use a strain gauge load cell and load cell amplifier to make a digital scale.
+</p>
+<figure>
+  <image width="73%" source="load_cell.jpg" />
+  <caption>Strain Gauge Load Cell</caption>
+</figure>
+<p>
+The sensor above is the <url href="https://www.adafruit.com/product/4543">a strain gauge load cell</url><xref ref="AdafruitMAIN"/>. The load cell itself is mounted to a metal beam with large holes in it so it can deflect when a load is placed on to it. The strain gauge itself changes its resistance when a load is applied but the output voltage is so low that an amplifier is needed.
+</p>
+<figure>
+  <image width="73%" source="load_cell_amplifier.jpg" />
+  <caption>Load Cell Amplifier</caption>
+</figure>
+<p>The figure above shows the <url href="https://www.adafruit.com/product/5974">HX711 load cell amplifier</url> which takes the signal from the load cell and amplifies it and converts it to a nice clean digital signal similar to I2C but not quite. In this chapter we're going to wire up the load cell and then read the data from amplifier after calibrating it properly.</p>
+</introduction>
+<section>
+  <title>Wiring and Software</title>
+<p>When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires from the CPX/CPB to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a <url href="https://learn.adafruit.com/adafruit-nau7802-24-bit-adc-stemma-qt-qwiic/python-circuitpython">Feather M4</url>. (Courtesy of <url href="https://learn.adafruit.com/u/BlitzCityDIY">Liz Clark</url>)<xref ref="Adafruit"/>.
+</p>
+<figure>
+  <image width="73%" source="adafruit_products_featherBB_revC_bb.png" />
+  <caption>Load Cell Wiring Diagram for Adafruit Feather M4<xref ref="load-cell-wiring"/></caption>
+</figure>
+<p>
+The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is not that straightforward unfortunately. This is because the amplifier in the parts lisk has a <em>SCK</em> and <em>DATA</em> line instead of <em>SDA/SCL</em>. The good news is that it still uses digital output so the CPX/CPB can read it.
+</p>
+<figure>
+  <image width="73%" source="CPX_HX711_Wiring.jpg" />
+  <caption>Load Cell Amplifier connected to a CPX</caption>
+</figure>
+<p>
+In the photos above and below, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to <em>E+</em>, the black wire is connected to <em>E-</em>, the white wire is connected to <em>A-</em> and the green wire is connected to <em>A+</em>. Although very innappropriate and non-standard, there are two yellow alligator clips. The first yello alligator clip is connected to <em>3.3V</em> and is then connected to a purple male-male wire which is then connected to the <em>VIN</em> pin on the amplifier. The white alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the amplifier. The green alligator clip is connected to the <em>A2</em> pin connected to an white male-male wire connected to the <em>SCK</em> pin on the amplifier. Finally, the second yellow alligator clip is connected to the <em>A1</em> pin connected to a green male-male wire connected to the <em>DATA</em> pin on the amplifier.
+</p>
+<figure>
+  <image width="73%" source="HX711_Amplifier.jpg" />
+  <caption>Strain Gauge Connected to a Load Cell Amplifier</caption>
+</figure>
+<p>
+Once you have the circuit wired there are no extra modules to install since we're just going to be using the digitalio library. The example code on Github <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/HX711/hx711_mytest.py">reads and calibrates the load cell data</url> and converts it to kg for ease of use. Note that kg is not a unit of weight but since we're on Earth we're assuming that we're under 1g acceleration and thus kg can be used as weight even though it's actually a mass. 
+<figure>
+  <image width="73%" source="HX711_Screenshot.png" />
+  <caption>Load Cell Output in Kg in Mu</caption>
+</figure>
+The photo above shows the example output of the load cell in kg by applying a load to the strain gauge. Using this simple script it is easy to weigh certain objects and get the value from the load cell. Notice however, that on line 73 at the time of this writing, the scale value is set to 12,000. That value will need to be adjusted based on your own calibration measurements which is left as an assignment to the reader. 
+</p>
+</section>
+<section>
+  <title>Assignment</title>
+  <introduction>
+<p>
+For this assignment you are to wire up a strain gauge and load cell amplifier and calibrate the sensor using known weights and another digital scale. First, set the scale value to zero and then place known weights on to the load cell and record the output. Place the known weight on a different calibrated scale and record those measurements as well. Repeat this experiment for 10 different known weights and plot the actual weight on the x-axis from the known digital scale and the output from the load cell on the y-axis. 
+</p>
+<ol>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction with wiring diagram - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a photo of your CPX/CPB mounted to a hard surface with the GPS sensor on a breadboard. - 10%</p></li>
+  <li><p>Include a selfie of you right before you change location either by going for a bike ride or a walk. Explain how you plan on changing location significantly in the supporting text. - 10%</p></li>
+  <li><p>Include a screenshot (entire computer screen) of Mu showing the Plotter open showing GPS data - 10%</p></li>
+  <li><p>Plot GPS coordinates (Latitude vs Longitude) for your experiment where coordinates significantly change. - 10%</p></li>
+  <li><p>Convert GPS coordinates to position and plot (X vs Y) for your experiment where position significantly changes. - 20%</p></li>
+  <li><p>Convert your position to velocity and plot velocity vs time for your experiment where velocity significantly changes. Comment on whether your velocity is accurate to the speed you were traveling - 20%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
+</ol>
+</introduction>
+</section>
+</chapter>

@@ -33,13 +33,14 @@
     <xi:include href="./cp_sensors.ptx"/> <!--Discuss the I2C Protocol here for the built-in accelerometer -->
     <xi:include href="./acceleration.ptx"/>
     <xi:include href="./pedometer.ptx"/>
-    <xi:include href="./imu.ptx"/> <!-- Discuss the I2C Protocol here for the IMU -->
-    <xi:include href="./pressure.ptx"/> 
-    <xi:include href="./gps.ptx"/>
     <xi:include href="./photocell.ptx"/>
     <xi:include href="./servo.ptx"/>
     <xi:include href="./thermistor.ptx"/>
     <xi:include href="./second-order.ptx"/>
+    <xi:include href="./imu.ptx"/> <!-- Discuss the I2C Protocol here for the IMU -->
+    <xi:include href="./pressure.ptx"/> 
+    <xi:include href="./gps.ptx"/>
+    <xi:include href="./load-cell.ptx"/>
 
     <!--Include Results and Discussion chapters-->
     <xi:include href="./results-discussion.ptx"/>
