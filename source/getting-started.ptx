@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="getting-started" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Setting up the CPX/CPB</title>
+  <title>Setting up your Microcontroller</title>
 <introduction>
 <list>
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p><url href="https://codewith.mu/en/download">Mu</url> <xref ref="mu"/></p></li>
-<li><p>CPX (or CPB) <url href="https://circuitpython.org">UF2 File</url> <xref ref="CircuitPython"/></p></li>
-<li><p>CPX(or CPB)</p></li>
+<li><p><url href="https://codewith.mu/en/download">Mu</url> <xref ref="mu"/> or <url href="https://www.arduino.cc/en/software/">Arduino IDE</url> <xref ref="Arduino"/></p></li>
+<li><p>CPX/CPB <url href="https://circuitpython.org">UF2 File</url> <xref ref="CircuitPython"/></p></li>
+<li><p>CPX/CPB or Arduino Family (UNO, MEGA, or similar)</p></li>
 <li><p>USB Cable (with a data line. Not all USB cables have data
     lines)</p></li>
 </ol>
@@ -17,25 +17,24 @@
 <list>
 <title>Learning Objectives</title>
 <ol>
-<li><p>Learn how to setup your Circuit Playground Express</p></li>
-<li><p>Learn how to install Mu</p></li>
-<li><p>Learn how to code with Mu</p></li>
+<li><p>Learn how to setup your Microcontroller</p></li>
+<li><p>Learn how to install Mu or Arduino IDE</p></li>
+<li><p>Learn how to code in CircuitPython or Arduino</p></li>
 <li><p>Learn about hardware and software debugging</p></li>
-<li><p>Learn the difference between Python and CircuitPython</p></li>
+<li><p>Learn the difference between Python and CircuitPython and potentially Arduino</p></li>
 </ol>
 </list>
 <p>
-By now you hopefully have your Circuit Playground Express (CPX) or a Circuit Playground Bluefruit (CPB) and it's time
-to get your CPX up and running. A very in depth and detailed tutorial
+By now you hopefully have your Circuit Playground Express (CPX), Circuit Playground Bluefruit (CPB) or an Arduino and it's time to get your microcontroller up and running. A very in depth and detailed tutorial
 can be found on the
 <url href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/first-things-first">Adafruit
-Learn site</url><xref ref="Adafruit"/>. This chapter is a summary
-of what you need to do to get the CPX up and running as well as writing a simple blink code. 
+Learn site</url><xref ref="Adafruit"/> for the CPX and similar tutorials exists for the Arduino. This chapter is a summary
+of what you need to do to get the CPX or Arduino up and running as well as writing a simple blink code. 
 </p>
 </introduction>
 
 <section xml:id="getting-started-setup">
-<title>Setup</title>
+<title>Setting up the CPX/CPB</title>
 <p>
 When you get your CPX and plug it into the computer via USB it
 actually won't run CircuitPython just yet. First you need to double click the
@@ -312,7 +311,7 @@ something similar.
 </section>
 
 <section>
-<title>TL;DR / Extra Help</title>
+<title>TL;DR / Extra Help for the CPX/CPB</title>
 <ol>
 <li><p>Plug in your CPX and double tap it to go into reset
   mode. CPLAYBOOT will mount to your computer. (Some CPXes you need to hold the button down instead of double tap).</p></li>
@@ -334,6 +333,21 @@ There is an accompanying
 <url href="https://www.youtube.com/watch?v=XFvLn6rwm3I">youtube video to
 help you see me perform the 8 steps above</url><xref ref="youtube"/>.
 </p>
+</section>
+
+<section>
+  <title>Setting up an Arduino</title>
+  <p>Setting up the Arduino is a bit different than the CPX/CPB family of microcontrollers. The main difference is that the code is done on your computer in the Arduino IDE and then sent or compiled to the Arduino. This means that the code from the Arduino is unrecoverable if you don't have the code on your computer. It's also a lot harder to debug code on the Arduino because it isn't like CircuitPython where the language will tell you which line of code is incorrect. My strategy with coding on the Arduino is pretty archaic in that I like to add one line of code at a time and have a lot of print statements to see where the code fails. This won't solve memory leaks or hardware issues but it does help a bit. In this section we will dive into getting the blink code to work. The pro of using an Arduino is highlighted here in that the only setup is in the IDE itself. To start you just plug in your Arduino to your laptop and then open the Arduino IDE. </p>
+<figure>
+<image width="73%" source="ArduinoIDE_Setup.png" />
+<caption>Arduino IDE Setup</caption>
+</figure>
+<p>When you open the Arduino IDE for the first time the window will open up with the <em>void setup()</em> routine and the <em>void loop()</em> routine. The <em>setup</em> routine runs once and is where all the one time setup code goes. The <em>loop</em> routine runs over and over again and never stops and unlike the CPX/CPB you can never stop it unless you have a line of code that stops the code automatically. To start programming on your microcontroller you first need to select the Tools&gt;<em>Board, Processor</em> and <em>Port</em>. The <em>Board</em> depends on the kind of board you purchased. For example, I purchased the Arduino MEGA so I selected Mega for the Board and Processor but you might have to select UNO if you're using an Arduino UNO. The <em>Port</em> is the serial port that the Arduino is connected to. Since I'm on Linux the port the Arduino is connected to is <em>/dev/ttyACMO</em> while it would be <em>COM3</em> or something similar on Windows or <em>/dev/tty.usbmodem14101</em> on Mac. This is shown in the Figure above. When you're ready to code the blink example the easy part is that the code for that is already included in the examples in the Arduino IDE. To do that click <em>File&gt;Examples&gt;01.Basics&gt;Blink</em></p>
+<figure>
+  <image width="73%" source="ArduinoBlink_13.png" />
+  <caption>Arduino Blink Example Using Pin 13</caption>
+</figure>
+<p>The figure above shows the code for blinking the LED connected to pin 13. The Arduino UNO/MEGA and also the CPX/CPB all share the same default LED on pin 13. The default example program will say <em>LED_BUILTIN</em> but I changed the pin to pin 13 to be more specific. The code is pretty straightforward where the setup routine makes pin 13 an output pin using the <em>pinMode()</em> function and then the loop routine sets pin 13 to HIGH and LOW using the <em>digitalWrite()</em> function with a <em>delay</em> function used to pause for 1000 ms or 1 second. In this case HIGH is on and LOW is off. If you click the <em>Upload</em> button which looks like a right arrow the code will be compiled to binary and then uploaded to the Arduino. If it's working properly the LED on pin 13 will blink. Again there isn't a lot of ability to debug if it isn't working right. Note that if you want to save this code you must click Save and then save the <em>.ino</em> file to somewhere on your computer. If you want to share code you can't just give someone your Arduino, you have to send them the code because the code is unrecoverable from the binary format on the Arduino itself. As for the code itself, the // is used for comments and semicolons ; are used to end every single line. Unlike python you don't need to worry about tabs to be setup properly. Loops and if statements are separated by brackets { and }. </p>
 </section>
 
 <section>
