@@ -11,7 +11,7 @@
 <li><p>Micro SD Card</p></li>
 <li><p>Micro SD Card USB Reader</p></li>
 <li><p><url href="https://www.adafruit.com/product/254">Micro SD Card Breakout Board</url></p></li>
-<li><p>Arduino (CPX/CPB does not work at the time of this writing)</p></li>
+<li><p>Arduino or CPX/CPB</p></li>
 </ol>
 </list>
 
@@ -25,23 +25,55 @@
 </ol>
 </list>
 <p>
-This chapter explores writing data directly to a micro SD card. This is helpful because when the datalogger is done taking data, it is easy to power down the system, take the SD card out and pop it into a laptop for post-processing. For the CPX/CPB setp it helps because you don't have to have data writing to the internal storage which can potentially brick the system. You have code and data storage in two different places. Setting up this system requires a few steps for both CPX/CPB and Arduino microcontrollers but this chapter for now only goes over the Arduino MEGA microcontroller. Unfortunately, at the time of this writing the CPX/CPB ecosystem does not correctly write to a micro SD card breakout board. The Arduino UNO is capable of writing to the micro SD card but the only difference is that the pins setup is different. There is a very indepth <url href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial">SD card tutorial on Adafruit</url> that can be used in conjunction with this tutorial if extra help is needed <xref ref="AdafruitMAIN"/>. 
+This chapter explores writing data directly to a micro SD card. This is helpful because when the datalogger is done taking data, it is easy to power down the system, take the SD card out and pop it into a laptop for post-processing. For the CPX/CPB setp it helps because you don't have to have data writing to the internal storage which can potentially brick the system. You have code and data storage in two different places. Setting up this system requires a few steps for both CPX/CPB and Arduino microcontrollers. The Arduino UNO is capable of writing to the micro SD card but the only difference is that the pins setup is different. There is a very indepth <url href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial">SD card tutorial on Adafruit</url> that can be used in conjunction with this tutorial if extra help is needed <xref ref="AdafruitMAIN"/>. 
 <figure>
   <image width="73%" source="microSDcard.jpg" />
   <caption>Micro SD card Breakout Board without header pins soldered</caption>
 </figure>
+No matter what for both microcontrollers you need to have a micro SD card formatted to FAT32. In Linux that means you need to navigate to the Disk utility app and format the disk. On Windows or Mac you need to use a similar program to format the disk.
+<figure>
+  <image width="73%" source="SDCARD_FORMAT.png"/>
+  <caption>Using the Disk Utility to Format a Micro SD Card on Linux</caption>
+</figure>
+Also, when you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 to <alert>solder the header pins to the board</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard and then move on to either the Arduino or CPX/CPB sections. 
 </p>
 </introduction>
 
 <section>
+  <title>Setting up the CPX/CPB</title>
+  <p>Before wiring up the system I recommend setting up the CPX/CPB first before wiring up the system. The example code we're going to use for this chapter is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/SD/sdcard_cpb_button_presses.py">Github</url> as usual. </p>
+  <figure>
+    <image width="73%" source="SDcard_Snippet_CPB.png"/>
+    <caption>Snippet of SD card Software for the CPB/CPX</caption>
+  </figure>
+  <p>
+  The figure above shows the preamble of the code which has a few things that you need to do before getting this to work. <alert>First, you need to have an <em>sd</em> folder in the your <em>CIRCUITPY</em> drive.</alert> That means, when you plug in the CPB/CPX to your computer you must add a solder called <em>sd</em> into the main folder alongside the <em>lib</em> folder which needs the <em>adafruit_sdcard</em> module. Before installing extra modules into the <em>lib</em> folder you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. In this example I'm using the 10.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. Again, for this lab you just need the <em>adafruit_sdcard</em> module in the lib folder. After that you can copy the software from Github into your <em>code.py</em> file and save it. The code will not run right away and will probably through an <em>SD Card Not Found</em> error. At this point you can unplug the CPX/CPB and begin wiring the breakout board making to plug in the micro SD card of course.</p>
+  <figure>
+    <image width="73%" source="CPB_Method5_Wiring.jpg"/>
+    <caption>CPB wired to a micro SD card breakout board</caption>
+  </figure>
+<p>In the figure above moving counter-clockwise, the red alligator clip from <em>5V</em> to a green male-male wire to <em>5V</em>, the first yellow alligator clip goes directly from <em>A1(CLK)</em> to <em>CLK</em>, the first green alligator clip goes from <em>A2(MISO)</em> to a white male-male wire to <em>DO</em>, the second green alligator clip goes from <em>A3(MOSI)</em> to a blue male-male wire to <em>DI</em>, the second yellow alligator clip is connected to <em>A4</em> then to a black male-male wire connected to <em>CS</em> and finally the black alligator clip goes directly from <em>GND</em> to <em>GND</em>.</p>
+<figure>
+  <image width="73%" source="CPB_Method5_DatFileOutput.png"/>
+  <caption>Example output when writing to the SD card</caption>
+</figure>
+<p>Once you plug in the CPB/CPX and press the A button to start recording you can press the A button over and over again to stop logging and then restart logging. Everytime you close the file and open a new file, the code will find a new file to create so that you don't continue to overwrite the file that is already on the sd card. In this code the A button is used to start and stop recording and the B button along with a dummy counter is logged to the SD card.</p>
+<figure>
+  <image width="73%" source="DataFile_CPB_Data.png"/>
+  <caption>Example Data file after writing to SD Card</caption>
+</figure>
+<p>When you are done recording make sure to press the A button to the close the current file and then remove power from the CPX/CPB. You can then place the SD card into your computer and you should see multiple <em>DataFile#.txt</em> text files in your computer. You can then copy those to your computer and plot the data similar to <xref ref="daq"/>. This code can easily be augmented to accommodate any other sensor such as GPS (<xref ref="gps"/>), accelerometer (<xref ref="imu"/>), pressure (<xref ref="pressure"/>) or any other sensor you can think of. Although you add the complexity of having an extra piece of hardware, you remove the software headache and potential bricking of your CPX/CPB by attempting to use Method 3 (<xref ref="daq"/>) while still removing the need for a laptop.</p>
+</section>
+
+<section>
 <title>Setting up the Arduino</title>
 <p>
-When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 to <alert>solder the header pins to the board</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 5 wires.
+There is no setup for the Arduino other than making sure the SD card is formatted to <em>FAT32</em> and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off. 
 <figure>
   <image width="73%" source="MEGA_SD_2.jpeg"/>
   <caption>Micro SD card Breakout Board wired to an Arduino MEGA</caption>
 </figure>
-In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the Figure below.
+In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the figure below.
 <figure>
   <image width="73%" source="SDCardSoftware_Arduino.png"/>
   <caption>Arduino MEGA Software Snippet to send data to a micro SD card breakout board</caption>

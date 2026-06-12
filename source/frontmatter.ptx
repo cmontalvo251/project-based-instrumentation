@@ -135,7 +135,7 @@
   <li> June 9th, 2026 - Edited content and title to reflect a more broad ecosystem of Arduino and Circuitpython. Edited men flags to md. Added Google Sheets and Octave to the plotting chapter. Finished the serial Method 6 chapter. </li>
   <li> June 10th, 2026 - Added two new chapters on GPS and Pressure sensors but they are not done. </li>
   <li> June 11th, 2026 - Finished the pressure sensor, GPS and load cell chapters. </li>
-  <li> June 12th, 2026 - Added Arduino blinking to the getting started chapter </li>
+  <li> June 12th, 2026 - Added Arduino blinking to the getting started chapter and finished method 5 for both Arduino and CPX/CPB </li>
       </ol>
     </p>
   </section>
