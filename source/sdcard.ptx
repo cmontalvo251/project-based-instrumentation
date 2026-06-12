@@ -6,21 +6,67 @@
 <list>
 <title>Parts List</title>
 <ol>
-<li><p>TBD</p></li>
+<li><p>Laptop</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Micro SD Card</p></li>
+<li><p>Micro SD Card USB Reader</p></li>
+<li><p><url href="https://www.adafruit.com/product/254">Micro SD Card Breakout Board</url></p></li>
+<li><p>Arduino (CPX/CPB does not work at the time of this writing)</p></li>
 </ol>
 </list>
+
+
 <list>
 <title>Learning Objectives</title>
 <ol>
-<li><p>TBD</p></li>
+<li><p>Understand how to use a micro SD card to log data from a microcontroller</p></li>
+<li><p>Learn to install libraries for the Arduino</p></li>
+<li><p>Learn yet another way to use a microcontroller as a data acquisition system</p></li>
 </ol>
 </list>
+<p>
+This chapter explores writing data directly to a micro SD card. This is helpful because when the datalogger is done taking data, it is easy to power down the system, take the SD card out and pop it into a laptop for post-processing. For the CPX/CPB setp it helps because you don't have to have data writing to the internal storage which can potentially brick the system. You have code and data storage in two different places. Setting up this system requires a few steps for both CPX/CPB and Arduino microcontrollers but this chapter for now only goes over the Arduino MEGA microcontroller. Unfortunately, at the time of this writing the CPX/CPB ecosystem does not correctly write to a micro SD card breakout board. The Arduino UNO is capable of writing to the micro SD card but the only difference is that the pins setup is different. There is a very indepth <url href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial">SD card tutorial on Adafruit</url> that can be used in conjunction with this tutorial if extra help is needed <xref ref="AdafruitMAIN"/>. 
+<figure>
+  <image width="73%" source="microSDcard.jpg" />
+  <caption>Micro SD card Breakout Board without header pins soldered</caption>
+</figure>
+</p>
 </introduction>
 
 <section>
-<title>Initial Setup</title>
+<title>Setting up the Arduino</title>
 <p>
-TBD
+When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 to <alert>solder the header pins to the board</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 5 wires.
+<figure>
+  <image width="73%" source="MEGA_SD_2.jpeg"/>
+  <caption>Micro SD card Breakout Board wired to an Arduino MEGA</caption>
+</figure>
+In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the Figure below.
+<figure>
+  <image width="73%" source="SDCardSoftware_Arduino.png"/>
+  <caption>Arduino MEGA Software Snippet to send data to a micro SD card breakout board</caption>
+</figure>
+You'll notice in this code that there is a <em>#include &gt;SD.h&lt;</em> line of code which imports the SD header file. In C++ and other compilation languages you have a <em>.cpp</em> or <em>.c</em> file which has all the code necessary to run somthing and a <em>.h</em> file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click <em>Sketch&gt;Include Library&gt;Manage Libraries...</em>.
+<figure>
+  <image width="73%" source="Arduino_Libraries_1.png"/>
+  <caption>Installing New Arduino Libraries</caption>
+</figure>
+After clicking that a new window will pop up where you can then search for "SD.h" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as <em>Serial.begin(115200)</em> is in the setup routine and there are many <em>Serial.print</em> calls in the loop routine. If you open the serial monitor you should see the <em>millis()</em> time printed on the screen provided you set the baud rate to 115200. 
+<figure>
+  <image width="73%" source="SD_Arduino_Serial.png"/>
+  <caption>Arduino Serial Monitor Output when writing to an SD Card</caption>
+</figure>
+In this case the serial monitor also states that is is writing the <em>DATA004.TXT</em>. Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.
+<figure>
+  <image width="73%" source="SD_Arduino_Acceleration.png"/>
+  <caption>Code to send acceleration data to an SD card</caption>
+</figure>
+The code to get an external accelerometer to work on an Arduino is dicussed in more detail in <xref ref="imu"/>. Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.
+<figure>
+  <image width="73%" source="SD_Arduino_Data.png"/>
+  <caption>Data files on a micro SD Card</caption>
+</figure>
+At this point it is identical to <xref ref="daq"/> to plot the data in whatever plotting environment you like. 
 </p>
 </section>
 
@@ -36,7 +82,7 @@ This project is similar to the Data Acquisition project only you must use method
   <li><p>Include a screenshot (entire computer screen) of your SD card open and mounted on your computer with your data file in it - 20%</p></li>
   <li><p>Include a snippet (5 lines) of your data file - 20%</p></li>
   <li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
-  <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you press a button on the CPX/CPB. Then show yourself removing the SD card and plotting the data on your computer - Pass/Fail</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open as you press a button on the microcontroller if a button exists. Then show yourself removing the SD card and plotting the data on your computer - Pass/Fail</p></li>
   <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
   <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
