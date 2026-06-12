@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Setup</title>
+<title>Setting up the CPX/CPB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -210,11 +210,12 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">6</span> <span class="title">Setting up the CPX/CPB</span></a></div>
+<div class="toc-title-box"><a href="getting-started.html" class="internal"><span class="codenumber">6</span> <span class="title">Setting up your Microcontroller</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="getting-started-setup.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Setup</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">TL;DR / Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="getting-started-setup.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Setting up the CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-4.html" class="internal"><span class="codenumber">6.2</span> <span class="title">TL;DR / Extra Help for the CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-5.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Setting up an Arduino</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="getting-started-6.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -265,8 +266,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="sdcard.html" class="internal"><span class="codenumber">11</span> <span class="title">SD Card Logging - Method 5</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Initial Setup</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-3.html" class="internal"><span class="codenumber">11.1</span> <span class="title">Setting up the CPX/CPB</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-4.html" class="internal"><span class="codenumber">11.2</span> <span class="title">Setting up the Arduino</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sdcard-5.html" class="internal"><span class="codenumber">11.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -426,7 +428,7 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="getting-started-setup"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Setup</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Setting up the CPX/CPB</span>
 </h2>
 <div class="para" id="getting-started-setup-2">When you get your CPX and plug it into the computer via USB it actually won’t run CircuitPython just yet. First you need to double click the reset button (the button in the center. It says RESET above the button) and put it into boot mode. All the neopixels (the ring lights on the CPX) will light up green.<div class="autopermalink" data-description="Paragraph"><a href="#getting-started-setup-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -519,7 +521,7 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="getting-started-setup-34">Finally, in order to keep practicing using Python on your desktop I want you to modify the code above to run on your desktop computer. You’re going to have to modify a few things. First, make sure to open Thonny or Spyder depending on which version of Python IDE you downloaded. Then, only import the <em class="emphasis">time</em> module. All the other modules don’t exist on your desktop. Also, get rid of all the lines of code that blink the LED. We just want to print time in a while loop. Finally, the time module on your desktop uses a function called time.time() (unless you have Python3 installed) so when you print time make sure to use that module instead. Again visit the <a class="external" href="https://docs.python.org/3/library/time.html#functions" target="_blank">documentation for time for Python if you want to learn more</a><a href="backmatter-1.html#python" class="xref" data-knowl="./knowl/xref/python.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 51">[51]</a>. Thonny by default will load Python version 3 but it’s possible you may have Python version 2 so make sure you look up the documentation for the appropriate version of Python. After searching through the documentation you can use a function called asctime() on your desktop. This is the output I get in Thonny when I add a sleep of 1 second. The exercise for you is to do something similar.<div class="autopermalink" data-description="Paragraph"><a href="#getting-started-setup-34" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="getting-started-setup-35"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/blinkcomputer.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Output of datetime in Thonny<div class="autopermalink" data-description="Figure 6.1.11"><a href="#getting-started-setup-35" title="Copy heading and permalink for Figure 6.1.11" aria-label="Copy heading and permalink for Figure 6.1.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Section 6.1: Setup"><a href="#getting-started-setup" title="Copy heading and permalink for Section 6.1: Setup" aria-label="Copy heading and permalink for Section 6.1: Setup">🔗</a></div></section></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Output of datetime in Thonny<div class="autopermalink" data-description="Figure 6.1.11"><a href="#getting-started-setup-35" title="Copy heading and permalink for Figure 6.1.11" aria-label="Copy heading and permalink for Figure 6.1.11">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Section 6.1: Setting up the CPX/CPB"><a href="#getting-started-setup" title="Copy heading and permalink for Section 6.1: Setting up the CPX/CPB" aria-label="Copy heading and permalink for Section 6.1: Setting up the CPX/CPB">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="getting-started.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="getting-started-4.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
