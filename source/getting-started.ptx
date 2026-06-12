@@ -348,6 +348,12 @@ help you see me perform the 8 steps above</url><xref ref="youtube"/>.
   <caption>Arduino Blink Example Using Pin 13</caption>
 </figure>
 <p>The figure above shows the code for blinking the LED connected to pin 13. The Arduino UNO/MEGA and also the CPX/CPB all share the same default LED on pin 13. The default example program will say <em>LED_BUILTIN</em> but I changed the pin to pin 13 to be more specific. The code is pretty straightforward where the setup routine makes pin 13 an output pin using the <em>pinMode()</em> function and then the loop routine sets pin 13 to HIGH and LOW using the <em>digitalWrite()</em> function with a <em>delay</em> function used to pause for 1000 ms or 1 second. In this case HIGH is on and LOW is off. If you click the <em>Upload</em> button which looks like a right arrow the code will be compiled to binary and then uploaded to the Arduino. If it's working properly the LED on pin 13 will blink. Again there isn't a lot of ability to debug if it isn't working right. Note that if you want to save this code you must click Save and then save the <em>.ino</em> file to somewhere on your computer. If you want to share code you can't just give someone your Arduino, you have to send them the code because the code is unrecoverable from the binary format on the Arduino itself. As for the code itself, the // is used for comments and semicolons ; are used to end every single line. Unlike python you don't need to worry about tabs to be setup properly. Loops and if statements are separated by brackets { and }. </p>
+<figure>
+  <image width="73%" source="Arduino_Blink_Serial.png" />
+  <caption>Arduino Blink Example with Serial Monitor</caption>
+</figure>
+<p>
+As I mentioned however, it's possible to add many print statements to the code and open up the Serial Monitor. The figure above shows the edited code with <em>Serial.begin(9600)</em> added to the setup routine which opens up serial communication between your computer and the Arduino at a baud rate of 9600 bits per second. In the loop routine I have added many <em>Serial.print("");</em> commands to print to the Serial monitor which can be opened by clicking the button that looks like a magnifying glass. Make sure the baud rate in the serial monitor is set to the same 9600 value or the values will be gibberish. Also <em>millis()</em> is the internal timer on all Arduinos that output time in milliseconds. Note because this program is so simple, the code is left to the student to recreate. </p>
 </section>
 
 <section>
