@@ -15,7 +15,6 @@
 </ol>
 </list>
 
-
 <list>
 <title>Learning Objectives</title>
 <ol>
@@ -25,19 +24,19 @@
 </ol>
 </list>
 <p>
-This chapter explores writing data directly to a micro SD card. This is helpful because when the datalogger is done taking data, it is easy to power down the system, take the SD card out and pop it into a laptop for post-processing. For the CPX/CPB setp it helps because you don't have to have data writing to the internal storage which can potentially brick the system. You have code and data storage in two different places. Setting up this system requires a few steps for both CPX/CPB and Arduino microcontrollers. The Arduino UNO is capable of writing to the micro SD card but the only difference is that the pins setup is different. There is a very indepth <url href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial">SD card tutorial on Adafruit</url> that can be used in conjunction with this tutorial if extra help is needed <xref ref="AdafruitMAIN"/>. 
+This chapter explores writing data directly to a micro SD card. This is helpful because when the datalogger is done taking data, it is easy to power down the system, take the SD card out and pop it into a laptop for post-processing. For the CPX/CPB setp it helps because you don't have to have data writing to the internal storage which can potentially brick the system. You have code and data storage in two different places. Setting up this system requires a few steps for both CPX/CPB and Arduino microcontrollers. The Arduino UNO is capable of writing to the micro SD card but the only difference is that the pins setup is different. There is a very indepth <url href="https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial">SD card tutorial on Adafruit</url> that can be used in conjunction with this tutorial if extra help is needed <xref ref="AdafruitMAIN"/>. </p>
 <figure>
   <image width="73%" source="microSDcard.jpg" />
   <caption>Micro SD card Breakout Board without header pins soldered</caption>
 </figure>
-No matter what for both microcontrollers you need to have a micro SD card formatted to FAT32. In Linux that means you need to navigate to the Disk utility app and format the disk. On Windows or Mac you need to use a similar program to format the disk.
+<p>No matter what for both microcontrollers you need to have a micro SD card formatted to FAT32. In Linux that means you need to navigate to the Disk utility app and format the disk. On Windows or Mac you need to use a similar program to format the disk.</p>
 <figure>
   <image width="73%" source="SDCARD_FORMAT.png"/>
   <caption>Using the Disk Utility to Format a Micro SD Card on Linux</caption>
 </figure>
-Also, when you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 to <alert>solder the header pins to the board</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard and then move on to either the Arduino or CPX/CPB sections. 
-</p>
+<p>Also, when you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 to <alert>solder the header pins to the board</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard and then move on to either the Arduino or CPX/CPB sections. </p>
 </introduction>
+
 
 <section>
   <title>Setting up the CPX/CPB</title>
@@ -63,44 +62,47 @@ Also, when you open the packaging of this breakout board you'll notice that the 
   <caption>Example Data file after writing to SD Card</caption>
 </figure>
 <p>When you are done recording make sure to press the A button to the close the current file and then remove power from the CPX/CPB. You can then place the SD card into your computer and you should see multiple <em>DataFile#.txt</em> text files in your computer. You can then copy those to your computer and plot the data similar to <xref ref="daq"/>. This code can easily be augmented to accommodate any other sensor such as GPS (<xref ref="gps"/>), accelerometer (<xref ref="imu"/>), pressure (<xref ref="pressure"/>) or any other sensor you can think of. Although you add the complexity of having an extra piece of hardware, you remove the software headache and potential bricking of your CPX/CPB by attempting to use Method 3 (<xref ref="daq"/>) while still removing the need for a laptop.</p>
-</section>
-
+</section> 
 <section>
-<title>Setting up the Arduino</title>
+  <title>Setting up the Arduino</title>
 <p>
-There is no setup for the Arduino other than making sure the SD card is formatted to <em>FAT32</em> and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off. 
+There is no setup for the Arduino other than making sure the SD card is formatted to <em>FAT32</em> and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off. </p>
 <figure>
   <image width="73%" source="MEGA_SD_2.jpeg"/>
   <caption>Micro SD card Breakout Board wired to an Arduino MEGA</caption>
 </figure>
-In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the figure below.
+<p>In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the figure below.</p>
 <figure>
   <image width="73%" source="SDCardSoftware_Arduino.png"/>
   <caption>Arduino MEGA Software Snippet to send data to a micro SD card breakout board</caption>
 </figure>
-You'll notice in this code that there is a <em>#include &gt;SD.h&lt;</em> line of code which imports the SD header file. In C++ and other compilation languages you have a <em>.cpp</em> or <em>.c</em> file which has all the code necessary to run somthing and a <em>.h</em> file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click <em>Sketch&gt;Include Library&gt;Manage Libraries...</em>.
+<p>You'll notice in this code that there is a <em>#include &lt;SD.h&gt;</em> line of code which imports the SD header file. In C++ and other compilation languages you have a <em>.cpp</em> or <em>.c</em> file which has all the code necessary to run somthing and a <em>.h</em> file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click <em>Sketch&gt;Include Library&gt;Manage Libraries...</em>.</p>
 <figure>
   <image width="73%" source="Arduino_Libraries_1.png"/>
   <caption>Installing New Arduino Libraries</caption>
 </figure>
-After clicking that a new window will pop up where you can then search for "SD.h" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as <em>Serial.begin(115200)</em> is in the setup routine and there are many <em>Serial.print</em> calls in the loop routine. If you open the serial monitor you should see the <em>millis()</em> time printed on the screen provided you set the baud rate to 115200. 
+<p>After clicking that a new window will pop up where you can then search for "SD.h" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as <em>Serial.begin(115200)</em> is in the setup routine and there are many <em>Serial.print</em> calls in the loop routine. If you open the serial monitor you should see the <em>millis()</em> time printed on the screen provided you set the baud rate to 115200. </p>
 <figure>
   <image width="73%" source="SD_Arduino_Serial.png"/>
   <caption>Arduino Serial Monitor Output when writing to an SD Card</caption>
 </figure>
-In this case the serial monitor also states that is is writing the <em>DATA004.TXT</em>. Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.
+<p>In this case the serial monitor also states that is is writing the <em>DATA004.TXT</em>. Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.</p>
+<pre>
+  PHOTO TO BE ADDED IN A LATER EDITION OF THE BOOK
+</pre>
+<!--
 <figure>
   <image width="73%" source="SD_Arduino_Acceleration.png"/>
   <caption>Code to send acceleration data to an SD card</caption>
 </figure>
-The code to get an external accelerometer to work on an Arduino is dicussed in more detail in <xref ref="imu"/>. Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.
+-->
+<p>The code to get an external accelerometer to work on an Arduino is dicussed in more detail in <xref ref="imu"/>. Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.</p>
 <figure>
   <image width="73%" source="SD_Arduino_Data.png"/>
   <caption>Data files on a micro SD Card</caption>
 </figure>
-At this point it is identical to <xref ref="daq"/> to plot the data in whatever plotting environment you like. 
-</p>
-</section>
+<p>At this point it is identical to <xref ref="daq"/> to plot the data in whatever plotting environment you like. </p> 
+</section> 
 
 <section>
   <title>Assignment</title>
@@ -120,5 +122,5 @@ This project is similar to the Data Acquisition project only you must use method
   <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
 </ol>
 
-</section>
+</section> 
 </chapter>
