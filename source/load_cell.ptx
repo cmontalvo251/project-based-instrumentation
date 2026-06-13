@@ -53,14 +53,14 @@ The sensor above is the <url href="https://www.adafruit.com/product/4543">a stra
 The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is not that straightforward unfortunately. This is because the amplifier in the parts lisk has a <em>SCK</em> and <em>DATA</em> line instead of <em>SDA/SCL</em>. The good news is that it still uses digital output so the CPX/CPB can read it.
 </p>
 <figure>
-  <image width="73%" source="CPX_HX711_Wiring.jpg" />
+  <image width="73%" source="CPX_HX711_Wiring.png" />
   <caption>Load Cell Amplifier connected to a CPX</caption>
 </figure>
 <p>
 In the photos above and below, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to <em>E+</em>, the black wire is connected to <em>E-</em>, the white wire is connected to <em>A-</em> and the green wire is connected to <em>A+</em>. Although very innappropriate and non-standard, there are two yellow alligator clips. The first yello alligator clip is connected to <em>3.3V</em> and is then connected to a purple male-male wire which is then connected to the <em>VIN</em> pin on the amplifier. The white alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the amplifier. The green alligator clip is connected to the <em>A2</em> pin connected to an white male-male wire connected to the <em>SCK</em> pin on the amplifier. Finally, the second yellow alligator clip is connected to the <em>A1</em> pin connected to a green male-male wire connected to the <em>DATA</em> pin on the amplifier.
 </p>
 <figure>
-  <image width="73%" source="HX711_Amplifier.jpg" />
+  <image width="73%" source="HX711_Amplifier.png" />
   <caption>Strain Gauge Connected to a Load Cell Amplifier</caption>
 </figure>
 <p>

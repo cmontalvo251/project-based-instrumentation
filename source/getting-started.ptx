@@ -349,7 +349,7 @@ help you see me perform the 8 steps above</url><xref ref="youtube"/>.
 </figure>
 <p>The figure above shows the code for blinking the LED connected to pin 13. The Arduino UNO/MEGA and also the CPX/CPB all share the same default LED on pin 13. The default example program will say <em>LED_BUILTIN</em> but I changed the pin to pin 13 to be more specific. The code is pretty straightforward where the setup routine makes pin 13 an output pin using the <em>pinMode()</em> function and then the loop routine sets pin 13 to HIGH and LOW using the <em>digitalWrite()</em> function with a <em>delay</em> function used to pause for 1000 ms or 1 second. In this case HIGH is on and LOW is off. If you click the <em>Upload</em> button which looks like a right arrow the code will be compiled to binary and then uploaded to the Arduino. If it's working properly the LED on pin 13 will blink. </p>
 <figure>
-  <image width="73%" source="Arduino_MEGA_Blink.jpg" />
+  <image width="73%" source="Arduino_MEGA_Blink.png" />
   <caption>Arduino MEGA with Pin 13 Illuminated</caption>
 </figure>
 <p>Again there isn't a lot of ability to debug if it isn't working right. Note that if you want to save this code you must click Save and then save the <em>.ino</em> file to somewhere on your computer. If you want to share code you can't just give someone your Arduino, you have to send them the code because the code is unrecoverable from the binary format on the Arduino itself. As for the code itself, the // is used for comments and semicolons ; are used to end every single line. Unlike python you don't need to worry about tabs to be setup properly. Loops and if statements are separated by brackets { and }. </p>

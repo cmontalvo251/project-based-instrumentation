@@ -48,7 +48,7 @@ This chapter explores writing data directly to a micro SD card. This is helpful 
   <p>
   The figure above shows the preamble of the code which has a few things that you need to do before getting this to work. <alert>First, you need to have an <em>sd</em> folder in the your <em>CIRCUITPY</em> drive.</alert> That means, when you plug in the CPB/CPX to your computer you must add a solder called <em>sd</em> into the main folder alongside the <em>lib</em> folder which needs the <em>adafruit_sdcard</em> module. Before installing extra modules into the <em>lib</em> folder you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. In this example I'm using the 10.X version. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. Again, for this lab you just need the <em>adafruit_sdcard</em> module in the lib folder. After that you can copy the software from Github into your <em>code.py</em> file and save it. The code will not run right away and will probably through an <em>SD Card Not Found</em> error. At this point you can unplug the CPX/CPB and begin wiring the breakout board making to plug in the micro SD card of course.</p>
   <figure>
-    <image width="73%" source="CPB_Method5_Wiring.jpg"/>
+    <image width="73%" source="CPB_Method5_Wiring.png"/>
     <caption>CPB wired to a micro SD card breakout board</caption>
   </figure>
 <p>In the figure above moving counter-clockwise, the red alligator clip from <em>5V</em> to a green male-male wire to <em>5V</em>, the first yellow alligator clip goes directly from <em>A1(CLK)</em> to <em>CLK</em>, the first green alligator clip goes from <em>A2(MISO)</em> to a white male-male wire to <em>DO</em>, the second green alligator clip goes from <em>A3(MOSI)</em> to a blue male-male wire to <em>DI</em>, the second yellow alligator clip is connected to <em>A4</em> then to a black male-male wire connected to <em>CS</em> and finally the black alligator clip goes directly from <em>GND</em> to <em>GND</em>.</p>
@@ -68,7 +68,7 @@ This chapter explores writing data directly to a micro SD card. This is helpful 
 <p>
 There is no setup for the Arduino other than making sure the SD card is formatted to <em>FAT32</em> and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off. </p>
 <figure>
-  <image width="73%" source="MEGA_SD_2.jpeg"/>
+  <image width="73%" source="MEGA_SD_2.png"/>
   <caption>Micro SD card Breakout Board wired to an Arduino MEGA</caption>
 </figure>
 <p>In the figure above the dark green male-male wire goes from <em>5V</em> to <em>5V</em>, the orange male-male wire goes from <em>GND</em> to <em>GND</em>, the light green wire goes from <em>52</em> to <em>CLK</em>, the white wire goes from <em>50</em> to <em>DO</em>, the purple male-male wire goes from <em>51</em> to <em>DI</em> and the blue male-male wire goes from <em>53</em> to <em>CS</em>. The software to get this to work is on <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/SD_Example/SD_Example.ino">Github</url> as usual and a snippet is shown in the figure below.</p>
