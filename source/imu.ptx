@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p>CPX/CPB</p></li>
+<li><p>CPX/CPB or Arduino</p></li>
 <li><p>USB Cable</p></li>
 <li><p><url href="https://www.adafruit.com/product/4485">LSM6DS33+LIS3MDL</url> (Note that other Inertial Measurement or "DOF" Sensors will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
@@ -39,11 +39,17 @@ The sensor above is the <url href="https://www.adafruit.com/product/4485">LSM6DS
   <caption>IMU on Adafruit</caption>
 </figure>
 <p>
+The nice thing about this sensor is that there is a magnetometer on board. Recall that the accelerometer can be used to measure roll and pitch (See <xref ref="accelerometer"/>). By combining the magnetometer in this IMU, it's possible to get the compass heading of the sensor.</p>
+<md number="yes">
+  \psi = tan^{-1}\left(\frac{\bar{\beta}_z s_{\phi} - \bar{\beta}_y c_{\phi}}{\bar{\beta}_x c_{\phi} + \bar{\beta}_y s_{\theta}s_{\phi} + \bar{\beta}_z c_{\phi}s_{\theta}}\right)
+</md>
+<p>
+In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>)<xref ref="Github"/>. When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard.
  </p>
 </introduction>
 <section>
-  <title>Wiring and Software</title>
-<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
+  <title>CPX/CPB Wiring and Software</title>
+<p>The wiring for this system requires 4 wires. The figure below shows the IMU connected to <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="73%" source="sensors_python_feather_wiring_breadboard.png" />
@@ -106,15 +112,39 @@ The final part is to get the LIS3MDL (magnetometer) to work. The starting point 
 <p>
   The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it.
 </p>
-<p>
-Recall that the accelerometer can be used to measure roll and pitch (See <xref ref="accelerometer"/>). By combining the magnetometer in this IMU, it's possible to get the compass heading of the sensor.
-<md number="yes">
-  \psi = tan^{-1}\left(\frac{\bar{\beta}_z s_{\phi} - \bar{\beta}_y c_{\phi}}{\bar{\beta}_x c_{\phi} + \bar{\beta}_y s_{\theta}s_{\phi} + \bar{\beta}_z c_{\phi}s_{\theta}}\right)
-</md>
-</p>
-<p>
-In the equations above, <m>\beta</m> is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See <url href="https://github.com/cmontalvo251/LaTeX/tree/master/Aerospace_Mechanics">Aerospace Mechanics</url>)<xref ref="Github"/>. 
-</p>
+</section>
+
+<section>
+  <title>Arduino Wiring and Software</title>
+  <p>
+  Wiring this to the Arduino requires the same setup as the CPX/CPB and also uses I2C. From the Arduino to the accelerometer, the <em>3.3V</em> pin runs to <em>VIN</em>, <em>GND</em> to <em>GND</em>, <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. This is shown in the figure below. Note that the SD card breakout board from <xref ref="sdcard"/> is also used in this example to showcase how easy it is to send accelerometer data to an SD card
+  </p>
+  <figure>
+    <image width="73%" source="Accelerometer_Arduino.png"/>
+    <caption>Accelerometer connected to an Arduino</caption>
+  </figure>
+  <p>Moving on to software, the <em>.ino</em> file for both the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/Accelerometer_LSM6DS33/Accelerometer_LSM6DS33.ino">accelerometer</url> by itself and the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/Accelerometer_LSM6DS33_SD/Accelerometer_LSM6DS33_SD.ino">accelerometer writing to an SD card</url> are both on Github. For both of the versions of the code you need to install some libraries. You'll notice that at the top of the code there is a #include statement which adds a specific library.</p>
+  <pre>
+    #include &lt;Adafruit_LSM6DS33.h&gt;
+    Adafruit_LSM6DS33 lsm6ds33;
+  </pre>
+  <p>In this case you need the <em>Adafruit_LSM6DS33</em> library which also requires other libraries in addition to that single #include call. Also, since the libraries are from Adafruit rather than Arduino you need to navigate to Github and download a few zip libraries. The list of libraries you need and links to those websites are shown below</p>
+  <ol>
+  <li><url href="https://github.com/adafruit/adafruit_lsm6ds">Adafruit_LSM6DS</url></li>
+  <li><url href="https://github.com/adafruit/Adafruit_BusIO">Adafruit_BusIO</url></li>
+  <li><url href="https://github.com/adafruit/adafruit_sensor">Adafruit_Sensor</url></li>
+  </ol>
+<p>Once you have the zip folders downloaded you need to navigate to Sketch&gt;Include Library&gt;Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in <xref ref="sdcard"/>. Once you've got the code downloaded and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.</p>
+<figure>
+  <image width="73%" source="Accel_Serial_Output.png"/>
+  <caption>Serial Monitor Output of Accelerometer Code on Arduino</caption>
+</figure>
+<p>In the figure above, the sensor is outputtting temperature, acceleration x,y and z as well as the angular velocity along the x,y, and z axes. If you then compile the code which contains the SD card setup and writing you'll be able to write the data to an external SD card which would be super helpful for a standalone project. Again setting up the SD card is done in <xref ref="sdcard"/></p>
+<figure>
+  <image width="73%" source="Accelerometer_Data_File.png"/>
+  <caption>Accelerometer Data File on SD Card</caption>
+</figure>
+<p>In the figure above, the code only writes the millis timer and acceleration data to the SD card but it would be very simple to add temperature and angular velocity to the code.</p>
 </section>
 
 <section>

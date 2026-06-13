@@ -87,15 +87,10 @@ There is no setup for the Arduino other than making sure the SD card is formatte
   <caption>Arduino Serial Monitor Output when writing to an SD Card</caption>
 </figure>
 <p>In this case the serial monitor also states that is is writing the <em>DATA004.TXT</em>. Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.</p>
-<pre>
-  PHOTO TO BE ADDED IN A LATER EDITION OF THE BOOK
-</pre>
-<!--
 <figure>
-  <image width="73%" source="SD_Arduino_Acceleration.png"/>
+  <image width="73%" source="Acceleration_SD_Code.png"/>
   <caption>Code to send acceleration data to an SD card</caption>
 </figure>
--->
 <p>The code to get an external accelerometer to work on an Arduino is dicussed in more detail in <xref ref="imu"/>. Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.</p>
 <figure>
   <image width="73%" source="SD_Arduino_Data.png"/>
