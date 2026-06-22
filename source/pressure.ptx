@@ -37,7 +37,7 @@ The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22<
 </introduction>
 <section>
   <title>LPS Setup</title>
-<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
+<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>. Notice that the <em>SDA/SCL</em> pins on the LPS22 are listed <em>SDI/SCK</em> respectively. 
 </p>
 <figure xml:id="pressure-bryan">
   <image width="73%" source="adafruit_products_d_cp_feather_wiring_bb.png" />
@@ -47,14 +47,14 @@ The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22<
 <section>
   <title>CPB Wiring and Software</title>
 <p>
-The only difference between the wiring diagram shown previously and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. The two figures below show a CPB wired to the LPS22.
+The only difference between the wiring diagram shown previously and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDI</em> and <em>SCL</em> to <em>SCK</em>. The two figures below show a CPB wired to the LPS22.
 </p>
 <figure>
   <image width="73%" source="lps22_CPB.jpeg" />
   <caption>Pressure Sensor Connected to a CPB</caption>
 </figure>
 <p>
-In the photos above and below, the red alligator clip is connected to <em>3.3V</em> and is then connected to a red male-male wire which is then connected to the <em>VIN</em> pin on the LPS22. The black alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the LPS22. The white alligator clip is connected to the <em>SCL</em> pin connected to an orange male-male wire connected to the <em>SCL</em> pin on the LPS22. Finally, the yellow alligator clip is connected to the <em>SDA</em> pin connected to a yellow male-male wire connected to the <em>SDA</em> pin on the LPS22.
+In the photos above and below, the red alligator clip is connected to <em>3.3V</em> and is then connected to a red male-male wire which is then connected to the <em>VIN</em> pin on the LPS22. The black alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the LPS22. The white alligator clip is connected to the <em>SCL</em> pin connected to an orange male-male wire connected to the <em>SCK</em> pin on the LPS22. Finally, the yellow alligator clip is connected to the <em>SDA</em> pin connected to a yellow male-male wire connected to the <em>SDI</em> pin on the LPS22.
 </p>
 <figure>
   <image width="73%" source="lps22.jpeg" />
@@ -81,9 +81,12 @@ The data shown have multiple columns of data which are time,x accel,y accel,z ac
 </section>
 <section>
   <title>Arduino Wiring and Software</title>
-  <p>The wiring for the Arduino is similar to any I2C setup like the external IMU (<xref ref="imu"/>). In this case <em>3.3V</em> and <em>GND</em> are straightforward while <em>SDA</em> and <em>SCL</em> pins are connected to the dedicated <em>SDA</em> and <em>SCL</em> pins on the Arduino. The good news is that the entire Arduino family has dedicated <em>SDA</em> and <em>SCL</em> pins for I2C. The Figure below shows the pressure sensor connected to an Arduino MEGA.</p>
-  <pre>INSERT FIGURE OF ACTUAL HARDWARE</pre>
-  <p>The Figure below also has an external IMU (<xref ref="imu"/>) and micro sd card breakout board (<xref ref="sdcard"/>) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and pressure and log that to a micro SD card. This is so students can place this whole setup into a rocket and measure pressure and acceleration while logging that to an SD card. Moving on to software is similar to any I2C device in that it is necessary to get the LP22 library but also <em>Adafruit_BusIO</em> and <em>Adafruit_Sensor</em>. Since these libraries are from Adafruit rather than Arduino I find it easier to navigate to Github and download the zip libraries directly. The list of libraries you need and links to those websites are shown below</p>
+  <p>The wiring for the Arduino is similar to any I2C setup like the external IMU (<xref ref="imu"/>). In this case <em>3.3V</em> and <em>GND</em> are straightforward while <em>SDI</em> and <em>SCK</em> pins are connected to the dedicated <em>SDA</em> and <em>SCL</em> pins on the Arduino. The good news is that the entire Arduino family has dedicated <em>SDA</em> and <em>SCL</em> pins for I2C. The Figure below shows the pressure sensor connected to an Arduino MEGA.</p>
+  <figure>
+    <image width="73%" source="Arduino_LPS_Accel_Hardware.jpg"/>
+    <caption>Arduino MEGA hooked up to an LPS22, IMU and SD Card breakout board</caption>
+  </figure>
+  <p>The Figure above also has an external IMU (<xref ref="imu"/>) and micro sd card breakout board (<xref ref="sdcard"/>) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and pressure and log that to a micro SD card. This is so students can place this whole setup into a rocket and measure pressure and acceleration while logging that to an SD card. The LPS22 sensor is the sensor on the left but unfortunately has header pins soldered upside down. As such the LPS22 sensor is upside down. Since you can't see the pins I placed another identical LPS22 right below it so the pins are shown. In this case, the blue wire is connected to the same <em>3.3V</em> pin as the IMU, the left most green wire is connected to <em>GND</em> on the Arduino, the next green wire is the <em>SCK</em> pin connected to the same <em>SCL</em> pin as the IMU, and the last dark green wire is connected to the <em>SDI</em> pin on the LPS22 while the other end is connected to the same <em>SDA</em> pin as the IMU. Note that I2C has multiple <q>addresses</q>. This means you can have multiple different I2C sensors connected to the same <em>SDA/SCL</em> pins and the code/hardware will know which sensor is where just like addresses on a street. Moving on to software, the code is similar to any I2C device in that it is necessary to get the LP22 library but also <em>Adafruit_BusIO</em> and <em>Adafruit_Sensor</em>. Since these libraries are from Adafruit rather than Arduino I find it easier to navigate to Github and download the zip libraries directly. The list of libraries you need and links to those websites are shown below</p>
   <ol>
     <li><url href="https://github.com/adafruit/Adafruit_LPS2X">Adafruit_LPS2X</url></li>
     <li><url href="https://github.com/adafruit/Adafruit_BusIO">Adafruit_BusIO</url></li>
@@ -93,12 +96,23 @@ The data shown have multiple columns of data which are time,x accel,y accel,z ac
   <pre>File&gt;Examples&gt;Adafruit_LPS2X&gt;adafruit_lps2x_test.</pre> <p>Just in case you're having trouble finding the example script, I've placed a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/LPS22_Test/LPS22_Test.ino">streamlined LPS22 copy</url> of the example on Github. A snippet of that code is shown below.</p>
 <figure>
 <image width="73%" source="LPS22_Code.png"/>
-<caption>Arduino MEGA Code</caption>
+<caption>Arduino MEGA Code for LPS22 Only</caption>
 </figure>
 <p> Notice that lines 2-4 of the software have the <em>#include</em> calls to the libraries just installed. <em>Wire.h</em> is a pre-installed header file and <em>Adafruit_BusIO</em> is called from <em>Adafruit_Sensor</em> so you the code doesn't require an excplicit include. Once you've got the code opened and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.</p>
-<pre>INCLUDE FIGURE OF PRESSURE OUTPUT</pre>
-<p>Again, it's possible to convert pressure to altitude and is done in <xref ref="pressure-altitude"/>. Along with getting pressure data from the LPS22, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a <em>standalone Pressure+IMU datalogger</em> is on Github us usual.</p>
-<pre>INSERT PICTURE OF PRESSURE+ACCEL DATALOGGER AND EDIT LINK ABOVE WHEN YOU'RE DONE</pre>
+<figure>
+<image width="73%" source="LPS22_Arduino_Output.png"/>
+<caption>Serial Monitor Output for LPS22 Only</caption>
+</figure>
+<p>Again, it's possible to convert pressure to altitude and is done in <xref ref="pressure-altitude"/>. Along with getting pressure data from the LPS22, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/Accelerometer_LSM6DS33_Pressure_LPS22_SD/Accelerometer_LSM6DS33_Pressure_LPS22_SD.ino">standalone Pressure+IMU datalogger</url> is on Github us usual.</p>
+<figure>
+<image width="73%" source="Accel_LPS22_Arduino_MEGA_Code.png"/>
+<caption>Arduino MEGA Code of IMU, Pressue and SD Card Breakout boards</caption>
+</figure>
+<p>In that snippet of code, you can see the loop routine where the IMU and the Pressure sensors are polled and printed to the serial monitor together. Once that code is compiled and flashed to the Arduino the serial monitor output will create something similar to the figure below.</p>
+<figure>
+<image width="73%" source="Pressure_Accel_Output_Arduino.png"/>
+<caption>Serial Monitor Output for LPS22 and IMU</caption>
+</figure>
 </section>
 <section xml:id="pressure-altitude">
   <title>Converting Pressure to Altitude</title>

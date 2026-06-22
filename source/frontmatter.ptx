@@ -138,7 +138,7 @@
   <li> June 12th, 2026 - Added Arduino blinking to the getting started chapter and finished method 5 for both Arduino and CPX/CPB </li>
   <li> June 13th, 2026 - Reduced the size of a few jpg files to make the PDF smaller than 50 MB. Added the accelerometer steps for the arduino. </li>
   <li> June 21st, 2026 - Happy Summer Solstice and Father's Day - I added an Arduino example for the HX711 load cell chapter and started adding the GPS arduino steps</li>
-  <li> June 22nd, 2026 - Started adding the LPS22 pressure sensor chatper for Arduino</li>
+  <li> June 22nd, 2026 - Finished adding the LPS22 pressure sensor and GPS chapter for Arduino.</li>
       </ol>
     </p>
   </section>
