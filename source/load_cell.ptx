@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p>CPX/CPB</p></li>
+<li><p>CPX/CPB or Arduino</p></li>
 <li><p>USB Cable</p></li>
 <li><p><url href="https://www.adafruit.com/product/5974">HX711 Load Cell Amplifier</url> (Note that other amplifiers will work)<xref ref="AdafruitMAIN"/></p></li>
 <li><p><url href="https://www.adafruit.com/product/5974">Strain Gauge Load Cell</url> <xref ref="AdafruitMAIN"/></p></li>
@@ -42,22 +42,25 @@ The sensor above is the <url href="https://www.adafruit.com/product/4543">a stra
 <p>The figure above shows the <url href="https://www.adafruit.com/product/5974">HX711 load cell amplifier</url> which takes the signal from the load cell and amplifies it and converts it to a nice clean digital signal similar to I2C but not quite. In this chapter we're going to wire up the load cell and then read the data from amplifier after calibrating it properly.</p>
 </introduction>
 <section>
-  <title>Wiring and Software</title>
-<p>When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires from the CPX/CPB to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a <url href="https://learn.adafruit.com/adafruit-nau7802-24-bit-adc-stemma-qt-qwiic/python-circuitpython">Feather M4</url>. (Courtesy of <url href="https://learn.adafruit.com/u/BlitzCityDIY">Liz Clark</url>)<xref ref="Adafruit"/>.
+  <title>Load Cell Setup</title>
+  <p>When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires from the microcontroller to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a <url href="https://learn.adafruit.com/adafruit-nau7802-24-bit-adc-stemma-qt-qwiic/python-circuitpython">Feather M4</url>. (Courtesy of <url href="https://learn.adafruit.com/u/BlitzCityDIY">Liz Clark</url>)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="73%" source="adafruit_products_featherBB_revC_bb.png" />
   <caption>Load Cell Wiring Diagram for Adafruit Feather M4<xref ref="load-cell-wiring"/></caption>
 </figure>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is not that straightforward unfortunately. This is because the amplifier in the parts lisk has a <em>SCK</em> and <em>DATA</em> line instead of <em>SDA/SCL</em>. The good news is that it still uses digital output so the CPX/CPB can read it.
-</p>
+In the wiring diagram above, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to <em>E+</em>, the black wire is connected to <em>E-</em>, the white wire is connected to <em>A-</em> and the green wire is connected to <em>A+</em>. </p>
+</section>
+<section>
+  <title>CPX/CPB Wiring and Software</title>
+<p>For the CPX/CPB the strain gauge and amplifier are the same but you will be using 4 alligator clips as shown in the photo below. Although very non-standard, there are two yellow alligator clips. The first yellow alligator clip is connected to <em>3.3V</em> and is then connected to a purple male-male wire which is then connected to the <em>VIN</em> pin on the amplifier. The white alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the amplifier. The green alligator clip is connected to the <em>A2</em> pin connected to an white male-male wire connected to the <em>SCK</em> pin on the amplifier. Finally, the second yellow alligator clip is connected to the <em>A1</em> pin connected to a green male-male wire connected to the <em>DATA</em> pin on the amplifier. </p>
 <figure>
   <image width="73%" source="CPX_HX711_Wiring.png" />
   <caption>Load Cell Amplifier connected to a CPX</caption>
 </figure>
 <p>
-In the photos above and below, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to <em>E+</em>, the black wire is connected to <em>E-</em>, the white wire is connected to <em>A-</em> and the green wire is connected to <em>A+</em>. Although very innappropriate and non-standard, there are two yellow alligator clips. The first yello alligator clip is connected to <em>3.3V</em> and is then connected to a purple male-male wire which is then connected to the <em>VIN</em> pin on the amplifier. The white alligator clip is connected to the <em>GND</em> pin which is connected to a brown male-male wire connected to the <em>GND</em> pin on the amplifier. The green alligator clip is connected to the <em>A2</em> pin connected to an white male-male wire connected to the <em>SCK</em> pin on the amplifier. Finally, the second yellow alligator clip is connected to the <em>A1</em> pin connected to a green male-male wire connected to the <em>DATA</em> pin on the amplifier.
+This isn't as straightforward because the amplifier in the parts list has an <em>SCK</em> and <em>DATA</em> line instead of <em>SDA/SCL</em>. The good news is that it still uses digital output so the CPX/CPB can read it. So not quite I2C but still digital communication.
 </p>
 <figure>
   <image width="73%" source="HX711_Amplifier.png" />
@@ -72,6 +75,22 @@ Once you have the circuit wired there are no extra modules to install since we'r
 The photo above shows the example output of the load cell in kg by applying a load to the strain gauge. Using this simple script it is easy to weigh certain objects and get the value from the load cell. Notice however, that on line 73 at the time of this writing, the scale value is set to 12,000. That value will need to be adjusted based on your own calibration measurements which is left as an assignment to the reader. 
 </p>
 </section>
+
+<section>
+  <title>Arduino Wiring and Software</title>
+  <p>The wiring for the Arduino family is extremely similar to the CPX/CPB. The figure below shows an Arduino connect to a load cell as well as many other external components that my students used for their final project.</p>
+  <figure>
+    <image width="73%" source="Arduino_HX711.png"/>
+    <caption>Arduino Connected to an HX711 plus many other components</caption>
+  </figure>
+  <p>The <em>DATA</em> line connects to pin 3 on the Arduino while <em>SCK</em> connects to pin 2 and then <em>5V</em> and <em>GND</em> pins are straightforward. The <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/UNO/Load_Cell/HX711_Arduino_Example.ino">Arduino code</url> is also on Github and starts with the example script from the <url href="https://github.com/bogde/HX711">HX711 library</url> which is also on Github. To install downloaded ZIP libraries, navigate to Sketch&gt;Include Library&gt;Add .ZIP Library... and then add the ZIP file downloaded from Github.</p>
+  <figure>
+    <image width="75%" source="HX711_Arduino_Code.png"/>
+    <caption>Arduino Code for the HX711</caption>
+  </figure>
+  <p>The screenshot above shows the <em>#include &lt;HX711.h&gt;</em> on line 34 which imports the HX711 library and then the rest of the setup sets up pins 2 and 3 for the strain gauge. There are also lines of code used to setup Serial communication so that you can see the output of the scale and also change the calibration factor by pressing a and z or + and - to either inrease or decrease the scale factor.</p>
+</section>
+
 <section>
   <title>Assignment</title>
   <introduction>
