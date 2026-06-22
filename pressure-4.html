@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Data from a Rocket Launch</title>
+<title>CPB Wiring and Software</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -101,14 +101,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.1';
+eBookConfig.runestone_version = '8.1.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.dcab57465a404e85.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.79fbb790b185d712.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
+<script src="_static/prefix-runtime.d1480f934b51d4ec.bundle.js"></script><script src="_static/prefix-713.de0ab26248766350.bundle.js"></script><script src="_static/prefix-runestone.fa61545fa3ffbf2f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-713.f43ced6a6134ea74.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.87414d180ebeebd6.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -382,33 +382,42 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="imu.html" class="internal"><span class="codenumber">22</span> <span class="title">Inertial Measurement Unit</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">22.1</span> <span class="title">Wiring and Software</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-3.html" class="internal"><span class="codenumber">22.1</span> <span class="title">CPX/CPB Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-4.html" class="internal"><span class="codenumber">22.2</span> <span class="title">Arduino Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="imu-5.html" class="internal"><span class="codenumber">22.3</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="pressure.html" class="internal"><span class="codenumber">23</span> <span class="title">Barometers</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-3.html" class="internal"><span class="codenumber">23.1</span> <span class="title">Wiring and Software</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="pressure-4.html" class="internal"><span class="codenumber">23.2</span> <span class="title">Data from a Rocket Launch</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-5.html" class="internal"><span class="codenumber">23.3</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-6.html" class="internal"><span class="codenumber">23.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-3.html" class="internal"><span class="codenumber">23.1</span> <span class="title">LPS Setup</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="pressure-4.html" class="internal"><span class="codenumber">23.2</span> <span class="title">CPB Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-5.html" class="internal"><span class="codenumber">23.3</span> <span class="title">Arduino Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-altitude.html" class="internal"><span class="codenumber">23.4</span> <span class="title">Converting Pressure to Altitude</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-7.html" class="internal"><span class="codenumber">23.5</span> <span class="title">Data from a Rocket Launch</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-8.html" class="internal"><span class="codenumber">23.6</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="pressure-9.html" class="internal"><span class="codenumber">23.7</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="gps.html" class="internal"><span class="codenumber">24</span> <span class="title">Global Positioning System (GPS)</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-3.html" class="internal"><span class="codenumber">24.1</span> <span class="title">Wiring and Software</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-4.html" class="internal"><span class="codenumber">24.2</span> <span class="title">Results from an aircraft flight</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-5.html" class="internal"><span class="codenumber">24.3</span> <span class="title">Extra Help</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-6.html" class="internal"><span class="codenumber">24.4</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-3.html" class="internal"><span class="codenumber">24.1</span> <span class="title">GPS Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-4.html" class="internal"><span class="codenumber">24.2</span> <span class="title">CPB Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-5.html" class="internal"><span class="codenumber">24.3</span> <span class="title">Arduino Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-explanation.html" class="internal"><span class="codenumber">24.4</span> <span class="title">GPS Receiver and Sentence Explanation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-7.html" class="internal"><span class="codenumber">24.5</span> <span class="title">Results from an aircraft flight</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-8.html" class="internal"><span class="codenumber">24.6</span> <span class="title">Extra Help</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="gps-9.html" class="internal"><span class="codenumber">24.7</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="load-cell.html" class="internal"><span class="codenumber">25</span> <span class="title">Load Cells</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-3.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Wiring and Software</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-4.html" class="internal"><span class="codenumber">25.2</span> <span class="title">Assignment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-3.html" class="internal"><span class="codenumber">25.1</span> <span class="title">Load Cell Setup</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-4.html" class="internal"><span class="codenumber">25.2</span> <span class="title">CPX/CPB Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-5.html" class="internal"><span class="codenumber">25.3</span> <span class="title">Arduino Wiring and Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="load-cell-6.html" class="internal"><span class="codenumber">25.4</span> <span class="title">Assignment</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -428,23 +437,51 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="pressure-4"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Data from a Rocket Launch</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">CPB Wiring and Software</span>
 </h2>
-<div class="para" id="pressure-4-2">My students have placed this entire data logger into a rocket and launched it. The figure below shows the rocket on the launch pad in Samson,AL.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="pressure-4-2">The only difference between the wiring diagram shown previously and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em class="emphasis">3.3V</em> to run to <em class="emphasis">VIN</em>, <em class="emphasis">GND</em> to <em class="emphasis">GND</em> and then <em class="emphasis">SDA</em> to <em class="emphasis">SDI</em> and <em class="emphasis">SCL</em> to <em class="emphasis">SCK</em>. The two figures below show a CPB wired to the LPS22.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="pressure-4-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/rocket.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Rocket on the Launch Pad<div class="autopermalink" data-description="Figure 23.2.1"><a href="#pressure-4-3" title="Copy heading and permalink for Figure 23.2.1" aria-label="Copy heading and permalink for Figure 23.2.1">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-4">The datalogger itself is attached to a piece of wood that is called a sled and then placed into the rocket prior to launch.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="pressure-4-3"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/lps22_CPB.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pressure Sensor Connected to a CPB<div class="autopermalink" data-description="Figure 23.2.1"><a href="#pressure-4-3" title="Copy heading and permalink for Figure 23.2.1" aria-label="Copy heading and permalink for Figure 23.2.1">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-4">In the photos above and below, the red alligator clip is connected to <em class="emphasis">3.3V</em> and is then connected to a red male-male wire which is then connected to the <em class="emphasis">VIN</em> pin on the LPS22. The black alligator clip is connected to the <em class="emphasis">GND</em> pin which is connected to a brown male-male wire connected to the <em class="emphasis">GND</em> pin on the LPS22. The white alligator clip is connected to the <em class="emphasis">SCL</em> pin connected to an orange male-male wire connected to the <em class="emphasis">SCK</em> pin on the LPS22. Finally, the yellow alligator clip is connected to the <em class="emphasis">SDA</em> pin connected to a yellow male-male wire connected to the <em class="emphasis">SDI</em> pin on the LPS22.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="pressure-4-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/pressure_sled.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Datalogger Attached to Sled<div class="autopermalink" data-description="Figure 23.2.2"><a href="#pressure-4-5" title="Copy heading and permalink for Figure 23.2.2" aria-label="Copy heading and permalink for Figure 23.2.2">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-6">In the figure above the small gray piece below the CPB is a small 1S Lipo battery and the LPS22 is on the other side of the sled. The figure below shows pressure as a function of time.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<figure class="figure figure-like" id="pressure-4-5"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/lps22.jpeg" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pressure Sensor Connected to a CPB with a Breadboard<div class="autopermalink" data-description="Figure 23.2.2"><a href="#pressure-4-5" title="Copy heading and permalink for Figure 23.2.2" aria-label="Copy heading and permalink for Figure 23.2.2">🔗</a></div></figcaption></figure><div class="para logical" id="pressure-4-6">
+<div class="para">Once you have the circuit wired and soldered it’s time to work on software. First, you want to make sure you have your <a class="external" href="https://circuitpython.org/downloads" target="_blank">Circuit Python UF2</a> up to date<a href="backmatter-1.html#CircuitPython" class="xref" data-knowl="./knowl/xref/CircuitPython.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 30">[30]</a>. Once I updated my UF2 I also updated my <a class="external" href="https://circuitpython.org/libraries" target="_blank">Circuit Python Libraries</a> (See <a href="installing-modules.html" class="internal" title="Section 7.2: Installing Modules">Section 7.2</a> for help on installing extra modules on your CPX/CPB)<a href="backmatter-1.html#CircuitPython" class="xref" data-knowl="./knowl/xref/CircuitPython.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 30">[30]</a>. In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:</div>
+<ol class="decimal" id="pressure-4-6-6">
+<li id="pressure-4-6-6-1">
+<div class="para" id="pressure-4-6-6-1-1">adafruit_lis3dh<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="pressure-4-7"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/pressure_rocket.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pressure Data from a Rocket Launch<div class="autopermalink" data-description="Figure 23.2.3"><a href="#pressure-4-7" title="Copy heading and permalink for Figure 23.2.3" aria-label="Copy heading and permalink for Figure 23.2.3">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-8">It’s clear from the data that pressure drops as the flight continues showing the boost phase of the rocket. There is a small oscillation near the apogee of the flight. This is due to the delay charge to blow the nose cone off the rocket body to deploy the parachute. The pressure sensor is measuring local atmospheric pressure. So if there is a small explosion inside the rocket to deploy the parachute, the data will show a slight oscillation.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#pressure-4-6-6-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="pressure-4-6-6-2">
+<div class="para" id="pressure-4-6-6-2-1">adafruit_lps2x<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="pressure-4-9"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/altitude_rocket.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Altitude Data from a Rocket Launch<div class="autopermalink" data-description="Figure 23.2.4"><a href="#pressure-4-9" title="Copy heading and permalink for Figure 23.2.4" aria-label="Copy heading and permalink for Figure 23.2.4">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-10">The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set <span class="process-math">\(p_0\)</span> equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn’t true but indicative of the explosion to deploy the parachute.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#pressure-4-6-6-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="pressure-4-6-6-3">
+<div class="para" id="pressure-4-6-6-3-1">adafruit_thermistor<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Section 23.2: Data from a Rocket Launch"><a href="#pressure-4" title="Copy heading and permalink for Section 23.2: Data from a Rocket Launch" aria-label="Copy heading and permalink for Section 23.2: Data from a Rocket Launch">🔗</a></div></section></div>
+<div class="autopermalink" data-description="Item 3"><a href="#pressure-4-6-6-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="pressure-4-6-6-4">
+<div class="para" id="pressure-4-6-6-4-1">neopixel<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#pressure-4-6-6-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="pressure-4-6-6-5">
+<div class="para" id="pressure-4-6-6-5-1">adafruit_ble<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6-6-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#pressure-4-6-6-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="pressure-4-7">Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. <em class="alert">Note that it’s a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <a href="I2C_scanner.html" class="internal" title="Section 7.4: Using an I2C Scanner">Section 7.4</a>).</em> Once you’re positive the I2C address of the LPS22 is setup properly you can run the example code to <a class="external" href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/Pressure_Accel_Datalogging" target="_blank">log pressure and acceleration data</a>. Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn’t have bluetooth, some students want their CPX/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="pressure-4-8"><div class="image-box" style="width: 73%; margin-left: 13.5%; margin-right: 13.5%;"><img src="external/Pressure_Logging.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Pressure Data in Mu<div class="autopermalink" data-description="Figure 23.2.3"><a href="#pressure-4-8" title="Copy heading and permalink for Figure 23.2.3" aria-label="Copy heading and permalink for Figure 23.2.3">🔗</a></div></figcaption></figure><div class="para" id="pressure-4-9">The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn’t have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. It’s possible to convert the pressure data to altitude and is shown in <a href="pressure-altitude.html" class="internal" title="Section 23.4: Converting Pressure to Altitude">Section 23.4</a>.<div class="autopermalink" data-description="Paragraph"><a href="#pressure-4-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 23.2: CPB Wiring and Software"><a href="#pressure-4" title="Copy heading and permalink for Section 23.2: CPB Wiring and Software" aria-label="Copy heading and permalink for Section 23.2: CPB Wiring and Software">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="pressure-3.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="pressure-5.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

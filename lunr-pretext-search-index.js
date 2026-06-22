@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2",
   "title": "Manuscript Changes",
-  "body": " Manuscript Changes    July 1st, 2020 - Original tutorials in Google Docs created  July 15th, 2020 - Tutorials purchased by Tangibles that Teach  December 21st, 2021 - Updated links for manuscript and hardware  May 30th, 2022 - Tangibles that teach went out of business and chapter began the move to Github  June 28th, 2022 - Work began on a Chromebook. Unfortunately the Figures folder is not back up on Git. As such a main_latest.pdf has been created that's the latest full version. The main.pdf is the version created by the Chromebook so it has new chapters but none of the older chapters. Figure files are now backup on Git but only figures from the 'Voltage Potentiometer' are currently there.  July 2nd, 2022 - All figures backed up and latest manuscript completed  October 18th, 2022 - A pedometer lab has been added.  November 8th, 2022 - Edited the Servo and feedback control servo lab to be one big lab with 3 parts  January 8th, 2023 - Removed all mentions of Tangibles that Teach in the main body of the text.  February 6th, 2023 - Changed an assignment description for LEDs and push buttons  February 22nd, 2023 - Moved the Bluetooth module to be before the modules lab so this will end up being a few updates to make those projects more uniform. I also created a backup called Bluetooth original in case you wanted to go back to the other version.  June 16th, 2023 - Cleaned up the ``changes needed\" list and updated Method 3 with some new software updates.  August 9th, 2023 - Edited the preamble for assignments and made a note in the servo lab  September 5th, 2023 - Updated hyperlinks to show up on Microsoft Edge using underlines and different color text.  September 7th, 2023 - Fixed the TL;DR section  September 15th, 2023 - Updated a link in the DAQ lab  September 20th, 2023 - Made the modules installation section a standalone tex file  October 4th, 2023 - Added a new potentiometer photo  November 16th, 2023 - Edited the lists of parts  November 22nd, 2023 - Edited acceleration lab  December 5th, 2023 - Edited the troubleshooting section  January 12th, 2024 - Edited chapters 1 and 2  January 22nd, 2024 - Edited the bootloader update notes in the troubleshooting chatper  January 25th, 2024 - More edits to the bootloader notes  March 20th, 2024 - Added a preamble about where this textbook is located  April 27th, 2024 - Previously edited servo lab and pendulum lab just the assignment portion and then added this change log to the manuscript  May 7th, 2024 - Title page changed and many sections moved around. Added a new results and discussion section following data analysis from course surveys of this course.  August 12th, 2024 - Added a new requirement for the servo lab  September 12th, 2024 - A few edits to assignment descriptions  October 25th, 2024 - Updated the photocell lab to include the number of data points for the histogram  November 11th, 2024 - Updated Method 3 quick list  March 26th, 2025 - Updated servo, pitot probe and photocell assignments  May 24th, 2025 - Made a few changes to chapters 2 and 19 to transition between the projects and the results and discussion about lab at home frameworks and project based teaching. Also overhauled the feedback control project.  June 16th, 2025 - Updated the assignment directions for all projects.  June 17th, 2025 - Added more theory to the photocell, thermistor and pitot probe assignment  June 20th, 2025 - Added more figures and wiring diagrams to many assignments to help students wire up their circuits.  June 21st, 2025 - Added a few problems from a standard instrumentation textbook. Probably need more statistics questions  July 2nd, 2025 - Moved changes needed to the preamble. Added learning objectives and parts list for a few projects that had them missing.  September 26th, 2025 - Updated the potentiometer assignment to include converting voltage to angle in degrees.  October 1st, 2025 - Updated the thermistor modules assignment with the thermistor equations so it's easy to find in two places.  November 12th, 2025 - Fixed an equation, link and figure in the feedback control assignment  November 14th, 2025 - Fixed a broken link  November 20th, 2025 - Added a GPS requirement to the integrating acceleration lab  December 5th, 2025 - Added the settling time to the list of parameters for the time constant assignment and edited the overall assignment directions to have a better description of the video requirements. Also edited the servo second order systems equation for an aircraft to be stable since the equations were unstable open loop. I also moved the changes needed to Github. I also edited the purchase assignment to have bold text for some important information.  February 2nd, 2026 - Updated the push button and LED assignment to fix a mistake in the voltage source description.  February 5th, 2026 - Added an update from Jan 18th that I forgot to push which highlighted the ``Rubric\" for each assignment. Also added a missing grade to the push button and LED assignment.  February 9th, 2026 - Moved the future project ideas to Github  February 26th, 2026 - Edited the trouble shooting guide for updating the CPB bootloader on Windows  March 21st, 2026 - Book officially converted from LaTeX and published to new repo  March 22nd, 2026 - Made a few major formatting changes and updated the assignment directions to be better viewable and digestable to students  March 23rd, 2026 - Updated the servo lab assignment to fix a broken png and added a link to an equation.  March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting. The IMU wiring photo was also updated to be correct. Also added annotations to the circuitpython kit photo and added the high level sound code to the bluefruit.  March 27th, 2026 - Moved the thermistor, accelerometer angles and photocell equations into one place. Also added another simulation to the servo lab.Also added the pitot probe wiring diagram. Also added proper citations for all links. Also started the systems engineering chapter.  March 30th, 2026 - Finished the systems engineering chapter and printed and deployed book.  March 31st, 2026 - Added a new assignment to the photocell histogram lab and underlined all hyperlinks in LaTeX document  April 2nd, 2026 - Edited all the titles to be shorter and made the parts lists\/objectives lists rather than sections and also moved all youtube tutorials into an Extra Help section.  April 3rd, 2026 - Updated the pitot wiring photo.  April 4th, 2026 - Added more alerts to acceleration lab.  April 9th, 2026 - Edited the photocell lab to explain that the resistor can be whatever value the student wants. Also added a CPX wiring diagram for the CPX and also added the voltage divider equations depending on where you measure the voltage.  April 10th, 2026 - Added an extra explanation to the servo lab for going into safe mode when drawing too much current.  April 13th, 2026 - Updated the servo lab to have annotations in the wiring diagram  April 15th, 2026 - Added SFR to the Systems Engineering chapter  April 16th, 2026 - Added a new requirement to grading appendices  April 17th, 2026 - Fixed an issue with the thermistor equations  April 22nd, 2026 - Fixed an equation in the servo lab  April 23rd, 2026 - Fixed a typo in the thermistor lab  April 26th, 2026 - Changed \"plotting in Python\" to just \"plotting on your computer\" to leave room for potentially having students plot everything in Excel\/Sheets. Also added a placeholder for Method 6. Also added an appendix C to the assignment requirements  May 4th, 2026 - May the Fourth be with you. Fixed a small error in the servo part 2 lab.  May 13th, 2026 - Started adding more information about Arduino  June 9th, 2026 - Edited content and title to reflect a more broad ecosystem of Arduino and Circuitpython. Edited men flags to md. Added Google Sheets and Octave to the plotting chapter. Finished the serial Method 6 chapter.  June 10th, 2026 - Added two new chapters on GPS and Pressure sensors but they are not done.  June 11th, 2026 - Finished the pressure sensor, GPS and load cell chapters.  June 12th, 2026 - Added Arduino blinking to the getting started chapter and finished method 5 for both Arduino and CPX\/CPB    "
+  "body": " Manuscript Changes    July 1st, 2020 - Original tutorials in Google Docs created  July 15th, 2020 - Tutorials purchased by Tangibles that Teach  December 21st, 2021 - Updated links for manuscript and hardware  May 30th, 2022 - Tangibles that teach went out of business and chapter began the move to Github  June 28th, 2022 - Work began on a Chromebook. Unfortunately the Figures folder is not back up on Git. As such a main_latest.pdf has been created that's the latest full version. The main.pdf is the version created by the Chromebook so it has new chapters but none of the older chapters. Figure files are now backup on Git but only figures from the 'Voltage Potentiometer' are currently there.  July 2nd, 2022 - All figures backed up and latest manuscript completed  October 18th, 2022 - A pedometer lab has been added.  November 8th, 2022 - Edited the Servo and feedback control servo lab to be one big lab with 3 parts  January 8th, 2023 - Removed all mentions of Tangibles that Teach in the main body of the text.  February 6th, 2023 - Changed an assignment description for LEDs and push buttons  February 22nd, 2023 - Moved the Bluetooth module to be before the modules lab so this will end up being a few updates to make those projects more uniform. I also created a backup called Bluetooth original in case you wanted to go back to the other version.  June 16th, 2023 - Cleaned up the ``changes needed\" list and updated Method 3 with some new software updates.  August 9th, 2023 - Edited the preamble for assignments and made a note in the servo lab  September 5th, 2023 - Updated hyperlinks to show up on Microsoft Edge using underlines and different color text.  September 7th, 2023 - Fixed the TL;DR section  September 15th, 2023 - Updated a link in the DAQ lab  September 20th, 2023 - Made the modules installation section a standalone tex file  October 4th, 2023 - Added a new potentiometer photo  November 16th, 2023 - Edited the lists of parts  November 22nd, 2023 - Edited acceleration lab  December 5th, 2023 - Edited the troubleshooting section  January 12th, 2024 - Edited chapters 1 and 2  January 22nd, 2024 - Edited the bootloader update notes in the troubleshooting chatper  January 25th, 2024 - More edits to the bootloader notes  March 20th, 2024 - Added a preamble about where this textbook is located  April 27th, 2024 - Previously edited servo lab and pendulum lab just the assignment portion and then added this change log to the manuscript  May 7th, 2024 - Title page changed and many sections moved around. Added a new results and discussion section following data analysis from course surveys of this course.  August 12th, 2024 - Added a new requirement for the servo lab  September 12th, 2024 - A few edits to assignment descriptions  October 25th, 2024 - Updated the photocell lab to include the number of data points for the histogram  November 11th, 2024 - Updated Method 3 quick list  March 26th, 2025 - Updated servo, pitot probe and photocell assignments  May 24th, 2025 - Made a few changes to chapters 2 and 19 to transition between the projects and the results and discussion about lab at home frameworks and project based teaching. Also overhauled the feedback control project.  June 16th, 2025 - Updated the assignment directions for all projects.  June 17th, 2025 - Added more theory to the photocell, thermistor and pitot probe assignment  June 20th, 2025 - Added more figures and wiring diagrams to many assignments to help students wire up their circuits.  June 21st, 2025 - Added a few problems from a standard instrumentation textbook. Probably need more statistics questions  July 2nd, 2025 - Moved changes needed to the preamble. Added learning objectives and parts list for a few projects that had them missing.  September 26th, 2025 - Updated the potentiometer assignment to include converting voltage to angle in degrees.  October 1st, 2025 - Updated the thermistor modules assignment with the thermistor equations so it's easy to find in two places.  November 12th, 2025 - Fixed an equation, link and figure in the feedback control assignment  November 14th, 2025 - Fixed a broken link  November 20th, 2025 - Added a GPS requirement to the integrating acceleration lab  December 5th, 2025 - Added the settling time to the list of parameters for the time constant assignment and edited the overall assignment directions to have a better description of the video requirements. Also edited the servo second order systems equation for an aircraft to be stable since the equations were unstable open loop. I also moved the changes needed to Github. I also edited the purchase assignment to have bold text for some important information.  February 2nd, 2026 - Updated the push button and LED assignment to fix a mistake in the voltage source description.  February 5th, 2026 - Added an update from Jan 18th that I forgot to push which highlighted the ``Rubric\" for each assignment. Also added a missing grade to the push button and LED assignment.  February 9th, 2026 - Moved the future project ideas to Github  February 26th, 2026 - Edited the trouble shooting guide for updating the CPB bootloader on Windows  March 21st, 2026 - Book officially converted from LaTeX and published to new repo  March 22nd, 2026 - Made a few major formatting changes and updated the assignment directions to be better viewable and digestable to students  March 23rd, 2026 - Updated the servo lab assignment to fix a broken png and added a link to an equation.  March 26th, 2026 - Added an I2C scanner code snippet to the troubleshooting guide as well as many many figures to help with troubleshooting. The IMU wiring photo was also updated to be correct. Also added annotations to the circuitpython kit photo and added the high level sound code to the bluefruit.  March 27th, 2026 - Moved the thermistor, accelerometer angles and photocell equations into one place. Also added another simulation to the servo lab.Also added the pitot probe wiring diagram. Also added proper citations for all links. Also started the systems engineering chapter.  March 30th, 2026 - Finished the systems engineering chapter and printed and deployed book.  March 31st, 2026 - Added a new assignment to the photocell histogram lab and underlined all hyperlinks in LaTeX document  April 2nd, 2026 - Edited all the titles to be shorter and made the parts lists\/objectives lists rather than sections and also moved all youtube tutorials into an Extra Help section.  April 3rd, 2026 - Updated the pitot wiring photo.  April 4th, 2026 - Added more alerts to acceleration lab.  April 9th, 2026 - Edited the photocell lab to explain that the resistor can be whatever value the student wants. Also added a CPX wiring diagram for the CPX and also added the voltage divider equations depending on where you measure the voltage.  April 10th, 2026 - Added an extra explanation to the servo lab for going into safe mode when drawing too much current.  April 13th, 2026 - Updated the servo lab to have annotations in the wiring diagram  April 15th, 2026 - Added SFR to the Systems Engineering chapter  April 16th, 2026 - Added a new requirement to grading appendices  April 17th, 2026 - Fixed an issue with the thermistor equations  April 22nd, 2026 - Fixed an equation in the servo lab  April 23rd, 2026 - Fixed a typo in the thermistor lab  April 26th, 2026 - Changed \"plotting in Python\" to just \"plotting on your computer\" to leave room for potentially having students plot everything in Excel\/Sheets. Also added a placeholder for Method 6. Also added an appendix C to the assignment requirements  May 4th, 2026 - May the Fourth be with you. Fixed a small error in the servo part 2 lab.  May 13th, 2026 - Started adding more information about Arduino  June 9th, 2026 - Edited content and title to reflect a more broad ecosystem of Arduino and Circuitpython. Edited men flags to md. Added Google Sheets and Octave to the plotting chapter. Finished the serial Method 6 chapter.  June 10th, 2026 - Added two new chapters on GPS and Pressure sensors but they are not done.  June 11th, 2026 - Finished the pressure sensor, GPS and load cell chapters.  June 12th, 2026 - Added Arduino blinking to the getting started chapter and finished method 5 for both Arduino and CPX\/CPB  June 13th, 2026 - Reduced the size of a few jpg files to make the PDF smaller than 50 MB. Added the accelerometer steps for the arduino.  June 21st, 2026 - Happy Summer Solstice and Father's Day - I added an Arduino example for the HX711 load cell chapter and started adding the GPS arduino steps  June 22nd, 2026 - Finished adding the LPS22 pressure sensor and GPS chapter for Arduino.    "
 },
 {
   "id": "future-changes",
@@ -1186,7 +1186,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "11.2",
   "title": "Setting up the Arduino",
-  "body": " Setting up the Arduino  There is no setup for the Arduino other than making sure the SD card is formatted to FAT32 and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off.    Micro SD card Breakout Board wired to an Arduino MEGA   In the figure above the dark green male-male wire goes from 5V to 5V , the orange male-male wire goes from GND to GND , the light green wire goes from 52 to CLK , the white wire goes from 50 to DO , the purple male-male wire goes from 51 to DI and the blue male-male wire goes from 53 to CS . The software to get this to work is on Github as usual and a snippet is shown in the figure below.    Arduino MEGA Software Snippet to send data to a micro SD card breakout board   You'll notice in this code that there is a #include <SD.h> line of code which imports the SD header file. In C++ and other compilation languages you have a .cpp or .c file which has all the code necessary to run somthing and a .h file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click Sketch>Include Library>Manage Libraries... .    Installing New Arduino Libraries   After clicking that a new window will pop up where you can then search for \"SD.h\" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as Serial.begin(115200) is in the setup routine and there are many Serial.print calls in the loop routine. If you open the serial monitor you should see the millis() time printed on the screen provided you set the baud rate to 115200.    Arduino Serial Monitor Output when writing to an SD Card   In this case the serial monitor also states that is is writing the DATA004.TXT . Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.  PHOTO TO BE ADDED IN A LATER EDITION OF THE BOOK   The code to get an external accelerometer to work on an Arduino is dicussed in more detail in . Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.    Data files on a micro SD Card   At this point it is identical to to plot the data in whatever plotting environment you like.  "
+  "body": " Setting up the Arduino  There is no setup for the Arduino other than making sure the SD card is formatted to FAT32 and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off.    Micro SD card Breakout Board wired to an Arduino MEGA   In the figure above the dark green male-male wire goes from 5V to 5V , the orange male-male wire goes from GND to GND , the light green wire goes from 52 to CLK , the white wire goes from 50 to DO , the purple male-male wire goes from 51 to DI and the blue male-male wire goes from 53 to CS . The software to get this to work is on Github as usual and a snippet is shown in the figure below.    Arduino MEGA Software Snippet to send data to a micro SD card breakout board   You'll notice in this code that there is a #include <SD.h> line of code which imports the SD header file. In C++ and other compilation languages you have a .cpp or .c file which has all the code necessary to run somthing and a .h file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click Sketch>Include Library>Manage Libraries... .    Installing New Arduino Libraries   After clicking that a new window will pop up where you can then search for \"SD.h\" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as Serial.begin(115200) is in the setup routine and there are many Serial.print calls in the loop routine. If you open the serial monitor you should see the millis() time printed on the screen provided you set the baud rate to 115200.    Arduino Serial Monitor Output when writing to an SD Card   In this case the serial monitor also states that is is writing the DATA004.TXT . Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.    Code to send acceleration data to an SD card   The code to get an external accelerometer to work on an Arduino is dicussed in more detail in . Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.    Data files on a micro SD Card   At this point it is identical to to plot the data in whatever plotting environment you like.  "
 },
 {
   "id": "sdcard-4-3",
@@ -1225,11 +1225,20 @@ var ptx_lunr_docs = [
   "body": "  Arduino Serial Monitor Output when writing to an SD Card  "
 },
 {
+  "id": "sdcard-4-11",
+  "level": "2",
+  "url": "sdcard-4.html#sdcard-4-11",
+  "type": "Figure",
+  "number": "11.2.5",
+  "title": "",
+  "body": "  Code to send acceleration data to an SD card  "
+},
+{
   "id": "sdcard-4-13",
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-13",
   "type": "Figure",
-  "number": "11.2.5",
+  "number": "11.2.6",
   "title": "",
   "body": "  Data files on a micro SD Card  "
 },
@@ -2040,8 +2049,8 @@ var ptx_lunr_docs = [
   "url": "imu-3.html",
   "type": "Section",
   "number": "22.1",
-  "title": "Wiring and Software",
-  "body": " Wiring and Software  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 4 and 6 for the top and bottom side of the board and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the IMU connected to Feather M4 (Courtesy of Bryan Siepert ) .    Wiring diagram of IMU connected to a FeatherWing   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDA and SCL to SCL .    Photo of IMU Connected to a CircuitPlayground Express   The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the 3.3V pin on the CPB and then also connected to the red male-male wire which is connected to the VIN pin on the IMU. The black alligator clip is connected to the GND pin on the CPB and also connected to the brown male-male wire which is connected to the GND pin on the IMU. The blue alligator clip is connected directly to the SDA pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the SCL pins on both the CPB and the IMU. Recall that SDA and SCL are external pins for I2C. In the accelerometer lab we used the internal I2C pins to access the accelerometer (See ). In this lab we're going to use the external I2C pads to connect different I2C sensors.  Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . In this example I'm using the 6.X version. Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . The specific modules I needed for this lab were:  adafruit_bus_device  adafruit_register  lis3mdl  lsm6ds33    Once you have the necessary modules you can run some example code. The Adafruit Learn page has a tutorial for the LSM6DS33 . The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on Adafruit's Github . After following both tutorials I was able to make my own script and upload it to my Github . Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ).     CircuitPython code to read an IMU   In the code above lines 1-6 import all the modules with line 5 importing the accelerometer on board the CPX and line 6 importing the external sensor wired up to SDA and SCL. Line 8 creates an I2C object using the SDA and SCL pins from the alligator clips and line 11 creates the sensor object. I also include lines 14-17 to include the onboard accelerometer. Notice I can access both sensors no problem. In the while loop line 20 checks the accelerometer on the CPX, line 21 checks the accelerometer on the breakout board and line 22 checks the angular velocity on the breakout board. Lines 23 and 24 print to serial and output to the plotter. Note that some lines are commented out because I wanted to try one thing at a time. With both accelerometers printing to the Plotter I could move the CPX and the breakout board in unison and get the following output.    Serial monitor open showing IMU data in Mu   Notice that there are 6 numbers printed and 6 lines on the plotter. Both the CPX and the breakout board have little XYZ cartesian coordinate systems. I had to line them up properly before I started moving them. My suggestion would be for you to get some hot glue or 3M tape and place both breakout board and CPX on some sort of hard material like plywood, masonite, or even a cutting board. Anything to keep everything together.  Once you've done this, try uncommenting the line of code that prints the angular velocity. When I do that and move the breakout board around I can measure the angular velocity of each axis. The units are in radians per second but it's pretty obvious just from the magnitude of the graph.    Angular Velocity data of IMU shown in Serial Monitor or Mu   The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the Adafruit Learn page , along with the simple example from Adafruit's Github . After that I was able to create my own code . The only difference in your code is that the address will be 0x1c instead of 0x1e.    Magnetometer code in CircuitPython   The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it.  Recall that the accelerometer can be used to measure roll and pitch (See ). By combining the magnetometer in this IMU, it's possible to get the compass heading of the sensor.   In the equations above, is the magnetic field along all 3 axes. Again shorthand is used for cosine and sine functions and the derivation is left for another course entirely (See Aerospace Mechanics ) .  "
+  "title": "CPX\/CPB Wiring and Software",
+  "body": " CPX\/CPB Wiring and Software  The wiring for this system requires 4 wires. The figure below shows the IMU connected to Feather M4 (Courtesy of Bryan Siepert ) .    Wiring diagram of IMU connected to a FeatherWing   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDA and SCL to SCL .    Photo of IMU Connected to a CircuitPlayground Express   The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the 3.3V pin on the CPB and then also connected to the red male-male wire which is connected to the VIN pin on the IMU. The black alligator clip is connected to the GND pin on the CPB and also connected to the brown male-male wire which is connected to the GND pin on the IMU. The blue alligator clip is connected directly to the SDA pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the SCL pins on both the CPB and the IMU. Recall that SDA and SCL are external pins for I2C. In the accelerometer lab we used the internal I2C pins to access the accelerometer (See ). In this lab we're going to use the external I2C pads to connect different I2C sensors.  Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . In this example I'm using the 6.X version. Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . The specific modules I needed for this lab were:  adafruit_bus_device  adafruit_register  lis3mdl  lsm6ds33    Once you have the necessary modules you can run some example code. The Adafruit Learn page has a tutorial for the LSM6DS33 . The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on Adafruit's Github . After following both tutorials I was able to make my own script and upload it to my Github . Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ).     CircuitPython code to read an IMU   In the code above lines 1-6 import all the modules with line 5 importing the accelerometer on board the CPX and line 6 importing the external sensor wired up to SDA and SCL. Line 8 creates an I2C object using the SDA and SCL pins from the alligator clips and line 11 creates the sensor object. I also include lines 14-17 to include the onboard accelerometer. Notice I can access both sensors no problem. In the while loop line 20 checks the accelerometer on the CPX, line 21 checks the accelerometer on the breakout board and line 22 checks the angular velocity on the breakout board. Lines 23 and 24 print to serial and output to the plotter. Note that some lines are commented out because I wanted to try one thing at a time. With both accelerometers printing to the Plotter I could move the CPX and the breakout board in unison and get the following output.    Serial monitor open showing IMU data in Mu   Notice that there are 6 numbers printed and 6 lines on the plotter. Both the CPX and the breakout board have little XYZ cartesian coordinate systems. I had to line them up properly before I started moving them. My suggestion would be for you to get some hot glue or 3M tape and place both breakout board and CPX on some sort of hard material like plywood, masonite, or even a cutting board. Anything to keep everything together.  Once you've done this, try uncommenting the line of code that prints the angular velocity. When I do that and move the breakout board around I can measure the angular velocity of each axis. The units are in radians per second but it's pretty obvious just from the magnitude of the graph.    Angular Velocity data of IMU shown in Serial Monitor or Mu   The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the Adafruit Learn page , along with the simple example from Adafruit's Github . After that I was able to create my own code . The only difference in your code is that the address will be 0x1c instead of 0x1e.    Magnetometer code in CircuitPython   The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it.  "
 },
 {
   "id": "imu-3-3",
@@ -2103,6 +2112,42 @@ var ptx_lunr_docs = [
   "url": "imu-4.html",
   "type": "Section",
   "number": "22.2",
+  "title": "Arduino Wiring and Software",
+  "body": " Arduino Wiring and Software  Wiring this to the Arduino requires the same setup as the CPX\/CPB and also uses I2C. From the Arduino to the accelerometer, the 3.3V pin runs to VIN , GND to GND , SDA to SDA and SCL to SCL . This is shown in the figure below. Note that the SD card breakout board from is also used in this example to showcase how easy it is to send accelerometer data to an SD card    Accelerometer connected to an Arduino   Moving on to software, the .ino file for both the accelerometer by itself and the accelerometer writing to an SD card are both on Github. For both of the versions of the code you need to install some libraries. You'll notice that at the top of the code there is a #include statement which adds a specific library.  #include <Adafruit_LSM6DS33.h> Adafruit_LSM6DS33 lsm6ds33;  In this case you need the Adafruit_LSM6DS33 library which also requires other libraries in addition to that single #include call. Also, since the libraries are from Adafruit rather than Arduino you need to navigate to Github and download a few zip libraries. The list of libraries you need and links to those websites are shown below   Adafruit_LSM6DS  Adafruit_BusIO  Adafruit_Sensor   Once you have the zip folders downloaded you need to navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in . Once you've got the code downloaded and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.    Serial Monitor Output of Accelerometer Code on Arduino   In the figure above, the sensor is outputtting temperature, acceleration x,y and z as well as the angular velocity along the x,y, and z axes. If you then compile the code which contains the SD card setup and writing you'll be able to write the data to an external SD card which would be super helpful for a standalone project. Again setting up the SD card is done in    Accelerometer Data File on SD Card   In the figure above, the code only writes the millis timer and acceleration data to the SD card but it would be very simple to add temperature and angular velocity to the code.  "
+},
+{
+  "id": "imu-4-3",
+  "level": "2",
+  "url": "imu-4.html#imu-4-3",
+  "type": "Figure",
+  "number": "22.2.1",
+  "title": "",
+  "body": "  Accelerometer connected to an Arduino  "
+},
+{
+  "id": "imu-4-9",
+  "level": "2",
+  "url": "imu-4.html#imu-4-9",
+  "type": "Figure",
+  "number": "22.2.2",
+  "title": "",
+  "body": "  Serial Monitor Output of Accelerometer Code on Arduino  "
+},
+{
+  "id": "imu-4-11",
+  "level": "2",
+  "url": "imu-4.html#imu-4-11",
+  "type": "Figure",
+  "number": "22.2.3",
+  "title": "",
+  "body": "  Accelerometer Data File on SD Card  "
+},
+{
+  "id": "imu-5",
+  "level": "1",
+  "url": "imu-5.html",
+  "type": "Section",
+  "number": "22.3",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external IMU and get data from it. You need to mount the CPX\/CPB and the IMU to some sort of hard surface so that when you move the CPX\/CPB the IMU moves as well. Make sure the axis of the IMU and the CPX\/CPB are oriented in the same direction. With system mounted to a hard surface, perform doublet manuevers on each axis for a total of 3 doublets. A doublet is where you rotate the system to +90 degrees and then -90 degrees and then back to zero typically taking around 3 seconds for the entire maneuever. Using the accelerometer, compute the roll and pitch angle in degrees. Then use the magnetometer to compute the yaw angle. Using the roll, pitch and yaw angles, take a derivative to compute the angular velocity. Finally, take the angular velocity data and integrate it to obtain the pitch, roll and yaw angles.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the IMU on a breadboard. Be sure to explain in your description about your axis system for both sensors. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open and all 3 angular velocity axes - 10%  Include a plot of both accelerometers for the 3 doublet manuevers. - 10%  Include a plot of angular velocity data for the 3 doublet manuevers. Also plot the derivative of the pitch, roll and yaw angles on top of this plot and add a legend to clearly indicate which is which. - 20%  Include a plot of magnetometer data for the 3 doublet maneuevers - 10%  Plot the roll, pitch and yaw angles in degrees from the accelerometer\/magnetometer as well as the integrated rate gyro angles. Add a legend to clearly indicate which line is which. - 20%  Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2112,8 +2157,8 @@ var ptx_lunr_docs = [
   "url": "pressure-3.html",
   "type": "Section",
   "number": "23.1",
-  "title": "Wiring and Software",
-  "body": " Wiring and Software  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a Feather M4 (Courtesy of Bryan Siepert ) .    Pressure Sensor Connected to a Feather M4   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDA and SCL to SCL . The two figures below show a CPB wired to the LPS22.    Pressure Sensor Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the LPS22. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the LPS22. The white alligator clip is connected to the SCL pin connected to an orange male-male wire connected to the SCL pin on the LPS22. Finally, the yellow alligator clip is connected to the SDA pin connected to a yellow male-male wire connected to the SDA pin on the LPS22.    Pressure Sensor Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_lps2x  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ). Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to log pressure and acceleration data . Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX\/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    Pressure Data in Mu   The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX\/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. The pressure data is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows: where p is pressure and is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket this equation will work just fine. Note that it's also possible to convert altitude to velocity using a first order derivative but students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results are left to the reader as an assignment.   "
+  "title": "LPS Setup",
+  "body": " LPS Setup  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a Feather M4 (Courtesy of Bryan Siepert ) . Notice that the SDA\/SCL pins on the LPS22 are listed SDI\/SCK respectively.    Pressure Sensor Connected to a Feather M4   "
 },
 {
   "id": "pressure-bryan",
@@ -2125,40 +2170,13 @@ var ptx_lunr_docs = [
   "body": "  Pressure Sensor Connected to a Feather M4  "
 },
 {
-  "id": "pressure-3-5",
-  "level": "2",
-  "url": "pressure-3.html#pressure-3-5",
-  "type": "Figure",
-  "number": "23.1.2",
-  "title": "",
-  "body": "  Pressure Sensor Connected to a CPB  "
-},
-{
-  "id": "pressure-3-7",
-  "level": "2",
-  "url": "pressure-3.html#pressure-3-7",
-  "type": "Figure",
-  "number": "23.1.3",
-  "title": "",
-  "body": "  Pressure Sensor Connected to a CPB with a Breadboard  "
-},
-{
-  "id": "pressure-3-10",
-  "level": "2",
-  "url": "pressure-3.html#pressure-3-10",
-  "type": "Figure",
-  "number": "23.1.4",
-  "title": "",
-  "body": "  Pressure Data in Mu  "
-},
-{
   "id": "pressure-4",
   "level": "1",
   "url": "pressure-4.html",
   "type": "Section",
   "number": "23.2",
-  "title": "Data from a Rocket Launch",
-  "body": " Data from a Rocket Launch  My students have placed this entire data logger into a rocket and launched it. The figure below shows the rocket on the launch pad in Samson,AL.    Rocket on the Launch Pad   The datalogger itself is attached to a piece of wood that is called a sled and then placed into the rocket prior to launch.    Datalogger Attached to Sled   In the figure above the small gray piece below the CPB is a small 1S Lipo battery and the LPS22 is on the other side of the sled. The figure below shows pressure as a function of time.    Pressure Data from a Rocket Launch   It's clear from the data that pressure drops as the flight continues showing the boost phase of the rocket. There is a small oscillation near the apogee of the flight. This is due to the delay charge to blow the nose cone off the rocket body to deploy the parachute. The pressure sensor is measuring local atmospheric pressure. So if there is a small explosion inside the rocket to deploy the parachute, the data will show a slight oscillation.    Altitude Data from a Rocket Launch   The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn't true but indicative of the explosion to deploy the parachute.  "
+  "title": "CPB Wiring and Software",
+  "body": " CPB Wiring and Software  The only difference between the wiring diagram shown previously and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDI and SCL to SCK . The two figures below show a CPB wired to the LPS22.    Pressure Sensor Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the LPS22. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the LPS22. The white alligator clip is connected to the SCL pin connected to an orange male-male wire connected to the SCK pin on the LPS22. Finally, the yellow alligator clip is connected to the SDA pin connected to a yellow male-male wire connected to the SDI pin on the LPS22.    Pressure Sensor Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_lps2x  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ). Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to log pressure and acceleration data . Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX\/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    Pressure Data in Mu   The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX\/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. It's possible to convert the pressure data to altitude and is shown in .  "
 },
 {
   "id": "pressure-4-3",
@@ -2167,7 +2185,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "23.2.1",
   "title": "",
-  "body": "  Rocket on the Launch Pad  "
+  "body": "  Pressure Sensor Connected to a CPB  "
 },
 {
   "id": "pressure-4-5",
@@ -2176,25 +2194,16 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "23.2.2",
   "title": "",
-  "body": "  Datalogger Attached to Sled  "
+  "body": "  Pressure Sensor Connected to a CPB with a Breadboard  "
 },
 {
-  "id": "pressure-4-7",
+  "id": "pressure-4-8",
   "level": "2",
-  "url": "pressure-4.html#pressure-4-7",
+  "url": "pressure-4.html#pressure-4-8",
   "type": "Figure",
   "number": "23.2.3",
   "title": "",
-  "body": "  Pressure Data from a Rocket Launch  "
-},
-{
-  "id": "pressure-4-9",
-  "level": "2",
-  "url": "pressure-4.html#pressure-4-9",
-  "type": "Figure",
-  "number": "23.2.4",
-  "title": "",
-  "body": "  Altitude Data from a Rocket Launch  "
+  "body": "  Pressure Data in Mu  "
 },
 {
   "id": "pressure-5",
@@ -2202,15 +2211,123 @@ var ptx_lunr_docs = [
   "url": "pressure-5.html",
   "type": "Section",
   "number": "23.3",
+  "title": "Arduino Wiring and Software",
+  "body": " Arduino Wiring and Software  The wiring for the Arduino is similar to any I2C setup like the external IMU ( ). In this case 3.3V and GND are straightforward while SDI and SCK pins are connected to the dedicated SDA and SCL pins on the Arduino. The good news is that the entire Arduino family has dedicated SDA and SCL pins for I2C. The Figure below shows the pressure sensor connected to an Arduino MEGA.    Arduino MEGA hooked up to an LPS22, IMU and SD Card breakout board   The Figure above also has an external IMU ( ) and micro sd card breakout board ( ) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and pressure and log that to a micro SD card. This is so students can place this whole setup into a rocket and measure pressure and acceleration while logging that to an SD card. The LPS22 sensor is the sensor on the left but unfortunately has header pins soldered upside down. As such the LPS22 sensor is upside down. Since you can't see the pins I placed another identical LPS22 right below it so the pins are shown. In this case, the blue wire is connected to the same 3.3V pin as the IMU, the left most green wire is connected to GND on the Arduino, the next green wire is the SCK pin connected to the same SCL pin as the IMU, and the last dark green wire is connected to the SDI pin on the LPS22 while the other end is connected to the same SDA pin as the IMU. Note that I2C has multiple addresses . This means you can have multiple different I2C sensors connected to the same SDA\/SCL pins and the code\/hardware will know which sensor is where just like addresses on a street. Moving on to software, the code is similar to any I2C device in that it is necessary to get the LP22 library but also Adafruit_BusIO and Adafruit_Sensor . Since these libraries are from Adafruit rather than Arduino I find it easier to navigate to Github and download the zip libraries directly. The list of libraries you need and links to those websites are shown below   Adafruit_LPS2X  Adafruit_BusIO  Adafruit_Sensor   Once you have the zip folders downloaded you need to navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in . The code for just reading the pressure sensor can be found in the example set of Adafruit_LPS2X and is done by navigating the toolbar as shown below.  File>Examples>Adafruit_LPS2X>adafruit_lps2x_test.  Just in case you're having trouble finding the example script, I've placed a streamlined LPS22 copy of the example on Github. A snippet of that code is shown below.    Arduino MEGA Code for LPS22 Only   Notice that lines 2-4 of the software have the #include calls to the libraries just installed. Wire.h is a pre-installed header file and Adafruit_BusIO is called from Adafruit_Sensor so you the code doesn't require an excplicit include. Once you've got the code opened and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.    Serial Monitor Output for LPS22 Only   Again, it's possible to convert pressure to altitude and is done in . Along with getting pressure data from the LPS22, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a standalone Pressure+IMU datalogger is on Github us usual.    Arduino MEGA Code of IMU, Pressue and SD Card Breakout boards   In that snippet of code, you can see the loop routine where the IMU and the Pressure sensors are polled and printed to the serial monitor together. Once that code is compiled and flashed to the Arduino the serial monitor output will create something similar to the figure below.    Serial Monitor Output for LPS22 and IMU   "
+},
+{
+  "id": "pressure-5-3",
+  "level": "2",
+  "url": "pressure-5.html#pressure-5-3",
+  "type": "Figure",
+  "number": "23.3.1",
+  "title": "",
+  "body": "  Arduino MEGA hooked up to an LPS22, IMU and SD Card breakout board  "
+},
+{
+  "id": "pressure-5-9",
+  "level": "2",
+  "url": "pressure-5.html#pressure-5-9",
+  "type": "Figure",
+  "number": "23.3.2",
+  "title": "",
+  "body": "  Arduino MEGA Code for LPS22 Only  "
+},
+{
+  "id": "pressure-5-11",
+  "level": "2",
+  "url": "pressure-5.html#pressure-5-11",
+  "type": "Figure",
+  "number": "23.3.3",
+  "title": "",
+  "body": "  Serial Monitor Output for LPS22 Only  "
+},
+{
+  "id": "pressure-5-13",
+  "level": "2",
+  "url": "pressure-5.html#pressure-5-13",
+  "type": "Figure",
+  "number": "23.3.4",
+  "title": "",
+  "body": "  Arduino MEGA Code of IMU, Pressue and SD Card Breakout boards  "
+},
+{
+  "id": "pressure-5-15",
+  "level": "2",
+  "url": "pressure-5.html#pressure-5-15",
+  "type": "Figure",
+  "number": "23.3.5",
+  "title": "",
+  "body": "  Serial Monitor Output for LPS22 and IMU  "
+},
+{
+  "id": "pressure-altitude",
+  "level": "1",
+  "url": "pressure-altitude.html",
+  "type": "Section",
+  "number": "23.4",
+  "title": "Converting Pressure to Altitude",
+  "body": " Converting Pressure to Altitude  The pressure data obtained from the CPX\/CPB is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows: where p is pressure and is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket, this equation will work just fine. It's also possible to convert altitude to velocity using a first order derivative.   In order to get that equation to have reasonable results, students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results and filtering are left to the reader as an assignment. I think students have had a lot of success using moving average and complimentary filters. I'm sure Google and AI tools will be able to help get that working.  "
+},
+{
+  "id": "pressure-7",
+  "level": "1",
+  "url": "pressure-7.html",
+  "type": "Section",
+  "number": "23.5",
+  "title": "Data from a Rocket Launch",
+  "body": " Data from a Rocket Launch  My students have placed this entire data logger into a rocket and launched it. The figure below shows the rocket on the launch pad in Samson,AL.    Rocket on the Launch Pad   The datalogger itself is attached to a piece of wood that is called a sled and then placed into the rocket prior to launch.    Datalogger Attached to Sled   In the figure above the small gray piece below the CPB is a small 1S Lipo battery and the LPS22 is on the other side of the sled. The figure below shows pressure as a function of time.    Pressure Data from a Rocket Launch   It's clear from the data that pressure drops as the flight continues showing the boost phase of the rocket. There is a small oscillation near the apogee of the flight. This is due to the delay charge to blow the nose cone off the rocket body to deploy the parachute. The pressure sensor is measuring local atmospheric pressure. So if there is a small explosion inside the rocket to deploy the parachute, the data will show a slight oscillation.    Altitude Data from a Rocket Launch   The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn't true but indicative of the explosion to deploy the parachute.  "
+},
+{
+  "id": "pressure-7-3",
+  "level": "2",
+  "url": "pressure-7.html#pressure-7-3",
+  "type": "Figure",
+  "number": "23.5.1",
+  "title": "",
+  "body": "  Rocket on the Launch Pad  "
+},
+{
+  "id": "pressure-7-5",
+  "level": "2",
+  "url": "pressure-7.html#pressure-7-5",
+  "type": "Figure",
+  "number": "23.5.2",
+  "title": "",
+  "body": "  Datalogger Attached to Sled  "
+},
+{
+  "id": "pressure-7-7",
+  "level": "2",
+  "url": "pressure-7.html#pressure-7-7",
+  "type": "Figure",
+  "number": "23.5.3",
+  "title": "",
+  "body": "  Pressure Data from a Rocket Launch  "
+},
+{
+  "id": "pressure-7-9",
+  "level": "2",
+  "url": "pressure-7.html#pressure-7-9",
+  "type": "Figure",
+  "number": "23.5.4",
+  "title": "",
+  "body": "  Altitude Data from a Rocket Launch  "
+},
+{
+  "id": "pressure-8",
+  "level": "1",
+  "url": "pressure-8.html",
+  "type": "Section",
+  "number": "23.6",
   "title": "Extra Help",
   "body": " Extra Help  There is one youtube video on logging pressure data with the LPS22 . If you need a refresher on Method 3 be sure to go back to for more help on that.  "
 },
 {
-  "id": "pressure-6",
+  "id": "pressure-9",
   "level": "1",
-  "url": "pressure-6.html",
+  "url": "pressure-9.html",
   "type": "Section",
-  "number": "23.4",
+  "number": "23.7",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external pressure sensor and get data from it. You need to mount the CPX\/CPB and the pressure sensor to some sort of hard surface so that when you move the CPX\/CPB the pressure moves as well. In order to get the pressure to change significantly you'll need to change your altitude by a lot. My recommendation is to ride the elevator of a tall building or drive up a really big hill. If you have the ability to do so, place the sensor in a rocket or an airplane!   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the pressure sensor on a breadboard. - 10%  Include a selfie of you right before you change altitude either by going up a big hill or by riding the elevator. Explain how you plan on changing altitude significantly in the supporting text. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing pressure - 20%  Plot pressure vs time for your experiment where pressure significantly changes. - 20%  Convert pressure to altitude and plot altitude vs time for your experiment where altitude significantly changes. - 20%  Appendix A - Video Details - Film yourself and your entire screen showing the pressure value in the serial Monitor in Mu. Also explain what you plan on doing to significantly change the altitude.- Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2220,8 +2337,8 @@ var ptx_lunr_docs = [
   "url": "gps-3.html",
   "type": "Section",
   "number": "24.1",
-  "title": "Wiring and Software",
-  "body": " Wiring and Software  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an Adafruit Metro M0 . (Courtesy of Lady Ada herself!) .    GPS Wiring Diagram for Adafruit Metro M0   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then TX to RX and RX to TX . That is the TX and RX pins are swapped so that the transmit wire goes to the receive wire on the other device.    GPS Module Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the GPS. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the GPS. The white alligator clip is connected to the TX pin connected to an orange male-male wire connected to the RX pin on the GPS. Finally, the yellow alligator clip is connected to the RX pin connected to a yellow male-male wire connected to the TX pin on the GPS.    GPS Module Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Flight Dynamics and Aircraft Design have to build a hobbyist radio controlled aircraft and get GPS data during the flight. This way they know where they flew and how fast. As such they need to build a standalone datalogger that can be placed into an airplane. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_gps  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Once you have all the modules, you can run the example code to log gps and acceleration data . Note that the link previously shown is to a folder of a few different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    GPS Data in Mu   Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47 This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N\/S, longitude, E\/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the -99 values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.  where is the radius of the Earth, is the longitude, is the latitude and and are the latitude and longitude of the origin point. In this case the x-axis is East-West and the y-axis is North-South. Once you have position you can take the derivative to get velocity typically doing a heavily filtered moving average derivative to get a smooth velocity plot. To start though a simple first order derivative will at least get you started.    "
+  "title": "GPS Setup",
+  "body": " GPS Setup  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an Adafruit Metro M0 . (Courtesy of Lady Ada herself!) .    GPS Wiring Diagram for Adafruit Metro M0   "
 },
 {
   "id": "gps-3-3",
@@ -2233,40 +2350,13 @@ var ptx_lunr_docs = [
   "body": "  GPS Wiring Diagram for Adafruit Metro M0  "
 },
 {
-  "id": "gps-3-5",
-  "level": "2",
-  "url": "gps-3.html#gps-3-5",
-  "type": "Figure",
-  "number": "24.1.2",
-  "title": "",
-  "body": "  GPS Module Connected to a CPB  "
-},
-{
-  "id": "gps-3-7",
-  "level": "2",
-  "url": "gps-3.html#gps-3-7",
-  "type": "Figure",
-  "number": "24.1.3",
-  "title": "",
-  "body": "  GPS Module Connected to a CPB with a Breadboard  "
-},
-{
-  "id": "gps-3-10",
-  "level": "2",
-  "url": "gps-3.html#gps-3-10",
-  "type": "Figure",
-  "number": "24.1.4",
-  "title": "",
-  "body": "  GPS Data in Mu  "
-},
-{
   "id": "gps-4",
   "level": "1",
   "url": "gps-4.html",
   "type": "Section",
   "number": "24.2",
-  "title": "Results from an aircraft flight",
-  "body": " Results from an aircraft flight  My students have placed this entire data logger into an airplane and flown it. The aircraft itself was a P-51 clone made out of balsa and clear monokote.    Aircraft with my students after their maiden flight   The datalogger itself was soldered to a custom printed circuit board courtesy of Aker Solutions and permanently soldered to a QtPy . The QtPy is a super small microcontroller without any extra sensors so the students only measured GPS and nothing else.    Datalogger inside balsa airplane   After the flight at the ACMA (Azalea City of Model Aeronautics) airfield in Irvington, AL, the students were able to plot the GPS position of the flight. The color code indicates speed throughout the flight.    Latitude vs Longitude for Aircraft Flight   It's clear from the data that the pilot took off and landed on the runway after flying a few loops around the radio controlled flying field.  "
+  "title": "CPB Wiring and Software",
+  "body": " CPB Wiring and Software  The only difference between the wiring diagram shown previously and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then TX to RX and RX to TX . That is the TX and RX pins are swapped so that the transmit wire goes to the receive wire on the other device.    GPS Module Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the GPS. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the GPS. The white alligator clip is connected to the TX pin connected to an orange male-male wire connected to the RX pin on the GPS. Finally, the yellow alligator clip is connected to the RX pin connected to a yellow male-male wire connected to the TX pin on the GPS.    GPS Module Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Flight Dynamics and Aircraft Design have to build a hobbyist radio controlled aircraft and get GPS data during the flight. This way they know where they flew and how fast. As such they need to build a standalone datalogger that can be placed into an airplane. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_gps  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Once you have all the modules, you can run the example code to log gps and acceleration data . Note that the link previously shown is to a folder of a few different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    GPS Data in Mu   Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. Move to to learn about getting a lock and how to process the GPS information once you get a lock.  "
 },
 {
   "id": "gps-4-3",
@@ -2275,7 +2365,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "24.2.1",
   "title": "",
-  "body": "  Aircraft with my students after their maiden flight  "
+  "body": "  GPS Module Connected to a CPB  "
 },
 {
   "id": "gps-4-5",
@@ -2284,16 +2374,16 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "24.2.2",
   "title": "",
-  "body": "  Datalogger inside balsa airplane  "
+  "body": "  GPS Module Connected to a CPB with a Breadboard  "
 },
 {
-  "id": "gps-4-7",
+  "id": "gps-4-8",
   "level": "2",
-  "url": "gps-4.html#gps-4-7",
+  "url": "gps-4.html#gps-4-8",
   "type": "Figure",
   "number": "24.2.3",
   "title": "",
-  "body": "  Latitude vs Longitude for Aircraft Flight  "
+  "body": "  GPS Data in Mu  "
 },
 {
   "id": "gps-5",
@@ -2301,15 +2391,114 @@ var ptx_lunr_docs = [
   "url": "gps-5.html",
   "type": "Section",
   "number": "24.3",
+  "title": "Arduino Wiring and Software",
+  "body": " Arduino Wiring and Software  The wiring for the Arduino depends on which type of Arduino you're using. For every Arduino the Serial0 pins are hardwired to the USB port so you can't use them which means you need to use Serial1 or similar. The problem is that the Arduino UNO does not have any more serial ports so you have to use SoftwareSerial . When using SoftwareSerial you can plug the TX\/RX pins into any two digital ports and then create a SoftwareSerial instance. If you're using an Arduino MEGA you can use any of the hardware Serial ports. In the figure below the GPS is plugged into Serial1 and thus TX on the GPS is connected to RX1 on the Arduino MEGA and RX on the GPS is connected to TX1 on the Arduino MEGA. The Figure below also has an IMU ( ) and micro sd card breakout board ( ) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and GPS and log that to a micro SD card.    Arduino MEGA Hooked up to a GPS and external IMU   In the Figure above, the blue wire goes from VIN to 5V on the Arduino, the left most green wire goes from GND to GND while the next two green wires connect TX\/RX to RX1\/TX1 respectively on the Arduino MEGA. Moving on to software also depends on the Arduino MEGA or UNO. On the UNO since you're using SoftwareSerial you need to ensure that you have #include <SoftwareSerial.h> at the top of your code and that the SoftwareSerial library is installed in Arduino IDE. Thankfully SoftwareSerial is already built-in to the Arduino IDE so there's no need to download it. The code for an Arduino UNO example can be found on Github but will not be shown in this chapter. Notice though that on line 33 upon following that link, pins 8 and 7 are used for the SoftwareSerial port given by this line of code: SoftwareSerial mySerial(8, 7); . For the Arduino MEGA , the code is also on Github but the Serial port is different as shown in the code below.    Arduino MEGA Code for GPS Only   Notice, in this code the call to create the GPS object is done using &Serial1 rather than &mySerial which is an instance of the SoftwareSerial library. While &Serial1 is simply built-in to the Arduino MEGA software suite &mySerial is a specific instance of SoftwareSerial that is only required on the Arduino UNO or similar boards that don't have Hardware Serial capabilities. However, for either the Arduino UNO or MEGA it is still required to get the Adafruit_GPS library which can be downloaded from Github and installed by navigating to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This library is needed to parse the specific raw GPS sentences ( ) coming in. Once you've installed all the libraries, compiled the code, wired up the Arduino with the GPS and flashed the code you should be able to open the Serial Monitor with a baud rate of 115200 and see the GPS output.    Serial monitor output for GPS Only   The Figure above shows the GPS output when you don't have a lock on any satellites which is why Latitude and Longitude have zeros. Still, this is a good check to make sure you're getting information correctly from the GPS since the date and time is typically accurate even without a lock. Move to to learn about getting a lock and how to process the GPS information once you get a lock. Along with getting a lock on the GPS, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a standalone GPS+IMU datalogger is on Github us usual.    Arduino MEGA Code for GPS,IMU and SD card breakout boards   The code shows the loop routine polling the GPS using the useInterrupt function as well as the sensors.getEvent() routine to poll the IMU. After compiling the code, verifying the hardware connections and flashing the software the Serial monitor will produce something similar to the code below. Again in this case the latitude and longitude are shown as zeros because there is no lock.    Serial Monitor Output for LPS22 and IMU   "
+},
+{
+  "id": "gps-5-3",
+  "level": "2",
+  "url": "gps-5.html#gps-5-3",
+  "type": "Figure",
+  "number": "24.3.1",
+  "title": "",
+  "body": "  Arduino MEGA Hooked up to a GPS and external IMU  "
+},
+{
+  "id": "gps-5-5",
+  "level": "2",
+  "url": "gps-5.html#gps-5-5",
+  "type": "Figure",
+  "number": "24.3.2",
+  "title": "",
+  "body": "  Arduino MEGA Code for GPS Only  "
+},
+{
+  "id": "gps-5-7",
+  "level": "2",
+  "url": "gps-5.html#gps-5-7",
+  "type": "Figure",
+  "number": "24.3.3",
+  "title": "",
+  "body": "  Serial monitor output for GPS Only  "
+},
+{
+  "id": "gps-5-9",
+  "level": "2",
+  "url": "gps-5.html#gps-5-9",
+  "type": "Figure",
+  "number": "24.3.4",
+  "title": "",
+  "body": "  Arduino MEGA Code for GPS,IMU and SD card breakout boards  "
+},
+{
+  "id": "gps-5-11",
+  "level": "2",
+  "url": "gps-5.html#gps-5-11",
+  "type": "Figure",
+  "number": "24.3.5",
+  "title": "",
+  "body": "  Serial Monitor Output for LPS22 and IMU  "
+},
+{
+  "id": "gps-explanation",
+  "level": "1",
+  "url": "gps-explanation.html",
+  "type": "Section",
+  "number": "24.4",
+  "title": "GPS Receiver and Sentence Explanation",
+  "body": " GPS Receiver and Sentence Explanation  The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47 This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N\/S, longitude, E\/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code in either Arduino ( Adafruit_GPS ) or CPX\/CPB ( adafruit_gps ) parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the latitude and longitude values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.  where is the radius of the Earth, is the longitude, is the latitude and and are the latitude and longitude of the origin point. In this case the x-axis is East-West and the y-axis is North-South. Once you have position you can take the derivative to get velocity typically doing a heavily filtered moving average derivative to get a smooth velocity plot. To start though a simple first order derivative will at least get you started.    "
+},
+{
+  "id": "gps-7",
+  "level": "1",
+  "url": "gps-7.html",
+  "type": "Section",
+  "number": "24.5",
+  "title": "Results from an aircraft flight",
+  "body": " Results from an aircraft flight  My students have placed this entire data logger into an airplane and flown it. The aircraft itself was a P-51 clone made out of balsa and clear monokote.    Aircraft with my students after their maiden flight   The datalogger itself was soldered to a custom printed circuit board courtesy of Aker Solutions and permanently soldered to a QtPy . The QtPy is a super small microcontroller without any extra sensors so the students only measured GPS and nothing else.    Datalogger inside balsa airplane   After the flight at the ACMA (Azalea City of Model Aeronautics) airfield in Irvington, AL, the students were able to plot the GPS position of the flight. The color code indicates speed throughout the flight.    Latitude vs Longitude for Aircraft Flight   It's clear from the data that the pilot took off and landed on the runway after flying a few loops around the radio controlled flying field.  "
+},
+{
+  "id": "gps-7-3",
+  "level": "2",
+  "url": "gps-7.html#gps-7-3",
+  "type": "Figure",
+  "number": "24.5.1",
+  "title": "",
+  "body": "  Aircraft with my students after their maiden flight  "
+},
+{
+  "id": "gps-7-5",
+  "level": "2",
+  "url": "gps-7.html#gps-7-5",
+  "type": "Figure",
+  "number": "24.5.2",
+  "title": "",
+  "body": "  Datalogger inside balsa airplane  "
+},
+{
+  "id": "gps-7-7",
+  "level": "2",
+  "url": "gps-7.html#gps-7-7",
+  "type": "Figure",
+  "number": "24.5.3",
+  "title": "",
+  "body": "  Latitude vs Longitude for Aircraft Flight  "
+},
+{
+  "id": "gps-8",
+  "level": "1",
+  "url": "gps-8.html",
+  "type": "Section",
+  "number": "24.6",
   "title": "Extra Help",
   "body": " Extra Help  There is one youtube video on logging GPS data with the Adafruit Ultimate GPS . If you need a refresher on Method 3 be sure to go back to for more help on that.  "
 },
 {
-  "id": "gps-6",
+  "id": "gps-9",
   "level": "1",
-  "url": "gps-6.html",
+  "url": "gps-9.html",
   "type": "Section",
-  "number": "24.4",
+  "number": "24.7",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external GPS and get data from it. You need to mount the CPX\/CPB and the GPS sensor to some sort of hard surface so that when you move the CPX\/CPB the GPS moves as well. In order to get a significant change in GPS coordinates I recommend going for a bike ride or a walk. If you decide to use a car I strongly recommend having a partner drive the car so you can focus on data acquisition and plotting. Once you have your GPS coordinates, convert them to position and velocity.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the GPS sensor on a breadboard. - 10%  Include a selfie of you right before you change location either by going for a bike ride or a walk. Explain how you plan on changing location significantly in the supporting text. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing GPS data - 10%  Plot GPS coordinates (Latitude vs Longitude) for your experiment where coordinates significantly change. - 10%  Convert GPS coordinates to position and plot (X vs Y) for your experiment where position significantly changes. - 20%  Convert your position to velocity and plot velocity vs time for your experiment where velocity significantly changes. Comment on whether your velocity is accurate to the speed you were traveling - 20%  Appendix A - Video Details - Film yourself and your entire screen showing your GPS getting a lock with the Serial monitor open in Mu. Also explain what you plan on doing to significantly change the GPS coordinates. - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2319,8 +2508,8 @@ var ptx_lunr_docs = [
   "url": "load-cell-3.html",
   "type": "Section",
   "number": "25.1",
-  "title": "Wiring and Software",
-  "body": " Wiring and Software  When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires from the CPX\/CPB to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a Feather M4 . (Courtesy of Liz Clark ) .    Load Cell Wiring Diagram for Adafruit Feather M4   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is not that straightforward unfortunately. This is because the amplifier in the parts lisk has a SCK and DATA line instead of SDA\/SCL . The good news is that it still uses digital output so the CPX\/CPB can read it.    Load Cell Amplifier connected to a CPX   In the photos above and below, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to E+ , the black wire is connected to E- , the white wire is connected to A- and the green wire is connected to A+ . Although very innappropriate and non-standard, there are two yellow alligator clips. The first yello alligator clip is connected to 3.3V and is then connected to a purple male-male wire which is then connected to the VIN pin on the amplifier. The white alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the amplifier. The green alligator clip is connected to the A2 pin connected to an white male-male wire connected to the SCK pin on the amplifier. Finally, the second yellow alligator clip is connected to the A1 pin connected to a green male-male wire connected to the DATA pin on the amplifier.    Strain Gauge Connected to a Load Cell Amplifier   Once you have the circuit wired there are no extra modules to install since we're just going to be using the digitalio library. The example code on Github reads and calibrates the load cell data and converts it to kg for ease of use. Note that kg is not a unit of weight but since we're on Earth we're assuming that we're under 1g acceleration and thus kg can be used as weight even though it's actually a mass.   Load Cell Output in Kg in Mu  The photo above shows the example output of the load cell in kg by applying a load to the strain gauge. Using this simple script it is easy to weigh certain objects and get the value from the load cell. Notice however, that on line 73 at the time of this writing, the scale value is set to 12,000. That value will need to be adjusted based on your own calibration measurements which is left as an assignment to the reader.  "
+  "title": "Load Cell Setup",
+  "body": " Load Cell Setup  When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires from the microcontroller to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a Feather M4 . (Courtesy of Liz Clark ) .    Load Cell Wiring Diagram for Adafruit Feather M4   In the wiring diagram above, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to E+ , the black wire is connected to E- , the white wire is connected to A- and the green wire is connected to A+ .  "
 },
 {
   "id": "load-cell-3-3",
@@ -2332,38 +2521,74 @@ var ptx_lunr_docs = [
   "body": "  Load Cell Wiring Diagram for Adafruit Feather M4  "
 },
 {
-  "id": "load-cell-3-5",
-  "level": "2",
-  "url": "load-cell-3.html#load-cell-3-5",
-  "type": "Figure",
-  "number": "25.1.2",
-  "title": "",
-  "body": "  Load Cell Amplifier connected to a CPX  "
-},
-{
-  "id": "load-cell-3-7",
-  "level": "2",
-  "url": "load-cell-3.html#load-cell-3-7",
-  "type": "Figure",
-  "number": "25.1.3",
-  "title": "",
-  "body": "  Strain Gauge Connected to a Load Cell Amplifier  "
-},
-{
-  "id": "load-cell-3-8-2",
-  "level": "2",
-  "url": "load-cell-3.html#load-cell-3-8-2",
-  "type": "Figure",
-  "number": "25.1.4",
-  "title": "",
-  "body": "  Load Cell Output in Kg in Mu  "
-},
-{
   "id": "load-cell-4",
   "level": "1",
   "url": "load-cell-4.html",
   "type": "Section",
   "number": "25.2",
+  "title": "CPX\/CPB Wiring and Software",
+  "body": " CPX\/CPB Wiring and Software  For the CPX\/CPB the strain gauge and amplifier are the same but you will be using 4 alligator clips as shown in the photo below. Although very non-standard, there are two yellow alligator clips. The first yellow alligator clip is connected to 3.3V and is then connected to a purple male-male wire which is then connected to the VIN pin on the amplifier. The white alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the amplifier. The green alligator clip is connected to the A2 pin connected to an white male-male wire connected to the SCK pin on the amplifier. Finally, the second yellow alligator clip is connected to the A1 pin connected to a green male-male wire connected to the DATA pin on the amplifier.    Load Cell Amplifier connected to a CPX   This isn't as straightforward because the amplifier in the parts list has an SCK and DATA line instead of SDA\/SCL . The good news is that it still uses digital output so the CPX\/CPB can read it. So not quite I2C but still digital communication.    Strain Gauge Connected to a Load Cell Amplifier   Once you have the circuit wired there are no extra modules to install since we're just going to be using the digitalio library. The example code on Github reads and calibrates the load cell data and converts it to kg for ease of use. Note that kg is not a unit of weight but since we're on Earth we're assuming that we're under 1g acceleration and thus kg can be used as weight even though it's actually a mass.   Load Cell Output in Kg in Mu  The photo above shows the example output of the load cell in kg by applying a load to the strain gauge. Using this simple script it is easy to weigh certain objects and get the value from the load cell. Notice however, that on line 73 at the time of this writing, the scale value is set to 12,000. That value will need to be adjusted based on your own calibration measurements which is left as an assignment to the reader.  "
+},
+{
+  "id": "load-cell-4-3",
+  "level": "2",
+  "url": "load-cell-4.html#load-cell-4-3",
+  "type": "Figure",
+  "number": "25.2.1",
+  "title": "",
+  "body": "  Load Cell Amplifier connected to a CPX  "
+},
+{
+  "id": "load-cell-4-5",
+  "level": "2",
+  "url": "load-cell-4.html#load-cell-4-5",
+  "type": "Figure",
+  "number": "25.2.2",
+  "title": "",
+  "body": "  Strain Gauge Connected to a Load Cell Amplifier  "
+},
+{
+  "id": "load-cell-4-6-2",
+  "level": "2",
+  "url": "load-cell-4.html#load-cell-4-6-2",
+  "type": "Figure",
+  "number": "25.2.3",
+  "title": "",
+  "body": "  Load Cell Output in Kg in Mu  "
+},
+{
+  "id": "load-cell-5",
+  "level": "1",
+  "url": "load-cell-5.html",
+  "type": "Section",
+  "number": "25.3",
+  "title": "Arduino Wiring and Software",
+  "body": " Arduino Wiring and Software  The wiring for the Arduino family is extremely similar to the CPX\/CPB. The figure below shows an Arduino connect to a load cell as well as many other external components that my students used for their final project.    Arduino Connected to an HX711 plus many other components   The DATA line connects to pin 3 on the Arduino while SCK connects to pin 2 and then 5V and GND pins are straightforward. The Arduino code is also on Github and starts with the example script from the HX711 library which is also on Github. To install downloaded ZIP libraries, navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file downloaded from Github.    Arduino Code for the HX711   The screenshot above shows the #include <HX711.h> on line 34 which imports the HX711 library and then the rest of the setup sets up pins 2 and 3 for the strain gauge. There are also lines of code used to setup Serial communication so that you can see the output of the scale and also change the calibration factor by pressing a and z or + and - to either inrease or decrease the scale factor.  "
+},
+{
+  "id": "load-cell-5-3",
+  "level": "2",
+  "url": "load-cell-5.html#load-cell-5-3",
+  "type": "Figure",
+  "number": "25.3.1",
+  "title": "",
+  "body": "  Arduino Connected to an HX711 plus many other components  "
+},
+{
+  "id": "load-cell-5-5",
+  "level": "2",
+  "url": "load-cell-5.html#load-cell-5-5",
+  "type": "Figure",
+  "number": "25.3.2",
+  "title": "",
+  "body": "  Arduino Code for the HX711  "
+},
+{
+  "id": "load-cell-6",
+  "level": "1",
+  "url": "load-cell-6.html",
+  "type": "Section",
+  "number": "25.4",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up a strain gauge and load cell amplifier and calibrate the sensor using known weights and another digital scale. First, set the scale value to zero and then place known weights on to the load cell and record the output. Place the known weight on a different calibrated scale and record those measurements as well. Repeat this experiment for 10 different known weights and plot the actual weight on the y-axis from the known digital scale and the output from the load cell on the x-axis. Use this data to compute a regression curve similar to and write the equation relating load cell output to actual \"weight\" (mass) in kg and report the scale value necessary for your code.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB connected to your amplifier and load cell. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing load cell data as you press on the strain gauge - 10%  Include a table of your known weights and load cell output in kg. - 20%  Include a Figure of your calibration data plotted with your trend line on top. Put your value in the title of the plot - 20%  Write your regression equation as ( actual weight = load cell output \/ scale ) being sure to replace scale with your actual values. Remember to round to appropriate significant figures - 10%  Using your calibration equation imbedded in your Mu code, place an unknown weight on your load cell and see what the output is and compare to the actual weight once you place it on a scale. Include a photo and screenshot of this experiment - 10%  Appendix A - Video Details - Film yourself and your entire screen showing the load cell value changing as you press on the strain gauge. - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
