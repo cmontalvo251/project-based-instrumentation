@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p>CPX/CPB</p></li>
+<li><p>CPX/CPB or Arduino</p></li>
 <li><p>USB Cable</p></li>
 <li><p><url href="https://www.adafruit.com/product/4633">LPS22</url> (Note that other barometers will work for this lab you will just have to change the code to accommodate the change in hardware)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
@@ -25,7 +25,7 @@
 </ol>
 </list>
 <p>
-In this lab we're going to use a pressure and temperature sensor (Barometer) to measure atmospheric pressure and temperature. Although <xref ref="temperature-sensor"/> already discussed temperature sensors, this external device has a pressure sensor as well adding the ability to measure more atmospheric conditions. Assuming a standard atmosphere model it's also possible to convert pressure to altitude.
+In this lab we're going to use a pressure and temperature sensor (Barometer) to measure atmospheric pressure and temperature. Although <xref ref="temperature-sensor"/> already discussed temperature sensors, this external device (LPS22) has a pressure sensor as well adding the ability to measure more atmospheric conditions. Assuming a standard atmosphere model it's also possible to convert pressure to altitude.
 </p>
 <figure>
   <image width="73%" source="lps22.jpg" />
@@ -36,15 +36,18 @@ The sensor above is the <url href="https://www.adafruit.com/product/4633">LPS22<
 </p>
 </introduction>
 <section>
-  <title>Wiring and Software</title>
+  <title>LPS Setup</title>
 <p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a <url href="https://learn.adafruit.com/lis3mdl-triple-axis-magnetometer/python-circuitpython">Feather M4</url> (Courtesy of <url href="https://learn.adafruit.com/u/siddacious">Bryan Siepert</url>)<xref ref="Adafruit"/>.
 </p>
 <figure xml:id="pressure-bryan">
   <image width="73%" source="adafruit_products_d_cp_feather_wiring_bb.png" />
   <caption>Pressure Sensor Connected to a Feather M4</caption>
 </figure>
+</section>
+<section>
+  <title>CPB Wiring and Software</title>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. The two figures below show a CPB wired to the LPS22.
+The only difference between the wiring diagram shown previously and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>SDA</em> to <em>SDA</em> and <em>SCL</em> to <em>SCL</em>. The two figures below show a CPB wired to the LPS22.
 </p>
 <figure>
   <image width="73%" source="lps22_CPB.jpeg" />
@@ -59,7 +62,6 @@ In the photos above and below, the red alligator clip is connected to <em>3.3V</
 </figure>
 <p>
 Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:
-
 <ol>
 <li><p>adafruit_lis3dh</p></li>
 <li><p>adafruit_lps2x</p></li>
@@ -68,7 +70,6 @@ Once you have the circuit wired and soldered it's time to work on software. Firs
 <li><p>adafruit_ble</p></li>
 </ol>
 </p>
-
 <p>
 Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. <alert> Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See <xref ref="I2C_scanner"/>).</alert> Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/Pressure_Accel_Datalogging">log pressure and acceleration data</url>. Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.</p>
 <figure>
@@ -76,14 +77,41 @@ Notice that I also added the thermistor and lis3dh libraries to get acceleration
   <caption>Pressure Data in Mu</caption>
 </figure>
 <p>
-The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. The pressure data is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows:
+The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. It's possible to convert the pressure data to altitude and is shown in <xref ref="pressure-altitude"/>.</p>
+</section>
+<section>
+  <title>Arduino Wiring and Software</title>
+  <p>The wiring for the Arduino is similar to any I2C setup like the external IMU (<xref ref="imu"/>). In this case <em>3.3V</em> and <em>GND</em> are straightforward while <em>SDA</em> and <em>SCL</em> pins are connected to the dedicated <em>SDA</em> and <em>SCL</em> pins on the Arduino. The good news is that the entire Arduino family has dedicated <em>SDA</em> and <em>SCL</em> pins for I2C. The Figure below shows the pressure sensor connected to an Arduino MEGA.</p>
+  <pre>INSERT FIGURE OF ACTUAL HARDWARE</pre>
+  <p>The Figure below also has an external IMU (<xref ref="imu"/>) and micro sd card breakout board (<xref ref="sdcard"/>) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and pressure and log that to a micro SD card. This is so students can place this whole setup into a rocket and measure pressure and acceleration while logging that to an SD card. Moving on to software is similar to any I2C device in that it is necessary to get the LP22 library but also <em>Adafruit_BusIO</em> and <em>Adafruit_Sensor</em>. Since these libraries are from Adafruit rather than Arduino I find it easier to navigate to Github and download the zip libraries directly. The list of libraries you need and links to those websites are shown below</p>
+  <ol>
+    <li><url href="https://github.com/adafruit/Adafruit_LPS2X">Adafruit_LPS2X</url></li>
+    <li><url href="https://github.com/adafruit/Adafruit_BusIO">Adafruit_BusIO</url></li>
+    <li><url href="https://github.com/adafruit/adafruit_sensor">Adafruit_Sensor</url></li>
+  </ol>
+  <p>Once you have the zip folders downloaded you need to navigate to Sketch&gt;Include Library&gt;Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in <xref ref="sdcard"/>. The code for just reading the pressure sensor can be found in the example set of <em>Adafruit_LPS2X</em> and is done by navigating the toolbar as shown below.</p>
+  <pre>File&gt;Examples&gt;Adafruit_LPS2X&gt;adafruit_lps2x_test.</pre> <p>Just in case you're having trouble finding the example script, I've placed a <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/LPS22_Test/LPS22_Test.ino">streamlined LPS22 copy</url> of the example on Github. A snippet of that code is shown below.</p>
+<figure>
+<image width="73%" source="LPS22_Code.png"/>
+<caption>Arduino MEGA Code</caption>
+</figure>
+<p> Notice that lines 2-4 of the software have the <em>#include</em> calls to the libraries just installed. <em>Wire.h</em> is a pre-installed header file and <em>Adafruit_BusIO</em> is called from <em>Adafruit_Sensor</em> so you the code doesn't require an excplicit include. Once you've got the code opened and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.</p>
+<pre>INCLUDE FIGURE OF PRESSURE OUTPUT</pre>
+<p>Again, it's possible to convert pressure to altitude and is done in <xref ref="pressure-altitude"/>. Along with getting pressure data from the LPS22, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a <em>standalone Pressure+IMU datalogger</em> is on Github us usual.</p>
+<pre>INSERT PICTURE OF PRESSURE+ACCEL DATALOGGER AND EDIT LINK ABOVE WHEN YOU'RE DONE</pre>
+</section>
+<section xml:id="pressure-altitude">
+  <title>Converting Pressure to Altitude</title>
+<p>The pressure data obtained from the CPX/CPB is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows:
 <md number="yes">
   h = \frac{1.0-(\frac{p}{p_0}^{1.0/5.25588})}{2.2557 \times 10^{-5.0}}
 </md>
-where <em>p</em> is pressure and <m>p_0</m> is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket this equation will work just fine.  Note that it's also possible to convert altitude to velocity using a first order derivative but students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results are left to the reader as an assignment.
+where <em>p</em> is pressure and <m>p_0</m> is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket, this equation will work just fine. It's also possible to convert altitude to velocity using a first order derivative.</p>
 <md number="yes">
   v = \frac{h_{i+1}-h_i}{t_{i+1}-t_i}
 </md>
+<p>
+In order to get that equation to have reasonable results, students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results and filtering are left to the reader as an assignment. I think students have had a lot of success using moving average and complimentary filters. I'm sure Google and AI tools will be able to help get that working. 
 </p>
 </section>
 <section>
