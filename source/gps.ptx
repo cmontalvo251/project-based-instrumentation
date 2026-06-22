@@ -7,7 +7,7 @@
 <title>Parts List</title>
 <ol>
 <li><p>Laptop</p></li>
-<li><p>CPX/CPB</p></li>
+<li><p>CPX/CPB or Arduino</p></li>
 <li><p>USB Cable</p></li>
 <li><p><url href="https://www.adafruit.com/product/746">GPS</url> (Note that other GPS modules will work for this lab provided they output standard NMEA sentences)<xref ref="AdafruitMAIN"/></p></li>
 <li><p>Alligator Clips (x4)</p></li>
@@ -37,15 +37,18 @@ The sensor above is the <url href="https://www.adafruit.com/product/746">GPS</ur
 </p>
 </introduction>
 <section>
-  <title>Wiring and Software</title>
-<p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an <url href="https://learn.adafruit.com/adafruit-ultimate-gps/circuitpython-parsing">Adafruit Metro M0</url>. (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
+  <title>GPS Setup</title>
+  <p>When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and <alert>solder the header pins to the sensor</alert>. If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can "plug" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an <url href="https://learn.adafruit.com/adafruit-ultimate-gps/circuitpython-parsing">Adafruit Metro M0</url>. (Courtesy of <url href="https://learn.adafruit.com/u/adafruit2">Lady Ada</url> herself!)<xref ref="Adafruit"/>.
 </p>
 <figure>
   <image width="73%" source="adafruit_products_m0_express_gps_bb.png" />
   <caption>GPS Wiring Diagram for Adafruit Metro M0<xref ref="gps-wiring"/></caption>
 </figure>
+</section>
+<section>
+  <title>CPB Wiring and Software</title>
 <p>
-The only difference between the wiring diagram above and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>TX</em> to <em>RX</em> and <em>RX</em> to <em>TX</em>. That is the <em>TX</em> and <em>RX</em> pins are swapped so that the transmit wire goes to the receive wire on the other device.
+The only difference between the wiring diagram shown previously and the CPX/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need <em>3.3V</em> to run to <em>VIN</em>, <em>GND</em> to <em>GND</em> and then <em>TX</em> to <em>RX</em> and <em>RX</em> to <em>TX</em>. That is the <em>TX</em> and <em>RX</em> pins are swapped so that the transmit wire goes to the receive wire on the other device.
 </p>
 <figure>
   <image width="73%" source="gps_CPB.jpeg" />
@@ -60,7 +63,6 @@ In the photos above and below, the red alligator clip is connected to <em>3.3V</
 </figure>
 <p>
 Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your <url href="https://circuitpython.org/downloads">Circuit Python UF2</url> up to date<xref ref="CircuitPython"/>. Once I updated my UF2 I also updated my <url href="https://circuitpython.org/libraries">Circuit Python Libraries</url> (See <xref ref="installing-modules"/> for help on installing extra modules on your CPX/CPB)<xref ref="CircuitPython"/>. In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Flight Dynamics and Aircraft Design have to build a hobbyist radio controlled aircraft and get GPS data during the flight. This way they know where they flew and how fast. As such they need to build a standalone datalogger that can be placed into an airplane. The specific modules I needed for this lab for all of that functionality is as follows:
-
 <ol>
 <li><p>adafruit_lis3dh</p></li>
 <li><p>adafruit_gps</p></li>
@@ -69,7 +71,6 @@ Once you have the circuit wired and soldered it's time to work on software. Firs
 <li><p>adafruit_ble</p></li>
 </ol>
 </p>
-
 <p>
 Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Once you have all the modules, you can run the example code to <url href="https://github.com/cmontalvo251/Microcontrollers/tree/master/Circuit_Playground/CircuitPython/GPS">log gps and acceleration data</url>. Note that the link previously shown is to a folder of a few different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.</p>
 <figure>
@@ -77,11 +78,31 @@ Notice that I also added the thermistor and lis3dh libraries to get acceleration
   <caption>GPS Data in Mu</caption>
 </figure>
 <p>
-Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this
+Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. Move to <xref ref="gps-explanation"/> to learn about getting a lock and how to process the GPS information once you get a lock.</p>
+</section>
+
+<section>
+  <title>Arduino Wiring and Software</title>
+  <p>The wiring for the Arduino depends on which type of Arduino you're using. For every Arduino the <em>Serial0</em> pins are hardwired to the USB port so you can't use them which means you need to use <em>Serial1</em> or similar. The problem is that the Arduino UNO does not have any more serial ports so you have to use <em>SoftwareSerial</em>. When using <em>SoftwareSerial</em> you can plug the <em>TX/RX</em> pins into any two digital ports and then create a <em>SoftwareSerial</em> instance. If you're using an Arduino MEGA you can use any of the hardware Serial ports. In the figure below the GPS is plugged into <em>Serial1</em> and thus <em>TX</em> on the GPS is connected to <em>RX1</em> on the Arduino MEGA and <em>RX</em> on the GPS is connected to <em>TX1</em> on the Arduino MEGA. The Figure below also has an accelerometer (<xref ref="imu"/>) and micro sd card breakout board (<xref ref="sdcard"/>) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and GPS and log that to a micro SD card.</p>
+  <pre>INSERT FIGURE OF ACTUAL HARDWARE</pre>
+  <p>Moving on to software also depends on the Arduino MEGA or UNO. On the UNO since you're using <em>SoftwareSerial</em> you need to ensure that you have <em>#include &lt;SoftwareSerial.h&gt;</em> at the top of your code and that the <em>SoftwareSerial</em> library is installed in Arduino IDE. Thankfully <em>SoftwareSerial</em> is already built-in to the Arduino IDE so there's no need to download it. The code for an <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/UNO/GPS/GPS_Shield_Print/GPS_Shield_Print.ino">Arduino UNO example</url> can be found on Github but will not be shown in this chapter. Notice though that on line 33 upon following that link, pins 8 and 7 are used for the <em>SoftwareSerial</em> port given by this line of code: <em>SoftwareSerial mySerial(8, 7);</em>. For the <url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Arduino/MEGA/GPS_Only/GPS_Only.ino">Arduino MEGA</url>, the code is also on Github but the <em>Serial</em> port is different as shown in the code below.</p>
+  <figure>
+    <image width="73%" source="Arduino_MEGA_GPS_Only.png"/>
+    <caption>Arduino MEGA Code</caption>
+  </figure>
+  <p>Notice, in this code the call to create the <em>GPS</em> object is done using <em>&amp;Serial1</em> rather than <em>&amp;mySerial</em> which is an instance of the <em>SoftwareSerial</em> library. While <em>&amp;Serial1</em> is simply built-in to the Arduino MEGA software suite <em>&amp;mySerial</em> is a specific instance of <em>SoftwareSerial</em> that is only required on the Arduino UNO or similar boards that don't have Hardware Serial capabilities. However, for either the Arduino UNO or MEGA it is still required to get the <url href="https://github.com/adafruit/Adafruit_GPS">Adafruit_GPS library</url> which can be downloaded from Github and installed by navigating to Sketch&gt;Include Library&gt;Add .ZIP Library... and then add the ZIP file you just downloaded. This library is needed to parse the specific raw GPS sentences (<xref ref="gps-explanation"/>) coming in. Once you've installed all the libraries, compiled the code, wired up the Arduino with the GPS and flashed the code you should be able to open the Serial Monitor with a baud rate of 115200 and see the GPS output.</p>
+  <pre>INCLUDE FIGURE OF GPS OUTPUT</pre>
+  <p>The Figure above shows the GPS output when you don't have a lock on any satellites. Move to <xref ref="gps-explanation"/> to learn about getting a lock and how to process the GPS information once  you get a lock. Along with getting a lock on the GPS, it's possible to augment the software to also read the accelerometer from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a <em>standalone GPS+Accel datalogger</em> is on Github us usual.</p>
+  <pre>INSERT PICTURE OF GPS+ACCEL DATALOGGER AND EDIT LINK ABOVE WHEN YOU'RE DONE</pre>
+</section>
+
+<section xml:id="gps-explanation">
+  <title>GPS Receiver and Sentence Explanation</title>
+<p>The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this
 <pre>
 $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
 </pre>
-This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N/S, longitude, E/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the -99 values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.
+This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N/S, longitude, E/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code in either Arduino (<em>Adafruit_GPS</em>) or CPX/CPB (<em>adafruit_gps</em>) parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the latitude and longitude values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.
 <md number="yes">
   x = R cos(\lambda)(\phi - \phi_0) 
 </md>
