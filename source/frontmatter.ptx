@@ -139,6 +139,7 @@
   <li> June 13th, 2026 - Reduced the size of a few jpg files to make the PDF smaller than 50 MB. Added the accelerometer steps for the arduino. </li>
   <li> June 21st, 2026 - Happy Summer Solstice and Father's Day - I added an Arduino example for the HX711 load cell chapter and started adding the GPS arduino steps</li>
   <li> June 22nd, 2026 - Finished adding the LPS22 pressure sensor and GPS chapter for Arduino.</li>
+  <li> August 28th, 2026 - Edited the Getting started chapter due to some broken links and confusing assignment requirements.</li>
       </ol>
     </p>
   </section>
