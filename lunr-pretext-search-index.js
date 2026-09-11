@@ -844,7 +844,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.1",
   "title": "Initial Setup",
-  "body": " Initial Setup  For starters, let's get the CPX to print button presses. The code I'm using is shown below and can also be found on Github .    CircuitPython code that prints button presses   The code is pretty similar to what I had in the past. I import board, digitalio, and time. I create a buttonA object using the digitalio library to record button presses. I then enter into a while loop print the buttonA.value. The difference here is that I use the int() function to convert the buttonA.value to an integer. The reason why I do this is because buttonA.value is a boolean. It is either True or False. An integer though is a number and thus a value of False is 0 and True is 1. If you open the serial monitor and push the A button down a few times you'll see some zeros and 1's.    Serial monitor showing button presses in Mu   Mu also has a really neat builtin plotter. You'll see next to the Serial button there is a button called Plotter. If you click that button now nothing will pop up on the screen. Unfortunately in order to plot using the Plotter you need to modify the print() statement to this:  print((int(buttonA.value),))  Notice the extra parentheses and the comma. Now if you click Plotter you'll see something like this. You'll notice that the print statement now has commas in it and the Plotter is recording button presses.    Plotter open showing button presses in Mu   The problem with this is we still can't save the recorded data anywhere. Before we get into saving data let's first edit the print statement again to get rid of the Plotter by removing the extra parentheses and add time.monotonic() that way we can keep track of when a button was pressed. My print statement looks like this now:  print(time.monotonic(),int(buttonA.value))  Looking at the serial monitor now you'll see that time is being printed alongside the button presses.    Serial monitor showing button presses and time in Mu   Now we are in a position where we can record some data and save it to our computer. There are 4 ways to record data. I call the first, Method1 and you basically just copy and paste from the serial monitor, Method2 where you have the CPX\/CPB type data into a spreadsheet and Method3 where you log data internally onto the CPX\/CPB itself. The 4th method called Method4 utilizes the Bluetooth Module. Since that has it's own issues there is a completely separate section on how to explain Bluetooth (See ). Note you can only do Bluetooth if you have the Circuit Playground Bluefruit (CPB).  "
+  "body": " Initial Setup  For starters, let's get the CPX to print button presses. The code I'm using is shown below and can also be found on Github .    CircuitPython code that prints button presses   The code is pretty similar to what I had in the past. I import board, digitalio, and time. I create a buttonA object using the digitalio library to record button presses. I then enter into a while loop print the buttonA.value. The difference here is that I use the int() function to convert the buttonA.value to an integer. The reason why I do this is because buttonA.value is a boolean. It is either True or False. An integer though is a number and thus a value of False is 0 and True is 1. If you open the serial monitor and push the A button down a few times you'll see some zeros and 1's.    Serial monitor showing button presses in Mu   Mu also has a really neat builtin plotter. You'll see next to the Serial button there is a button called Plotter. If you click that button now nothing will pop up on the screen. Unfortunately in order to plot using the Plotter you need to modify the print() statement to this:  print((int(buttonA.value),))  Notice the extra parentheses and the comma. Now if you click Plotter you'll see something like this. You'll notice that the print statement now has commas in it and the Plotter is recording button presses.    Plotter open showing button presses in Mu   The problem with this is we still can't save the recorded data anywhere. Before we get into saving data let's first edit the print statement again to get rid of the Plotter by removing the extra parentheses and add time.monotonic() that way we can keep track of when a button was pressed. My print statement looks like this now:  print(time.monotonic(),int(buttonA.value))  Looking at the serial monitor now you'll see that time is being printed alongside the button presses.    Serial monitor showing button presses and time in Mu   Now we are in a position where we can record some data and save it to our computer. There are 6 ways to record data. I call the first, Method1 and you basically just copy and paste from the serial monitor, Method2 ( ) where you have the CPX\/CPB type data into a spreadsheet, Method3 where you log data internally onto the CPX\/CPB itself ( ), Method4 which utilizes the Bluetooth Module ( ), Method5 which uses an external SD breakout board ( )and finally Method6 which uses a Serial read function on your laptop to automatically read the data coming from your CPX ( ). Note you can only do Bluetooth if you have the Circuit Playground Bluefruit (CPB).  "
 },
 {
   "id": "start-3",
@@ -907,34 +907,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.3",
   "title": "Method 2 - Automatically Populate a Spreadsheet",
-  "body": " Method 2 - Automatically Populate a Spreadsheet  The downside with the above method of course is if you have a ton of data to record you could lose the data or run into a massive copy and paste issue. The second option is to use this module called keyboard which takes control of your keyboard on your desktop computer and actively types your data into a spreadsheet. The code is very extensive but I'll include the simple one here so we can discuss it. Below are the first 30 lines of code. The first 6 lines of code are just comments since I heavily adopted this code from the Adafruit Learn System . My version of this code can be found on my Github . Lines 8 - 14 are import commands as we've seen previously. The regular import modules board, time and digitalio are imported but we are also importing the Keyboard module so that the CPX can takeover our keyboard. In order to import that module properly you need to install modules onto you lib folder (See ) . Lines 16-22 create two buttons. First we create buttonA attached to pin D4 and then a switch attached to pin D7. If you look on the CPX there is a switch labeled D7. Before you copy this code onto the CPX make sure you move the switch towards the ear looking symbol. Lines 26-28 created the keyboard object. We are going to call it layout for this example code.    Snippet of Typing code in CircuitPython   The next 30 lines are shown below. Lines 32-35 define a function. Functions in CircuitPython have a pretty standard structure. The keyword def is used to denote that the next line is a definition for a function. The name of the function is slow_write() . The input to the function is string which ironically enough is a string object. Line 33-35 define what the function does. Line 33 sets up a for loop where the code loops through each character in the string. Everytime it gets to a new character it will use your keyboard to type that character using the layout.write(c) command. The time.sleep(0.02) is just to slow down the keyboard so your computer can keep up. That function is defined above the standard while True: statement on line 37 but is called on line 42. You'll see there is a slow_write(output) on line 42. In this case output is a string and it's sent to the function slow_write() . So in this case we have a function that can write a string so we just need to take data and then write it using our keyboard. Line 38 is an if statement that will only be true if the switch on pin D7 is pushed towards the music note on the CPX. If the switch is not thrown the code will move to the else statement on line 52 and tell the user that you need to flip the switch. If the switch is thrown line 40 will take data for us. First it will record the time.monotonic() and store it as a floating point number using the %0.1f designation which means that it will store 1 decimal as a %floating point number for f.    Remainder of Typing code in CircuitPython   The second number in the string is an integer or a base 10 (decimal) integer designated by the %d part of the format. The integer is int(buttonA.value). You'll see a \\t in between the formatted numbers which is a tab. The tab is there to tab between cells in a spreadsheet. Line 41 will print the output string to the Serial monitor and it will also type the contents of the string. Very important here. When you flip the switch on the CPX your keyboard will start typing in whatever active window is selected. If you don't have a spreadsheet opened and active (selected), the keyboard will just begin typing in whatever window is open. Make sure you have a spreadsheet program open and ready to go. Lines 44-51 tell the keyboard to hit the DOWN_ARROW on your keyboard to move to the next row and the LEFT_ARROW twice to move back to the first column. Line 55 is a sleep to only log data once a second. I ran this code for a bit and had it type into LibreOffice Calc which is a free spreadsheet program. Google Sheets or Microsoft Excel will also work just fine.    Example data in a spreadsheet from Typing code   You'll see that the first column is time with 1 decimal point and the second column is the button press values. At this point you must click Save As... and save the document as a CSV which stands for Comma Separated Value. Once you have the file saved you can proceed to plotting on your Desktop.  "
-},
-{
-  "id": "daq-5-3",
-  "level": "2",
-  "url": "daq-5.html#daq-5-3",
-  "type": "Figure",
-  "number": "9.3.1",
-  "title": "",
-  "body": "  Snippet of Typing code in CircuitPython  "
-},
-{
-  "id": "daq-5-5",
-  "level": "2",
-  "url": "daq-5.html#daq-5-5",
-  "type": "Figure",
-  "number": "9.3.2",
-  "title": "",
-  "body": "  Remainder of Typing code in CircuitPython  "
-},
-{
-  "id": "daq-5-7",
-  "level": "2",
-  "url": "daq-5.html#daq-5-7",
-  "type": "Figure",
-  "number": "9.3.3",
-  "title": "",
-  "body": "  Example data in a spreadsheet from Typing code  "
+  "body": " Method 2 - Automatically Populate a Spreadsheet  The downside with Method 1 of course is if you have a ton of data to record you could lose the data or run into a massive copy and paste issue. The second option is to use this module called adafruit_hid.keyboard which takes control of your keyboard on your desktop computer and actively types your data into a spreadsheet. This method called Method 2 and is explained in .  "
 },
 {
   "id": "daq-6",
@@ -943,52 +916,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.4",
   "title": "Method 3 - Logging Data Directly to on board memory",
-  "body": " Method 3 - Logging Data Directly to on board memory  The problem with the above 2 methods is that you need a laptop to log data in the field. It would be nice if you could use the optional battery pack and just have the CPX log data on the CPX itself. This is the most complex way but in my opinion the best way. In order to get this to work you need to allow the drive on the CPX to have read\/write permissions. This requires you to load a piece of software called boot.py and put it on the CPX. I have this software on my Github . The software is shown below. The first 10 lines are probably very familiar. Import some modules and then create a switch object. Line 13 is where all of the storage permissions are changed. If the flip is switched towards the A button, the storage module is used to allow you to write to the CPX. The problem here is that if you do this, you won't be able to edit code. I'll explain the procedure here in a minute. As always, the relevant Adafruit tutorial is on the Adafruit Learn System if you want to read more about it. Again make sure you store this file onto the CIRCUITPY drive and save it as boot.py    boot.py script in CircuitPython   In addition to storing the file boot.py you'll need to edit your main.py script to only log data when the switch is moved towards the B button. The software to record button presses on disk is shown below and as always on my Github . In this software we again see the standard commands. Lines 1-3 import all the modules we need and then 5-15 create a switch, a button and an LED. In this case we're using the LED soldered to the board. Line 17-20 check to see if the user has flipped the switch. If the switch is False the storage module on boot.py will allow the drive to act like a data logger and it will open a file called Test_Data.txt for writing ( w ) . If the switch is True then the user will be notified that the file has not been opened for writing. Lines 22 through 33 include the infinite while loop. Line 23 turns the LED on and line 24 prints out the current time and the button value in integer form. If the switch value is False the program will create an output string by converting all numbers to strings using the str function. Notice that there is a str( \\textbackslash n ) at the end of the output variable which tells the computer to write a new line of data to the file. Lines 28 and 29 write the output to the file from line 18 and then flush the output which means the CPX waits for the data to be fully written before moving on. It also turns the LED off so we know the CPX took data even when we aren't looking at the Serial monitor. If the switch value is true it means that the we never opened the data file and thus we tell the user we aren't logging data and it's time to flip the switch and hit reset. NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.     Snippet of writing data to a text file in CircuitPython   So here is the flow of what you want to do for method 3.   Unplug the CPX  Flip the switch towards the A button.  Plug in the CPX and save the boot.py and main.py files. Remember you can only save CircuitPython scripts when the switch is flipped towards the A button.  When you are ready to start recording data, flip the switch towards the B button. If you're looking at the Serial monitor, the software will throw an error. Just ignore it and hit the reset button. When your computer recognizes the CPX you can turn the Serial monitor on and off.  When you are done taking data simply slide the switch over towards the A button and hit reset again. This is what my Serial monitor looks like when I do this. You'll see that I was writing to disk for like 25 seconds and then I flipped the switch back towards the A button.     Serial monitor open in Mu showing Method 3 for data logging   With the switch flipped and data taken, open your folder manager and take a look at the CIRCUITPY drive. This is what mine looks like. You'll see I have two CircuitPython files and a file Test_Data.txt with all my data in it.    Text file shown in file manager on computer   If you open the Test_Data.txt file you will hopefully see data in it.    Example text file from Method 3   At this point you can copy this text file over to your desktop computer and proceed to the plotting portion. Ok so let's recap method 3 one more time.  Unplug CPX (or remove power)  Slide switch to A  Plug in CPX (or provide battery power) and wait for system to fully boot up  Slide switch to B  Hit Reset and wait for system to fully boot up  Take data for however long you want  Slide switch to A when you're ready to stop taking data  Hit Reset and wait for system to fully boot up  Remove power if you're on battery power  Plug CPX into computer if not already connected  Transfer data file to computer    "
-},
-{
-  "id": "daq-6-3",
-  "level": "2",
-  "url": "daq-6.html#daq-6-3",
-  "type": "Figure",
-  "number": "9.4.1",
-  "title": "",
-  "body": "  boot.py script in CircuitPython  "
-},
-{
-  "id": "daq-6-5",
-  "level": "2",
-  "url": "daq-6.html#daq-6-5",
-  "type": "Figure",
-  "number": "9.4.2",
-  "title": "",
-  "body": "  Snippet of writing data to a text file in CircuitPython  "
-},
-{
-  "id": "daq-6-8",
-  "level": "2",
-  "url": "daq-6.html#daq-6-8",
-  "type": "Figure",
-  "number": "9.4.3",
-  "title": "",
-  "body": "  Serial monitor open in Mu showing Method 3 for data logging  "
-},
-{
-  "id": "daq-6-10",
-  "level": "2",
-  "url": "daq-6.html#daq-6-10",
-  "type": "Figure",
-  "number": "9.4.4",
-  "title": "",
-  "body": "  Text file shown in file manager on computer  "
-},
-{
-  "id": "daq-6-12",
-  "level": "2",
-  "url": "daq-6.html#daq-6-12",
-  "type": "Figure",
-  "number": "9.4.5",
-  "title": "",
-  "body": "  Example text file from Method 3  "
+  "body": " Method 3 - Logging Data Directly to on board memory  The downside of methods 1,2 and 6 is that you need to have your CircuitPlayground permanently connected to a laptop. Often times that's not possible given size and weight constraints. Furthermore, bluetooth (Method4) only works up to around 30 feet. So if you put your system into a rocket or an airplane you'll lose connection and stop saving data. Instead Method3 allows you to have the data logged directly onto the CircuitPlayground itself. This Method is explained in .  "
 },
 {
   "id": "daq-7",
@@ -997,7 +925,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.5",
   "title": "Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)",
-  "body": " Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)  As mentioned in the introduction it's possible to have the Circuit Playground send data wirelessly to a cell phone using Bluetooth provided you have Bluetooth setup and a smart phone with the Adafruit Connect App. Bluetooth is explained in detail in its own chapter (See ). Method 4 is a valid form of logging data it just requires a cell phone to be powered the entire time and it must be within 30 feet of the Circuit Playground at all times. This also only works on the CPB since the CPX does not have a Bluetooth transmitter.  "
+  "body": " Method 4 - Logging Data on a Cell Phone using Bluetooth (CPB Only)  As mentioned previously it's possible to have the Circuit Playground send data wirelessly to a cell phone using Bluetooth provided you have Bluetooth setup and a smart phone with the Adafruit Connect App. Bluetooth is explained in detail in its own chapter (See ). Method 4 is a valid form of logging data it just requires a cell phone to be powered the entire time and it must be within 30 feet of the Circuit Playground at all times. This also only works on the CPB since the CPX does not have a Bluetooth transmitter.  "
 },
 {
   "id": "daq-8",
@@ -1006,7 +934,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.6",
   "title": "Method 5 - Logging Data to an SD Card",
-  "body": " Method 5 - Logging Data to an SD Card  Another to log data is using a standalone micro sd card breakout board (See ) . Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See ) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting boot.py to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX\/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter.  "
+  "body": " Method 5 - Logging Data to an SD Card  Another to log data is using a standalone micro sd card breakout board  . Method 1 and 2 are simple to use but they require a laptop and Method 4 can only be done with a CPB. Method 3 is light-weight in the sense that you don't need any extra components but this method can be somewhat unreliable. It's possible to brick the CPX which requires formatting (See ) or data corruption in general to the file. I've seen so many students not follow Method 3 correctly and either not get data or corrupt their entire CPX which requires them to reformat. Although some students have been successful, the complexity of getting boot.py to work properly requires great care and this is where Method 5 excels. In this method rather than logging data directly to the CPX\/CPB and potentially corrupting the internal memory, the data is logged to an external SD card. After logging data the card can be removed and uploaded to a computer using any SD card to USB converter (See ).  "
 },
 {
   "id": "daq-9",
@@ -1015,7 +943,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.7",
   "title": "Method 6 - Logging Data via Serial",
-  "body": " Method 6 - Logging Data via Serial  Yet another method to log data is using the same serial communication that is used in Mu (See ). In this case you need your laptop just like method 1 and 2 but you forgo having to copy and paste the Serial monitor yourself. In this method you would have a program on your computer that automatically reads the serial output from the CPX and saves that to a text file. It reduces the complexity of the CircuitPython code and allows you to focus on the experiment while your computer handles logging data.  "
+  "body": " Method 6 - Logging Data via Serial  Yet another method to log data is using the same serial communication that is used in Mu. In this case you need your laptop just like method 1 and 2 but you forgo having to copy and paste the Serial monitor yourself. In this method you would have a program on your computer that automatically reads the serial output from the CPX and saves that to a text file. It reduces the complexity of the CircuitPython code and allows you to focus on the experiment while your computer handles logging data much like Method2 only the data is piped directly to a file rather than being forced to keep a spreadsheet open. This method is discussed in .  "
 },
 {
   "id": "daq-10",
@@ -1024,7 +952,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.8",
   "title": "Plotting Logged Data",
-  "body": " Plotting Logged Data  Alright so there you have it. I have explained 4 methods to datalogging. Here are the methods again in summary.  Print data to Serial and copy and paste  Use the Keyboard module to save data to a spreadsheet  Access the storage of your CPX and write data to a text file on the CPX  Send data wirelessly to a Cell Phone using Bluetooth - CPB Only (See )    All methods will work but some will obviously have their pros and cons. I suggest you get comfortable with 1 method and use that for the remainder of the semester. Whatever option you choose though will provide you with a data file that you can open on your desktop computer to plot. The simplest way to import data is by using the loadtxt function from the module numpy. Here is some very simple code to plot data from a text file.  When you plot make sure your Test_Data.txt file is in the same folder as your plotting script in Thonny or Spyder. Here's my example code (this code is not on Github but you only need 3 or 4 lines of code to plot).    Plotted data shown in Thonny   In this example lines 1 and 2 import numpy and matplotlib. Line 4 imports data from the Test_Data.txt file and then 6 and 7 save the first and second columns into time and button. The remaining lines plot the data and create x and y labels as well as a grid. Hopefully now you are well versed in taking data and plotting on your desktop computer.  "
+  "body": " Plotting Logged Data  Alright so there you have it. I have explained method 1 and provided links to other chapter to learn about other methods about datalogging. Here are the methods again in summary.  Method 1 - Print data to Serial in Mu and copy and paste  Method 2 - Use the Keyboard module to save data to a spreadsheet ( )  Method 3 - Access the storage of your CPX and write data to a text file on the CPX ( )  Method 4 - Send data wirelessly to a Cell Phone using Bluetooth - CPB Only ( )  Method 5 - Log data directly to an SD card - ( )  Method 6 - Log data directly to your computer automatically via serial - ( )    All methods will work but some will obviously have their pros and cons. I suggest you get comfortable with 1 method and use that for the remainder of the semester. Whatever option you choose though will provide you with a data file that you can open on your desktop computer to plot. The simplest way to import data is by using the loadtxt function from the module numpy. Here is some very simple code to plot data from a text file.  When you plot make sure your Test_Data.txt file is in the same folder as your plotting script in Thonny or Spyder. Here's my example code (this code is not on Github but you only need 3 or 4 lines of code to plot).    Plotted data shown in Thonny   In this example lines 1 and 2 import numpy and matplotlib. Line 4 imports data from the Test_Data.txt file and then 6 and 7 save the first and second columns into time and button. The remaining lines plot the data and create x and y labels as well as a grid. Hopefully now you are well versed in taking data and plotting on your desktop computer.  "
 },
 {
   "id": "daq-10-5",
@@ -1051,14 +979,122 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "9.10",
   "title": "Assignment",
-  "body": " Assignment   For this project you must use method 1, 2, 3 or 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a snippet (5 lines) of your data file - 40%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - File yourself and your entire screen pressing the button and showing the number change on the screen, then show yourself plotting your data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
+  "body": " Assignment   For this project you must use the copy and paste method (Method 1) to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a snippet (5 lines) of your data file - 40%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen pressing the button and showing the number change on the screen, then show yourself plotting your data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
+},
+{
+  "id": "spreadsheetMethod-3",
+  "level": "1",
+  "url": "spreadsheetMethod-3.html",
+  "type": "Section",
+  "number": "10.1",
+  "title": "Setup",
+  "body": " Setup  The code is very extensive but I'll include the simple one here so we can discuss it. Below are the first 30 lines of code. The first 6 lines of code are just comments since I heavily adopted this code from the Adafruit Learn System . My version of this code can be found on my Github . Lines 8 - 14 are import commands as we've seen previously. The regular import modules board, time and digitalio are imported but we are also importing the Keyboard module so that the CPX can takeover our keyboard. In order to import that module properly you need to install modules onto you lib folder (See ) . Lines 16-22 create two buttons. First we create buttonA attached to pin D4 and then a switch attached to pin D7. If you look on the CPX there is a switch labeled D7. Before you copy this code onto the CPX make sure you move the switch towards the ear looking symbol. Lines 26-28 created the keyboard object. We are going to call it layout for this example code.    Snippet of Typing code in CircuitPython   The next 30 lines are shown below. Lines 32-35 define a function. Functions in CircuitPython have a pretty standard structure. The keyword def is used to denote that the next line is a definition for a function. The name of the function is slow_write() . The input to the function is string which ironically enough is a string object. Line 33-35 define what the function does. Line 33 sets up a for loop where the code loops through each character in the string. Everytime it gets to a new character it will use your keyboard to type that character using the layout.write(c) command. The time.sleep(0.02) is just to slow down the keyboard so your computer can keep up. That function is defined above the standard while True: statement on line 37 but is called on line 42. You'll see there is a slow_write(output) on line 42. In this case output is a string and it's sent to the function slow_write() . So in this case we have a function that can write a string so we just need to take data and then write it using our keyboard. Line 38 is an if statement that will only be true if the switch on pin D7 is pushed towards the music note on the CPX. If the switch is not thrown the code will move to the else statement on line 52 and tell the user that you need to flip the switch. If the switch is thrown line 40 will take data for us. First it will record the time.monotonic() and store it as a floating point number using the %0.1f designation which means that it will store 1 decimal as a %floating point number for f.    Remainder of Typing code in CircuitPython   The second number in the string is an integer or a base 10 (decimal) integer designated by the %d part of the format. The integer is int(buttonA.value). You'll see a \\t in between the formatted numbers which is a tab. The tab is there to tab between cells in a spreadsheet. Line 41 will print the output string to the Serial monitor and it will also type the contents of the string. Very important here. When you flip the switch on the CPX your keyboard will start typing in whatever active window is selected. If you don't have a spreadsheet opened and active (selected), the keyboard will just begin typing in whatever window is open. Make sure you have a spreadsheet program open and ready to go. Lines 44-51 tell the keyboard to hit the DOWN_ARROW on your keyboard to move to the next row and the LEFT_ARROW twice to move back to the first column. Line 55 is a sleep to only log data once a second. I ran this code for a bit and had it type into LibreOffice Calc which is a free spreadsheet program. Google Sheets or Microsoft Excel will also work just fine.    Example data in a spreadsheet from Typing code   You'll see that the first column is time with 1 decimal point and the second column is the button press values. At this point you must click Save As... and save the document as a CSV which stands for Comma Separated Value. Once you have the file saved you can proceed to plotting on your Desktop.  "
+},
+{
+  "id": "spreadsheetMethod-3-3",
+  "level": "2",
+  "url": "spreadsheetMethod-3.html#spreadsheetMethod-3-3",
+  "type": "Figure",
+  "number": "10.1.1",
+  "title": "",
+  "body": "  Snippet of Typing code in CircuitPython  "
+},
+{
+  "id": "spreadsheetMethod-3-5",
+  "level": "2",
+  "url": "spreadsheetMethod-3.html#spreadsheetMethod-3-5",
+  "type": "Figure",
+  "number": "10.1.2",
+  "title": "",
+  "body": "  Remainder of Typing code in CircuitPython  "
+},
+{
+  "id": "spreadsheetMethod-3-7",
+  "level": "2",
+  "url": "spreadsheetMethod-3.html#spreadsheetMethod-3-7",
+  "type": "Figure",
+  "number": "10.1.3",
+  "title": "",
+  "body": "  Example data in a spreadsheet from Typing code  "
+},
+{
+  "id": "spreadsheetMethod-4",
+  "level": "1",
+  "url": "spreadsheetMethod-4.html",
+  "type": "Section",
+  "number": "10.2",
+  "title": "Assignment",
+  "body": " Assignment   This project is similar to the Data Acquisition project only you must use method 2 to save time and button presses to a spreadsheet. My recommendation is to then copy your spreadsheet data into a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a snippet (5 lines) of your data file in your spreadsheet program - 40%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen with your spreadsheet program open while you press and release the button and the CPX\/CPB automatically types into your spreadsheet. Then show yourself plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
+},
+{
+  "id": "internaldaq-3",
+  "level": "1",
+  "url": "internaldaq-3.html",
+  "type": "Section",
+  "number": "11.1",
+  "title": "Setup",
+  "body": " Setup  The problem with methods 1,2 and 6 is that you need a laptop to log data in the field. It would be nice if you could use the optional battery pack and just have the CPX log data on the CPX itself. This is the most complex way but in my opinion the best way. In order to get this to work you need to allow the drive on the CPX to have read\/write permissions. This requires you to load a piece of software called boot.py and put it on the CPX. I have this software on my Github . The software is shown below. The first 10 lines are probably very familiar. Import some modules and then create a switch object. Line 13 is where all of the storage permissions are changed. If the flip is switched towards the A button, the storage module is used to allow you to write to the CPX. The problem here is that if you do this, you won't be able to edit code. I'll explain the procedure here in a minute. As always, the relevant Adafruit tutorial is on the Adafruit Learn System if you want to read more about it. Again make sure you store this file onto the CIRCUITPY drive and save it as boot.py    boot.py script in CircuitPython   In addition to storing the file boot.py you'll need to edit your main.py script to only log data when the switch is moved towards the B button. The software to record button presses on disk is shown below and as always on my Github . In this software we again see the standard commands. Lines 1-3 import all the modules we need and then 5-15 create a switch, a button and an LED. In this case we're using the LED soldered to the board. Line 17-20 check to see if the user has flipped the switch. If the switch is False the storage module on boot.py will allow the drive to act like a data logger and it will open a file called Test_Data.txt for writing ( w ) . If the switch is True then the user will be notified that the file has not been opened for writing. Lines 22 through 33 include the infinite while loop. Line 23 turns the LED on and line 24 prints out the current time and the button value in integer form. If the switch value is False the program will create an output string by converting all numbers to strings using the str function. Notice that there is a str( \\textbackslash n ) at the end of the output variable which tells the computer to write a new line of data to the file. Lines 28 and 29 write the output to the file from line 18 and then flush the output which means the CPX waits for the data to be fully written before moving on. It also turns the LED off so we know the CPX took data even when we aren't looking at the Serial monitor. If the switch value is true it means that the we never opened the data file and thus we tell the user we aren't logging data and it's time to flip the switch and hit reset. NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.     Snippet of writing data to a text file in CircuitPython   So here is the flow of what you want to do for method 3.   Unplug the CPX  Flip the switch towards the A button.  Plug in the CPX and save the boot.py and main.py files. Remember you can only save CircuitPython scripts when the switch is flipped towards the A button.  When you are ready to start recording data, flip the switch towards the B button. If you're looking at the Serial monitor, the software will throw an error. Just ignore it and hit the reset button. When your computer recognizes the CPX you can turn the Serial monitor on and off.  When you are done taking data simply slide the switch over towards the A button and hit reset again. This is what my Serial monitor looks like when I do this. You'll see that I was writing to disk for like 25 seconds and then I flipped the switch back towards the A button.     Serial monitor open in Mu showing Method 3 for data logging   With the switch flipped and data taken, open your folder manager and take a look at the CIRCUITPY drive. This is what mine looks like. You'll see I have two CircuitPython files and a file Test_Data.txt with all my data in it.    Text file shown in file manager on computer   If you open the Test_Data.txt file you will hopefully see data in it.    Example text file from Method 3   At this point you can copy this text file over to your desktop computer and proceed to the plotting portion. Ok so let's recap method 3 one more time.  Unplug CPX (or remove power)  Slide switch to A  Plug in CPX (or provide battery power) and wait for system to fully boot up  Slide switch to B  Hit Reset and wait for system to fully boot up  Take data for however long you want  Slide switch to A when you're ready to stop taking data  Hit Reset and wait for system to fully boot up  Remove power if you're on battery power  Plug CPX into computer if not already connected  Transfer data file to computer    "
+},
+{
+  "id": "internaldaq-3-3",
+  "level": "2",
+  "url": "internaldaq-3.html#internaldaq-3-3",
+  "type": "Figure",
+  "number": "11.1.1",
+  "title": "",
+  "body": "  boot.py script in CircuitPython  "
+},
+{
+  "id": "internaldaq-3-5",
+  "level": "2",
+  "url": "internaldaq-3.html#internaldaq-3-5",
+  "type": "Figure",
+  "number": "11.1.2",
+  "title": "",
+  "body": "  Snippet of writing data to a text file in CircuitPython  "
+},
+{
+  "id": "internaldaq-3-8",
+  "level": "2",
+  "url": "internaldaq-3.html#internaldaq-3-8",
+  "type": "Figure",
+  "number": "11.1.3",
+  "title": "",
+  "body": "  Serial monitor open in Mu showing Method 3 for data logging  "
+},
+{
+  "id": "internaldaq-3-10",
+  "level": "2",
+  "url": "internaldaq-3.html#internaldaq-3-10",
+  "type": "Figure",
+  "number": "11.1.4",
+  "title": "",
+  "body": "  Text file shown in file manager on computer  "
+},
+{
+  "id": "internaldaq-3-12",
+  "level": "2",
+  "url": "internaldaq-3.html#internaldaq-3-12",
+  "type": "Figure",
+  "number": "11.1.5",
+  "title": "",
+  "body": "  Example text file from Method 3  "
+},
+{
+  "id": "internaldaq-4",
+  "level": "1",
+  "url": "internaldaq-4.html",
+  "type": "Section",
+  "number": "11.2",
+  "title": "Assignment",
+  "body": " Assignment   For this project you must use on board data logging method (Method 3) to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a snippet (5 lines) of your data file - 40%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen pressing the button and showing the number change on the screen while you flip the switch back and forth to switch from write mode to read mode. Then show yourself plotting your data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
 {
   "id": "bluetooth-3",
   "level": "1",
   "url": "bluetooth-3.html",
   "type": "Section",
-  "number": "10.1",
+  "number": "12.1",
   "title": "Setup",
   "body": " Setup  First we're going to run the bluetooth_uart_button.py script which sends button data to your smart phone via something called UART which is a type of serial communication. It's beyond the scope of this lesson but serial is digital as opposed to analog which is done using the AnalogIn functions (See ) .    Example Bluetooth code in CircuitPython   Lines 3-11 import a ton of modules. You'll recognize many of them like analogio, and time but the new ones are the ones that say ble. These are the bluetooth modules required for the CPB. Lines 21-24 setup the button so we can log the button via bluetooth and Lines 14-17 kick of the BLERadio object and the UARTService() to send data. Line 25 also grabs the current time before the infinite while loop that way the timer starts closer to zero.    Remainder of Bluetooth code in CircuitPython   The code above is the infinite while loop which actually contains 2 while loops. Lines 28-33 prints the name of your bluetooth sensor and then starts advertising bluetooth to whoever is listening. It will then enter a while loop from 32-33 until bluetooth is connected. Once bluetooth is connected it will enter into the second while loop from line 39-52. In those lines 40-46 is responsible for taking all the necessary measurements and printing them to the serial monitor in Mu. In this case it's only printing the current time and the value of the button as an integer. buttonA.value is either True or False and the int function converts that to a 0 or a 1. Line 49 then sends the data over bluetooth using the UART server. You'll notice in this case the code is sending t,b by using the format variable and the 2 empty brackets. If you want to send more data you need to add more empty brackets and more variables to the format function. When you first save this script your CPB will not be connected and enter into an infinite while loop where it waits for your smart phone to connect. If you open your smart phone and open the Bluefruit Connect App the following screen will pop up.    Screenshot of Bluetooth devices on a smart phone   In this case there are numerous different bluetooth modules can be seen but the one you need to click is the one that says CIRCUITPYf8e8. You will have a different code after CIRCUITPY and you can figure out what your 4 digit code is by making sure you have the print('Look for',ble.name) in your code. Once you do that the CPB will begin sending time and the button press to your smart phone.    Interfaces in Bluetooth App on smart phone   There are numerous items you can click. The Controller is very fun for creating a remote control robot but we're only going to go over the UART and Plotter tabs. If you click the plotter tab you will be greeted with a live screen of the data being sent.    Example plotter in Bluetooth App on smart phone   In the photo above you can see three data streams that is coming directly from the CPB. The red line is time and the blue line is the button value. Notice the blue line goes from 0 to 1 which means I pressed the button a few times. The red line is always increasing which kind of messes up the plotter so you can always go back to your code in Mu and just send your data. This is great for live demonstrations and for debugging if you need to see data from an experiment and you don't have access to a laptop with Mu. If you hit the back arrow and then click UART you will see the raw data come in as text.    Example UART data in Bluetooth App on smart phone   Again here you can see the 3 data streams separated by commas. The very neat thing with the UART tab is that you can click the three vertical dots in the upper right hand corner and click export to TXT. The easiest thing for me was to export the data to google drive and then download the data to my computer. Once I downloaded the TXT file to my computer and opened it the data file looked like this.    Example data exported to CSV file   If you export the file as a CSV the data file will look completely different and it's much more complicated to plot. If you export the data as a TXT file you just need to use the np.loadtxt command to read in the data. Note you might have commas in your data file. If there are commas just use the CTRL+H command and replace all commas with spaces or use the np.loadtxt('buttonble.txt',delimiter=',') command. Plotting your button presses should be as simple as the previous lab thus plotting the button is left as an exercise to the reader.  "
 },
@@ -1067,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-3",
   "type": "Figure",
-  "number": "10.1.1",
+  "number": "12.1.1",
   "title": "",
   "body": "  Example Bluetooth code in CircuitPython  "
 },
@@ -1076,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-5",
   "type": "Figure",
-  "number": "10.1.2",
+  "number": "12.1.2",
   "title": "",
   "body": "  Remainder of Bluetooth code in CircuitPython  "
 },
@@ -1085,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-7",
   "type": "Figure",
-  "number": "10.1.3",
+  "number": "12.1.3",
   "title": "",
   "body": "  Screenshot of Bluetooth devices on a smart phone  "
 },
@@ -1094,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-9",
   "type": "Figure",
-  "number": "10.1.4",
+  "number": "12.1.4",
   "title": "",
   "body": "  Interfaces in Bluetooth App on smart phone  "
 },
@@ -1103,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-11",
   "type": "Figure",
-  "number": "10.1.5",
+  "number": "12.1.5",
   "title": "",
   "body": "  Example plotter in Bluetooth App on smart phone  "
 },
@@ -1112,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-13",
   "type": "Figure",
-  "number": "10.1.6",
+  "number": "12.1.6",
   "title": "",
   "body": "  Example UART data in Bluetooth App on smart phone  "
 },
@@ -1121,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "bluetooth-3.html#bluetooth-3-15",
   "type": "Figure",
-  "number": "10.1.7",
+  "number": "12.1.7",
   "title": "",
   "body": "  Example data exported to CSV file  "
 },
@@ -1130,7 +1166,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "bluetooth-4.html",
   "type": "Section",
-  "number": "10.2",
+  "number": "12.2",
   "title": "Extra Help",
   "body": " Extra Help  You might find plotting data via bluetooth to be rather difficult and it was pretty difficult for me until I learned that you can export data as a txt file rather than a csv file. Before I learned how to do that I put together a 4 part series describing everything in this module. Worst case you can just watch the third video in the series . The video is 30 minutes but the first 8 minutes goes through setting up the bluetooth module and the rest of the video is just on plotting the exported csv data which took me some time. Note that exporting data as a txt file is the preferred method as parsing the file is way easier .  "
 },
@@ -1139,16 +1175,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "bluetooth-5.html",
   "type": "Section",
-  "number": "10.3",
+  "number": "12.3",
   "title": "Assignment",
-  "body": " Assignment   This project is similar to the Data Acquisition project only you must use method 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire screen) from your phone showing the raw UART output - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen showing data broadcast to your phone while you press and release the button, then show yourself plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
+  "body": " Assignment   This project is similar to the previous chapters only you must use method 4 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire screen) from your phone showing the raw UART output - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen showing data broadcast to your phone while you press and release the button, then show yourself plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
 {
   "id": "sdcard-3",
   "level": "1",
   "url": "sdcard-3.html",
   "type": "Section",
-  "number": "11.1",
+  "number": "13.1",
   "title": "Setting up the CPX\/CPB",
   "body": " Setting up the CPX\/CPB  Before wiring up the system I recommend setting up the CPX\/CPB first before wiring up the system. The example code we're going to use for this chapter is on Github as usual.    Snippet of SD card Software for the CPB\/CPX   The figure above shows the preamble of the code which has a few things that you need to do before getting this to work. First, you need to have an sd folder in the your CIRCUITPY drive. That means, when you plug in the CPB\/CPX to your computer you must add a solder called sd into the main folder alongside the lib folder which needs the adafruit_sdcard module. Before installing extra modules into the lib folder you want to make sure you have your Circuit Python UF2 up to date . In this example I'm using the 10.X version. Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . Again, for this lab you just need the adafruit_sdcard module in the lib folder. After that you can copy the software from Github into your code.py file and save it. The code will not run right away and will probably through an SD Card Not Found error. At this point you can unplug the CPX\/CPB and begin wiring the breakout board making to plug in the micro SD card of course.    CPB wired to a micro SD card breakout board   In the figure above moving counter-clockwise, the red alligator clip from 5V to a green male-male wire to 5V , the first yellow alligator clip goes directly from A1(CLK) to CLK , the first green alligator clip goes from A2(MISO) to a white male-male wire to DO , the second green alligator clip goes from A3(MOSI) to a blue male-male wire to DI , the second yellow alligator clip is connected to A4 then to a black male-male wire connected to CS and finally the black alligator clip goes directly from GND to GND .    Example output when writing to the SD card   Once you plug in the CPB\/CPX and press the A button to start recording you can press the A button over and over again to stop logging and then restart logging. Everytime you close the file and open a new file, the code will find a new file to create so that you don't continue to overwrite the file that is already on the sd card. In this code the A button is used to start and stop recording and the B button along with a dummy counter is logged to the SD card.    Example Data file after writing to SD Card   When you are done recording make sure to press the A button to the close the current file and then remove power from the CPX\/CPB. You can then place the SD card into your computer and you should see multiple DataFile#.txt text files in your computer. You can then copy those to your computer and plot the data similar to . This code can easily be augmented to accommodate any other sensor such as GPS ( ), accelerometer ( ), pressure ( ) or any other sensor you can think of. Although you add the complexity of having an extra piece of hardware, you remove the software headache and potential bricking of your CPX\/CPB by attempting to use Method 3 ( ) while still removing the need for a laptop.  "
 },
@@ -1157,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-3.html#sdcard-3-3",
   "type": "Figure",
-  "number": "11.1.1",
+  "number": "13.1.1",
   "title": "",
   "body": "  Snippet of SD card Software for the CPB\/CPX  "
 },
@@ -1166,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-3.html#sdcard-3-5",
   "type": "Figure",
-  "number": "11.1.2",
+  "number": "13.1.2",
   "title": "",
   "body": "  CPB wired to a micro SD card breakout board  "
 },
@@ -1175,7 +1211,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-3.html#sdcard-3-7",
   "type": "Figure",
-  "number": "11.1.3",
+  "number": "13.1.3",
   "title": "",
   "body": "  Example output when writing to the SD card  "
 },
@@ -1184,7 +1220,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-3.html#sdcard-3-9",
   "type": "Figure",
-  "number": "11.1.4",
+  "number": "13.1.4",
   "title": "",
   "body": "  Example Data file after writing to SD Card  "
 },
@@ -1193,7 +1229,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sdcard-4.html",
   "type": "Section",
-  "number": "11.2",
+  "number": "13.2",
   "title": "Setting up the Arduino",
   "body": " Setting up the Arduino  There is no setup for the Arduino other than making sure the SD card is formatted to FAT32 and that the breakout board is soldered properly to header pins. The wiring for an Arduino also requires 5 wires that I recommend doing while the system is powered off.    Micro SD card Breakout Board wired to an Arduino MEGA   In the figure above the dark green male-male wire goes from 5V to 5V , the orange male-male wire goes from GND to GND , the light green wire goes from 52 to CLK , the white wire goes from 50 to DO , the purple male-male wire goes from 51 to DI and the blue male-male wire goes from 53 to CS . The software to get this to work is on Github as usual and a snippet is shown in the figure below.    Arduino MEGA Software Snippet to send data to a micro SD card breakout board   You'll notice in this code that there is a #include <SD.h> line of code which imports the SD header file. In C++ and other compilation languages you have a .cpp or .c file which has all the code necessary to run somthing and a .h file which declares all the variables. In Python you don't have to declare a variable the language figures it out on its own but in Arduino you must tell the computer what type of variable you are using. In this case if you need an extra module you don't import it you include it. To include extra module you must click Sketch>Include Library>Manage Libraries... .    Installing New Arduino Libraries   After clicking that a new window will pop up where you can then search for \"SD.h\" and after scrolling down a bit you'll find the SD library to install. After installing it you will be able to Compile the software without any errors and Upload the script to your Arduino. The Serial monitor will work with this script as Serial.begin(115200) is in the setup routine and there are many Serial.print calls in the loop routine. If you open the serial monitor you should see the millis() time printed on the screen provided you set the baud rate to 115200.    Arduino Serial Monitor Output when writing to an SD Card   In this case the serial monitor also states that is is writing the DATA004.TXT . Everytime the code runs it will look for a new file that doesn't exist so that everytime you boot up the code it will create a new file. It ends up creating a lot of files but at least your data isn't overwritten. It also only outputs the internal timer because the Arduino does not have a built-in button but once we do other labs with pressure and acceleration it will be easy to send that data to the SD card as is shown in the code snippet below.    Code to send acceleration data to an SD card   The code to get an external accelerometer to work on an Arduino is dicussed in more detail in . Still, for the simple example of just writing time to an SD card, by simply unplugging the Arduino and placing the SD card into an SD card reader will show all the files on your laptop and opening the txt file itself will show all the data you just took.    Data files on a micro SD Card   At this point it is identical to to plot the data in whatever plotting environment you like.  "
 },
@@ -1202,7 +1238,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-3",
   "type": "Figure",
-  "number": "11.2.1",
+  "number": "13.2.1",
   "title": "",
   "body": "  Micro SD card Breakout Board wired to an Arduino MEGA  "
 },
@@ -1211,7 +1247,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-5",
   "type": "Figure",
-  "number": "11.2.2",
+  "number": "13.2.2",
   "title": "",
   "body": "  Arduino MEGA Software Snippet to send data to a micro SD card breakout board  "
 },
@@ -1220,7 +1256,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-7",
   "type": "Figure",
-  "number": "11.2.3",
+  "number": "13.2.3",
   "title": "",
   "body": "  Installing New Arduino Libraries  "
 },
@@ -1229,7 +1265,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-9",
   "type": "Figure",
-  "number": "11.2.4",
+  "number": "13.2.4",
   "title": "",
   "body": "  Arduino Serial Monitor Output when writing to an SD Card  "
 },
@@ -1238,7 +1274,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-11",
   "type": "Figure",
-  "number": "11.2.5",
+  "number": "13.2.5",
   "title": "",
   "body": "  Code to send acceleration data to an SD card  "
 },
@@ -1247,7 +1283,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sdcard-4.html#sdcard-4-13",
   "type": "Figure",
-  "number": "11.2.6",
+  "number": "13.2.6",
   "title": "",
   "body": "  Data files on a micro SD Card  "
 },
@@ -1256,16 +1292,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sdcard-5.html",
   "type": "Section",
-  "number": "11.3",
+  "number": "13.3",
   "title": "Assignment",
-  "body": " Assignment  This project is similar to the Data Acquisition project only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire computer screen) of your SD card open and mounted on your computer with your data file in it - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open as you press a button on the microcontroller if a button exists. Then show yourself removing the SD card and plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.   "
+  "body": " Assignment  This project is similar to the previous chapters only you must use method 5 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire computer screen) of your SD card open and mounted on your computer with your data file in it - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open as you press a button on the microcontroller if a button exists. Then show yourself removing the SD card and plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.   "
 },
 {
   "id": "serial-3",
   "level": "1",
   "url": "serial-3.html",
   "type": "Section",
-  "number": "12.1",
+  "number": "14.1",
   "title": "Serial Setup",
   "body": " Serial Setup  In order to read serial data from a microcontroller, the serial library must be installed in Python. The serial library allows the computer to communicate with the serial port on a computer and read data sent from the microcontroller. The steps to install the serial module is the same as installing numpy or matplotlib explained in Chapter . If using Spyder or command line the command is shown below.  !pip install serial  or  !pip3 install serial  if using Python3. If using Thonny, the process is the same as installing any other module by going to Tools > Manage Packages. The code to read serial data from the CPX\/CPB is shown below and can also be found on Github .    Example Serial code in Python   The code above is pretty advanced and uses a class called CPX to handle all of the serial communication as well as saving the text file and plotting. The __init__ function creates a filename and opens a serial port on \"\/dev\/ttyACM0\" which is a serial port for Linux. If using Windows the port will be something like \"COM3\" and if using Mac it will be something like \"\/dev\/tty.usbmodem14101\". The read function reads the serial data and saves it to a text file by first stripping the binary information, line feeds and converts the number of a 64 bit number. The extractdata function plots the data after the serial reading is done. The main part of the code is in the while loop at the bottom which continuously reads serial data for 10 seconds in this case. So basically, the CPX\/CPB is coded using Mu to send serial data to the computer just like the REPL in Mu and then the laptop program is run to save 10 second of data to a text file and then plot the data. The figure below shows the result of running the example script.   Example Serial Plot of Button Presses vs Time    "
 },
@@ -1274,7 +1310,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "serial-3.html#serial-3-7",
   "type": "Figure",
-  "number": "12.1.1",
+  "number": "14.1.1",
   "title": "",
   "body": "  Example Serial code in Python  "
 },
@@ -1283,7 +1319,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "serial-3.html#serial-3-8-5",
   "type": "Figure",
-  "number": "12.1.2",
+  "number": "14.1.2",
   "title": "",
   "body": "  Example Serial Plot of Button Presses vs Time  "
 },
@@ -1292,7 +1328,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "serial-4.html",
   "type": "Section",
-  "number": "12.2",
+  "number": "14.2",
   "title": "Extra Help",
   "body": " Extra Help  There are two great youtube videos on this topic. The first video discusses how to use the \"screen\" program on Ubuntu (Linux) to read serial data from a microcontroller without the use of Mu . This is a great starting point to see how serial communication is sent to a laptop via USB. The second video is a bit more advanced and shows how to use the serial library in Python to read serial data from a microcontroller . The video walks through the code explained in the previous sections and is a great starting point if video lectures are preferred to text  "
 },
@@ -1301,16 +1337,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "serial-5.html",
   "type": "Section",
-  "number": "12.3",
+  "number": "14.3",
   "title": "Assignment",
-  "body": " Assignment  This project is similar to the Data Acquisition project only you must use method 6 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire computer screen) of your computer actively reading serial data from your CPX\/CPB - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you press a button on the CPX\/CPB. Then show your computer actively reading and saving the data via serial. Finall,y show yourself plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.   "
+  "body": " Assignment  This project is similar to the previous chapters only you must use method 6 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a screenshot (entire computer screen) of your computer actively reading serial data from your CPX\/CPB - 20%  Include a snippet (5 lines) of your data file - 20%  Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you press a button on the CPX\/CPB. Then show your computer actively reading and saving the data via serial. Finall,y show yourself plotting the data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.   "
 },
 {
   "id": "voltage-3",
   "level": "1",
   "url": "voltage-3.html",
   "type": "Section",
-  "number": "13.1",
+  "number": "15.1",
   "title": "Setup",
   "body": " Setup  Here's my circuit all hooked up without a resistor in series. Two legs are connected to 3.3V and GND while the middle leg of the potentiometer is connected to pin A2.    Circuit Playground Express hooked up to a Potentiometer    As I said before, some potentiometers do not have enough resistance when turned all the way down. I suggest that you put a resistor in between the third leg and ground. Some experimenters have melted plastic or gotten really hot. One student even blew up a potentiometer. Here is my circuit with a resistor in series.    Potentiometer with a blue resistor in series   There is a relevant Adafruit Learn Tutorial to help with the analogio module but I'll explain the minimum required here to get some analog values plotted in Plotter and on your computer . First let's take a look at some simple example code to read an analog signal and plot it using the Plotter .    Code to read analog signal in CircuitPython   In the example code above, lines 1-3 again import the necessary modules with analogio being the new module here. Line 5 creates the analog object by attaching pin A2 to the analog function. Lines 7-9 then simple read the analog value and print it to Serial and the Plotter . Running this code on my laptop and turning the knob on the potentiometer produces this output. My potentiometer has a very large knob on the front and is easy to turn. Some potentiometers have a small screw on top that you need to turn with a screwdriver. Turning the screw or the knob results in chaning the resistance and therefore changing the voltage read by the CPX.    Reading an analog signal in Mu with Serial monitor and Plotter open   For this lab I want you to spin the potentiometer all the way to one side and then the other while recording time and the analog value. I then want you to plot the data with time on the x-axis and voltage on the y-axis. Remember to convert a digital output to voltage you just need to use the equation below where D is the raw value from the analog port. 3.3V is the range of the ADC and is the maximum value the ADC can represent.   After doing this experiment myself, this is the plot I obtain. The code is not provided as reading data and plotting has been discussed in a previous lab (See ). From the screenshot though you can see how I convert the digital output to an analog signal.   NOTE THAT ON LINE 6 IT READS   time -= time[0]   Notice the minus sign in front of the equal sign. That effects a lot.     Plotting analog signal in volts in Thonny   "
 },
@@ -1319,7 +1355,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-3.html#voltage-3-3",
   "type": "Figure",
-  "number": "13.1.1",
+  "number": "15.1.1",
   "title": "",
   "body": "  Circuit Playground Express hooked up to a Potentiometer  "
 },
@@ -1328,7 +1364,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-3.html#voltage-3-5",
   "type": "Figure",
-  "number": "13.1.2",
+  "number": "15.1.2",
   "title": "",
   "body": "  Potentiometer with a blue resistor in series  "
 },
@@ -1337,7 +1373,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-3.html#voltage-3-7",
   "type": "Figure",
-  "number": "13.1.3",
+  "number": "15.1.3",
   "title": "",
   "body": "  Code to read analog signal in CircuitPython  "
 },
@@ -1346,7 +1382,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-3.html#voltage-3-9",
   "type": "Figure",
-  "number": "13.1.4",
+  "number": "15.1.4",
   "title": "",
   "body": "  Reading an analog signal in Mu with Serial monitor and Plotter open  "
 },
@@ -1355,7 +1391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "voltage-3.html#voltage-3-15",
   "type": "Figure",
-  "number": "13.1.5",
+  "number": "15.1.5",
   "title": "",
   "body": "  Plotting analog signal in volts in Thonny  "
 },
@@ -1364,7 +1400,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "voltage-4.html",
   "type": "Section",
-  "number": "13.2",
+  "number": "15.2",
   "title": "Extra Help",
   "body": " Extra Help  I've made some youtube videos on first just creating the circuit and plotting the data and then another video where I write data to the CPX using method 3 .  "
 },
@@ -1373,7 +1409,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "voltage-5.html",
   "type": "Section",
-  "number": "13.3",
+  "number": "15.3",
   "title": "Assignment",
   "body": " Assignment   Your assignment for this lab is wire up the potentiometer, read the analog signal using the analog to digital converter on the CPX and plot it on your desktop computer. Remember to record both time and digital output as you rotate the potentiometer through the full range and then plot that as a function of time. Specific requirements are shown below.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your circuit showing the potentiometer wired up to an analog pin on your CPX\/CPB - 10%  Include a screenshot (entire computer screen) of Mu with the Plotter open showing the digital output of the potentiometer. The code in Mu also needs to also show the same analog pin as your potentiometer. - 10%  Based on the digital output from the potentiometer, compute the minimum and maximum voltage across the potentiometer. - 10%  Relate the voltage across your potentiometer to angle of the potentiometer in degrees and plot degrees on the x-axis and voltage across the potentiometer on the y-axis. Be sure to include the equation relating angle to voltage - 10%  Plot your digital output (raw potentiometer analog value) vs time make sure to rotate the potentiometer through the full range as when you take data - 10%  Then convert your digital output (Do) to voltage and plot that vs time - 10%  Finally convert your voltage to angle in degrees and plot that vs time - 20%  Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you rotate the potentiometer from it's maximum to minimum position. Then show yourself plotting the raw data on your computer - Pass\/Faill  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1382,7 +1418,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "setup.html",
   "type": "Section",
-  "number": "14.1",
+  "number": "16.1",
   "title": "Setup",
   "body": " Setup  To complete this lab, I chose pin A2 as shown in the Figure below.    CircuitPlayground Express connected to Pitot Probe and Transducer   At that point it's very simple to just print the analog signal in bits to Serial. I've done this below. The code is the same analog code that we've used in the past .    Analogio code in CircuitPython   The goal of the experiment is to take pitot probe data for 15 seconds with no wind, then 15 seconds of data with a fan on and then 15 seconds of no wind data. You'll need to use one of the datalogging methods (See ) to log both time and pitot probe analog value. Once you have that data, import the data on your desktop computer and convert the signal to windspeed as explained above. Using your data, create a plot of windspeed with time on the x-axis and windspeed on the y-axis. Some steps that might help you as you complete this project. First, have Mu plot the voltage coming from the pitot probe. If you've done everything right it will not be zero. The data sheet says there's an offset voltage of 2.5V so you will hopefully get something around 50,000 when you don't blow into the pitot probe. 50,000 multiplied by 3.3\/ is around 2.5V. Make a note of that average value you get so you can subtract it off later. Once you've verified you're reading the pitot probe correctly, blow into the pitot probe and using the Plotter or Serial, verify that the analog signal increases. If the signal decreases, it means the pressure taps on the pressure transducer are backwards and you need to flip them. Either that or just flip the sign in your plotting routine on your computer but flipping the tubes might be easier for you. Hopefully when you do this lab you will get some data that looks like this. In this Figure you'll see that when the fan wasn't running the signal was something around 49,800 which is fine. It means your bias is around 2.5 volts. Every pitot probe and circuit will be different. You can then convert this signal to voltage then and then pressure and then finally wind speed.    Example pitot probe data showing fan off\/on\/off scenario   The code to accomplish this is relatively simple and a portion of the code is shown below. You'll see that when I subtracted the bias from the voltage I also zeroed out any negative values. That is, any delta voltage less than zero was set to zero. A couple of things about this chart. The data from the pitot probe is super noisy which means attaching a complementary filter is probably a good idea provided you don't over filter the signal and run into aliasing issues (See ). You can see that I implemented an offline complementary filter and plotted it in the orange line which helps the noise issue quite a bit. You'll also notice that the noise is about 2 m\/s. It turns out that pitot probes are actually not very accurate lower than about 2 m\/s. They would be great for an airplane or you driving down the highway but they wouldn't be very good to take wind data outside on a calm day.    Example windspeed data showing complementary filter in Thonny   "
 },
@@ -1391,7 +1427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "setup.html#setup-3",
   "type": "Figure",
-  "number": "14.1.1",
+  "number": "16.1.1",
   "title": "",
   "body": "  CircuitPlayground Express connected to Pitot Probe and Transducer  "
 },
@@ -1400,7 +1436,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "setup.html#setup-5",
   "type": "Figure",
-  "number": "14.1.2",
+  "number": "16.1.2",
   "title": "",
   "body": "  Analogio code in CircuitPython  "
 },
@@ -1409,7 +1445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "setup.html#setup-7",
   "type": "Figure",
-  "number": "14.1.3",
+  "number": "16.1.3",
   "title": "",
   "body": "  Example pitot probe data showing fan off\/on\/off scenario  "
 },
@@ -1418,7 +1454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "setup.html#setup-9",
   "type": "Figure",
-  "number": "14.1.4",
+  "number": "16.1.4",
   "title": "",
   "body": "  Example windspeed data showing complementary filter in Thonny  "
 },
@@ -1427,7 +1463,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-4.html",
   "type": "Section",
-  "number": "14.2",
+  "number": "16.2",
   "title": "Extra Help",
   "body": " Extra Help  I explain the process of substracting off bias in this accelerometer video . That may help you figure out how to subtract off the bias of your initial pitot probe data. I've also done this pitot project before and have posted a video on Youtube about Converting Pitot Probe Data to Windspeed . There is a typo in the video though. V1 is supposed to have a sqrt()) . I also have a video about complementary filters and another about aliasing issues  .  "
 },
@@ -1436,7 +1472,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pitot-5.html",
   "type": "Section",
-  "number": "14.3",
+  "number": "16.3",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up a pitot probe and record time and raw analog signal from the pitot probe as you turn a fan on and off. My suggestion is you record at least 30 seconds of data with the fan off and then 30 seconds with the fan on and then again 30 seconds with the fan off. Specific requirements are shown below.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  In addition to the standard format above, you must also return the pitot probe you borrowed in class - Pass\/Fail  Include a photo of your circuit with your pitot probe wired up to an analog pin - 10%  Include a screenshot (entire computer screen) of Mu with the Plotter open showing the raw analog signal. The Mu code also needs to show the same analog pin as the circuit above - 10%  Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%  Convert your raw signal to windspeed and filter your signal using an offline complementary filter. Plot both unfiltered and filtered windspeed on the same plot and include a legend. Make sure you add the saturation filter to prevent a negative in the square root - 20%  What is the maximum windspeed that the CPX\/CPB can read? - 10%  The data sheet also suggests that you use a capacitor to filter the output. Select two resistors for a low pass filter such that the DC Gain would be equal to 1. Assume the total impedance of both resistors is . Also compute the cutoff frequency. - 10%  Appendix A - Video Details - Include 2 vidoes: First, film your entire team and your screen as you show the digital output change in the Plotter in Mu as the freestream airflow changes. Then, include a video of you plotting your raw digital output and converting that to windspeed on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1445,7 +1481,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-3.html",
   "type": "Section",
-  "number": "15.1",
+  "number": "17.1",
   "title": "Low Level Control",
   "body": " Low Level Control   Light  The light sensor on the CPX is just a simple photocell wired in series with a resistor. A photocell (or Light Dependent Resistor, LDR) is a sensor whose resistance changes significantly based on the intensity of light falling on its sensitive surface. In dimmer light, its resistance is high, and in brighter light, its resistance is low. By integrating it into a simple voltage divider circuit, Adafruit makes it possible to read the voltage across the photocell and correlate that to light level. There is a relevant Adafruit Tutorial on Photocells and the code required to measure the voltage if you'd like to read more about it .  The GND leg of the photocell is connected to pin A8. You can check the pin by looking at the graphic of an eye on the CPX and taking a look at the digital pin next to it. Since this circuit is connected to a voltage divider, the equations below can be used to relate the resistance in the photocell to the voltage being read by the ADC.   In this case is 3.3V and is a resistor value chosen by Adafruit. So, if you measure using the ADC on the CPX\/CPB you'll be able to solve for the resistance in the photocell . The resistance can then be used to determine the Lux value. Some sources suggest that Lux is a power law given by the equation below . where is the resistance of the photocell in Ohms. We've already learned how to access analog pins (See ) in a previous lab so just use the code from that lab and change the pin to A8 . Here's what my code looks like when I change the pin to A8. I also brought the Plotter up and moved my finger in front of the light to make sure the light was working. Verify that your CPX responds the same way before moving on.    Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)     Sound  The sound sensor uses the audiobusio library and creates a mic object using the (Pulse Density Modulation) PDM library. You have to set the sample rate and the number of bits to use to capture the data. We're going to set the bits to 16 to utilize the whole spectrum and then set the sample rate to 16 kHz. It's not quite 44.1 kHz like most modern microphones but it will do. After creating the mic object we have to compute some root mean squared values and thus two functions are defined before the while true loop in the code. The code itself is shown below. The code starts on line 22 because the first 22 lines are copyright from Dan Halbert, Kattni Rembor, and Tony DiCola from Adafruit Industries . I have edited the code a bit to fit my needs and uploaded my version to Github . In the code line 23-27 import standard modules as well as some new ones. The array module is used to create array like matrices. The math module is used to compute functions like cos, sin, and sqrt. Then of course the audiobusio module is used to create the mic object on line 42. Notice the two functions defined on 33 and 39 which create a function for computing the mean and for computing the normalized root mean square value of the data stream. Basically what's going to happen is we're going to record 160 samples as defined on line 160. So on line 43 we create a hexadecimal array (hexademical: base 16 hence the num_bits set to 16 on line 31) with 160 zeros. In the while true loop we're going to sleep for 0.01 seconds and then record some samples. Since we're sampling at 16 kHz the time it takes to record 160 samples is 160\/16000 = 16\/1600 = 1\/100 = 0.01 seconds. Since we're taking 160 samples we need to compute some sort of average which is why the normalized root mean square value is computed on line 48.    Reading sound code in CircuitPython   When I run this code and talk normally into the microphone, I get this output in the Plotter. You'll notice that the data is pretty noisy in the beginning but then there are noticeable humps in the data. This is me saying something random into the microphone at normal volume. It's possible we could increase the number of samples we take each loop by editing line 30 but that would slow down our code. So there's a tradeoff between filtering here and speed. That's something will investigate in some later labs.    Serial monitor and Plotter open in Mu showing digital output sound sensor     Temperature  The temperature sensor is actually a thermistor . A thermistor is basically a thermometer resistor which means the resistance depends on temperature. Since this thermistor on the CPX\/CPB is connected to an analog pin, you can read the analog signal coming from the thermistor just by reading the analog signal from pin A9. If you look for the thermometer symbol on the CPX you'll see pin A9. Therefore, it is possible to just use the analogio library and just read in the analog voltage but in order to convert to celsius and then fahrenheit you need to use some heat transfer equations to convert the analog signal to celsius.  In this case, the thermistor is wired in a voltage divider circuit in series with a resistor. For this circuit though, it turns out that the thermistor is actually wired to the high side of the voltage divider. That means when you measure pin A9 you're actually measuring the voltage across the series resistor rather than the thermistor. This means that the voltage across the series resistor must be inverted to compute the resistance across the thermistor. This is done using the equation below similar to the equation used for the photocell.   Where and . The equation above can be inverted to obtain the resistance in the thermistor . This means that the digital output from the analog to digital converter can be converted to voltage and then to resistance as has been done for various ADC labs in this textbook. Remember that the ADC on boad the CPX\/CPB is actually measuring the digital output . This can be converted to measured voltage as shown in the equation below If you absolutely must have the voltage across the thermistor you simply use Kirchhoff's Voltage Law given in the equation below So the process is to first read the digital output from the ADC, convert that to voltage, then use the voltage to compute the resistance in the thermistor and finally use the resistance to compute the temperature in Kelvin. In order to convert measured voltage to resistance, we can rearrange the equations above to get the equation below Note that . Once you have the resistance from the thermistor, you can use a modified version of the Stein-Hart to convert the resistance to temperature in Celsius.   where is a heat transfer coefficient specific to the bulk semiconductor material over a given temperature range of interest and is the nominal temperature of the semiconductor in Kelvin. Note that in the equation above, the output is in Kelvin.  If this all seems complex, the folks at Adafruit have done it again with an adafruit_thermistor module. If you head over to their github on this module you'll see the relevant conversion under the definition temperature which at the time of this writing is on line 127 . The Adafruit Learn system also does a bit of work to explain the conversion from voltage to temperature but understand that the tutorial on that page assumes that the thermistor is on the low (grounded) side and thus the voltage divider equation is different. If you look at the adafruit_thermistor module you'll see that there is a self.high_side boolean that changes between either a thermistor on the high side or the low side. In this case, for the built-in A9 thermistor the thermistor is on the high side. Given all this complexity, we will just appreciate the simplicity of the code below which uses the adafruit_thermistor module. I've also created a simple version of the code to read the analog value of the thermistor and posted it on my Github . Note the code below is from a much earlier and simpler version of my code which only reads the temperature in Celsius. The code on my Github has more functionality such as printing the raw ADC value and the voltage.     CircuitPython code to read the onboard thermistor   For the code above, lines 1-3 import the relevant modules and then line 8 create the thermistor object. You'll notice the input arguments are the pin which is A9 as well as the resistor values which are in series with the thermistor. These resistors are soldered to the PCB so they are fixed at . The 25 is for the nominal resistance temperature in celsius of the thermistor and 3950 is the b coefficient which is a heat transfer property. Running this code and then placing my finger on the A9 symbol causes the temperature to rise just a bit. You'll notice the temperature rise quite quickly when I place my finger on the sensor but when I remove the sensor it takes some time before the sensor cools off. This has to do with the dynamic response of the sensor. We'll discuss this in some future labs on dynamic measurements. For now you can move on to the accelerometer.    Serial monitor and Plotter open in Mu showing temperature in Celsius     Accelerometer  The accelerometer is a 3-axis sensor. As such, it is going to spit out not just 1 value but 3 values. Accelerations in x,y and z or North, East, Down or Forward, Side to Side, Up and Down. Since it's reading 3 values we can't just read 3 analog signals (we can but the accelerometer chip design didn't want to do that) so instead we're going to use the I2C (I like \"Indigo\" and 2C like \"Squared C\". So \"I Squared C\". Not \"12C\" or \"one two C\". It's \"I squared C\") functionality. I2C is a type of serial communication that allows computers to send strings rather than numbers. I2C is beyond the scope of this course but just know it's a type of serial communication that uses hexadecimal addresses. It's a much more complex form of communication but since it's a standard form of communication, we can just use the busio module which contains the I2C function.    CircuitPython code to read the onboard accelerometer   In this code we see alot more imports than normal. In addition to the standard time, board and digitalio modules we need the busio module and the adafruit_lis3dh . You might think that LIS3DH is a very weird name for an accelerometer but it's actually the name of the chip on your CPX. The chip itself is very standard and is well documented on multiple websites. Here's one from ST . You can also buy the chip on a breakout board from Adafruit and then of course the Adafruit Learn site has plenty of tutorials on reading Accelerometer data in CircuitPython . As always I've learned what I can from the relevant tutorials and created my own simple version to read the accelerometer data and posted it to Github . I digress, lines 8-11 of the code do alot. It first uses the SCL and SDA pins to set up an I2C object which establishes serial communication to the accelerometer. Line 9 creates an interrupt which is beyond the scope of this course. Finally, line 10 creates the actual accelerometer object by sending it the I2C pins, the hexadecimal address in the I2C protocol and finally the interrupt pin. Line 11 then sets the range. Line 14 in the while loop is where the x,y and z values of the accelerometer are read and then promptly printed to Serial on line 15. If I run this code and shake the sensor a bit I can get all the values to vary. If you put the CPX on a flat surface, the Z axis will measure something close to 9.81. The units of the accelerometer are clearly in .   Serial monitor and Plotter open in Mu showing accelerometer output in    Note that the accelerometer can be used to obtain pitch and roll angles in benign environments. This is done via trigonometry. You'll notice that when you point the CPX directly at you with the cable pointing up the x axis reads around 0 and the y axis reads around gravity. If you then rotate the sensor so that the cable is coming out of the left side of the CPX, the x axis is reading about gravity while the y axis is zero. Similarly, rotating the CPX in the X\/Z plane can be done by rotating the USB cable where it plugs into the CPX. In this case we can ignore the Y axis data. If you print the raw accelerometer data, you'll notice that when you place the CPX directly onto a flat surface, the x and y axes read a value around 0, while the z axis reads around gravity (9.81 ). If you then rotate the sensor clockwise 90 degrees, the x axis is reading about gravity while the z axis is now zero. This means we can form two triangles (one for the X\/Z plane and another for the Y\/Z plane) and get the angles of the CPX\/CPB using the equations below.  In the equations above, is the accelerations along all 3 axes. Shorthand is used for and . The notation is used to indicate a normalization of the vector. That is where is the norm of a 3 dimensional vector . The derivation for these angles from accelerometers is quite involved and requires the knowledge of rotation matrices. That derivation is in another textbook called Aerospace Mechanics .   "
 },
@@ -1454,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#light-sensor-5",
   "type": "Figure",
-  "number": "15.1.1",
+  "number": "17.1.1",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing digital output of pin A8 (light sensor)  "
 },
@@ -1463,7 +1499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#modules-3-3-3",
   "type": "Figure",
-  "number": "15.1.2",
+  "number": "17.1.2",
   "title": "",
   "body": "  Reading sound code in CircuitPython  "
 },
@@ -1472,7 +1508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#modules-3-3-5",
   "type": "Figure",
-  "number": "15.1.3",
+  "number": "17.1.3",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing digital output sound sensor  "
 },
@@ -1481,7 +1517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#temperature-sensor-8",
   "type": "Figure",
-  "number": "15.1.4",
+  "number": "17.1.4",
   "title": "",
   "body": "  CircuitPython code to read the onboard thermistor  "
 },
@@ -1490,7 +1526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#temperature-sensor-10",
   "type": "Figure",
-  "number": "15.1.5",
+  "number": "17.1.5",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing temperature in Celsius  "
 },
@@ -1499,7 +1535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#accelerometer-3",
   "type": "Figure",
-  "number": "15.1.6",
+  "number": "17.1.6",
   "title": "",
   "body": "  CircuitPython code to read the onboard accelerometer  "
 },
@@ -1508,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-3.html#accelerometer-4-11",
   "type": "Figure",
-  "number": "15.1.7",
+  "number": "17.1.7",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing accelerometer output in  "
 },
@@ -1517,7 +1553,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-4.html",
   "type": "Section",
-  "number": "15.2",
+  "number": "17.2",
   "title": "High Level Control",
   "body": " High Level Control  Alright so we've learned the hard way for all the sensors using low level control of the various sensors. Let's now import the simple adafruit_circuitplayground.express module. The Adafruit Learn site offers pretty much every example code snippet you'd ever need for all the different push buttons and sensors on the CPX . Head over there if you ever need something outside of the scope of this text. As I said before, the main module you need to import is done by adding the following to the top of your code  from adafruit_circuitplayground.express import cpx   Note that if you have a CPB you need to change that line to adafruit_circuitplayground.bluefruit import cpb. Then everywhere you see cpx you replace with cpb. Also, keep in mind that you will need to install modules onto your CPX\/CPB (See ). Assuming you have the right module, the line above will import the cpx module into your working code. From here the commands to read different things are relatively simple. Here are the commands for all the various sensors  light = cpx.light x,y,z = cpx.acceleration temperature = cpx.temperature  There unfortunately is no simple module for the sound sensor on the CPX. You'll still need to use the low level control no matter what. However, if you get the Circuit Playground Bluefruit there is a simple way to read the sound level using cpb.sound_level . Implementing the various sensors into a while loop on my CPX looks like this.    Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl   I left out the low level sound sensor stuff just because it kind of messes with the simplicity of the code above. The adafruit_circuitplayground.express module outputs just as before except for the light sensor. In the low level control we simply computed the voltage across the photocell but the adafruit_circuitplayground.express module outputs data in Lux . Recall, if you have a CPB you can use the high level cpb.sound_level command as shown in the Figure below. Notice that the import command has changed to adafruit_circuitplayground.bluefruit import cpb .   Example High Level Sound Level on the CPB    "
 },
@@ -1526,7 +1562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-4.html#modules-4-7",
   "type": "Figure",
-  "number": "15.2.1",
+  "number": "17.2.1",
   "title": "",
   "body": "  Serial monitor and Plotter open in Mu showing light, temperature and acceleration with high level contorl  "
 },
@@ -1535,7 +1571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "modules-4.html#cpb-sound-level",
   "type": "Figure",
-  "number": "15.2.2",
+  "number": "17.2.2",
   "title": "",
   "body": "  Example High Level Sound Level on the CPB  "
 },
@@ -1544,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-5.html",
   "type": "Section",
-  "number": "15.3",
+  "number": "17.3",
   "title": "Extra Help",
   "body": " Extra Help  If you need extra help on this assignment I have uploaded a youtube video where I read the temperature and accelerometer from the CircuitPlayground Bluefruit .  "
 },
@@ -1553,7 +1589,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "modules-6.html",
   "type": "Section",
-  "number": "15.4",
+  "number": "17.4",
   "title": "Assignment",
   "body": " Assignment   Using either low or high level control , take at least 60 seconds of data using the microphone, photocell, accelerometer and thermistor on your CPX\/CPB. Make sure to log time and the raw sensor value at 1Hz or faster. To make the project more challenging, try and log all sensor data all at once (although this isn't a strict requirement).   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include 4 screenshots (entire computer screen) of Mu with the plotter open showing example data from each sensor. - 10% per photo  Include 4 plots with time on the x-axis and sensor data on the y-axis (No screenshots) - 10% per plot  Appendix A - Video Details - Filmd yourself and your entire screen with the Plotter open in Mu as you demonstrate the output of all 4 sensors. The values on the Plotter must change due to your inputs - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1562,7 +1598,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "acceleration-3.html",
   "type": "Section",
-  "number": "16.1",
+  "number": "18.1",
   "title": "Setup",
   "body": " Setup  The code for this lab is to have the CPX log acceleration. So when you're done with this lab you will hopefully have a data file with 4 columns of data: time, acceleration x, acceleration y, acceleration z. The code I'm using is the same as the lab on accelerometers (See ). I'm using method 1 for datalogging so I'm just having it print to Serial (See ).    Accelerometer code used print acceleration to Serial   The code on Github has a sleep of 0.1 seconds but make sure to have the CPX take data as fast as possible. A sleep of 0.01 is probably good. You will probably get a lot of data points for this experiment. Once your code is working, place the CPX on your dashboard with one of the axes of the accelerometer pointing towards the nose of your car. Try and place the CPX on as flat a surface as possible. You can use 3M tape or duct tape or hot glue. Just make sure you don't damage your car and make sure the CPX is well anchored to the dashboard. This way when the car accelerates, the CPX will measure that acceleration. Note, if you'd like to do this with a bike or some other motor vehicle that is just fine. Just make sure to take pictures and videos when you do the experiment. I suggest you do this in a parking lot for safety reasons. I am not responsible for any damage done to your vehicle or anyone else because you are doing this project. Once you have the CPX anchored, accelerate your vehicle to 20 mph (or however fast you are comfortable driving) and then slam on the brakes. Once your data is logged, plot your acceleration on your desktop computer. After doing the experiment myself, this is what my acceleration plot looks like. I had to clip the time series to only include the part from where I accelerated and decelerated quickly. I also subtracted the first data point from each accelerometer axis to zero it out and subtract off the bias. Since I took some data for a bit before I started moving I could have averaged the first few data points to obtain the bias. Instead just to get something working properly I went ahead and just used the first data point.    Example acceleration curves coming from accelerating and decelerating in a car   It's clear from the plots that the z axis was oriented towards the nose of the car. In this case I am going to have to flip the z-axis since the beginning is acceleration and the end is deceleration. I also through the acceleration in the z-axis through a complementary filter with a filter value of 0.25. I think it makes the acceleration profile a bit less jumpy. I then used a Reimann sum and integrated the acceleration data points to get velocity. The equation itself looks like this:   This of course assumes the initial velocity is zero. Notice that I take the individual acceleration points and subtract off the bias. Computing that summation by hand is pretty trivial but getting the code to work is another story. For a Reimann sum we're going to use a for loop where we loop through all the data points. The good news is that the time between data points is the same so we can just treat that as a constant. Once you have acceleration integrated you can plot velocity. This is what mine looks like after I did the experiment. According to my plot I accelerated to about 45 mph. I guess I can't lie in this instance. I said to accelerate to 20 mph but I really wanted to see a large change in acceleration so I punched it. Notice though that at the end of the time series the velocity is negative. This is because as time goes on you are integrating error and the error just gets worse.    Integrating Acceleration and plotting Velocity in Thonny   This is why speedometers are used. They are just much more accurate than integrating acceleration which is prone to bias and drift. This folder on Github has some codes that will help with your project . Note, that some of those codes have a bias filter, truncation filter and complementary filter. That code may not work for you and you may need to tune the filters for your specific data set. Make sure to understand what each filter does and think about how it applies to your data set otherwise your code may throw an error due to the differences in your data set.   "
 },
@@ -1571,7 +1607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "acceleration-3.html#acceleration-3-3",
   "type": "Figure",
-  "number": "16.1.1",
+  "number": "18.1.1",
   "title": "",
   "body": "  Accelerometer code used print acceleration to Serial  "
 },
@@ -1580,7 +1616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "acceleration-3.html#acceleration-3-5",
   "type": "Figure",
-  "number": "16.1.2",
+  "number": "18.1.2",
   "title": "",
   "body": "  Example acceleration curves coming from accelerating and decelerating in a car  "
 },
@@ -1589,7 +1625,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "acceleration-3.html#acceleration-3-8",
   "type": "Figure",
-  "number": "16.1.3",
+  "number": "18.1.3",
   "title": "",
   "body": "  Integrating Acceleration and plotting Velocity in Thonny  "
 },
@@ -1598,7 +1634,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "acceleration-4.html",
   "type": "Section",
-  "number": "16.2",
+  "number": "18.2",
   "title": "Extra Help",
   "body": " Extra Help  I explain how to get mean and standard deviation on Youtube if you need help subtracting the bias from your data .  "
 },
@@ -1607,7 +1643,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "acceleration-5.html",
   "type": "Section",
-  "number": "16.3",
+  "number": "18.3",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to find a safe place to accelerate and decelerate your vehicle while recording acceleration data on the Circuit Playground. I also want you to take GPS data using PhyPhox so you can compare data. I suggest using a temporary adhesive to secure your CPX\/CPB to your dashboard (making sure it's level) and have a passenger in the car to help you record data as well as operate Phyphox and verify that you have a GPS lock. For safety's sake I suggest finding an empty parking lot and only accelerating to 20 mph or less.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a picture of your car and your passenger that is helping you record data. In your description write what speed you achieved in your experiment (If your passenger is in this class you must do the experiment twice and get two different individual sets of data) . - 10%  Include a photo of your CPX\/CPB mounted to your vehicle indicating which axis of acceleration is pointing forward - 10%  Plot one axis of your accelerometer data vs time which clearly indicates when you accelerated and decelerated. In your description be sure to explain which axis you are plotting and any signal conditioners you applied to get your clean signal (Again, if your passenger is also taking this class, you must do the experiment twice and get two different individual\/unique sets of data). . - 20%  Integrate acceleration and plot velocity as a function of time. Comment on whether or not the maximum velocity is the same as what you did in your actual car. Make sure to superimpose your Phyphox GPS speed on top of your plot to compare. You may need to have your raw GPS coordinates converted to velocity if it doesn't log speed natively. - 20%  Integrate the velocity and compute position. Plot your position as a function of time and include that in your report. Also include the position of your car using your GPS coordinates keeping in mind that you may need to convert your Lat\/Lon coordinates to meters. Although you didn't measure how far you went, comment on the accuracy of the plot and whether or not you think you traveled that far especially given the superimposed data from your GPS. - 20%  Appendix A - Video Details - Include 2 videos: The first is of yourself and your passenger in the car taking data showing the Plotter open in Mu, the second is plotting the acceleration data and converting that to velocity (Note, if your partner is in this class they must submit their own videos with their own data) . - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.     "
 },
@@ -1616,7 +1652,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pedometer-3.html",
   "type": "Section",
-  "number": "17.1",
+  "number": "19.1",
   "title": "Gathering Accelerometer Data",
   "body": " Gathering Accelerometer Data  First we need to make sure we can gather accelerometer data. The low level accelerometer code is relatively simple and is explained in the Modules lab ( ). In order to gather the accelerometer data while running you'll need to be able to operate the CPB\/CPX untethered from a computer. This means you have to use Method 3,4 or 5 (See , or . Remember that Method 1 and 2 require a computer and running with a computer would be difficult if not impossible. Method 3 requires a lot of setup to log data directly to the disk and Method 5 needs extra hardware. So, for this lab we will just use the Bluetooth module to send data directly to your phone. Note that if you have a CPX you will have to use Method 3 or 5. The best way to do this experiment is with a partner. Have the CPB\/CPX measure acceleration and place the entire device with a battery pack inside the runners pocket. Then have your partner connect to the CPB with the Adafruit Connect app and log data using the UART and Export to txt function. Remember not to run too far because the Bluetooth signal distance is only about 30 feet. See if you can combine the Bluetooth code and the acceleration code into one code to send time and the 3-axis accelerometer data. If you're still having trouble, code for this lab can be found on Github . Note if you have a CPX you will need to combine the accelerometer code with the Method 3 version of data logging.  Running the CPX\/CPB untethered does require a few extra steps besides writing the code. The first step is obviously to write the software that you want to run on the CPX\/CPB. I recommend testing the code extensively while tethered to the computer so you can debug using the REPL. Once you're certain the code works you can disconnect the CPX\/CPB and connect it to a battery pack. Once again I recommend testing the code with the battery back before you perform the experiment. In this experiment I used an external USB battery bank as shown in the photo below. My code also utilizes the neopixel library to turn on some LEDs.    CircuitPlayground Bluefruit connected to an external battery pack   "
 },
@@ -1625,7 +1661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pedometer-3.html#pedometer-3-4",
   "type": "Figure",
-  "number": "17.1.1",
+  "number": "19.1.1",
   "title": "",
   "body": "  CircuitPlayground Bluefruit connected to an external battery pack  "
 },
@@ -1634,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pedometer-4.html",
   "type": "Section",
-  "number": "17.2",
+  "number": "19.2",
   "title": "Computing Number of Steps: Post-Processing",
   "body": " Computing Number of Steps: Post-Processing  Using the hardware and software defined above I had my partner run down the hallway after I ensured there was a solid connection between the CPB and my smart phone. I then exported the data to a text file and plotted the raw data using Thonny.    Counting steps in Thonny   Upon inspecting the raw data it seems as though my partner began running around 68 seconds. At about 80 seconds my partner reached the end of the hallway and the CPB got a bit out of range. As such there is a gap in the data. The accelerometer streams return once my partner begins running back down the hallway. In order to simply look at the data of one run the data was truncated from 69 seconds to 79 seconds as shown in the Figure below.    Counting step in truncated data in Thonny   In order to count steps the algorithm is fairly simple and not very robust but it does at least give you a sense of how data can be analyzed to obtain steps. First, the norm of the accelerometer data is computed and then the norm is substracted by 9.81 . When glancing at the data the steps seem to be taken when the result of the norm-9.81 goes from positive to negative. It is possible that there is some aliasing in the data but for a simple experiment like this a rudimentary algorithm can be created. First the STEP counter is set to zero and then a for loop is created to loop through the data. When the data goes from positive to negative a STEP is created. This is done by using a RESET flag and checking whether or not the data becomes positive. This algorithm computes 26 steps which seems reasonable for the length of the hallway.  "
 },
@@ -1643,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pedometer-4.html#pedometer-4-3",
   "type": "Figure",
-  "number": "17.2.1",
+  "number": "19.2.1",
   "title": "",
   "body": "  Counting steps in Thonny  "
 },
@@ -1652,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pedometer-4.html#pedometer-4-5",
   "type": "Figure",
-  "number": "17.2.2",
+  "number": "19.2.2",
   "title": "",
   "body": "  Counting step in truncated data in Thonny  "
 },
@@ -1661,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pedometer-5.html",
   "type": "Section",
-  "number": "17.3",
+  "number": "19.3",
   "title": "Computing Number of Steps: Online",
   "body": " Computing Number of Steps: Online  The benefit of post-processing in Python is that the CPX\/CPB run a almost identical derivative of Python called CircuitPython. This means that almost any line of code used in Python can be copied directly onto the CPX\/CPB as shown in the Figure below.    CircuitPython code to count steps on the CircuitPlayground Express   You can see that the STEPS counter is set to zero before the infinite while loop and then after connection the RESET flag and bias value are checked for a switch from positive to negative. Some code is added to change the pixels on the CPB so that the user can see a step change. The raw data is still transmitted via bluetooth but it would be a neat exercise to have the CPB transmit the number of steps to a cell phone for instant feedback of the number of steps.  "
 },
@@ -1670,7 +1706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pedometer-5.html#pedometer-5-3",
   "type": "Figure",
-  "number": "17.3.1",
+  "number": "19.3.1",
   "title": "",
   "body": "  CircuitPython code to count steps on the CircuitPlayground Express  "
 },
@@ -1679,7 +1715,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pedometer-6.html",
   "type": "Section",
-  "number": "17.4",
+  "number": "19.4",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to run down the hallway while wearing your CPX\/CPB and record acceleration. The acceleration signal will then be processed to compute the number of steps you took. While running, be sure to make a note on the number of steps you are taking.   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB with its own battery pack - 40%  Include a plot of accelerometer data vs time showing stars where the peaks are. In your description be sure to comment on how many steps the code outputted vs how many steps you took during your experiment - 40%  Appendix A - Video Details - Include 2 videos: First, include a cell phone video of your partner placing the system in a pocket and running or walking, then show a video with yourself and your screen as you plot the acceleration vs time with peaks shown on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1688,7 +1724,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "photocell-3.html",
   "type": "Section",
-  "number": "18.1",
+  "number": "20.1",
   "title": "Taking Data",
   "body": " Taking Data  For this lab you need to wire up the circuit, take data at the low and high value of the photocell by covering the sensor with your finger and then shining a light on it and plotting the entire data set on your desktop computer. The wiring diagram was already presented and when I did the lab my example circuit is shown below. An alligator clip is connected to 3.3V on the CPX and the other end is connected to either end of the photocell. The photocell is then in series with a resistor and the other end of the resistor is connected to GND via another alligator clip. Finally, another alligator clip from pin A2 is plugged into the same row on the breadboard as the resistor and photocell. Again any value will do for the resistor. I used a 10k resistor but you can use a 1k or even a 330 resistor and it will work just fine. The only thing that will change is the range of voltages you get across the photocell. Recall that the equations for the photocell in a voltage divider are in .     CircuitPlayground Express connected to a Photocell   Once you have the circuit wired properly you can use the same code as the potentiometer lab . The example screenshot below shows the analog signal below showing a high spike where I placed a flashlight over the photocell and then a low spot where I covered the photocell with my finger. Remember that you can use any Analog pin on the CPX provided you change line 5 to the same pin.    Serial monitor open showing Photocell output in Mu   Once you've gotten some example data you can plot the result as you did for the potentiometer lab. Here's what your plot may look like.    Photocell data plotted in Thonny   "
 },
@@ -1697,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-3.html#photocell-3-3",
   "type": "Figure",
-  "number": "18.1.1",
+  "number": "20.1.1",
   "title": "",
   "body": "  CircuitPlayground Express connected to a Photocell  "
 },
@@ -1706,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-3.html#photocell-3-5",
   "type": "Figure",
-  "number": "18.1.2",
+  "number": "20.1.2",
   "title": "",
   "body": "  Serial monitor open showing Photocell output in Mu  "
 },
@@ -1715,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-3.html#photocell-3-7",
   "type": "Figure",
-  "number": "18.1.3",
+  "number": "20.1.3",
   "title": "",
   "body": "  Photocell data plotted in Thonny  "
 },
@@ -1724,7 +1760,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "photocell-4.html",
   "type": "Section",
-  "number": "18.2",
+  "number": "20.2",
   "title": "Statistics of your Data",
   "body": " Statistics of your Data  If you allow the light source to be constant you'll notice that the data is quite noisy. What I'd like you to do for part 2 of this lab is take 1000 data points with the photocell with as constant of a light source as possible. Do this for three different light ranges. Low Light, ambient light and then sunlight if you're outside. If you're completing this assignment late you can use a flashlight as your third light source. With the three different data streams, create a histogram of the data with appropriate labels and compute the mean, median, and standard deviation of the data stream. Here is my example code showing code to get mean, median, and standard deviation as well as create the histogram. Notice in my code I imported the statistics module to compute the mode. Although it worked in my code, it's not typical to compute the mode of a continuous variable because often times you will not ever get the same value twice. Still, feel free to compute the mode if you so desire.    Histogram of photocell data   Again make sure to convert to voltage and then Lux before you plot that way you can see what the noise level is in volts and Lux. When I ran this experiment for a second time my CPX started and stopped 3 separate times. You'll see in the time series plot below that the voltage dipped in the first set and the second data set had some weird bumps probably from me changing tabs on my chrome tab. The photocell was close to my computer so that effected it. Thankfully the 3rd data set looked pretty good.    Example of bad photocell data   The only problem with the 3rd data set is that I put my hand over it for testing purposes. Because of that I had to remove those outliers. To do that I computed the current mean and standard deviation and then threw out all data points that were 3 standard deviations away from the mean. The code looks like this.  ##COMPUTE CURRENT MEAN AND DEV mean = np.mean(voltage) dev = np.std(voltage) print(mean,dev) time = time[voltage > mean - 3*dev] voltage = voltage[voltage > mean - 3*dev] time = time[voltage < mean + 3*dev] voltage = voltage[voltage < mean + 3*dev] ###COMPUTE NEW MEAN,STD mean = np.mean(voltage) dev = np.std(voltage) print(mean,dev)  Once I did all that clean up I was able to get a nice time series plot of my data.    Photocell data plotted as a histogram with Gaussian Distribution plotted on top   I also was able to plot the Normal Gaussian Distribution on top of the histogram. You can see that in the left plot in orange. The code to do that is shown below where the 72 in the plot is the \"height\" of the histogram. Note that your histogram will have a different height and you will need to get that specifically from your plot.  ###COMPUTE THE NORMAL DISTRIBUTION x = np.linspace(-3*s+mu,3*s+mu,100) pdf = 1.0\/(s*np.sqrt(2*np.pi))*np.exp((-(x-mu)**2)\/(2.0*s**2)) * (s*np.sqrt(2*np.pi)) * 72  The equations above make a time series from +-3 standard deviations from the mean and then plot the PDF of a normal Gaussian distribution. The only extra thing you have to do is multiply by (s*np.sqrt(2*np.pi)) * 72 which first causes the height of the PDF to be 1 and then multiply by 72 which again is the height of the histogram which will be different for your system.  "
 },
@@ -1733,7 +1769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-4.html#photocell-4-3",
   "type": "Figure",
-  "number": "18.2.1",
+  "number": "20.2.1",
   "title": "",
   "body": "  Histogram of photocell data  "
 },
@@ -1742,7 +1778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-4.html#photocell-4-5",
   "type": "Figure",
-  "number": "18.2.2",
+  "number": "20.2.2",
   "title": "",
   "body": "  Example of bad photocell data  "
 },
@@ -1751,7 +1787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "photocell-4.html#photocell-4-9",
   "type": "Figure",
-  "number": "18.2.3",
+  "number": "20.2.3",
   "title": "",
   "body": "  Photocell data plotted as a histogram with Gaussian Distribution plotted on top  "
 },
@@ -1760,7 +1796,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "photocell-5.html",
   "type": "Section",
-  "number": "18.3",
+  "number": "20.3",
   "title": "Extra Help",
   "body": " Extra Help   Creating a histogram in Python is fairly simple as explained above but I have a Youtube Vide to supplement this tutorial. I also have another video where I get mean and median values for accelerometer data .  "
 },
@@ -1769,7 +1805,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "photocell-6.html",
   "type": "Section",
-  "number": "18.4",
+  "number": "20.4",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to build another voltage divider circuit using a photocell and measure the voltage across the photocell using the analog to digital converter on the CPB\/CPX. First take 30 seconds of data where you cover the photocell with your hand and also shine a flashlight on it. This will represent the min and max values of Lux as well as the min and max values of the resistance in your photocell. After that you are to run some statistics on the photocell by taking 1000 data points three separate times at three different light levels. The three light levels are low light (hand covered), ambient light (office light or shade light), and high light (flashlight or sunlight). For each set of 1000 data points, create a histogram, compute the mean, median, standard deviation and plot a Gaussian distribution curve on top of the histogram.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your circuit and write the value of the resistor that is in series with your photocell. Again, the value of the resistor can be whatever you want. Also, explain how you varied the light levels - 10%  Plot voltage, resistance (converted from voltage) and Lux (converted from resistance) of the photocell vs time for your first 30 seconds of data where you randomly vary light conditions. - 20%  Include the mean, median, and standard deviation of all light levels in Lux - 10%  Using the mean, standard deviation and number of samples, compute your 90% confidence interval for your 3 light levels - 10%  Similarly, using the mean and standard deviation of your low light level, compute the probability that you would get a reading greater than the mean plus 1 standard deviation of your low light level data set . Remember to show your work - 10%  Include 3 histogram plots of low light, ambient light and high light levels in units of Lux. On top of the histogram plot the normal Gaussian distribution to see how close your histogram is to a Gaussian distribution - 20%  Appendix A - Video Details - Film yourself and your entire screen with the Plotter open in Mu as you change the light level by putting your hand over the photocell and then shining a light on the photocell. Then show yourself plotting a histogram - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1778,7 +1814,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "servo-3.html",
   "type": "Section",
-  "number": "19.1",
+  "number": "21.1",
   "title": "Moving the Servo",
   "body": " Moving the Servo  To start, make sure you follow the wiring diagram in the introduction and wire up your servo to the CPX\/CPB. In my circuit I just picked pin A2 since I've been using it so much in the past. Very important: It is recommended to power a servo through an external power supply instead of the CPX. Servos can draw a lot of current and the CPX although it supports 5V can only provide so much power (P). Remember that P = VI so if P is low it means current is low. If the servo pulls more current than the CPX can provide the CPX will brown out which means it will go into a safe-mode setting. If you have the AA power supply you may consider doing that. For small servos you hopefully won't have any issues. However, on the off chance your servo does put you into safe mode I recommend making small movements in your code to drive your servo. For example, if moving the servo directly from 0 to 180 puts your system into safe mode, try moving from 0 to 45 degrees instead.    Photo of a servo connected to a CircuitPlayground Express  As I said before, a servo takes in a square wave. The square wave has a duty cycle in units of microseconds. If you send a roughly 500 us square wave to a servo it will rotate all the way to the left. If you send a roughly 2500 us signal to the servo, it will turn all the way to the right. The code to send PWM signals has been thoroughly explained in the Adafruit Learn system . I also have a simple servo.py script on Github .   CircuitPython code to move a servo  In this code as usual the top 3 lines are used to import the necessary modules. The pulseio module is used here to create a servo object on line 6 by connecting to pin A2. Make sure to change the pin to whatever pin you have the signal wire hooked up to. Lines 9-12 create a function that pulse in milliseconds and compute the duty cycle of PWM signal. Lines 16-19 then kick off an infinite while loop where a 800 us signal is sent to the servo and then a 2000 us signal is sent using a for loop which starts on line 16. You'll see servo command on line 18 which is responsible for sending the microsecond signal to the servo. The function servo_duty_cycle converts the pulse in milliseconds to a duty cycle. The value is then passed to the attribute of the servo object servo.duty_cycle. If you put this code on the CPX and run the code you will hopefully see your servo turning left and right in 1 second intervals.  Besides making the servo move back and forth I'd like you to vary the pulses on line 16 SLOWLY until the servo can't move any farther. This line of code is a for loop which loops through the array currently showing [0.8,2.0]. If you change that array to [0.9,1.2,1.5,1.8] the servo will move to a pulse in milliseconds of 0.9, 1.2, 1.5 and then 1.8 . The for loop is a great way to loop through multiple commands. Using this array, determine the minimum pulse you can send to the servo and the maximum pulse you can send to the servo. If the servo makes a funny noise it means you sent a signal outside the bounds so try a different signal. Hence the need for moving the pulse signal slowly. If you change the array to just 1 number [0.8] the servo will just move to 1 angle and stay there forever. NOTE THAT IN CIRCUITPYTHON VERSION 7.0.0 YOU HAVE TO USE THE PWMIO LIBRARY INSTEAD OF THE PULSEIO LIBRARY .  "
 },
@@ -1787,7 +1823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-3.html#servo-3-2-2",
   "type": "Figure",
-  "number": "19.1.1",
+  "number": "21.1.1",
   "title": "",
   "body": "  Photo of a servo connected to a CircuitPlayground Express  "
 },
@@ -1796,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-3.html#servo-3-2-7",
   "type": "Figure",
-  "number": "19.1.2",
+  "number": "21.1.2",
   "title": "",
   "body": "  CircuitPython code to move a servo  "
 },
@@ -1805,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "servo-calibration.html",
   "type": "Section",
-  "number": "19.2",
+  "number": "21.2",
   "title": "Servo Calibration",
   "body": " Servo Calibration  If you notice, sending a pulse signal in microseconds moved the servo to a specific angle. Thing is I would like to be able to move the servo to a specific angle rather than having to just guess and check like we did in the last lab. So what we're going to do is start at the minimum pulse signal you computed in the last project and then change the servo pulse in equal increments until we reach the maximum servo pulse signal. When I did this lab I found that 0.6 ms was just about the smallest I could get the servo to move. We're going to call this 0 degrees. My maximum pulse signal ended up being about 2.4 ms. So I want you to test 10 different points between your specific maximum and minimum value which will hopefully be different for all of you. Everytime you test a pulse I want to measure the angle the servo makes with the minimum value being 0 degrees. Create a table of data with two columns. In the first column put pulse in milliseconds and in the second column put angle of servo in degrees. Use a protractor to measure the angle. If you don't have a protractor you can actually build one or just pull up a protractor on your computer screen and use that. I did this project with just 3 data points and here are my data points. Again you need to have around 10 data points.   Example Data taken for Calibration of Servo    Pulse (ms)  Angle (Degrees)    0.6  0    1.5  90    2.4  180     Take your table of data and put it into a spreadsheet and save the data as a CSV or simply put your data into a text file. Since I only had 3 data points I just put them into a text file. Plot the data on your desktop computer with servo angle on the x-axis and duty cycle on the y axis. Using the data, determine if the data set is linear, quadratic or cubic. Fit a trend line to the data and plot your trend line on top of the data. I made a helpful python script with some fictitious data on Github that fits the data with linear and quadratic fits . Here is my data plotted alongside the trendline in Python. I sort of made up the data and made it perfect on purpose so my trendline is perfect. Yours will not be so perfect.    Example trendline fit to example servo calibration data   You'll notice that I first import the data from the text file using the np.loadtxt function and then I use the polyfit and polyval functions to create the trendline. The polyfit function requires you to give it the X and Y axes and the order of the trendline which since the trend line is linear I sent it a 1 but you could easily do 2 for quadratic or 3 for cubic. I then print the coefficients which are [0.01 0.6]. This means my trend line looks like this.   Where Pulse is in ms and Angle is in degrees. Now you have an equation where you can use angle in degrees to compute the pulse in milliseconds. In the code I've posted I then use np.linspace to create 1000 data points from 0 to 180 degrees and then use the polyval function to compute the pulse for all 1000 angles I created using the linspace command. I finally plot the trend line in red and use the remaining part of the script to create labels and legends. Once you have this plot write down your coefficients and create an equation like I did above. Again your numbers won't be so neat. Once you have this equation, return to Mu and create a function using the def keyword that takes in an angle as an input and then returns a pulse signal in milli seconds. It will look sometime like this  def angle2pulse(angle): return 0.6 + 0.01*angle   Note: Functions in python must be after all your imports but before your while loop. If you put this function inside your while loop the code will not work . Using that equation, modify your servo.py script to have the servo move through the following angles, 0, 45,90,135 (your servo may not travel to 180 degrees). Verify that your equation is working correctly by placing your protractor below the servo. Much of the code required for this project is not included because it is left as an exercise for the student.  "
 },
@@ -1814,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-calibration.html#table-servo-calibration",
   "type": "Table",
-  "number": "19.2.1",
+  "number": "21.2.1",
   "title": "Example Data taken for Calibration of Servo",
   "body": " Example Data taken for Calibration of Servo    Pulse (ms)  Angle (Degrees)    0.6  0    1.5  90    2.4  180    "
 },
@@ -1823,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-calibration.html#servo-calibration-5",
   "type": "Figure",
-  "number": "19.2.2",
+  "number": "21.2.2",
   "title": "",
   "body": "  Example trendline fit to example servo calibration data  "
 },
@@ -1832,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "servo-5.html",
   "type": "Section",
-  "number": "19.3",
+  "number": "21.3",
   "title": "Feedback Control",
   "body": " Feedback Control   Feedback control can be its own course or multiple courses but can be broken down into a few simple steps. The goal of feedback control is to drive the state of a system to a desired command by sending a control signal to the system . The figure below shows a standard block diagram for a dynamic system.    Simple feedback control block diagram   In this figure, R is the reference signal or the commanded signal. The reference signal feeds into a summation block where the reference signal is substracted from the measured signal. The measured signal is the output of the H block which represents the sensor. The output of the summation block is the error signal E. The error signal feeds into the controller C and outputs the control signal U to the plant system G. The output of the plant G is Y or the state. The state Y feeds into the sensor block H to measure this signal and out the measured signal to the summation block.    Example Feedback Control System  An example feedback control system could be employed for the longitudinal pitch dynamics of an airplane. In this case the aircraft pitches through the angle and the elevator is used to control the pitch angle. Typically the pitch angle is measured with an angle sensor or even an accelerometer. The elevator is then typically controlled with a servo. Thus, for this lab we are going to make the bare bones circuitry required for pitch angle control of an airplane. The system then is the aircraft. The state is the pitch angle (measured by the CPX), the command is the desired pitch angle (programmed by you the pilot in command) and the control signal is the elevator command (actuated by a servo). I'm using the same circuit I created in parts 1 and 2.  To measure the pitch and roll angles of the CPX\/CPB we're going to use the accelerometer values and convert them to angles using the same equations discussed in the accelerometer lab (See ).  The measurement of the pitch angle would represent the H block in the figure above. The elevator on an airplane is a control surface responsible for pitching the aircraft up and down. For this example we are going to assume that the desired pitch angle is 0 . This means our error signal is going to be 0 minus the pitch angle . Our control signal will be the angle of the elevator. As I said, we are going to use a servo to control the elevator so this just means we need a way to relate our error signal to servo pulse width. There are a few steps here before we can move on. First, we need to relate our error signal to the control signal which will be the elevator pitch angle. I've made a table below to explain what I mean.   Table of relationship between pitch angle, error signal and elevator deflection angle    Pitch (deg)  Error (deg)  Elevator (deg)    -90  90  +90    0  0  0    +90  -90  -90     This table basically says that if the aircraft is level with a pitch angle of zero I want the elevator to be zero as well. If the aircraft pitches down, I want the elevator to pitch up and counteract that rotation. Using these three data points I can create a simple equation to relate elevator angle to pitch angle.   This is a simplified version of proportional control however. In reality the control signal should be given by the equation below. where C is the controller and e is the error signal. If we replace the error signal with and the controller with just proportional gain we arrive at the equation below.   It's easy to see that if and the equation for the elevator would simplify to . Now that we have the elevator pitch angle we need to relate this to the servo angle. Servos can only move from 0 to 180 degrees which means we can't have the servo go negative. Thus we need to offset the elevator angle to the servo angle. Again we can make a table here.   Table showing relationship between Elevator deflection angle and Servo angle    Elevator (deg)  Servo (deg)    -90  0    0  90    +90  180     This also results in a simple equation to relate servo angle to elevator angle .   Finally, we can then use our calibration coefficients (See ) to relate servo angle to pulse width. When I calibrated my servo I obtained the following equation where is the pulse in PWM.   So now I have an equation that relates the pitch angle from the airplane to the elevator deflection angle . I can then relate the servo deflection angle to servo deflection angle ( ) and then finally the servo deflection angle to PWM signal . With these 3 equations I can now program my servo to respond to changes in the pitch angle of the CPX.  Using the accelerometer to measure pitch and the servo to deflect the elevator I can put the entire system together. Pictured below is my code which again is also online on Github . Note that the version on Github is constantly edited and as such will be slightly different than the version below.     Start of feedback control code in CircuitPython   The first 22 lines here will hopefully seem familiar. Line 1-7 are import commands of all the various modules needed. Lines 10-13 create the definition that converts pulse width to duty cycle. Line 16 creates the servo and lines 19-22 create the accelerometer. Hopefully this is a good example of combining different codes together to get a more complex piece of software. Lines 24-45 include a very long while loop. I will try and go through each line. Line 26 grabs the accelerometer data on the CPX. Line 28 uses the x and z axis accelerometer data and converts the values to pitch angle using the atan2 function in the math module which was imported on line 4. Line 30 computes the elevator pitch angle and line 32 computes the servo deflection angle. Line 34-37 is a type of signal conditioner called a saturation filter. Basically, I don't want the servo to break because I tried to make the servo rotate more than 180 degrees or less than 0 degrees. So I created two if statements that restrict the servo to be within these two values. If the servo angle is less than 0 as stated on line 34, the servo angle is set to 0 on line 35. If the servo angle is greater than 180 as stated in line 36 the servo angle is set to 180.    Second part of feedback cntrol code in CircuitPython   Line 39 uses the calibration equation from the previous experiment to convert servo angle to pulse width. You'll need to replace these numbers with your servo since all servos are different. Line 41 uses the definition created on lines 10-13 to convert pulse width to duty cycle. Line 43 makes the servo move. Line 44 prints everything to Serial for debugging purposes and line 45 pauses the script for 0.1 seconds which helps with some twitchiness in the servo. When I did this I didn't have to program a complementary filter so I guess the servo may have it's own low pass filter. Either way this circuit is ready to be placed on an aircraft. Whether or not it is effective is a completely different story.    Second Order Pitch Dynamics  We could take an entire aircraft design course or an undergraduate controls and systems dynamics course but to start let's just simulate this control system and see how it does. First we need to write the dynamic equation for pitch of an aircraft. That is shown below.   In the equation above is the inertia of the aircraft, and are non-dimensional coefficients, is the mean aerodynamic chord, is the equilibrium velocity, is the mean aerodynamic chord, S is the planform area of the wing and is the dynamic pressure. The dynamic pressure is given by the equation below where is the air density. To simulate this system use the table below.   Table of parameters used to simulate second order pitch response of an example radio controlled aircraft     -2.19   -24.45   -1.15     0.2286 m  S  0.34  J  0.1232     15 m\/s   1.225   -0.076     Now that the dynamics are written, the second order equation can be integrated using a standard numerical tool. In this case it's safe to assume the angular velocity is zero and the initial pitch angle is also zero. You can then use proportional control to command your pitch angle to whatever you want. Note that proportional control is not sufficient to stabilize your aircraft but I'll leave that discussion to your controls professor.    First Order Velocity Dynamics  In order to gain some practice with simulating dynamic systems it's possible to approximate the velocity of an aircraft as a first order system. In order to accelerate a radio controlled aircraft, the motor must spin faster. It turns out that the PWM commands sent to servos to cause them to rotate back and forth is actually the same PWM signal used to control an Electronic Speed Controller (ESC) which controls a motor. So if you send around 1.1 ms to an ESC, the motor will be off and 1.9 ms will be full throttle. In this case we can make a simple equation that relates the throttle command to the velocity of the aircraft. The equation is shown below. where , is the velocity of the aircraft, is the throttle command in , and is the nominal PWM pulse to an ESC. The coefficients and are coefficients that relate throttle to acceleration and velocity to drag respectively. The rest of the variables are explained above in the second order system. For this simulation you can assume that proportional control works just fine and thus where is the commanded velocity and is the proportional gain.   "
 },
@@ -1841,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#servo-5-2-2",
   "type": "Figure",
-  "number": "19.3.1",
+  "number": "21.3.1",
   "title": "",
   "body": "  Simple feedback control block diagram  "
 },
@@ -1850,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#servo-5-3-5",
   "type": "Table",
-  "number": "19.3.2",
+  "number": "21.3.2",
   "title": "Table of relationship between pitch angle, error signal and elevator deflection angle",
   "body": " Table of relationship between pitch angle, error signal and elevator deflection angle    Pitch (deg)  Error (deg)  Elevator (deg)    -90  90  +90    0  0  0    +90  -90  -90    "
 },
@@ -1859,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#servo-5-3-9",
   "type": "Table",
-  "number": "19.3.3",
+  "number": "21.3.3",
   "title": "Table showing relationship between Elevator deflection angle and Servo angle",
   "body": " Table showing relationship between Elevator deflection angle and Servo angle    Elevator (deg)  Servo (deg)    -90  0    0  90    +90  180    "
 },
@@ -1868,7 +1904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#servo-5-3-14",
   "type": "Figure",
-  "number": "19.3.4",
+  "number": "21.3.4",
   "title": "",
   "body": "  Start of feedback control code in CircuitPython  "
 },
@@ -1877,7 +1913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#servo-5-3-16",
   "type": "Figure",
-  "number": "19.3.5",
+  "number": "21.3.5",
   "title": "",
   "body": "  Second part of feedback cntrol code in CircuitPython  "
 },
@@ -1886,7 +1922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "servo-5.html#second-order-dynamics-4",
   "type": "Table",
-  "number": "19.3.6",
+  "number": "21.3.6",
   "title": "Table of parameters used to simulate second order pitch response of an example radio controlled aircraft",
   "body": " Table of parameters used to simulate second order pitch response of an example radio controlled aircraft     -2.19   -24.45   -1.15     0.2286 m  S  0.34  J  0.1232     15 m\/s   1.225   -0.076    "
 },
@@ -1895,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "servo-6.html",
   "type": "Section",
-  "number": "19.4",
+  "number": "21.4",
   "title": "Extra Help",
   "body": " Extra Help  If you're having trouble with this lab, I did the calibration part of the project myself and posted a YouTube video about it .If you need help with trend lines in Python you can watch this video where I create a regression line . There is a video about making a protractor with paper if you don't have one. I explain feedback control in much more detail in a controls overview Youtube video if you'd like to learn more about Control Theory .  "
 },
@@ -1904,7 +1940,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "servo-7.html",
   "type": "Section",
-  "number": "19.5",
+  "number": "21.5",
   "title": "Assignment",
   "body": " Assignment   This servo project can be split into 2 projects at your instructors discretion. The first part involves learning how to rotate the servo and then calibrating the servo so that degrees of rotation can be related to PWM in microseconds while the second part deals with feedback control. In part 1 ensure that you can rotate the servo and then experimentally determine the minimum and maximum PWM signal you can send to the servo before it stops rotating anymore. Then create a calibration equation and plot with degrees on the x-axis and PWM on the y-axis. Take at least 10 data points for your calibration equation and use a protractor on your computer screen to obtain angle in degrees of your servo. Your calibration equation needs to be linear. I'm also asking you to simulate a first order system to look at a simple feedback control problem. In part 2 you are to use the angle obtained by the accelerometer to feedback to the servo using proportional control. You are to do this for a value of 1 and 2. In addition, you are to simulate the second order system above for 10 seconds with varying values of and plotting the results. Note, for this lab, once you have the minimum and maximum values of your servo, you need to add a saturation filter into your code so that the value sent to your servo is always within these bounds. Otherwise you could damage or even break your servo.     Part 1   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include 2 photos of your servo with one photo rotated to the maximum and the other photo rotated to the minimum degrees. Also, include a screenshot (entire computer screen) of Mu showing the PWM pulse in the serial monitor for both rotations. - 10%  Report the minimum and maximum values of your servo in a table. Be sure to report the PWM signals in milliSeconds as well as the angle of the servo in degrees. - 10%  Include your raw calibration data with PWM signal in one column and degrees in the other column - 10%  Include a Figure of your calibration data plotted with your trend line on top. Put your value in the title of the plot - 20%  Write your regression equation as ( servo_pulse = m*servo_angle + b ) being sure to replace m and b with your actual values. Remember to round to appropriate significant figures - 10%  Using your calibration equation imbedded in your Mu code, compute the pulse required to rotate your servo to 90 degrees. Report on how close it is to 1.5 ms. Include a photo of your servo rotated to 90 degrees and a screenshot (entire computer screen) of your calibration equation placed into Mu with your pulse value in the Serial monitor. The code must also show your saturation filter as well - 10%  Simulate the first order system in Equation for 10 seconds with and for a . Plot vs time for both values of proportional gain. - 10%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the servo from 0 to roughly 180 degrees. Then show yourself plotting the regression line on top of your data on your laptop - Pass\/Fail  Appendix B - Code used to rotate servo and code used to plot data in plain text (no screenshots) - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.     Part 2   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include an annotated photo of your circuit showing the accelerometer, wiring, and servo. - 20%  Include a photo of your CPX rotated to 45 degrees and your servo rotated with and . Have your servo held up to your protractor when rotated so readers can see the angle at which your servo is rotated. - 40%  Simulate the second order system in Equation for 10 seconds with and for a . Plot vs time for both values of proportional gain. - 20%  Appendix A - Video Details - Film yourself and your entire screen with the Serial monitor open in Mu as you rotate the CPX\/CPB +\/-45 degrees and also showing the servo rotate IN SYNC (+\/-45 degrees) with your CPX\/CPB. - Pass\/Fail  Appendix B - Code used to rotate servo as well as simulation code in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1913,7 +1949,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "thermistor-3.html",
   "type": "Section",
-  "number": "20.1",
+  "number": "22.1",
   "title": "Initial Setup",
   "body": " Initial Setup  There is no wiring diagram for this project because we're using the thermistor that's already on the CPX\/CPB. The code to read the thermistor is pretty simple and is shown below. Remember that the thermistor is a resistor that changes with temperature. The ADC on the CPX converts the voltage across the thermistor to temperature. The Adafruit Learn system does a bit of work to explain the conversion from voltage to temperature and is also explained in . Just remember that the thermistor on pin A9 is connected to the high side of the voltage divider which effects the equations to compute the resistance and voltage in the thermistor. My version of the code is also on my Github . A simple version of the code is shown below but note that the code is from a much earlier and simpler version of my code which only reads the temperature in Celsius. The code on my Github has more functionality such as printing the raw ADC value and the voltage.     Read thermistor data code in CircuitPython   "
 },
@@ -1922,7 +1958,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "thermistor-3.html#thermistor-3-3",
   "type": "Figure",
-  "number": "20.1.1",
+  "number": "22.1.1",
   "title": "",
   "body": "  Read thermistor data code in CircuitPython  "
 },
@@ -1931,7 +1967,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "thermistor-4.html",
   "type": "Section",
-  "number": "20.2",
+  "number": "22.2",
   "title": "Estimating the Time Constant",
   "body": " Estimating the Time Constant  I did the first two examples (using a fridge) and plotted both data sets in the same script as shown below. I opted to use method 1 (see chapter ) from the datalogging project and just have the data print to Serial and then unplug the CPX when I'm done taking data and copy and paste the data into a text file.    Heating and cooling examples plotted in Thonny   At this point it's possible to get the time constant by remembering that the settling time (time it takes the temperature to settle out) is equal to 4 times the time constant ( ) and thus the time constant is the settling time divided by 4. After computing the settling time for both data sets and overlaying the equations on the measured data I get these two plots.    Exponential regression curves fit to heating and cooling data in Thonny   What was interesting was that the time constant for heating up was 62.5 seconds and for cooling down it was 155 seconds. The time to get cold was way slower than heating up. I'm not a heat transfer expert so I won't comment as to why this happened. One other import note I'd like to mention is the cool down phase was much more accurate than the heat up phase. This is most likely because when I pulled the thermistor out of the fridge I touched it with my hands and then moved it to a table. There was also alot more airflow outside the fridge which would change the overall dynamics. Still, the fitted data matches up pretty well and I hope yours does too.  "
 },
@@ -1940,7 +1976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "thermistor-4.html#thermistor-4-3",
   "type": "Figure",
-  "number": "20.2.1",
+  "number": "22.2.1",
   "title": "",
   "body": "  Heating and cooling examples plotted in Thonny  "
 },
@@ -1949,7 +1985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "thermistor-4.html#thermistor-4-5",
   "type": "Figure",
-  "number": "20.2.2",
+  "number": "22.2.2",
   "title": "",
   "body": "  Exponential regression curves fit to heating and cooling data in Thonny  "
 },
@@ -1958,7 +1994,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "thermistor-5.html",
   "type": "Section",
-  "number": "20.3",
+  "number": "22.3",
   "title": "Assignment",
   "body": " Assignment   For this assignment, you are to change the ambient temperature of the CPX\/CPB through heating or cooling and then record time and voltage while waiting for the CPX\/CPB to return to ambient temperature. You are to then plot voltage, resistance and temperature as a function of time and then using the graph of temperature (not using a curve fit), estimate , , , and . Finally, using equation , plot the estimate of .   Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Take a picture of you actively heating or actively cooling the CPX\/CPB - 10%  Plot the raw voltage and resistance in the thermistor vs time - 20%  Plot your temperature data with time on the x-axis and temperature on the y-axis and overlay your fitted data on top of your measured data. Points will be given based on how well your fit is - 20%  Include a table of your estimated parameters - 20%  Using the time constant you computed, assume you accidentally put your CPX\/CPB in the oven at 400F. Simulate your system heating up from room temperatue (25C) to 400F and tell me how long I would have before I destroy my CPX\/CPB. Make sure to show your work or you receive no credit - 10%  Appendix A - Video Details - Film yourself and your screen as you explain how you heated or cooled the CPX\/CPB. Then show the thermistor running on your computer with the Serial Monitor open in Mu. Finally plot the regression line over your plotted data on your computer - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -1967,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "second-order-3.html",
   "type": "Section",
-  "number": "21.1",
+  "number": "23.1",
   "title": "Setup Pendulum Example",
   "body": " Setup Pendulum Example  In this example I'm going to swing a pendulum in the X\/Y plane of the accelerometer sensor so that I can ignore the Z axis data. I'm going to get the actual angle of the pendulum but if you're building something else you can ignore this part. In order to convert the accelerometer values to pitch angle, I'm going to use the same equations discussed in the accelerometer lab (See )  Remember, on the CPX\/CPB specifically you'll want to import the math module and use the atan2 function. When I swing the pendulum, this is the result I get from Plotter in Mu.    Oscillations shown from atan2 measurement of accelerometer in Mu   If I then bring this into Python I get the following plot below. In my data set I only logged the angle. Since the time step between each point was 0.01 seconds I was able to create a time series. It's pretty clear that there is some nonlinearity in the data so I chose to start the data at 0.5 seconds. Another thing I noticed was that the angle settled out to around 8 degrees so I chose to subtract off that bias from the angle data.    Oscillation data plotted in Thonny   "
 },
@@ -1976,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "second-order-3.html#second-order-3-4",
   "type": "Figure",
-  "number": "21.1.1",
+  "number": "23.1.1",
   "title": "",
   "body": "  Oscillations shown from atan2 measurement of accelerometer in Mu  "
 },
@@ -1985,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "second-order-3.html#second-order-3-6",
   "type": "Figure",
-  "number": "21.1.2",
+  "number": "23.1.2",
   "title": "",
   "body": "  Oscillation data plotted in Thonny  "
 },
@@ -1994,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "second-order-4.html",
   "type": "Section",
-  "number": "21.2",
+  "number": "23.2",
   "title": "Estimating Parameters",
   "body": " Estimating Parameters  After trimming the data and removing some bias it was time to get my damping constant and damped natural frequency. There are a few equations that can help you obtain these parameters. First, the settling time is the length of time it takes for the oscillations to settle. The settling time can be used to find the damping constant. This is equal to:   For my data set the settling time was about 1.25 seconds which gave a damping constant of 3.2. Once I had the damping constant I could obtain the damped natural frequency. This was done by measuring the distance between two peaks in the data set. There is a peak at around 0.5 seconds and another at around 0.95 seconds. I can use this to compute a period T. Period can be computed to angular frequency using the equation below.   Using the period in my wave form I obtained a damped natural frequency of about 14.8 rad\/s. Using these values I can plot the simulated data on top of the measured data noting that my initial angle was about 35 degrees minus the bias of 8 degrees. When I first plotted the data I noticed that my fit wasn't entirely perfect. My period was correct but my damping rate was too high. I realized it was because my settling time was too big. I increased the settling time to 1.8 seconds and got this plot here. You can see that my fitted data lined up almost perfectly with my measured data.    Sinusoidal regression curve plotted on top of oscillation data in Thonny   "
 },
@@ -2003,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "second-order-4.html#second-order-4-5",
   "type": "Figure",
-  "number": "21.2.1",
+  "number": "23.2.1",
   "title": "",
   "body": "  Sinusoidal regression curve plotted on top of oscillation data in Thonny  "
 },
@@ -2012,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "aliasing.html",
   "type": "Section",
-  "number": "21.3",
+  "number": "23.3",
   "title": "Aliasing",
   "body": " Aliasing  Aliasing occurs when you don't take data fast enough. The speed of taking data to avoid aliasing depends on the natural frequency of the system itself. To show this I changed the length of the pendulum which changed the natural frequency. I then proceeded to measure the angle as it oscillated at its natural frequency. I repeated this at sampling frequencies of 1, 10 and 100 Hz. The way I changed the sampling frequency was by changing the time.sleep value in the while True loop. The accelerometer code I used can be found on Github . After I finished the experiment I had 3 data files that I plotted on top of each other. This what I got with the longest string. It's easy to see in the photo that sampling at 1 Hz was way too slow to capture the natural oscillations of the water bottle. However, 100 Hz and even 10 Hz was plenty fast to sample the oscillations. According to the recorded data there was above 19 cycles in 9 seconds which is about 2 Hz. In this case, as long as we sample at 4 Hz the signal will be captured properly which is why 10 Hz and 100 Hz is able to capture the signal correctly.    Aliasing shown with oscillatory data in Thonny   Once I sampled my waveform at 3 different sampling rates I elected to shrink the length of the pendulum to change the natural frequency and see if that affected any aliasing I saw. The results are shown in the figure below.    Aliasing for shorter pendulum shown in Thonny   In this case you can see that there were 33 cycles in 10 seconds which is 3.3 Hz. The Nyquist criteria states that I need to sample at 6.6 Hz. The Nyquist criteria is very specific though in that if you sample at twice the frequency, you will just obtain the correct frequency. This does not mean that you will capture every data point properly. Hence in the chart above, the blue line at 100 Hz is perfect, the green line at 1 Hz is too slow (less than 6.6 Hz) and the orange line at 10 Hz captures the frequency correctly but between 5 and 8 seconds does not adequately capture the waveform. In my opinion, in order to sample the data effectively and not just obtain the frequency of the waveform, you need to sample at 4 times the natural frequency. So for the waveform of 3.3 Hz, the Montalvo frequency would be 13.2 Hz which is higher than the 10 Hz. This explains why the 10 hz sample is not perfect while the 100 hz sample rate is much better.  "
 },
@@ -2021,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "aliasing.html#aliasing-3",
   "type": "Figure",
-  "number": "21.3.1",
+  "number": "23.3.1",
   "title": "",
   "body": "  Aliasing shown with oscillatory data in Thonny  "
 },
@@ -2030,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "aliasing.html#aliasing-5",
   "type": "Figure",
-  "number": "21.3.2",
+  "number": "23.3.2",
   "title": "",
   "body": "  Aliasing for shorter pendulum shown in Thonny  "
 },
@@ -2039,7 +2075,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "second-order-6.html",
   "type": "Section",
-  "number": "21.4",
+  "number": "23.4",
   "title": "Extra Help",
   "body": " Extra Help  I have an accompanying youtube video where I discuss aliasing issues which might help you better understand aliasing in general .  "
 },
@@ -2048,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "second-order-7.html",
   "type": "Section",
-  "number": "21.5",
+  "number": "23.5",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to create a system that oscillates and capture data while oscillating. You are to sample the system at 1, 10 and 100 Hz and plot the shifted and cleaned data for all 3 sample rates on the same graph. For the data sampled at 100 Hz you are then to estimate the initial amplitude, the settling time and the period using the graph. Then compute the natural frequency and damping ratio. Finally, using equation , plot the amplitude as a function of time on top of your 100hz sampled data. Note, if you decide to make a pendulum you must ensure that the CPX\/CPB does not spin when oscillating otherwise you won't be able to use your acceleration data easily.    Title page with name,title and date - 5%  Introduction - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your experiment and explain the state that you are measuring - 10%  Plot the results of your data (make sure to connect your data points) vs time for all 3 sampling frequencies (1,10, 100Hz) and include a legend - 10%  Include a table of your estimated parameters as well as the natural frequency and damping ratio - 20%  Plot your measured data sampled at 100hz with your fitted equation on top - 20%  Based on your results and your computed natural frequency, comment on the Nyquist frequency and the Montalvo frequency of your system and whether or not you encountered aliasing in your experiment based on the figures and the Nyquist\/Montalvo frequency - 10%  Using the natural frequency and damping ratio you computed, simulate your system for an initial amplitude of 1 for two times the settling time. - 10%  Appendix A - Video Details - Film yourself and your entire screen showing the camera the experiment you used to create oscillations in the accelerometer. Then plot your accelerometer data and show the regression line fit over your oscillations - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2057,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "imu-3.html",
   "type": "Section",
-  "number": "22.1",
+  "number": "24.1",
   "title": "CPX\/CPB Wiring and Software",
   "body": " CPX\/CPB Wiring and Software  The wiring for this system requires 4 wires. The figure below shows the IMU connected to Feather M4 (Courtesy of Bryan Siepert ) .    Wiring diagram of IMU connected to a FeatherWing   The only difference between the wiring diagram above and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDA and SCL to SCL .    Photo of IMU Connected to a CircuitPlayground Express   The photo above uses a combination of alligator clips and male to male wires into a breadboard. The red alligator clip is connected to the 3.3V pin on the CPB and then also connected to the red male-male wire which is connected to the VIN pin on the IMU. The black alligator clip is connected to the GND pin on the CPB and also connected to the brown male-male wire which is connected to the GND pin on the IMU. The blue alligator clip is connected directly to the SDA pins on both the CPB and the IMU. The white alligator clip connected to the yellow male-male wire which is connected to the SCL pins on both the CPB and the IMU. Recall that SDA and SCL are external pins for I2C. In the accelerometer lab we used the internal I2C pins to access the accelerometer (See ). In this lab we're going to use the external I2C pads to connect different I2C sensors.  Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . In this example I'm using the 6.X version. Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . The specific modules I needed for this lab were:  adafruit_bus_device  adafruit_register  lis3mdl  lsm6ds33    Once you have the necessary modules you can run some example code. The Adafruit Learn page has a tutorial for the LSM6DS33 . The problem with the tutorial is that it seems like it was written for the Raspberry or some other microcontroller. As such I had to find some example code on Adafruit's Github . After following both tutorials I was able to make my own script and upload it to my Github . Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ).     CircuitPython code to read an IMU   In the code above lines 1-6 import all the modules with line 5 importing the accelerometer on board the CPX and line 6 importing the external sensor wired up to SDA and SCL. Line 8 creates an I2C object using the SDA and SCL pins from the alligator clips and line 11 creates the sensor object. I also include lines 14-17 to include the onboard accelerometer. Notice I can access both sensors no problem. In the while loop line 20 checks the accelerometer on the CPX, line 21 checks the accelerometer on the breakout board and line 22 checks the angular velocity on the breakout board. Lines 23 and 24 print to serial and output to the plotter. Note that some lines are commented out because I wanted to try one thing at a time. With both accelerometers printing to the Plotter I could move the CPX and the breakout board in unison and get the following output.    Serial monitor open showing IMU data in Mu   Notice that there are 6 numbers printed and 6 lines on the plotter. Both the CPX and the breakout board have little XYZ cartesian coordinate systems. I had to line them up properly before I started moving them. My suggestion would be for you to get some hot glue or 3M tape and place both breakout board and CPX on some sort of hard material like plywood, masonite, or even a cutting board. Anything to keep everything together.  Once you've done this, try uncommenting the line of code that prints the angular velocity. When I do that and move the breakout board around I can measure the angular velocity of each axis. The units are in radians per second but it's pretty obvious just from the magnitude of the graph.    Angular Velocity data of IMU shown in Serial Monitor or Mu   The final part is to get the LIS3MDL (magnetometer) to work. The starting point for me was the Adafruit Learn page , along with the simple example from Adafruit's Github . After that I was able to create my own code . The only difference in your code is that the address will be 0x1c instead of 0x1e.    Magnetometer code in CircuitPython   The code is almost identical to the code before except all the LIS3DH and LSM6DS33 code is commented out. Instead I have code to grab the magnetometer (LIS3MDL) at address 0x1E. Line 25 then calls the magnetometer and prints it.  "
 },
@@ -2066,7 +2102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-3",
   "type": "Figure",
-  "number": "22.1.1",
+  "number": "24.1.1",
   "title": "",
   "body": "  Wiring diagram of IMU connected to a FeatherWing  "
 },
@@ -2075,7 +2111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-5",
   "type": "Figure",
-  "number": "22.1.2",
+  "number": "24.1.2",
   "title": "",
   "body": "  Photo of IMU Connected to a CircuitPlayground Express  "
 },
@@ -2084,7 +2120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-9",
   "type": "Figure",
-  "number": "22.1.3",
+  "number": "24.1.3",
   "title": "",
   "body": "  CircuitPython code to read an IMU  "
 },
@@ -2093,7 +2129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-11",
   "type": "Figure",
-  "number": "22.1.4",
+  "number": "24.1.4",
   "title": "",
   "body": "  Serial monitor open showing IMU data in Mu  "
 },
@@ -2102,7 +2138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-14",
   "type": "Figure",
-  "number": "22.1.5",
+  "number": "24.1.5",
   "title": "",
   "body": "  Angular Velocity data of IMU shown in Serial Monitor or Mu  "
 },
@@ -2111,7 +2147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-3.html#imu-3-16",
   "type": "Figure",
-  "number": "22.1.6",
+  "number": "24.1.6",
   "title": "",
   "body": "  Magnetometer code in CircuitPython  "
 },
@@ -2120,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "imu-4.html",
   "type": "Section",
-  "number": "22.2",
+  "number": "24.2",
   "title": "Arduino Wiring and Software",
   "body": " Arduino Wiring and Software  Wiring this to the Arduino requires the same setup as the CPX\/CPB and also uses I2C. From the Arduino to the accelerometer, the 3.3V pin runs to VIN , GND to GND , SDA to SDA and SCL to SCL . This is shown in the figure below. Note that the SD card breakout board from is also used in this example to showcase how easy it is to send accelerometer data to an SD card    Accelerometer connected to an Arduino   Moving on to software, the .ino file for both the accelerometer by itself and the accelerometer writing to an SD card are both on Github. For both of the versions of the code you need to install some libraries. You'll notice that at the top of the code there is a #include statement which adds a specific library.  #include <Adafruit_LSM6DS33.h> Adafruit_LSM6DS33 lsm6ds33;  In this case you need the Adafruit_LSM6DS33 library which also requires other libraries in addition to that single #include call. Also, since the libraries are from Adafruit rather than Arduino you need to navigate to Github and download a few zip libraries. The list of libraries you need and links to those websites are shown below   Adafruit_LSM6DS  Adafruit_BusIO  Adafruit_Sensor   Once you have the zip folders downloaded you need to navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in . Once you've got the code downloaded and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.    Serial Monitor Output of Accelerometer Code on Arduino   In the figure above, the sensor is outputtting temperature, acceleration x,y and z as well as the angular velocity along the x,y, and z axes. If you then compile the code which contains the SD card setup and writing you'll be able to write the data to an external SD card which would be super helpful for a standalone project. Again setting up the SD card is done in    Accelerometer Data File on SD Card   In the figure above, the code only writes the millis timer and acceleration data to the SD card but it would be very simple to add temperature and angular velocity to the code.  "
 },
@@ -2129,7 +2165,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-4.html#imu-4-3",
   "type": "Figure",
-  "number": "22.2.1",
+  "number": "24.2.1",
   "title": "",
   "body": "  Accelerometer connected to an Arduino  "
 },
@@ -2138,7 +2174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-4.html#imu-4-9",
   "type": "Figure",
-  "number": "22.2.2",
+  "number": "24.2.2",
   "title": "",
   "body": "  Serial Monitor Output of Accelerometer Code on Arduino  "
 },
@@ -2147,7 +2183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "imu-4.html#imu-4-11",
   "type": "Figure",
-  "number": "22.2.3",
+  "number": "24.2.3",
   "title": "",
   "body": "  Accelerometer Data File on SD Card  "
 },
@@ -2156,7 +2192,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "imu-5.html",
   "type": "Section",
-  "number": "22.3",
+  "number": "24.3",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external IMU and get data from it. You need to mount the CPX\/CPB and the IMU to some sort of hard surface so that when you move the CPX\/CPB the IMU moves as well. Make sure the axis of the IMU and the CPX\/CPB are oriented in the same direction. With system mounted to a hard surface, perform doublet manuevers on each axis for a total of 3 doublets. A doublet is where you rotate the system to +90 degrees and then -90 degrees and then back to zero typically taking around 3 seconds for the entire maneuever. Using the accelerometer, compute the roll and pitch angle in degrees. Then use the magnetometer to compute the yaw angle. Using the roll, pitch and yaw angles, take a derivative to compute the angular velocity. Finally, take the angular velocity data and integrate it to obtain the pitch, roll and yaw angles.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the IMU on a breadboard. Be sure to explain in your description about your axis system for both sensors. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open and all 3 angular velocity axes - 10%  Include a plot of both accelerometers for the 3 doublet manuevers. - 10%  Include a plot of angular velocity data for the 3 doublet manuevers. Also plot the derivative of the pitch, roll and yaw angles on top of this plot and add a legend to clearly indicate which is which. - 20%  Include a plot of magnetometer data for the 3 doublet maneuevers - 10%  Plot the roll, pitch and yaw angles in degrees from the accelerometer\/magnetometer as well as the integrated rate gyro angles. Add a legend to clearly indicate which line is which. - 20%  Appendix A - Video Details - Film yourself and your entire screen showing the acceleration and angular velocity values change in the Plotter in Mu - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2165,7 +2201,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-3.html",
   "type": "Section",
-  "number": "23.1",
+  "number": "25.1",
   "title": "LPS Setup",
   "body": " LPS Setup  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 8 header pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the pressure sensor connected to a Feather M4 (Courtesy of Bryan Siepert ) . Notice that the SDA\/SCL pins on the LPS22 are listed SDI\/SCK respectively.    Pressure Sensor Connected to a Feather M4   "
 },
@@ -2174,7 +2210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-3.html#pressure-bryan",
   "type": "Figure",
-  "number": "23.1.1",
+  "number": "25.1.1",
   "title": "",
   "body": "  Pressure Sensor Connected to a Feather M4  "
 },
@@ -2183,7 +2219,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-4.html",
   "type": "Section",
-  "number": "23.2",
+  "number": "25.2",
   "title": "CPB Wiring and Software",
   "body": " CPB Wiring and Software  The only difference between the wiring diagram shown previously and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then SDA to SDI and SCL to SCK . The two figures below show a CPB wired to the LPS22.    Pressure Sensor Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the LPS22. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the LPS22. The white alligator clip is connected to the SCL pin connected to an orange male-male wire connected to the SCK pin on the LPS22. Finally, the yellow alligator clip is connected to the SDA pin connected to a yellow male-male wire connected to the SDI pin on the LPS22.    Pressure Sensor Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Aerospace Propulsion and Spacecraft Design have to build a hobbyist level rocket and get pressure data during the flight. This way they know how high their rocket went. As such they need to build a standalone datalogger that can be placed into a rocket. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_lps2x  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Note that it's a good exercise when attaching I2C devices to run a scan on all connected I2C devices to make sure you can see the device and that you have the correct address (See ). Once you're positive the I2C address of the LPS22 is setup properly you can run the example code to log pressure and acceleration data . Note that the link previously shown is to a folder of many many different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth, some students want their CPX\/CPB to beep and some students use a BME280 instead of an LPS22 to log data. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    Pressure Data in Mu   The data shown have multiple columns of data which are time,x accel,y accel,z accel,pressure,relative humidity,lps22 temperature, CPX\/CPB temperature. Notice that the relative humidity is 0.0 because the LPS22 doesn't have a humidity sensor. If you were to use a BME280 instead of an LPS22 you would get relative humidity data as well. It's possible to convert the pressure data to altitude and is shown in .  "
 },
@@ -2192,7 +2228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-4.html#pressure-4-3",
   "type": "Figure",
-  "number": "23.2.1",
+  "number": "25.2.1",
   "title": "",
   "body": "  Pressure Sensor Connected to a CPB  "
 },
@@ -2201,7 +2237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-4.html#pressure-4-5",
   "type": "Figure",
-  "number": "23.2.2",
+  "number": "25.2.2",
   "title": "",
   "body": "  Pressure Sensor Connected to a CPB with a Breadboard  "
 },
@@ -2210,7 +2246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-4.html#pressure-4-8",
   "type": "Figure",
-  "number": "23.2.3",
+  "number": "25.2.3",
   "title": "",
   "body": "  Pressure Data in Mu  "
 },
@@ -2219,7 +2255,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-5.html",
   "type": "Section",
-  "number": "23.3",
+  "number": "25.3",
   "title": "Arduino Wiring and Software",
   "body": " Arduino Wiring and Software  The wiring for the Arduino is similar to any I2C setup like the external IMU ( ). In this case 3.3V and GND are straightforward while SDI and SCK pins are connected to the dedicated SDA and SCL pins on the Arduino. The good news is that the entire Arduino family has dedicated SDA and SCL pins for I2C. The Figure below shows the pressure sensor connected to an Arduino MEGA.    Arduino MEGA hooked up to an LPS22, IMU and SD Card breakout board   The Figure above also has an external IMU ( ) and micro sd card breakout board ( ) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and pressure and log that to a micro SD card. This is so students can place this whole setup into a rocket and measure pressure and acceleration while logging that to an SD card. The LPS22 sensor is the sensor on the left but unfortunately has header pins soldered upside down. As such the LPS22 sensor is upside down. Since you can't see the pins I placed another identical LPS22 right below it so the pins are shown. In this case, the blue wire is connected to the same 3.3V pin as the IMU, the left most green wire is connected to GND on the Arduino, the next green wire is the SCK pin connected to the same SCL pin as the IMU, and the last dark green wire is connected to the SDI pin on the LPS22 while the other end is connected to the same SDA pin as the IMU. Note that I2C has multiple addresses . This means you can have multiple different I2C sensors connected to the same SDA\/SCL pins and the code\/hardware will know which sensor is where just like addresses on a street. Moving on to software, the code is similar to any I2C device in that it is necessary to get the LP22 library but also Adafruit_BusIO and Adafruit_Sensor . Since these libraries are from Adafruit rather than Arduino I find it easier to navigate to Github and download the zip libraries directly. The list of libraries you need and links to those websites are shown below   Adafruit_LPS2X  Adafruit_BusIO  Adafruit_Sensor   Once you have the zip folders downloaded you need to navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This is different than adding a library directly from the Arduino website as is done for the SD library in . The code for just reading the pressure sensor can be found in the example set of Adafruit_LPS2X and is done by navigating the toolbar as shown below.  File>Examples>Adafruit_LPS2X>adafruit_lps2x_test.  Just in case you're having trouble finding the example script, I've placed a streamlined LPS22 copy of the example on Github. A snippet of that code is shown below.    Arduino MEGA Code for LPS22 Only   Notice that lines 2-4 of the software have the #include calls to the libraries just installed. Wire.h is a pre-installed header file and Adafruit_BusIO is called from Adafruit_Sensor so you the code doesn't require an excplicit include. Once you've got the code opened and the libraries installed you should be able to compile without seeing any errors. After uploading the code the serial monitor should produce something similar to the figure below.    Serial Monitor Output for LPS22 Only   Again, it's possible to convert pressure to altitude and is done in . Along with getting pressure data from the LPS22, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a standalone Pressure+IMU datalogger is on Github us usual.    Arduino MEGA Code of IMU, Pressue and SD Card Breakout boards   In that snippet of code, you can see the loop routine where the IMU and the Pressure sensors are polled and printed to the serial monitor together. Once that code is compiled and flashed to the Arduino the serial monitor output will create something similar to the figure below.    Serial Monitor Output for LPS22 and IMU   "
 },
@@ -2228,7 +2264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-5.html#pressure-5-3",
   "type": "Figure",
-  "number": "23.3.1",
+  "number": "25.3.1",
   "title": "",
   "body": "  Arduino MEGA hooked up to an LPS22, IMU and SD Card breakout board  "
 },
@@ -2237,7 +2273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-5.html#pressure-5-9",
   "type": "Figure",
-  "number": "23.3.2",
+  "number": "25.3.2",
   "title": "",
   "body": "  Arduino MEGA Code for LPS22 Only  "
 },
@@ -2246,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-5.html#pressure-5-11",
   "type": "Figure",
-  "number": "23.3.3",
+  "number": "25.3.3",
   "title": "",
   "body": "  Serial Monitor Output for LPS22 Only  "
 },
@@ -2255,7 +2291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-5.html#pressure-5-13",
   "type": "Figure",
-  "number": "23.3.4",
+  "number": "25.3.4",
   "title": "",
   "body": "  Arduino MEGA Code of IMU, Pressue and SD Card Breakout boards  "
 },
@@ -2264,7 +2300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-5.html#pressure-5-15",
   "type": "Figure",
-  "number": "23.3.5",
+  "number": "25.3.5",
   "title": "",
   "body": "  Serial Monitor Output for LPS22 and IMU  "
 },
@@ -2273,7 +2309,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-altitude.html",
   "type": "Section",
-  "number": "23.4",
+  "number": "25.4",
   "title": "Converting Pressure to Altitude",
   "body": " Converting Pressure to Altitude  The pressure data obtained from the CPX\/CPB is in hectopascals (hPa) which is the same as millibars (mbar). The standard atmospheric pressure at sea level is 1013.25 hPa. As you go up in altitude the pressure decreases. The equation to convert pressure to altitude assuming a standard atmosphere is as follows: where p is pressure and is the standard atmospheric pressure at sea level (1013.25 hPa). This equation assumes a standard atmosphere and is only accurate up to about 11 km in altitude. Beyond that the equation becomes less accurate and you would need to use a more complex model of the atmosphere to get accurate altitude data. However, for our purposes of launching a hobbyist rocket, this equation will work just fine. It's also possible to convert altitude to velocity using a first order derivative.   In order to get that equation to have reasonable results, students typically have to heavily filter their data given the amount of noise in the data. The equation to convert to velocity is shown below but the results and filtering are left to the reader as an assignment. I think students have had a lot of success using moving average and complimentary filters. I'm sure Google and AI tools will be able to help get that working.  "
 },
@@ -2282,7 +2318,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-7.html",
   "type": "Section",
-  "number": "23.5",
+  "number": "25.5",
   "title": "Data from a Rocket Launch",
   "body": " Data from a Rocket Launch  My students have placed this entire data logger into a rocket and launched it. The figure below shows the rocket on the launch pad in Samson,AL.    Rocket on the Launch Pad   The datalogger itself is attached to a piece of wood that is called a sled and then placed into the rocket prior to launch.    Datalogger Attached to Sled   In the figure above the small gray piece below the CPB is a small 1S Lipo battery and the LPS22 is on the other side of the sled. The figure below shows pressure as a function of time.    Pressure Data from a Rocket Launch   It's clear from the data that pressure drops as the flight continues showing the boost phase of the rocket. There is a small oscillation near the apogee of the flight. This is due to the delay charge to blow the nose cone off the rocket body to deploy the parachute. The pressure sensor is measuring local atmospheric pressure. So if there is a small explosion inside the rocket to deploy the parachute, the data will show a slight oscillation.    Altitude Data from a Rocket Launch   The figure above shows the pressure data converted to altitude using the equation shown above. Note that in order to get an altitude of zero at time (t=0) it is important to set equal to the pressure at time (t=0). This way the altitude will be zero at the start of the flight and will increase as the rocket goes up. Again the altitude plot shows a small oscillation in altitude which isn't true but indicative of the explosion to deploy the parachute.  "
 },
@@ -2291,7 +2327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-7.html#pressure-7-3",
   "type": "Figure",
-  "number": "23.5.1",
+  "number": "25.5.1",
   "title": "",
   "body": "  Rocket on the Launch Pad  "
 },
@@ -2300,7 +2336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-7.html#pressure-7-5",
   "type": "Figure",
-  "number": "23.5.2",
+  "number": "25.5.2",
   "title": "",
   "body": "  Datalogger Attached to Sled  "
 },
@@ -2309,7 +2345,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-7.html#pressure-7-7",
   "type": "Figure",
-  "number": "23.5.3",
+  "number": "25.5.3",
   "title": "",
   "body": "  Pressure Data from a Rocket Launch  "
 },
@@ -2318,7 +2354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "pressure-7.html#pressure-7-9",
   "type": "Figure",
-  "number": "23.5.4",
+  "number": "25.5.4",
   "title": "",
   "body": "  Altitude Data from a Rocket Launch  "
 },
@@ -2327,7 +2363,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-8.html",
   "type": "Section",
-  "number": "23.6",
+  "number": "25.6",
   "title": "Extra Help",
   "body": " Extra Help  There is one youtube video on logging pressure data with the LPS22 . If you need a refresher on Method 3 be sure to go back to for more help on that.  "
 },
@@ -2336,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "pressure-9.html",
   "type": "Section",
-  "number": "23.7",
+  "number": "25.7",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external pressure sensor and get data from it. You need to mount the CPX\/CPB and the pressure sensor to some sort of hard surface so that when you move the CPX\/CPB the pressure moves as well. In order to get the pressure to change significantly you'll need to change your altitude by a lot. My recommendation is to ride the elevator of a tall building or drive up a really big hill. If you have the ability to do so, place the sensor in a rocket or an airplane!   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the pressure sensor on a breadboard. - 10%  Include a selfie of you right before you change altitude either by going up a big hill or by riding the elevator. Explain how you plan on changing altitude significantly in the supporting text. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing pressure - 20%  Plot pressure vs time for your experiment where pressure significantly changes. - 20%  Convert pressure to altitude and plot altitude vs time for your experiment where altitude significantly changes. - 20%  Appendix A - Video Details - Film yourself and your entire screen showing the pressure value in the serial Monitor in Mu. Also explain what you plan on doing to significantly change the altitude.- Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2345,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-3.html",
   "type": "Section",
-  "number": "24.1",
+  "number": "26.1",
   "title": "GPS Setup",
   "body": " GPS Setup  When you open the packaging of this breakout board you'll notice that the header pins are missing. First you'll need to cut a row of 9 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires. The figure below shows the GPS sensor connected to an Adafruit Metro M0 . (Courtesy of Lady Ada herself!) .    GPS Wiring Diagram for Adafruit Metro M0   "
 },
@@ -2354,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-3.html#gps-3-3",
   "type": "Figure",
-  "number": "24.1.1",
+  "number": "26.1.1",
   "title": "",
   "body": "  GPS Wiring Diagram for Adafruit Metro M0  "
 },
@@ -2363,7 +2399,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-4.html",
   "type": "Section",
-  "number": "24.2",
+  "number": "26.2",
   "title": "CPB Wiring and Software",
   "body": " CPB Wiring and Software  The only difference between the wiring diagram shown previously and the CPX\/CPB is that you will be using 4 alligator clips. The rest is straightforward. You need 3.3V to run to VIN , GND to GND and then TX to RX and RX to TX . That is the TX and RX pins are swapped so that the transmit wire goes to the receive wire on the other device.    GPS Module Connected to a CPB   In the photos above and below, the red alligator clip is connected to 3.3V and is then connected to a red male-male wire which is then connected to the VIN pin on the GPS. The black alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the GPS. The white alligator clip is connected to the TX pin connected to an orange male-male wire connected to the RX pin on the GPS. Finally, the yellow alligator clip is connected to the RX pin connected to a yellow male-male wire connected to the TX pin on the GPS.    GPS Module Connected to a CPB with a Breadboard   Once you have the circuit wired and soldered it's time to work on software. First, you want to make sure you have your Circuit Python UF2 up to date . Once I updated my UF2 I also updated my Circuit Python Libraries (See for help on installing extra modules on your CPX\/CPB) . In this lab I purposefully made the code a bit more elaborate by adding, bluetooth, and method 3 data logging. The reason is that my students in Flight Dynamics and Aircraft Design have to build a hobbyist radio controlled aircraft and get GPS data during the flight. This way they know where they flew and how fast. As such they need to build a standalone datalogger that can be placed into an airplane. The specific modules I needed for this lab for all of that functionality is as follows:  adafruit_lis3dh  adafruit_gps  adafruit_thermistor  neopixel  adafruit_ble    Notice that I also added the thermistor and lis3dh libraries to get acceleration and temperature from the CPB. Once you have the necessary modules you can run some example code. Once you have all the modules, you can run the example code to log gps and acceleration data . Note that the link previously shown is to a folder of a few different pieces of software. The reason is because some students have a CPX that doesn't have bluetooth. Make sure to select the correct version for your hardware. Once you get it working the output will look something like this.    GPS Data in Mu   Notice that in the photo above the multiple columns of data are time,-99,-99,-99,0.0,x accel,y accel, z accel. The -99 values are dummy values for latitude, longitude and altitude because the GPS doesn't have a lock on any satellites. The 0.0 is the speed in knots which is also zero because there is no lock. The x,y,z accel values are from the accelerometer on the CPB. Move to to learn about getting a lock and how to process the GPS information once you get a lock.  "
 },
@@ -2372,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-4.html#gps-4-3",
   "type": "Figure",
-  "number": "24.2.1",
+  "number": "26.2.1",
   "title": "",
   "body": "  GPS Module Connected to a CPB  "
 },
@@ -2381,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-4.html#gps-4-5",
   "type": "Figure",
-  "number": "24.2.2",
+  "number": "26.2.2",
   "title": "",
   "body": "  GPS Module Connected to a CPB with a Breadboard  "
 },
@@ -2390,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-4.html#gps-4-8",
   "type": "Figure",
-  "number": "24.2.3",
+  "number": "26.2.3",
   "title": "",
   "body": "  GPS Data in Mu  "
 },
@@ -2399,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-5.html",
   "type": "Section",
-  "number": "24.3",
+  "number": "26.3",
   "title": "Arduino Wiring and Software",
   "body": " Arduino Wiring and Software  The wiring for the Arduino depends on which type of Arduino you're using. For every Arduino the Serial0 pins are hardwired to the USB port so you can't use them which means you need to use Serial1 or similar. The problem is that the Arduino UNO does not have any more serial ports so you have to use SoftwareSerial . When using SoftwareSerial you can plug the TX\/RX pins into any two digital ports and then create a SoftwareSerial instance. If you're using an Arduino MEGA you can use any of the hardware Serial ports. In the figure below the GPS is plugged into Serial1 and thus TX on the GPS is connected to RX1 on the Arduino MEGA and RX on the GPS is connected to TX1 on the Arduino MEGA. The Figure below also has an IMU ( ) and micro sd card breakout board ( ) connected to the Arduino to build a standalone datalogger capable of measuring acceleration and GPS and log that to a micro SD card.    Arduino MEGA Hooked up to a GPS and external IMU   In the Figure above, the blue wire goes from VIN to 5V on the Arduino, the left most green wire goes from GND to GND while the next two green wires connect TX\/RX to RX1\/TX1 respectively on the Arduino MEGA. Moving on to software also depends on the Arduino MEGA or UNO. On the UNO since you're using SoftwareSerial you need to ensure that you have #include <SoftwareSerial.h> at the top of your code and that the SoftwareSerial library is installed in Arduino IDE. Thankfully SoftwareSerial is already built-in to the Arduino IDE so there's no need to download it. The code for an Arduino UNO example can be found on Github but will not be shown in this chapter. Notice though that on line 33 upon following that link, pins 8 and 7 are used for the SoftwareSerial port given by this line of code: SoftwareSerial mySerial(8, 7); . For the Arduino MEGA , the code is also on Github but the Serial port is different as shown in the code below.    Arduino MEGA Code for GPS Only   Notice, in this code the call to create the GPS object is done using &Serial1 rather than &mySerial which is an instance of the SoftwareSerial library. While &Serial1 is simply built-in to the Arduino MEGA software suite &mySerial is a specific instance of SoftwareSerial that is only required on the Arduino UNO or similar boards that don't have Hardware Serial capabilities. However, for either the Arduino UNO or MEGA it is still required to get the Adafruit_GPS library which can be downloaded from Github and installed by navigating to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file you just downloaded. This library is needed to parse the specific raw GPS sentences ( ) coming in. Once you've installed all the libraries, compiled the code, wired up the Arduino with the GPS and flashed the code you should be able to open the Serial Monitor with a baud rate of 115200 and see the GPS output.    Serial monitor output for GPS Only   The Figure above shows the GPS output when you don't have a lock on any satellites which is why Latitude and Longitude have zeros. Still, this is a good check to make sure you're getting information correctly from the GPS since the date and time is typically accurate even without a lock. Move to to learn about getting a lock and how to process the GPS information once you get a lock. Along with getting a lock on the GPS, it's possible to augment the software to also read the external IMU from I2C and log all data to the micro SD card. A snippet of the software is shown below while the software itself for a standalone GPS+IMU datalogger is on Github us usual.    Arduino MEGA Code for GPS,IMU and SD card breakout boards   The code shows the loop routine polling the GPS using the useInterrupt function as well as the sensors.getEvent() routine to poll the IMU. After compiling the code, verifying the hardware connections and flashing the software the Serial monitor will produce something similar to the code below. Again in this case the latitude and longitude are shown as zeros because there is no lock.    Serial Monitor Output for LPS22 and IMU   "
 },
@@ -2408,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-5.html#gps-5-3",
   "type": "Figure",
-  "number": "24.3.1",
+  "number": "26.3.1",
   "title": "",
   "body": "  Arduino MEGA Hooked up to a GPS and external IMU  "
 },
@@ -2417,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-5.html#gps-5-5",
   "type": "Figure",
-  "number": "24.3.2",
+  "number": "26.3.2",
   "title": "",
   "body": "  Arduino MEGA Code for GPS Only  "
 },
@@ -2426,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-5.html#gps-5-7",
   "type": "Figure",
-  "number": "24.3.3",
+  "number": "26.3.3",
   "title": "",
   "body": "  Serial monitor output for GPS Only  "
 },
@@ -2435,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-5.html#gps-5-9",
   "type": "Figure",
-  "number": "24.3.4",
+  "number": "26.3.4",
   "title": "",
   "body": "  Arduino MEGA Code for GPS,IMU and SD card breakout boards  "
 },
@@ -2444,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-5.html#gps-5-11",
   "type": "Figure",
-  "number": "24.3.5",
+  "number": "26.3.5",
   "title": "",
   "body": "  Serial Monitor Output for LPS22 and IMU  "
 },
@@ -2453,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-explanation.html",
   "type": "Section",
-  "number": "24.4",
+  "number": "26.4",
   "title": "GPS Receiver and Sentence Explanation",
   "body": " GPS Receiver and Sentence Explanation  The GPS constellation of satellites orbiting planet Earth are around 26 satellites. Typically there are about 13 satellites above you from horizon to horizon. However, with cloud cover and buildings and trees you can typically only receive data from about 7 of them. You need at least 3 but 4 is preferred to get a GPS lock. If you go outside on a clear data and wait your data will return coordinates for your current position. Latitude is your degree value above or below the equator, longitude is your degree value east or west of the prime meridian and then altitude is your height above sea level. Note that if you're code is printing raw NMEA sentences, you may get something like this $GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47 This is the raw NMEA sentence output by the GPS. The code in the example folder parses this data to get the latitude, longitude, altitude and speed. The NMEA sentence is a command that contains all the GPS data. The first part is the type of sentence (GPGGA in this case) and then the rest of the data is separated by commas. The format is type of sentence, time, latitude, N\/S, longitude, E\/W, fix quality, number of satellites, horizontal dilution of position, altitude, M (meters), height of geoid above WGS84 ellipsoid, M (meters), time since last DGPS update, DGPS reference station id, checksum. The code in either Arduino ( Adafruit_GPS ) or CPX\/CPB ( adafruit_gps ) parses this data to get the latitude, longitude, altitude and speed. The code then prints this data in a more readable format. The code also converts the latitude and longitude from the NMEA format to decimal degrees which is easier to work with. Again, once you go outside and get a lock from more than 3 satellites, the latitude and longitude values will be replaced with your actual coordinates and speed. It's possible to convert GPS position to X and Y coordinate provided you use the first GPS coordinate as the origin. The equations to convert GPS coordinates to position are shown below.  where is the radius of the Earth, is the longitude, is the latitude and and are the latitude and longitude of the origin point. In this case the x-axis is East-West and the y-axis is North-South. Once you have position you can take the derivative to get velocity typically doing a heavily filtered moving average derivative to get a smooth velocity plot. To start though a simple first order derivative will at least get you started.    "
 },
@@ -2462,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-7.html",
   "type": "Section",
-  "number": "24.5",
+  "number": "26.5",
   "title": "Results from an aircraft flight",
   "body": " Results from an aircraft flight  My students have placed this entire data logger into an airplane and flown it. The aircraft itself was a P-51 clone made out of balsa and clear monokote.    Aircraft with my students after their maiden flight   The datalogger itself was soldered to a custom printed circuit board courtesy of Aker Solutions and permanently soldered to a QtPy . The QtPy is a super small microcontroller without any extra sensors so the students only measured GPS and nothing else.    Datalogger inside balsa airplane   After the flight at the ACMA (Azalea City of Model Aeronautics) airfield in Irvington, AL, the students were able to plot the GPS position of the flight. The color code indicates speed throughout the flight.    Latitude vs Longitude for Aircraft Flight   It's clear from the data that the pilot took off and landed on the runway after flying a few loops around the radio controlled flying field.  "
 },
@@ -2471,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-7.html#gps-7-3",
   "type": "Figure",
-  "number": "24.5.1",
+  "number": "26.5.1",
   "title": "",
   "body": "  Aircraft with my students after their maiden flight  "
 },
@@ -2480,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-7.html#gps-7-5",
   "type": "Figure",
-  "number": "24.5.2",
+  "number": "26.5.2",
   "title": "",
   "body": "  Datalogger inside balsa airplane  "
 },
@@ -2489,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "gps-7.html#gps-7-7",
   "type": "Figure",
-  "number": "24.5.3",
+  "number": "26.5.3",
   "title": "",
   "body": "  Latitude vs Longitude for Aircraft Flight  "
 },
@@ -2498,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-8.html",
   "type": "Section",
-  "number": "24.6",
+  "number": "26.6",
   "title": "Extra Help",
   "body": " Extra Help  There is one youtube video on logging GPS data with the Adafruit Ultimate GPS . If you need a refresher on Method 3 be sure to go back to for more help on that.  "
 },
@@ -2507,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "gps-9.html",
   "type": "Section",
-  "number": "24.7",
+  "number": "26.7",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up the external GPS and get data from it. You need to mount the CPX\/CPB and the GPS sensor to some sort of hard surface so that when you move the CPX\/CPB the GPS moves as well. In order to get a significant change in GPS coordinates I recommend going for a bike ride or a walk. If you decide to use a car I strongly recommend having a partner drive the car so you can focus on data acquisition and plotting. Once you have your GPS coordinates, convert them to position and velocity.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB mounted to a hard surface with the GPS sensor on a breadboard. - 10%  Include a selfie of you right before you change location either by going for a bike ride or a walk. Explain how you plan on changing location significantly in the supporting text. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing GPS data - 10%  Plot GPS coordinates (Latitude vs Longitude) for your experiment where coordinates significantly change. - 10%  Convert GPS coordinates to position and plot (X vs Y) for your experiment where position significantly changes. - 20%  Convert your position to velocity and plot velocity vs time for your experiment where velocity significantly changes. Comment on whether your velocity is accurate to the speed you were traveling - 20%  Appendix A - Video Details - Film yourself and your entire screen showing your GPS getting a lock with the Serial monitor open in Mu. Also explain what you plan on doing to significantly change the GPS coordinates. - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2516,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "load-cell-3.html",
   "type": "Section",
-  "number": "25.1",
+  "number": "27.1",
   "title": "Load Cell Setup",
   "body": " Load Cell Setup  When you open the packaging of the amplifier and strain gauge, you'll notice that the header pins on the amplifier are missing. First you'll need to cut a row of 6 pins and solder the header pins to the sensor . If you're taking my class I can solder this for you or teach everyone about soldering during a lecture session of class. If you are taking this class elsewhere you have two options: try and find someone who can solder this real quick (only takes about 5 minutes) or buy your own soldering iron and try to solder yourself. Once the device is soldered you can \"plug\" it into a breadboard. The wiring for this system requires 4 wires from the microcontroller to the amplifier and then 4 wires from the strain gauge to the amplifier. The figure below shows the load cell and load cell amplifier connected to a Feather M4 . (Courtesy of Liz Clark ) .    Load Cell Wiring Diagram for Adafruit Feather M4   In the wiring diagram above, the strain gauge is connected to the amplifier with 4 wires. The red wire is connected to E+ , the black wire is connected to E- , the white wire is connected to A- and the green wire is connected to A+ .  "
 },
@@ -2525,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-3.html#load-cell-3-3",
   "type": "Figure",
-  "number": "25.1.1",
+  "number": "27.1.1",
   "title": "",
   "body": "  Load Cell Wiring Diagram for Adafruit Feather M4  "
 },
@@ -2534,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "load-cell-4.html",
   "type": "Section",
-  "number": "25.2",
+  "number": "27.2",
   "title": "CPX\/CPB Wiring and Software",
   "body": " CPX\/CPB Wiring and Software  For the CPX\/CPB the strain gauge and amplifier are the same but you will be using 4 alligator clips as shown in the photo below. Although very non-standard, there are two yellow alligator clips. The first yellow alligator clip is connected to 3.3V and is then connected to a purple male-male wire which is then connected to the VIN pin on the amplifier. The white alligator clip is connected to the GND pin which is connected to a brown male-male wire connected to the GND pin on the amplifier. The green alligator clip is connected to the A2 pin connected to an white male-male wire connected to the SCK pin on the amplifier. Finally, the second yellow alligator clip is connected to the A1 pin connected to a green male-male wire connected to the DATA pin on the amplifier.    Load Cell Amplifier connected to a CPX   This isn't as straightforward because the amplifier in the parts list has an SCK and DATA line instead of SDA\/SCL . The good news is that it still uses digital output so the CPX\/CPB can read it. So not quite I2C but still digital communication.    Strain Gauge Connected to a Load Cell Amplifier   Once you have the circuit wired there are no extra modules to install since we're just going to be using the digitalio library. The example code on Github reads and calibrates the load cell data and converts it to kg for ease of use. Note that kg is not a unit of weight but since we're on Earth we're assuming that we're under 1g acceleration and thus kg can be used as weight even though it's actually a mass.   Load Cell Output in Kg in Mu  The photo above shows the example output of the load cell in kg by applying a load to the strain gauge. Using this simple script it is easy to weigh certain objects and get the value from the load cell. Notice however, that on line 73 at the time of this writing, the scale value is set to 12,000. That value will need to be adjusted based on your own calibration measurements which is left as an assignment to the reader.  "
 },
@@ -2543,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-4.html#load-cell-4-3",
   "type": "Figure",
-  "number": "25.2.1",
+  "number": "27.2.1",
   "title": "",
   "body": "  Load Cell Amplifier connected to a CPX  "
 },
@@ -2552,7 +2588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-4.html#load-cell-4-5",
   "type": "Figure",
-  "number": "25.2.2",
+  "number": "27.2.2",
   "title": "",
   "body": "  Strain Gauge Connected to a Load Cell Amplifier  "
 },
@@ -2561,7 +2597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-4.html#load-cell-4-6-2",
   "type": "Figure",
-  "number": "25.2.3",
+  "number": "27.2.3",
   "title": "",
   "body": "  Load Cell Output in Kg in Mu  "
 },
@@ -2570,7 +2606,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "load-cell-5.html",
   "type": "Section",
-  "number": "25.3",
+  "number": "27.3",
   "title": "Arduino Wiring and Software",
   "body": " Arduino Wiring and Software  The wiring for the Arduino family is extremely similar to the CPX\/CPB. The figure below shows an Arduino connect to a load cell as well as many other external components that my students used for their final project.    Arduino Connected to an HX711 plus many other components   The DATA line connects to pin 3 on the Arduino while SCK connects to pin 2 and then 5V and GND pins are straightforward. The Arduino code is also on Github and starts with the example script from the HX711 library which is also on Github. To install downloaded ZIP libraries, navigate to Sketch>Include Library>Add .ZIP Library... and then add the ZIP file downloaded from Github.    Arduino Code for the HX711   The screenshot above shows the #include <HX711.h> on line 34 which imports the HX711 library and then the rest of the setup sets up pins 2 and 3 for the strain gauge. There are also lines of code used to setup Serial communication so that you can see the output of the scale and also change the calibration factor by pressing a and z or + and - to either inrease or decrease the scale factor.  "
 },
@@ -2579,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-5.html#load-cell-5-3",
   "type": "Figure",
-  "number": "25.3.1",
+  "number": "27.3.1",
   "title": "",
   "body": "  Arduino Connected to an HX711 plus many other components  "
 },
@@ -2588,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "load-cell-5.html#load-cell-5-5",
   "type": "Figure",
-  "number": "25.3.2",
+  "number": "27.3.2",
   "title": "",
   "body": "  Arduino Code for the HX711  "
 },
@@ -2597,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "load-cell-6.html",
   "type": "Section",
-  "number": "25.4",
+  "number": "27.4",
   "title": "Assignment",
   "body": " Assignment   For this assignment you are to wire up a strain gauge and load cell amplifier and calibrate the sensor using known weights and another digital scale. First, set the scale value to zero and then place known weights on to the load cell and record the output. Place the known weight on a different calibrated scale and record those measurements as well. Repeat this experiment for 10 different known weights and plot the actual weight on the y-axis from the known digital scale and the output from the load cell on the x-axis. Use this data to compute a regression curve similar to and write the equation relating load cell output to actual \"weight\" (mass) in kg and report the scale value necessary for your code.   Title page with name,title and date - 5%  Introduction with wiring diagram - 5%  All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%  Include a photo of your CPX\/CPB connected to your amplifier and load cell. - 10%  Include a screenshot (entire computer screen) of Mu showing the Plotter open showing load cell data as you press on the strain gauge - 10%  Include a table of your known weights and load cell output in kg. - 20%  Include a Figure of your calibration data plotted with your trend line on top. Put your value in the title of the plot - 20%  Write your regression equation as ( actual weight = load cell output \/ scale ) being sure to replace scale with your actual values. Remember to round to appropriate significant figures - 10%  Using your calibration equation imbedded in your Mu code, place an unknown weight on your load cell and see what the output is and compare to the actual weight once you place it on a scale. Include a photo and screenshot of this experiment - 10%  Appendix A - Video Details - Film yourself and your entire screen showing the load cell value changing as you press on the strain gauge. - Pass\/Fail  Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass\/Fail  Appendix C - Screenshot of Excel or Sheets if applicable - Pass\/Fail  If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.    "
 },
@@ -2606,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "results-discussion-3.html",
   "type": "Section",
-  "number": "26.1",
+  "number": "28.1",
   "title": "Data Collection and Analysis",
   "body": " Data Collection and Analysis  Qualitative data collection for this study was done using end of the semester surveys. Course surveys are delivered by the University Office of Institutional Effectiveness. The instructor of the course only receives results of the survey. Eight questions in the survey are restricted to a 1-5 Likert scale while four questions are open ended text responses . The surveys are sent to every student taking the course via email. The surveys are optional and as such not all students completed the survey. The data for the course was compiled for all questions and compared against the Departmental average. This provides a base of comparison for this course across the Department of Mechanical Engineering. It is worth noting that the authors do reflect on how their own positionality may affect interpretation of data. This reflectivity is a core characteristic in qualitative research and is important in establishing credibility and showing transparency. A more in depth analysis of the results are examined in the discussion section.  "
 },
@@ -2615,7 +2651,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "results-discussion-4.html",
   "type": "Section",
-  "number": "26.2",
+  "number": "28.2",
   "title": "Results",
   "body": " Results  The main goal of implementing this survey was to determine the answer to the following question: What response does implementation of the kit yield from students? To answer this question, the 4th question in the course survey will be examined. This question states: \"What did you like best about how the instructor taught the course?\"  Table and Table includes examples of questionnaire responses which is in the appendix.   Questionnaire responses to What did you like best about how the instructor taught the course? (2019-2022)      Semester  Quotes    Fall 2019   The course was taught expertly with proper use of in class equipment available and hands on design problems with experiments relative to the material being taught.  I like how he introduced us to the Circuit Playground which allowed to be hands-on since none of my other classes are.     Spring 2020 (Remote Mid-Way)   Hands on experience  I especially enjoyed the hands-on Fridays portion of the course. The practical knowledge of creating something with the book-learning we gained during the lecture was priceless.  Fridays were my favorite days. I got to experience hands on projects where I learned the most from.     Fall 2020 (Hybrid)   I loved the hands on approach to the course. It is the first course, outside senior design, where we had the opportunity to exercise our engineering knowledge on an actual project.  The projects! this [taught] a lot of people hands-on skills     Spring 2021 (Hybrid)   I liked the hands on aspect of the class the most  I wish all other class were taught as well  I like that we actually had a hands on project, and several projects that were fun to do     Fall 2021   I love how he tries to engage his students and help them learn real world engineering, not just textbook stuff. He really wants to watch his students succeed inside and outside of the classroom. We need more classes and professors like this in engineering! It was a fantastic class and instructor     Spring 2022   I had no interest in coding or robotics like things but now I do. I grew an interest in coding after absolutely hating it. I love seeing the application of what I've learned so far in my degree path. I am a hands-on learner, so the labs and the project were my favorite.     Fall 2022   The hands on projects and labs  Very engaging with the students and cared for each student and wanted to help when needed. Gave good real world applications as well as fun, interesting assignments that helped us students learn.       Questionnaire responses to What did you like best about how the instructor taught the course? (2023-2025)      Spring 2023   I love how hands on everything was we would learn about a concept on either Monday or Wednesday and then Friday use that concept on the mini projects     Fall 2023   Dr. Montalvo gives a very calm atmosphere to learn in. He made this subject so much better and enjoyable than I ever would of thought of before starting this class. It has gotten me interested in perusing my own projects using what I learned outside of class as well. Dr. Montalvo also showed us a handful of resources for learning and getting components for our projects, which was fascinating as well.  His method of teaching was genuinely stimulating, and encouraged students to learn. This was the only class I actually looked forward to attending  Engaging and hands-on     Spring 2024   He makes things that seemed super hard and complicated in circuits, very easy. The labs are very engaging and he is very available and willing to help any time you have questions or issues.  Engaging and Funday fridays were actually fun     Fall 2024   How he engaged with the class.  His in class projects     Spring 2025   I like how he does a big project with numerous steps throughout the semester. This is very valuable in the design process learning how to keep moving forward but at the same time learning how to troubleshoot when issues do arise.     Fall 2025   No quotes this semester due to low response      Note that certain semesters were during the Pandemic of COVID-19. In the Spring of 2020 the University transitioned to fully online lectures on March 23rd. That was mid-way through the semester. In Fall 2020 and Spring 2021 the students participated in a hybrid lecture format where students were both allowed to come to class as well as remain remote and log on via Zoom. In the Fall 2021 semester, the University returned to fully in person lectures without masks.  To further answer this question, results from the question How effective was the instructor in helping students achieve course objectives is shown in Table also in the appendix. This table shows the response rate per semester as well as average score for the question The last column shows the average score across the department. Spring 2020 has an asterisk because the University of South Alabama created a different course survey due to the onset of COVID-19. Instead the question Please tell us your perception of the quality of the class prior to the transition to [online] on March 23rd was used during Spring 2020. As such, the departmental scores are not listed.   Average Score for Instructor Effectiveness in Helping Students Achieve Course Objectives (*Alternate question during COVID-19 Pandemic)    Semester  Response Rate  Average Score (1-5)  Department Avg Score (1-5)    Fall 2019  22%  4.20  3.63    Spring 2020 (Remote Mid-Way) *  30%  4.66*  N\/A    Fall 2020 (Hybrid)  46%  4.64  3.57    Spring 2021 (Hybrid)  45%  4.75  3.73    Fall 2021  42%  4.70  4.14    Spring 2022  47%  4.94  3.91    Fall 2022  57%  5.0  4.0    Spring 2023  35%  4.94  3.93    Fall 2023  92%  5.0  4.09    Spring 2024  55%  4.81  4.12    Fall 2024  40%  5.0  4.07    Spring 2025  37%  4.94  4.08    Fall 2025  11%  5.0  4.01      From analysis of the surveys, 4 themes emerged which capture student perceptions of the newly developed course. These include: Teaching Style, Course Design and; Comparison, Balance between Theory and; Application and Connected Learning. Table shows these four themes with definitions of each. These themes overall represent the perspectives students had on the course based on the survey results.   Resultant themes and definitions of themes      Theme  Definition    Teaching Style  Instructor teaching style and personality has an impact on course which is sometimes hard to distinguish from the course design itself    Course Design & Comparison  Student evaluation of different aspects of the course, including the flipped-classroom design, structure of lecture and class time, as well as specifics of the book. Course is compared to others.    Balance between Theory & Application  Students enjoyed the application aspect of the PBL Instrumentation course, but suggested adding more theory to the GitBook provided for the course. Students wanted more harmony between the textbook and the kit.    Connected Learning  Students extend learning outside of the classroom and make connections to their personal life     "
 },
@@ -2624,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "results-discussion-4.html#tab_quotes1",
   "type": "Table",
-  "number": "26.2.1",
+  "number": "28.2.1",
   "title": "Questionnaire responses to “What did you like best about how the instructor taught the course?” (2019-2022)",
   "body": " Questionnaire responses to What did you like best about how the instructor taught the course? (2019-2022)      Semester  Quotes    Fall 2019   The course was taught expertly with proper use of in class equipment available and hands on design problems with experiments relative to the material being taught.  I like how he introduced us to the Circuit Playground which allowed to be hands-on since none of my other classes are.     Spring 2020 (Remote Mid-Way)   Hands on experience  I especially enjoyed the hands-on Fridays portion of the course. The practical knowledge of creating something with the book-learning we gained during the lecture was priceless.  Fridays were my favorite days. I got to experience hands on projects where I learned the most from.     Fall 2020 (Hybrid)   I loved the hands on approach to the course. It is the first course, outside senior design, where we had the opportunity to exercise our engineering knowledge on an actual project.  The projects! this [taught] a lot of people hands-on skills     Spring 2021 (Hybrid)   I liked the hands on aspect of the class the most  I wish all other class were taught as well  I like that we actually had a hands on project, and several projects that were fun to do     Fall 2021   I love how he tries to engage his students and help them learn real world engineering, not just textbook stuff. He really wants to watch his students succeed inside and outside of the classroom. We need more classes and professors like this in engineering! It was a fantastic class and instructor     Spring 2022   I had no interest in coding or robotics like things but now I do. I grew an interest in coding after absolutely hating it. I love seeing the application of what I've learned so far in my degree path. I am a hands-on learner, so the labs and the project were my favorite.     Fall 2022   The hands on projects and labs  Very engaging with the students and cared for each student and wanted to help when needed. Gave good real world applications as well as fun, interesting assignments that helped us students learn.     "
 },
@@ -2633,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "results-discussion-4.html#tab_quotes2",
   "type": "Table",
-  "number": "26.2.2",
+  "number": "28.2.2",
   "title": "Questionnaire responses to “What did you like best about how the instructor taught the course?” (2023-2025)",
   "body": " Questionnaire responses to What did you like best about how the instructor taught the course? (2023-2025)      Spring 2023   I love how hands on everything was we would learn about a concept on either Monday or Wednesday and then Friday use that concept on the mini projects     Fall 2023   Dr. Montalvo gives a very calm atmosphere to learn in. He made this subject so much better and enjoyable than I ever would of thought of before starting this class. It has gotten me interested in perusing my own projects using what I learned outside of class as well. Dr. Montalvo also showed us a handful of resources for learning and getting components for our projects, which was fascinating as well.  His method of teaching was genuinely stimulating, and encouraged students to learn. This was the only class I actually looked forward to attending  Engaging and hands-on     Spring 2024   He makes things that seemed super hard and complicated in circuits, very easy. The labs are very engaging and he is very available and willing to help any time you have questions or issues.  Engaging and Funday fridays were actually fun     Fall 2024   How he engaged with the class.  His in class projects     Spring 2025   I like how he does a big project with numerous steps throughout the semester. This is very valuable in the design process learning how to keep moving forward but at the same time learning how to troubleshoot when issues do arise.     Fall 2025   No quotes this semester due to low response     "
 },
@@ -2642,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "results-discussion-4.html#tab_scores",
   "type": "Table",
-  "number": "26.2.3",
+  "number": "28.2.3",
   "title": "Average Score for “Instructor Effectiveness in Helping Students Achieve Course Objectives” (*Alternate question during COVID-19 Pandemic)",
   "body": " Average Score for Instructor Effectiveness in Helping Students Achieve Course Objectives (*Alternate question during COVID-19 Pandemic)    Semester  Response Rate  Average Score (1-5)  Department Avg Score (1-5)    Fall 2019  22%  4.20  3.63    Spring 2020 (Remote Mid-Way) *  30%  4.66*  N\/A    Fall 2020 (Hybrid)  46%  4.64  3.57    Spring 2021 (Hybrid)  45%  4.75  3.73    Fall 2021  42%  4.70  4.14    Spring 2022  47%  4.94  3.91    Fall 2022  57%  5.0  4.0    Spring 2023  35%  4.94  3.93    Fall 2023  92%  5.0  4.09    Spring 2024  55%  4.81  4.12    Fall 2024  40%  5.0  4.07    Spring 2025  37%  4.94  4.08    Fall 2025  11%  5.0  4.01     "
 },
@@ -2651,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "results-discussion-4.html#t_themes",
   "type": "Table",
-  "number": "26.2.4",
+  "number": "28.2.4",
   "title": "Resultant themes and definitions of themes",
   "body": " Resultant themes and definitions of themes      Theme  Definition    Teaching Style  Instructor teaching style and personality has an impact on course which is sometimes hard to distinguish from the course design itself    Course Design & Comparison  Student evaluation of different aspects of the course, including the flipped-classroom design, structure of lecture and class time, as well as specifics of the book. Course is compared to others.    Balance between Theory & Application  Students enjoyed the application aspect of the PBL Instrumentation course, but suggested adding more theory to the GitBook provided for the course. Students wanted more harmony between the textbook and the kit.    Connected Learning  Students extend learning outside of the classroom and make connections to their personal life    "
 },
@@ -2660,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "results-discussion-5.html",
   "type": "Section",
-  "number": "26.3",
+  "number": "28.3",
   "title": "Discussion",
   "body": " Discussion  This lab at home kit has been implemented since the Fall of 2019. By the time of this writing, the kit has been implemented for 7 semesters, three of which were during COVID-19. The kit was very useful during the COVID-19 pandemic (Spring 2020, Fall 2020 and Spring 2021) because students could order the kit and complete the projects remotely. If students had trouble they could email issues or take a video and share it or even set up a quick video conferencing call. The students were able to see their course objectives hands on which provided a unique way of learning during the pandemic. When the students used the kit in the classroom once the University returned to in person lectures, the students still enjoyed the projects as shown in the survey results.  In regards to the second research question about student satisfaction of the course through the use of the kit, Table and Table clearly show a positive response in regards to the projects and the lab at home kit. For brevity only two to three quotes were shown but for some semesters at least 25 quotes were generated with many of them reflecting on the \"hands on learning\" component of the course.  Furthermore, Table shows an on average course rating that is 22% higher than the departmental average. It can be said with confidence that the quotes in Table and Table are in direct response to the implementation of the kit and that the students would not have written these words had the kit not been an addition to the course. This proves the first research question that a kit can be implemented as well as answers the second research question.  When these quotes are taken into consideration with the higher course ratings and higher student responses, it is evident that the take-home lab kit promoted more active student engagement in the course and, by extension, more active student learning. This data shows, in conjunction with student commentary, that the projects associated with kits fostered a positive learning experience for students while also covering required content for the course. Projects like this one are a strong strategy professors can add to their repertoire as they teach content. Per Gardner's and Bloom's theories of learning, this would indicate the students likely mastered content and skills in this setting just as well as, if not better than they would in a more traditional lecture format .  "
 },
@@ -2669,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "results-discussion-6.html",
   "type": "Section",
-  "number": "26.4",
+  "number": "28.4",
   "title": "Limitations of Findings",
   "body": " Limitations of Findings  Although survey analysis resulted in themes that gave perspectives on the course, there are clear limitations in the resultant findings. The authors are well aware that this data does not conclusively show that implementing a kit in a course increases achievement of course objectives. Many other variable are present in this study, such as the instructor, the course and even the classroom the course is taught in. This study is limited in generalizability based on the small response rate in some of the semesters. Findings are also not generalizable to all engineering Instrumentation courses across the world or even the United States given the influence of the instructor's teaching style and personality in the course. Future research should expand on the study by recruiting individual interview participants and survey respondents to gain a better understanding of the impact of the course on students.  However, findings are useful for instructors seeking to improve their own course by adopting the at-home kit and documentation developed. This theme appeared multiple times among students and it is very possible that students were confused about whether they liked the course or liking the professor. For students, the instructor had a big influence on making the course enjoyable; Preliminary results from this qualitative study can be used to inform course design and teaching practice in future courses.  "
 },
@@ -2678,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "conclusions.html",
   "type": "Chapter",
-  "number": "27",
+  "number": "29",
   "title": "Conclusions",
   "body": " Conclusions   A lab at home kit has been described here. This kit is part of the curriculum for Instrumentation and Experimental Methods and uses the CircuitPlayground Express (CPX) from Adafruit as well as other electronic components. The CPX uses CircuitPython, a derivative of Python. Python like all scripting languages allows students to focus on writing concise code to use the CPX as a tool rather than getting bogged down in syntax, compilation and runtime errors. All software is free, open source and has numerous examples on the Adafruit Learn page as well as the internet at large and Github .  As with all other courses in engineering it is possible to teach this course without any hands on material. Instead, a project based learning (PBL) style is utilized where students use the CPX and other components of the lab at home kit to complete guided projects requiring data acquisition, analysis and post-processing all geared towards enhancing learning of course objectives. The final project in the class allows the students to be creative, take ownership, collaborate with others, and use critical thinking to develop something new.  The responses from the students is positive with a 22% increase over the department average over 7 semesters. The qualitative survey responses from students are also positive and show that the kit is effective in enhancing student satisfaction through interaction of tangible objects. Student satisfaction correlates to student performance as shown in the literature. Hopefully, similar kits can be created for other classes at USA as well as other universities in STEM across the world.   "
 },
@@ -2687,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "acknowledgements.html",
   "type": "Chapter",
-  "number": "28",
+  "number": "30",
   "title": "Acknowledgements",
   "body": " Acknowledgements   Dr. Carlos Montalvo would like to acknowledge a few key members who made this textbook possible. First and foremost I would like to thank Adafruit for their entire ecosystem of electronics, tutorials, blogs and forums. Much of what I have learned here to teach Instrumentation was from Adafruit and the Adafruit Learn system and specifically people like Lady Ada and John Park who have helped shape CircuitPython and the CircuitPlayground Express to what it is today . I would also like to thank Dr. Saami Yazdani for creating the blueprint for Instrumentation at my university by creating a laboratory environment for an otherwise totally theoretical course. His course was the foundation for this textbook and for that I thank him for showing the way. I’d like to also thank and acknowledge Tangibles that Teach for giving me the opportunity to morph this loose set of projects into a textbook that can be used for multiple universities and classrooms and of course help students learn and acquire knowledge through creating. I'd also like to thank Steven Clontz for first showing me PreTeXt and for Oscar Levin and all of his helpful replies via email and Zoom. I also like to thank Justin Dyer, Landon Freeman, Noah Broadus, and Logan Allen for their rocket pressure results and Judson Duke, Justin Dyer, and Jason Brignac for their GPS aircraft flight results. I'd like to thank my graduate students Nghia Hyunh and Prisha Chanana for their help on a few chapters. Finally, I'd like to thank the co-authors Lisa and Marine for helping me add some statistical survey data to this textbook and being all around great academic colleagues and friends   "
 },
