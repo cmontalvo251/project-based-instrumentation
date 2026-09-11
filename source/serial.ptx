@@ -60,7 +60,7 @@ The code above is pretty advanced and uses a class called <em>CPX</em> to handle
 <section>
   <title>Assignment</title>
 <p>
-This project is similar to the Data Acquisition project only you must use method 6 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
+This project is similar to the previous chapters only you must use method 6 to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
 </p>
 <ol>
   <li><p>Title page with name,title and date - 5%</p></li>

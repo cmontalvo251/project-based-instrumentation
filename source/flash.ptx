@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="internaldaq" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>On Board Data Logging - Method 3</title>
+<introduction>
+<list>
+<title>Parts List</title>
+<ol>
+<li><p>CircuitPlayground Express or Bluefruit</p></li>
+<li><p>USB Cable</p></li>
+<li><p>Laptop</p></li>
+</ol>
+</list>
+<list>
+<title>Learning Objectives</title>
+<ol>
+<li><p>Learn about read write access on the CircuitPlayground</p></li>
+<li><p>Learn about <em>boot.py</em> on the CircuitPlayground</p></li>
+<li><p>Learn how to save data directly to the CircuitPlayground</p></li>
+</ol>
+</list>
+</introduction>
+<section>
+<title>Setup</title>
+<p>
+The problem with methods 1,2 and 6 is that you need a laptop to log
+data in the field. It would be nice if you could use the optional
+battery pack and just have the CPX log data on the CPX itself. This is
+the most complex way but in my opinion the best way. In order to get
+this to work you need to allow the drive on the CPX to have read/write
+permissions. This requires you to load a piece of software called
+boot.py and put it on the CPX. I have this
+<url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/boot.py">software
+on my Github</url><xref ref="Github"/>. The software is shown below. The first 10 lines are
+probably very familiar. Import some modules and then create a switch object. Line 13
+is where all of the storage permissions are changed. If the flip is
+switched towards the A button, the storage module is used to allow you
+to write to the CPX. The problem here is that if you do this, you
+won't be able to edit code. I'll explain the procedure here in a
+minute. As always, the relevant Adafruit tutorial is on the <url href="https://learn.adafruit.com/adafruit-circuit-playground-express/circuitpython-storage">Adafruit
+Learn System</url><xref ref="Adafruit"/> if you want to read more about it. Again make sure you
+store this file onto the CIRCUITPY drive and save it as boot.py
+</p>
+<figure>
+  <image width="73%" source="boot.png" />
+  <caption>boot.py script in CircuitPython</caption>
+</figure>
+<p>
+In addition to storing the file boot.py you'll need to edit your
+main.py script to only log data when the switch is moved towards the B
+button. The software to record button presses on disk is shown below
+and as always
+<url href="https://github.com/cmontalvo251/Microcontrollers/blob/master/Circuit_Playground/CircuitPython/Data_Logging/write_button_presses_disk.py">on
+my Github</url><xref ref="Github"/>. In this software we again see the standard
+commands. Lines 1-3 import all the modules we need and then 5-15
+create a switch, a button and an LED. In this case we're using the LED
+soldered to the board. Line 17-20 check to see if the user has flipped
+the switch. If the switch is False the storage module on boot.py will
+allow the drive to act like a data logger and it will open a file
+called <em>Test_Data.txt</em> for writing <em>(<q>w</q>)</em>. If the switch is True then the
+user will be notified that the file has not been opened for
+writing. Lines 22 through 33 include the infinite while loop. Line 23
+turns the LED on and line 24 prints out the current time and the
+button value in integer form. If the switch value is False the program
+will create an output string by converting all numbers to strings
+using the str function. Notice that there is a <em>str(<q>\textbackslash n</q>)</em> at the end of
+the output variable which tells the computer to write a new line of
+data to the file. Lines 28 and 29 write the output to the file from
+line 18 and then flush the output which means the CPX waits for the
+data to be fully written before moving on. It also turns the LED off
+so we know the CPX took data even when we aren't looking at the Serial
+monitor. If the switch value is true it means that the we never opened
+the data file and thus we tell the user we aren't logging data and
+it's time to flip the switch and hit reset. <alert>NOTE: The figure below is from an old version of the code. The newest version produces the same outcome. The only difference is that the D13 LED blinks when the code is running and the first neopixel toggles 3 different colors when the system is logging data. This allows for extra user information when operating Method 3 without a computer and the serial monitor. Note that these additions require the use of neopixel.mpy module.</alert>
+</p>
+
+<figure>
+  <image width="73%" source="method3_1.png" />
+  <caption>Snippet of writing data to a text file in CircuitPython</caption>
+</figure>
+<p>
+So here is the flow of what you want to do for method 3.
+</p>
+
+<ol>
+<li><p>Unplug the CPX</p></li>
+<li><p>Flip the switch towards the A button.</p></li>
+<li><p>Plug in the CPX and save the boot.py and main.py files. Remember you can only save CircuitPython scripts when the switch is flipped towards the A button.</p></li>
+<li><p>When you are ready to start recording data, flip the switch towards the B button. If you're looking at the Serial monitor, the software will throw an error. Just ignore it and hit the reset button. When your computer recognizes the CPX you can turn the Serial monitor on and off.</p></li>
+<li><p>When you are done taking data simply slide the switch over towards the A button and hit reset again. This is what my Serial monitor looks like when I do this. You'll see that I was writing to disk for like 25 seconds and then I flipped the switch back towards the A button.</p></li>
+</ol>
+
+<figure>
+  <image width="73%" source="method3_2.png" />
+  <caption>Serial monitor open in Mu showing Method 3 for data logging</caption>
+</figure>
+
+<p>
+With the switch flipped and data taken, open your folder manager and
+take a look at the CIRCUITPY drive. This is what mine looks
+like. You'll see I have two CircuitPython files and a file <em>Test_Data.txt</em> with
+all my data in it.
+</p>
+
+<figure>
+  <image width="73%" source="method3_3.png" />
+  <caption>Text file shown in file manager on computer</caption>
+</figure>
+<p>
+If you open the <em>Test_Data.txt</em> file you will hopefully see data in it.
+</p>
+<figure>
+  <image width="73%" source="Gedit_Data.png" />
+  <caption>Example text file from Method 3</caption>
+</figure>
+<p>
+At this point you can copy this text file over to your desktop computer and proceed to the plotting portion.
+Ok so let's recap method 3 one more time.
+
+<ol>
+<li><p>Unplug CPX (or remove power)</p></li>
+<li><p>Slide switch to A</p></li>
+<li><p>Plug in CPX (or provide battery power) and wait for system to fully boot up</p></li>
+<li><p>Slide switch to B</p></li>
+<li><p>Hit Reset and wait for system to fully boot up</p></li>
+<li><p>Take data for however long you want</p></li>
+<li><p>Slide switch to A when you're ready to stop taking data</p></li>
+<li><p>Hit Reset and wait for system to fully boot up</p></li>
+<li><p>Remove power if you're on battery power</p></li>
+<li><p>Plug CPX into computer if not already connected</p></li>
+<li><p>Transfer data file to computer</p></li>
+</ol>
+</p>
+</section>
+<section>
+  <title>Assignment</title>
+  <introduction>
+<p>
+For this project you must use on board data logging method (Method 3) to save time and button presses to a text file. You must then plot the button presses as a function of time. Remember to add x and y labels to all figures.
+</p>
+<ol>
+  <li><p>Title page with name,title and date - 5%</p></li>
+  <li><p>Introduction - 5%</p></li>
+  <li><p>All figures must have appropriate annotations, figure captions, figure labels and a paragraph of supporting text - 10%</p></li>
+  <li><p>Include a snippet (5 lines) of your data file - 40%</p></li>
+  <li><p>Include a plot of your button presses with time on the x-axis and button presses on the y-axis (no screenshots) - 40%</p></li>
+  <li><p>Appendix A - Video Details - Film yourself and your entire screen pressing the button and showing the number change on the screen while you flip the switch back and forth to switch from write mode to read mode. Then show yourself plotting your data on your computer - Pass/Fail</p></li>
+  <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
+  <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
+  <li><p><alert>If you are asked to fix something in the Appendices such as missing content in your video or screenshots of your code, you will lose 10% of your grade everytime you submit an update after the deadline.</alert></p></li>
+</ol>
+</introduction>
+</section>
+</chapter>
