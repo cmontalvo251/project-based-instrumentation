@@ -79,7 +79,7 @@
       <image source="missing_module.png" width="80%"/>
       <caption>Example of a missing module error</caption>
     </figure>
-    Note that it's possible to import too many modules on the CPX/CPB and run out of memory. It turns out that the CPB has much more memory then the CPX. Run the commands below to see how much memory your CPX/CPX has left.
+    Note that it's possible to import too many modules on the CPX/CPB and run out of memory. It turns out that the CPB has much more memory then the CPX. Run the commands below to see how much memory your CPX/CPB has left.
     <pre>
     import gc
     gc.collect()
@@ -91,7 +91,7 @@
 
   <section>
     <title>Reformatting your CPX/CPB</title>
-    <p>If your CPX/CPX is completely bricked you can completely reformat it. In order to do that you simply put the CPX/CPB into CPLAYBOOT mode. Then drag either the 
+    <p>If your CPX/CPB is completely bricked you can completely reformat it. In order to do that you simply put the CPX/CPB into CPLAYBOOT mode. Then drag either the 
     <url href="https://cdn-learn.adafruit.com/assets/assets/000/048/745/original/flash_erase_express.ino.circuitplay.uf2?1512152080">CPX eraser tool</url> or the <url href="https://cdn-learn.adafruit.com/assets/assets/000/082/950/original/CP_Bluefruit_QSPI_Erase.UF2?1572026649">CPB eraser tool</url>. After that, you can reinstall the CircuitPython UF2 and start fresh (See <xref ref="getting-started"/>) <xref ref="Adafruit"/>. 
 
     If you have a linux computer you can also access the REPL of your CPX/CPB using the commands below
