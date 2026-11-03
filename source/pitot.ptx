@@ -105,7 +105,7 @@ I explain the process of substracting off bias in this <url href="https://www.yo
 <li><p>Include a plot of the raw analog signal vs time that clearly shows when the fan is on and off - 20%</p></li>
 <li><p>Convert your raw signal to windspeed and filter your signal using an offline complementary filter. Plot both unfiltered and filtered windspeed on the same plot and include a legend. Make sure you add the saturation filter to prevent a negative in the square root - 20%</p></li>
 <li><p>What is the maximum windspeed that the CPX/CPB can read? - 10%</p></li>
-<li><p>The data sheet also suggests that you use a <m>470~pF</m> capacitor to filter the output. Select two resistors for a low pass filter such that the DC Gain would be equal to 1. Assume the total impedance of both resistors is <m>2~k\Omega</m>. Also compute the cutoff frequency. - 10%</p></li>
+<li><p>The data sheet also suggests that you use a <m>470~pF</m> capacitor to filter the output. Assume the total impedance of your resistor is <m>2~k\Omega</m>. Draw a picture and compute the cutoff frequency. - 10%</p></li>
 <li><p>Appendix A - Video Details - Include 2 vidoes: First, film your entire team and your screen as you show the digital output change in the Plotter in Mu as the freestream airflow changes. Then, include a video of you plotting your raw digital output and converting that to windspeed on your computer - Pass/Fail</p></li>
 <li><p>Appendix B - Code used to take data and code used to plot in plain text (no screenshots) - Pass/Fail</p></li>
 <li><p>Appendix C - Screenshot of Excel or Sheets if applicable - Pass/Fail </p></li>
